@@ -28,6 +28,11 @@
 			value="jdbc:oracle:thin:@db20220512150004_high?TNS_ADMIN=/Users/mitakeran/LDH/Wallet_DB20220512150004" />
 		<beans:property name="username" value="ADMIN" />
 		<beans:property name="password" value="LDHsoldesk802" />
+
+			
+		<beans:property name="username" value="c##sj" />
+		<beans:property name="password" value="sj" />
+
 	</beans:bean>
 
 	<beans:bean id="transactionManager"
@@ -40,7 +45,11 @@
 		<beans:property name="typeAliasesPackage" value="com.team12.main" />
 		<beans:property name="mapperLocations">
 			<beans:list>
+
 				<beans:value>classpath:team1joinMapper.xml</beans:value>
+
+				<beans:value>classpath:testmapper.xml</beans:value>
+
 			</beans:list>
 		</beans:property>
 	</beans:bean>
