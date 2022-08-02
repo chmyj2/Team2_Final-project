@@ -1,0 +1,9 @@
+@charset "UTF-8";
+#homeBody{
+	background-color:fuchsia;
+	display: inline-flex;
+}
+
+#homeBoby{
+	width: 500px;
+}
