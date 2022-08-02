@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="homeBody">
-<div style="background-color: orange;">1팀</div>
+<div style="background-color: orange;"> <a href="MemberController"> 1팀 </a></div>
 <div style="background-color: blue;">2팀</div>
 </div>
 </body>
