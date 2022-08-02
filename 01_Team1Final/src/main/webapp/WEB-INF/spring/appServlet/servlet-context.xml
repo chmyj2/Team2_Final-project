@@ -25,9 +25,9 @@
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
-			value="jdbc:oracle:thin:@[IP]:[port]:[sid]" />
-		<beans:property name="username" value="[username]" />
-		<beans:property name="password" value="[password]" />
+			value="jdbc:oracle:thin:@db20220512150004_high?TNS_ADMIN=/Users/mitakeran/LDH/Wallet_DB20220512150004" />
+		<beans:property name="username" value="ADMIN" />
+		<beans:property name="password" value="LDHsoldesk802" />
 	</beans:bean>
 
 	<beans:bean id="transactionManager"
@@ -40,7 +40,7 @@
 		<beans:property name="typeAliasesPackage" value="com.team12.main" />
 		<beans:property name="mapperLocations">
 			<beans:list>
-				<beans:value>classpath:[mapper.xml파일명]</beans:value>
+				<beans:value>classpath:team1joinMapper.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>
@@ -50,7 +50,7 @@
 			ref="sqlSessionFactory" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.team1.main" />
+	<context:component-scan base-package="com.team12.main" />
 	
 	
 	
