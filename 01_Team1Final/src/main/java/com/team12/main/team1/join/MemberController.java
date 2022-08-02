@@ -17,7 +17,7 @@ public class MemberController {
 		
 		mlDAO.join(m, req);
 //		mlDAO.loginCheck(req);
-		req.setAttribute("contentPage", "member/join.jsp");
+		req.setAttribute("contentPage", "LDH/DH_login.jsp");
 		
 		return "index";
 	}

@@ -30,8 +30,8 @@
 		<beans:property name="password" value="LDHsoldesk802" />
 
 			
-		<beans:property name="username" value="c##sj" />
-		<beans:property name="password" value="sj" />
+		<!-- <beans:property name="username" value="c##sj" />
+		<beans:property name="password" value="sj" /> -->
 
 	</beans:bean>
 

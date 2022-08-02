@@ -19,7 +19,7 @@ public class HomeController {
 	public String home() {
 		
 		
-		return "home";
+		return "LDH/DH_login";
 	}
 	
 }
