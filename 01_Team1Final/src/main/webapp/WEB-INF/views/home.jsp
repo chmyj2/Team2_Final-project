@@ -9,8 +9,8 @@
 </head>
 <body>
 <div id="homeBody">
-<div style="background-color: orange;">1팀</div>
-<div style="background-color: blue;">2팀</div>
+	<div style="background-color: orange;">1팀</div>
+	<div style="background-color: blue;">2팀</div>
 </div>
 </body>
 </html>
