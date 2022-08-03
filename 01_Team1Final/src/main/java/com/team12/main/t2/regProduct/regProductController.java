@@ -14,7 +14,8 @@ public class regProductController {
 		
 		request.setAttribute("contentPage", "2Team/YJ/regProductPage.jsp");
 		
-		return "t2_index";
+		// 상품가져오는일
+		return "2Team/t2_index";
 	}
 	
 }
