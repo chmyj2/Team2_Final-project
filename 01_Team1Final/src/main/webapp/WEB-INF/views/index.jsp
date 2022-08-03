@@ -18,7 +18,6 @@
             <img class="icon_search" src="resources/img/search.png">
             <input class="search" type="text" placeholder="insert keyword">
         </div>
-        <!-- top부분 login/장바구니/검색기능 -->
         <!-- 지도 했던것 처럼 오늘 안락사 대상 친구 페이지 하단 우측에 뜨게하기 -->
         <nav>
             <ul>
