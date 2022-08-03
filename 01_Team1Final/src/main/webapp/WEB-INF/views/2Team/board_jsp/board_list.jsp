@@ -8,6 +8,7 @@
 </head>
 <body>
 <h1>board</h1>
+${r}
 
 </body>
 </html>
