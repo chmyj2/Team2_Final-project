@@ -28,16 +28,11 @@
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
-<<<<<<< HEAD
-			value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=/Users/choeyongjun/Wallet_DB202204301707" />
-		<beans:property name="username" value="CYJ" />
-		<beans:property name="password" value="YJ802soldesk" />
-=======
+
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<beans:property name="username" value="c##sj" />
 		<beans:property name="password" value="sj" />
 
->>>>>>> 8506a076e3f259e2fe52bc33ede1b9de04980cbe
 	</beans:bean>
 
 	<beans:bean id="transactionManager"
@@ -50,15 +45,13 @@
 		<beans:property name="typeAliasesPackage" value="com.team12.main" />
 		<beans:property name="mapperLocations">
 			<beans:list>
-<<<<<<< HEAD
+
 				<beans:value>classpath:team2/YJ/viewAllProductMapper.xml</beans:value>
 				<beans:value>classpath:team2/YJ/regProductMapper.xml</beans:value>
-=======
 				<beans:value>classpath:team1joinMapper.xml</beans:value>
 				<beans:value>classpath:testmapper.xml</beans:value>
 				<beans:value>classpath:team2BoardMapper.xml</beans:value>
-        
->>>>>>> 8506a076e3f259e2fe52bc33ede1b9de04980cbe
+
 			</beans:list>
 		</beans:property>
 	</beans:bean>
