@@ -8,11 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- <c:if test="${sessionScope.accountInfo.user_id eq 'ADMIN' }"> --%>
+<%-- <c:if test="${sessionScope.accountInfo.user_id eq 'ADMIN' }">
 		<div><button onclick="location.href='regProductPage'">운영자전용 상품등록버튼</button></div>
-	<%-- </c:if> --%>
+	</c:if> --%>
 <!-- db에있는 정보 뿌려주기 -->
+<button onclick="location.href='regProductPage'">운영자전용 상품등록버튼</button>
 
-asd
 </body>
 </html>

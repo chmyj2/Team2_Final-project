@@ -11,20 +11,9 @@
 <body>
 
 
-<div id="homeBody">
 <div style="background-color: orange;"> <a href=member.join> 1팀 </a></div>
-
-<!-- <div id="homeBody">
-<div style="background-color: orange;"> <a href=LDH/DH_login.jsp> 1팀 </a></div>
-<div style="background-color: blue;">2팀</div>
-</div> -->
-<<<<<<< HEAD
-
 <div style="background-color: blue;"><a href=team2Main> 2팀 </a></div>
 
-=======
-<div style="background-color: blue;"><a href="team2Main"> 2팀 </a></div>
->>>>>>> d21fa4bac95b4a2ddc89abbe0db494211ca8b092
         <!-- home -->
         <div id="main_wrapper">
             <img class="main_img" src="resources/img/home.jpg">

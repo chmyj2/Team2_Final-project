@@ -49,11 +49,7 @@
 	
 	
 	
-<<<<<<< HEAD
 	<jsp:include page="${contentPage }"></jsp:include>
-=======
-	 <jsp:include page="${contentPage }"></jsp:include>
->>>>>>> d21fa4bac95b4a2ddc89abbe0db494211ca8b092
 	
 	
 	

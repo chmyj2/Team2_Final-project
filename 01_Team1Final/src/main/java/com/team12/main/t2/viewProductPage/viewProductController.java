@@ -12,9 +12,8 @@ public class viewProductController {
 
 	@RequestMapping(value = "/viewProductPage", method = RequestMethod.GET)
 	public String viewProductPage(HttpServletRequest request) {
-		
 //		상품가져오는일
-		request.setAttribute("contentPage", "2Team/YJ/viewProductPage.jsp");
+		request.setAttribute("contentPage", "YJ/viewProductPage.jsp");
 		
 		return "2Team/t2_index";
 	}

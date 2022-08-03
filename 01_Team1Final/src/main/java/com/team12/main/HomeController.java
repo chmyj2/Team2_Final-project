@@ -15,11 +15,6 @@ public class HomeController {
 	public String home(HttpServletRequest req) {
 		
 		
-<<<<<<< HEAD
-	
-=======
-		
->>>>>>> d21fa4bac95b4a2ddc89abbe0db494211ca8b092
 		return "home";
 	}
 	
