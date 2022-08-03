@@ -20,10 +20,7 @@ public class HomeController {
 	}
 	
 	
-<<<<<<< HEAD
-	
-=======
->>>>>>> 2485cdb (create board DB)
+
 
 		
 }
