@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<body>
-     <!-- index -->
+
+    <!-- index -->
     <header>
         <div class="header">
             <a href="login"><img class="icon_login" src="resources/img/LOGIN.png"></a>
@@ -18,6 +18,7 @@
             <img class="icon_search" src="resources/img/search.png">
             <input class="search" type="text" placeholder="insert keyword">
         </div>
+        <!-- top부분 login/장바구니/검색기능 -->
         <!-- 지도 했던것 처럼 오늘 안락사 대상 친구 페이지 하단 우측에 뜨게하기 -->
         <nav>
             <ul>
@@ -33,7 +34,11 @@
                 <!-- <a href="#"><img class="logo" src="DENGSTINY.png" alt=""></a>   -->
                     <!-- dropdown 사료/영양제 -->  
                 
-                <li><a href="#">STORE</a>  
+                <li class="store_drop"><a href="#">STORE</a>  
+                    <ul class="store_drop_content">
+                        <li><a href="#">Food</a></li>
+                        <li><a href="#">Nutrient</a></li>
+                    </ul>
                 </li>
                 <li><a href="#">COMMUNITY</a>  
                 </li>
@@ -43,8 +48,8 @@
            
         </nav>
     </header>
-
-	<div>	<!-- home 영역 -->
+    
+    <div>	<!-- home 영역 -->
 		<jsp:include page="${contentPage }"></jsp:include>
 	</div>
 
