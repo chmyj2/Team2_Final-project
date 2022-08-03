@@ -1,5 +1,11 @@
 /.metadata/
+
 /Servers/
+
 .class
 pom.properties
 
+
+.settings
+
+pom.properties
