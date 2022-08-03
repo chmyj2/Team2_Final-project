@@ -4,21 +4,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="style.css">
 <title>Insert title here</title>
 </head>
 <body>
 <body>
+<<<<<<< HEAD
+index
+=======
      <!-- index -->
     <header>
         <div class="header">
-            <a href="login"><img class="icon_login" src="LOGIN.png"></a>
+            <a href="loginandjoin.go"><img class="icon_login" src="resources/img/LOGIN.png"></a>
             <span class="join_sale">10% SALE</span>
-            <a href="bag"><img class="icon_bag"src="shop.png"></a>
-            <img class="icon_search" src="search.png">
+            <a href="bag"><img class="icon_bag"src="resources/img/shop.png"></a>
+            <img class="icon_search" src="resources/img/search.png">
             <input class="search" type="text" placeholder="insert keyword">
         </div>
-        <!-- top부분 login/장바구니/검색기능 -->
         <!-- 지도 했던것 처럼 오늘 안락사 대상 친구 페이지 하단 우측에 뜨게하기 -->
         <nav>
             <ul>
@@ -45,5 +46,10 @@
         </nav>
     </header>
 
+	<div>	<!-- home 영역 -->
+		<jsp:include page="${contentPage }"></jsp:include>
+	</div>
+
+>>>>>>> 901c78a0ab8fc756badde1dc00be7a5b3c93afc7
 </body>
 </html>

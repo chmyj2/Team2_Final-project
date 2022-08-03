@@ -20,175 +20,38 @@
 	<link href='resources/t2_css/style.css' rel='stylesheet' type='text/css'>
 	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 	<link rel="stylesheet" type="text/css" href="css/settings.css" media="screen" />
-	<link href='resources/t2_css/hospital_main.css' rel='stylesheet' type='text/css'>
-	<!-- 병원찾기  CSS -->
-	<script type="text/javascript" src="resources/t2_js/jQuery.js"></script>
-	<style type="text/css">
-	.index-main{
-	display: flex;
-        
-    }
 
-.index-main div{
-	flex-grow: 1;
-	height: 1200px;
-	text-align: center;
-	
-    }
-
-
-
-/* ul li태그에 리스트 스타일을 없앰 */
-ul li{
-	list-style: none;
-	}
-
-
-a {
-	text-decoration: none;
-	
-	}
-	
-
-        
-/* 글자크기를 16px 맑은 고딕 굵게하고 width넓이 700, 높이 50만큼 배경색은 #ccc, 글자색은 검정색, 라인높이50px
-menu박스 가운데정렬, 글자가운데 정렬 */
-        
-        
-#indexMenu {
-	position: fixed;
-	top: 0px;
-    height:50px;
-    background: rgb(82,129,209);
-    line-height: 50px;
-    margin:0 auto;
-    text-align: center;
-    position: sticky;
-    z-index: 999;
-    font-size: 18px;
-    
-    }
-    
-   
-    
-
-#indexMenu ul{
-	display: inline-block;
-	
-	 }
-        
-
-
-
-/* menu태그 자식의 ul의 자식 li를 왼쪽정렬과 넓이 140설정 */
-	
-#indexMenu > ul > li {
-	float:left;
-	width:140px;
-	position:relative;
-	font-weight: 500;
-	}
-	
-
-
-#indexMenu > ul > li > a {
-  color: white;
-}
-
-	
-/* 메뉴 4 들어갔을때 */
-#indexMenu > ul > li > ul {
-	width:350px;
-	display:none;
-	position: absolute;
-	font-size:14px;
-	background : #B8B8B8;
-	
-	
-	
-	}
-	
-	
-#indexMenu > ul > li:hover > ul {
-	
-	display:flex;
-
-	}
-	
-	
-#indexMenu >ul>li>ul>li{
-	width: 500px;
-	}
-
-
-#indexMenu > ul > li > ul > li:hover {
-	background: #0d47a1;
-	transition: ease 0.5s;
-	}
-		
-		
-#indexMenu > ul > li > ul > li > a {
-  color: white;
-}
-
-.index_nav{
-	padding-top: 10px;
-
-}
-
-.index-nav-login{
-	text-align: right;
-	padding-right: 25px;
-	text-decoration-line : none;
-	text-decoration : none;
-
-
-}
-
-.index_logo_img{
-	width: 250px;
-	height:170px;
-
-}
-
-.index-logo-title{
-	font-size: 30px;
-	text-decoration-line : none;
-	text-decoration : none;
-}
-
-
-
-
-a { text-decoration:none !important }
-a:hover { text-decoration:none !important }
-
-	
-	</style>
-	
-	
 </head>
 <body>
-			<nav class="index_nav"><div class="index-nav-login"><a href="#">로그인</a></div></nav>
+			<nav class="index_nav"><div class="index-nav-login"><a href="t2.login">로그인</a></div></nav>
 		<div class="container">
 			<div class="container-fluid">
 				<div class="header-top">
-						<a href="#"><img class="index_logo_img" src="resources/t2_img/logo.jpg" alt="" /></a>
+						<a href="team2Main"><img class="index_logo_img" src="resources/t2_img/logo.jpg" alt="" /></a>
 					</div>
 					
 				</div>
 			</div>
 	<div id="indexMenu">
         <ul>
-            <li><a href="hospitalGo">동물병원 찾기</a></li>
-           <li><a href="ShoppingController?name=Drink">상품 판매</a></li>
-            <li><a href="#">게시판</a></li>
+            <li><a href="ourCollectionController">동물병원 찾기</a></li>
+           <li><a href="viewProductPage">상품 판매</a></li>
+            <li class="t2-indexDropdown">
+            	<a href="#" class="t2-indexDropbtn">게시판</a>
+            	<ul class="t2-indexDropdown-content">
+            	<li><a href="team2.boardlist?category=1">강아지</a></li>                     
+            	<li><a href="team2.boardlist?category=2">고양이</a></li>                 
+           		<li><a href="team2.boardlist?category=3">etc</a></li>                 
+            </ul>
+            </li>
         </ul>
 </div>
 	
 	
 	
-	<jsp:include page="${contentPage }"></jsp:include> 
+<
+	<jsp:include page="${contentPage }"></jsp:include>
+
 	
 	
 	
