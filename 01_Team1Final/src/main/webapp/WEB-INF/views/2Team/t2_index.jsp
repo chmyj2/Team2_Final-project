@@ -35,7 +35,7 @@
 	<div id="indexMenu">
         <ul>
             <li><a href="ourCollectionController">동물병원 찾기</a></li>
-           <li><a href="ShoppingController?name=Drink">상품 판매</a></li>
+           <li><a href="viewProductPage">상품 판매</a></li>
             <li class="t2-indexDropdown">
             	<a href="#" class="t2-indexDropbtn">게시판</a>
             	<ul class="t2-indexDropdown-content">
@@ -44,14 +44,12 @@
            		<li><a href="team2.boardlist?category=3">etc</a></li>                 
             </ul>
             </li>
-            
-            
         </ul>
 </div>
 	
 	
 	
-	 <jsp:include page="${contentPage }"></jsp:include>
+	<jsp:include page="${contentPage }"></jsp:include>
 	
 	
 	
