@@ -34,7 +34,7 @@ public class MemberController {
 		
 		mDAO.join(m, req);
 		mDAO.loginCheck(req);
-		req.setAttribute("contentPage", "LDH/join.jsp");
+		req.setAttribute("contentPage", "../LDH/loginAndJoin.jsp");
 		
 		return "index";
 	}

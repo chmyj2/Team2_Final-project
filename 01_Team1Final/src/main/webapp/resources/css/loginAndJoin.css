@@ -1,5 +1,9 @@
 @charset "UTF-8";
+<<<<<<< HEAD
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CLora%22"");
+=======
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora");
+>>>>>>> b3218038037c176040fe484bf174288d15d3cb7e
 
 .container{
     padding-top: 150px;
@@ -13,8 +17,13 @@
 
 .input_id{
     position: relative;
+<<<<<<< HEAD
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+=======
 	width: 280px;
 	padding: 10px 10px 10px 10px;
+>>>>>>> b3218038037c176040fe484bf174288d15d3cb7e
     margin-bottom: 10px;
     border-radius: 30px;
     border: none;
@@ -22,8 +31,13 @@
 
 .input_pw {
     position: relative;
+<<<<<<< HEAD
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+=======
 	width: 280px;
 	padding: 10px 10px 10px 10px;
+>>>>>>> b3218038037c176040fe484bf174288d15d3cb7e
     margin-bottom: 10px;
     border-radius: 30px;
     border: none;
@@ -39,6 +53,15 @@
 
 .login_btn{
     display: block;
+<<<<<<< HEAD
+    width: 300px;
+    height: 40px;
+    border-radius: 30px;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    cursor: pointer;
+=======
 	width: 300px;
 	height: 40px;
 	border-radius: 30px;
@@ -46,6 +69,7 @@
 	color: rgb(255, 255, 255);
 	font-size: 15px;
 	cursor: pointer;
+>>>>>>> b3218038037c176040fe484bf174288d15d3cb7e
     background-color: black;
     margin:auto;
     margin-bottom: 10px;
@@ -53,6 +77,15 @@
 
 .signUp_btn{
     display: block;
+<<<<<<< HEAD
+    width: 300px;
+    height: 40px;
+    border-radius: 30px;
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    cursor: pointer;
+=======
 	width: 300px;
 	height: 40px;
 	border-radius: 30px;
@@ -60,6 +93,7 @@
 	color: rgb(0, 0, 0);
 	font-size: 15px;
 	cursor: pointer;
+>>>>>>> b3218038037c176040fe484bf174288d15d3cb7e
     background-color: rgb(255, 255, 255);
     margin:auto;
     margin-bottom: 10px;
@@ -68,6 +102,15 @@
 .signUp_kakao_btn{
     display: block;
     margin-top: 10px;
+<<<<<<< HEAD
+    width: 300px;
+    height: 40px;
+    border-radius: 30px;
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    cursor: pointer;
+=======
 	width: 300px;
 	height: 40px;
 	border-radius: 30px;
@@ -75,6 +118,7 @@
 	color: rgb(0, 0, 0);
 	font-size: 15px;
 	cursor: pointer;
+>>>>>>> b3218038037c176040fe484bf174288d15d3cb7e
     background-color: rgb(255, 238, 0);
     margin:auto;
     margin-bottom: 20px;
@@ -90,6 +134,15 @@ hr.login_hr{
 .non_members_check_order{
     display: block;
     margin-top: 10px;
+<<<<<<< HEAD
+    width: 300px;
+    height: 40px;
+    border-radius: 30px;
+    font-weight: 900;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    cursor: pointer;
+=======
 	width: 300px;
 	height: 40px;
 	border-radius: 30px;
@@ -97,8 +150,13 @@ hr.login_hr{
 	color: rgb(0, 0, 0);
 	font-size: 15px;
 	cursor: pointer;
+>>>>>>> b3218038037c176040fe484bf174288d15d3cb7e
     background-color: rgb(170, 170, 170);
     margin:auto;
     margin-top:20px;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> b3218038037c176040fe484bf174288d15d3cb7e
 
