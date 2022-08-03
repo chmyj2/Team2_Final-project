@@ -19,7 +19,7 @@ public class MemberController {
 //		mlDAO.loginCheck(req);
 		req.setAttribute("contentPage", "LDH/DH_login.jsp");
 		
-		return "index";
+		return "LDH/DH_login";
 	}
 	
 
