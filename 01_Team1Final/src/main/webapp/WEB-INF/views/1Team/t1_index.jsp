@@ -52,6 +52,25 @@
     <div>	<!-- home 영역 -->
 		<jsp:include page="${contentPage }"></jsp:include>
 	</div>
+	
+	<footer id="footer">
+            <div class="footer">
+            <img id="footerlogo" name="footerlogo" src="">
+    
+            <div class="f_company">
+                <h4>DengStiny</h4>
+                <p> Address : 서울특별시 종로구 종로12길 15 5층 (관철동 13-13)</p>
+                <p> Contact. 02-0000-0000 </p>
+                <p>© DengStiny ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
+        <div class="footer_sub">
+
+        </div>
+
+    </footer>
+	
+	
 
 </body>
 </html>
