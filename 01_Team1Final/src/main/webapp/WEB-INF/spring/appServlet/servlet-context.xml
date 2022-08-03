@@ -25,10 +25,15 @@
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
-			value="jdbc:oracle:thin:@db20220512150004_high?TNS_ADMIN=/Users/mitakeran/LDH/Wallet_DB20220512150004" />
+
+<!-- 			value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<beans:property name="username" value="kwb" />
+		<beans:property name="password" value="kwb" /> -->
+
+		<!-- value="jdbc:oracle:thin:@db20220512150004_high?TNS_ADMIN=/Users/mitakeran/LDH/Wallet_DB20220512150004" />
 		<beans:property name="username" value="ADMIN" />
 		<beans:property name="password" value="LDHsoldesk802" />
-
+ 	-->
 			
 		<!-- <beans:property name="username" value="c##sj" />
 		<beans:property name="password" value="sj" /> -->
@@ -47,6 +52,7 @@
 			<beans:list>
 				<beans:value>classpath:team1joinMapper.xml</beans:value>
 				<beans:value>classpath:testmapper.xml</beans:value>
+				<beans:value>classpath:team2BoardMapper.xml</beans:value>
         
 			</beans:list>
 		</beans:property>
