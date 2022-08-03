@@ -289,4 +289,5 @@ nav ul li {
     position: relative;
     transform: translateY(-100%);
     text-align: center;
+    top: 500px;
 }

@@ -1,5 +1,5 @@
 
-
+/*
 
 $('#signup').click(function() {
   $('.pinkbox').css('transform', 'translateX(80%)');
@@ -11,4 +11,4 @@ $('#signin').click(function() {
   $('.pinkbox').css('transform', 'translateX(0%)');
   $('.signup').addClass('nodisplay');
   $('.signin').removeClass('nodisplay');
-});
+});*/
