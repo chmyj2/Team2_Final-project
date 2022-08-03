@@ -11,7 +11,7 @@
 <<<<<<< HEAD
 <div id="homeBody">
 	<div style="background-color: orange;">1팀</div>
-	<div style="background-color: blue;">2팀</div>
+	<div style="background-color: blue;"><a href="team2Main">2팀</a></div>
 </div>
 =======
 
