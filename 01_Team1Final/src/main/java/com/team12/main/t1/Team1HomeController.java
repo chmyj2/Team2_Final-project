@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class Team1HomeController {
 	
 
-	@RequestMapping(value = "/team1Main", method = {RequestMethod.GET, RequestMethod.POST})
-	public String home(HttpServletRequest req) {
-		
+	@RequestMapping(value = "/team1Main", method = RequestMethod.GET)
+	public String mainCall(HttpServletRequest req) {
+
 		req.setAttribute("contentPage", "t1_home.jsp");
 		return "1Team/t1_index";
 	}
