@@ -178,7 +178,7 @@ a:hover { text-decoration:none !important }
 	<div id="indexMenu">
         <ul>
             <li><a href="ourCollectionController">동물병원 찾기</a></li>
-           <li><a href="ShoppingController?name=Drink">상품 판매</a></li>
+           <li><a href="viewProductPage">상품 판매</a></li>
             <li><a href="#">게시판</a></li>
         </ul>
 </div>
