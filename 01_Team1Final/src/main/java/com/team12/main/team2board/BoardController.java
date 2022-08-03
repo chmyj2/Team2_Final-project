@@ -14,6 +14,10 @@ public class BoardController {
 		System.out.println(111);
 		System.out.println(111);
 		System.out.println(111);
+		System.out.println(2222);
+		System.out.println(222);
+		System.out.println(222);
+		System.out.println(222);
 		
 	  req.setAttribute("contentPage", "2Team/board_jsp/board_list.jsp");
 	  return "2Team/t2_index";
