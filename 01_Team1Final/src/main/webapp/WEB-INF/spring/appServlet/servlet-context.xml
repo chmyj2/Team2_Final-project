@@ -45,11 +45,9 @@
 		<beans:property name="typeAliasesPackage" value="com.team12.main" />
 		<beans:property name="mapperLocations">
 			<beans:list>
-
 				<beans:value>classpath:team1joinMapper.xml</beans:value>
-
 				<beans:value>classpath:testmapper.xml</beans:value>
-
+        
 			</beans:list>
 		</beans:property>
 	</beans:bean>
