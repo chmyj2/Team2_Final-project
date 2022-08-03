@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class BoardController {
-<<<<<<< HEAD
+/*<<<<<<< HEAD
     
 	
 
@@ -31,6 +31,6 @@ public class BoardController {
 	  req.setAttribute("contentPage", "2Team/board_jsp/board_list.jsp");
 	  return "2Team/t2_index";
 		
-	}
+	}*/
 	
 }
