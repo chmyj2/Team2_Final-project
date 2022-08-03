@@ -14,14 +14,10 @@ public class Team1HomeController {
 	public String home(HttpServletRequest req) {
 		
 		
-		req.setAttribute("contentPage", "1Team/t1_home.jsp");
-		return "index";
+		req.setAttribute("contentPage", "t1_home.jsp");
+		return "1Team/t1_index";
 	}
 	
-	@RequestMapping(value = "/index.go", method = RequestMethod.GET)
-	public String indexGo(HttpServletRequest req) {
-		return home(req);
-	}
 	
 }
 
