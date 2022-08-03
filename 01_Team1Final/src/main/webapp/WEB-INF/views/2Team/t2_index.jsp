@@ -20,7 +20,7 @@
 	<link href='resources/t2_css/style.css' rel='stylesheet' type='text/css'>
 	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 	<link rel="stylesheet" type="text/css" href="css/settings.css" media="screen" />
-	
+
 </head>
 <body>
 			<nav class="index_nav"><div class="index-nav-login"><a href="t2.login">로그인</a></div></nav>
@@ -49,7 +49,9 @@
 	
 	
 	
+<
 	<jsp:include page="${contentPage }"></jsp:include>
+
 	
 	
 	
