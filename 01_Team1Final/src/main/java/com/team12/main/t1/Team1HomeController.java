@@ -17,8 +17,6 @@ public class Team1HomeController {
 		req.setAttribute("contentPage", "t1_home.jsp");
 		return "1Team/t1_index";
 	}
-	
 
-		return "1Team/t1_index";
+
 }
-
