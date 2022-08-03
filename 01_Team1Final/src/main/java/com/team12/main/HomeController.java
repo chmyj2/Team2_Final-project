@@ -15,14 +15,10 @@ public class HomeController {
 	public String home(HttpServletRequest req) {
 		
 		
-		req.setAttribute("contentPage", "home.jsp");
-		return "index";
+		
+		return "home";
 	}
 	
-	@RequestMapping(value = "/index.go", method = RequestMethod.GET)
-	public String indexGo(HttpServletRequest req) {
-		
-		return home(req);
-	}
+	
 	
 }

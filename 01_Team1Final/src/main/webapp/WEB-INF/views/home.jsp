@@ -15,6 +15,7 @@
 <div style="background-color: blue;">2팀</div>
 </div> -->
 
+<div style="background-color: blue;"><a href="team2Main"> 2팀 </a></div>
 
 
         <!-- home -->
