@@ -19,11 +19,5 @@ public class HomeController {
 		return "home";
 	}
 	
-	
-<<<<<<< HEAD
-	
-=======
->>>>>>> 2485cdb (create board DB)
-
 		
 }
