@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class BoardController {
+<<<<<<< HEAD
     
 	
 
@@ -20,6 +21,12 @@ public class BoardController {
 		System.out.println(222);
 		System.out.println(222);
 		System.out.println(222);
+=======
+
+	@RequestMapping(value = "team2.boardlist", method = RequestMethod.GET)
+	public String home(HttpServletRequest req) {
+		
+>>>>>>> 2485cdb (create board DB)
 		
 	  req.setAttribute("contentPage", "2Team/board_jsp/board_list.jsp");
 	  return "2Team/t2_index";
