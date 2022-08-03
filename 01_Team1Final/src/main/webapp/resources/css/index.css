@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body {
 	margin:0px 0px 0px 0px;
+    padding-bottom: 300px;
     background-color: rgb(255, 193, 79);
 }
 
@@ -8,10 +9,12 @@ a{
     text-decoration: none;                          /* a태그 보라색 밑줄 없애기 */
     color: black;
     margin-bottom: 20px;
+    cursor: url(cursor_pointer.png), url(cursor_pointer.cur), pointer
 }
 
-body, html {cursor: url(resources/img/FnCursor.png), url(myBall.cur), auto}
-a {cursor: url(resources/img/cursor_pointer.png), url(myBall.cur), auto}
+body, html {
+    cursor: url(FnCursor.png), url(FnCursor.cur), auto
+}
 
 header {
     height: 40px;
@@ -50,6 +53,7 @@ nav {
     background-color: black;
     color: white;
     left: 86.5%;
+    font-weight:900;
     border-radius: 15px 15px 15px 15px;
     padding: 0px 5px 5px 5px;
     animation: motion 0.3s linear 0s infinite alternate; 
@@ -143,6 +147,7 @@ nav ul li {
     color: white;
 }
 
+/* ----------------------- main Contents --------------------- */
 
 .main_wrapper {
     width:100%;
@@ -177,18 +182,16 @@ nav ul li {
     letter-spacing: -1px;
 }
 
-.main_page_wrapper {
-    float: left;
-	margin: 0 auto;
-	display:block;
-	color:black;
-	font-size: 12pt;
-    margin-bottom: 200px;
-    text-align: center;
+/* ----------------------- sub Contents --------------------- */
+
+#contents{
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 300px;
 }
 
-.main_page_wrapper2 {
-    float: right;
+.main_page_wrapper {
+    float: left;
 	margin: 0 auto;
 	display:block;
 	color:black;
@@ -200,29 +203,14 @@ nav ul li {
 .main_page_img {
     float: left;
     width: 800px;
-	height: 800px;
-	object-fit: cover;
-}
-
-.main_page_img2 {
-    float: right;
-    width: 800px;
-	height: 800px;
-	object-fit: cover;
+    height: 800px;
+    object-fit: cover;
 }
 
 .main_page_txt {
     margin-top: 150px;
     margin-left: 200px;
     margin-bottom: 100px;
-    float: left;
-	letter-spacing: -1px;
-    font-size: 50pt;
-    color: rgb(255, 255, 255);
-}
-
-.main_page_txt2 {
-    margin: 180px 100px 100px 10px;
     float: left;
 	letter-spacing: -1px;
     font-size: 50pt;
@@ -238,6 +226,41 @@ nav ul li {
     color: rgb(0, 0, 0);
 }
 
+.main_page_wrapper2 {
+    float: right;
+	margin: 0 auto;
+	display:block;
+	color:black;
+	font-size: 12pt;
+    margin-bottom: 200px;
+    text-align: center;
+}
+
+
+.main_page_img2 {
+    float: right;
+    width: 800px;
+	height: 800px;
+	object-fit: cover;
+}
+
+.main_page_txt2 {
+    margin: 180px 100px 100px 10px;
+    float: left;
+	letter-spacing: -1px;
+    font-size: 50pt;
+    color: rgb(255, 255, 255);
+}
+
+.main_page_txt3 {
+    margin: 230px 0px 100px 100px;
+    float: left;
+	letter-spacing: -1px;
+    font-size: 50pt;
+    color: rgb(255, 255, 255);
+}
+
+
 .main_page_p2 {
     letter-spacing: -1px;
     line-height:30pt;
@@ -245,4 +268,27 @@ nav ul li {
     font-weight: 700;
     text-align: center;
     color: rgb(0, 0, 0);
-}}
+}
+
+.main_page_img3 {
+    float: right;
+    width: 800px;
+	height: 800px;
+	object-fit: cover;
+}
+
+#wrapper{
+	height:auto;
+	min-height: 100%;
+}
+
+#footer {
+	display:block;
+	bottom:0px;
+	background-color: rgba(255, 255, 255, 0.7); 
+	margin-top: 10px;
+    height: 200px;
+    position: relative;
+    transform: translateY(-100%);
+    text-align: center;
+}
