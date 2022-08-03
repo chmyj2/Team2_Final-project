@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class BoardController {
+    
+	
 
 	@RequestMapping(value = "team2.boardlist", method = RequestMethod.GET)
 	public String home(HttpServletRequest req) {

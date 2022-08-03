@@ -39,9 +39,9 @@
             <li class="t2-indexDropdown">
             	<a href="#" class="t2-indexDropbtn">게시판</a>
             	<ul class="t2-indexDropdown-content">
-            	<li><a href="#">강아지</a></li>                     
-            	<li><a href="#">고양이</a></li>                 
-           		<li><a href="#">etc</a></li>                 
+            	<li><a href="team2.boardlist?category=1">강아지</a></li>                     
+            	<li><a href="team2.boardlist?category=2">고양이</a></li>                 
+           		<li><a href="team2.boardlist?category=3">etc</a></li>                 
             </ul>
             </li>
             
