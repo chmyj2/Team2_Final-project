@@ -27,11 +27,9 @@
 
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<beans:property name="url"
-		value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<beans:property name="username" value="c##sj" />
 		<beans:property name="password" value="sj" />
-
 	</beans:bean>
 
 	<beans:bean id="transactionManager"
@@ -44,20 +42,23 @@
 		<beans:property name="typeAliasesPackage" value="com.team12.main" />
 		<beans:property name="mapperLocations">
 			<beans:list>
-
 				<beans:value>classpath:team2/YJ/viewAllProductMapper.xml</beans:value>
 				<beans:value>classpath:team2/YJ/regProductMapper.xml</beans:value>
 				<beans:value>classpath:team1joinMapper.xml</beans:value>
 				<beans:value>classpath:testmapper.xml</beans:value>
 				<beans:value>classpath:team2BoardMapper.xml</beans:value>
-
 			</beans:list>
 		</beans:property>
 	</beans:bean>
 
 	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-		<beans:constructor-arg name="sqlSessionFactory"
-			ref="sqlSessionFactory" />
+		<beans:constructor-arg name="sqlSessionFactory"	ref="sqlSessionFactory" />
 	</beans:bean>
 
 </beans:beans>
+
+
+
+
+
+
