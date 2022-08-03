@@ -9,6 +9,7 @@
 </head>
 <body>
 <body>
+<<<<<<< HEAD
      <!-- index -->
     <header>
         <div class="header">
@@ -48,5 +49,8 @@
 		<jsp:include page="${contentPage }"></jsp:include>
 	</div>
 
+=======
+ index
+>>>>>>> d9f8cc27bdebaeb991e31d628dbefe2c45ceca83
 </body>
 </html>
