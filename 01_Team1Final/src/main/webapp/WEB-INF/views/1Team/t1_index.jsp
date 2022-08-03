@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div id="wrapper">
 
     <!-- index -->
     <header>
@@ -53,9 +54,10 @@
 		<jsp:include page="${contentPage }"></jsp:include>
 	</div>
 	
+	<!-- footer 영역 -->
+	
 	<footer id="footer">
             <div class="footer">
-            <img id="footerlogo" name="footerlogo" src="">
     
             <div class="f_company">
                 <h4>DengStiny</h4>
@@ -71,6 +73,6 @@
     </footer>
 	
 	
-
+</div>
 </body>
 </html>
