@@ -88,10 +88,10 @@ public class MemberDAO {
 	public boolean loginCheck(HttpServletRequest req) {
 		Member m = (Member) req.getSession().getAttribute("loginMember");
 		if (m != null) {
-			req.setAttribute("loginPage", "member/loginSuccess.jsp");
+			req.setAttribute("loginPage", "LDH/loginSuccess.jsp");
 			return true;
 		} 
-			req.setAttribute("loginPage", "member/login.jsp");
+			req.setAttribute("loginPage", "LDH/login.jsp");
 			return false;
 		}
 	
