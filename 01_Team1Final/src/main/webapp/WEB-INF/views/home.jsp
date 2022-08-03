@@ -10,12 +10,13 @@
 </head>
 <body>
 
+
+<div id="homeBody">
+<div style="background-color: orange;"> <a href=member.join> 1팀 </a></div>
+
 <!-- <div id="homeBody">
 <div style="background-color: orange;"> <a href=LDH/DH_login.jsp> 1팀 </a></div>
 <div style="background-color: blue;">2팀</div>
 </div> -->
-
-
-
 </body>
 </html>
