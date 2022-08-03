@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Built-By: OZ
 Build-Jdk: 14
 Created-By: Maven Integration for Eclipse
 
+=======
+Manifest-Version: 1.0
+Built-By: gks36
+Build-Jdk: 14
+Created-By: Maven Integration for Eclipse
+
+>>>>>>> 42f551898b3895e63e155320c1ddc9a9a42f021c
