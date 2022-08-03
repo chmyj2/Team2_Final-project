@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class Team1HomeController {
 <<<<<<< HEAD
 	
-=======
 
->>>>>>> 901c78a0ab8fc756badde1dc00be7a5b3c93afc7
+	
+=======
+>>>>>>> b3218038037c176040fe484bf174288d15d3cb7e
+
 	@RequestMapping(value = "/team1Main", method = RequestMethod.GET)
 	public String mainCall(HttpServletRequest req) {
 
