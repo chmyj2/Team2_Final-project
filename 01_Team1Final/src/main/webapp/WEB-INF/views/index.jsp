@@ -4,11 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="resources/css/index.css">
 <title>Insert title here</title>
 </head>
 <body>
 <body>
+<<<<<<< HEAD
+index
+=======
      <!-- index -->
     <header>
         <div class="header">
@@ -48,5 +50,6 @@
 		<jsp:include page="${contentPage }"></jsp:include>
 	</div>
 
+>>>>>>> 901c78a0ab8fc756badde1dc00be7a5b3c93afc7
 </body>
 </html>

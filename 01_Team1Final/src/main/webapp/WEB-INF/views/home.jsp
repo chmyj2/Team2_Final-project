@@ -14,7 +14,6 @@
 <div id="homeBody">
 <div style="background-color: orange;"> <a href=team1Main> 1팀 </a></div>
 <div style="background-color: blue;"> <a href="team2Main"> 2팀 </a></div>
-
 </div>
 <P>  The time on the server is ${serverTime}. </P>
 
