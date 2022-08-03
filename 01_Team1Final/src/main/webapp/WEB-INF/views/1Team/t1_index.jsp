@@ -61,7 +61,15 @@
     
     <div>	<!-- home 영역 -->
 		<jsp:include page="${contentPage }"></jsp:include>
+		
 	</div>
+	
+	
+	
+	
+	
+	
+	
 	
 	<!-- footer 영역 -->
 	
