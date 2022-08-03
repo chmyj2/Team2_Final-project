@@ -73,7 +73,7 @@
 	
 	<!-- footer 영역 -->
 	
-	<footer id="footer">
+	<!-- <footer id="footer">
             <div class="footer">
     
             <div class="f_company">
@@ -87,7 +87,7 @@
 
         </div>
 
-    </footer>
+    </footer> -->
 	
 	
 </div>
