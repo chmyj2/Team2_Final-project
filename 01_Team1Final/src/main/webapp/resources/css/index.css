@@ -9,12 +9,12 @@ a{
     text-decoration: none;                          /* a태그 보라색 밑줄 없애기 */
     color: black;
     margin-bottom: 20px;
+    cursor: url(cursor_pointer.png), url(cursor_pointer.cur), pointer
 }
 
 body, html {
-    cursor: url(FnCursor.png), url(myBall.cur), auto
+    cursor: url(FnCursor.png), url(FnCursor.cur), auto
 }
-a {cursor: url(cursor_pointer.png), url(myBall.cur), auto}
 
 header {
     height: 40px;
@@ -53,6 +53,7 @@ nav {
     background-color: black;
     color: white;
     left: 86.5%;
+    font-weight:900;
     border-radius: 15px 15px 15px 15px;
     padding: 0px 5px 5px 5px;
     animation: motion 0.3s linear 0s infinite alternate; 
@@ -274,11 +275,18 @@ nav ul li {
 	object-fit: cover;
 }
 
+#wrapper{
+	height:auto;
+	min-height: 100%;
+}
+
 #footer {
 	display:block;
+	bottom:0px;
 	background-color: rgba(255, 255, 255, 0.7); 
 	margin-top: 10px;
-    height: 300px;
+    height: 200px;
     position: relative;
     transform: translateY(-100%);
+    text-align: center;
 }
