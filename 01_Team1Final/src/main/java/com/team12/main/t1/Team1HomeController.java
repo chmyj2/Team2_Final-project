@@ -10,19 +10,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class Team1HomeController {
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/team1Main", method = {RequestMethod.GET, RequestMethod.POST})
 	public String home(HttpServletRequest req) {
 		
 		
-		req.setAttribute("contentPage", "1Team/t1_home.jsp");
-		return "index";
+		req.setAttribute("contentPage", "t1_home.jsp");
+		
+		return "1Team/t1_index";
 	}
 	
-	@RequestMapping(value = "/index.go", method = RequestMethod.GET)
-	public String indexGo(HttpServletRequest req) {
-		
-		return home(req);
-	}
 	
 }
 
