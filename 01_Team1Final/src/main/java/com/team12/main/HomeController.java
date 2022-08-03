@@ -25,13 +25,6 @@ public class HomeController {
 		return home(req);
 	}
 	
-		
-		@RequestMapping(value = "team2home", method = RequestMethod.GET)
-		public String team2home() {
-			
-			
-			return "2Team/t2_index";
-		}
-	
+
 		
 }
