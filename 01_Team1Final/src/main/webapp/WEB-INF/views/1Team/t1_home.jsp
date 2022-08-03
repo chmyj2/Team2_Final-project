@@ -40,24 +40,14 @@
         </div>
         <div class="main_page3">
             <div class="main_page_wrapper3">
-                <img class="" src="">
-                <h2 class="main_page_txt2">Every Pet Deserves <br>The Best </h2>
-                <p class="main_page_p2">연간 유기견 안락사 통계<br>
-
-                    2017년 5400마리<br>
-                    2018년 6508마리<br>
-                    2019년 7703마리<br>
-                    .
-                    .
-                    .
-                </p>
+                <img class="main_page_img3" src="resources/img/main1.jpg">
+                <h2 class="main_page_txt3">Every Pet Deserves <br>The Best </h2>
         </div>
         </div>
 
 
 
     </div>
-    
 <P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>

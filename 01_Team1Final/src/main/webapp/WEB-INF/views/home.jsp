@@ -11,6 +11,7 @@
 <body>
 
 
+<<<<<<< HEAD
 <div style="background-color: orange;"> <a href=member.join> 1팀 </a></div>
 <div style="background-color: blue;"><a href=team2Main> 2팀 </a></div>
 
@@ -50,6 +51,12 @@
     <!-- 추천 영양제 PRODUCT 슬라이드 -->
     <!-- 입양후기 -->
 
+=======
+<div id="homeBody">
+<div style="background-color: orange;"> <a href=team1Main> 1팀 </a></div>
+<div style="background-color: blue;"> <a href="team2Main"> 2팀 </a></div>
+</div>
+>>>>>>> 8506a076e3f259e2fe52bc33ede1b9de04980cbe
 <P>  The time on the server is ${serverTime}. </P>
 
 </body>

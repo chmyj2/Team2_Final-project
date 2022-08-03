@@ -4,15 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="resources/css/index.css">
 <title>Insert title here</title>
 </head>
 <body>
 <body>
+<<<<<<< HEAD
+index
+=======
      <!-- index -->
     <header>
         <div class="header">
-            <a href="login"><img class="icon_login" src="resources/img/LOGIN.png"></a>
+            <a href="loginandjoin.go"><img class="icon_login" src="resources/img/LOGIN.png"></a>
             <span class="join_sale">10% SALE</span>
             <a href="bag"><img class="icon_bag"src="resources/img/shop.png"></a>
             <img class="icon_search" src="resources/img/search.png">
@@ -48,5 +50,6 @@
 		<jsp:include page="${contentPage }"></jsp:include>
 	</div>
 
+>>>>>>> 901c78a0ab8fc756badde1dc00be7a5b3c93afc7
 </body>
 </html>
