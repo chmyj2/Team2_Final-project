@@ -15,30 +15,9 @@ public class Team1HomeController {
 	public String mainCall(HttpServletRequest req) {
 
 		req.setAttribute("contentPage", "t1_home.jsp");
-<<<<<<< HEAD
 		return "1Team/t1_index";
 	}
 	
 
-=======
-<<<<<<< HEAD
-		return "1Team/t1_index";
-	}
-	
-=======
-		
-		return "1Team/t1_index";
-	}
-	
-<<<<<<< HEAD
-=======
-	@RequestMapping(value = "/index.go", method = RequestMethod.GET)
-	public String indexGo(HttpServletRequest req) {
-		return home(req);
-	}
->>>>>>> cdae99558cacacd9933946fce6b5454938511cc5
->>>>>>> 35be2d6844ef19c402996af9ca72482e7dece6c8
->>>>>>> ea181c742817d846bc27ab90f09084ca939d1955
-	
 }
 
