@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="resources/css/index.css">
 <title>Insert title here</title>
 </head>
 <body>
@@ -12,10 +12,10 @@
      <!-- index -->
     <header>
         <div class="header">
-            <a href="login"><img class="icon_login" src="LOGIN.png"></a>
+            <a href="login"><img class="icon_login" src="resources/img/LOGIN.png"></a>
             <span class="join_sale">10% SALE</span>
-            <a href="bag"><img class="icon_bag"src="shop.png"></a>
-            <img class="icon_search" src="search.png">
+            <a href="bag"><img class="icon_bag"src="resources/img/shop.png"></a>
+            <img class="icon_search" src="resources/img/search.png">
             <input class="search" type="text" placeholder="insert keyword">
         </div>
         <!-- top부분 login/장바구니/검색기능 -->
@@ -44,6 +44,10 @@
            
         </nav>
     </header>
+
+	<div>	<!-- home 영역 -->
+		<jsp:include page="${contentPage }"></jsp:include>
+	</div>
 
 </body>
 </html>
