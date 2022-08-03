@@ -5,14 +5,23 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="resources/css/index.css">
+<link rel="stylesheet" href="resources/css/loginAndJoin.css">
 <title>Insert title here</title>
+<script type="text/javascript" src="resources/js/jQuery.js"></script>
+<script type="text/javascript" src="resources/js/loginAndJoin.js"></script>
+<script type="text/javascript" src="resources/js/site_jquery.js"></script>
+<script type="text/javascript" src="resources/js/go.js"></script>
+<script type="text/javascript" src="resources/js/aqicn.js"></script>
+<script type="text/javascript" src="resources/js/validCheck.js"></script>
+<script type="text/javascript" src="resources/js/check.js"></script>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body>
 
     <!-- index -->
     <header>
         <div class="header">
-            <a href="login"><img class="icon_login" src="resources/img/LOGIN.png"></a>
+            <a href="loginandjoin.go"><img class="icon_login" src="resources/img/LOGIN.png"></a>
             <span class="join_sale">10% SALE</span>
             <a href="bag"><img class="icon_bag"src="resources/img/shop.png"></a>
             <img class="icon_search" src="resources/img/search.png">
