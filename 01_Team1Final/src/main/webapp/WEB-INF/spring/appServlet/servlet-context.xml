@@ -43,7 +43,11 @@
 		<beans:property name="typeAliasesPackage" value="com.team12.main" />
 		<beans:property name="mapperLocations">
 			<beans:list>
+<<<<<<< HEAD
 				<beans:value>classpath:</beans:value>
+=======
+				<beans:value>classpath:testmapper.xml</beans:value>
+>>>>>>> 68125c5f2d7aa921aaa9f15a1523e2c9816a90f0
 			</beans:list>
 		</beans:property>
 	</beans:bean>
