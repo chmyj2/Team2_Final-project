@@ -29,7 +29,7 @@ public class MemberController {
 	
 	
 	
-	@RequestMapping(value = "/member.join", method = RequestMethod.GET)
+	@RequestMapping(value = "/member.join", method = RequestMethod.POST)
 	public String memberJoin(Member m, HttpServletRequest req) {
 		
 		mDAO.join(m, req);
