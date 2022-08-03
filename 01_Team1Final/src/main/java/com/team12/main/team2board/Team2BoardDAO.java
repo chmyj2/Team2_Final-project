@@ -1,5 +1,7 @@
 package com.team12.main.team2board;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
@@ -12,19 +14,36 @@ public class Team2BoardDAO {
 	@Autowired
 	private SqlSession ss;
 	
-	private int allPost;
 	
 	
 	public int countPost(HttpServletRequest req, Team2BoardDTO board) {
 		
-		allPost = ss.getMapper(Team2BoardMapper.class).getAllpostCount(board);
+	int	allPost = ss.getMapper(Team2BoardMapper.class).getAllpostCount(board);
 		
+		int totalPage = (int) Math.ceil((double)allPost/10);
 		
+		req.setAttribute("r", totalPage);
 		
-		req.setAttribute("r", allPost);
-		return allPost;
+		return totalPage;
 	}
 
+
+
+	public void showPostList(HttpServletRequest req, Team2BoardDTO board) {
+		
+		List<Team2BoardDTO> posts = ss.getMapper(Team2BoardMapper.class).getPostList(board);
+		
+		req.setAttribute("posts", posts);
+		
+	}
+
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

@@ -18,6 +18,7 @@ public class BoardController {
 	public String boardList(HttpServletRequest req, Team2BoardDTO board) {
 		
 	  bDAO.countPost(req,board);
+	  bDAO.showPostList(req,board);
 	  req.setAttribute("contentPage", "board_jsp/board_list.jsp");
 	  return "2Team/t2_index";
 		
