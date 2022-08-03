@@ -27,7 +27,7 @@
 		<div class="container">
 			<div class="container-fluid">
 				<div class="header-top">
-						<a href="#"><img class="index_logo_img" src="resources/t2_img/logo.jpg" alt="" /></a>
+						<a href="team2Main"><img class="index_logo_img" src="resources/t2_img/logo.jpg" alt="" /></a>
 					</div>
 					
 				</div>
