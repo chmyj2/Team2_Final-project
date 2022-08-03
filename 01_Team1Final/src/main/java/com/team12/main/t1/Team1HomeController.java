@@ -19,5 +19,6 @@ public class Team1HomeController {
 	}
 	
 
+		return "1Team/t1_index";
 }
 
