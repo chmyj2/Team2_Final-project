@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class Team1HomeController {
+
 	@RequestMapping(value = "/team1Main", method = RequestMethod.GET)
 	public String mainCall(HttpServletRequest req) {
 

@@ -32,13 +32,13 @@
         <!-- 지도 했던것 처럼 오늘 안락사 대상 친구 페이지 하단 우측에 뜨게하기 -->
         <nav>
             <ul>
-                <li><a href="#">ABOUT</a>  
+                <li><a href="about.go">ABOUT</a>  
                 <!-- 페이지 소개 및 사료와 영양제 수익금의 0%는 유기견구조센터에 기부한다 -->
                 </li>
                 <li><a href="#">ADOPT</a>  
                     <!-- 지역별 구조센터 -->
                 </li>
-                <li><a href="#">MENU</a>  
+                <li><a href="team1Main">HOME</a>  
                     <!-- dropdown 사료/영양제 -->  
                 </li>
                 <!-- <a href="#"><img class="logo" src="DENGSTINY.png" alt=""></a>   -->
@@ -52,7 +52,7 @@
                 </li>
                 <li><a href="#">COMMUNITY</a>  
                 </li>
-                <li><a href="#">CONTACT</a>  
+                <li><a href="contact.go">CONTACT</a>  
                 </li>
             </ul>
            
