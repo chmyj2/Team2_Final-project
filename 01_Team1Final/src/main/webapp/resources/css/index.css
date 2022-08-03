@@ -197,7 +197,6 @@ nav ul li {
 	font-size: 12pt;
     margin-bottom: 200px;
     text-align: center;
-    background-color: antiquewhite;
 }
 
 .main_page_img {
@@ -253,8 +252,7 @@ nav ul li {
 }
 
 .main_page_txt3 {
-    margin: 230px 0px 100px 100px;
-    float: left;
+    margin: 0px 0px 0px 0px;
 	letter-spacing: -1px;
     font-size: 50pt;
     color: rgb(255, 255, 255);
@@ -271,8 +269,7 @@ nav ul li {
 }
 
 .main_page_img3 {
-    float: right;
-    width: 800px;
+    width: auto;
 	height: 800px;
 	object-fit: cover;
 }
