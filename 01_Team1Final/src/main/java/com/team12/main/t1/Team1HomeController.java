@@ -9,19 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class Team1HomeController {
-	
-
-	@RequestMapping(value = "/team1.go", method = RequestMethod.GET)
-	public String teamGo(HttpServletRequest req) {
-		
-		
-		req.setAttribute("contentPage", "1Team/t1_home.jsp");
-		return "index";
-	}
-	
-
-	
-
 
 	@RequestMapping(value = "/team1Main", method = RequestMethod.GET)
 	public String mainCall(HttpServletRequest req) {
@@ -29,7 +16,6 @@ public class Team1HomeController {
 		req.setAttribute("contentPage", "t1_home.jsp");
 		return "1Team/t1_index";
 	}
-
 
 
 }
