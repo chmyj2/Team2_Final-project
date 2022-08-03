@@ -10,8 +10,8 @@ a{
     margin-bottom: 20px;
 }
 
-body, html {cursor: url(FnCursor.png), url(myBall.cur), auto}
-a {cursor: url(cursor_pointer.png), url(myBall.cur), auto}
+body, html {cursor: url(resources/img/FnCursor.png), url(myBall.cur), auto}
+a {cursor: url(resources/img/cursor_pointer.png), url(myBall.cur), auto}
 
 header {
     height: 40px;
@@ -20,6 +20,7 @@ header {
     z-index: 999;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 200px;
 }
 
 .header{
@@ -244,4 +245,4 @@ nav ul li {
     font-weight: 700;
     text-align: center;
     color: rgb(0, 0, 0);
-}
+}}
