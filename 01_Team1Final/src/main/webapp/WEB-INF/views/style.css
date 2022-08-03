@@ -10,6 +10,9 @@ a{
     margin-bottom: 20px;
 }
 
+body, html {cursor: url(FnCursor.png), url(myBall.cur), auto}
+a {cursor: url(cursor_pointer.png), url(myBall.cur), auto}
+
 header {
     height: 40px;
     font-size: 10pt;
@@ -24,7 +27,7 @@ header {
     width: 100%;
     margin-top: 0px;
 }
-
+ /* ----------------------- nav top --------------------- */
 nav {
     font-size: 20pt;
     font-weight: bolder;
@@ -78,6 +81,8 @@ nav {
    
 }
 
+/* ----------------------- menu --------------------- */
+
 nav ul li {
     list-style-type: none;
     display: inline-block;
@@ -99,6 +104,43 @@ nav ul li {
     
 }
 
+.store_drop{
+    position : relative;
+    display : inline-block;
+  }
+  
+.store_drop_content{
+    display : none;
+    position : absolute;
+    z-index : 1; /*다른 요소들보다 앞에 배치*/
+    margin-top: 23px;
+    background-color: rgba(255, 255, 255, 0.7); 
+    padding: 20px 40px 0px 0px;
+	width: 80px;
+	text-align: center;
+    font-size: 15pt;
+    line-height: 10pt;
+    transition: all 0.2s ease-in;
+  }
+
+ .store_drop_content>li>a {
+    padding: 8px 0px 8px 0px;
+ } 
+
+.store_drop_content a{
+    display : block;
+  }
+.store_drop:hover {
+    color: white;
+}
+
+.store_drop:hover .store_drop_content {
+    display: block;
+}
+
+.store_drop_content a:hover{
+    color: white;
+}
 
 
 .main_wrapper {
