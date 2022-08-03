@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class Team1HomeController {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 <<<<<<< HEAD
 	@RequestMapping(value = "/team1.go", method = RequestMethod.GET)
@@ -24,10 +25,9 @@ public class Team1HomeController {
 	
 }
 =======
-
-	
 =======
->>>>>>> b3218038037c176040fe484bf174288d15d3cb7e
+>>>>>>> a0206f2fc77c49e4394ba7c59fedb5a9e36dbae3
+
 
 	@RequestMapping(value = "/team1Main", method = RequestMethod.GET)
 	public String mainCall(HttpServletRequest req) {
