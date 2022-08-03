@@ -20,6 +20,9 @@
 	<link href='resources/t2_css/style.css' rel='stylesheet' type='text/css'>
 	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 	<link rel="stylesheet" type="text/css" href="css/settings.css" media="screen" />
+	<link href='resources/t2_css/hospital_main.css' rel='stylesheet' type='text/css'>
+	<!-- 병원찾기  CSS -->
+	<script type="text/javascript" src="resources/t2_js/jQuery.js"></script>
 	<style type="text/css">
 	.index-main{
 	display: flex;
@@ -177,7 +180,7 @@ a:hover { text-decoration:none !important }
 			</div>
 	<div id="indexMenu">
         <ul>
-            <li><a href="ourCollectionController">동물병원 찾기</a></li>
+            <li><a href="hospitalGo">동물병원 찾기</a></li>
            <li><a href="ShoppingController?name=Drink">상품 판매</a></li>
             <li><a href="#">게시판</a></li>
         </ul>
@@ -185,7 +188,7 @@ a:hover { text-decoration:none !important }
 	
 	
 	
-	<%-- <jsp:include page="${contentPage }"></jsp:include> --%>
+	<jsp:include page="${contentPage }"></jsp:include> 
 	
 	
 	
