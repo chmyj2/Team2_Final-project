@@ -13,7 +13,12 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req) {
+<<<<<<< HEAD
+		
+		
+=======
 
+>>>>>>> 8506a076e3f259e2fe52bc33ede1b9de04980cbe
 		return "home";
 	}
 	
