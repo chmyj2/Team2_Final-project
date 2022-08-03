@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class Team1HomeController {
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/team1Main", method = RequestMethod.GET)
 	public String home(HttpServletRequest req) {
 		
 		
@@ -20,7 +20,6 @@ public class Team1HomeController {
 	
 	@RequestMapping(value = "/index.go", method = RequestMethod.GET)
 	public String indexGo(HttpServletRequest req) {
-		
 		return home(req);
 	}
 	
