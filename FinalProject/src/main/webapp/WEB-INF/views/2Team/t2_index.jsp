@@ -34,7 +34,7 @@
 			</div>
 	<div id="indexMenu">
         <ul>
-            <li><a href="ourCollectionController">동물병원 찾기</a></li>
+            <li><a href="hospitalGo">동물병원 찾기</a></li>
            <li><a href="viewProductPage">상품 판매</a></li>
             <li class="t2-indexDropdown">
             	<a href="#" class="t2-indexDropbtn">게시판</a>
