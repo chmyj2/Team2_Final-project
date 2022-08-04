@@ -4,6 +4,13 @@
 .container{
     padding-top: 150px;
     text-align: center;
+    height: 100%;
+    padding-bottom: 300px;
+    /* 푸터... don't bother me.... */
+}
+
+html{
+	height : 100%;
 }
 
 .welcome h1{

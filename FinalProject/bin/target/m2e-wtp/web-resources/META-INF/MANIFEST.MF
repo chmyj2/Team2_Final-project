@@ -1,17 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
-Built-By: OZ
+Built-By: leeyoky
 Build-Jdk: 14
-=======
-<<<<<<< HEAD
-Built-By: allmight
-Build-Jdk: 14.0.2
-=======
-
-Built-By: allmight
-Build-Jdk: 14.0.2
-
->>>>>>> 3fe6917e8b703263953ff823e2761a3401f29063
->>>>>>> c9dccd4e5980d411cb4a8e25ff749fb5ddb8a89b
 Created-By: Maven Integration for Eclipse
 
