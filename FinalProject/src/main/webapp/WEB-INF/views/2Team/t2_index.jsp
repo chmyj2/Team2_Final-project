@@ -23,7 +23,7 @@
 
 </head>
 <body>
-			<nav class="index_nav"><div class="index-nav-login"><a href="t2.login">로그인</a></div></nav>
+			<nav class="index_nav"><div class="index-nav-login"><a href="t2LoginGO">로그인</a></div></nav>
 		<div class="container">
 			<div class="container-fluid">
 				<div class="header-top">
