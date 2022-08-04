@@ -65,7 +65,11 @@
 		
 	</div>
 	
-	
+	<table id="siteLoginArea">
+		<tr>
+			<td><jsp:include page="${loginPage }"></jsp:include></td>
+		</tr>
+	</table>
 	
 	
 	

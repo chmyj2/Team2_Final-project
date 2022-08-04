@@ -466,4 +466,254 @@ nav ul li {
     margin-top: 80px;
     margin-bottom: 50px;
 }
+/* -----------------login------------------- */
+.container{
+    padding-top: 150px;
+    text-align: center;
+}
 
+.welcome h1{
+    font-size: 40pt;
+    text-align: center;
+
+    top: 500px;
+}
+
+
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-image: url("../img/ed6380196d0249733fca6208d869908c07038242465fe0a8308d5a73bab7ec93db35ead9dec82b8743ca4f3a2f09aa0ddb79b50c62d9778f345c2241978dc7e33973565f43a2ed14cdfeb8676394e002f02a14d3dda8a0b687bc06e33d5b21f9.png");
+	background-size: contain;
+	background-attachment: fixed;
+}
+
+button {
+	cursor: pointer;
+}
+
+input, button, textarea, select {
+	outline: none;
+	font-family: "a";
+}
+
+textarea {
+	resize: none;
+}
+
+@font-face {
+	font-family: "a";
+	src: url("a.TTF");
+}
+
+
+#siteTitleArea {
+	position: fixed;
+	top: -40px;
+	left: 0px;
+	width: 100%;
+	border-spacing: 0px;
+	transition: all 0.4s ease-out;
+}
+
+#siteMenuArea {
+	height: 50px;
+}
+
+#siteMenu {
+	width: 1000px;
+}
+
+#siteMenu td {
+	width: 25%;
+}
+
+#siteMenu img {
+	width: 13%;
+}
+
+#siteMenu img:hover {
+	width: 10%;
+}
+
+#siteTitleArea2 {
+	height: 50px;
+}
+
+#siteTitle {
+	font-family: "a";
+	width: 1000px;
+	color: #FFFFFF;
+	font-size: 27pt;
+	font-weight: 900;
+	cursor: pointer;
+}
+
+#siteTitle:hover {
+	text-shadow: 0px 0px 10px #FFFFFF;
+}
+
+#siteContentArea {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 150px;
+	margin-bottom: 100px;
+}
+
+#siteLoginArea {
+	position: fixed;
+	right: 20px;
+	top: 65px;
+	transition: all 0.4s ease-out;
+}
+
+#homeImg {
+	max-width: 40%;
+  /*	opacity: 0.9;  */
+}
+
+
+#weatherArea {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.3s ease-out;
+	
+	font-family: "a";
+	background-color: #FBC02DCC;
+	font-size: 12pt;
+	box-shadow: 0px 0px 30px #FBC02D;
+	font-weight: 900;
+	border-radius: 20px;
+}
+
+#weatherArea td {
+	padding: 5px;
+}
+
+
+
+
+#resultArea {
+	color: black;
+	font-size: 11pt;
+	font-weight: 800;
+}
+
+
+
+
+
+
+
+
+
+
+}
+
+.input_id{
+    position: relative;
+	width: 280px;
+	padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border: none;
+}
+
+.input_pw {
+    position: relative;
+	width: 280px;
+	padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border: none;
+}
+
+#remember {
+    margin-bottom: 10px;
+}
+
+.find_info{
+    margin-bottom: 20px;
+}
+
+.login_btn{
+    display: block;
+	width: 300px;
+	height: 40px;
+	border-radius: 30px;
+	font-weight: 900;
+	color: rgb(255, 255, 255);
+	font-size: 15px;
+	cursor: pointer;
+    background-color: black;
+    margin:auto;
+    margin-bottom: 10px;
+}
+
+.signUp_btn{
+    display: block;
+	width: 300px;
+	height: 40px;
+	border-radius: 30px;
+	font-weight: 900;
+	color: rgb(0, 0, 0);
+	font-size: 15px;
+	cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    margin:auto;
+    margin-bottom: 10px;
+}
+
+.signUp_kakao_btn{
+    display: block;
+    margin-top: 10px;
+	width: 300px;
+	height: 40px;
+	border-radius: 30px;
+	font-weight: 900;
+	color: rgb(0, 0, 0);
+	font-size: 15px;
+	cursor: pointer;
+    background-color: rgb(255, 238, 0);
+    margin:auto;
+    margin-bottom: 20px;
+}
+
+hr.login_hr{
+    border: 0;
+    border-bottom: 2px dashed #eee;
+    background: #999;
+    width: 45%;
+}
+
+.non_members_check_order{
+    display: block;
+    margin-top: 10px;
+	width: 300px;
+	height: 40px;
+	border-radius: 30px;
+	font-weight: 900;
+	color: rgb(0, 0, 0);
+	font-size: 15px;
+	cursor: pointer;
+    background-color: rgb(170, 170, 170);
+    margin:auto;
+    margin-top:20px;
+}
+
+
+#siteLoginArea {
+	position: fixed;
+	right: 20px;
+	top: 100px;
+	transition: all 0.4s ease-out;
+}
