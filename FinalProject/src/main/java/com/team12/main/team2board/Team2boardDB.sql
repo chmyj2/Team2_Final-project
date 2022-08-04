@@ -12,8 +12,6 @@ create sequence team2_board_seq;
 
 insert into team2_board values(team2_board_seq.nextval, 'mz', '1', 'title', 'txt', sysdate, 'karina.jpg')
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 select * from team2_board
 
 select * 
@@ -31,9 +29,3 @@ select count(*)
 from team2_board
 where board_category = '1'
 and board_title like '%%'
-=======
-select * from team2_board
->>>>>>> 083b2bd9d393a607e06b4f007a76fdc81b901777
-=======
-select * from team2_board
->>>>>>> 2485cdb (create board DB)
