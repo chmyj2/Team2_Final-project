@@ -1,9 +1,12 @@
+
+	
 function goHome() {
 	location.href='index.go';
 }
 
 function goJoin() {
 	location.href = "member.join.go";
+	alert(ddd);
 }
 
 
@@ -73,3 +76,4 @@ function deleteCommunityMsg(n) {
 		location.href = "community.delete?c_no=" + n;
 	}
 }
+
