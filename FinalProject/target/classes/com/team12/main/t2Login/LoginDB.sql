@@ -12,6 +12,10 @@ member_joinDate date not null,
 member_paper varchar2(30 char) not null
 );
 
+ALTER TABLE final_member MODIFY member_phoneNum varchar2(30 char);
+
+delete final_member where member_ID ='mz';
+
 drop table final_member;
 
 
@@ -19,7 +23,7 @@ select * from final_member;
 
 create sequence final_member_seq;
 
-insert into final_member values('mz','1004',1,'mz','2022-08-04','남자',01012341234,'종로','mz@naver.com',sysdate,'동의');
+insert into final_member values('mz','1004',1,'mz','2022-08-04','남자','010-1234-1234','종로','mz@naver.com',sysdate,'동의');
 
 create table pet_information(
 baby_num number(6) primary key,
@@ -50,3 +54,23 @@ create SEQUENCE pet_information_seq INCREMENT by 1 start with 1;
 
 
 select * from PET_INFORMATION;
+
+create table vet_member(
+vet_ID varchar2(30 char)primary key,
+vet_PW varchar2(30 char)not null,
+vet_businessNum number(20)not null,
+vet_address varchar2(100 char) not null,
+vet_phoneNum number(15) not null,
+vet_joinDate date not null
+)
+
+ALTER TABLE vet_member MODIFY vet_phoneNum varchar2(30 char);
+ALTER TABLE vet_member MODIFY vet_businessNum varchar2(30 char);
+
+delete vet_member where vet_ID ='sj';
+
+drop table vet_member;
+
+insert into vet_member values('sj','1004','123456789','인천','010-1234-1234',sysdate);
+
+select * from vet_member;
