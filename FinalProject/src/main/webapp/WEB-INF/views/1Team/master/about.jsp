@@ -50,5 +50,6 @@
                 <img class="about_sub_img_dog" src="resources/img/dogs.jpg">
             </div>
         </div>
+        </div>
 </body>
 </html>
