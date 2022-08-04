@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="resources/css/index.css">
 <link rel="stylesheet" href="resources/css/loginAndJoin.css">
+<link rel="stylesheet" href="resources/css/member.css">
 <title>Insert title here</title>
 <script type="text/javascript" src="resources/js/jQuery.js"></script>
 <script type="text/javascript" src="resources/js/loginAndJoin.js"></script>
@@ -64,7 +65,11 @@
 		
 	</div>
 	
-	
+	<table id="siteLoginArea">
+		<tr>
+			<td><jsp:include page="${loginPage }"></jsp:include></td>
+		</tr>
+	</table>
 	
 	
 	
@@ -92,9 +97,10 @@
             <div class="contact">
                 <h4 class="service">Customer Service Center</h4>
                 <p style="font-size: 25pt; font-weight: bolder; margin-bottom: 50px;"> 
-                    ☎ 02-0000-0000 </p>
+                    	☎ 02-0000-0000 </p>
                 <p style="font-size: 15pt; font-weight :bold;"> Mon-Fri 10:00AM - 6:00PM</p>
                 <p style="font-size: 15pt;">(Sat,Sun,Holiday OFF)</p>
+                <p style="font-size: 10pt;">BANK INFO 신한 000-000-000000 (댕스티니)</p>
             </div>
         </div>
     </footer>

@@ -65,9 +65,6 @@ public class MemberDAO {
 
 	public void login(Member m, HttpServletRequest req) {
 		// TODO Auto-generated method stub
-		
-		
-		
 		Member dbMember = ss.getMapper(Team1joinMapper.class).getMemberByID(m);
 
 		if (dbMember != null) {
@@ -88,10 +85,10 @@ public class MemberDAO {
 	public boolean loginCheck(HttpServletRequest req) {
 		Member m = (Member) req.getSession().getAttribute("loginMember");
 		if (m != null) {
-			req.setAttribute("loginPage", "LDH/loginSuccess.jsp");
+			req.setAttribute("loginPage", "../LDH/loginSuccess.jsp");
 			return true;
 		} 
-			req.setAttribute("loginPage", "LDH/login.jsp");
+			req.setAttribute("loginPage", "../LDH/login.jsp");
 			return false;
 		}
 	
