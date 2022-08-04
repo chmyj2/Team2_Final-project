@@ -10,20 +10,36 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class BoardController {
 
-    
 	@Autowired
 	private Team2BoardDAO bDAO;
 
-
 	@RequestMapping(value = "team2.boardlist", method = RequestMethod.GET)
 	public String boardList(HttpServletRequest req, Team2BoardDTO board) {
-	 
-	  bDAO.countPost(req,board);
-	  bDAO.showPostList(req,board);
-	  req.setAttribute("contentPage", "board_jsp/board_list.jsp");
 
-                 return "2Team/t2_index";
-    	}
+		bDAO.countPost(req, board);
+		bDAO.showPostList(req, board);
+		req.setAttribute("contentPage", "board_jsp/board_list.jsp");
 
-	
+		return "2Team/t2_index";
+	}
+
+	@RequestMapping(value = "team2.createPostPage", method = RequestMethod.GET)
+	public String createPostPage(HttpServletRequest req, Team2BoardDTO board) {
+
+		req.setAttribute("contentPage", "board_jsp/board_create.jsp");
+
+		return "2Team/t2_index";
+	}
+
+	@RequestMapping(value = "team2.createPost", method = RequestMethod.POST)
+	public String createPost(HttpServletRequest req, Team2BoardDTO board) {
+
+		bDAO.countPost(req, board);
+		bDAO.showPostList(req, board);
+		bDAO.createPost(req, board);
+		req.setAttribute("contentPage", "board_jsp/board_list.jsp");
+
+		return "2Team/t2_index";
+	}
+
 }
