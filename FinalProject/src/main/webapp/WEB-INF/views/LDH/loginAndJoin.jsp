@@ -27,10 +27,6 @@
         <button type="button" class="login_btn">로그인</button>
         <button type="button" class="signUp_btn"  onclick="goJoin()">회원가입</button>
         <button  type="button" class="signUp_kakao_btn">카카오 연결</button>
-
-        <button class="login_btn">로그인</button>
-        <button class="signUp_btn">회원가입</button>
-        <button class="signUp_kakao_btn">카카오 연결</button>
         <hr class="login_hr">
         <button class="non_members_check_order">비회원 주문조회</button>
         </form>
