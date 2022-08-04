@@ -17,7 +17,7 @@ public class BoardController {
 
 	@RequestMapping(value = "team2.boardlist", method = RequestMethod.GET)
 	public String boardList(HttpServletRequest req, Team2BoardDTO board) {
-		
+	 
 	  bDAO.countPost(req,board);
 	  bDAO.showPostList(req,board);
 	  req.setAttribute("contentPage", "board_jsp/board_list.jsp");
