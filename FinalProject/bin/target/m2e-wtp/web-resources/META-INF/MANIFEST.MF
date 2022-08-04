@@ -1,7 +1,12 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
+Built-By: allmight
+Build-Jdk: 14.0.2
+=======
 
 Built-By: allmight
 Build-Jdk: 14.0.2
 
+>>>>>>> 3fe6917e8b703263953ff823e2761a3401f29063
 Created-By: Maven Integration for Eclipse
 
