@@ -49,16 +49,16 @@ public class MemberController {
 		return "1Team/t1_index";
 	}
 	
-//	@RequestMapping(value = "/member.login", method = RequestMethod.POST)
-//	public String memberLogin(Member m, HttpServletRequest req) {
-//		
-//		// 로그인
-//		mDAO.login(m, req);
-//		mDAO.loginCheck(req);
-//		req.setAttribute("contentPage", "home.jsp");
-//		
-//		return "index";
-//	}
+	@RequestMapping(value = "/member.login", method = RequestMethod.POST)
+	public String memberLogin(Member m, HttpServletRequest req) {
+		
+		// 로그인
+		mDAO.login(m, req);
+		mDAO.loginCheck(req);
+		req.setAttribute("contentPage", "t1_home.jsp");
+		
+		return "t1_index";
+	}
 
 	
 	@RequestMapping(value = "member.info", method = RequestMethod.GET)

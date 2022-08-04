@@ -13,7 +13,7 @@
     <!-- SIGN IN -->
         <h1>SIGN IN</h1>
         <span id="resultArea">${result }</span>
-        <form class="more-padding" autocomplete="off" action="member.join" method="post">
+        <form class="more-padding" autocomplete="off" action="member.login" method="post">
           <input class="input_id" type="text" placeholder="아이디"><br>
           <input class="input_pw" type="password" placeholder="비밀번호">
           <div class="checkbox">
