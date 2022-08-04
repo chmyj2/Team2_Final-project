@@ -715,5 +715,11 @@ hr.login_hr{
 }
 
 
+#siteLoginArea {
+	position: fixed;
+	right: 20px;
+	top: 100px;
+	transition: all 0.4s ease-out;
+}
 
 
