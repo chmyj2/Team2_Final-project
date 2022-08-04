@@ -466,10 +466,6 @@ nav ul li {
     margin-top: 80px;
     margin-bottom: 50px;
 }
-
-
-
-
 /* -----------------login------------------- */
 .container{
     padding-top: 150px;
@@ -721,5 +717,3 @@ hr.login_hr{
 	top: 100px;
 	transition: all 0.4s ease-out;
 }
-
-
