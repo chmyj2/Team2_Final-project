@@ -15,6 +15,8 @@ member_paper number(3) not null
 
 drop table final_member;
 
+
+
 select * from final_member;
 
 create sequence final_member_seq;
