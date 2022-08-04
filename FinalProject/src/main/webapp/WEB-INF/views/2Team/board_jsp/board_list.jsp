@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-   
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,20 +9,48 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>board</h1>
-${r}
-<table border="">
-<tr>
-  <td>pk</td>  <td>title</td>
-</tr>
+	<h1>board</h1>
 
-<c:forEach var="b" items="${posts}">
-<tr>
-  <td>${b.board_num}</td>  <td>${b.board_title}</td>
-</tr>
-</c:forEach>
 
-</table>
+	<div class="container">
+		<div>
+			<a href='#' class="btn btn-success">글쓰기</a>
+		</div>
+		
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>날짜</th>
+					<th>조회수</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="b" items="${posts}">
+					
+					<tr>
+						<td>${b.board_num}</td>
+						<td>${b.board_title}</td>
+						<td>${b.board_member_id}</td>
+						<td>${b.board_date}</td>
+						<td>${b.board_count}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+
+
+		<nav aria-label="...">
+			<ul class="pagination pagination-sm">
+				<!-- <li class="page-item active" aria-current="page"> <span class="page-link">1</span> </li> -->
+			<c:forEach var="i" begin="1" end="${r}">
+				<li class="page-item"> <a class="page-link" href="team2.boardlist?board_category=${param.board_category}&vpage=${i}">${i}</a> </li>
+			</c:forEach>
+			</ul>
+		</nav>
+	</div>
 
 
 </body>

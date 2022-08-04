@@ -14,13 +14,14 @@ public class Team2BoardDAO {
 	@Autowired
 	private SqlSession ss;
 	
+	private int totalPage;
 	
 	
 	public int countPost(HttpServletRequest req, Team2BoardDTO board) {
 		
 	int	allPost = ss.getMapper(Team2BoardMapper.class).getAllpostCount(board);
 		
-		int totalPage = (int) Math.ceil((double)allPost/10);
+		 totalPage = (int) Math.ceil((double)allPost/10);
 		
 		req.setAttribute("r", totalPage);
 		
@@ -30,6 +31,25 @@ public class Team2BoardDAO {
 
 
 	public void showPostList(HttpServletRequest req, Team2BoardDTO board) {
+	
+		String vpage = req.getParameter("vpage");
+		   if( vpage == null) {
+			   vpage = "1";
+		   }
+		   
+
+		 
+		  int page = Integer.parseInt(vpage);
+		  
+		  if(page != 1) {
+			  board.setRnStart(page*10-9);
+			  board.setRnEnd(page*10);
+		  }  else {
+			  board.setRnStart(1);
+			  board.setRnEnd(10);
+		  }
+		
+
 		
 		List<Team2BoardDTO> posts = ss.getMapper(Team2BoardMapper.class).getPostList(board);
 		
