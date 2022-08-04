@@ -31,7 +31,7 @@ public class Team2BoardDAO {
 
 
 	public void showPostList(HttpServletRequest req, Team2BoardDTO board) {
-/*		
+	
 		String vpage = req.getParameter("vpage");
 		   if( vpage == null) {
 			   vpage = "1";
@@ -50,10 +50,6 @@ public class Team2BoardDAO {
 		  }
 		
 
-		
-		  board.setRnStart(11);
-		  board.setRnEnd(20);
-*/		
 		
 		List<Team2BoardDTO> posts = ss.getMapper(Team2BoardMapper.class).getPostList(board);
 		

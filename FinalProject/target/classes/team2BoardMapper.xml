@@ -11,13 +11,13 @@ where board_category = #{board_category}
 <select id="getPostList" resultType="com.team12.main.team2board.Team2BoardDTO">
 select * 
 from (
-    select rownum as rn, board_num, board_member_id, board_category, board_title, board_txt, board_date, board_img
+    select rownum as rn, board_num, board_member_id, board_category, board_title, board_txt, board_date, board_img, board_count
      from(
      select * from team2_board
      where board_category = #{board_category}
      order by board_date desc 
    )
-) where rn between 1 and 10
+) where rn between #{rnStart} and #{rnEnd}
 </select>
 
 
