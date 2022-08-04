@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-#loginTable input {
+/* #loginTable input {
 	border: #FFFFFF solid 3px;
 	background-color: transparent;
 	padding: 5px;
@@ -126,7 +126,8 @@
 }
 
 #addrSearchBtn {
-	cursor: pointer; color : white;
+	cursor: pointer; 
+	color : white;
 	border: none;
 	font-size: 16pt;
 	font-weight: 900;
@@ -159,3 +160,4 @@
 
 
 
+ */
