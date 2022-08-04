@@ -65,9 +65,6 @@ public class MemberDAO {
 
 	public void login(Member m, HttpServletRequest req) {
 		// TODO Auto-generated method stub
-		
-		
-		
 		Member dbMember = ss.getMapper(Team1joinMapper.class).getMemberByID(m);
 
 		if (dbMember != null) {

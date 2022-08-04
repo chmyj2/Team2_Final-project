@@ -1,13 +1,5 @@
-<<<<<<< HEAD
 Manifest-Version: 1.0
 Built-By: mitakeran
 Build-Jdk: 14.0.2
 Created-By: Maven Integration for Eclipse
 
-=======
-Manifest-Version: 1.0
-Built-By: OZ
-Build-Jdk: 14
-Created-By: Maven Integration for Eclipse
-
->>>>>>> 3ed3237981c13f239a38f39d1821dde20cbc7c23

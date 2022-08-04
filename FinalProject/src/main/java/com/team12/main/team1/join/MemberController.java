@@ -57,7 +57,7 @@ public class MemberController {
 		mDAO.loginCheck(req);
 		req.setAttribute("contentPage", "t1_home.jsp");
 		
-		return "t1_index";
+		return "1Team/t1_index";
 	}
 
 	
