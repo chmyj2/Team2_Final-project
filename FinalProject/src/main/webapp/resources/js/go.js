@@ -22,9 +22,10 @@ function logout() {
 }
 
 function bye() {
-	var ok = confirm("?");
+	var ok = confirm("정말 탈퇴하시겠습니까?");
 	if (ok) {
 		location.href = "member.bye";
+	
 	}
 }
 
