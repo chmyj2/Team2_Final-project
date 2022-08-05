@@ -1,8 +1,16 @@
 @charset "UTF-8";
 body {
 	margin:0px 0px 0px 0px;
-    padding-bottom: 300px;
     background-color: rgb(255, 193, 79);
+    height: 100%;
+}
+html{
+	height: 100%;
+}
+
+.wrap{
+    height: 100%;
+
 }
 
 a{
@@ -15,6 +23,7 @@ a{
 body, html {
     cursor: url(FnCursor.png), url(FnCursor.cur), auto
 }
+
 
 header {
     height: 40px;
@@ -53,7 +62,6 @@ nav {
     background-color: black;
     color: white;
     left: 86.5%;
-    font-weight:900;
     border-radius: 15px 15px 15px 15px;
     padding: 0px 5px 5px 5px;
     animation: motion 0.3s linear 0s infinite alternate; 
@@ -183,47 +191,92 @@ nav ul li {
 }
 
 /* ----------------------- sub Contents --------------------- */
+.content_msg{
+    width: 100%;
+    background-color: rgb(41, 41, 41);
+    color: white;
+    text-align: center;
+    font-size: 20pt;
+    height: 40px;
+    font-weight: bolder;
+    margin-top:-5px;
+}
+
 
 #contents{
+    background-color: rgb(255, 193, 79);
     height: auto;
     min-height: 100%;
-    padding-bottom: 300px;
+    padding-bottom: 100px;
+    padding-top: 0px;
 }
 
 .main_page_wrapper {
     float: left;
 	margin: 0 auto;
-	display:block;
 	color:black;
 	font-size: 12pt;
-    margin-bottom: 200px;
     text-align: center;
 }
 
+.main_page_left{
+    float: left;
+}
+
+.main_page_sub{
+    float: left;
+}
 .main_page_img {
     float: left;
-    width: 800px;
-    height: 800px;
+    width: 50%;
+    height: 830px;
     object-fit: cover;
 }
 
 .main_page_txt {
-    margin-top: 150px;
+	animation: text-focus-in 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    margin-top: 180px;
     margin-left: 200px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: 900;
     float: left;
 	letter-spacing: -1px;
-    font-size: 50pt;
+    font-size: 60pt;
     color: rgb(255, 255, 255);
 }
 
+
+@keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+        -webkit-filter: blur(0px);
+                filter: blur(0px);
+        opacity: 1;
+    }
+  }
+
+
 .main_page_p {
+    animation: text-focus-in 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
     text-align: center;
-    letter-spacing: -1px;
-    line-height:30pt;
+    margin-top: 150px;
+    margin-left: 300px;
+    margin-bottom: 100px;
+    letter-spacing: -2px;
+    line-height: 30pt;
     font-size: 15pt;
-    font-weight: 700;
+    font-weight: 900;
     color: rgb(0, 0, 0);
+    font-family: 'NotoSansKR','LibreBaskerville',sans-serif;
+}
+.main_page2{
+    width: 100%;
+    background-color: #3D8DAE;
 }
 
 .main_page_wrapper2 {
@@ -232,62 +285,435 @@ nav ul li {
 	display:block;
 	color:black;
 	font-size: 12pt;
-    margin-bottom: 200px;
+    margin-bottom: 5px;
     text-align: center;
 }
 
 
 .main_page_img2 {
     float: right;
-    width: 800px;
-	height: 800px;
+    width: 830px;
+	height: 830px;
 	object-fit: cover;
 }
 
 .main_page_txt2 {
-    margin: 180px 100px 100px 10px;
+    animation: text-focus-in 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    margin: 180px 200px 100px 0px;
     float: left;
 	letter-spacing: -1px;
     font-size: 50pt;
     color: rgb(255, 255, 255);
 }
 
-.main_page_txt3 {
-    margin: 0px 0px 0px 0px;
-	letter-spacing: -1px;
-    font-size: 50pt;
-    color: rgb(255, 255, 255);
-}
-
-
 .main_page_p2 {
-    letter-spacing: -1px;
-    line-height:30pt;
-    font-size: 15pt;
+    animation: text-focus-in 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    letter-spacing: -2px;
+    font-size: 16pt;
     font-weight: 700;
-    text-align: center;
     color: rgb(0, 0, 0);
+    margin-left: -200px;
+    line-height:30pt;
+    text-align: center;
 }
 
-.main_page_img3 {
-    width: auto;
-	height: 800px;
-	object-fit: cover;
+/* --------Every Dog Deserves The Best------- */
+
+.main_page3 {
+    height: auto;
+    font-weight:300; 
+    position: relative; 
+    width: 100%;
+    max-width:100%; 
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+    background-color:rgba(255, 255, 255, 0.8);
 }
 
-#wrapper{
-	height:auto;
-	min-height: 100%;
+/* .main_page3 .main_page_wrapper3 {
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 30s linear infinite; 
 }
+
+@keyframes marquee {
+  from { 
+    transform: translateX(0); }
+  to {
+     transform: translateX(-50%); }
+}
+@media (hover: hover) and (min-width: 700px){
+.main_page3 .main_page_txt3 {
+    -webkit-transform: translateY(calc(100% - 8rem)); 
+    transform: translateY(calc(100% - 8rem));
+    }
+}  */
+
+
+.main_page_txt3 {
+	letter-spacing: -2px;
+    font-size: 30pt;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    z-index: 3;
+    font-weight: 800;
+    padding-bottom: 10px;
+}
+
+.txt_word {
+    animation: color-animation 2s linear infinite;
+}
+.Every {
+    --color-1: #DF8453;
+    --color-2: #3D8DAE;
+    --color-3: #E4A9A8;
+}
+.Dog {
+    --color-1: #DBAD4A;
+    --color-2: #ACCFCB;
+    --color-3: #17494D;
+}
+.Deserves {
+    --color-1: #ACCFCB;
+    --color-2: #E4A9A8;
+    --color-3: #ACCFCB;
+}
+.The {
+    --color-1: #3D8DAE;
+    --color-2: #DF8453;
+    --color-3: #E4A9A8;
+  }
+.Best{
+    --color-1: #db4a4a;
+    --color-2: #DBAD4A;
+    --color-3: #DF8453;
+}
+  
+  @keyframes color-animation {
+    0%    {color: var(--color-1)}
+    32%   {color: var(--color-1)}
+    33%   {color: var(--color-2)}
+    65%   {color: var(--color-2)}
+    66%   {color: var(--color-3)}
+    99%   {color: var(--color-3)}
+    100%  {color: var(--color-1)}
+  }
+  
+.meet_dog_wrapper{
+    background-color: #77b4ce;
+    width: 100%;
+    height: 1000px;
+}
+
+
+/* -----------------footer------------------- */
+
 
 #footer {
 	display:block;
-	bottom:0px;
-	background-color: rgba(255, 255, 255, 0.7); 
-	margin-top: 10px;
-    height: 200px;
+	background-color: rgb(255, 252, 238); 
+    margin-top: 200px;
+    /* 마지막 컨텐츠 페이지 높이만큼 마진탑 */
+    /* 8/4 footer영역 이게 맞나..? */
+    height: 350px;
+    width: 100%;
     position: relative;
     transform: translateY(-100%);
+    font-size: 10pt;
+}
+
+.footer {
+    float: left;
+    padding-left: 200px;
+    margin-right: 250px;
+    
+}
+
+
+.company_name{
+    font-size: 50pt;
+    font-weight: 900;
+    margin-top: 10px;
+    margin-bottom: 1px;
+}
+
+.footer_hr {
+    width: 100%;
+    border: 3px solid black;
+    text-align: left;
+}
+
+.f_company{
+    margin-top: 40px;
+    margin-left: 40px;
+    line-height:10pt;
+}
+
+.contact{
+    margin-top: 40px;
+    margin-left: 40px;
+    line-height:10pt;
+}
+
+.footer_sub{
+    float: left;
+    margin-left: 100px;
+}
+
+.service{
+    font-size: 30pt;
+    font-weight: 900;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+/* -----------------login------------------- */
+.container{
+    padding-top: 150px;
     text-align: center;
+}
+
+.welcome h1{
+    font-size: 40pt;
+    text-align: center;
+
     top: 500px;
+}
+
+
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-image: url("../img/ed6380196d0249733fca6208d869908c07038242465fe0a8308d5a73bab7ec93db35ead9dec82b8743ca4f3a2f09aa0ddb79b50c62d9778f345c2241978dc7e33973565f43a2ed14cdfeb8676394e002f02a14d3dda8a0b687bc06e33d5b21f9.png");
+	background-size: contain;
+	background-attachment: fixed;
+}
+
+button {
+	cursor: pointer;
+}
+
+input, button, textarea, select {
+	outline: none;
+	font-family: "a";
+}
+
+textarea {
+	resize: none;
+}
+
+@font-face {
+	font-family: "a";
+	src: url("a.TTF");
+}
+
+
+#siteTitleArea {
+	position: fixed;
+	top: -40px;
+	left: 0px;
+	width: 100%;
+	border-spacing: 0px;
+	transition: all 0.4s ease-out;
+}
+
+#siteMenuArea {
+	height: 50px;
+}
+
+#siteMenu {
+	width: 1000px;
+}
+
+#siteMenu td {
+	width: 25%;
+}
+
+#siteMenu img {
+	width: 13%;
+}
+
+#siteMenu img:hover {
+	width: 10%;
+}
+
+#siteTitleArea2 {
+	height: 50px;
+}
+
+#siteTitle {
+	font-family: "a";
+	width: 1000px;
+	color: #FFFFFF;
+	font-size: 27pt;
+	font-weight: 900;
+	cursor: pointer;
+}
+
+#siteTitle:hover {
+	text-shadow: 0px 0px 10px #FFFFFF;
+}
+
+#siteContentArea {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 150px;
+	margin-bottom: 100px;
+}
+
+#siteLoginArea {
+	position: fixed;
+	right: 20px;
+	top: 65px;
+	transition: all 0.4s ease-out;
+}
+
+#homeImg {
+	max-width: 40%;
+  /*	opacity: 0.9;  */
+}
+
+
+#weatherArea {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.3s ease-out;
+	
+	font-family: "a";
+	background-color: #FBC02DCC;
+	font-size: 12pt;
+	box-shadow: 0px 0px 30px #FBC02D;
+	font-weight: 900;
+	border-radius: 20px;
+}
+
+#weatherArea td {
+	padding: 5px;
+}
+
+
+
+
+#resultArea {
+	color: black;
+	font-size: 11pt;
+	font-weight: 800;
+}
+
+
+
+
+
+
+
+
+
+
+}
+
+.input_id{
+    position: relative;
+	width: 280px;
+	padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border: none;
+}
+
+.input_pw {
+    position: relative;
+	width: 280px;
+	padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border: none;
+}
+
+#remember {
+    margin-bottom: 10px;
+}
+
+.find_info{
+    margin-bottom: 20px;
+}
+
+.login_btn{
+    display: block;
+	width: 300px;
+	height: 40px;
+	border-radius: 30px;
+	font-weight: 900;
+	color: rgb(255, 255, 255);
+	font-size: 15px;
+	cursor: pointer;
+    background-color: black;
+    margin:auto;
+    margin-bottom: 10px;
+}
+
+.signUp_btn{
+    display: block;
+	width: 300px;
+	height: 40px;
+	border-radius: 30px;
+	font-weight: 900;
+	color: rgb(0, 0, 0);
+	font-size: 15px;
+	cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    margin:auto;
+    margin-bottom: 10px;
+}
+
+.signUp_kakao_btn{
+    display: block;
+    margin-top: 10px;
+	width: 300px;
+	height: 40px;
+	border-radius: 30px;
+	font-weight: 900;
+	color: rgb(0, 0, 0);
+	font-size: 15px;
+	cursor: pointer;
+    background-color: rgb(255, 238, 0);
+    margin:auto;
+    margin-bottom: 20px;
+}
+
+hr.login_hr{
+    border: 0;
+    border-bottom: 2px dashed #eee;
+    background: #999;
+    width: 45%;
+}
+
+.non_members_check_order{
+    display: block;
+    margin-top: 10px;
+	width: 300px;
+	height: 40px;
+	border-radius: 30px;
+	font-weight: 900;
+	color: rgb(0, 0, 0);
+	font-size: 15px;
+	cursor: pointer;
+    background-color: rgb(170, 170, 170);
+    margin:auto;
+    margin-top:20px;
+}
+
+
+#siteLoginArea {
+	position: fixed;
+	right: 20px;
+	top: 100px;
+	transition: all 0.4s ease-out;
 }

@@ -29,14 +29,24 @@ public class MemberController {
 	
 	
 	
+	@RequestMapping(value = "/member.join.go", method = RequestMethod.GET)
+	public String memberJoinGo(Member m, HttpServletRequest req) {
+		
+//		mDAO.join(m, req);
+//		mDAO.loginCheck(req);
+		
+		req.setAttribute("contentPage", "../LDH/join.jsp");
+		return "1Team/t1_index";
+	}
+	
 	@RequestMapping(value = "/member.join", method = RequestMethod.POST)
 	public String memberJoin(Member m, HttpServletRequest req) {
 		
 		mDAO.join(m, req);
 		mDAO.loginCheck(req);
-		req.setAttribute("contentPage", "../LDH/loginAndJoin.jsp");
 		
-		return "index";
+		req.setAttribute("contentPage", "../LDH/loginAndJoin.jsp");
+		return "1Team/t1_index";
 	}
 	
 	@RequestMapping(value = "/member.login", method = RequestMethod.POST)
@@ -45,9 +55,9 @@ public class MemberController {
 		// 로그인
 		mDAO.login(m, req);
 		mDAO.loginCheck(req);
-		req.setAttribute("contentPage", "home.jsp");
+		req.setAttribute("contentPage", "t1_home.jsp");
 		
-		return "index";
+		return "1Team/t1_index";
 	}
 
 	

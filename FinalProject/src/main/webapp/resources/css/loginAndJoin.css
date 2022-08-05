@@ -4,6 +4,13 @@
 .container{
     padding-top: 150px;
     text-align: center;
+    height: 100%;
+    padding-bottom: 300px;
+    /* 푸터... don't bother me.... */
+}
+
+html{
+	height : 100%;
 }
 
 .welcome h1{
@@ -101,3 +108,96 @@ hr.login_hr{
     margin:auto;
     margin-top:20px;
 }
+
+/* --------------회원가입---------------- */
+.join_wrapper{
+	padding-top: 100px;
+    text-align: center;
+    height: 100%;
+    padding-bottom: 50px;
+	magin: 0 auto;
+}
+
+#joinTable{
+    background-color: rgb(255, 212, 193);
+    height: 700px;
+    width: 1000px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    border: 5px solid black;
+    border-radius: 50px 50px 50px 50px;
+    margin-top: 200px;	
+    margin-bottom: 300px;
+    padding-bottom: 100px;
+}
+
+#joinTableTitle{
+	font-size: 40pt;
+    letter-spacing: -2pt;
+    font-weight: bolder;
+}
+
+#updateMemberIDInput{
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border: none;
+}
+.join_input_id{
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+}
+.join_input_pw{
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+}
+
+.input_name{
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+}
+
+.input_addr1{
+	position: relative;
+    width: 235px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border: none;
+}
+
+.input_addr{
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border: none;
+}
+
+.join_btn{
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border: none;
+}
+
+#joinTable p{
+	font-size:10pt;
+	font-weight: bolder;
+}
+

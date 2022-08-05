@@ -23,7 +23,7 @@
 
 </head>
 <body>
-			<nav class="index_nav"><div class="index-nav-login"><a href="t2.login">로그인</a></div></nav>
+			<nav class="index_nav"><div class="index-nav-login"><a href="t2LoginGO">로그인</a></div></nav>
 		<div class="container">
 			<div class="container-fluid">
 				<div class="header-top">
@@ -39,9 +39,9 @@
             <li class="t2-indexDropdown">
             	<a href="#" class="t2-indexDropbtn">게시판</a>
             	<ul class="t2-indexDropdown-content">
-            	<li><a href="team2.boardlist?category=1">강아지</a></li>                     
-            	<li><a href="team2.boardlist?category=2">고양이</a></li>                 
-           		<li><a href="team2.boardlist?category=3">etc</a></li>                 
+            	<li><a href="team2.boardlist?board_category=1">강아지</a></li>                     
+            	<li><a href="team2.boardlist?board_category=2">고양이</a></li>                 
+           		<li><a href="team2.boardlist?board_category=3">etc</a></li>                 
             </ul>
             </li>
         </ul>
@@ -49,7 +49,7 @@
 	
 	
 	
-<
+
 	<jsp:include page="${contentPage }"></jsp:include>
 
 	

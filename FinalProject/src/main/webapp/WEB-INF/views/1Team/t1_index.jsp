@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="resources/css/index.css">
 <link rel="stylesheet" href="resources/css/loginAndJoin.css">
+<link rel="stylesheet" href="resources/css/member.css">
 <title>Insert title here</title>
 <script type="text/javascript" src="resources/js/jQuery.js"></script>
 <script type="text/javascript" src="resources/js/loginAndJoin.js"></script>
@@ -17,7 +18,7 @@
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body>
-<div id="wrapper">
+<div class="wrap">
 
     <!-- index -->
     <header>
@@ -64,7 +65,11 @@
 		
 	</div>
 	
-	
+	<table id="siteLoginArea">
+		<tr>
+			<td><jsp:include page="${loginPage }"></jsp:include></td>
+		</tr>
+	</table>
 	
 	
 	
@@ -73,23 +78,34 @@
 	
 	<!-- footer 영역 -->
 	
-	<!-- <footer id="footer">
+	 <footer id="footer">
             <div class="footer">
+            <img id="footerlogo" name="footerlogo" src="">
     
+            <h4 class="company_name">DengStiny</h4>
+            <hr align="left" class="footer_hr">
             <div class="f_company">
-                <h4>DengStiny</h4>
                 <p> Address : 서울특별시 종로구 종로12길 15 5층 (관철동 13-13)</p>
                 <p> Contact. 02-0000-0000 </p>
-                <p>© DengStiny ALL RIGHTS RESERVED</p>
+                <p> 사업자정보 : 12-3456-7890</p>
+                <p>GitHub : <a>https://github.com/LitaHart/Team12FinalProject</a></p>
+                <h4>© DengStiny ALL RIGHTS RESERVED</h4>
             </div>
         </div>
+        
         <div class="footer_sub">
-
+            <div class="contact">
+                <h4 class="service">Customer Service Center</h4>
+                <p style="font-size: 25pt; font-weight: bolder; margin-bottom: 50px;"> 
+                    	☎ 02-0000-0000 </p>
+                <p style="font-size: 15pt; font-weight :bold;"> Mon-Fri 10:00AM - 6:00PM</p>
+                <p style="font-size: 15pt;">(Sat,Sun,Holiday OFF)</p>
+                <p style="font-size: 10pt;">BANK INFO 신한 000-000-000000 (댕스티니)</p>
+            </div>
         </div>
-
-    </footer> -->
-	
-	
-</div>
+    </footer>
+        
+        
+        </div>
 </body>
 </html>
