@@ -23,6 +23,7 @@
     <!-- index -->
     <header>
         <div class="header">
+        <span id="resultArea">${result }</span>
             <a href="loginandjoin.go"><img class="icon_login" src="resources/img/LOGIN.png"></a>
             <span class="join_sale">10% SALE</span>
             <a href="bag"><img class="icon_bag"src="resources/img/shop.png"></a>

@@ -103,8 +103,8 @@ public class MemberController {
 		if (mDAO.loginCheck(req)) {
 			mDAO.bye(req);
 		}
-		req.setAttribute("contentPage", "home.jsp");
-		return "index";
+		req.setAttribute("contentPage", "t1_home.jsp");
+		return "1Team/t1_index";
 	}
 	
 	@RequestMapping(value = "member.get", 
