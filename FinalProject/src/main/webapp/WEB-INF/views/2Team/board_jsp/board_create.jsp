@@ -57,9 +57,9 @@ var toolbar = [
     // 줄간격
     ['height', ['height']],
     // 그림첨부, 링크만들기, 동영상첨부
-    ['insert',['picture','link','video']],
+    ['insert',['picture','link']],
     // 코드보기, 확대해서보기, 도움말
-    ['view', ['codeview','fullscreen', 'help']]
+    ['view', ['codeview','help']]
   ];
 
 var setting = {
