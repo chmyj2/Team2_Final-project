@@ -54,7 +54,7 @@
 			
 			<article id="item-2" class="menu__item">
 				<h3>기업</h3>
-				<p>l</p>
+				<p>제발되어라...ㅜ</p>
 			</article>
 
 
