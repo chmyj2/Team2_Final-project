@@ -113,7 +113,6 @@ public class ProductDAO {
 		}
 		
 		
-		
 		String path = request.getSession().getServletContext().getRealPath("resources/t2_yj_files");
 		
 		
