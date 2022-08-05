@@ -159,10 +159,10 @@ a {
 	/*로그인 창 welco부분 글씨 위치  */
 	position: relative;
 	width: 640px;
-	height: 600px;
+	height: 500px;
 	padding: 10px 0px 10px 0;
 	text-align: center;
-	margin: 0 auto;
+	margin: 0 auto 0 auto;
 	align-items: center;
 }
 
@@ -357,5 +357,34 @@ a {
 	font-size: 12px;
 	color: #9b9b9b;
 	cursor: pointer;
+}
+/* ----------로그인 후 드롭 다운------------------------------------- */
+.loginOK-dropdown{
+  position : relative;
+  display : inline-block;
+}
+
+.loginOK-dropdown-content{
+  display : none;
+  position : absolute;
+  z-index : 1; /*다른 요소들보다 앞에 배치*/
+  width: 65px;
+  text-align: center;
+  right: -10px;
+  background-color: rgb(82,129,209);
+}
+
+.loginOK-dropdown-content a{
+  display : block;
+  color: white;
+}
+
+.loginOK-dropdown:hover .loginOK-dropdown-content {
+  display: block;
+  
+}
+
+.loginOK-dropdown-content a:hover{
+	background-color:black;
 }
 

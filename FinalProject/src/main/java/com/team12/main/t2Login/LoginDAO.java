@@ -49,4 +49,9 @@ public class LoginDAO {
 		
 	}
 
+	public void logout(HttpServletRequest req) {
+		// 로그아웃하기
+		req.getSession().setAttribute("loginMember", null);
+	}
+
 }
