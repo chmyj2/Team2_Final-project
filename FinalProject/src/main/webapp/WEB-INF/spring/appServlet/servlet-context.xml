@@ -31,45 +31,36 @@
 	
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-<<<<<<< HEAD
-=======
-		<beans:property name="url"
+
+	<!-- 	<beans:property name="url"
 				value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<beans:property name="username" value="leeyoky" />
-		<beans:property name="password" value="leeyoky" />
+		<beans:property name="password" value="leeyoky" /> -->
 <!--			value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=/Users/choeyongjun/Wallet_DB202204301707" />
  		<beans:property name="username" value="CYJ" />
 		<beans:property name="password" value="YJ802soldesk" />
 
 
->>>>>>> 00bf17d57850e3c6a98af2f512007e01516cbe52
+
 		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<beans:property name="username" value="kwb" />
 		<beans:property name="password" value="kwb" /> -->
 
-		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<beans:property name="username" value="c##sj" />
 		<beans:property name="password" value="sj" />
 
-		<beans:property name="url" value="jdbc:oracle:thin:@db20220512150004_high?TNS_ADMIN=/Users/mitakeran/LDH/Wallet_DB20220512150004"/>
+		<!-- <beans:property name="url" value="jdbc:oracle:thin:@db20220512150004_high?TNS_ADMIN=/Users/mitakeran/LDH/Wallet_DB20220512150004"/>
 		<beans:property name="username" value="ADMIN" />
 		<beans:property name="password" value="LDHsoldesk802" />
 		<beans:property name="url" value="jdbc:oracle:thin:@db20220512150004_high?TNS_ADMIN=/Users/mitakeran/LDH/Wallet_DB20220512150004"/>
 		<beans:property name="username" value="ADMIN" />
-		<beans:property name="password" value="LDHsoldesk802" />
- -->
-<<<<<<< HEAD
+		<beans:property name="password" value="LDHsoldesk802" /> -->
+
  	</beans:bean>
  	
-	<beans:bean id="transactionManager"	class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-=======
-	</beans:bean>
-
-
-
 	<beans:bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
->>>>>>> 00bf17d57850e3c6a98af2f512007e01516cbe52
 		<beans:property name="dataSource" ref="dataSource" />
 		</beans:bean>
 
