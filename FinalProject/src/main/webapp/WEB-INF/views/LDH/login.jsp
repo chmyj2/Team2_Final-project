@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="member.login" method="post" name="loginForm">
+<!-- <form action="member.login" method="post" name="loginForm">
 		<table id="loginTable">
 			<tr>
 				<td align="center"><input name="m_id" placeholder="ID"
@@ -23,6 +23,6 @@
 			</tr>
 			
 		</table>
-	</form>
+	</form> -->
 </body>
 </html>
