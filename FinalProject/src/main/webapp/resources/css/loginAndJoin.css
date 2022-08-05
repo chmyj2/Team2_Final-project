@@ -118,7 +118,7 @@ hr.login_hr{
 	magin: 0 auto;
 }
 
-#joinTable{
+ #joinTable{
     background-color: rgb(255, 212, 193);
     height: 700px;
     width: 1000px;
@@ -131,21 +131,21 @@ hr.login_hr{
     margin-bottom: 300px;
     padding-bottom: 100px;
 }
-
-#joinTableTitle{
+ 
+ #joinTableTitle{
 	font-size: 40pt;
     letter-spacing: -2pt;
     font-weight: bolder;
-}
+} 
 
-#updateMemberIDInput{
+ #updateMemberIDInput{
 	position: relative;
     width: 280px;
     padding: 10px 10px 10px 10px;
     margin-bottom: 10px;
     border-radius: 30px;
     border: none;
-}
+} 
 .join_input_id{
 	position: relative;
     width: 280px;
@@ -200,4 +200,15 @@ hr.login_hr{
 	font-size:10pt;
 	font-weight: bolder;
 }
+
+
+
+
+
+
+
+
+
+
+
 
