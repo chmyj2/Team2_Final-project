@@ -1,5 +1,15 @@
 Manifest-Version: 1.0
+<<<<<<<< HEAD:FinalProject/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 Built-By: soldesk
 Build-Jdk: 14
+========
+<<<<<<< HEAD
+Built-By: soldesk
+Build-Jdk: 14
+=======
+Built-By: choeyongjun
+Build-Jdk: 14.0.2
+>>>>>>> d9a8bb9841680f2dd8b3d1d0ad5134e40f403f0e
+>>>>>>>> 2761d1cf0eb8803c335b2c61e9423302de7edf82:01_Team1Final/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 Created-By: Maven Integration for Eclipse
 
