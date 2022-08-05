@@ -12,7 +12,7 @@
 	
 <body>	
 	
-	<table border="3">
+	<table border="1">
 		<c:forEach var="products" items="${products}">
 			<tr> 
 				<td><img alt="product_img" src="resources/img/${products.thumbnail}"></td>
@@ -79,14 +79,6 @@
 		<button>검색합니다</button>
 		</form>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 </body>
 </html>

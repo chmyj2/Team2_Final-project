@@ -46,7 +46,7 @@
                 <!-- <a href="#"><img class="logo" src="DENGSTINY.png" alt=""></a>   -->
                     <!-- dropdown 사료/영양제 -->  
                 
-                <li class="store_drop"><a href="#">STORE</a>  
+                <li class="store_drop"><a href="enter.team1Shop">STORE</a>  
                     <ul class="store_drop_content">
                         <li><a href="#">Food</a></li>
                         <li><a href="#">Nutrient</a></li>
