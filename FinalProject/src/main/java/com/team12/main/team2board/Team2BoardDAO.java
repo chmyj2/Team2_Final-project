@@ -61,6 +61,7 @@ public class Team2BoardDAO {
 
 	public void createPost(HttpServletRequest req, Team2BoardDTO board) {
 		
+	
 		
 	}
 
