@@ -23,6 +23,7 @@
     <!-- index -->
     <header>
         <div class="header">
+        <span id="resultArea">${result }</span>
             <a href="loginandjoin.go"><img class="icon_login" src="resources/img/LOGIN.png"></a>
             <span class="join_sale">10% SALE</span>
             <a href="bag"><img class="icon_bag"src="resources/img/shop.png"></a>
@@ -45,7 +46,7 @@
                 <!-- <a href="#"><img class="logo" src="DENGSTINY.png" alt=""></a>   -->
                     <!-- dropdown 사료/영양제 -->  
                 
-                <li class="store_drop"><a href="#">STORE</a>  
+                <li class="store_drop"><a href="enter.team1Shop">STORE</a>  
                     <ul class="store_drop_content">
                         <li><a href="#">Food</a></li>
                         <li><a href="#">Nutrient</a></li>

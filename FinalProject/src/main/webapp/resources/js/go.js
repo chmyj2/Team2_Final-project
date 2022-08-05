@@ -15,16 +15,17 @@ function goMemberInfo() {
 }
 
 function logout() {
-	let ok = confirm("정말?")
+	let ok = confirm("정말 로그아웃 하시겠습니까?")
 	if(ok){
 		location.href='member.logout';
 	}
 }
 
 function bye() {
-	var ok = confirm("?");
+	var ok = confirm("정말 탈퇴하시겠습니까?");
 	if (ok) {
 		location.href = "member.bye";
+	
 	}
 }
 

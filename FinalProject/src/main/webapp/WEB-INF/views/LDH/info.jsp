@@ -7,18 +7,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="join_wrapper">
 
-        <form action="member.update" method="post" enctype="multipart/form-data" name="updateMemberForm" onsubmit="return updateMemberCheck();">
+<div class="join_wrapper">
             <div id="joinTable">
+        <form action="member.update" method="post" enctype="multipart/form-data" name="updateMemberForm" onsubmit="return updateMemberCheck();">
                 <div>
-                    <div id="joinTableTitle" colspan="2" align="center">
+                    <div id="joinTableTitle"  align="center">
                         <input readonly="readonly" value="${sessionScope.loginMember.m_id }" name="jm_id" id="updateMemberIDInput" style="color:black;">
                     </div>
                 </div>
                 
                 <div>
-                    <div class="td1">PW</d>
+                    <div class="td1">PW</div>
                     <div class="td2"><input value="${sessionScope.loginMember.m_pw }" name="jm_pw" placeholder="필수, 숫자 하나이상 반드시" type="password" maxlength="10" autocomplete="off"></div>
                 </div>
                 
@@ -44,6 +44,12 @@
                 </div>
                 
                 <div>
+                    <div align="center" style="background-color: #FFFFFF;">
+                        <button>수정</button>
+                        <button onclick="bye();" type="button">탈퇴</button>
+                    </div>
+                </div>
+                <div>
                     <div class="td1">사진</div>
                     <div class="td2">
                         <img src="resources/files/${sessionScope.loginMember.m_photo }" id="updateMemberPhoto"><br>
@@ -51,17 +57,11 @@
                     </div>
                 </div>
                 
-                <div>
-                    <div align="center" style="background-color: #FFFFFF;">
-                        <button>수정</button>
-                        <button onclick="bye();" type="button">탈퇴</button>
-                    </div>
-                </div>
                 
-            </div>
-            </div>
         </form>
+            </div>
         
-        </div>
+        
+            </div>
 </body>
 </html>

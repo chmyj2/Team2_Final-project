@@ -11,19 +11,35 @@
 
 	
 	<div class="login_didididiv">
-	<form action="DoLoginController" method="post" name="loginForm" onsubmit="return login_call()">
+	
+	<ul class="menu__tabs">
+			<li><a class="active" href="#item-1"><i class="fa fa-star"></i> 개인</a></li>
+			<li><a href="#item-2"><i class="fa fa-link"></i> 기업</a></li>	
+		</ul>
+		<section class="menu__wrapper">
+			<article id="item-1" class="menu__item item-active">
+				<h3>개인</h3>
+				
+				<form action="t2LoginDO" method="post" name="loginForm" onsubmit="return login_call()">
 
 		<div class="login_txt">
 			<h2 class="login_h2">Welcome!</h2>
+			<div class="login-social">
+				<a href=""><i class="fa fa-kakao">kakao</i></a>
+				<a href=""><i class="fa fa-naver">naver</i></a>
+				<a href=""><i class="fa fa-google-plus"></i></a>
+							</div>
 			
 			<label class="login_label"> <span>ID</span> 
-			<input class="login_input" name="id" />
+			<input class="login_input" name="member_ID" />
 			</label> <label class="login_label"> <span>Password</span> 
-			<input class="login_input" name="pw" />
+			<input class="login_input" name="member_PW" />
 			</label>
 			<span class="pw_alert">${r}</span>
-			<p class="forgot-pass" onclick="#">아이디를 잊으셨나요?</p>
-			<p class="forgot-pass" onclick="#">비밀번호를 잊으셨나요?</p>
+			<input type="checkbox" id="login_idSave">아이디 기억하기
+			<span class="forgot-pass" onclick="#" style="font-size: 12px;">회원가입</span>
+			<span class="forgot-pass" onclick="#" style="font-size: 12px;">아이디를 잊으셨나요?</span>
+			<span class="forgot-pass" onclick="#" style="font-size: 12px;">비밀번호를 잊으셨나요?</span>
 			<div class="box bg-1">
 			<button class="button button--nina button--text-thick button--text-upper button--size-s" data-text="LOGIN">
 			<span>H</span><span>E</span><span>L</span><span>L</span><span>O</span>
@@ -33,8 +49,33 @@
 
 
 </form>
+
+			</article>
+			
+			<article id="item-2" class="menu__item">
+				<h3>기업</h3>
+				<p>제발되어라...ㅜ</p>
+			</article>
+
+
+		</section>
+		<div class="menu--shadow"></div>
 	
 </div>
-
 </body>
+<script type="text/javascript">
+$(function() {
+
+	// Menu Tabular
+	var $menu_tabs = $('.menu__tabs li a'); 
+	$menu_tabs.on('click', function(e) {
+		e.preventDefault();
+		$menu_tabs.removeClass('active');
+		$(this).addClass('active');
+
+		$('.menu__item').fadeOut(300);
+		$(this.hash).delay(300).fadeIn();
+	});
+
+});</script>
 </html>
