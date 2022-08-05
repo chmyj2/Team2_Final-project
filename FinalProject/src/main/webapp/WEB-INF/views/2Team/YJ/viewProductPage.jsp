@@ -11,7 +11,7 @@
 <%-- <c:if test="${sessionScope.accountInfo.user_id eq 'ADMIN' }">
 		<div><button onclick="location.href='regProductPage'">운영자전용 상품등록버튼</button></div>
 	</c:if> --%>
-<!-- db에있는 정보 뿌려주기 -->
+
 <button onclick="location.href='regProductPage'">운영자전용 상품등록버튼</button>
 
 </body>

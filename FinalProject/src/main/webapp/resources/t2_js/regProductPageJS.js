@@ -90,7 +90,7 @@ function removeRow() {
 
 
 function frmCheck(){
-	
+	console.log(11)
  	
   var frm = document.form;
    

@@ -8,7 +8,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
 <script type="text/javascript" src="resources/t2_js/regProductPageJS.js"></script>
 <style type="text/css">
-.insert {
+/* .insert {
     padding: 20px 30px;
     display: block;
     width: 400px;
@@ -33,26 +33,21 @@
 .insert .file-list .filebox .delete i{
     color: #ff5353;
     margin-left: 5px;
-}
+} */
 </style>
 </head>
 <body>
-<div class="">
-		<form action="Search_drinkController" id="searchProduct" onsubmit="return CheckSubmit()" method="post">  
-			<div>
-				<input  class="" id="" name="" placeholder="SEARCH">
-				<input id="" type="submit" value="검색">
-			</div>
-		</form>
-	</div>
+
 
 <h1>등록페이지</h1>
 
-<form name="form" action="productInforeg" method="post"enctype="multipart/form-data">
+<form name="form" action="Product.upload" method="post"enctype="multipart/form-data">
+
+zzaa
 		<table>
-			<tr>
+			<!-- <tr>
 				<td>카테고리</td>
-				<td><select name="pets" id="pet_category">
+				<td><select name="pet_category" id="pet_category">
     				<option value="">동물 분류</option>
     				<option value="dog">Dog</option>
     				<option value="cat">Cat</option>
@@ -61,25 +56,25 @@
 			</tr>
 			<tr>
 				<td>상품 분류</td>
-				<td><select name="pets" id="product_category">
+				<td><select name="toy_category" id="toy_category">
     				<option value="">상품 분류</option>
     				<option value="snack">Snack</option>
     				<option value="toy">toy</option>
 					</select></td>
-			</tr>
+			</tr>-->
 			<tr>
 				<td>제품 이름</td>
 				<td><input  id="productName" class="" name="productName"></td>
 			</tr>
-			<tr>
+			<!-- <tr>
 				<td>제품 가격</td>
 				<td><input type="number" id="productPrice" min="0"step="100" class="" name="productPrice"></td>
-			</tr>
+			</tr> -->
 			<tr>
 				<td>제품 정보</td>
 				<td><textarea id="productInfo"name="productInfo"></textarea></td>
 			</tr>
-			<tr>
+			<!--<tr>
 				<td>재고</td>
 				<td><input type="number" id="productStock" min="0" class="" name="productStock"></td>
 			</tr>
@@ -87,22 +82,21 @@
 				<td>진열 여부</td>
 				<td>공개  <input type = "radio"  id="onExhibition"name = "onExhibition" value= "Y">
 					비공개 <input type = "radio" id="onExhibition" name = "onExhibition" value= "N"></td>
-			</tr>
+			</tr> -->
 			<tr>
 				<td>대표 사진</td>
 				<td><input type="file" name="productThumbnail" id="productThumbnail"></td>
 			</tr>
 			<tr>
 				<td>상세 이미지</td>
-				<td><div class="insert"><input type="file" onchange="addFile(this);" multiple />
-   				<div class="file-list"></div></div></td>
+				<td><input type="file" multiple="multiple" id="productImg" name="productImg"></td>
 			</tr>
-		</table>
-		<!-- <table>
+		<!--</table>
+		<table>
 			<tr>
-				<td> -->
+				<td>
 					<table id="addTable">
-						<tr style="color: ">
+						<tr>
 							<td>태그</td>
 						</tr>
 						<tr>
@@ -111,18 +105,18 @@
 							</td>
 						</tr>
 					</table>
-				<!-- </td>
-			</tr>
-		</table> -->
+				</td>
+			</tr> -->
+		</table>
 	</form>
 
-	<table>
+	<!-- <table>
 		<tr>
 			<td>
 				<input class="ingredient_txt_reg_btn" name="addButton" type="button" style="cursor: hand" onClick="insRow()" value="재료 추가">
 			</td>
 		</tr>
-	</table>
+	</table> -->
 
 	<table>
 		<tr>
@@ -132,6 +126,10 @@
 		</tr>
 	</table>
 
+
+
+	${products}
+						
 
 
 
