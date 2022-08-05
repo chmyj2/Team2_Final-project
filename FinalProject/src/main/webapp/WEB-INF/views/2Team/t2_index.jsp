@@ -34,7 +34,7 @@
 
 </head>
 <body>
-			<nav class="index_nav"><div class="index-nav-login"><a href="t2LoginGO"><jsp:include page="${loginPage }"></jsp:include></a></div></nav>
+			<nav class="index_nav"><div class="index-nav-login"><jsp:include page="${loginPage }"></jsp:include></div></nav>
 		<div class="container">
 			<div class="container-fluid">
 				<div class="header-top">
