@@ -39,6 +39,7 @@ public class LoginDAO {
 		// 로그인 체크 
 		Membert2 m = (Membert2) req.getSession().getAttribute("loginMember");
 		if (m != null) {
+			System.out.println(m.getMember_ID());
 			req.setAttribute("loginPage", "t2login/loginOK.jsp");
 			return true;
 		}else {
@@ -53,5 +54,9 @@ public class LoginDAO {
 		// 로그아웃하기
 		req.getSession().setAttribute("loginMember", null);
 	}
+
+	
+	
+	
 
 }

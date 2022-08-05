@@ -34,10 +34,10 @@
 
 		<beans:property name="url"
 				value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<beans:property name="username" value="leeyoky" />
-		<beans:property name="password" value="leeyoky" />
+		<beans:property name="username" value="c##sj" />
+		<beans:property name="password" value="sj" />
     
-<!--			value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=/Users/choeyongjun/Wallet_DB202204301707" />
+<!--		value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=/Users/choeyongjun/Wallet_DB202204301707" />
  		<beans:property name="username" value="CYJ" />
 
 		
@@ -45,7 +45,7 @@
 		<beans:property name="username" value="kwb" />
 		<beans:property name="password" value="kwb" />
 
-		<!-- <beans:property name="url"
+		<beans:property name="url"
 			value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=/Users/choeyongjun/Wallet_DB202204301707" />
 		<beans:property name="username" value="CYJ" />
 

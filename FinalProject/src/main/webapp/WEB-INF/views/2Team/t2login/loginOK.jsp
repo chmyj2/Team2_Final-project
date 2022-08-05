@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,7 @@
 <link rel="stylesheet" href="resources/t2_css/t2_login.css">
 </head>
 <body>
+
 <div class="loginOK-dropdown" >
       <span class="loginOK-dropbtn">${sessionScope.loginMember.member_ID }님</span>
       <div class="loginOK-dropdown-content">

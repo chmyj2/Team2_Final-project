@@ -55,24 +55,7 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
-	@RequestMapping(value = "/t2LoginDO.business", method = RequestMethod.POST)
-	public String loginDo_business(HttpServletRequest req, Membert2 m) {
-		
-		//기업용 로그인하기
-		if(lDAO.login(req,m)) {
-			
-			req.setAttribute("contentPage", "t2_home.jsp");
-		}else {
-			req.setAttribute("r", "로그인 실패");
-			req.setAttribute("contentPage", "t2login/t2_login.jsp");
-			
-		}
-		
-		//로그인 체크
-		lDAO.loginCheck(req);
-		
-		return "2Team/t2_index";
-	}
+	
 	
 	
 	
