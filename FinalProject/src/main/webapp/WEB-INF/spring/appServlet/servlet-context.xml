@@ -16,6 +16,7 @@
 	<context:annotation-config />
 	<tx:annotation-driven />
 	<resources mapping="/resources/**" location="/resources/" />
+	
 
 
 	<beans:bean
