@@ -14,7 +14,7 @@
 
 	<div class="container">
 		<div>
-			<a href='#' class="btn btn-success">글쓰기</a>
+			<a href='team2.createPostPage?board_category=${param.board_category}' class="btn btn-success">글쓰기</a>
 		</div>
 		
 		<table class="table table-striped table-hover">
