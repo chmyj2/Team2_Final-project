@@ -37,9 +37,9 @@
 			</label>
 			<span class="pw_alert">${r}</span>
 			<input type="checkbox" id="login_idSave">아이디 기억하기
-			<p class="forgot-pass" onclick="#" style="font-size: 12px;">회원가입</p>
-			<p class="forgot-pass" onclick="#" style="font-size: 12px;">아이디를 잊으셨나요?</p>
-			<p class="forgot-pass" onclick="#" style="font-size: 12px;">비밀번호를 잊으셨나요?</p>
+			<span class="forgot-pass" onclick="#" style="font-size: 12px;">회원가입</span>
+			<span class="forgot-pass" onclick="#" style="font-size: 12px;">아이디를 잊으셨나요?</span>
+			<span class="forgot-pass" onclick="#" style="font-size: 12px;">비밀번호를 잊으셨나요?</span>
 			<div class="box bg-1">
 			<button class="button button--nina button--text-thick button--text-upper button--size-s" data-text="LOGIN">
 			<span>H</span><span>E</span><span>L</span><span>L</span><span>O</span>
