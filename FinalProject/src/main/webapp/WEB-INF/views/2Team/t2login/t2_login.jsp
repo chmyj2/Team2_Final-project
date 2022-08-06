@@ -41,9 +41,7 @@
 			<p class="forgot-pass"  style="font-size: 12px;">아이디를 잊으셨나요?</p>
 			<p class="forgot-pass"  style="font-size: 12px;">비밀번호를 잊으셨나요?</p>
 			<div class="box bg-1">
-			<button class="button button--nina button--text-thick button--text-upper button--size-s" data-text="LOGIN">
-			<span>H</span><span>E</span><span>L</span><span>L</span><span>O</span>
-			</button>
+			<input type="submit" class="login-btn" value="L o g i n"/>
 			</div>
 		</div>
 </form>
@@ -68,9 +66,7 @@
 			<p class="forgot-pass"  style="font-size: 12px;">아이디를 잊으셨나요?</p>
 			<p class="forgot-pass"  style="font-size: 12px;">비밀번호를 잊으셨나요?</p>
 			<div class="box bg-1">
-			<button class="button button--nina button--text-thick button--text-upper button--size-s" data-text="LOGIN">
-			<span>H</span><span>E</span><span>L</span><span>L</span><span>O</span>
-			</button>
+			<input type="submit" class="login-btn" value="L o g i n"/>
 			</div>
 		</div>
 </form>
