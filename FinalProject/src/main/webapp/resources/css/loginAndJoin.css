@@ -131,6 +131,7 @@ hr.login_hr{
     margin-bottom: 300px;
     padding-bottom: 100px;
 }
+
  
  #joinTableTitle{
 	font-size: 40pt;
@@ -162,6 +163,11 @@ hr.login_hr{
     border-radius: 30px;
     border: none;
 } 
+
+#updateMemberPhoto {
+	max-width: 50%;
+}
+
 .join_input_id{
 	position: relative;
     width: 280px;
@@ -256,7 +262,35 @@ hr.login_hr{
 }
 
 
+/*  로그인 성공 화면 */
+#loginSuccessTable {
+	font-size: 15pt;
+	font-family: "a";
+	font-weight: 900;
+	color: #FFFFFF;
+}
 
+#loginSuccessTable img {
+	max-width: 60px;
+	border-radius: 10px;
+}
+
+#loginSuccessName {
+	color: white;
+}
+
+#loginSuccessTable button {
+	border: none;
+	background-color: transparent;
+	width: 72px;
+	font-size: 13pt;
+	font-weight: 900;
+	color: #FFFFFF;
+}
+
+#loginSuccessTable button:hover {
+	text-shadow: 0px 0px 10px #FFFFFF;
+}
 
 
 

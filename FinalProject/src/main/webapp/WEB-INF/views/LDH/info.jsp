@@ -9,8 +9,11 @@
 <body>
 
 <div class="join_wrapper">
+
+        <form action="member.update" method="post" enctype="multipart/form-data"
+         name="updateMemberForm" onsubmit="return updateMemberCheck();">
+            
             <div id="joinTable">
-        <form action="member.update" method="post" enctype="multipart/form-data" name="updateMemberForm" onsubmit="return updateMemberCheck();">
                 <div>
                     <div id="joinTableTitle"  align="center">
                         <input readonly="readonly" value="${sessionScope.loginMember.m_id }" name="jm_id" id="updateMemberIDInput" style="color:black;">
@@ -44,12 +47,6 @@
                 </div>
                 
                 <div>
-                    <div align="center" style="background-color: #FFFFFF;">
-                        <button>수정</button>
-                        <button onclick="bye();" type="button">탈퇴</button>
-                    </div>
-                </div>
-                <div>
                     <div class="td1">사진</div>
                     <div class="td2">
                         <img src="resources/files/${sessionScope.loginMember.m_photo }" id="updateMemberPhoto"><br>
@@ -57,11 +54,17 @@
                     </div>
                 </div>
                 
+                <div>
+                    <div align="center" style="background-color: #FFFFFF;">
+                        <button>수정</button>
+                        <button onclick="bye();" type="button">탈퇴</button>
+                    </div>
+                </div>
                 
-        </form>
             </div>
         
         
+        </form>
             </div>
 </body>
 </html>

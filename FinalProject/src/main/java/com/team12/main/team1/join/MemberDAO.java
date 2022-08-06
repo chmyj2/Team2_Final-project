@@ -88,7 +88,7 @@ public class MemberDAO {
 			req.setAttribute("loginPage", "../LDH/loginSuccess.jsp");
 			return true;
 		} 
-			req.setAttribute("loginPage", "../LDH/login.jsp");
+			req.setAttribute("loginWhether", "../LDH/login.jsp");
 			return false;
 		}
 	

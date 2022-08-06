@@ -27,24 +27,11 @@
 
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-
 		<beans:property name="url"
 			value="jdbc:oracle:thin:@db20220512150004_high?TNS_ADMIN=/Users/mitakeran/LDH/Wallet_DB20220512150004" />
 		<beans:property name="username" value="ADMIN" />
 		<beans:property name="password" value="LDHsoldesk802"/>
-
-		<beans:property name="url"
-				value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<beans:property name="username" value="leeyoky" />
-		<beans:property name="password" value="leeyoky" />
 	</beans:bean>
-
-
-
-
-
-
-
 
 
  	
