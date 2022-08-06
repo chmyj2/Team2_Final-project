@@ -76,6 +76,17 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/t2join", method = RequestMethod.GET)
+	public String join(HttpServletRequest req) {
+		
+		//회원가입하러 가기
+		
+		//로그인 체크
+		lDAO.loginCheck(req);
+		req.setAttribute("contentPage", "t2login/t2_join.jsp");
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	
