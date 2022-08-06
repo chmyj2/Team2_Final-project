@@ -74,7 +74,7 @@
 
 
 		</section>
-		<div class="menu--shadow"></div>
+		
 	
 </div>
 </body>

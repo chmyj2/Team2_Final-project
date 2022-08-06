@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/t2_css/t2_login.css">
 </head>
-<body class="login_body">
+<body>
 
+	
 	
 	<div class="login_didididiv">
 	
@@ -74,9 +75,10 @@
 
 
 		</section>
-		<div class="menu--shadow"></div>
+		
 	
 </div>
+
 </body>
 <script type="text/javascript">
 $(function() {
