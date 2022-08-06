@@ -259,15 +259,7 @@ hr.login_hr{
     width: 350px;
     top:730px;
     left: 950px;
-}
 
-
-/*  로그인 성공 화면 */
-#loginSuccessTable {
-	font-size: 15pt;
-	font-family: "a";
-	font-weight: 900;
-	color: #FFFFFF;
 }
 
 #loginSuccessTable img {
