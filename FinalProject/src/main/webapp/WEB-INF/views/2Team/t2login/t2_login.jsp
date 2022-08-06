@@ -62,7 +62,7 @@
 			</label> <label class="login_label"> <span>Password</span> 
 			<input class="login_input" name="vet_PW" />
 			</label>
-			<span class="pw_alert">${r}</span>
+			<span class="pw_alert">${rb}</span>
 			<input type="checkbox" id="login_idSave">아이디 기억하기
 			<p class="forgot-pass"  style="font-size: 12px;">회원가입</p>
 			<p class="forgot-pass"  style="font-size: 12px;">아이디를 잊으셨나요?</p>

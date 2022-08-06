@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="resources/t2_css/t2_login.css">
 </head>
 <body>
+<c:choose>
+<c:when test="${sessionScope.loginMember !=null }">
 
 <div class="loginOK-dropdown" >
       <span class="loginOK-dropbtn">${sessionScope.loginMember.member_ID }님</span>
@@ -19,6 +21,20 @@
         <a href="t2logout">로그아웃</a>
       </div>
     </div> 
+
+</c:when>
+<c:otherwise>
+<div class="loginOK-dropdown" >
+      <span class="loginOK-dropbtn">${sessionScope.loginMember_business.vet_ID }님</span>
+      <div class="loginOK-dropdown-content">
+        <a href="#">내 정보</a>
+        <a href="#">장바구니</a>
+        <a href="#">예약확인</a>
+        <a href="t2logout">로그아웃</a>
+      </div>
+    </div> 
+</c:otherwise>
+</c:choose>
 
 </body>
 </html>

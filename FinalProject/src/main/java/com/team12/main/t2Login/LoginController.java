@@ -26,7 +26,7 @@ public class LoginController {
 	@RequestMapping(value = "/t2LoginDO", method = RequestMethod.POST)
 	public String loginDo(HttpServletRequest req, Membert2 m) {
 		
-		//로그인하기
+		//일반 로그인하기
 		if(lDAO.login(req,m)) {
 			
 			req.setAttribute("contentPage", "t2_home.jsp");
@@ -41,6 +41,27 @@ public class LoginController {
 		
 		return "2Team/t2_index";
 	}
+	
+	@RequestMapping(value = "/t2LoginDO.business", method = RequestMethod.POST)
+	public String loginDo_business(HttpServletRequest req, vet v) {
+		
+		//비지니스 로그인하기
+		if(lDAO.login_business(req,v)) {
+			
+			req.setAttribute("contentPage", "t2_home.jsp");
+		}else {
+			req.setAttribute("rb", "로그인 실패");
+			req.setAttribute("contentPage", "t2login/login_business.jsp");
+			
+		}
+		
+		//로그인 체크
+		lDAO.loginCheck(req);
+		
+		return "2Team/t2_index";
+	}
+	
+	
 	
 	@RequestMapping(value = "/t2logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest req, Membert2 m) {
