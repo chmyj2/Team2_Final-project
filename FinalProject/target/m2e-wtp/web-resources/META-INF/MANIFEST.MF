@@ -1,5 +1,13 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD:01_Team1Final/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+<<<<<<< HEAD
+Built-By: choeyongjun
+=======
+Built-By: mitakeran
+>>>>>>> 135771f35d6cb11d64da05df013e0a04da1d542c
+=======
 Built-By: allmight
+>>>>>>> 8d1f0e8dbdffe5eab89da8b9a25497674825cb6b:FinalProject/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 Build-Jdk: 14.0.2
 Created-By: Maven Integration for Eclipse
 

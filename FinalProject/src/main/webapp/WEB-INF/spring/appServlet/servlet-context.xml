@@ -27,6 +27,12 @@
 
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+<<<<<<< HEAD
+		<beans:property name="url"
+			value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=/Users/choeyongjun/Wallet_DB202204301707" />
+		<beans:property name="username" value="CYJ" />
+		<beans:property name="password" value="YJ802soldesk" />
+=======
 
 <<<<<<< HEAD
 
@@ -55,6 +61,7 @@
 		<beans:property name="password" value="LDHsoldesk802" />
     -->
 
+>>>>>>> 8d1f0e8dbdffe5eab89da8b9a25497674825cb6b
 	</beans:bean>
 
 
@@ -62,6 +69,8 @@
 
 
 
+<<<<<<< HEAD
+=======
 
 =======
 		<beans:property name="url"
@@ -88,6 +97,7 @@
 		<beans:property name="username" value="ADMIN" />
 		<beans:property name="password" value="LDHsoldesk802" />
  -->
+>>>>>>> 8d1f0e8dbdffe5eab89da8b9a25497674825cb6b
  	
 	<beans:bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -100,8 +110,7 @@
 		<beans:property name="mapperLocations">
 			<beans:list>
 				<beans:value>classpath:testmapper.xml</beans:value>
-				<beans:value>classpath:team2/YJ/viewAllProductMapper.xml</beans:value>
-				<beans:value>classpath:team2/YJ/regProductMapper.xml</beans:value>
+				<beans:value>classpath:team2/YJ/productMapper.xml</beans:value>
 				<beans:value>classpath:team1joinMapper.xml</beans:value>
 				<beans:value>classpath:team2BoardMapper.xml</beans:value>
 				<beans:value>classpath:team2loginMapper.xml</beans:value>
@@ -112,6 +121,12 @@
 	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<beans:constructor-arg name="sqlSessionFactory"
 			ref="sqlSessionFactory" />
+	</beans:bean>
+	
+	
+	
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="104857600"/>
 	</beans:bean>
 
 <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

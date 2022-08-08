@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+<<<<<<< HEAD
+Built-By: choeyongjun
+=======
+Built-By: mitakeran
+>>>>>>> 135771f35d6cb11d64da05df013e0a04da1d542c
+Build-Jdk: 14.0.2
+Created-By: Maven Integration for Eclipse
+
