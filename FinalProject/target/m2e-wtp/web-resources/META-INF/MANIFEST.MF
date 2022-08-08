@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-<<<<<<< HEAD
-Built-By: mitakeran
-=======
-Built-By: allmight
->>>>>>> 8c871d3aa3e6af8ac56157b9ffccced84993fa12
-Build-Jdk: 14.0.2
-Created-By: Maven Integration for Eclipse
-
