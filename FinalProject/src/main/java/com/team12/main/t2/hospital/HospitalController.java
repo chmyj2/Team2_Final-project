@@ -20,8 +20,8 @@ public class HospitalController {
 	public String hospitalGo(HttpServletRequest req) {
 		
 		
-		
-		lDAO.loginCheck(req);
+
+		//lDAO.loginCheck(req);
 		req.setAttribute("contentPage", "sy/hospitalMain.jsp");
 		
 		return "2Team/t2_index";
