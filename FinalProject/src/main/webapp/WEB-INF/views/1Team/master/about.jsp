@@ -86,7 +86,7 @@
         </div>
         <div class="about_sub_donate_img">
             <p class="go_store">
-                <a href="">→ Go Store</a>
+                <a href="enter.team1Shop">→ Go Store</a>
             </p>
             <div class="about_sub_donate_img_wrapper1">
                 <img class="about_sub_donate_img_dog1" src="resources/img/store_cat.jpg"
@@ -94,7 +94,7 @@
                 data-aos-offset="350">
             </div>
             <p class="go_donate">
-                <a href="">Go Donate ←</a>
+                <a href="contact.go">Go Donate ←</a>
             </p>
             <div class="about_sub_donate_img_wrapper2">
                 <img class="about_sub_donate_img_dog2" src="resources/img/store.jpg"
