@@ -26,6 +26,17 @@
 	<script type="text/javascript" src="resources/t2_js/jQuery.js"></script>
 	<!-- jQuery JAVA SCRIPT -->
 
+<<<<<<< HEAD
+	<script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
+	<link rel="stylesheet" href="resources/t2_css/t2_login.css">
+	<!-- 주소 js -->
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script type="text/javascript" src="resources/t2_js/login_function.js"></script>
+=======
+>>>>>>> 6fdcda2840d5244b3f8e78d0d6443366cba0032f
 </head>
 <body>
 			<nav class="index_nav"><div class="index-nav-login"><jsp:include page="${loginPage }"></jsp:include></div></nav>

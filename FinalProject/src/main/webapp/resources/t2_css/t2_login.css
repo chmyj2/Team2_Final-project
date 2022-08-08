@@ -388,3 +388,218 @@ a {
 	background-color:black;
 }
 
+/* ------------------------------회원가입 css */
+.t2-join-outdiv {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  font-family:sans-serif;
+  height: 1000px;
+}
+
+
+
+.joinForm {
+  position:relative;
+  width:400px;
+  height:400px;
+  padding: 30px, 20px;
+  background-color:#FFFFFF;
+  text-align:center;
+  top:20%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-radius: 15px;
+}
+
+.joinForm h2 {
+  text-align: center;
+  margin: 30px;
+}
+
+.join-textForm {
+  border-bottom: 2px solid #adadad;
+  margin: 30px;
+  padding: 10px 10px;
+}
+
+
+.join-id {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.join-pw {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.join-name {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.join-email {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.join-birth{
+  width: 33%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.nickname {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.join-cellphoneNo {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.join-btn {
+  position:relative;
+  left:40%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+  width:80%;
+  height:40px;
+  background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+  background-position: left;
+  background-size: 200%;
+  color:white;
+  font-weight: bold;
+  border:none;
+  cursor:pointer;
+  transition: 0.4s;
+  display:inline;
+}
+
+.join-btn:hover {
+  background-position: right;
+}
+
+.brith{
+	text-align: left;
+	color: #636e72;
+  font-size:16px;
+}
+
+#join_addr3Input{
+	background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #CCC;
+  color: #555;
+  padding: 10px 0px;
+  margin-top:2px;
+  width: 80px;
+	
+	
+}
+#join_addr2Input{
+	background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #CCC;
+  color: #555;
+  padding: 10px 0px;
+  margin-top:2px;
+  width: 300px;
+	
+}
+#join_addr1Input{
+	background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #CCC;
+  color: #555;
+  padding: 10px 0px;
+  margin-top:2px;
+  width: 300px;
+}
+
+.addr{
+	text-align: left;
+	color: #636e72;
+  	font-size:16px;
+}
+
+#join_addr1Input:focus {
+	outline: none;
+}
+
+#join_addr3Input:focus {
+	outline: none;
+}
+#join_addr2Input:focus {
+	
+	outline: none;
+}
+
+.login-btn{
+	position:relative;
+  left:15%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+  width:30%;
+  height:40px;
+  background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+  background-position: left;
+  background-size: 200%;
+  color:white;
+  font-weight: bold;
+  border:none;
+  cursor:pointer;
+  transition: 0.4s;
+  display:inline;
+}
+
+.login-btn:hover {
+  background-position: right;
+}
+
+
+
+
+
+
+
+
+
+
+
