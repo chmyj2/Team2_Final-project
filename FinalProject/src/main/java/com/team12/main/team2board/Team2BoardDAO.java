@@ -1,12 +1,21 @@
 package com.team12.main.team2board;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequestWrapper;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.google.gson.JsonObject;
 
 @Service
 public class Team2BoardDAO {
@@ -59,10 +68,51 @@ public class Team2BoardDAO {
 
 
 
-	public void createPost(HttpServletRequest req, Team2BoardDTO board) {
+
+	public String uploadImg(MultipartFile multipartFile, HttpServletRequest request) {
+	    JsonObject jsonObject = new JsonObject();
 		
+		
+		// 내부경로로 저장
+		String contextRoot = new HttpServletRequestWrapper(request).getRealPath("");
+		String fileRoot = contextRoot+"resources/team2_files/";
+		System.out.println("file Root ==============="+fileRoot);
+		
+		String originalFileName = multipartFile.getOriginalFilename();	//오리지날 파일명
+		String extension = originalFileName.substring(originalFileName.lastIndexOf("."));	//파일 확장자
+		String savedFileName = UUID.randomUUID() + extension;	//저장될 파일 명
+		
+		File targetFile = new File(fileRoot + savedFileName);	
+		try {
+			InputStream fileStream = multipartFile.getInputStream();
+			FileUtils.copyInputStreamToFile(fileStream, targetFile);	//파일 저장
+			jsonObject.addProperty("url", "resources/team2_files/"+savedFileName); // contextroot + resources + 저장할 내부 폴더명
+			jsonObject.addProperty("responseCode", "success");
+				
+		} catch (IOException e) {
+			FileUtils.deleteQuietly(targetFile);	//저장된 파일 삭제
+			jsonObject.addProperty("responseCode", "error");
+			e.printStackTrace();
+		}
+		String a = jsonObject.toString();
+		
+		System.out.println("file----------------------------------" +a);
+		
+		return a;
 		
 	}
+	
+	
+	public void createPost(HttpServletRequest req, Team2BoardDTO board) {
+		
+	
+		
+	}
+
+
+
+
+
 
 	
 	

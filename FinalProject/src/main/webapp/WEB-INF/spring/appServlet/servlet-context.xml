@@ -28,6 +28,7 @@
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 
+<<<<<<< HEAD
 
 		<beans:property name="url"
 				value="jdbc:oracle:thin:@localhost:1521:xe" />
@@ -62,8 +63,31 @@
 
 
 
+=======
+		<beans:property name="url"
+			value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<beans:property name="username" value="kwb" />
+		<beans:property name="password" value="kwb" />
+	</beans:bean>
+    
+<!--			value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=/Users/choeyongjun/Wallet_DB202204301707" />
+ 		<beans:property name="username" value="CYJ" />
+		
+		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<beans:property name="username" value="kwb" />
+		<beans:property name="password" value="kwb" />
 
+		<beans:property name="url"
+			value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=/Users/choeyongjun/Wallet_DB202204301707" />
+		<beans:property name="username" value="CYJ" />
+>>>>>>> 6fdcda2840d5244b3f8e78d0d6443366cba0032f
 
+		<beans:property name="password" value="YJ802soldesk" />
+
+		<beans:property name="url" value="jdbc:oracle:thin:@db20220512150004_high?TNS_ADMIN=/Users/mitakeran/LDH/Wallet_DB20220512150004"/>
+		<beans:property name="username" value="ADMIN" />
+		<beans:property name="password" value="LDHsoldesk802" />
+ -->
  	
 	<beans:bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -90,4 +114,11 @@
 			ref="sqlSessionFactory" />
 	</beans:bean>
 
+<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<beans:property name="maxUploadSize" value="100000000"></beans:property>
+</beans:bean>
+
+
 </beans:beans>
+
+

@@ -18,7 +18,8 @@
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
-				<button onclick="goMemberInfo()">내 정보</button>
+				<!-- <button onclick="goMemberInfo()">내 정보</button> -->
+				<!--    <a href="member.info"><img class="icon_login" src="resources/img/LOGIN.png"></a> -->
 				<button onclick="logout()">로그아웃</button>
 			</td>
 		<tr>

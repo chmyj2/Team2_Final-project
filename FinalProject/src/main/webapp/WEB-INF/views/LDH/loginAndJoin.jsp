@@ -13,9 +13,9 @@
     <!-- SIGN IN -->
         <h1>SIGN IN</h1>
         <span id="resultArea">${result }</span>
-        <form class="more-padding" autocomplete="off" action="member.login" method="post" name="loginForm">
-          <input class="input_id"  name="m_id" placeholder="아이디"><br>
-          <input class="input_pw" name="m_pw" type="password" placeholder="비밀번호">
+        <form class="more-padding" autocomplete="off" action="member.login"  method="post" onsubmit="return frm_check();" name="loginForm" >
+          <input class="input_id"  name="m_id" id="userID" placeholder="아이디"><br>
+          <input class="input_pw" name="m_pw" id="pwd" type="password" placeholder="비밀번호">
           <div class="checkbox">
             <input type="checkbox" id="remember" /><label for="remember">remember me</label>
           </div>
@@ -27,7 +27,14 @@
         <button  class="login_btn">로그인</button>
         <button type="button" class="signUp_btn"  onclick="goJoin()">회원가입</button>
         <button  class="signUp_kakao_btn">카카오 연결</button>
-        <hr class="login_hr">
+
+ <a id="custom-login-btn" href="javascript:loginWithKakao()">
+        <img src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg" width="222" />
+    </a>
+
+    <button class="api-btn" onclick="kakaoLogout()">로그아웃</button>
+    
+<hr class="login_hr">
         <button class="non_members_check_order">비회원 주문조회</button>
         </form>
 

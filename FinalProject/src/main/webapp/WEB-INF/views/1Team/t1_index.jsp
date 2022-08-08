@@ -15,6 +15,10 @@
 <script type="text/javascript" src="resources/js/aqicn.js"></script>
 <script type="text/javascript" src="resources/js/validCheck.js"></script>
 <script type="text/javascript" src="resources/js/check.js"></script>
+<script type="text/javascript" src="resources/js/rememberID.js"></script>
+<script type="text/javascript" src="resources/js/kakaoLogin.js"></script> 
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body>
@@ -24,7 +28,8 @@
     <header>
         <div class="header">
         <span id="resultArea">${result }</span>
-            <a href="loginandjoin.go"><img class="icon_login" src="resources/img/LOGIN.png"></a>
+           <%--  <jsp:include page="${login }"></jsp:include> --%>
+           <a href="member.info"><img class="icon_login" src="resources/img/LOGIN.png"></a> 
             <span class="join_sale">10% SALE</span>
             <a href="bag"><img class="icon_bag"src="resources/img/shop.png"></a>
             <img class="icon_search" src="resources/img/search.png">
