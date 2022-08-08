@@ -272,6 +272,25 @@ hr.login_hr{
 	border-radius: 10px;
 }
 
+
+/*  로그인 성공 화면 */
+#loginSuccessTable {
+	font-size: 15pt;
+	font-family: "a";
+	font-weight: 900;
+	color: #FFFFFF;
+}
+
+#loginSuccessTable img {
+	max-width: 60px;
+	border-radius: 10px;
+}
+
+#loginSuccessName {
+	color: white;
+}
+
+
 #loginSuccessName {
 	color: white;
 }
