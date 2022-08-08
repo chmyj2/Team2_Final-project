@@ -1,6 +1,7 @@
 package com.team12.main.team2board;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -56,8 +57,11 @@ public class BoardController {
 
 	
 	@RequestMapping(value = "post.detail", method = RequestMethod.GET)
-	public String post_detail(HttpServletRequest req, Team2BoardDTO board) {
+	public String post_detail(HttpServletResponse res ,HttpServletRequest req, Team2BoardDTO board) {
 
+		if(bDAO.countCheck(req, board) == 0) {
+			bDAO.updateCount(res ,req, board);
+		}
 		bDAO.showPostDetail(req, board);
 		req.setAttribute("contentPage", "board_jsp/board_detail.jsp");
 
