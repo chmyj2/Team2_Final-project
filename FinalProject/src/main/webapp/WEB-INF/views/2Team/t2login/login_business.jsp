@@ -7,18 +7,17 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/t2_css/t2_login.css">
 </head>
-<body>
+<body class="login_body">
 
-	
 	
 	<div class="login_didididiv">
 	
 	<ul class="menu__tabs">
-			<li><a class="active" href="#item-1"><i class="fa fa-user"></i> 개인</a></li>
-			<li><a href="#item-2"><i class="fa fa-building"></i> 기업</a></li>	
+			<li><a  href="#item-1"><i class="fa fa-user"></i> 개인</a></li>
+			<li><a class="active" href="#item-2"><i class="fa fa-building"></i> 기업</a></li>	
 		</ul>
 		<section class="menu__wrapper">
-			<article id="item-1" class="menu__item item-active">
+			<article id="item-1" class="menu__item ">
 				<h3>개인</h3>
 				
 				<form action="t2LoginDO" method="post" name="loginForm">
@@ -49,7 +48,7 @@
 
 			</article>
 			
-			<article id="item-2" class="menu__item">
+			<article id="item-2" class="menu__item item-active">
 				<h3>기업</h3>
 			<form action="t2LoginDO.business" method="post" name="loginForm">
 
@@ -78,7 +77,6 @@
 		
 	
 </div>
-
 </body>
 <script type="text/javascript">
 $(function() {
