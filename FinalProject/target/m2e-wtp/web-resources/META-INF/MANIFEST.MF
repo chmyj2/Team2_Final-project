@@ -1,10 +1,5 @@
 Manifest-Version: 1.0
-<<<<<<< HEAD
-Built-By: soldesk
-Build-Jdk: 14
-=======
 Built-By: allmight
 Build-Jdk: 14.0.2
->>>>>>> be905c07402aec1ed05425d5167ad2cae8d58896
 Created-By: Maven Integration for Eclipse
 

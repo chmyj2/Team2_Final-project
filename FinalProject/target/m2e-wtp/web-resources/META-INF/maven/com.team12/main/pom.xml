@@ -15,10 +15,6 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
-<<<<<<< HEAD
-=======
-
->>>>>>> be905c07402aec1ed05425d5167ad2cae8d58896
 		<!--Spring 환경에서 ORMFramework사용 가능하게 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
