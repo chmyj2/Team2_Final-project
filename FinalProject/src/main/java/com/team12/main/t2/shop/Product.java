@@ -1,4 +1,4 @@
-package com.team12.main.t2.regProduct;
+package com.team12.main.t2.shop;
 
 public class Product {
 	 private int productNum;

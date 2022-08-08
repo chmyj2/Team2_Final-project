@@ -1,18 +1,11 @@
 $(function () {
 	
-	//hospital_map();
-	
-	hospital_list();
+	hospital_map();
+	//hospital_list();
 	gpsCheck();
-	
-	
-	//37.5693255, 126.9860066
+
 
 })
-
-
-
-
 
 
 $(function hospital_map() {
@@ -26,21 +19,24 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 // 지도를 생성합니다    
 var map = new kakao.maps.Map(mapContainer, mapOption);
 
-//지도가 이동, 확대, 축소로 인해 중심좌표가 변경되면 마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
-kakao.maps.event.addListener(map, 'center_changed', function() {
-
-    // 지도의  레벨을 얻어옵니다
-    var level = map.getLevel();
-
-    // 지도의 중심좌표를 얻어옵니다 
-    var latlng = map.getCenter(); 
-
-    var message = '<p>지도 레벨은 ' + level + ' 이고</p>';
-    message += '<p>중심 좌표는 위도 ' + latlng.getLat() + ', 경도 ' + latlng.getLng() + '입니다</p>';
-
-    var resultDiv = document.getElementById('result');
+//지도가 이동, 확대, 축소로 인해 지도영역이 변경되면 마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
+kakao.maps.event.addListener(map, 'bounds_changed', function() {             
+    
+    // 지도 영역정보를 얻어옵니다 
+    var bounds = map.getBounds();
+    
+    // 영역정보의 남서쪽 정보를 얻어옵니다 
+    var swLatlng = bounds.getSouthWest();
+    
+    // 영역정보의 북동쪽 정보를 얻어옵니다 
+    var neLatlng = bounds.getNorthEast();
+    
+    var message = '<p>영역좌표 <br> 남서쪽 위도, 경도 :   ' + swLatlng.toString() + '<br>'; 
+    message += '북동쪽 위도, 경도  : ' + neLatlng.toString() + ' </p>'; 
+    
+    var resultDiv = document.getElementById('result');   
     resultDiv.innerHTML = message;
-
+    
 });
 
 
@@ -127,10 +123,16 @@ type : "GET" ,
 dataType:"json",
 success:function(data){
 	
-	
-	
 	// 동물병원 리스트 데이터입니다.
 	let hospital = data.DATA
+	
+	// 북동쪽, 남서쪽 좌표
+	//new kakao.maps.LatLngBounds(swLatlng, neLatlng);
+	
+	
+	//리스트용 테이블
+	var tableList = $("<table/>");
+	
 	
 	$.each(hospital , function(i , m) {
 		
@@ -143,8 +145,9 @@ success:function(data){
 					let addr = hospital[i].sitewhladdr;
 					let tel = hospital[i].sitetel;
 					let state = hospital[i].dtlstatenm;
-
+					let mgtno = hospital[i].mgtno;
 					
+									
 					// 주소로 좌표를 검색합니다
 					geocoder.addressSearch("'"+addr+"'", function(result, status) {
 
@@ -160,8 +163,8 @@ success:function(data){
 				        imageSize = new kakao.maps.Size(50, 50), // 마커이미지의 크기입니다
 				        imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 
-				    // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
-				    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+				        // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
+				        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
 				        markerPosition = new kakao.maps.LatLng(result[0].y, result[0].x); // 마커가 표시될 위치입니다
 				        
 				        
@@ -172,15 +175,18 @@ success:function(data){
 				        	image: markerImage // 마커이미지 설정 
 				        });
 				        
+				        	console.log(swLatlng);				        
+				        	
+				        	
 				      
 				        
 				        	// 인포윈도우로 장소에 대한 설명을 표시합니다
-				        	var infowindow = new kakao.maps.InfoWindow({
+				        	var infowindow = new kakao.maps.InfoWindow({ 
 				        		content: '<div class="wrap">' + 
 				                '    <div class="info">' + 
 				                '        <div class="title">' + 
 				                	name + 
-				                '      <div  class="closeInfo">X</div>' + 
+				                '      <div  class="closeInfo'+mgtno+'">X</div>' + 
 				                '        </div>' + 
 				                '        <div class="body">' + 
 				                '            <div class="desc">' + 
@@ -195,12 +201,14 @@ success:function(data){
 				        	
 				        	
 				        	
+				        	
 				        	kakao.maps.event.addListener(marker, 'click', function() {
+				        		
 				        		infowindow.open(map, marker); 
 				        		
 				        	});
 				        	
-				        	 $(document).on("click",".closeInfo",function(event){
+				        	 $(document).on("click", ".closeInfo"+mgtno,function(event){
 				        		 
 				        		 infowindow.close(map, marker); 
 				        	 })
@@ -217,8 +225,24 @@ success:function(data){
 		
 		
 	});
+	if (new kakao.maps.LatLngBounds(swLatlng, neLatlng).equals(coords)==true) {
+		
+		var row = $("<tr/>").append(
+				$("<td/>").text(name),
+				$("<td/>").text(addr),
+				$("<td/>").text(tel),
+				$("<td/>").text(state)
+				
+				)
+				
 	
-
+		
+			}
+	
+			table.append(row);
+	
+	
+	$(".hospital_list").append(tableList);
 	
 }
 });
@@ -234,47 +258,47 @@ success:function(data){
 
 
 
-$(function hospital_list(){
-			
-			$.ajax({
-				url:"resources/t2_js/petHospital.json",
-				type : "GET" ,
-				dataType:"json",
-				success:function(data){
-			
-						let hospital = data.DATA
-						
-						var table = $("<table/>");
-						
-						$.each(hospital , function(i , m) {
-							
-							let name = hospital[i].bplcnm;
-							let addr = hospital[i].sitewhladdr;
-							let tel = hospital[i].sitetel;
-							let state = hospital[i].dtlstatenm;
-							
-						
-							if(state == "정상"){
-								
-								if(addr != ""){
-								
-							var row = $("<tr/>").append(
-									$("<td/>").text(name),
-									$("<td/>").text(addr),
-									$("<td/>").text(tel),
-									$("<td/>").text(state)
-									
-									)
-								}
-							}
-								table.append(row);
-						});
-						
-						$(".hospital_list").append(table);
-				
-				}
-			})
-		})
+//$(function hospital_list(){
+//			
+//			$.ajax({
+//				url:"resources/t2_js/petHospital.json",
+//				type : "GET" ,
+//				dataType:"json",
+//				success:function(data){
+//			
+//						let hospital = data.DATA
+//						
+//						var table = $("<table/>");
+//						
+//						$.each(hospital , function(i , m) {
+//							
+//							let name = hospital[i].bplcnm;
+//							let addr = hospital[i].sitewhladdr;
+//							let tel = hospital[i].sitetel;
+//							let state = hospital[i].dtlstatenm;
+//							
+//						
+//							if(state == "정상"){
+//								
+//								if(addr != ""){
+//								
+//							var row = $("<tr/>").append(
+//									$("<td/>").text(name),
+//									$("<td/>").text(addr),
+//									$("<td/>").text(tel),
+//									$("<td/>").text(state)
+//									
+//									)
+//								}
+//							}
+//								table.append(row);
+//						});
+//						
+//						$(".hospital_list").append(table);
+//				
+//				}
+//			})
+//		})
 		
 		
 		
