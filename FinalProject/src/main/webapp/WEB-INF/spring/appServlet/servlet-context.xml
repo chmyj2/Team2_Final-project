@@ -28,6 +28,7 @@
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
@@ -45,6 +46,8 @@
 =======
 
 <<<<<<< HEAD
+=======
+>>>>>>> ddd15786efeb2bf7251e13b679d60b2114b39296
 
 		<beans:property name="url"
 				value="jdbc:oracle:thin:@localhost:1521:xe" />
@@ -71,7 +74,10 @@
 		<beans:property name="password" value="LDHsoldesk802" />
     -->
 
+<<<<<<< HEAD
 >>>>>>> 8d1f0e8dbdffe5eab89da8b9a25497674825cb6b
+=======
+>>>>>>> ddd15786efeb2bf7251e13b679d60b2114b39296
 	</beans:bean>
 
 
@@ -84,13 +90,18 @@
 
 =======
 		<beans:property name="url"
+				value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<beans:property name="username" value="leeyoky" />
+		<beans:property name="password" value="leeyoky" />
+    
+<!--			value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=/Users/choeyongjun/Wallet_DB202204301707" />
+ 		<beans:property name="username" value="CYJ" />
+
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<beans:property name="username" value="kwb" />
 		<beans:property name="password" value="kwb" />
 	</beans:bean>
     
-<!--			value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=/Users/choeyongjun/Wallet_DB202204301707" />
- 		<beans:property name="username" value="CYJ" />
 		
 		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<beans:property name="username" value="kwb" />
@@ -106,8 +117,15 @@
 		<beans:property name="url" value="jdbc:oracle:thin:@db20220512150004_high?TNS_ADMIN=/Users/mitakeran/LDH/Wallet_DB20220512150004"/>
 		<beans:property name="username" value="ADMIN" />
 		<beans:property name="password" value="LDHsoldesk802" />
+<<<<<<< HEAD
+    -->
+	</beans:bean>
+
+
+=======
  -->
 >>>>>>> 8d1f0e8dbdffe5eab89da8b9a25497674825cb6b
+>>>>>>> a7db30dd4f8221a10cf0d71a94827c6f18968195
  	
 	<beans:bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
