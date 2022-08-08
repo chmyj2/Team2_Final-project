@@ -22,52 +22,6 @@ public class Team2BoardDAO {
 
 	@Autowired
 	private SqlSession ss;
-	
-	private int totalPage;
-	
-	
-	public int countPost(HttpServletRequest req, Team2BoardDTO board) {
-		
-	int	allPost = ss.getMapper(Team2BoardMapper.class).getAllpostCount(board);
-		
-		 totalPage = (int) Math.ceil((double)allPost/10);
-		
-		req.setAttribute("r", totalPage);
-		
-		return totalPage;
-	}
-
-
-
-	public void showPostList(HttpServletRequest req, Team2BoardDTO board) {
-	
-		String vpage = req.getParameter("vpage");
-		   if( vpage == null) {
-			   vpage = "1";
-		   }
-		   
-
-		 
-		  int page = Integer.parseInt(vpage);
-		  
-		  if(page != 1) {
-			  board.setRnStart(page*10-9);
-			  board.setRnEnd(page*10);
-		  }  else {
-			  board.setRnStart(1);
-			  board.setRnEnd(10);
-		  }
-		
-
-		
-		List<Team2BoardDTO> posts = ss.getMapper(Team2BoardMapper.class).getPostList(board);
-		
-		req.setAttribute("posts", posts);
-		
-	}
-
-
-
 
 	public String uploadImg(MultipartFile multipartFile, HttpServletRequest request) {
 	    JsonObject jsonObject = new JsonObject();
@@ -103,12 +57,92 @@ public class Team2BoardDAO {
 		
 	}
 	
+	public void showPostList(HttpServletRequest req, Team2BoardDTO board) {
+		
+		int	allPost = ss.getMapper(Team2BoardMapper.class).getAllpostCount(board);
+		int totalPage = (int) Math.ceil((double)allPost/10);
+		req.setAttribute("r", totalPage);  // r = 총 페이지 수
+		
+		
+		String vpage = req.getParameter("vpage");
+		   if( vpage == null) {
+			   vpage = "1";
+		   }
+		   
+
+		 
+		  int page = Integer.parseInt(vpage);
+		  
+		  if(page != 1) {
+			  board.setRnStart(page*10-9);
+			  board.setRnEnd(page*10);
+		  }  else {
+			  board.setRnStart(1);
+			  board.setRnEnd(10);
+		  }
+		
+
+		
+		List<Team2BoardDTO> posts = ss.getMapper(Team2BoardMapper.class).getPostList(board);
+		
+		req.setAttribute("posts", posts);
+		
+	}
 	
 	public void createPost(HttpServletRequest req, Team2BoardDTO board) {
 		
+		if(board.getBoard_category() == null) {
+			board.setBoard_category((String) req.getAttribute("board_category"));
+		}
+		
+		
+		if(ss.getMapper(Team2BoardMapper.class).writePost(board) == 1) {
+			System.out.println("등록성공");
+			req.setAttribute("board_category", board.getBoard_category());
+		} else {
+			System.out.println("등록실패");
+		}
+		
+	}
+	
+	public void updatePost(HttpServletRequest req, Team2BoardDTO board) {
+		
+		
+		if(ss.getMapper(Team2BoardMapper.class).updatepost(board) == 1) {
+			System.out.println("등록성공");
+			
+		} else {
+			System.out.println("수정실패");
+		}
 	
 		
 	}
+
+	
+
+
+
+	public void showPostDetail(HttpServletRequest req, Team2BoardDTO board) {
+		
+		Team2BoardDTO p = ss.getMapper(Team2BoardMapper.class).postDetail(board);
+		
+		req.setAttribute("p", p);
+	}
+
+
+
+	public void deletePost(HttpServletRequest req, Team2BoardDTO board) {
+		req.setAttribute("board_category", req.getParameter("board_category"));
+		
+		if(ss.getMapper(Team2BoardMapper.class).deletePost(board) == 1) {
+			System.out.println("삭제성공");
+		} else {
+			System.out.println("삭제실패");
+		}
+		
+	}
+
+
 
 
 
