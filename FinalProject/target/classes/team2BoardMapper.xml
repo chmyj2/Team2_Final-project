@@ -9,20 +9,35 @@ where board_category = #{board_category}
 </select>
 
 <select id="getPostList" resultType="com.team12.main.team2board.Team2BoardDTO">
-select * 
-from (
-    select rownum as rn, board_num, board_member_id, board_category, board_title, board_txt, board_date, board_img, board_count
-     from(
-     select * from team2_board
-     where board_category = #{board_category}
-     order by board_date desc 
-   )
-) where rn between #{rnStart} and #{rnEnd}
+	select * 
+	from (
+    	select rownum as rn, board_num, board_member_id, board_category, board_title, board_txt, board_date, board_img, board_count
+     	from(
+     	select * from team2_board
+     	where board_category = #{board_category}
+     	order by board_date desc 
+   		)
+	) where rn between #{rnStart} and #{rnEnd}
 </select>
 
+<insert id="writePost" parameterType="com.team12.main.team2board.Team2BoardDTO">
+	insert into team2_board values(team2_board_seq.nextval, 'mz', #{board_category}, #{board_title}, #{board_txt}, sysdate, 0,'karina.jpg')
+</insert>
 
+<select id="postDetail" resultType="com.team12.main.team2board.Team2BoardDTO">
+	select * from team2_board where board_num = #{board_num}
+</select>
 
+<delete id="deletePost">
+	delete from team2_board where board_num = #{board_num}
+</delete>
 
+<update id="updatepost" parameterType="com.team12.main.team2board.Team2BoardDTO">
+	update team2_board
+	set board_title = #{board_title}, 
+		board_txt = #{board_txt}
+	where board_num = #{board_num}
+</update>
 
 
 

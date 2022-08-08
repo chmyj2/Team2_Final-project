@@ -14,7 +14,8 @@ create sequence team2_board_seq;
 
 insert into team2_board values(team2_board_seq.nextval, 'mz', '1', 'title12', 'txt', sysdate, 0,'karina.jpg')
 
-select * from team2_board
+
+select * from team2_board where board_num = 16
 
 delete from team2_board where board_num = 
 
@@ -36,3 +37,13 @@ select count(*)
 from team2_board
 where board_category = '1'
 and board_title like '%%'
+
+
+
+
+
+
+
+
+
+
