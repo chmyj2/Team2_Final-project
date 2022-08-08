@@ -7,10 +7,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<!-- 견본상품 -->
-	<div>
-		<div><img alt="견본 이미지" src=""></div>
-	</div>
+	
+		<h1>장바구니</h1>
 		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </body>
 </html>
