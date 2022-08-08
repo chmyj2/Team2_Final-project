@@ -25,7 +25,10 @@
 	<!-- Hospital CSS  -->
 	<script type="text/javascript" src="resources/t2_js/jQuery.js"></script>
 	<!-- jQuery JAVA SCRIPT -->
+<<<<<<< HEAD
+=======
 
+>>>>>>> 3d1d4c3b652b03be21dbc4b3657f7c1f6751fec4
 	<script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
