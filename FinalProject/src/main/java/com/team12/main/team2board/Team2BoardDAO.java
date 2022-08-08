@@ -48,8 +48,7 @@ public class Team2BoardDAO {
 			jsonObject.addProperty("responseCode", "error");
 			e.printStackTrace();
 		}
-//		String a = jsonObject.toString();
-		String a = "d";
+		String a = jsonObject.toString();
 		
 		System.out.println("file----------------------------------" +a);
 		
