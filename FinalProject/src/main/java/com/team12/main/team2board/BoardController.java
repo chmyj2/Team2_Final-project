@@ -52,7 +52,7 @@ public class BoardController {
 	@RequestMapping(value = "team2.createPost", method = RequestMethod.POST)
 	public String post_create(HttpServletRequest req, Team2BoardDTO board) {
 		lDAO.loginCheck(req);
-		bDAO.createPost(req, board);
+		bDAO.createPost(req, board); 
 		bDAO.showPostList(req, board);
 		req.setAttribute("contentPage", "board_jsp/board_list.jsp");
 
