@@ -12,7 +12,7 @@
 		<form action="member.join" method="post" enctype="multipart/form-data"
 			name="joinForm" onsubmit="return joinCheck();">
 
-			<div id="joinTable" class="joinTable">
+			<div id="joinTable" class="joinTable" style="color: black;">
 			
 				<h2 id="joinTableTitle">회원가입</h2>
 				<p class="required">* 필수입력사항</p>
@@ -47,9 +47,9 @@
 					<input class="input_addr" name="m_addr2" maxlength="30" autocomplete="off"	placeholder="상세주소">
 				
 				<!-- 사진 -->
-				<div class="join_my_photo">
+				<div class="join_my_photo1">
 					<span>-프로필 사진-</span> <br>
-					<input class="my_photo" name="m_photo" type="file">
+					<input class="my_photo1" name="m_photo" type="file">
 				</div>
 				
 				<button class="join_btn">
