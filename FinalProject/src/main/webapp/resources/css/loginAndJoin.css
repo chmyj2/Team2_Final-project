@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CLora%22");
-
+/* --------------로그인---------------- */
 .container{
     padding-top: 230px;
     text-align: center;
@@ -31,7 +31,7 @@ html{
     position: relative;
     width: 280px;
     padding: 10px 10px 10px 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border-radius: 30px;
     border: none;
 }
@@ -159,7 +159,7 @@ hr.login_hr{
 	position: relative;
     width: 280px;
     padding: 10px 10px 10px 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border-radius: 30px;
     border: none;
 } 
@@ -196,7 +196,7 @@ hr.login_hr{
 	position: relative;
     width: 230px;
     padding: 10px 10px 10px 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border-radius: 30px;
     border: none;
     margin-right:10px;
@@ -206,7 +206,7 @@ hr.login_hr{
 	position: relative;
     width: 280px;
     padding: 10px 10px 10px 10px;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     border-radius: 30px;
     border: none;
 }
@@ -231,13 +231,17 @@ hr.login_hr{
     background-color: white;
 }
 
+.join_btn:hover{
+	cursor: url(cursor_pointer.png), url(cursor_pointer.cur), pointer
+}
+
 .join_btn span{
 	font-weight: bolder;
-	font-size: 15pt;
+	font-size: 10pt;
 }
 
 .join_my_photo span{
-	font-size: 12pt;
+	font-size: 10pt;
 	font-weight: bolder;
 	text-align: center;
 }
@@ -259,32 +263,106 @@ hr.login_hr{
     width: 350px;
     top:730px;
     left: 950px;
-
 }
 
-#loginSuccessTable img {
-	max-width: 60px;
-	border-radius: 10px;
+/* --------------회원 정보 수정 ----------------- */
+ #updateTable{
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 750px;
+    width: 800px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    border: 5px solid black;
+    border-radius: 50px 50px 50px 50px;
+    margin-top: 100px;	
+    margin-bottom: 300px;
+    padding-bottom: 100px;
 }
 
-#loginSuccessName {
-	color: white;
+.join_my_photo .upload-name {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 10%;
+    color: #999999;
 }
 
-#loginSuccessTable button {
-	border: none;
-	background-color: transparent;
-	width: 72px;
-	font-size: 13pt;
-	font-weight: 900;
-	color: #FFFFFF;
+.join_my_photo input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
 }
 
-#loginSuccessTable button:hover {
-	text-shadow: 0px 0px 10px #FFFFFF;
+.join_my_photo label {
+/*     display: inline-block;
+    padding: 10px 20px;
+    color: black;
+    vertical-align: middle;
+    background-color: #999999;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px; */
+    font-size: 10pt;
+    border: 1px solid #808080;
+    background-color: white;
+    font-weight: bolder;
+    padding: 3px 5px 3px 5px;
+    border-radius: 8px;
+}
+
+.update_box{
+	 text-align:center
+}
+
+.update_btn{
+	position: relative;
+    width: 60px;
+    padding: 5px 0px 5px 0px;
+    margin-bottom: 10px;
+    margin-top:20px;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+    border: 2px solid black;
+    font-size: 12pt;
+    font-weight: bolder;
+    display: inline-block;
+}
+
+.delete_account_btn{
+	position: relative;
+    width: 60px;
+    padding: 5px 0px 5px 0px;
+    margin-bottom: 10px;
+    margin-top:20px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+    font-size: 12pt;
+    font-weight: bolder;
+    display: inline-block;
+}
+
+.update_img_pet{
+	position: absolute;
+    width: 350px;
+    top:900px;
+    left:60%;
 }
 
 
+/* --------------My info----------------- */
 
+#myInfo_id{
+	font-size:15pt;
+}
 
 

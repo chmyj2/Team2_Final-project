@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -30,11 +31,11 @@
 			<tbody>
 				<c:forEach var="b" items="${posts}">
 					
-					<tr>
+					<tr onclick="location.href='post.detail?board_num=${b.board_num}'">
 						<td>${b.board_num}</td>
 						<td>${b.board_title}</td>
 						<td>${b.board_member_id}</td>
-						<td>${b.board_date}</td>
+						<td><fmt:formatDate value="${b.board_date}" pattern="yyyy-MM-dd HH:mm"/></td>
 						<td>${b.board_count}</td>
 					</tr>
 				</c:forEach>

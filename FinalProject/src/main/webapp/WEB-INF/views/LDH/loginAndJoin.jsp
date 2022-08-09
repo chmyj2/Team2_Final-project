@@ -26,11 +26,10 @@
 
         <button  class="login_btn">로그인</button>
         <button type="button" class="signUp_btn"  onclick="goJoin()">회원가입</button>
+ 		<a id="custom-login-btn" href="javascript:loginWithKakao()">
         <button  class="signUp_kakao_btn">카카오 연결</button>
+    	</a>
 
- <a id="custom-login-btn" href="javascript:loginWithKakao()">
-        <img src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg" width="222" />
-    </a>
 
     <button class="api-btn" onclick="kakaoLogout()">로그아웃</button>
     

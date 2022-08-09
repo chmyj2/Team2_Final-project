@@ -29,6 +29,7 @@
 
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+<<<<<<< HEAD
 		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<beans:property name="username" value="c##sj" />
 		<beans:property name="password" value="sj" />
@@ -91,6 +92,13 @@
   </beans:props>
  </beans:property>
 </beans:bean>
+=======
+		<beans:property name="url"
+			value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<beans:property name="username" value="kwb" />
+		<beans:property name="password" value="kwb" />
+	</beans:bean>
+>>>>>>> a6e383e10a5af733dc112961ca35a5259eea6dd4
 
 
  	
@@ -118,13 +126,9 @@
 			ref="sqlSessionFactory" />
 	</beans:bean>
 	
-	
-	
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="maxUploadSize" value="104857600"/>
 	</beans:bean>
 
 
 </beans:beans>
-
-

@@ -20,7 +20,8 @@
 		<div class="form-group">
 			<label for="title">Title:</label>
 			<input type="text" class="form-control" placeholder="title" id="title" name="board_title">
-            <input name="${param.board_category}" type="hidden">
+            <input name="board_category" value="${param.board_category}" type="hidden">
+            <%-- <input name="board_member_id" value="${sessionScope.loginMember.member_ID}" type="hidden"> --%>
 		</div>
 	
 		<div class="form-group">

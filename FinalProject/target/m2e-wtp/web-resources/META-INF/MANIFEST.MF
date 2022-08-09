@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: gks36
+=======
+Built-By: OZ
+>>>>>>> a6e383e10a5af733dc112961ca35a5259eea6dd4
 Build-Jdk: 14
 Created-By: Maven Integration for Eclipse
 

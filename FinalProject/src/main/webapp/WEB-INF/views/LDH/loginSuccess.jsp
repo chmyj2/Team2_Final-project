@@ -7,22 +7,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table id="loginSuccessTable">
-		<tr>
-			<td rowspan="2" style="width: 70px;"><img
-				src="resources/files/${sessionScope.loginMember.m_photo }"></td>
-			<td style="height: 20px;">${sessionScope.loginMember.m_id }</td>
-		</tr>
-		<tr>
-			<td align="right" valign="top">(${sessionScope.loginMember.m_name })</td>
-		</tr>
-		<tr>
-			<td colspan="2" align="center">
-				<!-- <button onclick="goMemberInfo()">내 정보</button> -->
-				<!--    <a href="member.info"><img class="icon_login" src="resources/img/LOGIN.png"></a> -->
-				<button onclick="logout()">로그아웃</button>
-			</td>
-		<tr>
-	</table>
+
+		<!-- login 후  나타나는 drop페이지  CSS는 적용시켜놨어요. -->
+
+		<div class="login_dropdown">
+
+		<a href="#" class="dropbtn">
+		<img class="icon_login" src="resources/img/LOGIN.png">
+		</a>
+
+		<div class="dropdown-content">
+			<p>
+				<button onclick="goMemberInfo()">내 정보</button>
+			</p>
+			<p>
+				<a href="myTextC">나의 펫 정보</a>
+			</p>
+			<p>
+				<button onclick="logout()">logout</button>
+			</p>
+		</div>
+	</div>
 </body>
 </html>

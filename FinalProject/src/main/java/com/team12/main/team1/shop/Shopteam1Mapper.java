@@ -11,5 +11,4 @@ public interface Shopteam1Mapper {
 	List<ProductDTO> loadProductsByCategory(ProductDTO p);
 
 	List<ProductDTO> searchProductsByWord(ProductDTO p);
-
 }
