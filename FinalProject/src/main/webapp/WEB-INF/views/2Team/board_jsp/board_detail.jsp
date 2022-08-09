@@ -26,7 +26,12 @@
   
     <div class="col">
       ${p.board_txt}
-      <hr>
+      <br>
+	  <button 
+	  onclick="getBoardLike(${p.board_num},'${sessionScope.loginMember.member_ID }')"
+	  id="like_btn" type="button" class="btn btn-default btn-sm center-block">${p.board_like} 좋아요
+	  </button>      
+	  <hr>
     </div>
         
         <button class="btn btn-primary"
