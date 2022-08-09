@@ -32,7 +32,6 @@
         <span id="resultArea">${result }</span>
            <%--  <jsp:include page="${login }"></jsp:include> --%>
            
-           
            <div class="log_state">
            <ul>
            		<li><a href="member.info"><img class="icon_login" src="resources/img/LOGIN.png"></a>

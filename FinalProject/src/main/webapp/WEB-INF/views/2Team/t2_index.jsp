@@ -27,9 +27,18 @@
 	<!-- jQuery JAVA SCRIPT -->
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> a6e383e10a5af733dc112961ca35a5259eea6dd4
+=======
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> a6e383e10a5af733dc112961ca35a5259eea6dd4
+>>>>>>> BestSujin_email
+>>>>>>> 6af9ff818c95570a45c1fd8adfd1c0af6eff7fc4
 	<script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>

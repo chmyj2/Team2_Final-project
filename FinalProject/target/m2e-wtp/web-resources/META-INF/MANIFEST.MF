@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: gks36
+=======
+Built-By: leeyoky
+>>>>>>> 6af9ff818c95570a45c1fd8adfd1c0af6eff7fc4
 Build-Jdk: 14
 Created-By: Maven Integration for Eclipse
 
