@@ -9,22 +9,6 @@ where board_category = #{board_category}
 </select>
 
 <select id="getPostList" resultType="com.team12.main.team2board.Team2BoardDTO">
-<<<<<<< HEAD
-select * 
-from (
-    select rownum as rn, board_num, board_member_id, board_category, board_title, board_txt, board_date, board_img, board_count
-     from(
-     select * from team2_board
-     where board_category = #{board_category}
-     order by board_date desc 
-   )
-) where rn between #{rnStart} and #{rnEnd}
-</select>
-
-
-
-
-=======
 	select * 
 	from (
     	select rownum as rn, board_num, board_member_id, board_category, board_title, board_txt, board_date, board_img, board_count
@@ -58,7 +42,6 @@ from (
 <update id="updatecount">
 	update team2_board set board_count = board_count + 1 where board_num = #{board_num}
 </update>
->>>>>>> a6e383e10a5af733dc112961ca35a5259eea6dd4
 
 
 

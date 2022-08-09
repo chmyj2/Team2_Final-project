@@ -15,7 +15,7 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
-<<<<<<< HEAD
+
 	<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
 <dependency>
     <groupId>javax.mail</groupId>
@@ -33,9 +33,7 @@
 </dependency>
 
 
-=======
 
->>>>>>> a6e383e10a5af733dc112961ca35a5259eea6dd4
 		<!--Spring 환경에서 ORMFramework사용 가능하게 -->
 		<dependency>
 			<groupId>org.springframework</groupId>

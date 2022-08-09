@@ -10,8 +10,5 @@
 	select * from vet_member where vet_ID =#{vet_ID}
 	</select>
 	
-<<<<<<< HEAD
-=======
 	
->>>>>>> a6e383e10a5af733dc112961ca35a5259eea6dd4
 </mapper>
