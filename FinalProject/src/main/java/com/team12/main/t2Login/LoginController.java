@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class LoginController {
@@ -86,6 +87,17 @@ public class LoginController {
 		req.setAttribute("contentPage", "t2login/t2_join.jsp");
 		
 		return "2Team/t2_index";
+	}
+	
+	@RequestMapping(value = "/emailcheck", method = RequestMethod.GET)
+	@ResponseBody
+	public String emailcheck(HttpServletRequest req , String member_email ) {
+		
+		//이메일 체크하기
+		System.out.println("이메일 요청");
+		System.out.println("email:" + member_email);
+		
+		return lDAO.emailCheck(member_email);
 	}
 	
 	
