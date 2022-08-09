@@ -42,7 +42,7 @@ header {
 	float: right;
 	min-width: 150px;
 	position: absolute;
-	right: 1%;
+	right: 2%;
 	top:-11px;
 }
 
@@ -158,7 +158,7 @@ nav ul li {
     transition: all 0.2s ease-in;
   }
 
- .store_drop_content>li>a {
+.store_drop_content>li>a {
     padding: 8px 0px 8px 0px;
  } 
 
@@ -491,42 +491,49 @@ nav ul li {
 
 
 /* ---------------마이페이지 드롭다운 -------- */
-.login_dropdown {
-	position: relative;
-	display: inline-block;
+.login_area{
+	height:100px;
 }
 
-.dropdown-content {
-	display: none;
-	position: absolute;
-	margin-top: 10px;
-	z-index: 1; /*다른 요소들보다 앞에 배치*/
-	font-size: 10pt;
-	font-weight: 800;
-	background: rgb(234, 235, 222);
-	opacity: 0.8;
-	padding: 10px 10px 10px 10px;
-	width: 90px;
+.mypage_drop{
+    position : relative;
+    display : inline-block;
+    height: 100px;
+    /* 드롭박스때 자꾸 휙휙 사라지던 issue=height값 안줘서 그럼!! */
+}
+  
+.mypage_dropdown{
+    /* display : none; */
+    position : absolute;
+    z-index : 1; /*다른 요소들보다 앞에 배치*/
+    background-color: rgba(255, 255, 255, 0.7); 
+    padding: 10px 0px 10px 10px;
+	width: 80px;
 	text-align: center;
-	border-radius: 10px 10px 10px 10px;
+    font-size: 10pt;
+    line-height: 10pt;
+    transition: all 0.2s ease-in;
+    height: 150px;
+  }
+  
+.mypage_dropdown>li>a {
+    padding: 8px 0px 8px 0px;
+} 
+
+.mypage_dropdown a{
+    display : block;
+}
+  
+.mypage_drop:hover {
+    color: white;
 }
 
-.dropdown-content p {
-	line-height: 150%;
+.mypage_drop:hover .mypage_dropdown {
+    display: block;
 }
 
-.dropbtn:hover {
-	color:rgb(188, 184, 141);
-	cursor: pointer;
+.store_drop_content a:hover{
+    color: white;
 }
-
-.dropbtn {
-	margin-bottom: 10px;
-}
-
-.loginBf {
-	width: 25px;
-}
-
-
-
+  
+  

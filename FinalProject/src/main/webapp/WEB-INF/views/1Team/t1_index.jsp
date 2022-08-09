@@ -30,16 +30,12 @@
             <img class="icon_search" src="resources/img/search.png">
             <input class="search" type="text" placeholder="insert keyword">
         <span id="resultArea">${result }</span>
-           <%--  <jsp:include page="${login }"></jsp:include> --%>
-           
+        
            <div class="log_state">
-           <ul>
-           		<li><a href="member.info"><img class="icon_login" src="resources/img/LOGIN.png"></a>
-            	<span class="join_sale">10%SALE</span>
-           		</li>
-           		<li><a href="bag"><img class="icon_bag"src="resources/img/shop.png"></a></li>
-           </ul>
+           		<jsp:include page="${loginPage }"></jsp:include> 
            </div>
+           
+           
            
            
         </div>
@@ -77,13 +73,6 @@
 		<jsp:include page="${contentPage }"></jsp:include>
 		
 	</div>
-	
-	<div id="siteLoginArea">
-			<jsp:include page="${loginPage }"></jsp:include>
-	</div>
-	
-	
-	
 	
 	
 	

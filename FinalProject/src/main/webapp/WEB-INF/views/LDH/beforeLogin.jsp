@@ -7,18 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<!-- login 후  나타나는 drop페이지  CSS는 적용시켜놨어요. -->
-		
+	<!-- <a href="loginandjoin.go">
+	로그인<img class="icon_login" src="resources/img/LOGIN.png">
+	</a> -->
 		<ul>
 			<li class="login_area">
 			<a href="loginandjoin.go"> 
 			<img class="icon_login" src="resources/img/LOGIN.png">
 			</a>
-				<ul class="mypage_dropdown">
-					<li><a href="member.info">내 정보</a></li>
-					<li><a href="#">나의 펫 정보</a></li>
-					<li><a href="member.logout">logout</a></li>
-				</ul>
+			<span class="join_sale">10%SALE</span></li>
 			<li><a href="bag"><img class="icon_bag"src="resources/img/shop.png"></a></li>
 		</ul>
 </body>

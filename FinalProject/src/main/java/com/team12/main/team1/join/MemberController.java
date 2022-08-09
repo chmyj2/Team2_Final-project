@@ -21,6 +21,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "/loginandjoin.go", method = RequestMethod.GET)
 	public String indexGO(HttpServletRequest req) {
+		
 		mDAO.loginCheck(req);
 		req.setAttribute("contentPage", "../LDH/loginAndJoin.jsp");
 		
