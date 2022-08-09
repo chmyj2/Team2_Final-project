@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> deedeabd71a437c4bd12b7ec4c8852ea3a6f5f67
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>01_Team1Final</name>
@@ -52,6 +55,8 @@
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
 </projectDescription>
+<<<<<<< HEAD
+=======
 =======
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
@@ -107,3 +112,4 @@
 	</natures>
 </projectDescription>
 >>>>>>> 3d1d4c3b652b03be21dbc4b3657f7c1f6751fec4
+>>>>>>> deedeabd71a437c4bd12b7ec4c8852ea3a6f5f67
