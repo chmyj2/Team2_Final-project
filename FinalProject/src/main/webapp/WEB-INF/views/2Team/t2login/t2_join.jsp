@@ -5,6 +5,45 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+$(function() {
+	$('#join_mail_check').click(function() {
+		var email = $('#join-email').val();
+		console.log(email); // 입력한 값 넘어오는지 확인
+		var checkNum = $('#join_mail_num');
+		
+		$.ajax({
+			url:"emailcheck",
+			type:"GET",
+			dataType :"text",
+			data:{"member_email":email},
+			success : function (data) {
+				console.log("data : " +  data);
+				checkNum.attr('disabled',false);
+				code =data;
+				alert('인증번호가 전송되었습니다.')
+			}			
+		}); //ajax끝
+	});//joinCheckbtn끝
+	
+	$("#join_mail_num").blur(function() {
+		var inputNum = $(this).val();
+		var result = $('#mail-check-warn');
+		
+		if (inputNum == code) {
+			result.html("인증번호가 일치합니다.")
+			result.css('color','green');
+			
+		}else {
+			result.html("인증번호가 불일치합니다.")
+			result.css('color','red');
+		}
+		
+	})
+})
+
+
+</script>
 </head>
 <body>
 <div class="t2-join-outdiv">
@@ -50,7 +89,10 @@
       </div>
       
        <div class="join-textForm">
-        <input name="email" type="text" class="join-email" placeholder="이메일">
+        <input name="email" type="text" id="join-email" placeholder="이메일"> 
+        <button type="button" id="join_mail_check">이메일인증</button><br>
+        <input placeholder="인증번호를 입력해주세요" id="join_mail_num" disabled="disabled">
+      <span id="mail-check-warn"></span>
       </div>
       
       

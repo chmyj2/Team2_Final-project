@@ -67,8 +67,6 @@ $(function() {
                         <button class="delete_account_btn" onclick="bye();" type="button">탈퇴</button>
                     </div>
                 </div>
-                <!-- 임시로 로그아웃 버튼좀 생성 할게요 YK -->
-                <button class="join_btn" onclick="logout()">logout(임시)</button>
                 
                 <div class="join_img">
 					<img class="update_img_pet" src="resources/img/update_dog.png">
@@ -77,6 +75,8 @@ $(function() {
                 
             </div>
         </form>
+                <!-- 임시로 로그아웃 버튼좀 생성 할게요 YK -->
+                <button class="join_btn" onclick="logout()">logout(임시)</button>
             </div>
 </body>
 </html>

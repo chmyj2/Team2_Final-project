@@ -1,9 +1,14 @@
 package com.team12.main.t2Login;
 
+import java.util.Random;
+
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 
@@ -13,6 +18,8 @@ public class LoginDAO {
 	
 	@Autowired
 	private SqlSession ss;
+	@Autowired
+	private JavaMailSender mailSender;
 
 	public boolean login(HttpServletRequest req, Membert2 m) {
 		//로그인하는 기능
@@ -107,6 +114,47 @@ public class LoginDAO {
 			
 		}
 		
+	}
+
+
+
+	public String emailCheck(String member_email) {
+		// 인증 이메일 보내기
+		
+		//랜덤숫자 생성
+		Random random = new Random();
+		int checknum = random.nextInt(888888)+111111; //111111~999999 랜덤 숫자
+		System.out.println("랜덤 숫자"+checknum); //랜덤숫자 확인용
+		
+		//이메일 보낼 양식
+		String setFrom = "tn3651@naver.com"; // 설정한 내 이메일
+        String toMail = member_email;
+        String title = "산책가자 회원가입 인증 이메일 입니다.";
+        String content = 
+                "산책가자를 방문해주셔서 감사합니다." +
+                "</n></n>" + 
+                "인증 번호는 " + checknum + "입니다." + 
+                "<br>" + 
+                "해당 인증번호를 인증번호 확인란에 기입하여 주세요.";
+        
+        //이메일 전송을 위한 코드
+        
+        try {
+        	MimeMessage mes =mailSender.createMimeMessage();
+        	MimeMessageHelper helper = new MimeMessageHelper(mes,true,"utf-8");
+        	helper.setFrom(setFrom);
+        	helper.setTo(toMail);
+        	helper.setSubject(title);
+        	helper.setText(content);
+        	mailSender.send(mes);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        
+		
+		
+		return Integer.toString(checknum);
 	}
 
 	

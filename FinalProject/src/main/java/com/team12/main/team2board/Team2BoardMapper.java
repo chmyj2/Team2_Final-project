@@ -16,6 +16,8 @@ public interface Team2BoardMapper {
 
 	int updatepost(Team2BoardDTO board);
 
+	int updatecount(Team2BoardDTO board);
+
 
 
 
