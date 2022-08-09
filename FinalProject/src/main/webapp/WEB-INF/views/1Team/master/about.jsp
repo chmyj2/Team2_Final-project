@@ -91,7 +91,7 @@
             <div class="about_sub_donate_img_wrapper1">
                 <img class="about_sub_donate_img_dog1" src="resources/img/store_cat.jpg"
                 data-aos="fade-up-left" data-aos-duration="1500"
-                data-aos-offset="350">
+                data-aos-offset="300">
             </div>
             <p class="go_donate">
                 <a href="contact.go">Go Donate ←</a>
@@ -99,7 +99,7 @@
             <div class="about_sub_donate_img_wrapper2">
                 <img class="about_sub_donate_img_dog2" src="resources/img/store.jpg"
                 data-aos="fade-down-right" data-aos-duration="1500"
-                data-aos-offset="350">
+                data-aos-offset="300">
             </div>
 
         </div>
