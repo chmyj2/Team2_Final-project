@@ -34,6 +34,7 @@
 	<!-- 주소 js -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" src="resources/t2_js/login_function.js"></script>
+
 </head>
 <body>
 			<nav class="index_nav"><div class="index-nav-login"><jsp:include page="${loginPage }"></jsp:include></div></nav>

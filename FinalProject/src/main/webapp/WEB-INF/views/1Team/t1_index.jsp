@@ -27,15 +27,23 @@
     <!-- index -->
     <header>
         <div class="header">
-        <span id="resultArea">${result }</span>
-           <%--  <jsp:include page="${login }"></jsp:include> --%>
-           <a href="member.info"><img class="icon_login" src="resources/img/LOGIN.png"></a> 
-            <span class="join_sale">10% SALE</span>
-            <a href="bag"><img class="icon_bag"src="resources/img/shop.png"></a>
             <img class="icon_search" src="resources/img/search.png">
             <input class="search" type="text" placeholder="insert keyword">
+        <span id="resultArea">${result }</span>
+           <%--  <jsp:include page="${login }"></jsp:include> --%>
+           
+           
+           <div class="log_state">
+           <ul>
+           		<li><a href="member.info"><img class="icon_login" src="resources/img/LOGIN.png"></a>
+            	<span class="join_sale">10%SALE</span>
+           		</li>
+           		<li><a href="bag"><img class="icon_bag"src="resources/img/shop.png"></a></li>
+           </ul>
+           </div>
+           
+           
         </div>
-        <!-- top부분 login/장바구니/검색기능 -->
         <!-- 지도 했던것 처럼 오늘 안락사 대상 친구 페이지 하단 우측에 뜨게하기 -->
         <nav>
             <ul>
