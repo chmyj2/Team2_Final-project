@@ -20,6 +20,10 @@ a{
     cursor: url(cursor_pointer.png), url(cursor_pointer.cur), pointer
 }
 
+button:hover{
+	cursor: url(cursor_pointer.png), url(cursor_pointer.cur), pointer
+}
+
 body, html {
     cursor: url(FnCursor.png), url(FnCursor.cur), auto
 }
@@ -34,9 +38,26 @@ header {
     background-color: rgba(255, 255, 255, 0.5);
     margin-bottom: 200px;
 }
+.log_state{
+	float: right;
+	min-width: 150px;
+	position: absolute;
+	right: 1%;
+	top:-11px;
+}
+
+.log_state ul li:first-child{
+	position: relative;
+}
+
+.log_state > ul li {
+	float: left;
+	margin-right: 30px;
+	list-style-type: none;
+    display: inline-block;
+}
 
 .header{
-    display: inline;
     width: 100%;
     margin-top: 0px;
 }
@@ -50,18 +71,18 @@ nav {
     line-height: 10px;
     display: inline-block;
     text-align: center;
+    margin-top: 5px;
 }
 
 .icon_login{
     width:40px;
-    margin-left: 75.5%;
 }
 
 .join_sale {
     position: absolute;
     background-color: black;
+    left:-15px;
     color: white;
-    left: 86.5%;
     border-radius: 15px 15px 15px 15px;
     padding: 0px 5px 5px 5px;
     animation: motion 0.3s linear 0s infinite alternate; 
@@ -74,7 +95,6 @@ nav {
 
 .icon_bag{
     width:32px;
-    margin-left: 20px;
     margin-top: 5px;
 }
 
