@@ -91,12 +91,13 @@ public class LoginController {
 	
 	@RequestMapping(value = "/emailcheck", method = RequestMethod.GET)
 	@ResponseBody
-	public void emailcheck(HttpServletRequest req , String member_email ) {
+	public String emailcheck(HttpServletRequest req , String member_email ) {
 		
 		//이메일 체크하기
 		System.out.println("이메일 요청");
 		System.out.println("email:" + member_email);
 		
+		return lDAO.emailCheck(member_email);
 	}
 	
 	

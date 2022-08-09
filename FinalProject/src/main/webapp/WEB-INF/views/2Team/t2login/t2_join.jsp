@@ -23,7 +23,22 @@ $(function() {
 				code =data;
 				alert('인증번호가 전송되었습니다.')
 			}			
-		});
+		}); //ajax끝
+	});//joinCheckbtn끝
+	
+	$("#join_mail_num").blur(function() {
+		var inputNum = $(this).val();
+		var result = $('#mail-check-warn');
+		
+		if (inputNum == code) {
+			result.html("인증번호가 일치합니다.")
+			result.css('color','green');
+			
+		}else {
+			result.html("인증번호가 불일치합니다.")
+			result.css('color','red');
+		}
+		
 	})
 })
 
@@ -77,6 +92,7 @@ $(function() {
         <input name="email" type="text" id="join-email" placeholder="이메일"> 
         <button type="button" id="join_mail_check">이메일인증</button><br>
         <input placeholder="인증번호를 입력해주세요" id="join_mail_num" disabled="disabled">
+      <span id="mail-check-warn"></span>
       </div>
       
       
