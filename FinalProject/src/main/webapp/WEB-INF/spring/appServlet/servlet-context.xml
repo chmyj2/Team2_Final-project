@@ -29,19 +29,12 @@
 		<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
-<<<<<<< HEAD
-			value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=/Users/choeyongjun/Wallet_DB202204301707" />
-		<beans:property name="username" value="CYJ" />
-		<beans:property name="password" value="YJ802soldesk" />
-		</beans:bean>
-	 -
-=======
-			value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<beans:property name="username" value="leeyoky" />
-		<beans:property name="password" value="leeyoky" />
-	</beans:bean>
 
->>>>>>> 3d1d4c3b652b03be21dbc4b3657f7c1f6751fec4
+			value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<beans:property name="username" value="c##sj" />
+		<beans:property name="password" value="sj" />
+	</beans:bean>
+	
 
  	
 	<beans:bean id="transactionManager"
@@ -71,10 +64,5 @@
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="maxUploadSize" value="104857600"/>
 	</beans:bean>
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 3d1d4c3b652b03be21dbc4b3657f7c1f6751fec4
-
+  
 </beans:beans>
