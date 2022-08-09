@@ -199,6 +199,10 @@ public class Team2BoardDAO {
 		
 		return ary;
 	}
+
+	public int checkLike(Team2BoardLikeDTO t) {
+		return ss.getMapper(Team2BoardMapper.class).checkLike(t);
+	}
 	
 	
 	

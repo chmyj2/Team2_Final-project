@@ -26,5 +26,25 @@ function getBoardLike(board_num,member_ID) {
 }
 
 
-
+function likeCheck(board_num,member_ID) {
+	
+	
+	$.ajax({
+		url : "post.checkLike",
+		data : {
+			"like_board_num" : board_num ,
+			"like_member_id" : member_ID
+		},
+		success : function(data) {
+			console.log(data)
+			if (data == 1) {
+				$('#like_btn').attr('class','btn btn-warning btn-sm center-block');
+			}
+			
+			
+		}
+	
+	});
+	
+}
 

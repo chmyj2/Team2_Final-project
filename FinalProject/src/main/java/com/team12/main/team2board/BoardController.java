@@ -102,10 +102,15 @@ public class BoardController {
 	
 	@RequestMapping(value="/post.like", method = RequestMethod.GET, produces = "application/json; charset=utf8")
 	@ResponseBody
-	public int[] post_like(Team2BoardLikeDTO t)  {
+	public int[] post_updatelike(Team2BoardLikeDTO t)  {
 		return bDAO.updateLike(t);
 	}
 	
+	@RequestMapping(value="/post.checkLike", method = RequestMethod.GET, produces = "application/json; charset=utf8")
+	@ResponseBody
+	public int post_checkLike(Team2BoardLikeDTO t)  {
+		return bDAO.checkLike(t);
+	}
 	
 	
 	

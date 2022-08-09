@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body onload="likeCheck(${p.board_num},'${sessionScope.loginMember.member_ID}')">
 	
 <div class="container" style="margin-top: 50px">
   
