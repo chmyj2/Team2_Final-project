@@ -16,6 +16,24 @@
 	</properties>
 	<dependencies>
 
+	<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+<dependency>
+    <groupId>javax.mail</groupId>
+    <artifactId>mail</artifactId>
+    <version>1.4</version>
+</dependency>
+
+
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context-support</artifactId>
+    <version>${org.springframework-version}</version>
+</dependency>
+
+
+
 		<!--Spring 환경에서 ORMFramework사용 가능하게 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
