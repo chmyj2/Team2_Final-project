@@ -98,9 +98,6 @@ $.ajax({
 	processData : false,
 	success : function(data) {
 		console.log(data);
-		// 현지 url 보면 주소값인데,  사진 파일 이름만 필요한 상황
-		// 1. res 받을때 아예 파일 명만 받는다
-		// 2. data 객체에서 딴거 쓸 수 도 있으니까 여기서 데이터 정제 한다
 		
 		$j341(el).summernote('editor.insertImage', data.url);
 	  

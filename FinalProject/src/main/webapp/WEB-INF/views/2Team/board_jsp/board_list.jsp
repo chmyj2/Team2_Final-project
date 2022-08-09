@@ -33,7 +33,7 @@
 					
 					<tr onclick="location.href='post.detail?board_num=${b.board_num}'">
 						<td>${b.board_num}</td>
-						<td>${b.board_title}</td>
+						<td style="width: 70%; text-align: center;">${b.board_title}</td>
 						<td>${b.board_member_id}</td>
 						<td><fmt:formatDate value="${b.board_date}" pattern="yyyy-MM-dd HH:mm"/></td>
 						<td>${b.board_count}</td>
