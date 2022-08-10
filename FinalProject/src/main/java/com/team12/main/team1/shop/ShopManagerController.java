@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class ShopManagerController {
 	@Autowired
 	ProductManagerDAO mDAO;
-
+	
+	
 	//	처음에 숍을 클릭했을 때
 	@RequestMapping(value="/enter.team1Shop", method = RequestMethod.GET)
 	public String shopEntering(ProductDTO p, HttpServletRequest req) {
@@ -22,6 +23,31 @@ public class ShopManagerController {
 		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopMain.jsp");
 		return "1Team/t1_index";
 	}
+	
+	
+	// 상품 디테일 페이지로 이동
+	@RequestMapping(value="/get.aProductTeam1",method = RequestMethod.GET )
+	public String detailAProduct(ProductDTO p, HttpServletRequest req){
+		//상품 하나 가져오기
+		mDAO.loadAProduct(p,req);
+		
+		//로그인체크
+		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
+		return "1Team/t1_index";
+	}
+	
+	
+	// 상품 카테고리별 출력
+	@RequestMapping(value = "/loadByCategory.go", method = RequestMethod.GET)
+	public String loadProductsByCategory(ProductDTO p, HttpServletRequest req) {
+		
+		mDAO.loadProductsByCategory(p, req);
+		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopMain.jsp");
+		return "1Team/t1_index";
+	}
+	
+	
+	
 	
 	
 	
@@ -45,12 +71,6 @@ public class ShopManagerController {
 	@RequestMapping(value = "/shopManager.loadAll", method = RequestMethod.GET)
 	public String loadProducts(ProductDTO p, HttpServletRequest req) {
 		mDAO.loadProducts(p, req);
-		return "team1_shop_input";
-	}
-//	------------------------------------------------------------
-	@RequestMapping(value = "/loadByCategory.go", method = RequestMethod.GET)
-	public String loadProductsByCategory(ProductDTO p, HttpServletRequest req) {
-		mDAO.loadProductsByCategory(p, req);
 		return "team1_shop_input";
 	}
 //	------------------------------------------------------------
