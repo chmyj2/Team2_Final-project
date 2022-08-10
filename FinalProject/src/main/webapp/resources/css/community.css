@@ -1,6 +1,27 @@
 @charset "UTF-8";
 .board_wrapper{
     max-width: 1000px;
+    height: auto; /* 작업 완료 후 조정해 줄 것 */
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.board_title{
+	height: 200px;
+    width: 800px;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+
+.board_title h2{
+    font-size: 60pt;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin: 0 auto;
     width:100%;
     margin: 0 auto;
     height: 800px; /* 작업 완료 후 조정해 줄 것 */
