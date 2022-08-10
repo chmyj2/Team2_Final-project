@@ -11,11 +11,10 @@
 </head>
 <body>
 	<h1>board</h1>
-
-
+    
 	<div class="container">
 		<div>
-			<a href='team2.createPostPage?board_category=${param.board_category}' class="btn btn-success ">글쓰기</a>
+			<a id="writeBtn" href='team2.createPostPage?board_category=${param.board_category}' class="btn btn-success ">글쓰기</a>
 		</div>
 		
 		<table class="table table-striped table-hover">
@@ -33,14 +32,15 @@
 					
 					<tr onclick="location.href='post.detail?board_num=${b.board_num}'">
 						<td>${b.board_num}</td>
-						<td style="width: 70%; text-align: center;">${b.board_title}</td>
+						<td style="width: 40%; text-align: center;">${b.board_title}</td>
 						<td>${b.board_member_id}</td>
-						<td><fmt:formatDate value="${b.board_date}" pattern="yyyy-MM-dd HH:mm"/></td>
+						<td><fmt:formatDate value="${b.board_date}" pattern="yy-MM-dd HH:mm"/></td>
 						<td>${b.board_count}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+		<hr>
 
 
 		<nav aria-label="...">
@@ -53,6 +53,8 @@
 		</nav>
 	</div>
 
-
+      
+      <input id="loginCheckId" type="hidden" value="${sessionScope.loginMember.member_ID}">
+      
 </body>
 </html>

@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.Cookie;
@@ -186,9 +185,12 @@ public class Team2BoardDAO {
 		int result = ss.getMapper(Team2BoardMapper.class).checkLike(t);
 	
 		if(result == 0) {
-			ss.getMapper(Team2BoardMapper.class).updateLike(t);
 			ss.getMapper(Team2BoardMapper.class).insertInfoLike(t);
+			ss.getMapper(Team2BoardMapper.class).countUpTotalLike(t);
 			
+		} else {
+			ss.getMapper(Team2BoardMapper.class).deleteInfoLike(t);
+			ss.getMapper(Team2BoardMapper.class).countDownTotalLike(t);
 		}
 		
 		Team2BoardLikeDTO b = ss.getMapper(Team2BoardMapper.class).getTotalLike(t);
@@ -202,6 +204,23 @@ public class Team2BoardDAO {
 
 	public int checkLike(Team2BoardLikeDTO t) {
 		return ss.getMapper(Team2BoardMapper.class).checkLike(t);
+	}
+
+	
+	// 코멘트 업로드 
+	public int createComment(Team2CommentDTO t) {
+		int a = ss.getMapper(Team2BoardMapper.class).createcomment(t);
+		return a;
+	}
+
+	public void getComment(HttpServletRequest req, Team2BoardDTO board, Team2CommentDTO comment) {
+		
+		comment.setComment_board_num(board.getBoard_num());
+		
+		List<Team2CommentDTO> comments = ss.getMapper(Team2BoardMapper.class).getcomment(comment);
+		
+		req.setAttribute("c", comments);
+		
 	}
 	
 	
