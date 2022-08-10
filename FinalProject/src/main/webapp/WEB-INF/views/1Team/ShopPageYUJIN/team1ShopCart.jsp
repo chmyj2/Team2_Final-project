@@ -56,43 +56,31 @@
 				} else if(result == '5'){
 					alert("로그인이 필요합니다.");	
 				}
-			}
-		 
-		 
-		 
-		 
-		 
+			}	 
 	/* --READY------------ */	
 	});
-
-
-
-
-
-
 </script>
-
-
-
-
-
-
-
-
-
-
 
 </head>
 <body>
 
 
 	<div style="height: 500px;"></div>
-
+	
+	
+	
 
 
 	<div class="shoppingCart_team1" style="height: 500px;">
 			<!-- 주문수량 관련 -->
 			<div>
+			
+			
+			
+			
+			
+			
+			
 				Quantity
 				<input type="text" id="quantity_input" value="1">
 				<span>

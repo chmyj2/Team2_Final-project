@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.Cookie;
@@ -139,7 +140,6 @@ public class Team2BoardDAO {
 		if (cookies != null) {
 			for (Cookie c : cookies) {
 				value = c.getValue();
-				System.out.println("쿠키넘버: " + value);
 
 				if (value.equals(num)) {
 					return 1;
@@ -177,6 +177,31 @@ public class Team2BoardDAO {
 		
 		
 		
+	}
+
+	public int[] updateLike(Team2BoardLikeDTO t) {
+		
+		System.out.println("보드넘  ,,,"+t.getLike_board_num());
+		System.out.println("멤버넘 ,,,"+t.getLike_member_id());
+		int result = ss.getMapper(Team2BoardMapper.class).checkLike(t);
+	
+		if(result == 0) {
+			ss.getMapper(Team2BoardMapper.class).updateLike(t);
+			ss.getMapper(Team2BoardMapper.class).insertInfoLike(t);
+			
+		}
+		
+		Team2BoardLikeDTO b = ss.getMapper(Team2BoardMapper.class).getTotalLike(t);
+		int total = b.getBoard_like();
+		
+		int[] ary = {result,total};
+		
+		
+		return ary;
+	}
+
+	public int checkLike(Team2BoardLikeDTO t) {
+		return ss.getMapper(Team2BoardMapper.class).checkLike(t);
 	}
 	
 	

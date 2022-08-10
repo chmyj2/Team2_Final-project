@@ -16,7 +16,6 @@ html{
 a{
     text-decoration: none;                          /* a태그 보라색 밑줄 없애기 */
     color: black;
-    margin-bottom: 20px;
     cursor: url(cursor_pointer.png), url(cursor_pointer.cur), pointer
 }
 
@@ -42,7 +41,7 @@ header {
 	float: right;
 	min-width: 150px;
 	position: absolute;
-	right: 1%;
+	right: 2%;
 	top:-11px;
 }
 
@@ -67,11 +66,16 @@ nav {
     font-weight: bolder;
     background-color: rgba(255, 217, 111, 0.7); 
     width: 100%;
-    height: 61px;
+    height: 60px;
     line-height: 10px;
     display: inline-block;
     text-align: center;
     margin-top: 5px;
+    /* margin:0 auto; */
+}
+
+nav > a{
+	padding-left: 15px;
 }
 
 .icon_login{
@@ -119,9 +123,16 @@ nav {
 nav ul li {
     list-style-type: none;
     display: inline-block;
-    margin-left: 20px;
-    margin-right: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 40px;
 }
+
+nav ul li:first-chlid{
+	padding-left:20px;
+	padding-right:20px;
+}
+
 
 .nav_left {
     display: inline-block;
@@ -140,25 +151,26 @@ nav ul li {
 .store_drop{
     position : relative;
     display : inline-block;
-    height: 50px;
     /* 드롭박스때 자꾸 휙휙 사라지던 issue=height값 안줘서 그럼!! */
   }
-  
+
 .store_drop_content{
     display : none;
     position : absolute;
     z-index : 1; /*다른 요소들보다 앞에 배치*/
     margin-top: 23px;
     background-color: rgba(255, 255, 255, 0.7); 
-    padding: 20px 40px 0px 0px;
+    padding: 20px 40px 10px 0px;
 	width: 80px;
 	text-align: center;
     font-size: 15pt;
     line-height: 10pt;
     transition: all 0.2s ease-in;
+    margin-left: auto;
+    margin-right: auto;
   }
 
- .store_drop_content>li>a {
+.store_drop_content>li>a {
     padding: 8px 0px 8px 0px;
  } 
 
@@ -491,42 +503,88 @@ nav ul li {
 
 
 /* ---------------마이페이지 드롭다운 -------- */
-.login_dropdown {
-	position: relative;
-	display: inline-block;
+.login_area{
+	height:100px;
+    position : relative;
+    display : inline-block;
+    /* 드롭박스때 자꾸 휙휙 사라지던 issue=height값 안줘서 그럼!! */
 }
 
-.dropdown-content {
-	display: none;
-	position: absolute;
-	margin-top: 10px;
-	z-index: 1; /*다른 요소들보다 앞에 배치*/
-	font-size: 10pt;
-	font-weight: 800;
-	background: rgb(234, 235, 222);
-	opacity: 0.8;
-	padding: 10px 10px 10px 10px;
+.mypage_dropdown{
+    display : none;
+    position : absolute;
+    z-index : 1; /*다른 요소들보다 앞에 배치*/
+    background-color: rgba(255, 255, 255, 0.7); 
+    padding: 5px 0px 10px 10px;
 	width: 90px;
 	text-align: center;
-	border-radius: 10px 10px 10px 10px;
+    font-size: 10pt;
+    font-weight:bolder;
+    transition: all 0.2s ease-in;
+    height: 80px;
+    line-height: 12px;
+  }
+
+.mypage_dropdown>li>a {
+    padding: 8px 0px 8px 0px;
+} 
+
+.mypage_dropdown a{
+    display : block;
 }
 
-.dropdown-content p {
-	line-height: 150%;
+.mypage_dropdown:hover {
+    background-color: rgba(255, 255, 255, 0.7); 
+    color:white;
 }
 
-.dropbtn:hover {
-	color:rgb(188, 184, 141);
-	cursor: pointer;
+.login_area:hover .mypage_dropdown {
+    display: block;
 }
 
-.dropbtn {
-	margin-bottom: 10px;
+.mypage_dropdown a:hover{
+    color: white;
 }
 
-.loginBf {
-	width: 25px;
+.mypage_drop{
+    position : relative;
+    display : inline-block;
+    height: 100px;
+    /* 드롭박스때 자꾸 휙휙 사라지던 issue=height값 안줘서 그럼!! */
+}
+  
+.mypage_dropdown{
+    /* display : none; */
+    position : absolute;
+    z-index : 1; /*다른 요소들보다 앞에 배치*/
+    background-color: rgba(255, 255, 255, 0.7); 
+    padding: 10px 0px 10px 10px;
+	width: 80px;
+	text-align: center;
+    font-size: 10pt;
+    line-height: 10pt;
+    transition: all 0.2s ease-in;
+    height: 150px;
+  }
+  
+.mypage_dropdown>li>a {
+    padding: 8px 0px 8px 0px;
+} 
+
+.mypage_dropdown a{
+    display : block;
+}
+  
+.mypage_drop:hover {
+    color: white;
 }
 
+.mypage_drop:hover .mypage_dropdown {
+    display: block;
+}
 
-
+.store_drop_content a:hover{
+    color: white;
+}
+  
+  

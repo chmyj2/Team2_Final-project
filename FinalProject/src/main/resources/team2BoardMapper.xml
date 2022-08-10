@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.team12.main.team2board.Team2BoardMapper">
-
+<!-- 글쓰기관련  -->
 <select id="getAllpostCount" resultType="int">
 select count(*)
 from team2_board
@@ -11,7 +11,7 @@ where board_category = #{board_category}
 <select id="getPostList" resultType="com.team12.main.team2board.Team2BoardDTO">
 	select * 
 	from (
-    	select rownum as rn, board_num, board_member_id, board_category, board_title, board_txt, board_date, board_img, board_count
+    	select rownum as rn, board_num, board_member_id, board_category, board_title, board_txt, board_date, board_img, board_count, board_like
      	from(
      	select * from team2_board
      	where board_category = #{board_category}
@@ -21,7 +21,7 @@ where board_category = #{board_category}
 </select>
 
 <insert id="writePost" parameterType="com.team12.main.team2board.Team2BoardDTO">
-	insert into team2_board values(team2_board_seq.nextval, 'mz', #{board_category}, #{board_title}, #{board_txt}, sysdate, 0,'karina.jpg')
+	insert into team2_board values(team2_board_seq.nextval, 'mz', #{board_category}, #{board_title}, #{board_txt}, sysdate, 0,'karina.jpg', 0)
 </insert>
 
 <select id="postDetail" resultType="com.team12.main.team2board.Team2BoardDTO">
@@ -39,15 +39,30 @@ where board_category = #{board_category}
 	where board_num = #{board_num}
 </update>
 
+<!-- 조회수  -->
 <update id="updatecount">
 	update team2_board set board_count = board_count + 1 where board_num = #{board_num}
 </update>
 
+<!-- 좋아요  -->
+<select id="checkLike" resultType="int">
+select count(*) from team2_like 
+where like_board_num = #{like_board_num} 
+and   like_member_id= #{like_member_id}
+</select>
 
+<update id="updateLike">
+update team2_board set board_like = board_like + 1 where board_num = #{like_board_num} 
+</update>
 
+<insert id="insertInfoLike">
+insert into team2_like values(team2_like_seq.nextval, #{like_board_num}, #{like_member_id})
+</insert>
 
-
-
+<select id="getTotalLike" resultType="com.team12.main.team2board.Team2BoardLikeDTO">
+select board_like from team2_board
+where board_num = #{like_board_num}
+</select>
 
 
 

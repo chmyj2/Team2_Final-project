@@ -21,7 +21,7 @@ public class ProductManagerDAO {
 		
 		try {
 		// 인코딩 타입 바꿔줘서 파라미터 받아야 함.
-			String path = req.getSession().getServletContext().getRealPath("resources/img");
+			String path = req.getSession().getServletContext().getRealPath("resources/team1ProductImgs");
 			MultipartRequest mr = null;
 
 			mr = new MultipartRequest(
