@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +11,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
 <script type="text/javascript" src="resources/t2_js/regProductPageJS.js"></script>
 <style type="text/css">
-.insert {
+/* .insert {
     padding: 20px 30px;
     display: block;
     width: 400px;
@@ -33,26 +36,21 @@
 .insert .file-list .filebox .delete i{
     color: #ff5353;
     margin-left: 5px;
-}
+} */
 </style>
 </head>
 <body>
-<div class="">
-		<form action="Search_drinkController" id="searchProduct" onsubmit="return CheckSubmit()" method="post">  
-			<div>
-				<input  class="" id="" name="" placeholder="SEARCH">
-				<input id="" type="submit" value="검색">
-			</div>
-		</form>
-	</div>
+
 
 <h1>등록페이지</h1>
 
-<form name="form" action="productInforeg" method="post"enctype="multipart/form-data">
+<form name="form" action="Product.upload" method="post"enctype="multipart/form-data">
+
+
 		<table>
 			<tr>
 				<td>카테고리</td>
-				<td><select name="pets" id="pet_category">
+				<td><select name="pet_category" id="pet_category">
     				<option value="">동물 분류</option>
     				<option value="dog">Dog</option>
     				<option value="cat">Cat</option>
@@ -61,7 +59,7 @@
 			</tr>
 			<tr>
 				<td>상품 분류</td>
-				<td><select name="pets" id="product_category">
+				<td><select name="toy_category" id="toy_category">
     				<option value="">상품 분류</option>
     				<option value="snack">Snack</option>
     				<option value="toy">toy</option>
@@ -94,15 +92,14 @@
 			</tr>
 			<tr>
 				<td>상세 이미지</td>
-				<td><div class="insert"><input type="file" onchange="addFile(this);" multiple />
-   				<div class="file-list"></div></div></td>
+				<td><input type="file" multiple="multiple" id="productImg" name="productImg"></td>
 			</tr>
 		</table>
-		<!-- <table>
+		<table>
 			<tr>
-				<td> -->
+				<td>
 					<table id="addTable">
-						<tr style="color: ">
+						<tr>
 							<td>태그</td>
 						</tr>
 						<tr>
@@ -111,19 +108,18 @@
 							</td>
 						</tr>
 					</table>
-				<!-- </td>
+				</td>
 			</tr>
-		</table> -->
+		</table>
 	</form>
 
 	<table>
 		<tr>
 			<td>
-				<input class="ingredient_txt_reg_btn" name="addButton" type="button" style="cursor: hand" onClick="insRow()" value="재료 추가">
+				<input class="tag_reg_btn" name="addButton" type="button" style="cursor: hand" onClick="insRow()" value="태그 추가">
 			</td>
 		</tr>
 	</table>
-
 	<table>
 		<tr>
 			<td><input class="reg_input" type="button" name="button" value="등록"
@@ -132,6 +128,73 @@
 		</tr>
 	</table>
 
+
+
+ <div class="container-fluid">
+     <div class="row">
+      <c:forEach var="p" items="${Product}">
+           <div class="col-md-3">
+           <a href="#"><div class="thumbnail">
+                <img src="resources/t2_yj_files/${p.productThumbnail }" style="height: 300px;width:300px">
+                <div class="caption">
+                  <p>${fn:length(p.productName)>20?fn:substring(p.productName,0,20)+="...":p.productName }</p>
+                  <p><fmt:formatNumber value="${p.productPrice }" pattern="#,###" />원</p>
+                  <%--
+                          ${fn:메소드() fn:메소드}
+                   --%>
+                </div>
+            </div></a>
+           </div>
+         </c:forEach>
+     </div>
+    </div>
+<%-- <c:forEach var="p" items="${Product}">
+
+<table>
+	<tr>
+		<td>${p.pet_category}</td>
+	</tr>
+	<tr>
+		<td>${p.toy_category}</td>
+	</tr>
+	<tr>
+		<td>${p.productName}</td>
+	</tr>
+	<tr>
+		<td>${p.productPrice}</td>
+	</tr>
+	<tr>
+		<td>${p.productInfo}</td>
+	</tr>
+	<tr>
+		<td>${p.productStock}</td>
+	</tr>
+	<tr>
+		<td>${p.onExhibition}</td>
+	</tr>
+	<tr>
+		<td>${p.onExhibition}</td>
+	</tr>
+	<tr>
+		<td><c:forTokens var="item" items="${p.productTag }" delims="!">
+				${item }<br>
+			</c:forTokens>
+		</td>
+	</tr>
+	<tr>
+		<td><img src="resources/t2_yj_files/${p.productThumbnail }" style="height: 300px;width:300px"></td>
+	</tr>
+	<tr>
+		<td><c:forTokens var="item" items="${p.productImg }" delims="!">
+				<img src="resources/t2_yj_files/${item }" style="height: 900px;width:600px"><br>
+			</c:forTokens>
+		</td>
+	</tr>
+</table>
+	
+</c:forEach> --%>
+	
+						
 
 
 
