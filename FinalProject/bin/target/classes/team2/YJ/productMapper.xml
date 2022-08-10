@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team12.main.t2.shop.ProductMapper">
+
+	
+	<select id="getAllProduct" resultType="com.team12.main.t2.shop.Product">
+		select * from PRODUCT
+	</select>
+	
+
+	<insert id="regProduct" parameterType="com.team12.main.t2.shop.Product">
+		INSERT into PRODUCT VALUES(Product_seq.NEXTVAL,#{pet_category},#{toy_category},#{productName},#{productPrice},#{productInfo},#{productStock},#{onExhibition},#{productThumbnail},#{productImg},#{productTag})
+	</insert>
+	
+	
+	<select id="getProduct" parameterType="com.team12.main.t2.shop.Product" resultType="com.team12.main.t2.shop.Product">
+		select * from PRODUCT where PRODUCTNUM = #{productNum }
+	</select>
+
+</mapper>

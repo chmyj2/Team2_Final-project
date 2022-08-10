@@ -70,11 +70,10 @@ function joinCheck() {
 		return false;
 	} else if (isEmpty(photoInput)
 			|| (isNotType(photoInput, "png") && isNotType(photoInput, "gif")
-					&& isNotType(photoInput, "jpg") && isNotType(photoInput,
-					"bmp"))) {
+					&& isNotType(photoInput, "jpg") && isNotType(photoInput, "bmp"))) {
 		alert("사진?");
 		return false;
-	}
+	} 
 
 	return true;
 }

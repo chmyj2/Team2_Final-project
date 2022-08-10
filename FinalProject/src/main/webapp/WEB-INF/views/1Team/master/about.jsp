@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="resources/css/style.css">
 <link rel="stylesheet" href="resources/css/about.css">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 <link rel="stylesheet"

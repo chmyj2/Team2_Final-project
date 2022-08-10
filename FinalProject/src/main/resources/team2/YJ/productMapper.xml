@@ -3,10 +3,13 @@
 <mapper namespace="com.team12.main.t2.shop.ProductMapper">
 
 	
-	<select id="getAllProduct" resultType="com.team12.main.t2.shop.Product">
-		select * from PRODUCT
+	<select id="getAllProduct" parameterType="com.team12.main.t2.shop.Product" resultType="com.team12.main.t2.shop.Product">
+		select * from PRODUCT where onExhibition = #{onExhibition }
 	</select>
 	
+	<select id="realGetAllProduct" resultType="com.team12.main.t2.shop.Product">
+		select * from PRODUCT
+	</select>
 
 	<insert id="regProduct" parameterType="com.team12.main.t2.shop.Product">
 		INSERT into PRODUCT VALUES(Product_seq.NEXTVAL,#{pet_category},#{toy_category},#{productName},#{productPrice},#{productInfo},#{productStock},#{onExhibition},#{productThumbnail},#{productImg},#{productTag})
@@ -14,7 +17,17 @@
 	
 	
 	<select id="getProduct" parameterType="com.team12.main.t2.shop.Product" resultType="com.team12.main.t2.shop.Product">
-		select * from PRODUCT where PRODUCTNUM = #{productNum }
+		select * from PRODUCT where productNum = #{productNum }
 	</select>
+	
+	
+	<update id="updateProduct" parameterType="com.team12.main.t2.shop.Product">
+		UPDATE PRODUCT SET  PET_CATEGORY = #{pet_category},toy_category = #{toy_category}, productName = #{productName},productPrice = #{productPrice},productInfo = #{productInfo},productStock = #{productStock},onExhibition = #{onExhibition}, productThumbnail = #{productThumbnail},productImg = #{productImg},productTag = #{productTag} WHERE productNum = #{productNum}
+	</update>
+	
+	
+	<delete id="deleteProduct" parameterType="com.team12.main.t2.shop.Product">
+		DELETE from PRODUCT where PRODUCTNUM = #{productNum}
+	</delete>
 
 </mapper>
