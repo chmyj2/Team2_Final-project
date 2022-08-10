@@ -15,7 +15,6 @@
       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-
 	<annotation-driven />
 	<context:annotation-config />
 	<tx:annotation-driven />
@@ -26,20 +25,24 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-
+	
 	<context:component-scan
 		base-package="com.team12.main" />
-
-	<beans:bean id="dataSource"
-		class="org.apache.commons.dbcp2.BasicDataSource">
-		<beans:property name="driverClassName"
-			value="oracle.jdbc.driver.OracleDriver" />
+		
+	<!-- //////////DB연결관련!///////////// -->
+	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
-			value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<beans:property name="username" value="leeyoky" />
-		<beans:property name="password" value="leeyoky" />
-	</beans:bean>
 
+			value="jdbc:oracle:thin:@db202204301707_high?TNS_ADMIN=/Users/allmight/eclipse-workspace/OracleWallet/Wallet_DB202204301707"/>
+		<beans:property name="username" value="YJJ" />
+		<beans:property name="password" value="YJ802soldesk" />
+
+	</beans:bean>
+	<!-- //////////DB연결관련!///////////// -->
+	
+	
+	
 	<beans:bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<beans:property name="dataSource" ref="dataSource" />
@@ -57,6 +60,7 @@
 				<beans:value>classpath:team1joinMapper.xml</beans:value>
 				<beans:value>classpath:team2BoardMapper.xml</beans:value>
 				<beans:value>classpath:team2loginMapper.xml</beans:value>
+				<beans:value>classpath:shopteam1Mapper.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>
@@ -72,8 +76,7 @@
 		class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<beans:property name="host" value="smtp.naver.com" /> <!-- 메이서버 호스트 -->
 		<beans:property name="port" value="465" /> <!-- 메이서버 포트번호 -->
-		<beans:property name="username"
-			value="tn3651@naver.com" /> <!-- 자신의 이메일 아이디 -->
+		<beans:property name="username"	value="tn3651@naver.com" /> <!-- 자신의 이메일 아이디 -->
 		<beans:property name="password" value="tnsmd!12!d" /> <!-- 자신의 비밀번호 -->
 
 		<!-- 보안연결 SSL과 관련된 설정 -->
@@ -94,5 +97,5 @@
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="maxUploadSize" value="104857600" />
 	</beans:bean>
-
+	
 </beans:beans>
