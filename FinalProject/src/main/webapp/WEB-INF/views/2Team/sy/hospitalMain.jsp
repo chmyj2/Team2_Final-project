@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=616ab49f45cfb91e31f4cd32e312c1aa&libraries=services,clusterer,drawing"></script>
-<script type="text/javascript" src="resources/t2_js/hospital_function.js"></script>
+<script type="text/javascript" src="resources/t2_js/hospital_function2.js"></script>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     
     <h1>------------------------------------------------</h1>
     
-    <div class="hospital_list"></div>
+    <div class="hospital_list" ></div>
     
 	
 </body>

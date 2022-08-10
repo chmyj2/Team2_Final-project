@@ -1,21 +1,9 @@
 $(function() {
 	hospital_map();
 	
-	let newlatlng;
-	let newlatlng2;
-	$("#map").mouseup(function() {
-
-	newlatlng =	$("#newlatlng").text();
-	newlatlng2 = $("#newlatlng2").text();
-	hospital_map(newlatlng,newlatlng2);
-	
-	});
 });
 	
-	
-
-
-function hospital_map(newlatlng1,newlatlng2) {
+function hospital_map() {
 	
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 	mapOption = {
@@ -23,30 +11,35 @@ function hospital_map(newlatlng1,newlatlng2) {
 		level: 4 // 지도의 확대 레벨
 	};  
 	
-// 지도를 생성합니다    
+	// 지도를 생성합니다    
 	var map = new kakao.maps.Map(mapContainer, mapOption);
-
 
 
 //지도가 이동, 확대, 축소로 인해 지도영역이 변경되면 마지막 파라미터로 넘어온 함수를 호출하도록 이벤트를 등록합니다
 kakao.maps.event.addListener(map, 'bounds_changed', function() {             
     
-    // 지도 영역정보를 얻어옵니다 
-    var bounds = map.getBounds();
     
-    // 영역정보의 남서쪽 정보를 얻어옵니다 
-    var swLatlng = bounds.getSouthWest();
+    kakao.maps.event.addListener(map, 'mouseup', function() {             
+    	// 지도 영역정보를 얻어옵니다 
+    	var bounds = map.getBounds();
+    	
+    	// 영역정보의 남서쪽 정보를 얻어옵니다 
+    	var swLatlng = bounds.getSouthWest();
+    	
+    	// 영역정보의 북동쪽 정보를 얻어옵니다 
+    	var neLatlng = bounds.getNorthEast();
+    	var lb = new kakao.maps.LatLngBounds(swLatlng, neLatlng);
+    	var message = "<p>영역좌표 <br> 남서쪽 위도, 경도 :   <span id='newlatlng1'>" + swLatlng + "</span><br>"; 
+    	message += "북동쪽 위도, 경도  : <span id='newlatlng2'>" + neLatlng + '</span> </p>'; 
+    	var resultDiv = document.getElementById('result');   
+    	resultDiv.innerHTML = message;
+    	hospital_list(lb);
+    });
+    	
+
     
-    // 영역정보의 북동쪽 정보를 얻어옵니다 
-    var neLatlng = bounds.getNorthEast();
     
-    var message = "<p>영역좌표 <br> 남서쪽 위도, 경도 :   <span id='newlatlng'>" + swLatlng.toString() + '</span><br>'; 
-    message += "북동쪽 위도, 경도  : <span id='newlatlng2'>" + neLatlng.toString() + '</span> </p>'; 
     
-    var resultDiv = document.getElementById('result');   
-    resultDiv.innerHTML = message;
-    
-    var lb = new kakao.maps.LatLngBounds(swLatlng, neLatlng);
 });
 
 
@@ -136,15 +129,8 @@ type : "GET" ,
 dataType:"json",
 success:function(data){
 	// 동물병원 리스트 데이터입니다.
-	alert(newlatlng1 + '11111111111')
-	alert(newlatlng2 + '22222222')
 	let hospital = data.DATA
-	
-	//리스트용 테이블
-	var tableList = $("<table/>");
 
-	
-	
 	$.each(hospital , function(i , m) {
 		
 		//병원이 정상 영업 시 
@@ -156,7 +142,7 @@ success:function(data){
 					let addr = hospital[i].sitewhladdr;
 					let mgtno = hospital[i].mgtno;
 					
-									
+					
 					// 주소로 좌표를 검색합니다
 					geocoder.addressSearch("'"+addr+"'", function(result, status) {
 
@@ -239,17 +225,21 @@ success:function(data){
 
 
 function hospital_list(lb){
-
-			
+		
+		var lb = lb;
+		
 			$.ajax({
 				url:"resources/t2_js/petHospital.json",
 				type : "GET" ,
 				dataType:"json",
 				success:function(data){
-			
+					
+						// 주소-좌표 변환 객체를 생성합니다
+						var geocoder = new kakao.maps.services.Geocoder();
+				   	
 						let hospital = data.DATA
 						
-						var table = $("<table/>");
+						var table = $("<table border='1' style='margin-left: auto; margin-right:auto;' />");
 						
 						$.each(hospital , function(i , m) {
 							
@@ -257,26 +247,49 @@ function hospital_list(lb){
 							let addr = hospital[i].sitewhladdr;
 							let tel = hospital[i].sitetel;
 							let state = hospital[i].dtlstatenm;
+							let mgtno = hospital[i].mgtno;
 							
-						
 							if(state == "정상"){
 								
 								if(addr != ""){
-								
-							var row = $("<tr/>").append(
 									
-									$("<td/>").apeend($("<a href='hospitalDetailGo'/>").text(name)),
-									$("<td/>").text(addr),
-									$("<td/>").text(tel),
-									$("<td/>").text(state)
 									
-									)
+									// 주소로 좌표를 검색합니다
+									geocoder.addressSearch("'"+addr+"'", function(result, status) {
+									
+									
+									 // 정상적으로 검색이 완료됐으면 
+								     if (status === kakao.maps.services.Status.OK) {
+								    	 
+								    	 console.log('ㅇㅇ');
+								    	 
+								       var hospitalxy = new kakao.maps.LatLng(result[0].y, result[0].x);
+							
+								       if(lb.contain(hospitalxy)==true){
+								     
+//								        var row = $("<tr/>").append(
+//								        		  $("<td/>").text(name),
+//								        		  $("<td/>").text(addr),
+//								        		  $("<td/>").text(tel),
+//								        		  $("<td/>").text(state ),
+//								        		  $("<td/>").append($("<a href='hospitalDetailGo?hospitalNo="+mgtno+"'/>").text("자세히"))
+//								        		
+//								        )
+								        	        
+								        }
+								        
+								    } 
+								});    
+
+									
+									
 								}
 							}
-								table.append(row);
+							
+							//table.append(row);
 						});
 						
-						$(".hospital_list").append(table);
+						//$(".hospital_list").append(table);
 				
 				}
 			})
