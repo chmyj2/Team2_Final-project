@@ -2,10 +2,10 @@
 
 /Servers/
 
-.class
+*.class
 pom.properties
 
-.classpath
+*.classpath
 .settings
 
 pom.properties
