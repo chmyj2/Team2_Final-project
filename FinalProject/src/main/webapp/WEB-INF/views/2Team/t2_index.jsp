@@ -34,6 +34,9 @@
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" src="resources/t2_js/login_function.js"></script>
 	<script type="text/javascript" src="resources/t2_js/board.js"></script>
+	<!-- 로그인 JS -->
+	<script type="text/javascript" src="resources/t2_js/validCheck.js"></script>
+	<script type="text/javascript" src="resources/t2_js/login_checkJS.js"></script>
 
 </head>
 <body>
