@@ -1,0 +1,149 @@
+@charset "UTF-8";
+.contact_wrapper{
+    background-color: rgba(252, 252, 252, 0.6);
+    width: 100%;
+    height: auto;
+    margin-bottom: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.contact_main{
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 250px;
+    width: 1000px;
+    align-items: center;
+    margin: 0 auto;
+    border: 5px solid black;
+    border-radius: 50px 50px 50px 50px;
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+.contact_main_txt{
+    height: 130pt;
+    color: black;
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+}
+
+.contact_main span{
+    background: yellow;
+    font-size: 13pt;
+}
+
+.contact_main h2{
+    font-size: 40pt;
+    letter-spacing: -2pt;
+    font-weight: bolder;
+}
+
+.contact_main p{
+    font-size: 13pt;
+    font-weight: bolder;
+    line-height: 0.5em;
+}
+
+.contact_main_img{
+    position: relative;
+    width: 100%;
+    height: 700px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.contact_main_pet1{
+    position: absolute;
+    width: 1000px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contact_DengStiny{
+    padding: 65px 20px 65px 20px;
+    border-radius: 4em 4em 4em 4em;
+    font-weight: bolder;
+    font-size: 20pt;
+    z-index: 1;
+    position: absolute;
+    background-color: rgb(255, 233, 111);
+    left: 75%;
+    border: 5px solid salmon;
+    transform: rotate(10deg);
+}
+
+/* -----------여러분의 후원금 -------------- */
+
+.contact_sub{
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 140px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 200px;
+    padding-top: 5px;
+}
+
+.contact_sub_txt h2{
+    font-size: 22pt;
+    font-weight: 600;
+}
+
+.contact_sub_img{
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    margin: 0 auto;
+    background-color: bisque;
+}
+
+.contact_sub_img_pet1{
+    position: absolute;
+    width: 800px;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+.contact_sub_img_txt{
+    position: absolute;
+    background-color: rgba(240, 248, 255, 0.7);
+    width: 450px;
+    height: 500px;
+    top: 25%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.contact_sub_img_txt h2{
+    font-size: 35pt;
+    text-decoration: underline;
+    margin-bottom: 60px;
+}
+
+.contact_sub_img_txt span{
+    font-size: 15pt;
+    font-weight: 700;
+}
+
+.contact_sub_img_txt p{
+    font-size: 11pt;
+}
+
+.contact_sub_img_txt label{
+    font-size: 15pt;
+}
+
+.contact_sub_img_txt h4{
+    font-size: 20pt;
+    margin-top: 110px;
+}
+
+.contact_sub_img_txt h4>span {
+    font-size: 27pt;
+}
+
+

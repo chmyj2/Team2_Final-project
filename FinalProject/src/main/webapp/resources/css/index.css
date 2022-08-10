@@ -545,46 +545,5 @@ nav ul li:first-chlid{
 .mypage_dropdown a:hover{
     color: white;
 }
-
-.mypage_drop{
-    position : relative;
-    display : inline-block;
-    height: 100px;
-    /* 드롭박스때 자꾸 휙휙 사라지던 issue=height값 안줘서 그럼!! */
-}
-  
-.mypage_dropdown{
-    /* display : none; */
-    position : absolute;
-    z-index : 1; /*다른 요소들보다 앞에 배치*/
-    background-color: rgba(255, 255, 255, 0.7); 
-    padding: 10px 0px 10px 10px;
-	width: 80px;
-	text-align: center;
-    font-size: 10pt;
-    line-height: 10pt;
-    transition: all 0.2s ease-in;
-    height: 150px;
-  }
-  
-.mypage_dropdown>li>a {
-    padding: 8px 0px 8px 0px;
-} 
-
-.mypage_dropdown a{
-    display : block;
-}
-  
-.mypage_drop:hover {
-    color: white;
-}
-
-.mypage_drop:hover .mypage_dropdown {
-    display: block;
-}
-
-.store_drop_content a:hover{
-    color: white;
-}
   
   

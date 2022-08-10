@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,51 +7,59 @@
 <title>Insert title here</title>
 </head>
 <body>
-<br>
-	<form action="member.join"
-		method="post" enctype="multipart/form-data"
-		name="joinForm" onsubmit="return joinCheck();">
-		<table id="joinTable">
-			<tr>
-				<td id="joinTableTitle" colspan="2" align="center">
-					회원가입
-				</td>
-			</tr>
-			<tr>
-				<td class="td1">ID</td>
-				<td class="td2"><input id="jm_idInput" name="m_id" placeholder="필수, 영어/숫자만" maxlength="10" autocomplete="off" autofocus="autofocus"></td>
-			</tr>
-			<tr>
-				<td class="td1">PW</td>
-				<td class="td2"><input name="m_pw" placeholder="필수, 숫자 하나이상 반드시" type="password" maxlength="10" autocomplete="off"></td>
-			</tr>
-			<tr>
-				<td class="td1">PW확인</td>
-				<td class="td2"><input name="m_pwChk" placeholder="필수, 숫자 하나이상 반드시" type="password" maxlength="10" autocomplete="off"></td>
-			</tr>
-			<tr>
-				<td class="td1">이름</td>
-				<td class="td2"><input name="m_name" placeholder="필수" maxlength="10" autocomplete="off"></td>
-			</tr>
-			<tr>
-				<td class="td1">주소</td>
-				<td class="td2">
-					<input id="jm_addr3Input" readonly="readonly" name="m_addr3" maxlength="5" autocomplete="off" placeholder="우편번호">
-					<span id="addrSearchBtn">[검색]</span><br>
-					<input id="jm_addr1Input" readonly="readonly" name="m_addr1" maxlength="30" autocomplete="off" placeholder="주소"><br>
-					<input name="m_addr2" maxlength="30" autocomplete="off" placeholder="상세주소">
-				</td>
-			</tr>
-			<tr>
-				<td class="td1">사진</td>
-				<td class="td2"><input name="m_photo" type="file"></td>
-			</tr>
-			<tr>
-				<td colspan="2" align="center" style="background-color: #FFFFFF;">
-					<button>가입</button>
-				</td>
-			</tr>
-		</table>
-	</form>
+	<div class="join_wrapper">
+
+		<form action="member.join" method="post" enctype="multipart/form-data"
+			name="joinForm" onsubmit="return joinCheck();">
+
+			<div id="joinTable" class="joinTable" style="color: black;">
+			
+				<h2 id="joinTableTitle">회원가입</h2>
+				<p class="required">* 필수입력사항</p>
+				
+				<!-- id 입력 -->
+				<input class="join_input_id" id="jm_idInput" name="m_id" placeholder="ID *"
+					maxlength="10" autocomplete="off" autofocus="autofocus">
+				<p class="required_txt">10글자 이하</p>
+
+				<!-- pw 입력 -->
+				
+				<input class="join_input_pw" name="m_pw" placeholder="Password *"
+					type="password" maxlength="10" autocomplete="off">
+				<p class="required_txt">숫자 하나 이상</p>
+				
+				<!-- pw 재확인 -->
+				<input class="input_pw" name="m_pwChk" placeholder="Password Check *" type="password"
+					maxlength="10" autocomplete="off">
+				<br>
+				
+				<!-- 이름 입력 -->
+					<input class="input_name"name="m_name" placeholder="Name *" maxlength="10"
+						autocomplete="off">
+				<br>
+				<!-- 주소 -->
+					<input class="input_addr1" id="jm_addr3Input" readonly="readonly" name="m_addr3"
+							maxlength="5" autocomplete="off" placeholder="우편번호"> 
+					<span class="search_addr" id="addrSearchBtn" style="margin-left:-5px">
+							검색</span><br> 
+					<input class="input_addr" id="jm_addr1Input" readonly="readonly" name="m_addr1"
+							maxlength="30" autocomplete="off" placeholder="주소"><br> 
+					<input class="input_addr" name="m_addr2" maxlength="30" autocomplete="off"	placeholder="상세주소">
+				
+				<!-- 사진 -->
+				<div class="join_my_photo1">
+					<span>-프로필 사진-</span> <br>
+					<input class="my_photo1" name="m_photo" type="file">
+				</div>
+				
+				<button class="join_btn">
+				<span>가입</span>
+				</button>
+				<div class="join_img">
+					<img class="join_img_pet" src="resources/img/about2.png" alt="">
+				</div>
+			</div>
+		</form>
+	</div>
 </body>
 </html>
