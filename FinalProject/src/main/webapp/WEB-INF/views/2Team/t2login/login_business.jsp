@@ -20,7 +20,7 @@
 			<article id="item-1" class="menu__item ">
 				<h3>개인</h3>
 				
-				<form action="t2LoginDO" method="post" name="loginForm">
+				<form action="t2LoginDO" method="post" name="loginForm" onsubmit="return logincheckCall()">
 
 		<div class="login_txt">
 			<h2 class="login_h2">Welcome!</h2>
@@ -50,7 +50,7 @@
 			
 			<article id="item-2" class="menu__item item-active">
 				<h3>기업</h3>
-			<form action="t2LoginDO.business" method="post" name="loginForm">
+			<form action="t2LoginDO.business" method="post" name="loginFormBusiness" onsubmit="return loginCheck_business()">
 
 		<div class="login_txt">
 			<h2 class="login_h2">Welcome!</h2>
