@@ -14,13 +14,12 @@ public class ShopManagerController {
 
 	//	처음에 숍을 클릭했을 때
 	@RequestMapping(value="/enter.team1Shop", method = RequestMethod.GET)
-	public String shopEntering(HttpServletRequest req) {
-		
+	public String shopEntering(ProductDTO p, HttpServletRequest req) {
 			//모든 상품 불러오기
+			mDAO.loadProducts(p, req);
 			//페이징하기
-		
 			//로그인체크
-		req.setAttribute("contentPage", "ShopPageYUJIN/team1ShopCart.jsp");
+		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopMain.jsp");
 		return "1Team/t1_index";
 	}
 	

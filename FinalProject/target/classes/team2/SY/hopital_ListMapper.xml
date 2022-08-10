@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="team2.SY.hopital_ListMapper">
+
+		<select id="" resultType="com.team12.main.t2.hospital.HospitalDTO">
+		
+		select * from hospital_list where hospital_no = 1
+ 		
+		</select>
+
+</mapper>
