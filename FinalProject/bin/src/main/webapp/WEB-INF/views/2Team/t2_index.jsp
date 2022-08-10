@@ -21,9 +21,31 @@
 	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 	<link rel="stylesheet" type="text/css" href="css/settings.css" media="screen" />
 
+	<link href='resources/t2_css/hospital_main.css' rel='stylesheet' type='text/css'> 
+	<!-- Hospital CSS  -->
+	<script type="text/javascript" src="resources/t2_js/jQuery.js"></script>
+	<!-- jQuery JAVA SCRIPT -->
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> a6e383e10a5af733dc112961ca35a5259eea6dd4
+>>>>>>> BestSujin_email
+	<script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
+	<link rel="stylesheet" href="resources/t2_css/t2_login.css">
+	<!-- 주소 js -->
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script type="text/javascript" src="resources/t2_js/login_function.js"></script>
+	<script type="text/javascript" src="resources/t2_js/board.js"></script>
+
 </head>
 <body>
-			<nav class="index_nav"><div class="index-nav-login"><a href="t2.login">로그인</a></div></nav>
+			<nav class="index_nav"><div class="index-nav-login"><jsp:include page="${loginPage }"></jsp:include></div></nav>
 		<div class="container">
 			<div class="container-fluid">
 				<div class="header-top">
@@ -34,14 +56,14 @@
 			</div>
 	<div id="indexMenu">
         <ul>
-            <li><a href="ourCollectionController">동물병원 찾기</a></li>
-           <li><a href="viewProductPage">상품 판매</a></li>
+            <li><a href="hospitalGo">동물병원 찾기</a></li>
+           <li><a href="viewProductPage.go">상품 판매</a></li>
             <li class="t2-indexDropdown">
             	<a href="#" class="t2-indexDropbtn">게시판</a>
             	<ul class="t2-indexDropdown-content">
-            	<li><a href="team2.boardlist?category=1">강아지</a></li>                     
-            	<li><a href="team2.boardlist?category=2">고양이</a></li>                 
-           		<li><a href="team2.boardlist?category=3">etc</a></li>                 
+            	<li><a href="team2.boardlist?board_category=1">강아지</a></li>                     
+            	<li><a href="team2.boardlist?board_category=2">고양이</a></li>                 
+           		<li><a href="team2.boardlist?board_category=3">etc</a></li>                 
             </ul>
             </li>
         </ul>
@@ -49,7 +71,7 @@
 	
 	
 	
-<
+
 	<jsp:include page="${contentPage }"></jsp:include>
 
 	

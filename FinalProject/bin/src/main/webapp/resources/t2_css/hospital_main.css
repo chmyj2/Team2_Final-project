@@ -1,14 +1,25 @@
-#map{
-	
-	margin-left : auto;
-	margin-right : auto;
-	width :1200px;
-	height : 600px;
-	border: 10px solid rgb(82,129,209);
+#map {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1200px;
+	height: 600px;
+	border: 10px solid rgb(82, 129, 209);
 }
 
-#hospital_list{
-	margin-left : auto;
-	margin-right : auto;
-	
+#hospital_list {
+	margin-left: auto;
+	margin-right: auto;
 }
+
+.customoverlay {
+	position: relative;
+	bottom: 70px;
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	border-bottom: 2px solid #ddd;
+	float: left;
+	background-color: white;
+	width:100px;
+	text-align: center;
+}
+
