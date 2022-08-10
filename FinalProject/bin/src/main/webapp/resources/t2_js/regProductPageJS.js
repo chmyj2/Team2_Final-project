@@ -1,60 +1,5 @@
 
-// var oTbll;
-// //Row 추가
-// function insRow() {
-// oTbll = document.getElementById("addTable");
-// var oRoww = oTbll.insertRow();
-// oRoww.onmouseover=function(){oTbll.clickedRowIndex=this.rowIndex}; //clickedRowIndex - 클릭한 Row의 위치를 확인;
-// var oCell = oRoww.insertCell();
 
-// //삽입될 Form Tag
-// var frmTag = "<input type=text id='cocktail_tag'  name='cocktail_tag' >";
-// frmTag += "<input type=button value='삭제' onClick='removeRow()' class='erase'>";
-// oCell.innerHTML = frmTag;
-// }
-// //Row 삭제
-// function removeRow() {
-// oTbll.deleteRow(oTbll.clickedRowIndex);
-// }
-
-
-
-
-
-
-// function removeinput_value(){
-// 	var el = document.getElementsByClassName('drink_reg_input');
-// 	for(var i=0; i<el.length; i++){	
-// 		el[i].value = '';}
-	
-// }
-
-// function CheckSubmit() {
-//     var inputVal = document.getElementById( 'searchProduct' ).value;
-//     if (inputVal == "") {
-//     	swal("검색어를 입력해주세요.", "Please Enter The CockTails").then(function() {
-// 		})
-// 	 	return false;
-// 	}
-//   }
-
-
-
-
-//   function frmCheck(){
-	
- 	
-// 	var frm = document.form;
-   	
-	
-  
-//    frm.submit();
-  
-   
- 
- 
- 
-//  }
    
 
 
@@ -67,7 +12,7 @@ function insRow() {
   var oCell = oRow.insertCell();
 
   //삽입될 Form Tag
-  var frmTag = "<input  id='cocktail_tag' type=text name='cocktail_tag'style='height: 30px;width: 400px;border-radius: 5px;' >";
+  var frmTag = "<input  id='productTag' type=text name='productTag' >";
   frmTag += "<input type=button value='삭제' onClick='removeRow()' class='erase' style='cursor:hand'>";
   oCell.innerHTML = frmTag;
 }
@@ -90,7 +35,7 @@ function removeRow() {
 
 
 function frmCheck(){
-	
+	console.log(11)
  	
   var frm = document.form;
    

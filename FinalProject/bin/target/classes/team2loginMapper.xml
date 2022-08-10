@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team12.main.t2Login.Team2loginMapper">
+	
+	<select id="getMemberByID" resultType="com.team12.main.t2Login.Membert2">
+	select * from final_member where member_ID =#{member_ID}
+	</select>
+	
+	<select id="getVetByID" resultType="com.team12.main.t2Login.vet">
+	select * from vet_member where vet_ID =#{vet_ID}
+	</select>
+	
+	
+</mapper>

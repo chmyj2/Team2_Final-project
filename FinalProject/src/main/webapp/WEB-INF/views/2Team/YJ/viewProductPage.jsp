@@ -19,8 +19,7 @@
 		<div><button onclick="location.href='regProductPage'">운영자전용 상품등록버튼</button></div>
 	</c:if> --%>
 
-<button onclick="location.href='regProductPage.go'">운영자전용 상품등록버튼</button>
-
+<button onclick="location.href='regProductPage.go'">운영자전용 상품등록버튼</button>${result }
 
  <div class="container-fluid">
      <div class="row">
@@ -31,9 +30,6 @@
                 <div class="caption">
                   <p>${fn:length(p.productName)>20?fn:substring(p.productName,0,20)+="...":p.productName }</p>
                   <p><fmt:formatNumber value="${p.productPrice }" pattern="#,###" />원</p>
-                  <%--
-                          ${fn:메소드() fn:메소드}
-                   --%>
                 </div>
             </div></a>
            </div>

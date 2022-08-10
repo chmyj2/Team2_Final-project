@@ -1,9 +1,16 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CLora%22");
-
+/* --------------로그인---------------- */
 .container{
-    padding-top: 150px;
+    padding-top: 230px;
     text-align: center;
+    height: 100%;
+    padding-bottom: 400px;
+    /* 푸터... don't bother me.... */
+}
+
+html{
+	height : 100%;
 }
 
 .welcome h1{
@@ -24,7 +31,7 @@
     position: relative;
     width: 280px;
     padding: 10px 10px 10px 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border-radius: 30px;
     border: none;
 }
@@ -101,3 +108,261 @@ hr.login_hr{
     margin:auto;
     margin-top:20px;
 }
+
+/* --------------회원가입---------------- */
+.join_wrapper{
+	padding-top: 100px;
+    text-align: center;
+    height: 100%;
+    padding-bottom: 50px;
+	magin: 0 auto;
+}
+
+ #joinTable{
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 750px;
+    width: 800px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    border: 5px solid black;
+    border-radius: 50px 50px 50px 50px;
+    margin-top: 100px;	
+    margin-bottom: 300px;
+    padding-bottom: 100px;
+}
+
+ 
+ #joinTableTitle{
+	font-size: 40pt;
+    letter-spacing: -2pt;
+    font-weight: bolder;
+}
+
+.required {
+	text-align: right;
+	margin-right: 250px;
+	font-size: 10pt;
+	font-weight: bolder;
+}
+
+.required_txt{
+	text-align: left;
+	margin-left: 33%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-size: 10pt;
+}
+
+
+ #updateMemberIDInput{
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: none;
+} 
+
+#updateMemberPhoto {
+	max-width: 50%;
+}
+
+.join_input_id{
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+}
+.join_input_pw{
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+}
+
+.input_name{
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+    margin-bottom: 50px;
+}
+
+.input_addr1{
+	position: relative;
+    width: 230px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: none;
+    margin-right:10px;
+}
+
+.input_addr{
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: none;
+}
+
+.search_addr{
+	font-size: 10pt;
+	border:1px solid #808080;
+	background-color: white;
+	font-weight: bolder;
+	padding: 3px 5px 3px 5px;
+	border-radius: 8px;
+}
+
+.join_btn{
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+    margin-top:20px;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+}
+
+.join_btn:hover{
+	cursor: url(cursor_pointer.png), url(cursor_pointer.cur), pointer
+}
+
+.join_btn span{
+	font-weight: bolder;
+	font-size: 10pt;
+}
+
+.join_my_photo span{
+	font-size: 10pt;
+	font-weight: bolder;
+	text-align: center;
+}
+
+.my_photo{
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border: none;
+    color:gray;
+    font-weight: bolder;
+    margin-left: 80px;
+}
+
+.join_img_pet{
+	position: absolute;
+    width: 350px;
+    top:730px;
+    left: 950px;
+}
+
+/* --------------회원 정보 수정 ----------------- */
+ #updateTable{
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 750px;
+    width: 800px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    border: 5px solid black;
+    border-radius: 50px 50px 50px 50px;
+    margin-top: 100px;	
+    margin-bottom: 300px;
+    padding-bottom: 100px;
+}
+
+.join_my_photo .upload-name {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width: 10%;
+    color: #999999;
+}
+
+.join_my_photo input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+.join_my_photo label {
+/*     display: inline-block;
+    padding: 10px 20px;
+    color: black;
+    vertical-align: middle;
+    background-color: #999999;
+    cursor: pointer;
+    height: 40px;
+    margin-left: 10px; */
+    font-size: 10pt;
+    border: 1px solid #808080;
+    background-color: white;
+    font-weight: bolder;
+    padding: 3px 5px 3px 5px;
+    border-radius: 8px;
+}
+
+.update_box{
+	 text-align:center
+}
+
+.update_btn{
+	position: relative;
+    width: 60px;
+    padding: 5px 0px 5px 0px;
+    margin-bottom: 10px;
+    margin-top:20px;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+    border: 2px solid black;
+    font-size: 12pt;
+    font-weight: bolder;
+    display: inline-block;
+}
+
+.delete_account_btn{
+	position: relative;
+    width: 60px;
+    padding: 5px 0px 5px 0px;
+    margin-bottom: 10px;
+    margin-top:20px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background-color: black;
+    border: 2px solid black;
+    font-size: 12pt;
+    font-weight: bolder;
+    display: inline-block;
+}
+
+.update_img_pet{
+	position: absolute;
+    width: 350px;
+    top:900px;
+    left:60%;
+}
+
+
+/* ------------------My info----------------- */
+
+#myInfo_id{
+	font-size:15pt;
+}
+
+

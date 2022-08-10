@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team12.main.team1.shop.Shopteam1Mapper">
+
+	<insert id="regProduct" parameterType="com.team12.main.team1.shop.ProductDTO">
+		insert into productTbl values(
+		#{num_PK}, #{categoryNum}, #{name}, #{price}, #{vat}, #{contents}, #{thumbnail}, #{img1}, #{img2}, #{img3}, #{tag}, #{onsale}, #{stock})
+	</insert>
+	
+	<select id="loadProducts" resultType="com.team12.main.team1.shop.ProductDTO">
+		select * from productTbl	
+	</select>
+
+	<select id="loadProductsByCategory" resultType="com.team12.main.team1.shop.ProductDTO">
+		select * from productTbl where categoryNum = #{categoryNum}
+	</select>
+
+	<select id="searchProductsByWord" resultType="com.team12.main.team1.shop.ProductDTO">
+		select * from productTbl where name like '%'||#{name}||'%'
+	</select>
+	
+</mapper>

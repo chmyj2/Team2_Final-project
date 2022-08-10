@@ -3,6 +3,7 @@ package com.team12.main.team1.shop;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,9 +82,15 @@ public class ProductManagerDAO {
 				}
 	}
 
+	
+	
+	
+	
+	
 	public void loadProducts(ProductDTO p, HttpServletRequest req) {
 		try {
 			List<ProductDTO> products = ss.getMapper(Shopteam1Mapper.class).loadProducts();
+			
 			req.setAttribute("products", products);
 			req.setAttribute("result", "불러오기 성공");
 		
@@ -94,6 +101,10 @@ public class ProductManagerDAO {
 		}
 	}
 
+	
+	
+	
+	
 	public void loadProductsByCategory(ProductDTO p, HttpServletRequest req) {
 		System.out.print("CategoryNumber: ");	System.out.println(p.getCategoryNum());
 		
@@ -109,7 +120,7 @@ public class ProductManagerDAO {
 		}
 		
 	}
-
+	
 	public void searchProductsByWord(ProductDTO p, HttpServletRequest req) {
 		System.out.print("검색어: ");	System.out.println(req.getParameter("searchWord"));
 		String searchName = req.getParameter("searchWord");
@@ -128,4 +139,25 @@ public class ProductManagerDAO {
 		
 	}
 
+	// 상품 디테일 페이지 로드
+	public void loadAProduct(ProductDTO p, HttpServletRequest req) {
+		try {
+			ProductDTO aproduct = ss.getMapper(Shopteam1Mapper.class).loadAProduct(p);	
+			req.setAttribute("p", aproduct);		
+		} catch (Exception e) {
+			e.printStackTrace();
+			return;
+		}		
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

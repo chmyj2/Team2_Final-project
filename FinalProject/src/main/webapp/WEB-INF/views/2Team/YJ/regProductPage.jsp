@@ -43,10 +43,8 @@
 
 
 <h1>등록페이지</h1>
-
-<form name="form" action="Product.upload" method="post"enctype="multipart/form-data">
-
-
+<h1>${result }</h1>
+<form name="form" action="Product.upload" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td>카테고리</td>
@@ -67,24 +65,24 @@
 			</tr>
 			<tr>
 				<td>제품 이름</td>
-				<td><input  id="productName" class="" name="productName"></td>
+				<td><input id="productName" name="productName"></td>
 			</tr>
 			<tr>
 				<td>제품 가격</td>
-				<td><input type="number" id="productPrice" min="0"step="100" class="" name="productPrice"></td>
+				<td><input type="number" id="productPrice" min="0"step="100" name="productPrice"></td>
 			</tr>
 			<tr>
 				<td>제품 정보</td>
-				<td><textarea id="productInfo"name="productInfo"></textarea></td>
+				<td><textarea id="productInfo" name="productInfo"></textarea></td>
 			</tr>
 			<tr>
 				<td>재고</td>
-				<td><input type="number" id="productStock" min="0" class="" name="productStock"></td>
+				<td><input type="number" id="productStock" min="0" name="productStock"></td>
 			</tr>
 			<tr>
 				<td>진열 여부</td>
-				<td>공개  <input type = "radio"  id="onExhibition"name = "onExhibition" value= "Y">
-					비공개 <input type = "radio" id="onExhibition" name = "onExhibition" value= "N"></td>
+				<td>공개  <input type = "radio"  id="onExhibition" name="onExhibition" value= "Y">
+					비공개 <input type = "radio" id="onExhibition" name="onExhibition" value= "N"></td>
 			</tr>
 			<tr>
 				<td>대표 사진</td>
@@ -92,7 +90,7 @@
 			</tr>
 			<tr>
 				<td>상세 이미지</td>
-				<td><input type="file" multiple="multiple" id="productImg" name="productImg"></td>
+				<td><input type="file" multiple="multiple" id="productImg" name="productImg">
 			</tr>
 		</table>
 		<table>
@@ -130,71 +128,26 @@
 
 
 
- <div class="container-fluid">
+	 <div class="container-fluid">
      <div class="row">
       <c:forEach var="p" items="${Product}">
            <div class="col-md-3">
-           <a href="#"><div class="thumbnail">
+          <div class="thumbnail">
                 <img src="resources/t2_yj_files/${p.productThumbnail }" style="height: 300px;width:300px">
                 <div class="caption">
-                  <p>${fn:length(p.productName)>20?fn:substring(p.productName,0,20)+="...":p.productName }</p>
-                  <p><fmt:formatNumber value="${p.productPrice }" pattern="#,###" />원</p>
-                  <%--
-                          ${fn:메소드() fn:메소드}
-                   --%>
+                	<p>${fn:length(p.productName)>20?fn:substring(p.productName,0,20)+="...":p.productName }</p>
+                	<p>가격 <fmt:formatNumber value="${p.productPrice }" pattern="#,###" />원</p>
+                	<p>재고 <fmt:formatNumber value="${p.productStock }" pattern="#,###" />개</p>
+                	<button onclick="location.href='update.product.go?productNum=${p.productNum}'">수정</button>
+					<button onclick="productDelete(${p.productNum},'${p.productThumbnail}','${p.productImg}')">삭제</button>
                 </div>
-            </div></a>
+            </div>
            </div>
          </c:forEach>
      </div>
     </div>
-<%-- <c:forEach var="p" items="${Product}">
 
-<table>
-	<tr>
-		<td>${p.pet_category}</td>
-	</tr>
-	<tr>
-		<td>${p.toy_category}</td>
-	</tr>
-	<tr>
-		<td>${p.productName}</td>
-	</tr>
-	<tr>
-		<td>${p.productPrice}</td>
-	</tr>
-	<tr>
-		<td>${p.productInfo}</td>
-	</tr>
-	<tr>
-		<td>${p.productStock}</td>
-	</tr>
-	<tr>
-		<td>${p.onExhibition}</td>
-	</tr>
-	<tr>
-		<td>${p.onExhibition}</td>
-	</tr>
-	<tr>
-		<td><c:forTokens var="item" items="${p.productTag }" delims="!">
-				${item }<br>
-			</c:forTokens>
-		</td>
-	</tr>
-	<tr>
-		<td><img src="resources/t2_yj_files/${p.productThumbnail }" style="height: 300px;width:300px"></td>
-	</tr>
-	<tr>
-		<td><c:forTokens var="item" items="${p.productImg }" delims="!">
-				<img src="resources/t2_yj_files/${item }" style="height: 900px;width:600px"><br>
-			</c:forTokens>
-		</td>
-	</tr>
-</table>
 	
-</c:forEach> --%>
-	
-						
 
 
 

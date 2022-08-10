@@ -1,8 +1,3 @@
-
-
-   
-
-
 var oTbl;
 //Row 추가
 function insRow() {
@@ -20,15 +15,6 @@ function insRow() {
 function removeRow() {
   oTbl.deleteRow(oTbl.clickedRowIndex);
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -153,5 +139,20 @@ function submitForm() {
     })
 }
 
+function productDelete(num,thumbnail,img){
+
+    var con_test = confirm("정말 삭제하시겠습니까?");
+    if(con_test == true){
+    location.href="product.delete?num=" + num +"&thumbnail=" + thumbnail + "&img=" + img;
+    }
+    else if(con_test == false){
+    return false;
+    }
+    
    
+
+}
+
+   
+
    

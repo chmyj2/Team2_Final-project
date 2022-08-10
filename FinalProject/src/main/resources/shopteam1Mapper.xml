@@ -10,6 +10,9 @@
 	<select id="loadProducts" resultType="com.team12.main.team1.shop.ProductDTO">
 		select * from productTbl	
 	</select>
+	<select id="loadAProduct" resultType="com.team12.main.team1.shop.ProductDTO">
+		select * from productTbl where num_PK= #{num_PK}
+	</select>
 
 	<select id="loadProductsByCategory" resultType="com.team12.main.team1.shop.ProductDTO">
 		select * from productTbl where categoryNum = #{categoryNum}

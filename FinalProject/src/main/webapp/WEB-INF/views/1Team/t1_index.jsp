@@ -60,7 +60,7 @@
                         <li><a href="#">Nutrient</a></li>
                     </ul>
                 </li>
-                <li><a href="#">COMMUNITY</a>  
+                <li><a href="team1.community">COMMUNITY</a>  
                 </li>
                 <li><a href="contact.go">CONTACT</a>  
                 </li>
