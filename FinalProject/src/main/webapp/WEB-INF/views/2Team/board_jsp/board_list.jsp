@@ -32,7 +32,7 @@
 					
 					<tr onclick="location.href='post.detail?board_num=${b.board_num}'">
 						<td>${b.board_num}</td>
-						<td style="width: 40%; text-align: center;">${b.board_title}</td>
+						<td style="width: 40%;">${b.board_title}</td>
 						<td>${b.board_member_id}</td>
 						<td><fmt:formatDate value="${b.board_date}" pattern="yy-MM-dd HH:mm"/></td>
 						<td>${b.board_count}</td>
@@ -41,16 +41,14 @@
 			</tbody>
 		</table>
 		<hr>
-
-
-		<nav aria-label="...">
+		
 			<ul class="pagination pagination-sm">
 				<!-- <li class="page-item active" aria-current="page"> <span class="page-link">1</span> </li> -->
 			<c:forEach var="i" begin="1" end="${r}">
 				<li class="page-item"> <a class="page-link" href="team2.boardlist?board_category=${param.board_category}&vpage=${i}">${i}</a> </li>
 			</c:forEach>
 			</ul>
-		</nav>
+		
 	</div>
 
       

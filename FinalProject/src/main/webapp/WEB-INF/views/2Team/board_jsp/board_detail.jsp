@@ -37,7 +37,7 @@
 	  </button>      
 	  <hr>
 	  
-	  <div class="float-right">
+	  <div class="">
 	        <button class="btn btn-warning modBtn"
         			onclick="location.href='post.updatePage?board_num=${p.board_num}&board_category=${p.board_category}'">
         			<i class="fa fa-edit"></i>수정
@@ -72,6 +72,43 @@
       </div>
     
     </div>
+
+</div>
+
+
+<div class="container" style="margin-top: 50px; margin-bottom: 50px;">
+  
+    <div class="row" id="commentContainer">
+    <c:forEach var="c" items="${comments}">
+      <div class="commentDiv">
+      <div class="col-sm-8 comment" style="border: solid 1px;">
+        	<div>
+        	user : ${c.comment_member_id} &nbsp&nbsp 
+        	<fmt:formatDate value="${c.comment_date}" pattern="yy-MM-dd HH:mm"/>
+        	</div>
+        	<div class="commentTXT">${c.comment_txt}</div>
+      </div>
+      
+      <div class="col-sm-1">
+      
+      		<a id="${c.comment_num}" class="deleteAtag">
+             	<i class="fa fa-times"> 삭제</i>
+      		</a>
+      		<a onclick="updateComment()">
+            	<i class="fa fa-edit"> 수정</i>
+     		</a>
+      </div>
+      </div>
+    </c:forEach>
+    </div>
+    
+	<ul class="pagination pagination-sm">
+		<c:forEach var="i" begin="1" end="${r}">
+			<li class="page-item">
+				<a class="commentPage">${i}</a> 
+			</li>
+		</c:forEach>
+	</ul>
 
 </div>
 

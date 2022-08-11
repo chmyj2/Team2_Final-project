@@ -90,15 +90,28 @@ from (
      from(
      select * from team2_comment
      where comment_board_num = #{comment_board_num}
-     order by comment_date desc 
    )
-) where rn between 1 and 10
+) where rn between #{start} and #{end}
 </select>
 
-<select id="getTotalCommentCount" resultType="com.team12.main.team2board.Team2CommentDTO">
+<select id="getcommentJson" resultType="com.team12.main.team2board.CommentBean">
+select * 
+from (
+    select rownum as rn, comment_num, comment_board_num, comment_member_id, comment_txt, comment_date 
+     from(
+     select * from team2_comment
+     where comment_board_num = #{comment_board_num}
+   )
+) where rn between #{start} and #{end}
+</select>
+
+<select id="getTotalCommentCount" resultType="int">
 select count(*) from team2_comment where comment_board_num = #{comment_board_num}
 </select>
 
+<delete id="deletecomment">
+delete from team2_comment where comment_num = #{comment_num}
+</delete>
 
 
 

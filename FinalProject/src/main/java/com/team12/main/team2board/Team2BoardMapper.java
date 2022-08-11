@@ -34,6 +34,12 @@ public interface Team2BoardMapper {
 
 	List<Team2CommentDTO> getcomment(Team2CommentDTO comment);
 
+	int getTotalCommentCount(Team2CommentDTO comment);
+
+	List<CommentBean> getcommentJson(Team2CommentDTO t);
+
+	int deletecomment(Team2CommentDTO t);
+
 	
 
 

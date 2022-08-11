@@ -212,16 +212,41 @@ public class Team2BoardDAO {
 		int a = ss.getMapper(Team2BoardMapper.class).createcomment(t);
 		return a;
 	}
-
+	
+	// 코멘트 10개 ajax 가져오기
 	public void getComment(HttpServletRequest req, Team2BoardDTO board, Team2CommentDTO comment) {
-		
 		comment.setComment_board_num(board.getBoard_num());
 		
-		List<Team2CommentDTO> comments = ss.getMapper(Team2BoardMapper.class).getcomment(comment);
 		
-		req.setAttribute("c", comments);
+		int allComments = ss.getMapper(Team2BoardMapper.class).getTotalCommentCount(comment); //총 댓글 개수
+		int totalPage = (int) Math.ceil((double) allComments / 10);
+		req.setAttribute("r", totalPage); // r = 총 페이지 수
+		
+		comment.setStart(1);
+		comment.setEnd(10);
+	
+			
+	
+		List<Team2CommentDTO> comments = ss.getMapper(Team2BoardMapper.class).getcomment(comment); //comments 가져오기
+		req.setAttribute("comments", comments);
 		
 	}
+	
+	// 댓글 10개 json형식 얻기
+	public CommentsJson getCommentsJson(Team2CommentDTO t, CommentsJson c) {
+		List<CommentBean> comment = ss.getMapper(Team2BoardMapper.class).getcommentJson(t);
+		c.setComments(comment);
+		
+		return c;
+	}
+	
+	//댓글삭제
+	public int deleteComment(Team2CommentDTO t) {
+		int a = ss.getMapper(Team2BoardMapper.class).deletecomment(t);
+		System.out.println("삭제여부 ------"+a);
+		
+		return a;
+	} 
 	
 	
 	

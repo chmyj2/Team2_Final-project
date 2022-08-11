@@ -1,5 +1,7 @@
 package com.team12.main.team2board;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -122,7 +124,18 @@ public class BoardController {
 	public int comment_create(Team2CommentDTO t)  {
 		return bDAO.createComment(t);
 	}
-	
+	// 댓글 10개 ajax 가져오기
+	@RequestMapping(value="/comment.get", method = RequestMethod.GET, produces = "application/json; charset=utf8")
+	@ResponseBody
+	public CommentsJson comment_get(Team2CommentDTO t, CommentsJson c)  {
+		return bDAO.getCommentsJson(t,c);
+	}
+	// 댓글 삭제
+	@RequestMapping(value="/comment.delete", method = RequestMethod.GET, produces = "application/json; charset=utf8")
+	@ResponseBody
+	public int comment_delete(Team2CommentDTO t)  {
+		return bDAO.deleteComment(t);
+	}
 	
 	
 	
