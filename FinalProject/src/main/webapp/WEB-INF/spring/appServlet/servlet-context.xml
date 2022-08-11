@@ -20,50 +20,62 @@
    <tx:annotation-driven />
    <resources mapping="/resources/**" location="/resources/" />
 
-   <beans:bean
-      class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-      <beans:property name="prefix" value="/WEB-INF/views/" />
-      <beans:property name="suffix" value=".jsp" />
-   </beans:bean>
-   
-   <context:component-scan
-      base-package="com.team12.main" />
-      
-   <!-- //////////DB연결관련!///////////// -->
-<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+	<beans:bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+
+	
+	<context:component-scan base-package="com.team12.main" />
+
+	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<beans:property name="url"
+		<beans:property name="url" value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=C:/Users/soldesk/Downloads/Wallet_DB202204301707" />
+		<beans:property name="username" value="SYP" />
+		<beans:property name="password" value="YJ802soldesk" />
+	</beans:bean>
+	
+	
 
-			value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<beans:property name="username" value="c##sj" />
-		<beans:property name="password" value="sj" />
+	<context:component-scan
+		base-package="com.team12.main" />
+		
+	<!-- //////////DB연결관련!///////////// -->
+<!-- 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<beans:property name="url" value="jdbc:oracle:thin:@db202204301707_high?TNS_ADMIN=/Users/allmight/eclipse-workspace/OracleWallet/Wallet_DB202204301707"/>
+		<beans:property name="username" value="YJJ" />
+		<beans:property name="password" value="YJ802soldesk" />
 
+	</beans:bean> -->
+	<!-- //////////DB연결관련!///////////// -->
+	
+	
+	
+	<beans:bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<beans:property name="dataSource" ref="dataSource" />
+	</beans:bean>
 
-	</beans:bean>  
-   
-   
-   
-   <beans:bean id="transactionManager"
-      class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-      <beans:property name="dataSource" ref="dataSource" />
-   </beans:bean>
-
-   <beans:bean id="sqlSessionFactory"
-      class="org.mybatis.spring.SqlSessionFactoryBean">
-      <beans:property name="dataSource" ref="dataSource" />
-      <beans:property name="typeAliasesPackage"
-         value="com.team12.main" />
-      <beans:property name="mapperLocations">
-         <beans:list>
-            <beans:value>classpath:testmapper.xml</beans:value>
-            <beans:value>classpath:team2/YJ/productMapper.xml</beans:value>
-            <beans:value>classpath:team1joinMapper.xml</beans:value>
-            <beans:value>classpath:team2BoardMapper.xml</beans:value>
-            <beans:value>classpath:team2loginMapper.xml</beans:value>
-            <beans:value>classpath:shopteam1Mapper.xml</beans:value>
-         </beans:list>
-      </beans:property>
-   </beans:bean>
+	<beans:bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="typeAliasesPackage"
+			value="com.team12.main" />
+		<beans:property name="mapperLocations">
+			<beans:list>
+				<beans:value>classpath:testmapper.xml</beans:value>
+				<beans:value>classpath:team2/YJ/productMapper.xml</beans:value>
+				<beans:value>classpath:team2/SY/hospital_ListMapper.xml</beans:value>
+				<beans:value>classpath:team1joinMapper.xml</beans:value>
+				<beans:value>classpath:team2BoardMapper.xml</beans:value>
+				<beans:value>classpath:team2loginMapper.xml</beans:value>
+				<beans:value>classpath:shopteam1Mapper.xml</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
 
    <beans:bean id="sqlSession"
       class="org.mybatis.spring.SqlSessionTemplate">
