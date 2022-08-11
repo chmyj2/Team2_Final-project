@@ -1,6 +1,6 @@
 package com.team12.main.t2Login;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Membert2 {
 	private String member_ID;

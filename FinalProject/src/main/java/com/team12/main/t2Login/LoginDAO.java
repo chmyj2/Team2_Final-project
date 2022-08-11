@@ -1,5 +1,8 @@
 package com.team12.main.t2Login;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 import java.util.Random;
 
 import javax.mail.internet.MimeMessage;
@@ -10,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+
+import oracle.jdbc.driver.T2CConnection;
 
 
 
@@ -155,6 +160,60 @@ public class LoginDAO {
 		
 		
 		return Integer.toString(checknum);
+	}
+
+
+
+	public int checkId(Membert2 m) {
+		//아이디 중복체크
+		return ss.getMapper(Team2loginMapper.class).checkId(m);
+	}
+
+
+
+	public int checkEmail(Membert2 m) {
+		// 이메일 중복체크
+		return ss.getMapper(Team2loginMapper.class).checkEmail(m);
+	}
+
+
+
+	public void join(HttpServletRequest req, Membert2 m) {
+		// 회원가입
+		
+		try {
+			req.setCharacterEncoding("utf-8");
+			
+			
+			String addr3 = req.getParameter("m_addr3");
+			String addr2 = req.getParameter("m_addr2");
+			String addr1 = req.getParameter("m_addr1");
+			
+			
+			Date member_birth = Date.valueOf(req.getParameter("member_birth"));
+
+			
+			String member_address = addr1 +"!"+addr2+"!"+addr3;
+			
+			m.setMember_ID(req.getParameter("member_ID"));
+			m.setMember_PW(req.getParameter("member_PW"));
+			m.setMember_name(req.getParameter("member_name"));
+			m.setMember_birth(member_birth);
+			m.setMember_sex(req.getParameter("member_sex"));
+			m.setMember_phoneNum(req.getParameter("member_phoneNum"));
+			m.setMember_address(member_address);
+			m.setMember_email(req.getParameter("member_email"));
+			
+			if (ss.getMapper(Team2loginMapper.class).join(m) == 1) {
+				System.out.println("성공");
+			}else {
+				System.out.println("실패");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	

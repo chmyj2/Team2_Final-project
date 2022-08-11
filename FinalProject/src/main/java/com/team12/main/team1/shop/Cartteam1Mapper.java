@@ -5,7 +5,7 @@ import java.util.List;
 public interface Cartteam1Mapper {
 	
 	/* 카트 추가 */
-	public int addCart(CartDTO cartDTO) throws Exception;
+	public int addCart(CartDTO c);
 	
 	/* 카트 삭제 */
 	public int deleteCart(int Num_PK);
