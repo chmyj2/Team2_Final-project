@@ -130,6 +130,19 @@ public class LoginController {
 		return lDAO.checkEmail(m);
 	}
 	
+	@RequestMapping(value = "/joinDo", method = RequestMethod.POST)
+	public String joinDo(HttpServletRequest req, Membert2 m) {
+		
+		//회원가입
+		lDAO.join(req,m);
+		
+		//로그인 체크
+		lDAO.loginCheck(req);
+		req.setAttribute("contentPage", "t2login/joinOK.jsp");
+		
+		return "2Team/t2_index";
+	}
+	
 	
 	
 	

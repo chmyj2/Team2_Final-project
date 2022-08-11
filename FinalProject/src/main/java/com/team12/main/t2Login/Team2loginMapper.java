@@ -10,4 +10,6 @@ public interface Team2loginMapper {
 
 	int checkEmail(Membert2 m);
 
+	int join(Membert2 m);
+
 }

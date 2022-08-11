@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="t2-join-outdiv">
-<form action="#" method="POST" class="joinForm" name="joinForm"> <!-- onsubmit="return joinCheck()"  -->
+<form action="joinDo" method="POST" class="joinForm" name="joinForm"> <!-- onsubmit="return joinCheck()"  -->
                                                                                                
       <h2>회원가입</h2>
       <div class="join-textForm">
@@ -30,7 +30,7 @@
       
       <div class="join-textForm brith">
       	생일&nbsp;&nbsp;<input name="member_birth" type="date" class="join-birth" >
-      </div>
+      </div> 
       
       <div class="join-textForm brith">
       	성별 &nbsp;&nbsp;
