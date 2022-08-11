@@ -1,37 +1,28 @@
 @charset "UTF-8";
 .board_wrapper{
-    max-width: 1000px;
-    height: auto; /* 작업 완료 후 조정해 줄 것 */
-    width:100%;
-    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.575);
+    width: 100%;
+    height: auto;
     text-align: center;
+    margin-bottom: 300px;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .board_title{
-	height: 200px;
-    width: 800px;
+    height: 250px;
+    width: 1000px;
     align-items: center;
     margin: 0 auto;
     margin-top: 200px;
-}
-
-
-.board_title h2{
-    font-size: 60pt;
-    font-weight: bold;
-    margin-bottom: 50px;
-    margin: 0 auto;
-    width:100%;
-    margin: 0 auto;
-    height: 800px; /* 작업 완료 후 조정해 줄 것 */
+    margin-bottom: 200px;
 }
 
 .board_header{
     /* community */
     font-size: 50pt;
     font-weight: bold;
-    margin-top:200px;
+    margin-top: 200px;
     margin-bottom: 50px;
     margin: 0 auto;
     text-align: center;
@@ -79,13 +70,11 @@ table tr th{
 tbody tr td{
     border-bottom: 1px solid black;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 tbody tr:hover{
     background-color: rgba(255, 255, 255, 0.5);
 }
-
-
 
 
