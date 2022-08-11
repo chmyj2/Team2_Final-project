@@ -164,6 +164,13 @@ public class LoginDAO {
 		return ss.getMapper(Team2loginMapper.class).checkId(m);
 	}
 
+
+
+	public int checkEmail(Membert2 m) {
+		// 이메일 중복체크
+		return ss.getMapper(Team2loginMapper.class).checkEmail(m);
+	}
+
 	
 	
 	

@@ -14,4 +14,8 @@
 	select count(*) from FINAL_MEMBER , VET_MEMBER where vet_ID = #{member_ID} or member_ID = #{member_ID}
 	</select>
 	
+	<select id="checkEmail" resultType="int">
+	select count(*) from FINAL_MEMBER where member_email = #{member_email}
+	</select>
+	
 </mapper>

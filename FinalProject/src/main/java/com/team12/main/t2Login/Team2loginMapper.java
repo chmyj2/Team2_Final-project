@@ -8,4 +8,6 @@ public interface Team2loginMapper {
 
 	int checkId(Membert2 m);
 
+	int checkEmail(Membert2 m);
+
 }

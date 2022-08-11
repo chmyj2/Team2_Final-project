@@ -121,6 +121,15 @@ public class LoginController {
 		return lDAO.checkId(m);
 	}
 	
+	@RequestMapping(value = "/email.check", method = RequestMethod.GET)
+	@ResponseBody
+	public int emailcheck(Membert2 m) {
+		
+		//이메일 중복체크
+		
+		return lDAO.checkEmail(m);
+	}
+	
 	
 	
 	

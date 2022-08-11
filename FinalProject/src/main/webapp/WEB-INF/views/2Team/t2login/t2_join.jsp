@@ -56,6 +56,7 @@
         <input placeholder="인증번호를 입력해주세요" id="join_mail_num" disabled="disabled">
         <input type="hidden" id="join_num_check" value="emailUnCheck">
       <span id="mail-check-warn"></span>
+      <span id="emailcheckResult"></span>
       </div>
       
       
