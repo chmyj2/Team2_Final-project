@@ -1,6 +1,3 @@
-
-
-
 $(function() {
 	hospital_map();
 	
@@ -16,16 +13,6 @@ $(function() {
 });
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 
 
 function hospital_map(newlatlng1,newlatlng2) {
@@ -251,10 +238,8 @@ success:function(data){
 
 
 
+function hospital_list(lb){
 
-$(function hospital_list(lb){
-	
-	console.log("dd"+lb);
 			
 			$.ajax({
 				url:"resources/t2_js/petHospital.json",
@@ -279,7 +264,8 @@ $(function hospital_list(lb){
 								if(addr != ""){
 								
 							var row = $("<tr/>").append(
-									$("<td/>").text(name),
+									
+									$("<td/>").apeend($("<a href='hospitalDetailGo'/>").text(name)),
 									$("<td/>").text(addr),
 									$("<td/>").text(tel),
 									$("<td/>").text(state)
@@ -294,7 +280,7 @@ $(function hospital_list(lb){
 				
 				}
 			})
-		})
+		}
 		
 		
 		

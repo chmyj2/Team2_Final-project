@@ -25,14 +25,6 @@
 	<!-- Hospital CSS  -->
 	<script type="text/javascript" src="resources/t2_js/jQuery.js"></script>
 	<!-- jQuery JAVA SCRIPT -->
-
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> a6e383e10a5af733dc112961ca35a5259eea6dd4
->>>>>>> BestSujin_email
 	<script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
@@ -42,6 +34,9 @@
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" src="resources/t2_js/login_function.js"></script>
 	<script type="text/javascript" src="resources/t2_js/board.js"></script>
+	<!-- 로그인 JS -->
+	<script type="text/javascript" src="resources/t2_js/validCheck.js"></script>
+	<script type="text/javascript" src="resources/t2_js/login_checkJS.js"></script>
 
 </head>
 <body>
@@ -57,7 +52,7 @@
 	<div id="indexMenu">
         <ul>
             <li><a href="hospitalGo">동물병원 찾기</a></li>
-           <li><a href="viewProductPage.go">상품 판매</a></li>
+           <li><a href="viewProductPage.go?onExhibition=Y">상품 판매</a></li>
             <li class="t2-indexDropdown">
             	<a href="#" class="t2-indexDropbtn">게시판</a>
             	<ul class="t2-indexDropdown-content">

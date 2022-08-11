@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<!-- <a href="loginandjoin.go">
-	로그인<img class="icon_login" src="resources/img/LOGIN.png">
-	</a> -->
 		<ul>
 			<li class="login_area">
 			<a href="loginandjoin.go"> 
