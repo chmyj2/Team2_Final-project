@@ -10,6 +10,36 @@ function connectAddrSearchEvent() {
 	});
 }//회원가입 주소 찾기 기능
 
+function idCheck() {
+	$('.join-id').blur(function() {
+		let idInput =$('.join-id').val();
+		alert(idInput);
+		
+			$.ajax({
+				url:"id.check",
+				type:"GET",
+				dataType :"text",
+				data:{"member_ID":idInput},
+				success: function(getData) {
+					console.log(getData);
+					if (getData ==1) {
+						$('#idcheckResult').text("사용불가");
+						$('#idcheckResult').css('color','red');
+					}else {
+						$('#idcheckResult').text("사용가능");
+						$('#idcheckResult').css('color','green');
+					}
+					
+					//$('span').text(idInput+"이미 사용중입니다.");
+				},
+				error : function(request,status,error) {
+					console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					
+				}
+			});
+		});
+}
+
 function joinEmail_check() {
 	$('#join_mail_check').click(function() {
 		var email = $('#join-email').val();
@@ -52,6 +82,7 @@ function joinEmail_numCheck() {
 
 $(function() {
 	connectAddrSearchEvent();
+	idCheck();
 	joinEmail_check();
 	joinEmail_numCheck();
 })

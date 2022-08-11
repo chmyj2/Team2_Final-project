@@ -13,6 +13,7 @@
       <h2>회원가입</h2>
       <div class="join-textForm">
         <input name="member_ID" type="text" class="join-id" placeholder="아이디">
+        <span id="idcheckResult"></span>
       </div>
       
       <div class="join-textForm">

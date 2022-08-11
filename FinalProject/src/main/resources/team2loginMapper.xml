@@ -10,5 +10,8 @@
 	select * from vet_member where vet_ID =#{vet_ID}
 	</select>
 	
+	<select id="checkId" resultType="int">
+	select count(*) from FINAL_MEMBER , VET_MEMBER where vet_ID = #{member_ID} or member_ID = #{member_ID}
+	</select>
 	
 </mapper>

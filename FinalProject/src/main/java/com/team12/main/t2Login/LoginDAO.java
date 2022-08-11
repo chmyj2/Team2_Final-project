@@ -157,6 +157,13 @@ public class LoginDAO {
 		return Integer.toString(checknum);
 	}
 
+
+
+	public int checkId(Membert2 m) {
+		//아이디 중복체크
+		return ss.getMapper(Team2loginMapper.class).checkId(m);
+	}
+
 	
 	
 	
