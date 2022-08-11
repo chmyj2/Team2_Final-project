@@ -2,9 +2,17 @@
 
 /Servers/
 
+<<<<<<< HEAD
+*.class
+pom.properties
+
+*.classpath
+.settings
+=======
 /.class/
 
 /pom.properties/
+>>>>>>> d1c215a661651042ca242b0432b63f1b906b16ce
 
 /.classpath/
 
