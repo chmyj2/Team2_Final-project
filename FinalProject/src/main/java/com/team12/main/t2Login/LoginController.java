@@ -143,7 +143,17 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
-	
+	@RequestMapping(value = "/joingo.business", method = RequestMethod.GET)
+	public String joingoBusiness(HttpServletRequest req) {
+		
+		//회원가입창으로 이동 비즈니스용
+		
+		//로그인 체크
+		lDAO.loginCheck(req);
+		req.setAttribute("contentPage", "t2login/t2_joinBusiness.jsp");
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	
