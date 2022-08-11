@@ -77,10 +77,22 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
-	@RequestMapping(value = "/t2join", method = RequestMethod.GET)
+	@RequestMapping(value = "/acceptgo", method = RequestMethod.GET)
+	public String accept(HttpServletRequest req) {
+		
+		//이용약관
+		
+		//로그인 체크
+		lDAO.loginCheck(req);
+		req.setAttribute("contentPage", "t2login/accept.jsp");
+		
+		return "2Team/t2_index";
+	}
+	
+	@RequestMapping(value = "/joingo", method = RequestMethod.GET)
 	public String join(HttpServletRequest req) {
 		
-		//회원가입하러 가기
+		//이용약관
 		
 		//로그인 체크
 		lDAO.loginCheck(req);
@@ -100,7 +112,36 @@ public class LoginController {
 		return lDAO.emailCheck(member_email);
 	}
 	
+	@RequestMapping(value = "/id.check", method = RequestMethod.GET)
+	@ResponseBody
+	public int idCheck(Membert2 m) {
+		
+		//아이디 중복체크
+		
+		return lDAO.checkId(m);
+	}
 	
+	@RequestMapping(value = "/email.check", method = RequestMethod.GET)
+	@ResponseBody
+	public int emailcheck(Membert2 m) {
+		
+		//이메일 중복체크
+		
+		return lDAO.checkEmail(m);
+	}
+	
+	@RequestMapping(value = "/joinDo", method = RequestMethod.POST)
+	public String joinDo(HttpServletRequest req, Membert2 m) {
+		
+		//회원가입
+		lDAO.join(req,m);
+		
+		//로그인 체크
+		lDAO.loginCheck(req);
+		req.setAttribute("contentPage", "t2login/joinOK.jsp");
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	

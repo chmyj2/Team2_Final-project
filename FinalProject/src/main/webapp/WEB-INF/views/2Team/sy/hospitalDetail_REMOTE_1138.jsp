@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-				<div>
-				  <h3>병원 이름 </h3>
-				  
-				  	<span>
-				  	<span>일반</span>
-				  	<span>2차 병원</span>
-				  	</span>
-				  	
-				  
-				</div>
-	
-</body>
-=======
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <<<<<<< HEAD
@@ -79,5 +55,4 @@
 >>>>>>> 109c5931d7e93a8554889a9602c9ed4d21083d23
 	
 </body>
->>>>>>> 2dedeb7026d4a1cdb8b601191823c6a31d467910
 </html>

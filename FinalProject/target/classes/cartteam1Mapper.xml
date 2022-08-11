@@ -2,21 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.team12.main.team1.shop.Cartteam1Mapper">
 
-			<!--  컬럼네임 수정 -->
+	<!--  *****컬럼네임 수정****** -->
 
 	<!-- 카트 추가 -->
-	<insert id="addCart">
-	
-	
-	
-	
-	
-
-		insert into vam_cart(memberId, bookId, bookCount)
-		values(#{memberId},
-		#{bookId}, #{bookCount})
-
+	<insert id="addCart" parameterType="com.team12.main.team1.shop.CartDTO">
+	insert into cartTbl values (cart_sequence.nextval, #{Cart_userID}, #{cart_product_Num}, #{Cart_ProductQuantity}, sysdate)
 	</insert>
+
+
+
+
 
 
 	<!-- 카트 삭제 -->
