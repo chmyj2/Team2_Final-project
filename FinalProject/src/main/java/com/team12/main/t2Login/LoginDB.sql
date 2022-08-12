@@ -74,3 +74,5 @@ drop table vet_member;
 insert into vet_member values('sj','1004','123456789','인천','010-1234-1234',sysdate);
 
 select * from vet_member;
+
+select count(*) from FINAL_MEMBER , VET_MEMBER where vet_ID = 'mz' or member_ID = 'mz';

@@ -1,9 +1,7 @@
 package com.team12.main.team1.join;
 
-import java.io.File;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,7 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
+
 
 @Service
 public class MemberDAO {
@@ -20,55 +19,44 @@ public class MemberDAO {
 	@Autowired
 	private SqlSession ss;
 
-	public void join(Member m, HttpServletRequest req) {
+	public void join(Member m, HttpServletRequest req){
 		// TODO Auto-generated method stub
 		
-		
-		String path = req.getSession().getServletContext().getRealPath("resources/files"); // 이미지 파일 경로
-		MultipartRequest mr = null;
-		try {
-		mr =  new MultipartRequest(req, path, 10 * 1024 * 1024, "utf-8", new DefaultFileRenamePolicy());
-			String jm_id = mr.getParameter("m_id");
-			String jm_pw = mr.getParameter("m_pw");
-			String jm_name = mr.getParameter("m_name");
-			String jm_addr1 = mr.getParameter("m_addr1");
-			String jm_addr2 = mr.getParameter("m_addr2");
-			String jm_addr3 = mr.getParameter("m_addr3");
+		       
+//				req.setCharacterEncoding("utf-8");
 			
-			String jm_addr = jm_addr1 + "!" + jm_addr2 + "!" + jm_addr3;
-			
-			String jm_photo = mr.getFilesystemName("m_photo");
-//			jm_photo = URLEncoder.encode(jm_photo, "utf-8");
-//			jm_photo = jm_photo.replace("+", " ");
 		
-	
+			String jm_address1 = req.getParameter("m_addr1");
+			String jm_address2 = req.getParameter("m_addr2");
+			String jm_address3 = req.getParameter("m_addr3");
+			
+			String jm_addr = jm_address1 + "!" + jm_address2  + "!" + jm_address3;
+			
+		
+			Date jm_date = Date.valueOf(req.getParameter("member_birth"));
 
 
-	m.setM_id(jm_id);
-	m.setM_pw(jm_pw);
-	m.setM_name(jm_name);
-	m.setM_addr(jm_addr);
-	m.setM_photo(jm_photo);
+
+	m.setMember_address(jm_addr);
+	m.setMember_birth(jm_date);
+//	m.setMember_joinDate(jm_joinDate);
+//	m.setMember_paper(jm_paper);
 
 	if (ss.getMapper(Team1joinMapper.class).join(m) == 1) {
 		req.setAttribute("result", "가입성공");
 	} else {
 		req.setAttribute("result", "가입실패");
 	}
-} catch (Exception e) {
-	e.printStackTrace();
-	String fileName = mr.getFilesystemName("m_photo");
-	new File(path + "/" + fileName).delete();
-	req.setAttribute("result", "가입실패");
-}
-}
+		      
+} 
+
 
 	public void login(Member m, HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		Member dbMember = ss.getMapper(Team1joinMapper.class).getMemberByID(m);
 
 		if (dbMember != null) {
-			if (m.getM_pw().equals(dbMember.getM_pw())) {
+			if (m.getMember_PW().equals(dbMember.getMember_PW())) {
 				req.getSession().setAttribute("loginMember", dbMember);
 				req.getSession().setMaxInactiveInterval(60 * 10);
 			} else {
@@ -94,7 +82,7 @@ public class MemberDAO {
 	
 	public void splitAddr(HttpServletRequest req) {
 		Member m = (Member) req.getSession().getAttribute("loginMember");
-		String jm_addr = m.getM_addr();
+		String jm_addr = m.getMember_address();
 		String[] jm_addr2 = jm_addr.split("!");
 		req.setAttribute("addr", jm_addr2);
 
@@ -113,69 +101,27 @@ public class MemberDAO {
 	public void update(Member m, HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		
-		String path = req.getSession().getServletContext().getRealPath("resources/files");
-		MultipartRequest mr = null;
-		Member loginMember = (Member) req.getSession().getAttribute("loginMember");
-		String oldFile = loginMember.getM_photo();
-		String newFile = null;
-		try {
-			mr = new MultipartRequest(req, path, 10 * 1024 * 1024, "utf-8", new DefaultFileRenamePolicy());
-			newFile = mr.getFilesystemName("jm_photo");
-			if (newFile == null) {
-				newFile = oldFile;
-			} else {
-				newFile = URLEncoder.encode(newFile, "utf-8");
-				newFile = newFile.replace("+", " ");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			req.setAttribute("result", "수정실패");
-			return;
-		}
 		
-	
-	
-	try {
-		String jm_id = mr.getParameter("jm_id");
-		String jm_pw = mr.getParameter("jm_pw");
-		String jm_name = mr.getParameter("jm_name");
-		String jm_addr1 = mr.getParameter("jm_addr1");
-		String jm_addr2 = mr.getParameter("jm_addr2");
-		String jm_addr3 = mr.getParameter("jm_addr3");
-		String jm_addr = jm_addr1 + "!" + jm_addr2 + "!" + jm_addr3;
-		String jm_photo = newFile;
+		String jm_address1 = req.getParameter("m_addr1");
+		String jm_address2 = req.getParameter("m_addr2");
+		String jm_address3 = req.getParameter("m_addr3");
 
-		m.setM_id(jm_id);
-		m.setM_pw(jm_pw);
-		m.setM_name(jm_name);
-		m.setM_addr(jm_addr);
-		m.setM_photo(jm_photo);
+		String jm_addr = jm_address1 + "!" + jm_address2 + "!" + jm_address3;
+
+//		Date jm_date = Date.valueOf(req.getParameter("member_birth"));
+
+		m.setMember_address(jm_addr);
+//		m.setMember_birth(jm_date);
+		
+
 
 		if (ss.getMapper(Team1joinMapper.class).update(m) == 1) {
 			req.setAttribute("result", "수정성공");
 			req.getSession().setAttribute("loginMember", m);
-			if (!oldFile.equals(newFile)) {
-				oldFile = URLDecoder.decode(oldFile, "utf-8");
-				new File(path + "/" + oldFile).delete();
-			}
 		} else {
 			req.setAttribute("result", "수정실패");
-			if (!oldFile.equals(newFile)) {
-				newFile = URLDecoder.decode(newFile, "utf-8");
-				new File(path + "/" + newFile).delete();
-			}
 		}
-	} catch (Exception e) {
-		e.printStackTrace();
-		req.setAttribute("result", "수정실패");
-		if (!oldFile.equals(newFile)) {
-			try {
-				newFile = URLDecoder.decode(newFile, "utf-8");
-			} catch (UnsupportedEncodingException e1) {
-			}
-			new File(path + "/" + newFile).delete();
-		}
-	}
+
 		}
 
 	public void bye(HttpServletRequest req) {
@@ -193,9 +139,9 @@ public class MemberDAO {
 				//sDAO.setAllMsgCount(allMsgCount - msgCount);
 
 				String path = req.getSession().getServletContext().getRealPath("resources/files");
-				String jm_photo = m.getM_photo();
-				jm_photo = URLDecoder.decode(jm_photo, "utf-8");
-				new File(path + "/" + jm_photo).delete();
+//				String jm_photo = m.getM_photo();
+//				jm_photo = URLDecoder.decode(jm_photo, "utf-8");
+//				new File(path + "/" + jm_photo).delete();
 
 				logout(req);
 				loginCheck(req);

@@ -6,4 +6,10 @@ public interface Team2loginMapper {
 
 	vet getVetByID(vet v);
 
+	int checkId(Membert2 m);
+
+	int checkEmail(Membert2 m);
+
+	int join(Membert2 m);
+
 }

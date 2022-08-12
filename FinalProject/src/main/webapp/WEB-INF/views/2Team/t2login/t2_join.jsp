@@ -8,11 +8,12 @@
 </head>
 <body>
 <div class="t2-join-outdiv">
-<form action="#" method="POST" class="joinForm" name="joinForm"> <!-- onsubmit="return joinCheck()"  -->
+<form action="joinDo" method="POST" class="joinForm" name="joinForm"> <!-- onsubmit="return joinCheck()"  -->
                                                                                                
       <h2>회원가입</h2>
       <div class="join-textForm">
         <input name="member_ID" type="text" class="join-id" placeholder="아이디">
+        <span id="idcheckResult"></span>
       </div>
       
       <div class="join-textForm">
@@ -29,7 +30,7 @@
       
       <div class="join-textForm brith">
       	생일&nbsp;&nbsp;<input name="member_birth" type="date" class="join-birth" >
-      </div>
+      </div> 
       
       <div class="join-textForm brith">
       	성별 &nbsp;&nbsp;
@@ -55,6 +56,7 @@
         <input placeholder="인증번호를 입력해주세요" id="join_mail_num" disabled="disabled">
         <input type="hidden" id="join_num_check" value="emailUnCheck">
       <span id="mail-check-warn"></span>
+      <span id="emailcheckResult"></span>
       </div>
       
       

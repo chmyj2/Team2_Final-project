@@ -1,5 +1,7 @@
 $(function() {
 	hospital_map();
+	hospital_list();
+
 	
 });
 	
@@ -33,7 +35,9 @@ kakao.maps.event.addListener(map, 'bounds_changed', function() {
     	message += "북동쪽 위도, 경도  : <span id='newlatlng2'>" + neLatlng + '</span> </p>'; 
     	var resultDiv = document.getElementById('result');   
     	resultDiv.innerHTML = message;
-    	hospital_list(lb);
+
+    	//hospital_list(lb);
+
     });
     	
 
@@ -180,7 +184,10 @@ success:function(data){
 				                '        <div class="body">' + 
 				                '            <div class="desc">' + 
 				                '                <div class="ellipsis">후기수</div>' + 
+				                '                <div class="jibun ellipsis"> <a href="hospitalDetailGo?hospital_no='+mgtno+'"> 자세히 </a> ' + 
+
 				                '                <div class="jibun ellipsis"> <a href=""> 자세히 </a> ' + 
+
 				                '                <a href="https://www.kakaocorp.com/main" target="_blank" class="link">홈페이지</a></div>' + 
 				                '            </div>' + 
 				                '        </div>' + 
@@ -215,7 +222,6 @@ success:function(data){
 }
 });
 
-	
 }
 
 
@@ -224,76 +230,59 @@ success:function(data){
 
 
 
-function hospital_list(lb){
-		
-		var lb = lb;
-		
-			$.ajax({
-				url:"resources/t2_js/petHospital.json",
-				type : "GET" ,
-				dataType:"json",
-				success:function(data){
-					
-						// 주소-좌표 변환 객체를 생성합니다
-						var geocoder = new kakao.maps.services.Geocoder();
-				   	
-						let hospital = data.DATA
-						
-						var table = $("<table border='1' style='margin-left: auto; margin-right:auto;' />");
-						
-						$.each(hospital , function(i , m) {
-							
-							let name = hospital[i].bplcnm;
-							let addr = hospital[i].sitewhladdr;
-							let tel = hospital[i].sitetel;
-							let state = hospital[i].dtlstatenm;
-							let mgtno = hospital[i].mgtno;
-							
-							if(state == "정상"){
-								
-								if(addr != ""){
-									
-									
-									// 주소로 좌표를 검색합니다
-									geocoder.addressSearch("'"+addr+"'", function(result, status) {
-									
-									
-									 // 정상적으로 검색이 완료됐으면 
-								     if (status === kakao.maps.services.Status.OK) {
-								    	 
-								    	 console.log('ㅇㅇ');
-								    	 
-								       var hospitalxy = new kakao.maps.LatLng(result[0].y, result[0].x);
-							
-								       if(lb.contain(hospitalxy)==true){
-								     
-//								        var row = $("<tr/>").append(
-//								        		  $("<td/>").text(name),
-//								        		  $("<td/>").text(addr),
-//								        		  $("<td/>").text(tel),
-//								        		  $("<td/>").text(state ),
-//								        		  $("<td/>").append($("<a href='hospitalDetailGo?hospitalNo="+mgtno+"'/>").text("자세히"))
-//								        		
-//								        )
-								        	        
-								        }
-								        
-								    } 
-								});    
+function hospital_list(){
 
-									
-									
-								}
-							}
-							
-							//table.append(row);
-						});
-						
-						//$(".hospital_list").append(table);
+	$.ajax({
+		url:"resources/t2_js/petHospital.json",
+		type : "GET" ,
+		dataType:"json",
+		success:function(data){
+	
+				let hospital = data.DATA
+
+				var table = $("<table class='main-hospital-list' border='1'/>");
 				
-				}
-			})
+				var table = $("<table/>");
+
+				
+				$.each(hospital , function(i , m) {
+					
+					let name = hospital[i].bplcnm;
+					let addr = hospital[i].sitewhladdr;
+					let tel = hospital[i].sitetel;
+					let state = hospital[i].dtlstatenm;
+					let mgtno = hospital[i].mgtno;
+					
+					let [city, ward] = addr.split(' ');
+
+					if(state == "정상"){
+						
+						if(addr != ""){
+						
+					var row = $("<tr/>").append(
+							
+							$("<td/>").text(name),
+							$("<td/>").text(ward),
+							$("<td/>").text(tel),
+							$("<td><a href='hospitalDetailGo?hospital_no="+mgtno+"'>자세히</a></td>")		
+							
+							$("<td/>").apeend($("<a href='hospitalDetailGo'/>").text(name)),
+							$("<td/>").text(addr),
+							$("<td/>").text(tel),
+							$("<td/>").text(state)
+							
+							)
+						}
+					}
+						table.append(row);
+				});
+				
+				$(".hospital_list").append(table);
+		
 		}
+	})
+}
+		
 		
 		
 		

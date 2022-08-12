@@ -10,5 +10,16 @@
 	select * from vet_member where vet_ID =#{vet_ID}
 	</select>
 	
+	<select id="checkId" resultType="int">
+	select count(*) from FINAL_MEMBER , VET_MEMBER where vet_ID = #{member_ID} or member_ID = #{member_ID}
+	</select>
+	
+	<select id="checkEmail" resultType="int">
+	select count(*) from FINAL_MEMBER where member_email = #{member_email}
+	</select>
+	
+	<insert id="join" parameterType="com.team12.main.t2Login.Membert2">
+	insert into final_member values(#{member_ID},#{member_PW},1,#{member_name},#{member_birth},#{member_sex},#{member_phoneNum},#{member_address},#{member_email},sysdate,'동의')
+	</insert>
 	
 </mapper>

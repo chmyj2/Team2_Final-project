@@ -83,10 +83,6 @@ public class ProductManagerDAO {
 	}
 
 	
-	
-	
-	
-	
 	public void loadProducts(ProductDTO p, HttpServletRequest req) {
 		try {
 			List<ProductDTO> products = ss.getMapper(Shopteam1Mapper.class).loadProducts();

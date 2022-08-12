@@ -6,9 +6,16 @@
 	border: 10px solid rgb(82, 129, 209);
 }
 
-#hospital_list {
+.main-hospital-list {
 	margin-left: auto;
 	margin-right: auto;
+	
+}
+.main-hospital-list td{
+	
+	font-size : 14pt;
+	text-align : center
+	width: 200px;
 }
 
 .customoverlay {
