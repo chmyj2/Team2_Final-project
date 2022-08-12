@@ -101,7 +101,6 @@
 	</table>
 
 
-<h1>${Product.productTag }</h1>
 
 
 

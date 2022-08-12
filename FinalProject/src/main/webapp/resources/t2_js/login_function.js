@@ -24,7 +24,7 @@ function idCheck() {
 				data:{"member_ID":idInput},
 				success: function(getData) {
 					console.log(getData);
-					if (getData ==1) {
+					if (getData >=1) {
 						$('#idcheckResult').text("사용불가");
 						$('#idcheckResult').css('color','red');
 					}else {
@@ -117,9 +117,60 @@ function joinEmail_numCheck() {
 	})
 }//이메일 인증번호 일치 확인
 
+function pwcheck() {
+	//패스워드일치불일치
+	
+	let result = $('.pwCheckResult');
+	$('.join-pw2').keyup(function() {
+		let pw1 = $('.join-pw').val();
+		let pw2 = $('.join-pw2').val();
+		
+		if (pw1 != pw2) {
+			result.html("패스워드불일치");
+			result.css('color','red');
+		}else {
+			result.html("");
+			
+		}
+	})
+	
+}//패스워드일치불일치
+
+function businessNumCheck() {
+	//사업자 번호 일치확인
+	$('.vet_businessNum').blur(function() {
+		let businessNum = $(this).val();
+		
+		$.ajax({
+				url:"businessNum.check",
+				type:"GET",
+				dataType :"text",
+				data:{"vet_businessNum":businessNum},
+				success: function(getData) {
+					console.log(getData);
+					if (getData >=1) {
+						$('.businessNumResult').text("일치하는 사업자 번호가 있습니다.");
+						$('.businessNumResult').css('color','red');
+					}else {
+						$('.businessNumResult').text("");
+					}
+					
+					//$('span').text(idInput+"이미 사용중입니다.");
+				},
+				error : function(request,status,error) {
+					console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					
+				}
+			}); // ajax끝
+	})
+	
+}//사업자 번호 일치확인
+
 $(function() {
 	connectAddrSearchEvent();
 	idCheck();
 	joinEmail_numCheck();
 	emailCheck();
+	pwcheck();
+	businessNumCheck()
 })

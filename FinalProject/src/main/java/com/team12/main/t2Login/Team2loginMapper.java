@@ -12,4 +12,10 @@ public interface Team2loginMapper {
 
 	int join(Membert2 m);
 
+	int businessNumCheck(vet v);
+
+	int joinBusiness(vet v);
+
+	
+
 }

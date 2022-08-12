@@ -6,13 +6,11 @@ import java.io.File;
 import java.util.List;
 import java.util.UUID;
 
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -21,8 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 public class ProductDAO {
 	
 	
-	@Autowired
-	ServletContext servletContext;
 	
 	@Autowired
 	private SqlSession ss;
@@ -52,8 +48,6 @@ public class ProductDAO {
 	}
 		
 	
-
-
 
 	// 하나만 가져오기
 	public void getProduct(HttpServletRequest request, Product p) {
@@ -298,7 +292,12 @@ public class ProductDAO {
 		
 		
 		
-	}}
+	}
+	
+	
+	
+	
+}
 
 	
 	

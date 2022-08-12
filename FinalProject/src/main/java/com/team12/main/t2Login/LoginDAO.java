@@ -216,6 +216,41 @@ public class LoginDAO {
 		
 	}
 
+
+
+	public int checkBusinessNum(vet v) {
+		// 비즈니스 사업자 번호 중복체크
+		return ss.getMapper(Team2loginMapper.class).businessNumCheck(v);
+	}
+
+
+
+	public void joinBusiness(HttpServletRequest req, vet v) {
+		// 비즈니스 회원가입 기능
+		
+		try {
+			req.setCharacterEncoding("utf-8");
+			
+			String addr3 = req.getParameter("m_addr3");
+			String addr2 = req.getParameter("m_addr2");
+			String addr1 = req.getParameter("m_addr1");
+			
+			String vet_address = addr1 +"!"+addr2+"!"+addr3;
+			
+			v.setVet_address(vet_address);
+			
+			if (ss.getMapper(Team2loginMapper.class).joinBusiness(v) == 1) {
+				System.out.println("비즈니스성공");
+			}else {
+				System.out.println("비즈니스실패");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
 	
 	
 	

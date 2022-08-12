@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </head>
 <body>
 <div class="t2-join-outdiv">
@@ -21,7 +23,8 @@
       </div>
       
        <div class="join-textForm">
-        <input name="loginPwConfirm"  class="join-pw" placeholder="비밀번호 확인">
+        <input name="loginPwConfirm"  class="join-pw2" placeholder="비밀번호 확인">
+        <span class="pwCheckResult"></span>
       </div>
       
       <div class="join-textForm">
@@ -63,5 +66,17 @@
       <input type="submit" class="join-btn" value="J O I N"/>
     </form>
     </div>
+    <script type="text/javascript">
+  var naver_id_login = new naver_id_login("BuwruEVQIqPoVW9Sc3Uo", "http://localhost/main/joingo");
+  // 접근 토큰 값 출력
+  alert(naver_id_login.oauthParams.access_token);
+  // 네이버 사용자 프로필 조회
+  naver_id_login.get_naver_userprofile("naverSignInCallback()");
+  // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
+  function naverSignInCallback() {
+    alert(naver_id_login.getProfileData('email'));
+    alert(naver_id_login.getProfileData('age'));
+  }
+</script>
 </body>
 </html>
