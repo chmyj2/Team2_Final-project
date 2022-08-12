@@ -1,5 +1,12 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3bcbc0f571e095b402da4b5c40c55bde83b30063
 Manifest-Version: 1.0
 Built-By: gks36
 Build-Jdk: 14
 Created-By: Maven Integration for Eclipse
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3bcbc0f571e095b402da4b5c40c55bde83b30063
