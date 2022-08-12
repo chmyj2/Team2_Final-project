@@ -40,6 +40,8 @@ public interface Team2BoardMapper {
 
 	int deletecomment(Team2CommentDTO t);
 
+	int updatecomment(Team2CommentDTO t);
+
 	
 
 

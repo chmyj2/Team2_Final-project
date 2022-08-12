@@ -246,6 +246,12 @@ public class Team2BoardDAO {
 		System.out.println("삭제여부 ------"+a);
 		
 		return a;
+	}
+
+	public int updateComment(Team2CommentDTO t) {
+		int a = ss.getMapper(Team2BoardMapper.class).updatecomment(t);
+		System.out.println("수정완료여부-----"+a);
+		return a;
 	} 
 	
 	

@@ -54,38 +54,38 @@ function likeCheck(board_num,member_ID) {
 	
 }
 
-// 글쓰기 로그인 체크
-function loginChek() {
-	$('#writeBtn').click(function() {
-		let id = $('#loginCheckId').val();
-		
-		if(id.length == 0){
-			alert('로그인 후 사용가능합니다.')
-			return false;
-		}
-		
-		
-	});
-	
 
-}
-
-// 댓글 ajax
+// 댓글작성 
 function createComment() {
 
-    $('#commentBtn').click(function() {
+	
+	
+	$('#commentBtn').click(function() { 
+    	
+		let txt = $('#commentTXT').val();
+			if(txt.length == 0){
+				alert('내용을 입력해주세요')
+				return false;
+			}
 		
-    	let board_num = $('#boardNum').val();
-    	let member_ID = $('#memberID').val();
-    	let comment_txt = $('#commentTXT').val();
+		let loginid = $('#memberID').val();
+			if(loginid.length == 0){
+				alert('로그인 후 댓글을 작성해 주세요')
+				return false;
+			}
+		
+		
+		let num = $('#boardNum').val();
+    	let id = $('#memberID').val();
+  
     	
     	$.ajax({//댓글 쓰기
     		type: "POST" ,
     		url : "comment.create",
     		data : {
-    			"comment_board_num" : board_num ,
-    			"comment_member_id" : member_ID ,
-    			"comment_txt" : comment_txt
+    			"comment_board_num" : num ,
+    			"comment_member_id" : id ,
+    			"comment_txt" : txt
     		},
     		success : function(data) {
     			if(data == 1){
@@ -93,10 +93,31 @@ function createComment() {
     			}
     			
     			
-    		}
+    		},
+    		error : function () {
+				return false;
+			}
     	
     	});//ajax
     	
+		let now = new Date();
+		let month = now.getMonth() + 1;  
+		let day = now.getDate();  
+		let hour = now.getHours();
+		let minute = now.getMinutes();
+		
+		let date = month +"-"+ day +"  "+ hour +":"+ minute
+		
+		let inputData = `<div class="commentDiv"><div class="col-sm-8 commentBorder"><div>user : <strong class="cStrong">${id}</strong> <em class="cEm">${date}</em></div><div><span class="commentSpan">${txt}</span> <input class="form-control input-sm toggleInput" type="text"><button class="btn btn-success btn-sm togglebtn">완료</button></div></div><div class="col-sm-1"><a id="${num}" class="deleteAtag"><i class="fa fa-times">삭제</i></a> <a id="${num}" class="updateAtag"><i class="fa fa-edit">수정</i></a></div></div>`
+		
+		/*let buttons = `<a id="${num}" class="deleteAtag"><i class="fa fa-times">삭제</i></a> <a id="${num}" class="updateAtag"><i class="fa fa-edit">수정</i></a>`
+		let buttonDiv = `<div class="col-sm-1"></div>`
+			if(loginid != id){
+				buttons = buttonDiv;
+			}*/
+		$('#commentContainer').prepend(inputData);
+		
+
     	
     	
 	});
@@ -114,7 +135,7 @@ function getComments() {
 		let end = page * 10;
 		let btn ="<div class=\"col-sm-1\"> <a href=\"#\" class=\"float-right btn-box-tool replyDelBtn\"> <i class=\"fa fa-times\"> 삭제</i> </a> <a href=\"#\" class=\"float-right btn-box-tool replyModBtn\"> <i class=\"fa fa-edit\"> 수정</i> </a> </div>";
 		
-		$.ajax({//댓글 쓰기
+		$.ajax({//댓글 얻기
     		type: "GET" ,
     		dataType : 'json',
     		url : "comment.get",
@@ -154,11 +175,11 @@ function deleteComment() {
 	$('.deleteAtag').click(function() {
 		let num = $(this).attr('id')
 		
-		$.ajax({//댓글 쓰기
+		$.ajax({//댓글 삭제
 		type: "GET" ,
 		url : "comment.delete",
 		data : {
-			"comment_num" : num ,
+			"comment_num" : num 
 		},
 		success : function(data) {
 			if(data == 1){
@@ -179,10 +200,79 @@ function deleteComment() {
 }
 
 
+// 댓글 수정 
+function commentUpdate() {
+	
+	 let num = 0;
+	 let txt = '';
+	
+	$('.updateAtag').click(function() {
+		$(this).parent().parent().find('input').fadeToggle('100') 
+		$(this).parent().parent().find('span').toggle() 
+		$(this).parent().parent().find('button').fadeToggle('100') 
+		
+		 num = $(this).attr('id')
+		
+	});
+	
+	$('.togglebtn').click(function() {
+		
+		txt = $(this).parent().find('input').val();
+		
+		$.ajax({//댓글 삭제
+			type: "POST" ,
+			url : "comment.update",
+			data : {
+				"comment_num" : num ,
+				"comment_txt" : txt 
+			},
+			success : function(data) {
+				if(data == 1){
+					console.log("수정 성공")
+					
+					
+				}
+				
+			}
+		
+		});//ajaxfunction
+	
+			$(this).parent().find('input').fadeToggle('100');
+			$(this).parent().find('button').fadeToggle('100');
+			$(this).parent().find('span').toggle();
+			$(this).parent().find('span').html(txt);
+		
+	});//버튼클릭function
+	
+	
+}
 
 
 
 
+
+
+
+
+
+
+//글쓰기 로그인 체크
+function loginChekBoard() {
+	$('#writeBtn').click(function() {
+		let id = $('#loginCheckId').val();
+		
+		if(id.length == 0){
+			alert('로그인 후 사용가능합니다.')
+			return false;
+		}
+		
+		
+	});
+	
+
+}
+
+// 댓글 쓰기 로그인 체크 
 
 
 
@@ -190,10 +280,11 @@ function deleteComment() {
 
 
 $(function() {
-	loginChek();
+	loginChekBoard();
 	createComment();
 	getComments();
 	deleteComment();
+	commentUpdate();
 });
 
 

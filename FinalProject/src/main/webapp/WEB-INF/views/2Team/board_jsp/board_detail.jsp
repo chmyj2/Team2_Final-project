@@ -37,7 +37,7 @@
 	  </button>      
 	  <hr>
 	  
-	  <div class="">
+	  <div id="boardDeleteUpdateBtn">
 	        <button class="btn btn-warning modBtn"
         			onclick="location.href='post.updatePage?board_num=${p.board_num}&board_category=${p.board_category}'">
         			<i class="fa fa-edit"></i>수정
@@ -76,28 +76,36 @@
 </div>
 
 
-<div class="container" style="margin-top: 50px; margin-bottom: 50px;">
+<div class="container" id="commentParent" style="margin-top: 50px; margin-bottom: 50px;">
   
     <div class="row" id="commentContainer">
     <c:forEach var="c" items="${comments}">
       <div class="commentDiv">
-      <div class="col-sm-8 comment" style="border: solid 1px;">
+      <div class="col-sm-8 commentBorder">
         	<div>
-        	user : ${c.comment_member_id} &nbsp&nbsp 
-        	<fmt:formatDate value="${c.comment_date}" pattern="yy-MM-dd HH:mm"/>
+        	user : <strong class="cStrong">${c.comment_member_id}</strong> 
+        	<em class="cEm"><fmt:formatDate value="${c.comment_date}" pattern="MM-dd HH:mm"/></em>
         	</div>
-        	<div class="commentTXT">${c.comment_txt}</div>
+        	
+        	<div>
+        	<span class="commentSpan">${c.comment_txt}</span>	 
+        	<input class="form-control input-sm toggleInput" type="text"><button class="btn btn-success btn-sm togglebtn">완료</button>
+        	</div> 
+        	
       </div>
       
       <div class="col-sm-1">
       
+      		<c:if test="${c.comment_member_id == sessionScope.loginMember.member_ID}">
       		<a id="${c.comment_num}" class="deleteAtag">
              	<i class="fa fa-times"> 삭제</i>
       		</a>
-      		<a onclick="updateComment()">
+      		<a id="${c.comment_num}" class="updateAtag">
             	<i class="fa fa-edit"> 수정</i>
      		</a>
+     		</c:if>
       </div>
+      
       </div>
     </c:forEach>
     </div>
@@ -112,8 +120,18 @@
 
 </div>
 
+<%-- 
+      <div class="col-sm-1">
+      
+      		<a id="${num}" class="deleteAtag">
+             	<i class="fa fa-times"> 삭제</i>
+      		</a>
+      		<a id="${num}" class="updateAtag">
+            	<i class="fa fa-edit"> 수정</i>
+     		</a>
+      </div>
 
-
+ --%>
 
 
 </body>

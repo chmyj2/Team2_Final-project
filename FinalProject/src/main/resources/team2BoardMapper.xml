@@ -90,6 +90,7 @@ from (
      from(
      select * from team2_comment
      where comment_board_num = #{comment_board_num}
+     order by comment_date desc
    )
 ) where rn between #{start} and #{end}
 </select>
@@ -101,6 +102,7 @@ from (
      from(
      select * from team2_comment
      where comment_board_num = #{comment_board_num}
+     order by comment_date desc
    )
 ) where rn between #{start} and #{end}
 </select>
@@ -112,6 +114,12 @@ select count(*) from team2_comment where comment_board_num = #{comment_board_num
 <delete id="deletecomment">
 delete from team2_comment where comment_num = #{comment_num}
 </delete>
+
+<update id="updatecomment">
+update team2_comment 
+set comment_txt = #{comment_txt}
+where comment_num = #{comment_num}
+</update>
 
 
 
