@@ -36,10 +36,12 @@
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<beans:property name="username" value="c##sj" />
 		<beans:property name="password" value="sj" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> ed301f9c64387d8ceeaab9bc98ca7c10f45aeed7
 	</beans:bean>
-
-
+	
 	
 	<beans:bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -57,6 +59,7 @@
 			<beans:list>
 				<beans:value>classpath:testmapper.xml</beans:value>
 				<beans:value>classpath:team2/YJ/productMapper.xml</beans:value>
+<<<<<<< HEAD
 				<beans:value>classpath:team1joinMapper.xml</beans:value>
 				<beans:value>classpath:team2BoardMapper.xml</beans:value>
 				<beans:value>classpath:team2loginMapper.xml</beans:value>
@@ -79,6 +82,33 @@
 		<beans:property name="username"	value="tn3651@naver.com" /> <!-- 자신의 이메일 아이디 -->
 		<beans:property name="password" value="tnsmd!12!d" /> <!-- 자신의 비밀번호 -->
 
+=======
+
+				<beans:value>classpath:team2/SY/hospital_ListMapper.xml</beans:value>
+
+				<beans:value>classpath:team1joinMapper.xml</beans:value>
+				<beans:value>classpath:team2BoardMapper.xml</beans:value>
+				<beans:value>classpath:team2loginMapper.xml</beans:value>
+				<beans:value>classpath:shopteam1Mapper.xml</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
+	<beans:bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<beans:constructor-arg name="sqlSessionFactory"
+			ref="sqlSessionFactory" />
+	</beans:bean>
+
+	<!-- 이메일 인증 관련 빈 등록 -->
+	<beans:bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<beans:property name="host" value="smtp.naver.com" /> <!-- 메이서버 호스트 -->
+		<beans:property name="port" value="465" /> <!-- 메이서버 포트번호 -->
+		<beans:property name="username"	value="tn3651@naver.com" /> <!-- 자신의 이메일 아이디 -->
+		<beans:property name="password" value="tnsmd!12!d" /> <!-- 자신의 비밀번호 -->
+
+>>>>>>> ed301f9c64387d8ceeaab9bc98ca7c10f45aeed7
 		<!-- 보안연결 SSL과 관련된 설정 -->
 		<beans:property name="javaMailProperties">
 			<beans:props>
