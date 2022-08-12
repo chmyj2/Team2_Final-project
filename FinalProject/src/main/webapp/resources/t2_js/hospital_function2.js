@@ -264,8 +264,7 @@ function hospital_list(){
 							$("<td/>").text(name),
 							$("<td/>").text(ward),
 							$("<td/>").text(tel),
-							$("<td><a href='hospitalDetailGo?hospital_no="+mgtno+"'>자세히</a></td>")		
-							
+							$("<td><a href='hospitalDetailGo?hospital_no="+mgtno+"'>자세히</a></td>"),		
 							$("<td/>").apeend($("<a href='hospitalDetailGo'/>").text(name)),
 							$("<td/>").text(addr),
 							$("<td/>").text(tel),
