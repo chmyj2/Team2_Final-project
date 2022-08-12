@@ -30,4 +30,8 @@
 	insert into vet_member values(#{vet_ID},#{vet_PW},#{vet_businessNum},#{vet_address},#{vet_phoneNum},sysdate)
 	</insert>
 	
+	<select id="checkIdNaver" resultType="int">
+	select count(*) from final_member where member_ID =#{member_ID}
+	</select>
+	
 </mapper>

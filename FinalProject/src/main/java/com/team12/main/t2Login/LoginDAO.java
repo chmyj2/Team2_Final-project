@@ -251,6 +251,15 @@ public class LoginDAO {
 		
 	}
 
+
+
+	public int naverLogin(Membert2 m) {
+		
+			//아이디있는 지 확인
+			
+		return ss.getMapper(Team2loginMapper.class).checkIdNaver(m);
+	}
+
 	
 	
 	

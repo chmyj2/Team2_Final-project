@@ -82,7 +82,7 @@
 	
 </div>
 <script type="text/javascript">
-  	var naver_id_login = new naver_id_login("BuwruEVQIqPoVW9Sc3Uo", "http://localhost/main/joingo");
+  	var naver_id_login = new naver_id_login("BuwruEVQIqPoVW9Sc3Uo", "http://localhost/main/naver.login");
   	var state = naver_id_login.getUniqState();
   	naver_id_login.setButton("white", 2,40);
   	naver_id_login.setDomain("http://localhost/main/naver.login");

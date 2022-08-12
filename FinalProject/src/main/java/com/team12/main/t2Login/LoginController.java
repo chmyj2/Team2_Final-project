@@ -177,6 +177,22 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/naver.login", method = RequestMethod.GET)
+	public String naverlogin(HttpServletRequest req, Membert2 m) {
+		//네이버로그인
+		
+		return "2Team/t2login/naverLogin";
+	}
+	
+	@RequestMapping(value = "/naverlogin.check", method = RequestMethod.GET)
+	public int naverlogincheck(HttpServletRequest req, Membert2 m) {
+		//네이버로그인 확인
+		
+		return lDAO.naverLogin(m);
+	}
+	
+	
+	
 	
 	
 	
