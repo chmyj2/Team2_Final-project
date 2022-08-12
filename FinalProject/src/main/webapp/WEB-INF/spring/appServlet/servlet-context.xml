@@ -32,9 +32,10 @@
 	<!-- //////////DB연결관련!///////////// -->
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<beans:property name="url" value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=C:/Users/soldesk/Downloads/Wallet_DB202204301707" />
-		<beans:property name="username" value="SYP" />
-		<beans:property name="password" value="YJ802soldesk" />
+		<beans:property name="url"
+			value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<beans:property name="username" value="c##sj" />
+		<beans:property name="password" value="sj" />
 	</beans:bean>
 	
 	
@@ -54,7 +55,9 @@
 			<beans:list>
 				<beans:value>classpath:testmapper.xml</beans:value>
 				<beans:value>classpath:team2/YJ/productMapper.xml</beans:value>
+
 				<beans:value>classpath:team2/SY/hospital_ListMapper.xml</beans:value>
+
 				<beans:value>classpath:team1joinMapper.xml</beans:value>
 				<beans:value>classpath:team2BoardMapper.xml</beans:value>
 				<beans:value>classpath:team2loginMapper.xml</beans:value>

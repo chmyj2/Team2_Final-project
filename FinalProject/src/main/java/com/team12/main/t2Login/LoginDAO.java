@@ -188,9 +188,9 @@ public class LoginDAO {
 			String addr3 = req.getParameter("m_addr3");
 			String addr2 = req.getParameter("m_addr2");
 			String addr1 = req.getParameter("m_addr1");
+			String date = req.getParameter("member_birth");
 			
-			
-			Date member_birth = Date.valueOf(req.getParameter("member_birth"));
+			Date member_birth = Date.valueOf(date);
 
 			
 			String member_address = addr1 +"!"+addr2+"!"+addr3;
@@ -247,6 +247,30 @@ public class LoginDAO {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		
+	}
+
+
+
+	public int naverLogin(Membert2 m) {
+		
+			//아이디있는 지 확인
+			System.out.println(m.getMember_ID());
+		return ss.getMapper(Team2loginMapper.class).checkIdNaver(m);
+	}
+
+
+
+	public void loginNaver(HttpServletRequest req, Membert2 m) {
+		// 네이버 로그인
+		Membert2 dbMember = ss.getMapper(Team2loginMapper.class).getMemberByID(m);
+		
+		if (dbMember != null) {
+				req.getSession().setAttribute("loginMember", dbMember);
+				req.getSession().setMaxInactiveInterval(60 * 10);
+		}else {
+			System.out.println("--------------------실패");
 		}
 		
 	}
