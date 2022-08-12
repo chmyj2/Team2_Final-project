@@ -21,7 +21,8 @@
       </div>
       
        <div class="join-textForm">
-        <input name="loginPwConfirm"  class="join-pw" placeholder="비밀번호 확인">
+        <input name="loginPwConfirm"  class="join-pw2" placeholder="비밀번호 확인">
+        <span class="pwCheckResult"></span>
       </div>
       
       <div class="join-textForm">

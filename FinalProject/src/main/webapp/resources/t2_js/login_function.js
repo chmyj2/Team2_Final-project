@@ -24,7 +24,7 @@ function idCheck() {
 				data:{"member_ID":idInput},
 				success: function(getData) {
 					console.log(getData);
-					if (getData ==1) {
+					if (getData >=1) {
 						$('#idcheckResult').text("사용불가");
 						$('#idcheckResult').css('color','red');
 					}else {
@@ -117,9 +117,29 @@ function joinEmail_numCheck() {
 	})
 }//이메일 인증번호 일치 확인
 
+function pwcheck() {
+	//패스워드일치불일치
+	
+	let result = $('.pwCheckResult');
+	$('.join-pw2').keyup(function() {
+		let pw1 = $('.join-pw').val();
+		let pw2 = $('.join-pw2').val();
+		
+		if (pw1 != pw2) {
+			result.html("패스워드불일치");
+			result.css('color','red');
+		}else {
+			result.html("");
+			
+		}
+	})
+	
+}//패스워드일치불일치
+
 $(function() {
 	connectAddrSearchEvent();
 	idCheck();
 	joinEmail_numCheck();
 	emailCheck();
+	pwcheck();
 })
