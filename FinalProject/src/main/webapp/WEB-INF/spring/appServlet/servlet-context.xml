@@ -36,10 +36,8 @@
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<beans:property name="username" value="c##sj" />
 		<beans:property name="password" value="sj" />
-
 	</beans:bean>
-
-
+	
 	
 	<beans:bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -57,6 +55,9 @@
 			<beans:list>
 				<beans:value>classpath:testmapper.xml</beans:value>
 				<beans:value>classpath:team2/YJ/productMapper.xml</beans:value>
+
+				<beans:value>classpath:team2/SY/hospital_ListMapper.xml</beans:value>
+
 				<beans:value>classpath:team1joinMapper.xml</beans:value>
 				<beans:value>classpath:team2BoardMapper.xml</beans:value>
 				<beans:value>classpath:team2loginMapper.xml</beans:value>

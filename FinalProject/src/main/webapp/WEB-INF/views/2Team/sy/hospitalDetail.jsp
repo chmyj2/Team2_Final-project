@@ -11,7 +11,6 @@
 </head>
 <body>
 
-
 			<div>
 				<div class="detail-top-menu">
 					<input type="hidden" id="detail_addr" value="${Hospital.hospital_addr}"/>
@@ -21,7 +20,6 @@
 				<div>
 					<h3 id="detail_map"></h3>
 				</div>
-				
 				
 				<div class="detail-info">
 				 <section class="detail-info-section">

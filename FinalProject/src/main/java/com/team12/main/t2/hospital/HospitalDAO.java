@@ -14,10 +14,8 @@ public class HospitalDAO {
 	private SqlSession ss;
 
 	public void hospitalView(HttpServletRequest req, HospitalDTO hDTO) {
-		 
 		
 		Hospital_ListMapper hlm = ss.getMapper(Hospital_ListMapper.class);
-
 		
 		req.setAttribute("Hospital",hlm.getDetailview(hDTO));
 		
