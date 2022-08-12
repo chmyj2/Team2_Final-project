@@ -26,7 +26,8 @@
       </div>
        
       <div class="join-textForm">
-        <input name="vet_businessNum" type="number" class="join-cellphoneNo" placeholder="사업자번호">
+        <input name="vet_businessNum" type="number" class="vet_businessNum" placeholder="사업자번호">
+        <span class="businessNumResult"></span>
       </div>
       
       <div class="join-textForm">

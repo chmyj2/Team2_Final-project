@@ -69,6 +69,8 @@ ALTER TABLE vet_member MODIFY vet_businessNum varchar2(30 char);
 
 delete vet_member where vet_ID ='sj';
 
+select count(*) from VET_MEMBER where vet_businessNum = '123456789';
+
 drop table vet_member;
 
 insert into vet_member values('sy','1004','123456789','인천','010-1234-1234',sysdate);

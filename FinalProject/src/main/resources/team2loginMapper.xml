@@ -22,4 +22,8 @@
 	insert into final_member values(#{member_ID},#{member_PW},1,#{member_name},#{member_birth},#{member_sex},#{member_phoneNum},#{member_address},#{member_email},sysdate,'동의')
 	</insert>
 	
+	<select id="businessNumCheck" resultType="int">
+	select count(*) from VET_MEMBER where vet_businessNum = #{vet_businessNum}
+	</select>
+	
 </mapper>

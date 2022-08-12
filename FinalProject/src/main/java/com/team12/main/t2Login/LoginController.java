@@ -155,7 +155,14 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
-	
+	@RequestMapping(value = "/businessNum.check", method = RequestMethod.GET)
+	@ResponseBody
+	public int businessNumcheck(vet v) {
+		
+		//비즈니스 사업자 번호 중복체크
+		
+		return lDAO.checkBusinessNum(v);
+	}
 	
 	
 	

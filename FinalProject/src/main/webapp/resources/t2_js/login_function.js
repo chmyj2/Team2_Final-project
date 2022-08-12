@@ -136,10 +136,41 @@ function pwcheck() {
 	
 }//패스워드일치불일치
 
+function businessNumCheck() {
+	//사업자 번호 일치확인
+	$('.vet_businessNum').blur(function() {
+		let businessNum = $(this).val();
+		
+		$.ajax({
+				url:"businessNum.check",
+				type:"GET",
+				dataType :"text",
+				data:{"vet_businessNum":businessNum},
+				success: function(getData) {
+					console.log(getData);
+					if (getData >=1) {
+						$('.businessNumResult').text("일치하는 사업자 번호가 있습니다.");
+						$('.businessNumResult').css('color','red');
+					}else {
+						$('.businessNumResult').text("");
+					}
+					
+					//$('span').text(idInput+"이미 사용중입니다.");
+				},
+				error : function(request,status,error) {
+					console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					
+				}
+			}); // ajax끝
+	})
+	
+}//사업자 번호 일치확인
+
 $(function() {
 	connectAddrSearchEvent();
 	idCheck();
 	joinEmail_numCheck();
 	emailCheck();
 	pwcheck();
+	businessNumCheck()
 })

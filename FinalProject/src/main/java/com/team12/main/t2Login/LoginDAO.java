@@ -216,6 +216,13 @@ public class LoginDAO {
 		
 	}
 
+
+
+	public int checkBusinessNum(vet v) {
+		// 비즈니스 사업자 번호 중복체크
+		return ss.getMapper(Team2loginMapper.class).businessNumCheck(v);
+	}
+
 	
 	
 	
