@@ -1,6 +1,5 @@
 $(function() {
 	hospital_map();
-
 	hospital_list();
 
 	
@@ -37,7 +36,6 @@ kakao.maps.event.addListener(map, 'bounds_changed', function() {
     	var resultDiv = document.getElementById('result');   
     	resultDiv.innerHTML = message;
 
-    	
     	//hospital_list(lb);
 
     });
@@ -187,7 +185,9 @@ success:function(data){
 				                '            <div class="desc">' + 
 				                '                <div class="ellipsis">후기수</div>' + 
 				                '                <div class="jibun ellipsis"> <a href="hospitalDetailGo?hospital_no='+mgtno+'"> 자세히 </a> ' + 
+
 				                '                <div class="jibun ellipsis"> <a href=""> 자세히 </a> ' + 
+
 				                '                <a href="https://www.kakaocorp.com/main" target="_blank" class="link">홈페이지</a></div>' + 
 				                '            </div>' + 
 				                '        </div>' + 
@@ -232,7 +232,6 @@ success:function(data){
 
 function hospital_list(){
 
-	
 	$.ajax({
 		url:"resources/t2_js/petHospital.json",
 		type : "GET" ,
@@ -240,8 +239,11 @@ function hospital_list(){
 		success:function(data){
 	
 				let hospital = data.DATA
+
+				var table = $("<table class='main-hospital-list' border='1'/>");
 				
 				var table = $("<table/>");
+
 				
 				$.each(hospital , function(i , m) {
 					
@@ -249,13 +251,20 @@ function hospital_list(){
 					let addr = hospital[i].sitewhladdr;
 					let tel = hospital[i].sitetel;
 					let state = hospital[i].dtlstatenm;
+					let mgtno = hospital[i].mgtno;
 					
-				
+					let [city, ward] = addr.split(' ');
+
 					if(state == "정상"){
 						
 						if(addr != ""){
 						
 					var row = $("<tr/>").append(
+							
+							$("<td/>").text(name),
+							$("<td/>").text(ward),
+							$("<td/>").text(tel),
+							$("<td><a href='hospitalDetailGo?hospital_no="+mgtno+"'>자세히</a></td>")		
 							
 							$("<td/>").apeend($("<a href='hospitalDetailGo'/>").text(name)),
 							$("<td/>").text(addr),

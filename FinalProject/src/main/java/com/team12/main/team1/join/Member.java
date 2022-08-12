@@ -1,68 +1,153 @@
 package com.team12.main.team1.join;
 
+import java.sql.Date;
 
 public class Member {
 	
-	private String m_id;
-	private String m_pw;
-	private String m_name;
-	private String m_addr;
-	private String m_photo;
+	private String member_ID;
+	private String member_PW;
+	private int member_linkWhere;
+	private String member_name;
+	private Date member_birth;
+	private String member_sex;
+	private String member_phoneNum;
+	private String member_address;
+	private	String member_email;
+	private Date member_joinDate;
+	private String member_paper;
+	
 	
 	public Member() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Member(String m_id, String m_pw, String m_name, String m_addr, String m_photo) {
+
+	public Member(String member_ID, String member_PW, int member_linkWhere, String member_name, Date member_birth,
+			String member_sex, String member_phoneNum, String member_address, String member_email, Date member_joinDate,
+			String member_paper) {
 		super();
-		this.m_id = m_id;
-		this.m_pw = m_pw;
-		this.m_name = m_name;
-		this.m_addr = m_addr;
-		this.m_photo = m_photo;
+		this.member_ID = member_ID;
+		this.member_PW = member_PW;
+		this.member_linkWhere = member_linkWhere;
+		this.member_name = member_name;
+		this.member_birth = member_birth;
+		this.member_sex = member_sex;
+		this.member_phoneNum = member_phoneNum;
+		this.member_address = member_address;
+		this.member_email = member_email;
+		this.member_joinDate = member_joinDate;
+		this.member_paper = member_paper;
 	}
 
-	public String getM_id() {
-		return m_id;
+
+	public String getMember_ID() {
+		return member_ID;
 	}
 
-	public void setM_id(String m_id) {
-		this.m_id = m_id;
+
+	public void setMember_ID(String member_ID) {
+		this.member_ID = member_ID;
 	}
 
-	public String getM_pw() {
-		return m_pw;
+
+	public String getMember_PW() {
+		return member_PW;
 	}
 
-	public void setM_pw(String m_pw) {
-		this.m_pw = m_pw;
+
+	public void setMember_PW(String member_PW) {
+		this.member_PW = member_PW;
 	}
 
-	public String getM_name() {
-		return m_name;
+
+	public int getMember_linkWhere() {
+		return member_linkWhere;
 	}
 
-	public void setM_name(String m_name) {
-		this.m_name = m_name;
+
+	public void setMember_linkWhere(int member_linkWhere) {
+		this.member_linkWhere = member_linkWhere;
 	}
 
-	public String getM_addr() {
-		return m_addr;
+
+	public String getMember_name() {
+		return member_name;
 	}
 
-	public void setM_addr(String m_addr) {
-		this.m_addr = m_addr;
+
+	public void setMember_name(String member_name) {
+		this.member_name = member_name;
 	}
 
-	public String getM_photo() {
-		return m_photo;
+
+	public Date getMember_birth() {
+		return member_birth;
 	}
 
-	public void setM_photo(String m_photo) {
-		this.m_photo = m_photo;
+
+	public void setMember_birth(Date member_birth) {
+		this.member_birth = member_birth;
 	}
-	
-	
+
+
+	public String getMember_sex() {
+		return member_sex;
+	}
+
+
+	public void setMember_sex(String member_sex) {
+		this.member_sex = member_sex;
+	}
+
+
+	public String getMember_phoneNum() {
+		return member_phoneNum;
+	}
+
+
+	public void setMember_phoneNum(String member_phoneNum) {
+		this.member_phoneNum = member_phoneNum;
+	}
+
+
+	public String getMember_address() {
+		return member_address;
+	}
+
+
+	public void setMember_address(String member_address) {
+		this.member_address = member_address;
+	}
+
+
+	public String getMember_email() {
+		return member_email;
+	}
+
+
+	public void setMember_email(String member_email) {
+		this.member_email = member_email;
+	}
+
+
+	public Date getMember_joinDate() {
+		return member_joinDate;
+	}
+
+
+	public void setMember_joinDate(Date member_joinDate) {
+		this.member_joinDate = member_joinDate;
+	}
+
+
+	public String getMember_paper() {
+		return member_paper;
+	}
+
+
+	public void setMember_paper(String member_paper) {
+		this.member_paper = member_paper;
+	}
 	
 	
 	
