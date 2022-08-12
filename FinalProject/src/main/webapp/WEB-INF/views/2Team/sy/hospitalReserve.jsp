@@ -11,12 +11,12 @@
 <table class="scriptCalendar">
     <thead>
         <tr>
-            <td onClick="prevCalendar();" style="cursor:pointer;">&#60;&#60;</td>
-            <td colspan="5">
+             <td onClick="prevCalendar();" style="cursor:pointer;">&#60;&#60;</td> 
+            <td colspan="5" >
                 <span id="calYear">YYYY</span>년
                 <span id="calMonth">MM</span>월
             </td>
-            <td onClick="nextCalendar();" style="cursor:pointer;">&#62;&#62;</td>
+           <td onClick="nextCalendar();" style="cursor:pointer;">&#62;&#62;</td> 
         </tr>
         <tr>
             <td>일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td>토</td>
@@ -24,5 +24,8 @@
     </thead>
   	<tbody></tbody>
 </table>
+		
+		<div class="reserve-time-list" style="border: 1px solid black; text-align: center;" ></div>
+		
 </body>
 </html>
