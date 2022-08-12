@@ -37,9 +37,12 @@
 		<beans:property name="username" value="c##sj" />
 		<beans:property name="password" value="sj" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> ed301f9c64387d8ceeaab9bc98ca7c10f45aeed7
+=======
+>>>>>>> 42845b987f855244270b258790fc2499f9aa4334
 	</beans:bean>
 	
 	
@@ -60,6 +63,12 @@
 				<beans:value>classpath:testmapper.xml</beans:value>
 				<beans:value>classpath:team2/YJ/productMapper.xml</beans:value>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+				<beans:value>classpath:team2/SY/hospital_ListMapper.xml</beans:value>
+
+>>>>>>> 42845b987f855244270b258790fc2499f9aa4334
 				<beans:value>classpath:team1joinMapper.xml</beans:value>
 				<beans:value>classpath:team2BoardMapper.xml</beans:value>
 				<beans:value>classpath:team2loginMapper.xml</beans:value>
