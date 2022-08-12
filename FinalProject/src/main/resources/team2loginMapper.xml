@@ -26,4 +26,8 @@
 	select count(*) from VET_MEMBER where vet_businessNum = #{vet_businessNum}
 	</select>
 	
+	<insert id="joinBusiness" parameterType="com.team12.main.t2Login.vet">
+	insert into vet_member values(#{vet_ID},#{vet_PW},#{vet_businessNum},#{vet_address},#{vet_phoneNum},sysdate)
+	</insert>
+	
 </mapper>

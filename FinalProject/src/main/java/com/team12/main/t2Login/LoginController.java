@@ -164,6 +164,20 @@ public class LoginController {
 		return lDAO.checkBusinessNum(v);
 	}
 	
+	@RequestMapping(value = "/joinDo.business", method = RequestMethod.POST)
+	public String joinDobusiness(HttpServletRequest req, vet v) {
+		
+		//비즈니스 회원가입
+		lDAO.joinBusiness(req,v);
+		
+		//로그인 체크
+		lDAO.loginCheck(req);
+		req.setAttribute("contentPage", "t2login/joinOK.jsp");
+		
+		return "2Team/t2_index";
+	}
+	
+	
 	
 	
 }

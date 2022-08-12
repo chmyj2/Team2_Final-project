@@ -14,4 +14,8 @@ public interface Team2loginMapper {
 
 	int businessNumCheck(vet v);
 
+	int joinBusiness(vet v);
+
+	
+
 }

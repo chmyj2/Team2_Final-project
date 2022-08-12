@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="t2-join-outdiv">
-<form action="#" method="POST" class="joinForm" name="joinForm"> <!-- onsubmit="return joinCheck()"  -->
+<form action="joinDo.business" method="POST" class="joinForm" name="joinForm"> <!-- onsubmit="return joinCheck()"  -->
                                                                                                
       <h2>회원가입</h2>
       <div class="join-textForm">
