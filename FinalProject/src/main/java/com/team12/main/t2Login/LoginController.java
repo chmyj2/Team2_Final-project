@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.team12.main.t2.Team2HomeController;
+
+
 @Controller
 public class LoginController {
 	
@@ -185,11 +188,36 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "/naverlogin.check", method = RequestMethod.GET)
+	@ResponseBody
 	public int naverlogincheck(HttpServletRequest req, Membert2 m) {
-		//네이버로그인 확인
-		
+		//네이버 아이디 확인
 		return lDAO.naverLogin(m);
 	}
+	
+	@RequestMapping(value = "/naverlogin.do", method = RequestMethod.GET)
+	public String naverloginDo(HttpServletRequest req, Membert2 m) {
+			//네이버 로그인하기
+			if (req.getParameter("member_ID") != null) {
+				lDAO.loginNaver(req, m);
+				lDAO.loginCheck(req);
+			}
+			req.setAttribute("contentPage", "t2_home.jsp");	
+			
+		return "2Team/t2_index";
+	}
+	
+	@RequestMapping(value = "/naverjoin.go", method = RequestMethod.GET)
+	public String naverjoingo(HttpServletRequest req, Membert2 m) {
+		//네이버 회원가입하러가기
+		
+		lDAO.loginCheck(req);
+		req.setAttribute("contentPage", "t2login/t2_join.jsp");
+		
+		
+		return "2Team/t2_index";
+	}
+	
+	
 	
 	
 	
