@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +13,14 @@
                                                                                                
       <h2>회원가입</h2>
       <div class="join-textForm">
-        <input name="member_ID" type="text" class="join-id" placeholder="아이디">
+      <c:choose>
+      <c:when test="${param.member_ID != null}">
+        <input name="member_ID" type="text" class="join-id" placeholder="아이디" value="${param.member_ID}">      
+      </c:when>
+      <c:otherwise>      
+        <input name="member_ID" type="text" class="join-id" placeholder="아이디">      
+      </c:otherwise>
+      </c:choose>
         <span id="idcheckResult"></span>
       </div>
       
@@ -21,7 +29,8 @@
       </div>
       
        <div class="join-textForm">
-        <input name="loginPwConfirm"  class="join-pw" placeholder="비밀번호 확인">
+        <input name="loginPwConfirm"  class="join-pw2" placeholder="비밀번호 확인">
+        <span class="pwCheckResult"></span>
       </div>
       
       <div class="join-textForm">
