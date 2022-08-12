@@ -36,11 +36,14 @@ public class MemberDAO {
 			Date jm_date = Date.valueOf(req.getParameter("member_birth"));
 
 
-
-	m.setMember_address(jm_addr);
-	m.setMember_birth(jm_date);
-//	m.setMember_joinDate(jm_joinDate);
-//	m.setMember_paper(jm_paper);
+			m.setMember_ID(req.getParameter("member_ID"));
+			m.setMember_PW(req.getParameter("member_PW"));
+			m.setMember_name(req.getParameter("member_name"));
+			m.setMember_birth(jm_date);
+			m.setMember_sex(req.getParameter("member_sex"));
+			m.setMember_phoneNum(req.getParameter("member_phoneNum"));
+	        m.setMember_address(jm_addr);
+	        m.setMember_email(req.getParameter("member_email"));
 
 	if (ss.getMapper(Team1joinMapper.class).join(m) == 1) {
 		req.setAttribute("result", "가입성공");
@@ -101,19 +104,32 @@ public class MemberDAO {
 	public void update(Member m, HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		
+	try {
 		
-		String jm_address1 = req.getParameter("m_addr1");
-		String jm_address2 = req.getParameter("m_addr2");
-		String jm_address3 = req.getParameter("m_addr3");
+	
+		String jm_address1 = req.getParameter("jm_addr1");
+		String jm_address2 = req.getParameter("jm_addr2");
+		String jm_address3 = req.getParameter("jm_addr3");
 
 		String jm_addr = jm_address1 + "!" + jm_address2 + "!" + jm_address3;
 
-//		Date jm_date = Date.valueOf(req.getParameter("member_birth"));
 
+		m.setMember_ID(req.getParameter("jm_id"));
+		m.setMember_PW(req.getParameter("jm_pw"));
+		m.setMember_name(req.getParameter("jm_name"));
+		m.setMember_phoneNum(req.getParameter("jm_pNum"));
+   
 		m.setMember_address(jm_addr);
-//		m.setMember_birth(jm_date);
+        m.setMember_email(req.getParameter("jm_email"));
 		
-
+//        System.out.println(m.getMember_ID());
+//        System.out.println(m.getMember_PW());
+//        System.out.println(m.getMember_name());
+//        System.out.println(m.getMember_phoneNum());
+//        System.out.println(jm_addr);
+//        System.out.println(m.getMember_email());
+//        
+//        
 
 		if (ss.getMapper(Team1joinMapper.class).update(m) == 1) {
 			req.setAttribute("result", "수정성공");
@@ -121,9 +137,14 @@ public class MemberDAO {
 		} else {
 			req.setAttribute("result", "수정실패");
 		}
-
-		}
-
+	} catch (Exception e) {
+		e.printStackTrace();
+		req.setAttribute("result", "수정실패");
+		// TODO: handle exception
+	}
+		
+	}
+	
 	public void bye(HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		
