@@ -189,7 +189,35 @@ hr.login_hr{
     padding: 10px 10px 10px 10px;
     border-radius: 30px;
     border: none;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */      /* 동훈 수정 영경님 맘대로 다시 바꾸셔도 무관 */
+    margin-bottom: 20px;
+}
+
+.input_birth{                           
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+	
+}
+.join-cellphoneNo{                          
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+	
+}
+.input_email{                          
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+	
 }
 
 .input_addr1{
