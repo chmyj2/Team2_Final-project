@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,14 @@
 </head>
 <body>
 <div style="text-align: center; margin-top: 10px;">
-<span style="font-size: 20px; font-weight: 15px;">"산책가자"이용약관</span>
+<span style="font-size: 20px; font-weight: 15px;">"산책가자"이용약관</span><br>
+<c:choose>
+<c:when test="${param.member == 1 }">
+<span>-개인-</span>
+</c:when>
+<c:otherwise>
+<span>-기업-</span></c:otherwise>
+</c:choose>
 <div>
 <div>회원약관</div>
 
@@ -17,10 +25,10 @@
 이 약관은 산책가자에서 제공하는 인터넷 관련 서비스(이하 “서비스”)를 이용함에 있어 이용자와 산책가자의 권리․의무 및 책임사항을 규정함을 목적으로 합니다.
 제2조 (정의)
 1. 본 약관에서 사용하는 용어의 정의는 다음과 같습니다.
-① 이용계약 : 서비스 이용과 관련하여 누리집과 이용자 간에 체결하는 계약
+① 이용계약 : 서비스 이용과 관련하여 산책가자와 이용자 간에 체결하는 계약
 ② 가입 : 산책가자이 제공하는 신청서 양식에 해당 정보를 기입하고, 본 약관에 동의하여 서비스 이용계약을 완료시키는 행위
-③ 회원 : 산책가자에 회원가입에 필요한 개인 정보를 제공하여 회원 등록을 한 자로서, 누리집의 정보 및 서비스를 이용할 수 있는 자
-④ 이용자번호(ID) : 이용고객의 식별과 이용자가 서비스 이용을 위하여 이용자가 정하고 누리집이 승인하는 문자와 숫자의 조합
+③ 회원 : 산책가자에 회원가입에 필요한 개인 정보를 제공하여 회원 등록을 한 자로서, 산책가자의 정보 및 서비스를 이용할 수 있는 자
+④ 이용자번호(ID) : 이용고객의 식별과 이용자가 서비스 이용을 위하여 이용자가 정하고 산책가자이 승인하는 문자와 숫자의 조합
 ⑤ 비밀번호(PW) : 이용자가 등록회원과 동일인인지 신원을 확인하고 통신상의 자신의 개인정보보호를 위하여 이용자 자신이 정한 문자와 숫자의 조합
 ⑥ 게시물 : 회원이 서비스를 이용하면서 게시한 글, 이미지, 동영상 등 각종 파일과 링크 등
 ⑦ 탈퇴(해지) : 서비스 또는 회원이 이용계약을 종료하는 행위
@@ -82,7 +90,14 @@
 <label class="agree" for="agree">
 <input type="checkbox" id="agree" onchange="agree()">위의 내용을 읽었으며, 내용에 동의합니다 
 </label><br>
+<c:choose>
+<c:when test="${param.member == 1 }">
 <button id="join_btn" disabled="disabled" onclick="location.href='joingo'">가입하기</button>
+</c:when>
+<c:otherwise>
+<button id="join_btn" disabled="disabled" onclick="location.href='joingo.business'">가입하기</button>
+</c:otherwise>
+</c:choose>
 
 </div>
 </body>

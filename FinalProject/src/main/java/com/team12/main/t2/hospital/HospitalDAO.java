@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 package com.team12.main.t2.hospital;
 
+<<<<<<< HEAD
 import javax.servlet.http.HttpServletRequest;
 
 public class HospitalDAO {
@@ -42,3 +43,26 @@ public class HospitalDAO {
 	
 }
 >>>>>>> 2dedeb7026d4a1cdb8b601191823c6a31d467910
+=======
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class HospitalDAO {
+	
+	@Autowired
+	private SqlSession ss;
+
+	public void hospitalView(HttpServletRequest req, HospitalDTO hDTO) {
+		
+		Hospital_ListMapper hlm = ss.getMapper(Hospital_ListMapper.class);
+		
+		req.setAttribute("Hospital",hlm.getDetailview(hDTO));
+		
+		System.out.println();
+
+    }
+	
+}
+>>>>>>> ed301f9c64387d8ceeaab9bc98ca7c10f45aeed7

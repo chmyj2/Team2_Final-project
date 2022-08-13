@@ -14,7 +14,7 @@ member_paper varchar2(30 char) not null
 
 ALTER TABLE final_member MODIFY member_phoneNum varchar2(30 char);
 
-delete final_member where member_ID ='mz';
+delete final_member where member_ID ='sj';
 
 drop table final_member;
 
@@ -69,9 +69,11 @@ ALTER TABLE vet_member MODIFY vet_businessNum varchar2(30 char);
 
 delete vet_member where vet_ID ='sj';
 
+select count(*) from VET_MEMBER where vet_businessNum = '123456789';
+
 drop table vet_member;
 
-insert into vet_member values('sj','1004','123456789','인천','010-1234-1234',sysdate);
+insert into vet_member values('sy','1004','123456789','인천','010-1234-1234',sysdate);
 
 select * from vet_member;
 

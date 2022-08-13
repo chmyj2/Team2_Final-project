@@ -25,7 +25,7 @@
      <div class="row">
       <c:forEach var="p" items="${Product}">
            <div class="col-md-3">
-           <a href="detail.go?productNum=${p.productNum}"><div class="thumbnail">
+           <a href="detailPage.go?productNum=${p.productNum}"><div class="thumbnail">
                 <img src="resources/t2_yj_files/${p.productThumbnail }" style="height: 300px;width:300px">
                 <div class="caption">
                   <p>${fn:length(p.productName)>20?fn:substring(p.productName,0,20)+="...":p.productName }</p>

@@ -6,6 +6,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/t2_css/t2_login.css">
+  <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+ 
 </head>
 <body>
 
@@ -27,7 +30,7 @@
 			<h2 class="login_h2">Welcome!</h2>
 			<div class="login-social">
 				<a href=""><i class="fa fa-kakao">kakao</i></a>
-				<a href=""><i class="fa fa-naver">naver</i></a>
+				<div id="naver_id_login"></div>
 				<a href=""><i class="fa fa-google-plus"></i></a>
 							</div>
 			
@@ -38,7 +41,7 @@
 			</label>
 			<span class="pw_alert">${r}</span>
 			<input type="checkbox" id="login_idSave">아이디 기억하기
-			<p class="forgot-pass" type="button"  style="font-size: 12px;" onclick="location.href='acceptgo' ">회원가입</p>
+			<p class="forgot-pass" type="button"  style="font-size: 12px;" onclick="location.href='acceptgo?member=1' ">회원가입</p>
 			<p class="forgot-pass"  style="font-size: 12px;">아이디를 잊으셨나요?</p>
 			<p class="forgot-pass"  style="font-size: 12px;">비밀번호를 잊으셨나요?</p>
 			<div class="box bg-1">
@@ -63,7 +66,7 @@
 			</label>
 			<span class="pw_alert">${rb}</span>
 			<input type="checkbox" id="login_idSave">아이디 기억하기
-			<p class="forgot-pass"  style="font-size: 12px;">회원가입</p>
+			<p class="forgot-pass"  style="font-size: 12px;" onclick="location.href='acceptgo?member=2' ">회원가입</p>
 			<p class="forgot-pass"  style="font-size: 12px;">아이디를 잊으셨나요?</p>
 			<p class="forgot-pass"  style="font-size: 12px;">비밀번호를 잊으셨나요?</p>
 			<div class="box bg-1">
@@ -78,7 +81,15 @@
 		
 	
 </div>
-
+<script type="text/javascript">
+  	var naver_id_login = new naver_id_login("BuwruEVQIqPoVW9Sc3Uo", "http://localhost/main/naver.login");
+  	var state = naver_id_login.getUniqState();
+  	naver_id_login.setButton("white", 2,40);
+  	naver_id_login.setDomain("http://localhost/main/naver.login");
+  	naver_id_login.setState(state);
+  	naver_id_login.setPopup();
+  	naver_id_login.init_naver_id_login();
+  </script>
 </body>
 <script type="text/javascript">
 $(function() {
