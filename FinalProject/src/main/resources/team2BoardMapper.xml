@@ -21,7 +21,7 @@ where board_category = #{board_category}
 </select>
 
 <insert id="writePost" parameterType="com.team12.main.team2board.Team2BoardDTO">
-	insert into team2_board values(team2_board_seq.nextval, 'mz', #{board_category}, #{board_title}, #{board_txt}, sysdate, 0,'karina.jpg', 0)
+	insert into team2_board values(team2_board_seq.nextval, #{board_member_id}, #{board_category}, #{board_title}, #{board_txt}, sysdate, 0,'karina.jpg', 0)
 </insert>
 
 <select id="postDetail" resultType="com.team12.main.team2board.Team2BoardDTO">
@@ -51,8 +51,12 @@ where like_board_num = #{like_board_num}
 and   like_member_id= #{like_member_id}
 </select>
 
-<update id="updateLike">
+<update id="countUpTotalLike">
 update team2_board set board_like = board_like + 1 where board_num = #{like_board_num} 
+</update>
+
+<update id="countDownTotalLike">
+update team2_board set board_like = board_like - 1 where board_num = #{like_board_num} 
 </update>
 
 <insert id="insertInfoLike">
@@ -64,7 +68,58 @@ select board_like from team2_board
 where board_num = #{like_board_num}
 </select>
 
+<delete id="deleteInfoLike">
+delete  from team2_like
+where 	like_board_num = #{like_board_num}
+and 	like_member_id = #{like_member_id}
+</delete>
 
+<!-- 댓글 관련-->
+<insert id="createcomment">
+insert into team2_comment 
+values(team2_comment_seq.nextval, 
+ 		#{comment_board_num}, 
+		#{comment_member_id}, 
+		#{comment_txt}, sysdate)
+</insert>
+
+<select id="getcomment" resultType="com.team12.main.team2board.Team2CommentDTO">
+select * 
+from (
+    select rownum as rn, comment_num, comment_board_num, comment_member_id, comment_txt, comment_date 
+     from(
+     select * from team2_comment
+     where comment_board_num = #{comment_board_num}
+     order by comment_date desc
+   )
+) where rn between #{start} and #{end}
+</select>
+
+<select id="getcommentJson" resultType="com.team12.main.team2board.CommentBean">
+select * 
+from (
+    select rownum as rn, comment_num, comment_board_num, comment_member_id, comment_txt, comment_date 
+     from(
+     select * from team2_comment
+     where comment_board_num = #{comment_board_num}
+     order by comment_date desc
+   )
+) where rn between #{start} and #{end}
+</select>
+
+<select id="getTotalCommentCount" resultType="int">
+select count(*) from team2_comment where comment_board_num = #{comment_board_num}
+</select>
+
+<delete id="deletecomment">
+delete from team2_comment where comment_num = #{comment_num}
+</delete>
+
+<update id="updatecomment">
+update team2_comment 
+set comment_txt = #{comment_txt}
+where comment_num = #{comment_num}
+</update>
 
 
 
