@@ -21,3 +21,6 @@ pom.properties
 /pom.properties/
 
 /MANIFEST.MF/
+*.properties
+*.name
+*.container

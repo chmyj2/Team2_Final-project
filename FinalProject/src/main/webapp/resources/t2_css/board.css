@@ -1,0 +1,41 @@
+
+.toggleInput{
+	width: 70%;
+	display: none;
+}
+
+.togglebtn{
+	display: none;
+	
+}
+
+.commentBorder{
+	background-color: #F8F8F8;
+	margin-bottom: 10px;
+} 
+
+
+#commentContainer{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+#boardDeleteUpdateBtn {
+	float: right;
+}
+
+.cEm{
+	margin-left: 20px;
+}
+.cStrong{
+	margin-left: 10px;
+}
+
+.deleteAtag{
+	color: #A51D13;
+}
+.updateAtag{
+	color: #C18F11;
+}
