@@ -217,16 +217,7 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
-	@RequestMapping(value = "/naverID.check", method = RequestMethod.GET)
-	public String naverIDCheck(HttpServletRequest req, Membert2 m) {
-		//네이버 회원가입하러가기
-		
-		lDAO.loginCheck(req);
-		req.setAttribute("contentPage", "t2login/t2_join.jsp");
-		
-		
-		return "2Team/t2_index";
-	}
+	
 	
 	
 	
