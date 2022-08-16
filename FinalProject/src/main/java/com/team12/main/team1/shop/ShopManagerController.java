@@ -7,15 +7,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.team12.main.team1.join.MemberDAO;
+
 @Controller
 public class ShopManagerController {
+	
 	@Autowired
 	ProductManagerDAO mDAO;
 	
+//  YK : 오른쪽 상단 위에 로그인이랑, 장바구니 아이콘 뜨게 하려면,
+//	private MemberDAO mDAO; 이 친구 Autowired해야해요
+
 	
 	//	처음에 숍을 클릭했을 때
 	@RequestMapping(value="/enter.team1Shop", method = RequestMethod.GET)
 	public String shopEntering(ProductDTO p, HttpServletRequest req) {
+			
+//		mDAO.loginCheck(req);
 			//모든 상품 불러오기
 			mDAO.loadProducts(p, req);
 			//페이징하기

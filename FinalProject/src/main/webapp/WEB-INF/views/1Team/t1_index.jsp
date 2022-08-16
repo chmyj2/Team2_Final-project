@@ -56,8 +56,8 @@
                 
                 <li class="store_drop"><a href="enter.team1Shop">STORE</a>  
                     <ul class="store_drop_content">
-                        <li><a href="#">Food</a></li>
-                        <li><a href="#">Nutrient</a></li>
+                        <li><a href="#">Dog</a></li>
+                        <li><a href="#">Cat</a></li>
                     </ul>
                 </li>
                 <li><a href="team1.community">COMMUNITY</a>  
