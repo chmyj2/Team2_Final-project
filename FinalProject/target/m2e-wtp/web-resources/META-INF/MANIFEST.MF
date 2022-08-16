@@ -1,5 +1,12 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0a6afc687f273990b541db1a67559730fe6e01f1
 Manifest-Version: 1.0
 Built-By: OZ
 Build-Jdk: 14
 Created-By: Maven Integration for Eclipse
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0a6afc687f273990b541db1a67559730fe6e01f1
