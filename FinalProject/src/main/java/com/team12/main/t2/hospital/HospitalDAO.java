@@ -9,18 +9,18 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class HospitalDAO {
-	
-	@Autowired
-	private SqlSession ss;
 
-	public void hospitalView(HttpServletRequest req, HospitalDTO hDTO) {
-		
-		Hospital_ListMapper hlm = ss.getMapper(Hospital_ListMapper.class);
-		
-		req.setAttribute("Hospital",hlm.getDetailview(hDTO));
-		
-		System.out.println();
+    @Autowired
+    private SqlSession ss;
+
+    public void hospitalView(HttpServletRequest req, HospitalDTO hDTO) {
+
+        Hospital_ListMapper hlm = ss.getMapper(Hospital_ListMapper.class);
+
+        req.setAttribute("Hospital",hlm.getDetailview(hDTO));
+
+        System.out.println();
 
     }
-	
+
 }

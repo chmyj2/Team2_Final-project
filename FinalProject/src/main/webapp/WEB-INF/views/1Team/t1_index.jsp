@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="resources/css/index.css">
 <link rel="stylesheet" href="resources/css/loginAndJoin.css">
 <link rel="stylesheet" href="resources/css/member.css">
+<link rel="stylesheet" href="resources/css/store.css">
 <title>Insert title here</title>
 <script type="text/javascript" src="resources/js/jQuery.js"></script>
 <script type="text/javascript" src="resources/js/loginAndJoin.js"></script>
@@ -54,9 +55,9 @@
                 <!-- <a href="#"><img class="logo" src="DENGSTINY.png" alt=""></a>   -->
                     <!-- dropdown 사료/영양제 -->  
                 
-                <li class="store_drop"><a href="enter.team1Shop">STORE</a>  
+                <li class="store_drop"><a href="enter.team1MainShop">STORE</a>  
                     <ul class="store_drop_content">
-                        <li><a href="#">Dog</a></li>
+                        <li><a href="enter.team1StoreForDog">Dog</a></li>
                         <li><a href="#">Cat</a></li>
                     </ul>
                 </li>
