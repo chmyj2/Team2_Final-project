@@ -86,6 +86,7 @@ function joinCheck() {
 		emailInput.focus();
 		return false;
 	}
+
 	return true;
 }
 

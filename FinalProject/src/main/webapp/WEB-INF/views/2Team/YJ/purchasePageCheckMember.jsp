@@ -45,6 +45,7 @@
 			<div class="box bg-1">
 			<input type="submit" class="login-btn" value="L o g i n"/>
 			<input type="hidden" value="${Product.productNum }" name="productNum"/>
+			<input type="hidden" value="${param.quanId }" name="quanId"/>
 			</div>
 		</div>
 </form>
@@ -71,6 +72,7 @@
 			<div class="box bg-1">
 			<input type="submit" class="login-btn" value="L o g i n"/>
 			<input type="hidden" value="${Product.productNum }" name="productNum"/>
+			<input type="hidden" value="${param.quanId }" name="quanId"/>
 			</div>
 		</div>
 </form>
@@ -117,6 +119,7 @@
                     <br>동의 거부시 불이익 귀하는 개인정보 수집 및 이용 등에 관해 동의하지 않을 권리가 있습니다. 다만, 필수수집 동의를 하지 않을 경우 구매가 제한될 수 있습니다.</br>
                     <br>고객의 동의를 받아 보유하고 있는 거래정보 등을 고객께서 열람을 요구하는 경우 산책가자는 지체 없이 그 정보를 열람·확인 할 수 있도록 조치합니다.
 			</div>
+			<input type="hidden" value="${param.quanId }" name="quanId"/>
 		<input type="checkbox" id="agree" name="agree" onchange="changeBtn()">
 		안내 사항을 모두 확인하였으며, 이에 동의합니다.
 	</label><br><br>
