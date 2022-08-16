@@ -2,26 +2,18 @@
 
 /Servers/
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b3254c3 (ㅐㅐ)
-=======
->>>>>>> 05fefaa (ㅇㄸㄹ)
-=======
->>>>>>> b3254c3 (ㅐㅐ)
+
+
 *.class
 pom.properties
 
 *.classpath
 .settings
-=======
+
 /.class/
 
 /pom.properties/
->>>>>>> d1c215a661651042ca242b0432b63f1b906b16ce
+
 
 /.classpath/
 
