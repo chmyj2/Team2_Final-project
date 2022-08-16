@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CLora%22");
 /* --------------로그인---------------- */
 .container{
@@ -8,7 +9,6 @@
     padding-bottom: 400px;
     /* 푸터... don't bother me.... */
 }
-
 html{
 	height : 100%;
 }
@@ -191,6 +191,69 @@ hr.login_hr{
     border: none;
     /* margin-bottom: 50px; */      /* 동훈 수정 영경님 맘대로 다시 바꾸셔도 무관 */
     margin-bottom: 20px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+}
+
+.input_birth{                           
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+	
+}
+.join-cellphoneNo{                          
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+	
+}
+.input_email{                          
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+	
+=======
+>>>>>>> ec7a82d (풀 하기 위한 커밋)
+}
+
+.input_birth{                           
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+	
+}
+.join-cellphoneNo{                          
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+	
+}
+.input_email{                          
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+	
+=======
+>>>>>>> ec7a82d (풀 하기 위한 커밋)
+=======
+>>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
 }
 
 .input_birth{                           
