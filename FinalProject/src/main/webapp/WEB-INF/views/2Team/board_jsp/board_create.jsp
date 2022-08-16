@@ -43,6 +43,7 @@
 </body>
 
 <script type="text/javascript">
+var imgs = "";
 var toolbar = [
     // 글꼴 설정
     ['fontname', ['fontname']],
@@ -88,6 +89,7 @@ console.log('loaded')
 $j341('#summernote').summernote(setting);
 
 function uploadSummernoteImageFile(file, el) {
+
 data = new FormData();
 data.append("file", file);
 $.ajax({
@@ -97,13 +99,17 @@ $.ajax({
 	contentType : false,
 	enctype : 'multipart/form-data',
 	processData : false,
+	async:false,
 	success : function(data) {
 		console.log(data);
-		
+		imgs = imgs +data.url+"!"
+		console.log(data.url)
 		$j341(el).summernote('editor.insertImage', data.url);
+		
 	  
 	} 
 });
+	console.log(imgs)
 }
 
 

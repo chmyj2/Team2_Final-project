@@ -141,7 +141,6 @@ function getComments() {
 		let start = page * 10 - 9;
 		let end = page * 10;
 		
-		
 		$.ajax({//댓글 얻기
     		type: "GET" ,
     		dataType : 'json',
@@ -166,7 +165,7 @@ function getComments() {
     					inputData = `<div class="commentDiv"><div class="col-sm-8 commentBorder"><div>user : <strong class="cStrong">${id}</strong> <em class="cEm">${date}</em></div><div><span class="commentSpan">${txt}</span> <input class="form-control input-sm toggleInput" type="text"><button class="btn btn-success btn-sm togglebtn">완료</button></div></div><div class="col-sm-1"></div></div>
 `
     				}
-    					
+    				
     					
     					$('#commentContainer').append(inputData);
     				
@@ -246,7 +245,6 @@ function commentUpdate() {
 			success : function(data) {
 				if(data == 1){
 					console.log("수정 성공")
-					
 					
 				}
 				
