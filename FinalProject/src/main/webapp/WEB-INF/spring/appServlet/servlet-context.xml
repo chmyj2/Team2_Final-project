@@ -55,6 +55,7 @@
 			<beans:list>
 				<beans:value>classpath:testmapper.xml</beans:value>
 				<beans:value>classpath:team2/YJ/productMapper.xml</beans:value>
+				<beans:value>classpath:team2/YJ/productCartMapper.xml</beans:value>
 				<beans:value>classpath:team2/SY/hospital_ListMapper.xml</beans:value>
 				<beans:value>classpath:team1joinMapper.xml</beans:value>
 				<beans:value>classpath:team2BoardMapper.xml</beans:value>
