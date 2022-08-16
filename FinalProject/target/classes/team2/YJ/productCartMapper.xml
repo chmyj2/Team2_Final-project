@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team12.main.t2.shop.ProductCartMapper">
+
+ <insert id="regCart" parameterType="com.team12.main.t2.shop.Cart">
+ 	INSERT into PRODUCT_CART VALUES(CARTNUM_SEQ.nextval,#{cart_UserID },#{cart_ProductNum},#{cart_ProductQuantity},sysdate)
+ </insert>
+
+<select id="checkCart" parameterType="com.team12.main.t2.shop.Cart" resultType="int">
+	select * from PRODUCT_CART where CART_USERID = #{cart_UserID} and cart_ProductNum = #{cart_ProductNum}  and cart_ProductQuantity = #{cart_ProductQuantity} 
+</select>
+
+<select id="getProductFromCart" parameterType="com.team12.main.t2.shop.Cart" resultType="com.team12.main.t2.shop.Product">
+	select p1.*, p2.cart_ProductQuantity from product p1,product_cart p2 where p1.productnum = p2.cart_productnum and cart_userid = #{cart_UserID}
+</select>
+
+</mapper>

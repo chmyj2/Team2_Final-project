@@ -33,13 +33,18 @@ public class ProductController {
 	@RequestMapping(value = "/viewProductPage.go", method = RequestMethod.GET)
 	public String viewProductPage(HttpServletRequest request,Product p) {
 		// 진열된 상품가져오는일
-		pDAO.getAllProduct(request,p);
+		
+		pDAO.getPetCategoryProduct(request,p);
+		
 		lDAO.loginCheck(request);
 		request.setAttribute("contentPage", "YJ/viewProductPage.jsp");
 		
 		
 		return "2Team/t2_index";
 	}
+	
+	
+	
 	
 	// 등록페이지
 	@RequestMapping(value = "/regProductPage.go", method = RequestMethod.GET)
@@ -83,11 +88,13 @@ public class ProductController {
 	
 	// 구매페이지
 	@RequestMapping(value = "/purchasePage.go", method = RequestMethod.GET)
-	public String purchasePageGo(HttpServletRequest request,Product p) {
+	public String purchasePageGo(HttpServletRequest request,Product p,
+			@RequestParam("quanId") int quanId) {
 		//상품가져오는일
 		pDAO.getProduct(request,p);
 		
 		if (lDAO.loginCheck(request)) {
+			request.setAttribute("quanId", quanId);
 			request.setAttribute("contentPage", "YJ/purchasePage.jsp");
 		}else {
 			request.setAttribute("contentPage", "YJ/purchasePageCheckMember.jsp");
@@ -103,13 +110,14 @@ public class ProductController {
 	
 	// 로그인 후 페이지(개인)
 	@RequestMapping(value = "/t2LoginDO.purchase", method = RequestMethod.POST)
-	public String LoginPurchase(HttpServletRequest request,Product p,Membert2 m) {
+	public String LoginPurchase(HttpServletRequest request,Product p,Membert2 m,
+			@RequestParam("quanId") int quanId) {
 		//상품가져오는일
 		pDAO.getProduct(request,p);
-		System.out.println(p.getProductNum());
 		//일반 로그인하기
+		System.out.println(quanId);
 			if(lDAO.login(request,m)) {
-					
+				request.setAttribute("quanId", quanId);
 				request.setAttribute("contentPage", "YJ/purchasePage.jsp");
 			}else {
 				request.setAttribute("r", "로그인 실패");
@@ -127,13 +135,15 @@ public class ProductController {
 	
 	// 로그인 후 페이지(기업)
 	@RequestMapping(value = "/t2LoginDO.business.purchase", method = RequestMethod.POST)
-	public String LoginBusinessPurchase(HttpServletRequest request,Product p,vet v) {
+	public String LoginBusinessPurchase(HttpServletRequest request,Product p,vet v,
+			@RequestParam("quanId") int quanId) {
 		//상품가져오는일
 		pDAO.getProduct(request,p);
 		
+		System.out.println(quanId);
 		//비지니스 로그인하기
 			if(lDAO.login_business(request,v)) {
-					
+				request.setAttribute("quanId", quanId);
 				request.setAttribute("contentPage", "YJ/purchasePage.jsp");
 			}else {
 				request.setAttribute("rb", "로그인 실패");
@@ -169,7 +179,6 @@ public class ProductController {
 	
 	
 	
-//	기능 -------------------------------------------------------------------------
 
 	
 	// 상품 등록

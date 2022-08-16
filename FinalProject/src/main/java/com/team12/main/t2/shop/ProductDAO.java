@@ -26,15 +26,6 @@ public class ProductDAO {
 	
 	
 	
-	// 진열될 상품전체 가져오기	
-	public void getAllProduct(HttpServletRequest request, Product p) {
-		try {
-			request.setAttribute("Product", ss.getMapper(ProductMapper.class).getAllProduct(p));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
 	// 상품전체 가져오기
 	public void realGetAllProduct(HttpServletRequest request) {
 		
@@ -293,13 +284,17 @@ public class ProductDAO {
 		
 		
 	}
-	
-	
-	
-	
-}
 
-	
+
+
+	public void getPetCategoryProduct(HttpServletRequest request, Product p) {
+		
+		
+			request.setAttribute("Product", ss.getMapper(ProductMapper.class).getPetProduct(p));
+		}
+		
+
+}
 	
 	
 
