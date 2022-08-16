@@ -138,6 +138,8 @@ public class LoginController {
 		
 		//회원가입
 		lDAO.join(req,m);
+		//로그인
+		lDAO.login(req,m);
 		
 		//로그인 체크
 		lDAO.loginCheck(req);
@@ -218,6 +220,27 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/may", method = RequestMethod.GET)
+	public String may(HttpServletRequest req, Membert2 m) {
+		//------------------------------------나중에 삭제할거
+		
+		lDAO.loginCheck(req);
+		req.setAttribute("contentPage", "t2login/joinOK.jsp");
+		
+		
+		return "2Team/t2_index";
+	}
+	
+	@RequestMapping(value = "/petRegistration", method = RequestMethod.GET)
+	public String petRegistration(HttpServletRequest req) {
+		//펫등록페이지로 이동하기
+		
+		lDAO.loginCheck(req);
+		req.setAttribute("contentPage", "t2login/petRegistration.jsp");
+		
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	
