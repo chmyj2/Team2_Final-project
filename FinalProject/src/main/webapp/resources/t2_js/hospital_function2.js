@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 $(function() {
 	hospital_map();
 	
@@ -298,8 +296,6 @@ function hospital_list(lb){
 		}
 		
 		
-		
-=======
 $(function() {
 	hospital_map();
 
@@ -579,8 +575,6 @@ function hospital_list(){
 		
 		
 		
->>>>>>> 2dedeb7026d4a1cdb8b601191823c6a31d467910
-=======
 $(function() {
 	hospital_map();
 	hospital_list();
@@ -860,4 +854,3 @@ function hospital_list(){
 		
 		
 		
->>>>>>> ed301f9c64387d8ceeaab9bc98ca7c10f45aeed7
