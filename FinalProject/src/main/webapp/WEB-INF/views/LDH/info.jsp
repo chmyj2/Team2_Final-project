@@ -65,11 +65,14 @@ $(function() {
 >>>>>>> 78da7b1 (2022/08/11 커밋)
                 	<br>
 
+<<<<<<< HEAD
                 	<!-- phoneNum -->
                     <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum" placeholder="Phone Number *" type="text" maxlength="10" autocomplete="off">
 =======
 >>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
                 	<br>
+=======
+>>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
                 	
                 	
                 	
@@ -103,6 +106,7 @@ $(function() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 	
 =======
                 	<%-- <!-- 프로필 사진 -->
@@ -114,6 +118,8 @@ $(function() {
                         <input name="jm_photo" type="file" id="file">
                     </div> --%>
 >>>>>>> 78da7b1 (2022/08/11 커밋)
+=======
+>>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
 =======
                 	
 >>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
