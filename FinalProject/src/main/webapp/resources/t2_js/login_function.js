@@ -166,11 +166,14 @@ function businessNumCheck() {
 	
 }//사업자 번호 일치확인
 
+
+
 $(function() {
 	connectAddrSearchEvent();
 	idCheck();
 	joinEmail_numCheck();
 	emailCheck();
 	pwcheck();
-	businessNumCheck()
+	businessNumCheck();
+	
 })

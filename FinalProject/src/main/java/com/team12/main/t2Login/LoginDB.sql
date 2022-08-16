@@ -23,7 +23,7 @@ select * from final_member;
 
 create sequence final_member_seq;
 
-insert into final_member values('mz11111','1004',1,'mz','','남자','010-1234-1234',' ','mz111111@naver.com',sysdate,'동의');
+insert into final_member values('mz','1004',1,'mz','2020-02-08','남자','010-1234-1234','중구 ','mz@naver.com',sysdate,'동의');
 
 create table pet_information(
 baby_num number(6) primary key,
