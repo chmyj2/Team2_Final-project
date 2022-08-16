@@ -8,12 +8,6 @@
 </head>
 <body>
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	<!-- <a href="loginandjoin.go">
-	로그인<img class="icon_login" src="resources/img/LOGIN.png">
-	</a> -->
->>>>>>> 08efc03 (퐆)
 =======
 	<!-- <a href="loginandjoin.go">
 	로그인<img class="icon_login" src="resources/img/LOGIN.png">
