@@ -15,7 +15,7 @@
 				<img class="icon_login" src="resources/img/LOGIN.png"></a>
 				<ul class="mypage_dropdown">
 					<li><a href="member.info">MY PAGE</a></li>
-					<li><a href="#">MY PET</a></li>
+					<li><a href="pet.info">MY PET</a></li>
 					<li><a href="member.logout">LOGOUT</a></li>
 				</ul>
 			</li>
