@@ -87,8 +87,6 @@ $(function() {
                 
             </div>
         </form>
-                <!-- 임시로 로그아웃 버튼좀 생성 할게요 YK -->
-                <button class="join_btn" onclick="logout()">logout(임시)</button>
             </div>
 </body>
 </html>
