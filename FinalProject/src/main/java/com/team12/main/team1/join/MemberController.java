@@ -17,6 +17,7 @@ public class MemberController {
 	
 	@Autowired
 	private	MemberDAO mDAO;
+	private MemberService ms;
 	
 	
 	
@@ -69,6 +70,12 @@ public class MemberController {
 	@RequestMapping(value="/member.kakao", method=RequestMethod.GET)
 	public String kakaoLogin(@RequestParam(value = "code", required = false) String code) throws Exception {
 		System.out.println("#########" + code);
+		
+		// 위에서 만든 코드 아래에 코드 추가
+				String access_Token = ms.getAccessToken(code);
+				System.out.println("###access_Token#### : " + access_Token);
+		        
+		
 		return "1Team/t1_index";
 		/*
 		 * 리턴값의 testPage는 아무 페이지로 대체해도 괜찮습니다.
@@ -78,20 +85,7 @@ public class MemberController {
     	}
 	
 	
-//	@RequestMapping(value = "member.info.go", method = RequestMethod.GET)
-//	public String memberInfoGO(HttpServletRequest req) {
-//		if(mDAO.loginCheck(req)) {
-//			
-//			// 세션이 없을 때 null인데 그걸 잘라달라하면 500에러
-//			mDAO.splitAddr(req);
-//			req.setAttribute("login", "../LDH/login.jsp");
-//			
-//		} else {
-//			req.setAttribute("login", "../LDH/notLogin.jsp");
-//		}
-//		return "1Team/t1_index";
-//	}
-	
+
 	@RequestMapping(value = "member.info", method = RequestMethod.GET)
 	public String memberInfo(HttpServletRequest req) {
 		if(mDAO.loginCheck(req)) {
