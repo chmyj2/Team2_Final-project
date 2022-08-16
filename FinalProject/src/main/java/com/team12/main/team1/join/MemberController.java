@@ -76,6 +76,8 @@ public class MemberController {
 		 * 404가 떠도 제일 중요한건 #########인증코드 가 잘 출력이 되는지가 중요하므로 너무 신경 안쓰셔도 됩니다.
 		 */
     	}
+	
+	
 //	@RequestMapping(value = "member.info.go", method = RequestMethod.GET)
 //	public String memberInfoGO(HttpServletRequest req) {
 //		if(mDAO.loginCheck(req)) {
