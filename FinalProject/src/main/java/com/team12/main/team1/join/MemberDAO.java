@@ -34,6 +34,7 @@ public class MemberDAO {
 			
 		
 			Date jm_date = Date.valueOf(req.getParameter("member_birth"));
+<<<<<<< HEAD
 
 
 			m.setMember_ID(req.getParameter("member_ID"));
@@ -44,6 +45,15 @@ public class MemberDAO {
 			m.setMember_phoneNum(req.getParameter("member_phoneNum"));
 	        m.setMember_address(jm_addr);
 	        m.setMember_email(req.getParameter("member_email"));
+=======
+
+
+
+	m.setMember_address(jm_addr);
+	m.setMember_birth(jm_date);
+//	m.setMember_joinDate(jm_joinDate);
+//	m.setMember_paper(jm_paper);
+>>>>>>> 78da7b1 (2022/08/11 커밋)
 
 	if (ss.getMapper(Team1joinMapper.class).join(m) == 1) {
 		req.setAttribute("result", "가입성공");
@@ -104,6 +114,7 @@ public class MemberDAO {
 	public void update(Member m, HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		
+<<<<<<< HEAD
 	try {
 		
 	
@@ -130,6 +141,21 @@ public class MemberDAO {
 //        System.out.println(m.getMember_email());
 //        
 //        
+=======
+		
+		String jm_address1 = req.getParameter("m_addr1");
+		String jm_address2 = req.getParameter("m_addr2");
+		String jm_address3 = req.getParameter("m_addr3");
+
+		String jm_addr = jm_address1 + "!" + jm_address2 + "!" + jm_address3;
+
+//		Date jm_date = Date.valueOf(req.getParameter("member_birth"));
+
+		m.setMember_address(jm_addr);
+//		m.setMember_birth(jm_date);
+		
+
+>>>>>>> 78da7b1 (2022/08/11 커밋)
 
 		if (ss.getMapper(Team1joinMapper.class).update(m) == 1) {
 			req.setAttribute("result", "수정성공");
@@ -137,6 +163,7 @@ public class MemberDAO {
 		} else {
 			req.setAttribute("result", "수정실패");
 		}
+<<<<<<< HEAD
 	} catch (Exception e) {
 		e.printStackTrace();
 		req.setAttribute("result", "수정실패");
@@ -145,6 +172,11 @@ public class MemberDAO {
 		
 	}
 	
+=======
+
+		}
+
+>>>>>>> 78da7b1 (2022/08/11 커밋)
 	public void bye(HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		
