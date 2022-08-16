@@ -60,7 +60,7 @@
 			<h2 class="login_h2">Welcome!</h2>
 			
 			<label class="login_label"> <span>ID</span> 
-			<input class="login_input" name="vet_ID" />
+			<input class="login_input3" name="vet_ID" />
 			</label> <label class="login_label"> <span>Password</span> 
 			<input class="login_input1" name="vet_PW" />
 			</label>
