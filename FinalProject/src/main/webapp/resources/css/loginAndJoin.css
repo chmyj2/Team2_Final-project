@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CLora%22");
 /* --------------로그인---------------- */
 .container{
@@ -8,7 +9,6 @@
     padding-bottom: 400px;
     /* 푸터... don't bother me.... */
 }
-
 html{
 	height : 100%;
 }
