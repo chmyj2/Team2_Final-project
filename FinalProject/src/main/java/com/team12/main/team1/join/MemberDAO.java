@@ -130,7 +130,7 @@ public class MemberDAO {
 //        System.out.println(jm_addr);
 //        System.out.println(m.getMember_email());
 //        
-//        
+
 
 
 		if (ss.getMapper(Team1joinMapper.class).update(m) == 1) {
@@ -147,6 +147,7 @@ public class MemberDAO {
 		
 	}
 	
+
 	public void bye(HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		
