@@ -39,11 +39,18 @@ function joinCheck() {
 	var nameInput = document.joinForm.member_name;
 	var birthInput = document.joinForm.member_birth;
 	var phoneNumInput = document.joinForm.member_phoneNum;
+<<<<<<< HEAD
 	var addr1Input = document.joinForm.m_addr1;
 	var addr2Input = document.joinForm.m_addr2;
 	var addr3Input = document.joinForm.m_addr3;
 	var emailInput = document.joinForm.member_email;
 	
+=======
+	var addr1Input = document.joinForm.member_address1;
+	var addr2Input = document.joinForm.member_address2;
+	var addr3Input = document.joinForm.member_address3;
+	/*var photoInput = document.joinForm.m_photo;*/
+>>>>>>> 78da7b1 (2022/08/11 커밋)
 	if (isEmpty(idInput) || containsHS(idInput)
 			|| $("#member_IDInput").css("color") == "rgb(244, 67, 54)") {
 		alert("ID를 입력해주세요.");
@@ -80,12 +87,22 @@ function joinCheck() {
 		addr3Input.value = "";
 		addr1Input.focus();
 		return false;
+<<<<<<< HEAD
 	}else if (isEmpty(emailInput)) {
 		alert("이메일을 입력해주세요.");
 		emailInput.value = "";
 		emailInput.focus();
 		return false;
 	}
+=======
+	}/* else if (isEmpty(photoInput)
+			|| (isNotType(photoInput, "png") && isNotType(photoInput, "gif")
+					&& isNotType(photoInput, "jpg") && isNotType(photoInput, "bmp"))) {
+		alert("사진?");
+		return false;
+	} */
+
+>>>>>>> 78da7b1 (2022/08/11 커밋)
 	return true;
 }
 
@@ -141,6 +158,7 @@ function snsWriteReplyCheck(f) {
 }
 */
 function updateMemberCheck() {
+<<<<<<< HEAD
 	var pwInput = document.joinForm.member_PW;
 	var pwChkInput = document.joinForm.m_pwChk;
 	var nameInput = document.joinForm.member_name;
@@ -149,6 +167,16 @@ function updateMemberCheck() {
 	var addr2Input = document.joinForm.m_addr2;
 	var addr3Input = document.joinForm.m_addr3;
 	var emailInput = document.joinForm.member_email;
+=======
+	var pwInput = document.updateMemberForm.m_pw;
+	var pwChkInput = document.updateMemberForm.m_pwChk;
+	var nameInput = document.updateMemberForm.m_name;
+	var phoneNumInput = document.joinForm.member_phoneNum;
+	var addr1Input = document.updateMemberForm.m_addr1;
+	var addr2Input = document.updateMemberForm.m_addr2;
+	var addr3Input = document.updateMemberForm.m_addr3;
+	var emailInput = document.updateMemberForm.member_email;
+>>>>>>> 78da7b1 (2022/08/11 커밋)
 
 	if (isEmpty(pwInput) || notEquals(pwInput, pwChkInput)
 			|| notContains(pwInput, "1234567890")) {
@@ -179,8 +207,22 @@ function updateMemberCheck() {
 		alert("이메일을 입력해주세요.");
 		emailInput.value = "";
 		emailInput.focus();
+<<<<<<< HEAD
 		return false;
 	}
 	
+=======
+		return false;
+	}
+	
+	/*else if (isEmpty(photoInput)) {
+		return true;
+	} else if (isNotType(photoInput, "png") && isNotType(photoInput, "gif")
+			&& isNotType(photoInput, "jpg") && isNotType(photoInput, "bmp")) {
+		alert("사진?");
+		return false;
+	}*/
+
+>>>>>>> 78da7b1 (2022/08/11 커밋)
 	return true;
 }
