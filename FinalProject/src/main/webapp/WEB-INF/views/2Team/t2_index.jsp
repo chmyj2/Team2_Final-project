@@ -20,7 +20,7 @@
 	<link href='resources/t2_css/style.css' rel='stylesheet' type='text/css'>
 	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 	<link rel="stylesheet" type="text/css" href="css/settings.css" media="screen" />
-
+	<link rel="stylesheet" href="resources/t2_css/t2_login.css">
 	<!-- Hospital MAIN CSS  -->
 	<link href='resources/t2_css/hospital_main.css' rel='stylesheet' type='text/css'> 
 	<link href='resources/t2_css/hospital_detail.css' rel="stylesheet" type="text/css">

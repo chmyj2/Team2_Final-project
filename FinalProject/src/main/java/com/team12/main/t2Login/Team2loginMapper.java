@@ -18,6 +18,7 @@ public interface Team2loginMapper {
 
 	int checkIdNaver(Membert2 m);
 
+
 	
 
 }
