@@ -30,6 +30,7 @@
       base-package="com.team12.main" />
       
    <!-- //////////DB연결관련!///////////// -->
+
   <beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
@@ -37,6 +38,7 @@
 		<beans:property name="username" value="ADMIN" />
 		<beans:property name="password" value="LDHsoldesk802" />
 	</beans:bean>
+
    
    
    <beans:bean id="transactionManager"

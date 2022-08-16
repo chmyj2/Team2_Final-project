@@ -42,6 +42,8 @@ public interface Team2BoardMapper {
 
 	int updatecomment(Team2CommentDTO t);
 
+	Team2CommentDTO getCommentNum(Team2CommentDTO t);
+
 	
 
 
