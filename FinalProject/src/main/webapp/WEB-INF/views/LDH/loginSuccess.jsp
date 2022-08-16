@@ -10,7 +10,8 @@
 		<!-- login 후  나타나는 drop페이지  CSS는 적용시켜놨어요. -->
 		
 		<ul>
-			<li class="login_area"><a href="loginandjoin.go"> 
+		<!-- login 후에는 다시 login창 안뜨게 #으로 막아뒀어요. -->
+			<li class="login_area"><a href="#"> 
 				<img class="icon_login" src="resources/img/LOGIN.png"></a>
 				<ul class="mypage_dropdown">
 					<li><a href="member.info">MY PAGE</a></li>
