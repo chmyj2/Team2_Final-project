@@ -40,10 +40,27 @@ create table team2_comment(
 	references final_member(member_ID) on delete cascade
 )
 create sequence team2_comment_seq;
+---------------------------------------------------------------------------
 
 insert into team2_comment values(team2_comment_seq.nextval, 47, 'mz', 'hello', sysdate)
 
 select * from team2_comment
+
+update team2_comment 
+set comment_txt = 'why'
+where comment_num = 107
+
+
+
+select comment_num from(
+	select comment_num
+	from team2_comment
+	where comment_board_num = 61
+	and comment_member_id = 'mz'
+	and comment_txt like '%why%'
+	order by comment_date desc
+)where rownum = 1
+
 
 
 select * 

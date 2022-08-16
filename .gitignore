@@ -2,25 +2,23 @@
 
 /Servers/
 
-<<<<<<< HEAD
+
 *.class
 pom.properties
 
 *.classpath
 .settings
+
+pom.properties
+
+<<<<<<< HEAD
+FinalProject/bin/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+FinalProject/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+01_Team1Final/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 =======
-/.class/
-
-/pom.properties/
->>>>>>> d1c215a661651042ca242b0432b63f1b906b16ce
-
-/.classpath/
-
-/.settings/
-
-/pom.properties/
-
 /MANIFEST.MF/
 *.properties
 *.name
 *.container
+>>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
+FinalProject/target/test-classes/log4j.xml

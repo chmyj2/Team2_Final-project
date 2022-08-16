@@ -195,14 +195,10 @@ public class LoginDAO {
 			
 			String member_address = addr1 +"!"+addr2+"!"+addr3;
 			
-			m.setMember_ID(req.getParameter("member_ID"));
-			m.setMember_PW(req.getParameter("member_PW"));
-			m.setMember_name(req.getParameter("member_name"));
+			
 			m.setMember_birth(member_birth);
-			m.setMember_sex(req.getParameter("member_sex"));
-			m.setMember_phoneNum(req.getParameter("member_phoneNum"));
 			m.setMember_address(member_address);
-			m.setMember_email(req.getParameter("member_email"));
+			
 			
 			if (ss.getMapper(Team2loginMapper.class).join(m) == 1) {
 				System.out.println("성공");
@@ -271,6 +267,47 @@ public class LoginDAO {
 				req.getSession().setMaxInactiveInterval(60 * 10);
 		}else {
 			System.out.println("--------------------실패");
+		}
+		
+	}
+
+
+
+	public void naverJoin(HttpServletRequest req, Membert2 m) {
+		
+		try {
+			req.setCharacterEncoding("utf-8");
+			
+			String member_ID =req.getParameter("member_ID");
+			String member_name = req.getParameter("member_name");
+			String member_email = req.getParameter("member_email");
+			String member_sex = req.getParameter("member_sex");
+			
+			String member_address = " ";
+			String member_PW = " ";
+			int member_linkWhere = 3;
+			String member_phoneNum = " "; 
+			
+			
+			m.setMember_ID(member_ID);
+			m.setMember_PW(member_PW);
+			m.setMember_linkWhere(member_linkWhere);
+			m.setMember_name(member_name);
+			m.setMember_sex(member_sex);
+			m.setMember_phoneNum(member_phoneNum);
+			m.setMember_email(member_email);
+			m.setMember_address(member_address);
+			m.setMember_birth(null);
+			
+			
+			if (ss.getMapper(Team2loginMapper.class).join(m) == 1) {
+				System.out.println("성공");
+			}else {
+				System.out.println("실패");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		
 	}
