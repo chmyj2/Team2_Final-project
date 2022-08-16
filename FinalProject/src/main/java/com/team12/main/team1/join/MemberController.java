@@ -104,6 +104,21 @@ public class MemberController {
 		return "1Team/t1_index";
 	}
 	
+	// ------------------ 마이페이지 펫 인포 YK ----------------------------
+	@RequestMapping(value = "pet.info", method = RequestMethod.GET)
+	public String petInfo(HttpServletRequest req) {
+		if(mDAO.loginCheck(req)) {
+			
+		// 세션이 없을 때 null인데 그걸 잘라달라하면 500에러
+		mDAO.splitAddr(req);
+		req.setAttribute("contentPage", "../LDH/petInfo.jsp");
+		
+		} else {
+			req.setAttribute("contentPage", "../LDH/loginAndJoin.jsp");
+		}
+		return "1Team/t1_index";
+	}
+	
 	
 	
 	@RequestMapping(value = "member.logout", method = RequestMethod.GET)
