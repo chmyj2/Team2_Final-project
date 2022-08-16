@@ -48,12 +48,23 @@ public class MemberDAO {
 =======
 
 
+<<<<<<< HEAD
 
 	m.setMember_address(jm_addr);
 	m.setMember_birth(jm_date);
 //	m.setMember_joinDate(jm_joinDate);
 //	m.setMember_paper(jm_paper);
 >>>>>>> 78da7b1 (2022/08/11 커밋)
+=======
+			m.setMember_ID(req.getParameter("member_ID"));
+			m.setMember_PW(req.getParameter("member_PW"));
+			m.setMember_name(req.getParameter("member_name"));
+			m.setMember_birth(jm_date);
+			m.setMember_sex(req.getParameter("member_sex"));
+			m.setMember_phoneNum(req.getParameter("member_phoneNum"));
+	        m.setMember_address(jm_addr);
+	        m.setMember_email(req.getParameter("member_email"));
+>>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
 
 	if (ss.getMapper(Team1joinMapper.class).join(m) == 1) {
 		req.setAttribute("result", "가입성공");
@@ -115,6 +126,7 @@ public class MemberDAO {
 		// TODO Auto-generated method stub
 		
 <<<<<<< HEAD
+<<<<<<< HEAD
 	try {
 		
 	
@@ -142,20 +154,39 @@ public class MemberDAO {
 //        
 //        
 =======
+=======
+	try {
+>>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
 		
-		String jm_address1 = req.getParameter("m_addr1");
-		String jm_address2 = req.getParameter("m_addr2");
-		String jm_address3 = req.getParameter("m_addr3");
+	
+		String jm_address1 = req.getParameter("jm_addr1");
+		String jm_address2 = req.getParameter("jm_addr2");
+		String jm_address3 = req.getParameter("jm_addr3");
 
 		String jm_addr = jm_address1 + "!" + jm_address2 + "!" + jm_address3;
 
-//		Date jm_date = Date.valueOf(req.getParameter("member_birth"));
 
+		m.setMember_ID(req.getParameter("jm_id"));
+		m.setMember_PW(req.getParameter("jm_pw"));
+		m.setMember_name(req.getParameter("jm_name"));
+		m.setMember_phoneNum(req.getParameter("jm_pNum"));
+   
 		m.setMember_address(jm_addr);
-//		m.setMember_birth(jm_date);
+        m.setMember_email(req.getParameter("jm_email"));
 		
+<<<<<<< HEAD
 
 >>>>>>> 78da7b1 (2022/08/11 커밋)
+=======
+//        System.out.println(m.getMember_ID());
+//        System.out.println(m.getMember_PW());
+//        System.out.println(m.getMember_name());
+//        System.out.println(m.getMember_phoneNum());
+//        System.out.println(jm_addr);
+//        System.out.println(m.getMember_email());
+//        
+//        
+>>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
 
 		if (ss.getMapper(Team1joinMapper.class).update(m) == 1) {
 			req.setAttribute("result", "수정성공");
@@ -164,6 +195,9 @@ public class MemberDAO {
 			req.setAttribute("result", "수정실패");
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
 	} catch (Exception e) {
 		e.printStackTrace();
 		req.setAttribute("result", "수정실패");
@@ -172,11 +206,14 @@ public class MemberDAO {
 		
 	}
 	
+<<<<<<< HEAD
 =======
 
 		}
 
 >>>>>>> 78da7b1 (2022/08/11 커밋)
+=======
+>>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
 	public void bye(HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		

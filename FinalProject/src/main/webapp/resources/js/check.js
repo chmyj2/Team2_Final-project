@@ -40,17 +40,23 @@ function joinCheck() {
 	var birthInput = document.joinForm.member_birth;
 	var phoneNumInput = document.joinForm.member_phoneNum;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
 	var addr1Input = document.joinForm.m_addr1;
 	var addr2Input = document.joinForm.m_addr2;
 	var addr3Input = document.joinForm.m_addr3;
 	var emailInput = document.joinForm.member_email;
 	
+<<<<<<< HEAD
 =======
 	var addr1Input = document.joinForm.member_address1;
 	var addr2Input = document.joinForm.member_address2;
 	var addr3Input = document.joinForm.member_address3;
 	/*var photoInput = document.joinForm.m_photo;*/
 >>>>>>> 78da7b1 (2022/08/11 커밋)
+=======
+>>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
 	if (isEmpty(idInput) || containsHS(idInput)
 			|| $("#member_IDInput").css("color") == "rgb(244, 67, 54)") {
 		alert("ID를 입력해주세요.");
@@ -88,10 +94,14 @@ function joinCheck() {
 		addr1Input.focus();
 		return false;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
 	}else if (isEmpty(emailInput)) {
 		alert("이메일을 입력해주세요.");
 		emailInput.value = "";
 		emailInput.focus();
+<<<<<<< HEAD
 		return false;
 	}
 =======
@@ -103,6 +113,10 @@ function joinCheck() {
 	} */
 
 >>>>>>> 78da7b1 (2022/08/11 커밋)
+=======
+		return false;
+	}
+>>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
 	return true;
 }
 
@@ -159,6 +173,7 @@ function snsWriteReplyCheck(f) {
 */
 function updateMemberCheck() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	var pwInput = document.joinForm.member_PW;
 	var pwChkInput = document.joinForm.m_pwChk;
 	var nameInput = document.joinForm.member_name;
@@ -177,6 +192,16 @@ function updateMemberCheck() {
 	var addr3Input = document.updateMemberForm.m_addr3;
 	var emailInput = document.updateMemberForm.member_email;
 >>>>>>> 78da7b1 (2022/08/11 커밋)
+=======
+	var pwInput = document.joinForm.member_PW;
+	var pwChkInput = document.joinForm.m_pwChk;
+	var nameInput = document.joinForm.member_name;
+	var phoneNumInput = document.joinForm.member_phoneNum;
+	var addr1Input = document.joinForm.m_addr1;
+	var addr2Input = document.joinForm.m_addr2;
+	var addr3Input = document.joinForm.m_addr3;
+	var emailInput = document.joinForm.member_email;
+>>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
 
 	if (isEmpty(pwInput) || notEquals(pwInput, pwChkInput)
 			|| notContains(pwInput, "1234567890")) {
@@ -215,6 +240,7 @@ function updateMemberCheck() {
 		return false;
 	}
 	
+<<<<<<< HEAD
 	/*else if (isEmpty(photoInput)) {
 		return true;
 	} else if (isNotType(photoInput, "png") && isNotType(photoInput, "gif")
@@ -224,5 +250,7 @@ function updateMemberCheck() {
 	}*/
 
 >>>>>>> 78da7b1 (2022/08/11 커밋)
+=======
+>>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
 	return true;
 }
