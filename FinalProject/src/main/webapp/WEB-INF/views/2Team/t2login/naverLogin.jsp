@@ -18,9 +18,13 @@
   // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
   function naverSignInCallback() {
     alert(naver_id_login.getProfileData('email'));
-    let email =naver_id_login.getProfileData('email');
-    let member_ID =  email.split('@');
-   	member_ID =member_ID[0];
+    alert(naver_id_login.getProfileData('name'));
+    alert(naver_id_login.getProfileData('gender')); 
+    let member_email =naver_id_login.getProfileData('email'); //email에 담기
+    let member_ID =  member_email.split('@');
+   	member_ID =member_ID[0]; //아이디 담기
+   	let member_name =naver_id_login.getProfileData('name');
+   	let member_sex = naver_id_login.getProfileData('gender');
     alert(member_ID);
     
     $.ajax({
@@ -36,9 +40,10 @@
 				window.opener.location.href="http://localhost/main/naverlogin.do?member_ID="+member_ID;
 			}else {
 				//회원정보가 없다는 의미
-				alert('회원가입을 해주세요');
+				alert('회원가입을 도와드리겠습니다.');
 				window.close();
-				window.opener.location.href="http://localhost/main/naverjoin.go?member_ID="+member_ID;
+				window.opener.location.href="http://localhost/main/naverjoin.go?member_ID="+member_ID+"&member_email="+member_email+"&member_name="+member_name+"&member_sex="+member_sex;
+				
 			}
 			
 		},

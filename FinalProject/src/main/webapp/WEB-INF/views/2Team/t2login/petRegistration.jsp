@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,18 +8,11 @@
 </head>
 <body>
 <div class="t2-join-outdiv">
-<form action="joinDo" method="POST" class="joinForm" name="joinForm"> <!-- onsubmit="return joinCheck()"  -->
+<form action="#" method="POST" class="joinForm" name="joinForm"> <!-- onsubmit="return joinCheck()"  -->
                                                                                                
-      <h2>회원가입</h2>
-      <div class="join-textForm">
-      <c:choose>
-      <c:when test="${param.member_ID != null}">
-        <input name="member_ID" type="text" class="join-id" placeholder="아이디" value="${param.member_ID}">      
-      </c:when>
-      <c:otherwise>      
-        <input name="member_ID" type="text" class="join-id" placeholder="아이디">      
-      </c:otherwise>
-      </c:choose>
+      <h2>펫 등록하기</h2>
+      <div class="join-textForm">   
+        <input name="member_ID" type="text" class="join-id" placeholder="펫이름">      
         <span id="idcheckResult"></span>
       </div>
       
@@ -68,7 +60,6 @@
       <span id="emailcheckResult"></span> <!-- 중복확인 -->
       </div>
       
-      <input type="hidden" name="member_linkWhere" value="${param.member_linkWhere }">
       <input type="submit" class="join-btn" value="J O I N"/>
     </form>
     </div>
