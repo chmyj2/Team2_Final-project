@@ -12,6 +12,12 @@
                                                                                                
       <h2>펫 등록하기</h2>
       <div class="join-textForm">   
+        <span>펫 이미지</span>
+        <input name="baby_img" type="file" class="join-name" onchange="setThumbnail(event)"> 
+        <img id="image" src="">
+      </div>
+      
+      <div class="join-textForm">   
         <input name="member_ID" type="text" class="join-id" placeholder="펫이름">      
         <span id="idcheckResult"></span>
       </div>
@@ -64,4 +70,17 @@
     </form>
     </div>
 </body>
+<script type="text/javascript">
+$(document).ready(function setThumbnail(event) {
+    var reader = new FileReader();
+
+    reader.onload = function(event) {
+      var img = document.createElement("baby_img");
+      img.setAttribute("src", event.target.result);
+      document.querySelector("div#image_container").appendChild(img);
+    };
+
+    reader.readAsDataURL(event.target.files[0]);
+  });
+</script>
 </html>
