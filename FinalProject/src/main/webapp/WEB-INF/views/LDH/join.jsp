@@ -40,11 +40,16 @@
                 <!-- 생년월일 입력 -->
 				<div class="join-textForm brith">
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<input class="input_birth" name="member_birth" type="date" class="join-birth" >
 					<p class="required_txt"> 생년월일 </p>
 =======
 					생년월일&nbsp;&nbsp;<input class="input_birth" name="member_birth" type="date" class="join-birth">
 >>>>>>> 78da7b1 (2022/08/11 커밋)
+=======
+					<input class="input_birth" name="member_birth" type="date" class="join-birth" >
+					<p class="required_txt"> 생년월일 </p>
+>>>>>>> ec7a82d (풀 하기 위한 커밋)
 				</div>
 
                 <!-- 성별 체크 -->
