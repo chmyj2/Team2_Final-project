@@ -107,6 +107,7 @@ $(function() {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 	
 =======
                 	<%-- <!-- 프로필 사진 -->
@@ -126,6 +127,9 @@ $(function() {
 =======
                 	
 >>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
+=======
+
+>>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
                 
                 <div>
                     <div class="update_box">

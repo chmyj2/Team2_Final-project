@@ -64,11 +64,11 @@
         <button type="button" id="join_mail_check">이메일인증</button><br>
         <input placeholder="인증번호를 입력해주세요" id="join_mail_num" disabled="disabled">
         <input type="hidden" id="join_num_check" value="emailUnCheck">
-      <span id="mail-check-warn"></span>
-      <span id="emailcheckResult"></span>
+      <span id="mail-check-warn"></span> <!-- 인증코드 확인 -->
+      <span id="emailcheckResult"></span> <!-- 중복확인 -->
       </div>
       
-      
+      <input type="hidden" name="member_linkWhere" value="${param.member_linkWhere }">
       <input type="submit" class="join-btn" value="J O I N"/>
     </form>
     </div>

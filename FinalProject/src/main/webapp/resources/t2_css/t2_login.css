@@ -135,13 +135,14 @@ a {
 }
 
 
-.login_input, .login_bt {
+.login_input,.login_input1,.login_input3, .login_bt {
 	/* login input 버튼 */
 	border: none;
 	outline: none;
 	background: none;
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
+
 
 .login_cont {
 	/*로그인 div 페이지  */
@@ -335,6 +336,26 @@ a {
 }
 
 .login_input {
+	/* login input */
+	display: block;
+	width: 100%;
+	margin-top: 5px;
+	padding-bottom: 5px;
+	font-size: 16px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+	text-align: left;
+}
+.login_input1 {
+	/* login input */
+	display: block;
+	width: 100%;
+	margin-top: 5px;
+	padding-bottom: 5px;
+	font-size: 16px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+	text-align: left;
+}
+.login_input3 {
 	/* login input */
 	display: block;
 	width: 100%;

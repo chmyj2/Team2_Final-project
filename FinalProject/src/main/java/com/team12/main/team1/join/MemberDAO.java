@@ -64,18 +64,6 @@ public class MemberDAO {
 	        m.setMember_address(jm_addr);
 	        m.setMember_email(req.getParameter("member_email"));
 
-	m.setMember_address(jm_addr);
-	m.setMember_birth(jm_date);
-//	m.setMember_joinDate(jm_joinDate);
-//	m.setMember_paper(jm_paper);
-			m.setMember_ID(req.getParameter("member_ID"));
-			m.setMember_PW(req.getParameter("member_PW"));
-			m.setMember_name(req.getParameter("member_name"));
-			m.setMember_birth(jm_date);
-			m.setMember_sex(req.getParameter("member_sex"));
-			m.setMember_phoneNum(req.getParameter("member_phoneNum"));
-	        m.setMember_address(jm_addr);
-	        m.setMember_email(req.getParameter("member_email"));
 
 	if (ss.getMapper(Team1joinMapper.class).join(m) == 1) {
 		req.setAttribute("result", "가입성공");
@@ -161,6 +149,7 @@ public class MemberDAO {
 //        System.out.println(jm_addr);
 //        System.out.println(m.getMember_email());
 //        
+<<<<<<< HEAD
 //        
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -178,6 +167,10 @@ public class MemberDAO {
 >>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
 =======
 >>>>>>> c0c2bb4629554ff1d0b2eb27d53a92a9dcf06cf3
+=======
+
+
+>>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
 
 		if (ss.getMapper(Team1joinMapper.class).update(m) == 1) {
 			req.setAttribute("result", "수정성공");
@@ -208,6 +201,7 @@ public class MemberDAO {
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -221,6 +215,9 @@ public class MemberDAO {
 >>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
 =======
 >>>>>>> c0c2bb4629554ff1d0b2eb27d53a92a9dcf06cf3
+=======
+
+>>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
 	public void bye(HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		

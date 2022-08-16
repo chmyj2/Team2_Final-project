@@ -16,6 +16,7 @@
 	</properties>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	
 	<dependencies>
@@ -27,7 +28,10 @@
 >>>>>>> c0c2bb4629554ff1d0b2eb27d53a92a9dcf06cf3
 	<dependencies>
 
+=======
+>>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
 	
+	<dependencies>
 
 >>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
 
@@ -46,6 +50,7 @@
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 <<<<<<< HEAD
@@ -55,6 +60,9 @@
 >>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
 =======
 >>>>>>> c0c2bb4629554ff1d0b2eb27d53a92a9dcf06cf3
+=======
+
+>>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
 	<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
 <dependency>
     <groupId>javax.mail</groupId>
@@ -71,6 +79,7 @@
     <version>${org.springframework-version}</version>
 </dependency>
 
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
@@ -88,6 +97,8 @@
 >>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
 =======
 >>>>>>> c0c2bb4629554ff1d0b2eb27d53a92a9dcf06cf3
+=======
+>>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
 		<!--Spring 환경에서 ORMFramework사용 가능하게 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -302,6 +313,7 @@
 	</dependencies>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 <<<<<<< HEAD
@@ -315,6 +327,9 @@
 >>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
 =======
 >>>>>>> c0c2bb4629554ff1d0b2eb27d53a92a9dcf06cf3
+=======
+
+>>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
 	<build>
 		<plugins>
 			<plugin>
