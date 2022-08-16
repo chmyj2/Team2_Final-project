@@ -200,7 +200,7 @@
 
 
 .store_product_detail_wrap{
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: white;
     width: 100%;
     height: auto;
     text-align: center;
@@ -225,7 +225,11 @@
     border-radius: 20px; 
     margin-left: 15%;
     margin-top: 50px;
+    
     display: flex;
+    
+    334344641366
+    
     
 }
 
