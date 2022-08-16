@@ -7,10 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+
  <div class="store_main_wrap">
         <div class="store_main_header">
             <div class="store_main_for_dog">
-            <a href="#">
+            <a href="enter.team1StoreForDog">
                 <img class="store_main_for_dog_img" src="resources/img/about3.png" alt="">
                 <h2>
                     FOR DOG
