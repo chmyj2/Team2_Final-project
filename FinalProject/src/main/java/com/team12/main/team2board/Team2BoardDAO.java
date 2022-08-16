@@ -210,6 +210,12 @@ public class Team2BoardDAO {
 	// 코멘트 업로드 
 	public int createComment(Team2CommentDTO t) {
 		int a = ss.getMapper(Team2BoardMapper.class).createcomment(t);
+		
+		if(a == 1) {  //댓글 pk 가져오기
+		Team2CommentDTO c = ss.getMapper(Team2BoardMapper.class).getCommentNum(t);
+		 a = c.getComment_num();
+			
+		}
 		return a;
 	}
 	

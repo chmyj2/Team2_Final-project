@@ -19,7 +19,7 @@
 	</select>
 	
 	<insert id="join" parameterType="com.team12.main.t2Login.Membert2">
-	insert into final_member values(#{member_ID},#{member_PW},1,#{member_name},#{member_birth},#{member_sex},#{member_phoneNum},#{member_address},#{member_email},sysdate,'동의')
+	insert into final_member values(#{member_ID},#{member_PW},#{member_linkWhere},#{member_name},#{member_birth, jdbcType=DATE},#{member_sex},#{member_phoneNum},#{member_address},#{member_email},sysdate,'동의')
 	</insert>
 	
 	<select id="businessNumCheck" resultType="int">
@@ -31,7 +31,8 @@
 	</insert>
 	
 	<select id="checkIdNaver" resultType="int">
-	select count(*) from final_member where member_ID =#{member_ID}
+	select count(*) from final_member where member_ID =#{member_ID} and member_linkWhere = 3
 	</select>
+	
 	
 </mapper>

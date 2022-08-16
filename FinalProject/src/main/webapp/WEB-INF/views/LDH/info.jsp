@@ -47,6 +47,8 @@ $(function() {
                 	<!-- phoneNum -->
                     <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum" placeholder="Phone Number *" type="text" maxlength="10" autocomplete="off">
                 	<br>
+
+                	
                 	
                 	
                 	<!-- 주소  -->
@@ -62,7 +64,7 @@ $(function() {
                 	<br>
                 	
                 	
-                	
+
                 
                 <div>
                     <div class="update_box">
@@ -78,8 +80,6 @@ $(function() {
                 
             </div>
         </form>
-                <!-- 임시로 로그아웃 버튼좀 생성 할게요 YK -->
-                <button class="join_btn" onclick="logout()">logout(임시)</button>
             </div>
 </body>
 </html>

@@ -45,6 +45,7 @@ public class MemberDAO {
 	        m.setMember_address(jm_addr);
 	        m.setMember_email(req.getParameter("member_email"));
 
+
 	if (ss.getMapper(Team1joinMapper.class).join(m) == 1) {
 		req.setAttribute("result", "가입성공");
 	} else {
@@ -129,7 +130,8 @@ public class MemberDAO {
 //        System.out.println(jm_addr);
 //        System.out.println(m.getMember_email());
 //        
-//        
+
+
 
 		if (ss.getMapper(Team1joinMapper.class).update(m) == 1) {
 			req.setAttribute("result", "수정성공");
@@ -145,6 +147,7 @@ public class MemberDAO {
 		
 	}
 	
+
 	public void bye(HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		
