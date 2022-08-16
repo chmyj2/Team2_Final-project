@@ -56,12 +56,12 @@
 			<h2 class="login_h2">Welcome!</h2>
 			
 			<label class="login_label"> <span>ID</span> 
-			<input class="login_input" name="vet_ID" />
+			<input class="login_input3" name="vet_ID" />
 			</label> <label class="login_label"> <span>Password</span> 
 			<input class="login_input1" name="vet_PW" />
 			</label>
 			<span class="pw_alert">${rb}</span>
-			<input type="checkbox" id="login_idSave">아이디 기억하기
+			<input type="checkbox" id="login_idSave1">아이디 기억하기
 			<p class="forgot-pass"  style="font-size: 12px;" onclick="location.href='acceptgo?member=2' ">회원가입</p>
 			<p class="forgot-pass"  style="font-size: 12px;">아이디를 잊으셨나요?</p>
 			<p class="forgot-pass"  style="font-size: 12px;">비밀번호를 잊으셨나요?</p>
