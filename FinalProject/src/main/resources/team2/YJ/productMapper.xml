@@ -3,8 +3,8 @@
 <mapper namespace="com.team12.main.t2.shop.ProductMapper">
 
 	
-	<select id="getAllProduct" parameterType="com.team12.main.t2.shop.Product" resultType="com.team12.main.t2.shop.Product">
-		select * from PRODUCT where onExhibition = #{onExhibition }
+	<select id="getPetProduct" parameterType="com.team12.main.t2.shop.Product" resultType="com.team12.main.t2.shop.Product">
+		select * from PRODUCT where onExhibition = #{onExhibition } and pet_category = #{pet_category }
 	</select>
 	
 	<select id="realGetAllProduct" resultType="com.team12.main.t2.shop.Product">
