@@ -20,7 +20,6 @@
 	<tx:annotation-driven />
 	<resources mapping="/resources/**" location="/resources/" />
 
-<<<<<<< HEAD
    <beans:bean
       class="org.springframework.web.servlet.view.InternalResourceViewResolver">
       <beans:property name="prefix" value="/WEB-INF/views/" />
@@ -41,7 +40,6 @@
 
 
 
-=======
 	<beans:bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
@@ -59,23 +57,21 @@
 		
 		
 	<!-- //////////DB연결관련!///////////// -->
-	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+<!-- 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
 
 		<beans:property name="username" value="leeyoky" />
 		<beans:property name="password" value="leeyoky" />
-	</beans:bean>
+	</beans:bean> -->
 	<!-- //////////DB연결관련!///////////// -->
->>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
 	
 
 	<beans:bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<beans:property name="dataSource" ref="dataSource" />
 	</beans:bean>  
-<<<<<<< HEAD
 
 
    
@@ -101,13 +97,16 @@
          </beans:list>
       </beans:property>
    </beans:bean>
-=======
-<beans:bean id="sqlSessionFactory"
+   
+   
+<!-- <beans:bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="typeAliasesPackage"
 			value="com.team12.main" />
 		<beans:property name="mapperLocations">
+		
+		 -->
 			<beans:list>
 				<beans:value>classpath:testmapper.xml</beans:value>
 				<beans:value>classpath:team2/YJ/productMapper.xml</beans:value>
@@ -121,7 +120,6 @@
 			</beans:list>
 		</beans:property>
 	</beans:bean>
->>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
 
 	<beans:bean id="sqlSession"
 		class="org.mybatis.spring.SqlSessionTemplate">
@@ -152,18 +150,15 @@
 	</beans:bean>
 
 
-<<<<<<< HEAD
    <beans:bean id="multipartResolver"
       class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
       <beans:property name="maxUploadSize" value="104857600" />
    </beans:bean> 
    
 </beans:beans>
-=======
 	<beans:bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<beans:property name="maxUploadSize" value="104857600" />
 	</beans:bean>
 	
 </beans:beans>
->>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
