@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="resources/t2_css/t2_login.css">
   <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="${contextPath}/resources/js/js.cookie.js"></script>
+  
 </head>
 <body>
 
@@ -37,7 +37,7 @@
 			<label class="login_label"> <span>ID</span> 
 			<input class="login_input" name="member_ID" />
 			</label> <label class="login_label"> <span>Password</span> 
-			<input class="login_input" name="member_PW" />
+			<input class="login_input1" name="member_PW" />
 			</label>
 			<span class="pw_alert">${r}</span>
 			<input type="checkbox" id="login_idSave">아이디 기억하기
@@ -62,7 +62,7 @@
 			<label class="login_label"> <span>ID</span> 
 			<input class="login_input" name="vet_ID" />
 			</label> <label class="login_label"> <span>Password</span> 
-			<input class="login_input" name="vet_PW" />
+			<input class="login_input1" name="vet_PW" />
 			</label>
 			<span class="pw_alert">${rb}</span>
 			<input type="checkbox" id="login_idSave">아이디 기억하기
