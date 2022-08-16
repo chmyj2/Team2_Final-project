@@ -191,6 +191,7 @@ hr.login_hr{
     border: none;
     /* margin-bottom: 50px; */      /* 동훈 수정 영경님 맘대로 다시 바꾸셔도 무관 */
     margin-bottom: 20px;
+<<<<<<< HEAD
 }
 
 .input_birth{                           
@@ -218,8 +219,23 @@ hr.login_hr{
     border-radius: 30px;
     border: none;
 	
+=======
+>>>>>>> ec7a82d (풀 하기 위한 커밋)
 }
 
+.input_birth{                           /* 동훈 수정 영경님 맘대로 다시 바꾸셔도 무관 */
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+	
+}
+.join-textForm brith{
+    margin-bottom: 20px;
+	
+	
+}
 .input_addr1{
 	position: relative;
     width: 230px;
