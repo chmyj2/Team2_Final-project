@@ -55,11 +55,11 @@
         <ul>
             <li><a href="hospitalGo">동물병원 찾기</a></li>
            <li class="t2-indexDropdown">
-           <a href="viewProductPage.go?onExhibition=Y">상품 판매</a>
+           <a class="t2-indexDropbtn">상품 판매</a>
            <ul class="t2-indexDropdown-content">
-            	<li><a href="#">강아지</a></li>                     
-            	<li><a href="#">고양이</a></li>                 
-            	<li><a href="#">etc</a></li>                 
+            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=dog">강아지</a></li>                     
+            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=cat">고양이</a></li>                 
+            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=etc">etc</a></li>                 
             </ul>
            </li>
             <li class="t2-indexDropdown">
