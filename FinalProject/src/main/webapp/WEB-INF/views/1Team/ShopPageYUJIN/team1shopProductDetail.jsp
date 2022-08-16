@@ -21,44 +21,16 @@
 					$("#quantity_input").val(--quantity);
 				}
 			});
-		 /* ------------------------------------ */
-		 // 서버로 전송할 데이터
-			const form = {
-				m_id : '${sessionScope.loginMember.m_id }',
-				Num_PK :'${products.num_PK}',
-				Cart_ProductQuantity : ''
-			} 
-		 
-		 // click Add Cart	
-		 	$("#cart_btn").on("click", function(e){
-					form.Cart_ProductQuantity = $("#quantity_input").val();
-		 	$.ajax({
-		 		url: 'team1.addCart',
-		 		type: 'POST',
-		 		data: form,
-		 		success: function(result){
-		 				/* ========== */
-		 				console.log('성공했어용')
-
-					}
-		 		/* ajax 마지막줄 */
-		 		});	
-		 		/* click fucn 마지막줄 */
-			});
-		
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
+		/* ------------------------------------ */		
 	/* --READY------------ */	
 	});
 		
+	
+	
+	
+	
+	
+	
 		
 		
 		
@@ -68,12 +40,18 @@
 	
 	<div>
 	<h1>${p.num_PK}</h1>
+	<h1>${p.num_PK}</h1>
+	<h1>${p.num_PK}</h1>
+	<h1>${p.num_PK}</h1>
+	<h1>${p.num_PK}</h1>
+	<h1>${p.num_PK}</h1>
 	${p.categoryNum}
 	${p.name}
 	${p.price}
 	${p.vat}
 	${p.contents}
 	
+	<img src="resources/team1ProductImgs/${products.thumbnail}" alt="${products.name}">
 	${p.thumbnail}
 	${p.img1}
 	${p.img2}

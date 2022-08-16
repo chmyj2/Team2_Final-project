@@ -19,22 +19,16 @@
 			var categoryNum = document.getElementById('categoryNumSelect');
 			var cv = categoryNum.options[categoryNum.selectedIndex].value;
 			location.href="loadByCategory.go?categoryNum="+cv;
-		};
-		
+		};		
 </script>
-
-
 
 </head>
 <body>
-
 	<div class="store_wrapper">
 		<div>
 			<h1>Store</h1>
 		</div>
-
-
-
+		
 			<!-- 상품 카테고리별 출력 선택  -->
 			<h2>카테고리별 출력</h2>
 			<div style="color:fuchsia; display: inline-block;" >
@@ -45,23 +39,19 @@
 					<option value="02">간식</option>
 					<option value="03">사료</option>
 			</select>
-			</div>
-
-
-		<!-- 상품 전체 출력 -->
-		<c:forEach var="products" items="${products}">
-			<div style="border: solid 1px black; width:150px;height:200px; display: inline-block;">
-			<a style="font-size: 20pt;" onclick="gotoDetail(${products.num_PK})">
-				<img alt="${products.name}"
-					src="resources/team1ProductImgs/${products.thumbnail}">
-					${products.name}
-				(<fmt:setLocale value="ko_KR" /><fmt:formatNumber type="currency" value="${products.price}" />)
-			</a>
-			</div>
-		</c:forEach>
-
+			</div>			
+			
+			<!-- store format  -->
+			<c:forEach var="products" items="${products}">
+			<div class="store_new_products_ANF" onclick="gotoDetail(${products.num_PK})">
+                    <img src="resources/team1ProductImgs/${products.thumbnail}" alt="${products.name}">
+                    <h2>${products.name}</h2>
+                    <p>${products.name}</p>
+                    <span>0.0kg 
+                        <strong><fmt:setLocale value="ko_KR" /><fmt:formatNumber type="currency" value="${products.price}" /></strong>
+                    </span><br>
+           </div>
+			</c:forEach>
 	</div>
-
-
 </body>
 </html>
