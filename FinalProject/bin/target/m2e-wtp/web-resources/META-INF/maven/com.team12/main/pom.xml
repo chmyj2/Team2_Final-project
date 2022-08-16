@@ -15,9 +15,12 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<dependencies>
 
 =======
+=======
+>>>>>>> 08efc03 (퐆)
 	
 	<dependencies>
 
@@ -35,6 +38,9 @@
 	<version>2.8.7</version>
 	</dependency>
 	
+<<<<<<< HEAD
+>>>>>>> 08efc03 (퐆)
+=======
 >>>>>>> 08efc03 (퐆)
 	<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
 <dependency>
@@ -55,6 +61,10 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 08efc03 (퐆)
 =======
 
 >>>>>>> 08efc03 (퐆)
@@ -271,6 +281,10 @@
 		</dependency>
 	</dependencies>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 08efc03 (퐆)
 =======
 	
 >>>>>>> 08efc03 (퐆)

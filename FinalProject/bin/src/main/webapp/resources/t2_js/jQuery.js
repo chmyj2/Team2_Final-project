@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*! jQuery v3.6.0 | (c) OpenJS Foundation and other contributors | jquery.org/license */
+=======
+/*! jQuery v3.6.0 | (c) OpenJS Foundation and other contributors | jquery.org/license */
+>>>>>>> 08efc03 (퐆)
 =======
 /*! jQuery v3.6.0 | (c) OpenJS Foundation and other contributors | jquery.org/license */
 >>>>>>> 08efc03 (퐆)
