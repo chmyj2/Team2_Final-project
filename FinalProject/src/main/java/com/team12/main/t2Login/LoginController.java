@@ -210,8 +210,9 @@ public class LoginController {
 	public String naverjoingo(HttpServletRequest req, Membert2 m) {
 		//네이버 회원가입하러가기
 		
+		lDAO.naverJoin(req,m);
 		lDAO.loginCheck(req);
-		req.setAttribute("contentPage", "t2login/t2_join.jsp");
+		req.setAttribute("contentPage", "t2login/t2_login.jsp");
 		
 		
 		return "2Team/t2_index";

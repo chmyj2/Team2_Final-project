@@ -3,7 +3,7 @@ member_ID varchar2(30 char) primary key,
 member_PW varchar2(30 char) not null,
 member_linkWhere number(3) not null,
 member_name varchar2(30 char) not null,
-member_birth date not null,
+member_birth date ,
 member_sex varchar2(30 char) not null,
 member_phoneNum number(15) not null,
 member_address varchar2(100 char) not null,
@@ -13,7 +13,7 @@ member_paper varchar2(30 char) not null
 );
 
 ALTER TABLE final_member MODIFY member_phoneNum varchar2(30 char);
-
+alter table final_member modify member_birth null;
 delete final_member where member_ID ='tn3651';
 
 drop table final_member;
@@ -23,7 +23,7 @@ select * from final_member;
 
 create sequence final_member_seq;
 
-insert into final_member values('mz','1004',1,'mz','2022-08-04','남자','010-1234-1234','종로','mz@naver.com',sysdate,'동의');
+insert into final_member values('mz11111','1004',1,'mz','','남자','010-1234-1234',' ','mz111111@naver.com',sysdate,'동의');
 
 create table pet_information(
 baby_num number(6) primary key,
