@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- YK 임시작업공간입니다 곧 지울거에요 -->
     <div class="store_wrap">
         <div class="store_header">
             <h2>FOR DOG</h2>

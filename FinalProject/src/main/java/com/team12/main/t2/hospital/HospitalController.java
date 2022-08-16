@@ -33,7 +33,7 @@ public class HospitalController {
 		lDAO.loginCheck(req);
 
 		//lDAO.loginCheck(req);
-		HDAO.hospitalView(req,hDTO);
+//		HDAO.hospitalView(req,hDTO);
 
 		req.setAttribute("contentPage", "sy/hospitalDetail.jsp");
 		

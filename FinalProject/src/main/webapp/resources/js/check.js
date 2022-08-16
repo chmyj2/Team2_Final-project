@@ -86,13 +86,6 @@ function joinCheck() {
 		emailInput.focus();
 		return false;
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
-=======
->>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
 	return true;
 }
 
