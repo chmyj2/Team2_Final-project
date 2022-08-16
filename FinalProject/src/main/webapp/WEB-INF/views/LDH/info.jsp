@@ -35,6 +35,7 @@ $(function() {
                 	<!-- pw  -->
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <input class="join_input_pw" value="${sessionScope.loginMember.member_PW }" name="jm_pw" placeholder="Password *" type="password" maxlength="10" autocomplete="off" >
 =======
                     <input class="join_input_pw" value="${sessionScope.loginMember.member_PW }" name="jm_pw" placeholder="Password *" type="password" maxlength="10" autocomplete="off">
@@ -43,6 +44,9 @@ $(function() {
 =======
                     <input class="join_input_pw" value="${sessionScope.loginMember.member_PW }" name="jm_pw" placeholder="Password *" type="password" maxlength="10" autocomplete="off" >
 >>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
+=======
+                    <input class="join_input_pw" value="${sessionScope.loginMember.member_PW }" name="jm_pw" placeholder="Password *" type="password" maxlength="10" autocomplete="off" >
+>>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
                 	<p class="required_txt">* 숫자 하나 이상</p>
                 	
                 	<!-- pw 재확인 -->
@@ -56,12 +60,15 @@ $(function() {
 
                 	<!-- phoneNum -->
                     <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum" placeholder="Phone Number *" type="text" maxlength="10" autocomplete="off">
+<<<<<<< HEAD
 =======
 >>>>>>> 78da7b1 (2022/08/11 커밋)
                 	<br>
 
                 	<!-- phoneNum -->
                     <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum" placeholder="Phone Number *" type="text" maxlength="10" autocomplete="off">
+=======
+>>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
                 	<br>
                 	
                 	
@@ -74,6 +81,7 @@ $(function() {
                         <input class="input_addr" value="${addr[1] }"  name="jm_addr2" maxlength="30" autocomplete="off" placeholder="상세주소">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            <br>
                            
 =======
@@ -83,11 +91,16 @@ $(function() {
                            <br>
                            
 >>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
+=======
+                           <br>
+                           
+>>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
                 	<!-- email -->
                     <input class="input_email" value="${sessionScope.loginMember.member_email }" name="jm_email" placeholder="Email *" type="text" maxlength="10" autocomplete="off">
                 	<br>
                 	
                 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 	
@@ -104,6 +117,9 @@ $(function() {
 =======
                 	
 >>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
+=======
+                	
+>>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
                 
                 <div>
                     <div class="update_box">

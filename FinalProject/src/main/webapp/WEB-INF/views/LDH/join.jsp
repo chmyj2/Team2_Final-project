@@ -41,6 +41,7 @@
 				<div class="join-textForm brith">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<input class="input_birth" name="member_birth" type="date" class="join-birth" >
 					<p class="required_txt"> 생년월일 </p>
 =======
@@ -50,6 +51,10 @@
 					<input class="input_birth" name="member_birth" type="date" class="join-birth" >
 					<p class="required_txt"> 생년월일 </p>
 >>>>>>> ec7a82d (풀 하기 위한 커밋)
+=======
+					<input class="input_birth" name="member_birth" type="date" class="join-birth" >
+					<p class="required_txt"> 생년월일 </p>
+>>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
 				</div>
 
                 <!-- 성별 체크 -->

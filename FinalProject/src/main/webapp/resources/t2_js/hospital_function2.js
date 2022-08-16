@@ -185,9 +185,6 @@ success:function(data){
 				                '            <div class="desc">' + 
 				                '                <div class="ellipsis">후기수</div>' + 
 				                '                <div class="jibun ellipsis"> <a href="hospitalDetailGo?hospital_no='+mgtno+'"> 자세히 </a> ' + 
-
-				                '                <div class="jibun ellipsis"> <a href=""> 자세히 </a> ' + 
-
 				                '                <a href="https://www.kakaocorp.com/main" target="_blank" class="link">홈페이지</a></div>' + 
 				                '            </div>' + 
 				                '        </div>' + 
@@ -242,8 +239,6 @@ function hospital_list(){
 
 				var table = $("<table class='main-hospital-list' border='1'/>");
 				
-				var table = $("<table/>");
-
 				
 				$.each(hospital , function(i , m) {
 					
@@ -255,6 +250,8 @@ function hospital_list(){
 					
 					let [city, ward] = addr.split(' ');
 
+					console.log(ward);
+					
 					if(state == "정상"){
 						
 						if(addr != ""){
@@ -264,12 +261,7 @@ function hospital_list(){
 							$("<td/>").text(name),
 							$("<td/>").text(ward),
 							$("<td/>").text(tel),
-							$("<td><a href='hospitalDetailGo?hospital_no="+mgtno+"'>자세히</a></td>"),		
-							$("<td/>").apeend($("<a href='hospitalDetailGo'/>").text(name)),
-							$("<td/>").text(addr),
-							$("<td/>").text(tel),
-							$("<td/>").text(state)
-							
+							$("<td><a href='hospitalDetailGo?hospital_no="+mgtno+"'>자세히</a></td>")		
 							)
 						}
 					}

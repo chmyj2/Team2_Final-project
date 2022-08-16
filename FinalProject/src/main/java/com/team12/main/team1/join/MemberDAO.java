@@ -36,6 +36,7 @@ public class MemberDAO {
 			Date jm_date = Date.valueOf(req.getParameter("member_birth"));
 
 
+<<<<<<< HEAD
 
 			m.setMember_ID(req.getParameter("member_ID"));
 			m.setMember_PW(req.getParameter("member_PW"));
@@ -52,6 +53,8 @@ public class MemberDAO {
 	m.setMember_birth(jm_date);
 //	m.setMember_joinDate(jm_joinDate);
 //	m.setMember_paper(jm_paper);
+=======
+>>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
 			m.setMember_ID(req.getParameter("member_ID"));
 			m.setMember_PW(req.getParameter("member_PW"));
 			m.setMember_name(req.getParameter("member_name"));
@@ -146,7 +149,10 @@ public class MemberDAO {
 //        System.out.println(m.getMember_email());
 //        
 //        
+<<<<<<< HEAD
 	
+=======
+>>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
 
 		if (ss.getMapper(Team1joinMapper.class).update(m) == 1) {
 			req.setAttribute("result", "수정성공");
@@ -157,6 +163,7 @@ public class MemberDAO {
 	} catch (Exception e) {
 		e.printStackTrace();
 		req.setAttribute("result", "수정실패");
+<<<<<<< HEAD
 		
 		// TODO: handle exception
 	}
@@ -168,6 +175,13 @@ public class MemberDAO {
 
 		
 
+=======
+		// TODO: handle exception
+	}
+		
+	}
+	
+>>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
 	public void bye(HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		

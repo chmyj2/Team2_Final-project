@@ -20,11 +20,29 @@ public interface Team2BoardMapper {
 
 	int checkLike(Team2BoardLikeDTO t);
 
-	void updateLike(Team2BoardLikeDTO t);
+	void countUpTotalLike(Team2BoardLikeDTO t);
 
+	void countDownTotalLike(Team2BoardLikeDTO t);
+	
 	void insertInfoLike(Team2BoardLikeDTO t);
 
 	Team2BoardLikeDTO getTotalLike(Team2BoardLikeDTO t);
+
+	void deleteInfoLike(Team2BoardLikeDTO t);
+
+	int createcomment(Team2CommentDTO t);
+
+	List<Team2CommentDTO> getcomment(Team2CommentDTO comment);
+
+	int getTotalCommentCount(Team2CommentDTO comment);
+
+	List<CommentBean> getcommentJson(Team2CommentDTO t);
+
+	int deletecomment(Team2CommentDTO t);
+
+	int updatecomment(Team2CommentDTO t);
+
+	
 
 
 
