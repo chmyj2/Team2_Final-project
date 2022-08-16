@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /.metadata/
 
 /Servers/
@@ -34,3 +35,29 @@ FinalProject/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 *.name
 *.container
 >>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
+=======
+/.metadata/
+
+/Servers/
+
+
+*.class
+pom.properties
+
+*.classpath
+.settings
+
+pom.properties
+
+<<<<<<< HEAD
+FinalProject/bin/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+FinalProject/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+01_Team1Final/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+=======
+/MANIFEST.MF/
+*.properties
+*.name
+*.container
+>>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
+FinalProject/target/test-classes/log4j.xml
+>>>>>>> c0c2bb4629554ff1d0b2eb27d53a92a9dcf06cf3

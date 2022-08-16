@@ -59,7 +59,6 @@ function likeCheck(board_num,member_ID) {
 function createComment() {
 
 	
-	
 	$('#commentBtn').click(function() { 
     	
 		let txt = $('#commentTXT').val();
@@ -88,8 +87,22 @@ function createComment() {
     			"comment_txt" : txt
     		},
     		success : function(data) {
-    			if(data == 1){
-    				console.log("댓글 작성 성공")
+    			if(data >= 1){
+    				let commentPK = data;
+    				console.log("댓글 작성 성공---"+commentPK)
+    				
+    				let now = new Date();
+    				let month = now.getMonth() + 1;  
+    				let day = now.getDate();  
+    				let hour = now.getHours();
+    				let minute = now.getMinutes();
+    				
+    				let date = month +"-"+ day +"  "+ hour +":"+ minute
+    				
+    				let inputData = `<div class="commentDiv"><div class="col-sm-8 commentBorder"><div>user : <strong class="cStrong">${id}</strong> <em class="cEm">${date}</em></div><div><span class="commentSpan">${txt}</span> <input class="form-control input-sm toggleInput" type="text"><button class="btn btn-success btn-sm togglebtn">완료</button></div></div><div class="col-sm-1"><a id="${commentPK}" class="deleteAtag"><i class="fa fa-times">삭제</i></a> <a id="${commentPK}" class="updateAtag"><i class="fa fa-edit">수정</i></a></div></div>`
+    				
+    				$('#commentContainer').prepend(inputData);
+    				
     			}
     			
     			
@@ -100,22 +113,15 @@ function createComment() {
     	
     	});//ajax
     	
-		let now = new Date();
-		let month = now.getMonth() + 1;  
-		let day = now.getDate();  
-		let hour = now.getHours();
-		let minute = now.getMinutes();
-		
-		let date = month +"-"+ day +"  "+ hour +":"+ minute
-		
-		let inputData = `<div class="commentDiv"><div class="col-sm-8 commentBorder"><div>user : <strong class="cStrong">${id}</strong> <em class="cEm">${date}</em></div><div><span class="commentSpan">${txt}</span> <input class="form-control input-sm toggleInput" type="text"><button class="btn btn-success btn-sm togglebtn">완료</button></div></div><div class="col-sm-1"><a id="${num}" class="deleteAtag"><i class="fa fa-times">삭제</i></a> <a id="${num}" class="updateAtag"><i class="fa fa-edit">수정</i></a></div></div>`
-		
-		/*let buttons = `<a id="${num}" class="deleteAtag"><i class="fa fa-times">삭제</i></a> <a id="${num}" class="updateAtag"><i class="fa fa-edit">수정</i></a>`
+    	
+
+			
+		/*let btn = `<a id="${num}" class="deleteAtag"><i class="fa fa-times">삭제</i></a> <a id="${num}" class="updateAtag"><i class="fa fa-edit">수정</i></a>`
 		let buttonDiv = `<div class="col-sm-1"></div>`
 			if(loginid != id){
-				buttons = buttonDiv;
+				btn= buttonDiv;
 			}*/
-		$('#commentContainer').prepend(inputData);
+		
 		
 
     	
@@ -131,9 +137,10 @@ function getComments() {
 		
 		let page = $(this).html();
 		let board_num = $('#boardNum').val();
+		let loginid = $('#memberID').val();
 		let start = page * 10 - 9;
 		let end = page * 10;
-		let btn ="<div class=\"col-sm-1\"> <a href=\"#\" class=\"float-right btn-box-tool replyDelBtn\"> <i class=\"fa fa-times\"> 삭제</i> </a> <a href=\"#\" class=\"float-right btn-box-tool replyModBtn\"> <i class=\"fa fa-edit\"> 수정</i> </a> </div>";
+		
 		
 		$.ajax({//댓글 얻기
     		type: "GET" ,
@@ -148,11 +155,20 @@ function getComments() {
     			console.log(data);
     			$('#commentContainer').empty();
     			$.each(data.comments, function(i, c) {
-    				let comment_member_id = c.comment_member_id;
-    				let comment_txt = c.comment_txt
-    				let comment_date = c.comment_date;
-    				let div = "<div class=\"row\" id=\"commentContainer\"> <div class=\"col-sm-8\" style=\"border: solid 1px;\"><div>user : "+comment_member_id+"&nbsp&nbsp"+comment_date+"</div><div>"+comment_txt+"</div></div>"+btn
-    				$('#commentContainer').append(div);
+    				let commentPK = c.comment_num
+    				let id = c.comment_member_id;
+    				let txt = c.comment_txt
+    				let date = c.comment_date;
+    				
+    				let inputData = `<div class="commentDiv"><div class="col-sm-8 commentBorder"><div>user : <strong class="cStrong">${id}</strong> <em class="cEm">${date}</em></div><div><span class="commentSpan">${txt}</span> <input class="form-control input-sm toggleInput" type="text"><button class="btn btn-success btn-sm togglebtn">완료</button></div></div><div class="col-sm-1"><a id="${commentPK}" class="deleteAtag"><i class="fa fa-times">삭제</i></a> <a id="${commentPK}" class="updateAtag"><i class="fa fa-edit">수정</i></a></div></div>`
+    				
+    				if(loginid != id){ //본인 작성 댓글에만 수정 삭제버튼 노출 
+    					inputData = `<div class="commentDiv"><div class="col-sm-8 commentBorder"><div>user : <strong class="cStrong">${id}</strong> <em class="cEm">${date}</em></div><div><span class="commentSpan">${txt}</span> <input class="form-control input-sm toggleInput" type="text"><button class="btn btn-success btn-sm togglebtn">완료</button></div></div><div class="col-sm-1"></div></div>
+`
+    				}
+    					
+    					
+    					$('#commentContainer').append(inputData);
     				
     			});
     			
@@ -172,7 +188,7 @@ function getComments() {
 function deleteComment() {
 	let result = 0;
 	
-	$('.deleteAtag').click(function() {
+	$(document).on("click",'.deleteAtag',function() {
 		let num = $(this).attr('id')
 		
 		$.ajax({//댓글 삭제
@@ -203,10 +219,11 @@ function deleteComment() {
 // 댓글 수정 
 function commentUpdate() {
 	
+	
 	 let num = 0;
 	 let txt = '';
 	
-	$('.updateAtag').click(function() {
+	$(document).on("click",'.updateAtag',function() {
 		$(this).parent().parent().find('input').fadeToggle('100') 
 		$(this).parent().parent().find('span').toggle() 
 		$(this).parent().parent().find('button').fadeToggle('100') 
@@ -215,7 +232,7 @@ function commentUpdate() {
 		
 	});
 	
-	$('.togglebtn').click(function() {
+	$(document).on("click",'.togglebtn',function() {
 		
 		txt = $(this).parent().find('input').val();
 		

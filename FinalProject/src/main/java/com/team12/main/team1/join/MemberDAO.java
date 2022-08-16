@@ -63,8 +63,6 @@ public class MemberDAO {
 			m.setMember_phoneNum(req.getParameter("member_phoneNum"));
 	        m.setMember_address(jm_addr);
 	        m.setMember_email(req.getParameter("member_email"));
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 	m.setMember_address(jm_addr);
 	m.setMember_birth(jm_date);
@@ -78,10 +76,6 @@ public class MemberDAO {
 			m.setMember_phoneNum(req.getParameter("member_phoneNum"));
 	        m.setMember_address(jm_addr);
 	        m.setMember_email(req.getParameter("member_email"));
-=======
->>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
-=======
->>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
 
 	if (ss.getMapper(Team1joinMapper.class).join(m) == 1) {
 		req.setAttribute("result", "가입성공");
@@ -170,6 +164,7 @@ public class MemberDAO {
 //        
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 =======
 =======
@@ -181,6 +176,8 @@ public class MemberDAO {
 =======
 >>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
 >>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
+=======
+>>>>>>> c0c2bb4629554ff1d0b2eb27d53a92a9dcf06cf3
 
 		if (ss.getMapper(Team1joinMapper.class).update(m) == 1) {
 			req.setAttribute("result", "수정성공");
@@ -210,6 +207,7 @@ public class MemberDAO {
 	}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -221,6 +219,8 @@ public class MemberDAO {
 =======
 >>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
 >>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
+=======
+>>>>>>> c0c2bb4629554ff1d0b2eb27d53a92a9dcf06cf3
 	public void bye(HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		
