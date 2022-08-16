@@ -36,9 +36,27 @@
 				window.opener.location.href="http://localhost/main/naverlogin.do?member_ID="+member_ID;
 			}else {
 				//회원정보가 없다는 의미
+				
+				$.ajax({
+				url:"naverID.check",
+				type:"GET",
+				dataType :"text",
+				data:{"member_ID":member_ID,
+					member_phoneNum:},
+				success : function (data) {
+					if (data>=1) {
+						//다른방법으로 회원가입함
+						alert("다른 방법으로 가입이 되어있습니다.");
+						window.close();
+						window.opener.location.href="http://localhost/main/t2LoginGO";
+					}else {
 				alert('회원가입을 해주세요');
 				window.close();
-				window.opener.location.href="http://localhost/main/naverjoin.go?member_ID="+member_ID;
+				window.opener.location.href="http://localhost/main/naverjoin.go?member_ID="+member_ID+"&member_linkWhere=3";
+						}
+				}			
+			}); //ajax끝
+				
 			}
 			
 		},

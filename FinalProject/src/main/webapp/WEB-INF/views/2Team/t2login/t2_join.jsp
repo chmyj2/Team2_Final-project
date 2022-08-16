@@ -68,7 +68,7 @@
       <span id="emailcheckResult"></span> <!-- 중복확인 -->
       </div>
       
-      
+      <input type="hidden" name="member_linkWhere" value="${param.member_linkWhere }">
       <input type="submit" class="join-btn" value="J O I N"/>
     </form>
     </div>

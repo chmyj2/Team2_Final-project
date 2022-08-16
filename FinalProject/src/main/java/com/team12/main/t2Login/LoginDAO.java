@@ -195,14 +195,10 @@ public class LoginDAO {
 			
 			String member_address = addr1 +"!"+addr2+"!"+addr3;
 			
-			m.setMember_ID(req.getParameter("member_ID"));
-			m.setMember_PW(req.getParameter("member_PW"));
-			m.setMember_name(req.getParameter("member_name"));
+			
 			m.setMember_birth(member_birth);
-			m.setMember_sex(req.getParameter("member_sex"));
-			m.setMember_phoneNum(req.getParameter("member_phoneNum"));
 			m.setMember_address(member_address);
-			m.setMember_email(req.getParameter("member_email"));
+			
 			
 			if (ss.getMapper(Team2loginMapper.class).join(m) == 1) {
 				System.out.println("성공");
