@@ -59,7 +59,6 @@
             <beans:value>classpath:team1joinMapper.xml</beans:value>
             <beans:value>classpath:team2BoardMapper.xml</beans:value>
             <beans:value>classpath:team2loginMapper.xml</beans:value>
-            <beans:value>classpath:shopteam1Mapper.xml</beans:value>
          </beans:list>
       </beans:property>
    </beans:bean>
