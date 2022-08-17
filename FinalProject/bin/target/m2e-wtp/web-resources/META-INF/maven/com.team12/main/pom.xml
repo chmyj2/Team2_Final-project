@@ -15,6 +15,7 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	
 	<dependencies>
@@ -23,15 +24,16 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 	<dependencies>
+=======
+>>>>>>> 996190cffbc50ccd1a037e5ef775c81f05b81377
 
-=======
-=======
->>>>>>> 08efc03 (퐆)
-	
 	<dependencies>
 
+<<<<<<< HEAD
 >>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
 
+=======
+>>>>>>> 996190cffbc50ccd1a037e5ef775c81f05b81377
 <!-- Kakao Login -->
 <dependency>
 	<groupId>com.googlecode.json-simple</groupId>
@@ -44,6 +46,7 @@
 	<artifactId>gson</artifactId>
 	<version>2.8.7</version>
 	</dependency>
+<<<<<<< HEAD
 	
 <<<<<<< HEAD
 
@@ -53,6 +56,9 @@
 =======
 >>>>>>> 08efc03 (퐆)
 >>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
+=======
+
+>>>>>>> 996190cffbc50ccd1a037e5ef775c81f05b81377
 	<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
 <dependency>
     <groupId>javax.mail</groupId>
@@ -69,6 +75,7 @@
     <version>${org.springframework-version}</version>
 </dependency>
 
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
@@ -83,6 +90,8 @@
 
 >>>>>>> 08efc03 (퐆)
 >>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
+=======
+>>>>>>> 996190cffbc50ccd1a037e5ef775c81f05b81377
 		<!--Spring 환경에서 ORMFramework사용 가능하게 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -296,6 +305,7 @@
 		</dependency>
 	</dependencies>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 <<<<<<< HEAD
@@ -307,6 +317,9 @@
 	
 >>>>>>> 08efc03 (퐆)
 >>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
+=======
+
+>>>>>>> 996190cffbc50ccd1a037e5ef775c81f05b81377
 	<build>
 		<plugins>
 			<plugin>
