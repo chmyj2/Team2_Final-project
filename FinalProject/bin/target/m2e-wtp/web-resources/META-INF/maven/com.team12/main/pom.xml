@@ -14,16 +14,8 @@
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	<dependencies>
 
-=======
-=======
->>>>>>> 08efc03 (퐆)
-	
 	<dependencies>
-
 
 <!-- Kakao Login -->
 <dependency>
@@ -37,11 +29,7 @@
 	<artifactId>gson</artifactId>
 	<version>2.8.7</version>
 	</dependency>
-	
-<<<<<<< HEAD
->>>>>>> 08efc03 (퐆)
-=======
->>>>>>> 08efc03 (퐆)
+
 	<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
 <dependency>
     <groupId>javax.mail</groupId>
@@ -58,16 +46,6 @@
     <version>${org.springframework-version}</version>
 </dependency>
 
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 08efc03 (퐆)
-=======
-
->>>>>>> 08efc03 (퐆)
 		<!--Spring 환경에서 ORMFramework사용 가능하게 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -280,14 +258,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-	
->>>>>>> 08efc03 (퐆)
-=======
-	
->>>>>>> 08efc03 (퐆)
+
 	<build>
 		<plugins>
 			<plugin>
