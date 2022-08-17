@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.team12.main.t2Login.Membert2;
 import com.team12.main.team1.join.*;
 @Controller
 public class MemberController {
@@ -23,6 +24,7 @@ public class MemberController {
 	
 	@Autowired
 	private	MemberDAO mDAO;
+	
 	
 	@Autowired
 	private HttpSession session;
@@ -76,7 +78,6 @@ public class MemberController {
 	
 	
 	
-	
 	@RequestMapping(value="/member.kakao", method=RequestMethod.GET)
 	public String kakaoLogin(@RequestParam(value = "code", required = false) String code) throws Exception {
 		System.out.println("#########" + code);
@@ -86,7 +87,7 @@ public class MemberController {
 		Member userInfo = mDAO.getUserInfo(access_Token);
 		
 		System.out.println("###access_Token#### : " + access_Token);
-		System.out.println("###nickname#### : " +  userInfo.getMember_name());
+		System.out.println("###nickname#### : " + userInfo.getMember_name());
 		System.out.println("###email#### : " + userInfo.getMember_email());
 		
 		// 아래 코드가 추가되는 내용
@@ -100,10 +101,9 @@ public class MemberController {
 		return "1Team/t1_index";
     	
 	}
+	
 
-
-		
-
+	
 	
 	
 

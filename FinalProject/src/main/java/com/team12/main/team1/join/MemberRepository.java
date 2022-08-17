@@ -6,7 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.team12.main.team1.join.Member;
+import com.team12.main.team1.join.*;;
+
 @Repository
 public class MemberRepository {
 
@@ -16,14 +17,14 @@ public class MemberRepository {
 	
 	// 정보 저장
 	public void kakaoinsert(HashMap<String, Object> userInfo) {
-		sql.insert("com.team12.main.team1.join.Team1joinMapper.kakaoInsert",userInfo);
+		sql.insert("com.team12.main.team1.join.kakaoInsert",userInfo);
 	}
 
 	// 정보 확인
 	public Member findkakao(HashMap<String, Object> userInfo) {
-		System.out.println("RN:"+ userInfo.get("nickname"));
-		System.out.println("RE:"+ userInfo.get("email"));
-		return sql.selectOne("com.team12.main.team1.join.Team1joinMapper.findKakao", userInfo);
+		System.out.println("RN:"+userInfo.get("nickname"));
+		System.out.println("RE:"+userInfo.get("email"));
+		return sql.selectOne("com.team12.main.team1.join.findKakao", userInfo);
 	}
 
 }

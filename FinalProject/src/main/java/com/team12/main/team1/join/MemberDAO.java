@@ -21,6 +21,8 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.oreilly.servlet.MultipartRequest;
+import com.team12.main.t2Login.Membert2;
+import com.team12.main.t2Login.Team2loginMapper;
 
 
 
@@ -194,7 +196,10 @@ public class MemberDAO {
 		}
 		
 	}
+	
+	
 
+	// 카카오 로그인 관련
 	public int getMemberNum(Member m, HttpServletRequest req) {
 		//System.out.println(ss.getMapper(MemberMapper.class).getMemberNum(m));
 		return ss.getMapper(Team1joinMapper.class).getMemberNum(m);
@@ -281,6 +286,58 @@ public class MemberDAO {
 				} else {
 					return result;
 					// 정보가 이미 있기 때문에 result를 리턴함.
+				}
+		        
+			}
+
+
+//	public void kakaoJoin(HttpServletRequest req, Member m) {
+//		// TODO Auto-generated method stub
+//		
+//		
+//		try {
+//			req.setCharacterEncoding("utf-8");
+//			
+//			String member_ID =req.getParameter("member_ID");
+//			String member_name = req.getParameter("member_name");
+//			String member_email = req.getParameter("member_email");
+//			String member_sex = req.getParameter("member_sex");
+//			
+//			String member_address = " ";
+//			String member_PW = " ";
+//			int member_linkWhere = 2;
+//			String member_phoneNum = " "; 
+//			
+//			
+//			m.setMember_ID(member_ID);
+//			m.setMember_PW(member_PW);
+//			m.setMember_linkWhere(member_linkWhere);
+//			m.setMember_name(member_name);
+//			m.setMember_sex(member_sex);
+//			m.setMember_phoneNum(member_phoneNum);
+//			m.setMember_email(member_email);
+//			m.setMember_address(member_address);
+//			m.setMember_birth(null);
+//			
+//			
+//			if (ss.getMapper(Team1joinMapper.class).join(m) == 1) {
+//				System.out.println("성공");
+//			}else {
+//				System.out.println("실패");
+//			}
+//			
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//	}
+
+
+	
+
 	}
-	}
-	}
+	
+
+	
+	
+
