@@ -32,6 +32,13 @@ select * from final_member where member_ID =#{member_ID}
 		select count(*) from final_member where member_ID = #{member_ID}
 	</select>
 
+<select id="findKakao" parameterType="java.util.HashMap" resultType="com.team12.main.team1.join.Member">
+		select * from final_member where member_name=#{member_name} and member_email=#{member_email}
+	</select>
 
+<insert id="kakaoInsert" parameterType="java.util.HashMap">
+		insert into final_member(member_name, member_email)
+			values(#{member_name}, #{member_email})
+	</insert>
 
 </mapper>

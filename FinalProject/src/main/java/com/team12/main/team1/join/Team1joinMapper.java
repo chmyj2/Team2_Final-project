@@ -12,6 +12,8 @@ public interface Team1joinMapper {
 	int bye(Member m);
 
 	int getMemberNum(Member m);
+	
+	Member findKakao(Member m);
 
 
 }
