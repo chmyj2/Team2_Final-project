@@ -248,6 +248,7 @@ function getCookie(cookieName) {
 }
 
 
+
 $(function() {
 	connectAddrSearchEvent();
 	idCheck();
@@ -255,5 +256,4 @@ $(function() {
 	emailCheck();
 	pwcheck();
 	businessNumCheck();
-	
 })
