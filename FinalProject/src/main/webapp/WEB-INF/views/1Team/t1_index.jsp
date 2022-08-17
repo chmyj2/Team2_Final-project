@@ -31,7 +31,14 @@
         <div class="header">
             <img class="icon_search" src="resources/img/search.png">
             <input class="search" type="text" placeholder="insert keyword">
-        <span id="resultArea">${result }</span>
+            
+            <h1 class="logo_wrap">
+            <a href="team1Main">
+            <img class="logo_dengstiny" src="resources/img/dengstiny.png">
+            </a>
+            </h1>
+            
+        	<span id="resultArea">${result }</span>
         
            <div class="log_state">
            		<jsp:include page="${loginPage }"></jsp:include> 
@@ -50,9 +57,8 @@
                 <li><a href="#">ADOPT</a>  
                     <!-- 지역별 구조센터 -->
                 </li>
-                <li><a href="team1Main">HOME</a>  
-                    <!-- dropdown 사료/영양제 -->  
-                </li>
+                <!-- <li><a href="team1Main">HOME</a>  
+                </li> -->
                 <!-- <a href="#"><img class="logo" src="DENGSTINY.png" alt=""></a>   -->
                     <!-- dropdown 사료/영양제 -->  
                 

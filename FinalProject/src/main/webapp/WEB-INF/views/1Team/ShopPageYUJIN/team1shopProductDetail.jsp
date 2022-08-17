@@ -35,6 +35,7 @@
                 <!-- 누른 해당 이미지 상품 보여주기 -->
                 <img src="resources/img/food/ANF_유기농식스프리+소고기연어.jpg" alt="">
             </div>
+            
             <div class="store_product_detail_text">
                 <!-- 제품명 -->
                 <h2>ANF MADE WITH ORGANIC 6Free+</h2>
@@ -93,12 +94,6 @@
 			</div>
 		</div>
 	</div>
-    
-    
-    
-    
-    
-    
     
     
 	<div>
