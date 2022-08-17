@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="resources/css/loginAndJoin.css">
 <link rel="stylesheet" href="resources/css/member.css">
 <link rel="stylesheet" href="resources/css/store.css">
+<link rel="stylesheet" href="resources/css/master.css">
 <title>Insert title here</title>
 <script type="text/javascript" src="resources/js/jQuery.js"></script>
 <script type="text/javascript" src="resources/js/loginAndJoin.js"></script>
