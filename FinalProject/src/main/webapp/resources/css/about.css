@@ -12,10 +12,13 @@
 
 /* DengStiny Give Pet Happiness */
 .about_main{ 
+	background-color: rgb(255, 212, 193);
     height: 250px;
     width: 1000px;
     align-items: center;
     margin: 0 auto;
+    border: 5px solid black;
+    border-radius: 50px 50px 50px 50px;
     margin-top: 200px;
     margin-bottom: 200px;
 }

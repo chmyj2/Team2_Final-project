@@ -19,7 +19,7 @@
             </a>
             </div>
             <div class="store_main_for_cat">
-            <a href="#">
+            <a href="enter.team1StoreForCat">
                 <img class="store_main_for_cat_img" src="resources/img/about4.png" alt="">
                 <h2>
                     FOR CAT

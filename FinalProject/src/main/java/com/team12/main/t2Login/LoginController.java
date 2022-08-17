@@ -1,12 +1,17 @@
 package com.team12.main.t2Login;
 
+import java.sql.Date;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.team12.main.t2.Team2HomeController;
 
@@ -220,16 +225,6 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
-	@RequestMapping(value = "/may", method = RequestMethod.GET)
-	public String may(HttpServletRequest req, Membert2 m) {
-		//------------------------------------나중에 삭제할거
-		
-		lDAO.loginCheck(req);
-		req.setAttribute("contentPage", "t2login/joinOK.jsp");
-		
-		
-		return "2Team/t2_index";
-	}
 	
 	@RequestMapping(value = "/petRegistration", method = RequestMethod.GET)
 	public String petRegistration(HttpServletRequest req) {
@@ -242,6 +237,26 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/petInformationReg.do", method = RequestMethod.POST)
+	public String petInformationRegdo(HttpServletRequest req, @RequestParam("baby_img") MultipartFile baby_img,
+	         @RequestParam("baby_name") String baby_name,
+	         @RequestParam("baby_weight") Double baby_weight,
+	         @RequestParam("baby_birth") Date baby_birth,
+	         @RequestParam("baby_sex") String baby_sex,
+	         @RequestParam("baby_type") String baby_type,
+	         @RequestParam("baby_typeDetail") String baby_typeDetail,
+	         @RequestParam("baby_neut") String baby_neut,
+	         @RequestParam("baby_memberID") String baby_memberID){
+		//펫등록하기
+		System.out.println("-----------------------");
+		lDAO.petReg(req,baby_img,baby_name,baby_weight,baby_birth,baby_sex,baby_type,baby_typeDetail,baby_neut,baby_memberID);
+		
+		lDAO.loginCheck(req);
+		req.setAttribute("contentPage", "t2_home.jsp");
+		
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	
