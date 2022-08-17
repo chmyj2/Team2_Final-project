@@ -12,6 +12,12 @@ public interface Team1joinMapper {
 	int bye(Member m);
 
 	int getMemberNum(Member m);
+	
+	Member findKakao(Member m);
+	
+	Member kakaoInsert(Member m);
+
+	int checkIdKakao(Member m);
 
 
 }
