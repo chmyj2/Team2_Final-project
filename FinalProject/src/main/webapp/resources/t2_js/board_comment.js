@@ -102,7 +102,6 @@ function getComments() {
     				let id = c.comment_member_id;
     				let txt = c.comment_txt
     				let date = c.comment_date;
-    				
     				let inputData = `<div class="commentDiv"><div class="col-sm-8 commentBorder"><div>user : <strong class="cStrong">${id}</strong> <em class="cEm">${date}</em></div><div><span class="commentSpan">${txt}</span> <input class="form-control input-sm toggleInput" type="text"><button class="btn btn-success btn-sm togglebtn">완료</button></div></div><div class="col-sm-1"><a id="${commentPK}" class="deleteAtag"><i class="fa fa-times">삭제</i></a> <a id="${commentPK}" class="updateAtag"><i class="fa fa-edit">수정</i></a></div></div>`
     				
     				if(loginid != id){ //본인 작성 댓글에만 수정 삭제버튼 노출 

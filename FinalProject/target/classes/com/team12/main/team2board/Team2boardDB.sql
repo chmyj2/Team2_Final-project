@@ -12,6 +12,10 @@ create table team2_board(
 )
 create sequence team2_board_seq;  
 select * from team2_board where board_num = 64
+
+	select board_img
+	from team2_board
+	where board_num = 70
 -----------------------------------------------------------------------------------------------------------
 --좋아요 DB
 create table team2_like(
