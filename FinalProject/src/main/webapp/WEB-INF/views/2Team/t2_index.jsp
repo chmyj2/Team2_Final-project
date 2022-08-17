@@ -20,7 +20,7 @@
 	<link href='resources/t2_css/style.css' rel='stylesheet' type='text/css'>
 	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 	<link rel="stylesheet" type="text/css" href="css/settings.css" media="screen" />
-
+	<link rel="stylesheet" href="resources/t2_css/t2_login.css">
 	<!-- Hospital MAIN CSS  -->
 	<link href='resources/t2_css/hospital_main.css' rel='stylesheet' type='text/css'> 
 	<link href='resources/t2_css/hospital_detail.css' rel="stylesheet" type="text/css">
@@ -52,11 +52,11 @@
         <ul>
             <li><a href="hospitalGo">동물병원 찾기</a></li>
            <li class="t2-indexDropdown">
-           <a href="viewProductPage.go?onExhibition=Y">상품 판매</a>
+           <a class="t2-indexDropbtn">상품 판매</a>
            <ul class="t2-indexDropdown-content">
-            	<li><a href="#">강아지</a></li>                     
-            	<li><a href="#">고양이</a></li>                 
-            	<li><a href="#">etc</a></li>                 
+            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=dog">강아지</a></li>                     
+            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=cat">고양이</a></li>                 
+            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=etc">etc</a></li>                 
             </ul>
            </li>
             <li class="t2-indexDropdown">
