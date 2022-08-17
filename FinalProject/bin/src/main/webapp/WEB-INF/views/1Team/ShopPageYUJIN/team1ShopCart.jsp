@@ -71,25 +71,16 @@
 
 
 </script>
-
-
-
-
-
-
-
-
-
+	
+	
+	
+	<!-- 장바구니 내에서 수량 조절이 가능하게 할 것인가말것인가... -->
 
 
 </head>
 <body>
-
-
 	<div style="height: 500px;"></div>
-
-
-
+	
 	<div class="shoppingCart_team1" style="height: 500px;">
 			<!-- 주문수량 관련 -->
 			<div>
@@ -99,8 +90,6 @@
 					<button id="minus_btn">▼</button>
 					<button id="plus_btn">▲</button>
 				</span>
-				
-				
 			<!-- 장바구니 넣기, 바로구매 버튼 -->
 				<div class="button_set">
 					<div> <a id="cart_btn">Add Cart</a></div>
