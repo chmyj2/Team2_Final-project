@@ -24,16 +24,6 @@
 		/* ------------------------------------ */		
 	/* --READY------------ */	
 	});
-		
-	
-	
-	
-	
-	
-	
-		
-		
-		
 	</script>
 </head>
 <body>
@@ -75,7 +65,34 @@
             </div>
         </div>
 <!-- 리뷰 넣을건지? -->
-    </div>
+		<div class="store_product_detail_review_wrap">
+			<div class="store_product_detail_review">
+				<h2>REVIEW</h2>
+				<!-- 최근 리뷰 5개만 보여줄지/ 페이징으로 5개씩 늘려나갈지? -->
+				<div class="store_product_detail_review_img_wrap">
+					<img src="resources/img/food/ANF_유기농식스프리+소고기연어.jpg" alt="리뷰이미지">
+					<img src="resources/img/food/ANF_유기농식스프리+소고기연어.jpg" alt="리뷰이미지">
+					<img src="resources/img/food/ANF_유기농식스프리+소고기연어.jpg" alt="리뷰이미지">
+					<img src="resources/img/food/ANF_유기농식스프리+소고기연어.jpg" alt="리뷰이미지">
+				</div>
+				<div class="store_product_detail_review_board">
+
+					<ul class="store_product_menu">
+						<li>
+							<!-- 클릭시 현재 페이지 보여주기 --> 
+							<a href=""> 상품상세정보 </a>
+						</li>
+						<li><a href=""> 사용후기 </a></li>
+						<li><a href=""> Q&A </a></li>
+					</ul>
+				</div>
+
+				<!-- 상품상세정보 div -->
+				<div class="store_product_detail_cont"></div>
+
+			</div>
+		</div>
+	</div>
     
     
     
@@ -107,8 +124,6 @@
 	${p.onsale}
 	${p.stock }
 	</div>
-	
-	
 	
 	
 	

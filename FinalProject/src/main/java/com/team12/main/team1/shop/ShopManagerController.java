@@ -40,6 +40,18 @@ public class ShopManagerController {
 		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopMain.jsp");
 		return "1Team/t1_index";
 	}
+	// Yk Store For Cat Page입니다
+	@RequestMapping(value="/enter.team1StoreForCat", method = RequestMethod.GET)
+	public String shopEnteringCat(ProductDTO p, HttpServletRequest req) {
+			
+//		mDAO.loginCheck(req);
+			//모든 상품 불러오기
+			mDAO.loadProducts(p, req);
+			//페이징하기
+			//로그인체크
+		req.setAttribute("contentPage", "ShopPageYUJIN/team1ShopForCat.jsp");
+		return "1Team/t1_index";
+	}
 	
 	
 	// 상품 디테일 페이지로 이동
