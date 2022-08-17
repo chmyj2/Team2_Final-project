@@ -36,7 +36,22 @@ header {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.5);
     margin-bottom: 200px;
+    text-aling:center;
 }
+
+.logo_wrap{
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.logo_dengstiny{
+	width: 200px;
+	display: block;
+	margin: 0 auto;
+}
+
 .log_state{
 	float: right;
 	min-width: 150px;
