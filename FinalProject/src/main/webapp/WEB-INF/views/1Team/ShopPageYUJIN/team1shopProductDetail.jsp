@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<script type="text/javascript">
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="resources/js/StoreTapMenu.js"></script>
+<script type="text/javascript">
 	<!-- add cart -->
 	$(function() {
 		/* ------------------------------------ */
@@ -24,7 +27,7 @@
 		/* ------------------------------------ */		
 	/* --READY------------ */	
 	});
-	</script>
+</script>
 </head>
 <body>
 		<!-- YK : product detail -->
@@ -68,7 +71,7 @@
 <!-- 리뷰 넣을건지? -->
 		<div class="store_product_detail_review_wrap">
 			<div class="store_product_detail_review">
-				<h2>REVIEW</h2>
+				<h2>BEST REVIEW</h2>
 				<!-- 최근 리뷰 5개만 보여줄지/ 페이징으로 5개씩 늘려나갈지? -->
 				<div class="store_product_detail_review_img_wrap">
 					<img src="resources/img/food/ANF_유기농식스프리+소고기연어.jpg" alt="리뷰이미지">
@@ -76,20 +79,72 @@
 					<img src="resources/img/food/ANF_유기농식스프리+소고기연어.jpg" alt="리뷰이미지">
 					<img src="resources/img/food/ANF_유기농식스프리+소고기연어.jpg" alt="리뷰이미지">
 				</div>
-				<div class="store_product_detail_review_board">
 
-					<ul class="store_product_menu">
-						<li>
-							<!-- 클릭시 현재 페이지 보여주기 --> 
-							<a href=""> 상품상세정보 </a>
-						</li>
-						<li><a href=""> 사용후기 </a></li>
-						<li><a href=""> Q&A </a></li>
-					</ul>
+<!-- 상품상세정보/사용후기/QnA -->
+
+				<div class="tab_content">
+					<input type="radio" name="tabmenu" id="tab01" checked>
+					<label for="tab01">상품상세정보</label>
+					<input type="radio" name="tabmenu" id="tab02">
+					<label for="tab02">사용후기</label>
+					<input type="radio" name="tabmenu" id="tab03">
+					<label for="tab03">Q&A</label>
+					
+					<div class="conbox con1">
+					상품상세정보
+					</div>
+					
+					<div class="conbox con2">
+					                <div class="store_product_detail_cont">
+                    <!-- 사용후기 -->
+                    <div class="store_product_detail_purchase_review">
+                        <div class="store_product_detail_purchase_review_span">
+                            <span>REVIEW</span>
+                            <span>
+                                <!-- 리뷰 게시물 총 갯수 알려주기 -->
+                                (10)
+                            </span>
+                            <hr>
+                        </div>
+                        <div class="store_product_detail_purchase_review_star">
+                            <div class="store_product_detail_purchase_review_center">
+                                <span>
+                                    <img src="resources/img/review_star.png" alt="">
+                                </span>
+                                <span>
+                                    <!-- 총 별점 평균 점수 알려주기 -->
+                                    4.8
+                                </span>
+                                <br>
+                                <button onclick="review">상품리뷰 작성하기</button>
+                            </div>
+                            <div class="store_product_detail_purchase_review_alert">
+                                <c:if test="${sessionScope.loginMember == null }">
+                                <p>상품 리뷰는 <a href="loginandjoin.go">로그인</a>후 에 작성 가능합니다</p>
+                                </c:if>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+					</div>
+					
+					<div class="conbox con3">
+					컨텐츠탭 내용03
+					</div>
+				
 				</div>
+				
 
-				<!-- 상품상세정보 div -->
-				<div class="store_product_detail_cont"></div>
+   
+
+
+			
+			
+				
+			
 
 			</div>
 		</div>
