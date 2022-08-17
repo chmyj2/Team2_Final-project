@@ -76,6 +76,7 @@ public class CartDAO {
 		
 	}
 
+	// 카트 받기
 	public void getCart(HttpServletRequest request, int productNum, String cart_UserID) {
 		
 		System.out.println(productNum);
@@ -83,6 +84,21 @@ public class CartDAO {
 		c.setCart_UserID(cart_UserID);
 		
 		request.setAttribute("Product",ss.getMapper(ProductCartMapper.class).getProductFromCart(c));
+		
+	}
+
+	
+	
+	
+	// 카드 삭제
+	public int deleteCart(Cart c) {
+		
+		if (ss.getMapper(ProductCartMapper.class).deleteCart(c) == 1) {
+			return 1;
+			
+		}else {
+			return 0;
+		}
 		
 	}
 	

@@ -11,4 +11,6 @@ public interface ProductCartMapper {
 
 	public List<Product> getProductFromCart(Cart c);
 
+	int deleteCart(Cart c);
+
 }
