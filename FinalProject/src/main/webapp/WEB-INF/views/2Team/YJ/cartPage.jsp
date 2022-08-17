@@ -17,35 +17,28 @@ function selectAll(selectAll)  {
 
 
 $(function(){
-	$(".paymentBtn").click(function() {
+	
+		var checkArr = new Array();
+		var total = 0;
+		$(".paymentBtn").on("click", function(){
+		$("input:checkbox[name='checkboxName']").each(function(){
+			if($(this).is(":checked") == true){
+				checkArr.push($(this).val());
+			}
+		});
 		
-		var totalPrice = document.getElementById("totalPrice").innerHTML ;
-		alert(totalPrice);
-		
-		$('input', $('.divTableBody')).each(function(i, e){
-		    
-		       //thisCategory = e.value + '!'
-		    });
-		
+		for (var i = 0; i < checkArr.length; i++) {
+			total += Number(checkArr[i]);
+		};
+				
+		alert(total);
 		
 		
 	})
-	/* $(document).on("click", ".paymentBtn", function(){
-    $('input', $('.categoryList')).each(function(i, e){
-    
-       //thisCategory = e.value + '!'
-    });
-    $(this).click(function() {
-    let thisCategory = $(this).parent().find('input').val() + '!'
-    alert(thisCategory);
-    var diaryUserId = document.getElementById("diaryUserId").value;
-    location.href="category.delete?thisCategory=" + thisCategory + "&diaryUserId=" + diaryUserId;
-    });      
-    
-    
- alert("asd");
-    
- }); */ 
+	
+	
+	
+	
  
  
  
@@ -121,7 +114,7 @@ div.minimalistBlack {
 <c:forEach items="${Product }" var="p">
   		<div class="divTableBody">
     		<div class="divTableRow">
-      			<div class="divTableCell"><input name='cart' type="checkbox"></div>
+      			<div class="divTableCell"><input name='checkboxName'type="checkbox" value="${p.productPrice * p.cart_ProductQuantity + 2500}" ></div>
       			<div class="divTableCell"style="width: 100px"><img src="resources/t2_yj_files/${p.productThumbnail }" style="height: 100px;width:100px"></div>
       			<div class="divTableCell">${p.productPrice }원</div>
       			<div class="divTableCell">${p.cart_ProductQuantity }개</div>
