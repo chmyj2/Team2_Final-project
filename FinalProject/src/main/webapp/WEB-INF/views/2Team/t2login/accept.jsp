@@ -11,7 +11,7 @@
 <div style="text-align: center; margin-top: 10px;">
 <span style="font-size: 20px; font-weight: 15px;">"산책가자"이용약관</span><br>
 <c:choose>
-<c:when test="${param.member_linkWhere == 1 }">
+<c:when test="${param.member == 1 }">
 <span>-개인-</span>
 </c:when>
 <c:otherwise>
@@ -91,8 +91,8 @@
 <input type="checkbox" id="agree" onchange="agree()">위의 내용을 읽었으며, 내용에 동의합니다 
 </label><br>
 <c:choose>
-<c:when test="${param.member_linkWhere == 1 }">
-<button id="join_btn" disabled="disabled" onclick="location.href='joingo?member_linkWhere=1'">가입하기</button>
+<c:when test="${param.member == 1 }">
+<button id="join_btn" disabled="disabled" onclick="location.href='joingo'">가입하기</button>
 </c:when>
 <c:otherwise>
 <button id="join_btn" disabled="disabled" onclick="location.href='joingo.business'">가입하기</button>

@@ -1,9 +1,12 @@
 package com.team12.main.t2Login;
 
+import java.io.File;
+import java.net.URLEncoder;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 import java.util.Random;
+import java.util.UUID;
 
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +16,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import oracle.jdbc.driver.T2CConnection;
 
@@ -260,13 +267,14 @@ public class LoginDAO {
 
 	public void loginNaver(HttpServletRequest req, Membert2 m) {
 		// 네이버 로그인
+		m.setMember_linkWhere(3);
 		Membert2 dbMember = ss.getMapper(Team2loginMapper.class).getMemberByID(m);
 		
 		if (dbMember != null) {
 				req.getSession().setAttribute("loginMember", dbMember);
 				req.getSession().setMaxInactiveInterval(60 * 10);
 		}else {
-			System.out.println("--------------------실패");
+			System.out.println("--------111------------실패");
 		}
 		
 	}
@@ -274,7 +282,7 @@ public class LoginDAO {
 
 
 	public void naverJoin(HttpServletRequest req, Membert2 m) {
-		
+		//네이버로 회원가입한 사람 등록하기
 		try {
 			req.setCharacterEncoding("utf-8");
 			
@@ -309,6 +317,66 @@ public class LoginDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+	}
+
+
+
+	public void petReg(HttpServletRequest req, MultipartFile baby_img, String baby_name, Double baby_weight, Date baby_birth, String baby_sex, String baby_type, String baby_typeDetail, String baby_neut, String baby_memberID) {
+		// 펫등록하기
+		String path = req.getSession().getServletContext().getRealPath("resources/t2_sj_petFiles");
+		
+		System.out.println("여기오는거니???????????");
+		
+		try {
+			System.out.println("왜 안되는 거냐구 왜!!!");
+			
+			String fileName = baby_img.getOriginalFilename();
+			
+			String saveFileName = UUID.randomUUID().toString()+fileName.substring(fileName.lastIndexOf("."));
+			System.out.println(saveFileName);
+			
+			//값 받아오기
+			
+			
+			
+			System.out.println(baby_memberID);
+			System.out.println(saveFileName);
+			System.out.println(baby_name);
+			System.out.println(baby_weight);
+			System.out.println(baby_birth);
+			System.out.println(baby_sex);
+			System.out.println(baby_type);
+			System.out.println(baby_typeDetail);
+			System.out.println(baby_neut);
+			
+			//값세팅하기
+			pet p = new pet();
+			p.setBaby_birth(baby_birth);
+			p.setBaby_img(saveFileName);
+			p.setBaby_memberID(baby_memberID);
+			p.setBaby_name(baby_name);
+			p.setBaby_neut(baby_neut);
+			p.setBaby_sex(baby_sex);
+			p.setBaby_type(baby_type);
+			p.setBaby_typeDetail(baby_typeDetail);
+			p.setBaby_weight(baby_weight);
+			
+			if (ss.getMapper(Team2loginMapper.class).petReg(p)==1) {
+				System.out.println("등록 성공-----------");
+			}else {
+				System.out.println("1등록 실패-----------");
+			}
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			//String fileName = mr.getFilesystemName("baby_img");
+			//new File(path + "/" + fileName).delete();
+			System.out.println("2등록실패------------------------");
+		}
+		
 		
 	}
 
