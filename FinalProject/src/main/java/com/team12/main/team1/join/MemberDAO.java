@@ -46,6 +46,7 @@ public class MemberDAO {
 	        m.setMember_email(req.getParameter("member_email"));
 
 
+
 	if (ss.getMapper(Team1joinMapper.class).join(m) == 1) {
 		req.setAttribute("result", "가입성공");
 	} else {
