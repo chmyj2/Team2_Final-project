@@ -33,36 +33,39 @@
   <beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
-			value="jdbc:oracle:thin:@db20220512150004_high?TNS_ADMIN=/Users/mitakeran/LDH/Wallet_DB20220512150004" />
-		<beans:property name="username" value="ADMIN" />
-		<beans:property name="password" value="LDHsoldesk802" />
+			value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<beans:property name="username" value="c##sj" />
+		<beans:property name="password" value="sj" />
 	</beans:bean>
    
    
+
    <beans:bean id="transactionManager"
       class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
       <beans:property name="dataSource" ref="dataSource" />
    </beans:bean>  
    
-   
 
-   <beans:bean id="sqlSessionFactory"
-      class="org.mybatis.spring.SqlSessionFactoryBean">
-      <beans:property name="dataSource" ref="dataSource" />
-      <beans:property name="typeAliasesPackage"
-         value="com.team12.main" />
-      <beans:property name="mapperLocations">
-         <beans:list>
-            <beans:value>classpath:testmapper.xml</beans:value>
-            <beans:value>classpath:team2/YJ/productMapper.xml</beans:value>
-            <beans:value>classpath:team2/SY/hospital_ListMapper.xml</beans:value>
-            <beans:value>classpath:team1joinMapper.xml</beans:value>
-            <beans:value>classpath:team2BoardMapper.xml</beans:value>
-            <beans:value>classpath:team2loginMapper.xml</beans:value>
-            <beans:value>classpath:shopteam1Mapper.xml</beans:value>
-         </beans:list>
-      </beans:property>
-   </beans:bean>
+	<beans:bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="typeAliasesPackage"
+			value="com.team12.main" />
+		<beans:property name="mapperLocations">
+			<beans:list>
+				<beans:value>classpath:testmapper.xml</beans:value>
+				<beans:value>classpath:team2/YJ/productMapper.xml</beans:value>
+				<beans:value>classpath:team2/YJ/productCartMapper.xml</beans:value>
+				<beans:value>classpath:team2/SY/hospital_ListMapper.xml</beans:value>
+				<beans:value>classpath:team1joinMapper.xml</beans:value>
+				<beans:value>classpath:team2BoardMapper.xml</beans:value>
+				<beans:value>classpath:team2loginMapper.xml</beans:value>
+				<beans:value>classpath:shopteam1Mapper.xml</beans:value>
+				<beans:value>classpath:team1ReviewMapper.xml</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
 
    <beans:bean id="sqlSession"
       class="org.mybatis.spring.SqlSessionTemplate">
