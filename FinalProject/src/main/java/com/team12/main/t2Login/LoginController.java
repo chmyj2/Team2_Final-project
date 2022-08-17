@@ -225,16 +225,6 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
-	@RequestMapping(value = "/may", method = RequestMethod.GET)
-	public String may(HttpServletRequest req, Membert2 m) {
-		//------------------------------------나중에 삭제할거
-		
-		lDAO.loginCheck(req);
-		req.setAttribute("contentPage", "t2login/joinOK.jsp");
-		
-		
-		return "2Team/t2_index";
-	}
 	
 	@RequestMapping(value = "/petRegistration", method = RequestMethod.GET)
 	public String petRegistration(HttpServletRequest req) {
@@ -262,7 +252,7 @@ public class LoginController {
 		lDAO.petReg(req,baby_img,baby_name,baby_weight,baby_birth,baby_sex,baby_type,baby_typeDetail,baby_neut,baby_memberID);
 		
 		lDAO.loginCheck(req);
-		req.setAttribute("contentPage", "t2login/petRegistration.jsp");
+		req.setAttribute("contentPage", "t2_home.jsp");
 		
 		
 		return "2Team/t2_index";

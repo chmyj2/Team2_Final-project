@@ -267,13 +267,14 @@ public class LoginDAO {
 
 	public void loginNaver(HttpServletRequest req, Membert2 m) {
 		// 네이버 로그인
+		m.setMember_linkWhere(3);
 		Membert2 dbMember = ss.getMapper(Team2loginMapper.class).getMemberByID(m);
 		
 		if (dbMember != null) {
 				req.getSession().setAttribute("loginMember", dbMember);
 				req.getSession().setMaxInactiveInterval(60 * 10);
 		}else {
-			System.out.println("--------------------실패");
+			System.out.println("--------111------------실패");
 		}
 		
 	}

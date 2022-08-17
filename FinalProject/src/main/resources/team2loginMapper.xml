@@ -3,7 +3,7 @@
 <mapper namespace="com.team12.main.t2Login.Team2loginMapper">
 	
 	<select id="getMemberByID" resultType="com.team12.main.t2Login.Membert2">
-	select * from final_member where member_ID =#{member_ID}
+	select * from final_member where member_ID =#{member_ID} and member_linkWhere = #{member_linkWhere}
 	</select>
 	
 	<select id="getVetByID" resultType="com.team12.main.t2Login.vet">
