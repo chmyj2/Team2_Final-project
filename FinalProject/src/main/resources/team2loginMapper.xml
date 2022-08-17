@@ -34,5 +34,9 @@
 	select count(*) from final_member where member_ID =#{member_ID} and member_linkWhere = 3
 	</select>
 	
+	<insert id="petReg" parameterType="com.team12.main.t2Login.pet">
+	insert into PET_INFORMATION values(pet_information_seq.nextval,#{baby_memberID},#{baby_name},#{baby_birth},#{baby_sex},#{baby_weight},#{baby_type},#{baby_typeDetail},#{baby_neut},#{baby_img})
+	</insert>
+	
 	
 </mapper>
