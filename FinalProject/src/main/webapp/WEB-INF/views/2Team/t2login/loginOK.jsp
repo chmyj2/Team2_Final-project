@@ -15,7 +15,7 @@
 <div class="loginOK-dropdown" >
       <span class="loginOK-dropbtn">${sessionScope.loginMember.member_ID }님</span>
       <div class="loginOK-dropdown-content">
-        <a href="may">내 정보</a>
+        <a href="#">내 정보</a>
         <a href="#">장바구니</a>
         <a href="#">예약확인</a>
         <a href="t2logout">로그아웃</a>

@@ -39,9 +39,10 @@
 			</label> <label class="login_label"> <span>Password</span> 
 			<input class="login_input1" name="member_PW" />
 			</label>
+			<input name="member_linkWhere" value="1" type="hidden">
 			<span class="pw_alert">${r}</span>
 			<input type="checkbox" id="login_idSave">아이디 기억하기
-			<p class="forgot-pass" type="button"  style="font-size: 12px;" onclick="location.href='acceptgo?member_linkWhere=1' ">회원가입</p>
+			<p class="forgot-pass" type="button"  style="font-size: 12px;" onclick="location.href='acceptgo?member=1' ">회원가입</p>
 			<p class="forgot-pass"  style="font-size: 12px;">아이디를 잊으셨나요?</p>
 			<p class="forgot-pass"  style="font-size: 12px;">비밀번호를 잊으셨나요?</p>
 			<div class="box bg-1">

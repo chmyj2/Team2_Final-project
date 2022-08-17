@@ -12,15 +12,8 @@
 <form action="joinDo" method="POST" class="joinForm" name="joinForm"> <!-- onsubmit="return joinCheck()"  -->
                                                                                                
       <h2>회원가입</h2>
-      <div class="join-textForm">
-      <c:choose>
-      <c:when test="${param.member_ID != null}">
-        <input name="member_ID" type="text" class="join-id" placeholder="아이디" value="${param.member_ID}">      
-      </c:when>
-      <c:otherwise>      
+      <div class="join-textForm">     
         <input name="member_ID" type="text" class="join-id" placeholder="아이디">      
-      </c:otherwise>
-      </c:choose>
         <span id="idcheckResult"></span>
       </div>
       
@@ -68,7 +61,7 @@
       <span id="emailcheckResult"></span> <!-- 중복확인 -->
       </div>
       
-      <input type="hidden" name="member_linkWhere" value="${param.member_linkWhere }">
+      <input type="hidden" name="member_linkWhere" value="1">
       <input type="submit" class="join-btn" value="J O I N"/>
     </form>
     </div>
