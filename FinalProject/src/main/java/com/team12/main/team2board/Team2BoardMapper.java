@@ -44,6 +44,8 @@ public interface Team2BoardMapper {
 
 	Team2CommentDTO getCommentNum(Team2CommentDTO t);
 
+	Team2BoardDTO getImgsName(Team2BoardDTO board);
+
 	
 
 
