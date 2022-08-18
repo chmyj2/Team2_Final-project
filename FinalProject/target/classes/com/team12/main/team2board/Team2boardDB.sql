@@ -7,11 +7,15 @@ create table team2_board(
 	board_txt 		varchar2(2000 char) not null,
 	board_date 		date not null,
 	board_count 	number(7) not null,
-	board_img 		varchar2(100 char) not null,
+	board_img 		varchar2(1000 char) not null,
 	board_like 		number(6) default 0
 )
 create sequence team2_board_seq;  
-select * from team2_board
+select * from team2_board where board_num = 64
+
+	select board_img
+	from team2_board
+	where board_num = 70
 -----------------------------------------------------------------------------------------------------------
 --좋아요 DB
 create table team2_like(
