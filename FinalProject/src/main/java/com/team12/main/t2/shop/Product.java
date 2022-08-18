@@ -13,6 +13,7 @@ public class Product {
 	 private String productImg;
 	 private String productTag;
 	 private int cart_ProductQuantity;
+	 private int cartNum;
 	 
 	 public Product() {
 		// TODO Auto-generated constructor stub
@@ -20,7 +21,7 @@ public class Product {
 
 	public Product(int productNum, String pet_category, String toy_category, String productName, int productPrice,
 			String productInfo, int productStock, String onExhibition, String productThumbnail, String productImg,
-			String productTag, int cart_ProductQuantity) {
+			String productTag, int cart_ProductQuantity, int cartNum) {
 		super();
 		this.productNum = productNum;
 		this.pet_category = pet_category;
@@ -34,6 +35,7 @@ public class Product {
 		this.productImg = productImg;
 		this.productTag = productTag;
 		this.cart_ProductQuantity = cart_ProductQuantity;
+		this.cartNum = cartNum;
 	}
 
 	public int getProductNum() {
@@ -132,7 +134,15 @@ public class Product {
 		this.cart_ProductQuantity = cart_ProductQuantity;
 	}
 
-	
+	public int getCartNum() {
+		return cartNum;
+	}
+
+	public void setCartNum(int cartNum) {
+		this.cartNum = cartNum;
+	}
+
 	 
-	
+	 
+	 
 }

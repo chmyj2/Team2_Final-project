@@ -12,13 +12,13 @@
 <script type="text/javascript">
 /* 상품 디테일 페이지로 이동 */
 	function gotoDetail(num) {
-			location.href="get.aProductTeam1?num_PK="+num;
+			location.href="enter.productDetail"?num_PK="+num;
 		}
 /* 상품 카테고리별 출력 */
  		function selectACategory() {
 			var categoryNum = document.getElementById('categoryNumSelect');
 			var cv = categoryNum.options[categoryNum.selectedIndex].value;
-			location.href="loadByCategory.go?categoryNum="+cv;
+			location.href="get.team1byCategory?categoryNum="+cv;
 		};		
 </script>
 

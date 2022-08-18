@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.team12.main.t2Login.Membert2;
 import com.team12.main.team1.join.*;
 @Controller
 public class MemberController {
@@ -23,8 +25,11 @@ public class MemberController {
 	@Autowired
 	private	MemberDAO mDAO;
 	
+	
 	@Autowired
-	private MemberService ms;
+	private HttpSession session;
+	
+	
 	
 	
 	
@@ -73,28 +78,32 @@ public class MemberController {
 	
 	
 	
-	
 	@RequestMapping(value="/member.kakao", method=RequestMethod.GET)
 	public String kakaoLogin(@RequestParam(value = "code", required = false) String code) throws Exception {
 		System.out.println("#########" + code);
-		String access_Token = ms.getAccessToken(code);
-		HashMap<String, Object> userInfo = ms.getUserInfo(access_Token);
+		String access_Token = mDAO.getAccessToken(code);
+		
+		// userInfo의 타입을 Member로 변경 및 import.
+		Member userInfo = mDAO.getUserInfo(access_Token);
+		
 		System.out.println("###access_Token#### : " + access_Token);
-		System.out.println("###nickname#### : " + userInfo.get("nickname"));
-		System.out.println("###email#### : " + userInfo.get("email"));
+		System.out.println("###nickname#### : " + userInfo.getMember_name());
+		System.out.println("###email#### : " + userInfo.getMember_email());
+		
+		// 아래 코드가 추가되는 내용
+		session.invalidate();
+		// 위 코드는 session객체에 담긴 정보를 초기화 하는 코드.
+		session.setAttribute("kakaoN", userInfo.getMember_name());
+		session.setAttribute("kakaoE", userInfo.getMember_email());
+		// 위 2개의 코드는 닉네임과 이메일을 session객체에 담는 코드
+		// jsp에서 ${sessionScope.kakaoN} 이런 형식으로 사용할 수 있다.
 		
 		return "1Team/t1_index";
     	
 	}
+	
 
-
-		
-		/*
-		 * 리턴값의 testPage는 아무 페이지로 대체해도 괜찮습니다.
-		 * 없는 페이지를 넣어도 무방합니다.
-		 * 404가 떠도 제일 중요한건 #########인증코드 가 잘 출력이 되는지가 중요하므로 너무 신경 안쓰셔도 됩니다.
-		 */
-    	
+	
 	
 	
 

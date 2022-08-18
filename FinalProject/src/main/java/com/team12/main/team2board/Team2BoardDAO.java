@@ -120,12 +120,39 @@ public class Team2BoardDAO {
 
 	public void deletePost(HttpServletRequest req, Team2BoardDTO board) {
 		req.setAttribute("board_category", req.getParameter("board_category"));
+		
 
+		Team2BoardDTO imgs = ss.getMapper(Team2BoardMapper.class).getImgsName(board); //이미지 이름 가져오기
+			
+		String file = imgs.getBoard_img(); 
+		
+		
+		if(!file.equals("-")) {
+			
+			String[]files = file.split("!"); // "!" 기준으로 문자열 스플릿 
+			
+			String path = req.getSession().getServletContext().getRealPath("resources/team2_files");
+			
+		
+			for (String s : files) {
+				System.out.println(path + s);
+				
+			new File(path +"/"+ s).delete();
+				
+			}
+			
+			
+			
+		}
+		
+		
 		if (ss.getMapper(Team2BoardMapper.class).deletePost(board) == 1) {
 			System.out.println("삭제성공");
 		} else {
 			System.out.println("삭제실패");
 		}
+		
+			
 
 	}
 

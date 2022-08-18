@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.team12.main.team2board.Team2BoardMapper">
 <!-- 글쓰기관련  -->
+<!-- 총 글 개수 -->
 <select id="getAllpostCount" resultType="int">
 select count(*)
 from team2_board
@@ -19,23 +20,31 @@ where board_category = #{board_category}
    		)
 	) where rn between #{rnStart} and #{rnEnd}
 </select>
-
+<!-- 글쓰기 -->
 <insert id="writePost" parameterType="com.team12.main.team2board.Team2BoardDTO">
-	insert into team2_board values(team2_board_seq.nextval, #{board_member_id}, #{board_category}, #{board_title}, #{board_txt}, sysdate, 0,'karina.jpg', 0)
+	insert into team2_board values(team2_board_seq.nextval, #{board_member_id}, #{board_category}, #{board_title}, #{board_txt}, sysdate, 0,#{board_img}, 0)
 </insert>
 
 <select id="postDetail" resultType="com.team12.main.team2board.Team2BoardDTO">
 	select * from team2_board where board_num = #{board_num}
 </select>
 
+<select id="getImgsName" resultType="com.team12.main.team2board.Team2BoardDTO">  <!-- 글 삭제 전 이미지 파일 이름 얻기-->
+	select board_img
+	from team2_board
+	where board_num = #{board_num}
+</select>
+
 <delete id="deletePost">
 	delete from team2_board where board_num = #{board_num}
 </delete>
 
+
 <update id="updatepost" parameterType="com.team12.main.team2board.Team2BoardDTO">
 	update team2_board
 	set board_title = #{board_title}, 
-		board_txt = #{board_txt}
+		board_txt = #{board_txt},
+		board_img = #{board_img}
 	where board_num = #{board_num}
 </update>
 
