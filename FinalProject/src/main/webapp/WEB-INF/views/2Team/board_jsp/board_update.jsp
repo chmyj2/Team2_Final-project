@@ -20,6 +20,8 @@
 			<input type="text" class="form-control" placeholder="title" id="title" name="board_title" value="${p.board_title}">
             <input name="board_category" value="${param.board_category}" type="hidden">
             <input name="board_num" value="${param.board_num}" type="hidden">
+            <input id="board_img_input" name="board_img" value="${p.board_img}" type="hidden"> 
+            
 		</div>
 	
 		<div class="form-group">
@@ -33,6 +35,7 @@
 
 
 <script type="text/javascript">
+var imgs = "";
 var toolbar = [
     ['fontname', ['fontname']],
     ['fontsize', ['fontsize']],
@@ -71,15 +74,30 @@ $j341('#summernote').summernote(setting);
 function uploadSummernoteImageFile(file, el) {
 data = new FormData();
 data.append("file", file);
+
+imgs = $j341('#board_img_input').val();
+if(imgs.length == 1){
+	imgs = "";
+}
+
+console.log('이미지	:'+imgs);
+
+
 $.ajax({
 	data : data,
 	type : "POST",
 	url : "uploadSummernoteImageFile",
 	contentType : false,
 	enctype : 'multipart/form-data',
+	async:false,
 	processData : false,
 	success : function(data) {
 		$j341(el).summernote('editor.insertImage', data.url);
+			
+		imgs = imgs + data.url.replace(/(.png|.jpg|.jpeg|.gif)$/, '')+"!";
+		$j341('#board_img_input').attr('value', imgs);
+		console.log(imgs);
+
 	  
 	} 
 });
