@@ -11,7 +11,7 @@
     function prevCalendar() {
         this.today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
         buildCalendar();    // @param 전월 캘린더 출력 요청
-        $(".abcdef").remove(); 
+        $(".reserve-time-select").remove(); 
 
     }
 
@@ -21,7 +21,7 @@
     function nextCalendar() {
         this.today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
         buildCalendar();    // @param 명월 캘린더 출력 요청
-        $(".abcdef").remove(); 
+        $(".reserve-time-select").remove();  
 
     }
 
@@ -66,8 +66,29 @@
         for(let day = 1 - doMonth.getDay(); daysLength >= day; day++) {
 
             let column = row.insertCell();
-            column.id = "M"+(doMonth.getMonth()+1)+"D"+day;
-
+            
+			if ((doMonth.getMonth()+1)<10) {
+				if (day<10) {
+					
+					column.id =(today.getFullYear())+"-"+"0"+(doMonth.getMonth()+1)+"-"+"0"+day;
+				} else {
+					
+					column.id =(today.getFullYear())+"-"+"0"+(doMonth.getMonth()+1)+"-"+day;
+				}
+				
+			} else {
+				
+				if (day<10) {
+					
+					column.id =(today.getFullYear())+"-"+(doMonth.getMonth()+1)+"-"+"0"+day;
+				} else {
+					column.id =(today.getFullYear())+"-"+(doMonth.getMonth()+1)+"-"+day;
+					
+				}
+				
+			}
+            	
+		
             
 
             // @param 평일( 전월일과 익월일의 데이터 제외 )
@@ -172,19 +193,16 @@
      * @brief   날짜 선택
      * @details 사용자가 선택한 날짜에 체크표시를 남긴다.
      */
-    
     function calendarChoiceDay(column, id) {
     	
         // @param 기존 선택일이 존재하는 경우 기존 선택일의 표시형식을 초기화 한다.
         if(document.getElementsByClassName("choiceDay")[0]) {
             document.getElementsByClassName("choiceDay")[0].style.backgroundColor = "#FFFFFF";
             document.getElementsByClassName("choiceDay")[0].classList.remove("choiceDay");
-            $(".abcdef").remove(); 
+            $(".reserve-time-select").remove(); 
           
         }
 
-        alert(id);
-    
        			
         // @param 선택일 체크 표시
         column.style.backgroundColor = "#FF9999";
@@ -193,15 +211,19 @@
         // @param 선택일 클래스명 변경
         column.classList.add("choiceDay");
         
-
-        $(".reserve-time-list").append("<span class='abcdef'><a id>시간 10~11</a></span><br>");
-        $(".reserve-time-list").append("<span class='abcdef'><a id>시간 11~22</a></span><br>");
-        $(".reserve-time-list").append("<span class='abcdef'><a id>시간 12~13</a></span><br>");
-        $(".reserve-time-list").append("<span class='abcdef'><a id>시간 13~14</a></span><br>");
-        $(".reserve-time-list").append("<span class='abcdef'><a id>시간 14~15</a></span><br>");
-        $(".reserve-time-list").append("<span class='abcdef'><a id>시간 15~16</a></span>");
+              
+        // 날짜 선택시 시간 체크표시 
+        $(".reserve-time-list").append("<div id='reserve-time-select' class='reserve-time-select'><a onclick='calendarSelect()' class='reserve-time-select-a'>10:00</a>");
+        $(".reserve-time-select").append("<a  onclick='calendarSelect(this)' class='reserve-time-select-a'>11:00</a>");
+        $(".reserve-time-select").append("<a  onclick='calendarSelect()' class='reserve-time-select-a'>13:00</a>");
+        $(".reserve-time-select").append("<a  onclick='calendarSelect()' class='reserve-time-select-a'>14:00</a>");
+        $(".reserve-time-select").append("<a  onclick='calendarSelect()' class='reserve-time-select-a'>15:00</a>");
+        $(".reserve-time-select").append("<a  onclick='calendarSelect()' class='reserve-time-select-a'>16:00</a>");
+        $(".reserve-time-select").append("<a  onclick='calendarSelect()' class='reserve-time-select-a'>17:00</a>");
+        $(".reserve-time-select").append("<a  onclick='calendarSelect()' class='reserve-time-select-a'>18:00</a><input id='calendarYDM' type='hidden' value='"+id+"'></div>");
+        //$(".reserve-time-select").append("<span class='abcdef'><a id='reserve-time-select-a18' onclick='calendarSelect(18)' class='reserve-time-select-a'>18:00</a></span><input id='calendarInput' type='hidden' value='"+id+"'></div>");
        
-    }
+    }		
 
     /**
      * @brief   숫자 두자릿수( 00 ) 변경
@@ -215,6 +237,37 @@
         }
         return num;
     }
-
     
-   
+    
+function calendarSelect() {
+    	
+
+    	let ydm = document.getElementById('calendarYDM').value;
+    	
+    	let rtime = $(event.target).text();
+    	
+    	
+    	//버튼 클리시 CSS 적용
+        var selectA = document.getElementsByClassName("reserve-time-select-a");
+        
+    		
+    	if (event.target.classList[1] === "reserve-time-select-a-click") {
+            event.target.classList.remove("reserve-time-select-a-click");
+          } else {
+            for (var i = 0; i < selectA.length; i++) {
+            	selectA[i].classList.remove("reserve-time-select-a-click");
+            }
+
+            event.target.classList.add("reserve-time-select-a-click");
+          }
+        
+    	
+    	// 날짜 클릭시 Text 삽입
+    	const innerdate = document.getElementById('reserve-date');
+    	
+    	innerdate.innerText =ydm+" "+rtime;
+    	
+       	
+    	  
+	}
+    
