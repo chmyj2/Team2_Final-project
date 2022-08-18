@@ -37,7 +37,8 @@ public class ProductController {
 		pDAO.getPetCategoryProduct(request,p);
 		
 		lDAO.loginCheck(request);
-		request.setAttribute("contentPage", "YJ/viewProductPage.jsp");
+		//request.setAttribute("contentPage", "YJ/viewProductPage.jsp");
+		request.setAttribute("contentPage", "YJ/test.jsp");
 		
 		
 		return "2Team/t2_index";
