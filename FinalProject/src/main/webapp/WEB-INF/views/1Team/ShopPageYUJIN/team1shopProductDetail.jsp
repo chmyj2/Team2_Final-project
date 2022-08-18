@@ -79,6 +79,7 @@
 					<img src="resources/img/food/ANF_유기농식스프리+소고기연어.jpg" alt="리뷰이미지">
 					<img src="resources/img/food/ANF_유기농식스프리+소고기연어.jpg" alt="리뷰이미지">
 				</div>
+			</div>
 
 <!-- 상품상세정보/사용후기/QnA -->
 
@@ -90,13 +91,18 @@
 					<input type="radio" name="tabmenu" id="tab03">
 					<label for="tab03">Q&A</label>
 					
+					
+					
+					<!------------- 상품 상세 정보 란 ------------->
 					<div class="conbox con1">
 					상품상세정보
 					</div>
 					
-					<div class="conbox con2">
-					                <div class="store_product_detail_cont">
+					
+					
                     <!-- 사용후기 -->
+					<div class="conbox con2">
+						<div class="store_product_detail_cont">
                     <div class="store_product_detail_purchase_review">
                         <div class="store_product_detail_purchase_review_span">
                             <span>REVIEW</span>
@@ -117,20 +123,81 @@
                                 </span>
                                 <br>
                                 <button onclick="review">상품리뷰 작성하기</button>
+                                <div class="store_product_detail_purchase_review_alert">
+                                    <c:if test="${sessionScope.loginMember == null }">
+                                    <p>상품 리뷰는 <a href="loginandjoin.go" style="background-color: yellow;">로그인</a>후 에 작성 가능합니다</p>
+                                    </c:if>
+                                </div>
                             </div>
-                            <div class="store_product_detail_purchase_review_alert">
-                                <c:if test="${sessionScope.loginMember == null }">
-                                <p>상품 리뷰는 <a href="loginandjoin.go">로그인</a>후 에 작성 가능합니다</p>
-                                </c:if>
+                            
+							<form action="write.review1" method="post" enctype="multipart/form-data">
+                            <div class="store_product_detail_purchase_review_cont"> 
+                                <h2>REVIEW</h2>
+                                <!-- 제목 -->
+                                <input type="text" name="review_title"> <br>
+                                <!-- 내용 -->
+                                <textarea name="review_text" id="" placeholder="write text">
+                                </textarea>
+                                <!-- 파일첨부 -->
+                                <input name="review_img" type="file">
+                                <!-- 별점주기 -->
+                                <div class="store_review_rating">
+                                    <div class="star_rating">
+                                        <input type="checkbox" name="review_star" id="rating1" value="1" class="rate_radio" title="1점">
+                                        <label for="rating1"></label>
+                                        <input type="checkbox" name="review_star" id="rating2" value="2" class="rate_radio" title="2점">
+                                        <label for="rating2"></label>
+                                        <input type="checkbox" name="review_star" id="rating3" value="3" class="rate_radio" title="3점">
+                                        <label for="rating3"></label>
+                                        <input type="checkbox" name="review_star" id="rating4" value="4" class="rate_radio" title="4점">
+                                        <label for="rating4"></label>
+                                        <input type="checkbox" name="review_star" id="rating5" value="5" class="rate_radio" title="5점">
+                                        <label for="rating5"></label>
+                                    </div>
+                                </div>
+                                <button>리뷰작성완료</button>
                             </div>
-
+							</form>
+							
+							
                         </div>
 
 
                     </div>
                 </div>
+					<!-- 리뷰 보여주기 -->
+					<div class="store_product_detail_purchase_reviews">
+						<hr>
+						<div class="store_review_state">
+							<ul>
+								<li>평점순</li>
+							</ul>
+						</div>
+						
+						<div class="store_review_tbody">
+						<c:forEach var="r" items="${r}">
+							<div>
+								<!-- 별점 -->
+								★★★★★
+							</div>
+							<div>글번호</div>
+							<div>아이디</div>
+							<div>제목</div>
+							<div>내용 ${r.review_txt}</div>
+							<div>날짜 ${r.review_date}</div>
+							<div>이미지</div>
+							<div>평점</div>
+						</c:forEach>
+						</div>
+
 					</div>
+
+
+				</div>
 					
+					
+					
+					<!------------------ Q&A 영역 ------------------>
 					<div class="conbox con3">
 					컨텐츠탭 내용03
 					</div>
@@ -146,10 +213,10 @@
 				
 			
 
-			</div>
+			
 		</div>
 	</div>
-    
+
     
 	<div>
 	<h1>${p.num_PK}</h1>

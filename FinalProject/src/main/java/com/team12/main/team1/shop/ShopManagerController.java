@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.team12.main.team1.join.MemberDAO;
+import com.team12.main.team1.shop.review.Team1ReviewDAO;
+import com.team12.main.team1.shop.review.Team1ReviewDTO;
 
 @Controller
 public class ShopManagerController {
@@ -17,6 +19,10 @@ public class ShopManagerController {
 	
 	@Autowired
 	MemberDAO mDAO;
+	
+	@Autowired
+	private Team1ReviewDAO rDAO;
+	
 	
 //  YK : 오른쪽 상단 위에 로그인이랑, 장바구니 아이콘 뜨게 하려면,
 //	private MemberDAO mDAO; 이 친구 Autowired해야해요
@@ -38,9 +44,10 @@ public class ShopManagerController {
 			
 		mDAO.loginCheck(req);
 			//모든 상품 불러오기
-			pDAO.loadProducts(p, req);
+		pDAO.loadProducts(p, req);
 			//페이징하기
 			//로그인체크
+	
 		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopMain.jsp");
 		return "1Team/t1_index";
 	}
@@ -60,11 +67,16 @@ public class ShopManagerController {
 	
 	// 상품 디테일 페이지로 이동
 	@RequestMapping(value="/get.aProductTeam1",method = RequestMethod.GET )
-	public String detailAProduct(ProductDTO p, HttpServletRequest req){
+	public String detailAProduct(Team1ReviewDTO review, ProductDTO p, HttpServletRequest req){
+		
+		mDAO.loginCheck(req);
+		//리뷰 리스트 가져오기
+		rDAO.showReviewList(req, review);
 		//상품 하나 가져오기
 		pDAO.loadAProduct(p,req);
 		
 		//로그인체크
+		
 		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
 		return "1Team/t1_index";
 	}
