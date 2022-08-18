@@ -289,9 +289,28 @@ public class ProductDAO {
 
 	public void getPetCategoryProduct(HttpServletRequest request, Product p) {
 		
-		
+			
 			request.setAttribute("Product", ss.getMapper(ProductMapper.class).getPetProduct(p));
+			
+			
+			
 		}
+
+
+
+	public void getSnack(HttpServletRequest request, Product p) {
+		request.setAttribute("Snack", ss.getMapper(ProductMapper.class).getSnack(p));
+		
+	}
+
+
+
+	public void getToy(HttpServletRequest request, Product p, String toy) {
+		
+		p.setToy_category(toy);
+		request.setAttribute("Toy", ss.getMapper(ProductMapper.class).getToy(p));
+		
+	}
 		
 
 }
