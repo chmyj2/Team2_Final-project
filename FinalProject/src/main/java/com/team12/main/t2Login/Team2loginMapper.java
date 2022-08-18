@@ -20,6 +20,8 @@ public interface Team2loginMapper {
 
 	int petReg(pet p);
 
+	
+
 
 	
 

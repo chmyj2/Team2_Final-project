@@ -260,7 +260,7 @@ public class LoginDAO {
 		
 			//아이디있는 지 확인
 			System.out.println(m.getMember_ID());
-		return ss.getMapper(Team2loginMapper.class).checkIdNaver(m);
+		    return ss.getMapper(Team2loginMapper.class).checkIdNaver(m);
 	}
 
 
