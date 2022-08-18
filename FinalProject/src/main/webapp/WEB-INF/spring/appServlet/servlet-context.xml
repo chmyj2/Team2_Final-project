@@ -133,14 +133,16 @@
   <beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 =======
 	<!-- //////////DB연결관련!///////////// -->
+	
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 >>>>>>> 811b0b57e92852262eb84b6cc2a2caf171349522
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
-			value="jdbc:oracle:thin:@db202204301707_high?TNS_ADMIN=/Users/allmight/eclipse-workspace/OracleWallet/Wallet_DB202204301707"/>
-		<beans:property name="username" value="YJJ" />
+			value="jdbc:oracle:thin:@db202204301707_high?TNS_ADMIN=C:/Users/soldesk/Downloads/Wallet_DB202204301707" />
+		<beans:property name="username" value="SYP" />
 		<beans:property name="password" value="YJ802soldesk" />
 	</beans:bean>
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 996190cffbc50ccd1a037e5ef775c81f05b81377
    
@@ -242,6 +244,9 @@
 =======
 =======
 	
+=======
+
+>>>>>>> 829c7665325889bfb3072bc0611de0e1bd11936e
 	
 	<beans:bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -265,6 +270,7 @@
 				<beans:value>classpath:team2BoardMapper.xml</beans:value>
 				<beans:value>classpath:team2loginMapper.xml</beans:value>
 				<beans:value>classpath:shopteam1Mapper.xml</beans:value>
+				<beans:value>classpath:team1CartMapper.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>

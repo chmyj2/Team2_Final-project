@@ -33,8 +33,8 @@ Created-By: Maven Integration for Eclipse
 >>>>>>> 5443c468c76f76e74daebd7aa3ebc4233adc77db
 =======
 Manifest-Version: 1.0
-Built-By: allmight
-Build-Jdk: 14.0.2
+Built-By: gks36
+Build-Jdk: 14
 Created-By: Maven Integration for Eclipse
 
 >>>>>>> 811b0b57e92852262eb84b6cc2a2caf171349522

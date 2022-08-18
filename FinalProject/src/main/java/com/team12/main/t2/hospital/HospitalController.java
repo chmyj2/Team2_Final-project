@@ -21,7 +21,7 @@ public class HospitalController {
 	@RequestMapping(value = "/hospitalGo", method = RequestMethod.GET)
 	public String hospitalGo(HttpServletRequest req) {
 
-		lDAO.loginCheck(req);
+		//lDAO.loginCheck(req);
 		req.setAttribute("contentPage", "sy/hospitalMain.jsp");
 		
 		return "2Team/t2_index";
@@ -30,10 +30,9 @@ public class HospitalController {
 	@RequestMapping(value = "/hospitalDetailGo", method = RequestMethod.GET)
 	public String hospitalDetailGo(HttpServletRequest req , HospitalDTO hDTO) {
 
-		lDAO.loginCheck(req);
-
 		//lDAO.loginCheck(req);
-//		HDAO.hospitalView(req,hDTO);
+		System.out.println("와라");
+		HDAO.hospitalView(req,hDTO);
 
 		req.setAttribute("contentPage", "sy/hospitalDetail.jsp");
 		
@@ -43,7 +42,7 @@ public class HospitalController {
 	@RequestMapping(value = "/hospitalReserveGo", method = RequestMethod.GET)
 	public String hospitalReserveGo(HttpServletRequest req , HospitalDTO hDTO) {
 		
-		lDAO.loginCheck(req);
+		//lDAO.loginCheck(req);
 		HDAO.hospitalView(req,hDTO);
 		
 		req.setAttribute("contentPage", "sy/hospitalReserve.jsp");
