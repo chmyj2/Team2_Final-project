@@ -31,18 +31,9 @@
         <button  class="signUp_kakao_btn">카카오 연결</button>
     	</a>
  
-<!--  <a href="https://kauth.kakao.com/oauth/authorize?client_id=64c1168aec7c4fd20862f02cda8f9856&redirect_uri=http://localhost:8080/main/member.kakao&response_type=code">로그인</a>
- -->
-      <c:if test="${userId eq null}">
-        <a href="https://kauth.kakao.com/oauth/authorize?client_id=64c1168aec7c4fd20862f02cda8f9856&redirect_uri=http://localhost:8080/main/member.kakao&response_type=code">
-            <img src="resources/img/kakao_login_medium_narrow.png">
-        </a>
-    </c:if>
-    <c:if test="${userId ne null}">
-        <h1>로그인 성공입니다</h1>
-        <input type="button" value="로그아웃" onclick="location.href='/logout'">
-    </c:if>
-        
+  <a href="https://kauth.kakao.com/oauth/authorize?client_id=64c1168aec7c4fd20862f02cda8f9856&redirect_uri=http://localhost:8080/main/member.kakao&response_type=code">카카오 로그인</a>
+ 
+
 <hr class="login_hr">
         <button class="non_members_check_order">비회원 주문조회</button>
         </form>

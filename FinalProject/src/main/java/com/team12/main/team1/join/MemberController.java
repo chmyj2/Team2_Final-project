@@ -5,13 +5,13 @@ import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 @Controller
 public class MemberController {
 	
@@ -25,8 +25,7 @@ public class MemberController {
 	 @Autowired
 	 private MemberDAO kakaoService;
 	
-	 @Autowired
-		private SqlSession ss;
+	
 	
 	
 	
@@ -84,25 +83,14 @@ public class MemberController {
 	        System.out.println("###nickname#### : " + userInfo.get("nickname"));
 //	        System.out.println("###profile_image#### : " + userInfo.get("profile_image"));
 	        
-//	      클라이언트의 이메일이 존재할 때 세션에 해당 이메일과 토큰 등록
-	        if (userInfo.get("email") != null) {
-	            session.setAttribute("userId", userInfo.get("email"));
-	            session.setAttribute("access_Token", access_Token);
-	        }
-	        
+//	        req.setAttribute("loginPage", "../LDH/loginSuccess.jsp");
+//	        req.setAttribute("contentPage", "t1_home.jsp");
 	        
 	        return "1Team/t1_index";
 	    }
 	
 	
-	   @RequestMapping(value="/logout")
-	   public String logout(HttpSession session) {
-	       mDAO.kakaoLogout((String)session.getAttribute("access_Token"));
-	       session.removeAttribute("access_Token");
-	       session.removeAttribute("userId");
-	       return "index";
-	   }
-
+	   
 
 	@RequestMapping(value = "member.info", method = RequestMethod.GET)
 	public String memberInfo(HttpServletRequest req) {
