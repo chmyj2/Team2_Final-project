@@ -26,6 +26,35 @@ $(function() {
 
 
 
+function goPurchasePage() {
+	   
+	
+	
+	var cartqtAndNum = new Array();
+	$("#cart .qtAndNum").each(function( i, e ) {
+     
+		cartqtAndNum.push($(this).parent().find('.qtAndNum').val());
+	      
+        //thisCategory = e.value + '!'
+     });
+	
+     alert(cartqtAndNum);
+	
+	
+	
+	location.href="test?cartqtAndNum=" + cartqtAndNum;
+
+	
+	
+	
+	
+	
+	
+	
+}
+
+
+
 
 
 var check = false;
@@ -141,10 +170,7 @@ $(document).ready(function(){
   
   window.setTimeout(function(){$(".is-open").removeClass("is-open")}, 1200);
   
-  $(".btn").click(function(){
-    check = true;
-    $(".remove").click();
-  });
+  
 });
 
 </script>
@@ -452,7 +478,7 @@ a:hover {
 	float: right;
 }
 
-.btn {
+.CheckOutbtn {
 	background: #53b5aa;
 	border: 1px solid #999;
 	border-style: none none solid none;
@@ -472,7 +498,7 @@ a:hover {
 	transition: all .2s linear;
 }
 
-.btn:hover {
+.CheckOutbtn:hover {
 	color: #fff;
 	background: #429188;
 }
@@ -543,6 +569,7 @@ background: #f0f0f0;
 	<div class="container">
 
 		<section id="cart" class="cart">  
+		
 		<c:forEach items="${Product }" var="p">
 			<article class="product">
 				<header>
@@ -551,6 +578,7 @@ background: #f0f0f0;
 						
 						<h3>Remove product</h3>
 						<input class="cartNum" type="hidden" id="cartNum" value="${p.cartNum }">
+						<input class="qtAndNum" type="hidden" id="qtAndNum" value="${p.productNum }@${p.cart_ProductQuantity }">
 					</a>
 					
 				</header>
@@ -569,7 +597,6 @@ background: #f0f0f0;
 					<span class="qt">${p.cart_ProductQuantity }</span>
 					<span class="qt-plus">+</span>
 					<span class="full-price">${p.productPrice * p.cart_ProductQuantity }</span>
-					
 					<h2 class="price">${p.productPrice}</h2>
 					<h2 class="onePriceWon">가격 : </h2>
 				</footer>
@@ -584,13 +611,13 @@ background: #f0f0f0;
 		<div class="container clearfix">
 
 			<div class="left">
-				<h2 class="subtotal">Subtotal : <span id="subPrice"></span>원</h2>
+				<h2 class="subtotal">상품 금액 : <span id="subPrice"></span>원</h2>
 				<h3 class="tax">배송비 : <span>2500</span>원</h3>
 			</div>
 
 			<div class="right">
-				<h1 class="total">Total: <span id="totalPrice">0</span>원</h1>
-				<a class="btn">Checkout</a>
+				<h1 class="total">총 금액: <span id="totalPrice">0</span>원</h1>
+				<a class="CheckOutbtn" onclick="goPurchasePage()" >Check Out</a>
 			</div>
 
 		</div>
