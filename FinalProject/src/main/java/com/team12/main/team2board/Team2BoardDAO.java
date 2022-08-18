@@ -59,7 +59,11 @@ public class Team2BoardDAO {
 	}
 
 	public void showPostList(HttpServletRequest req, Team2BoardDTO board) {
-
+		
+		if(board.getBoard_category() == null) {
+			board.setBoard_category((String) req.getAttribute("board_category"));
+		}
+		System.out.println("board category :"+board.getBoard_category());
 		int allPost = ss.getMapper(Team2BoardMapper.class).getAllpostCount(board);
 		int totalPage = (int) Math.ceil((double) allPost / 10);
 		req.setAttribute("r", totalPage); // r = 총 페이지 수
@@ -85,18 +89,26 @@ public class Team2BoardDAO {
 
 	}
 
-	public void createPost(HttpServletRequest req, Team2BoardDTO board) {
-
+	public int createPost(HttpServletRequest req, Team2BoardDTO board) {
+		int numResult = 0;
+		
 		if (board.getBoard_category() == null) {
 			board.setBoard_category((String) req.getAttribute("board_category"));
 		}
+		
 
 		if (ss.getMapper(Team2BoardMapper.class).writePost(board) == 1) {
 			System.out.println("등록성공");
 			req.setAttribute("board_category", board.getBoard_category());
+			
+			numResult = ss.getMapper(Team2BoardMapper.class).getPostNum(board);
+			System.out.println("numResult  : "+numResult);
+			
 		} else {
 			System.out.println("등록실패");
 		}
+		
+		return numResult;
 
 	}
 
@@ -285,7 +297,9 @@ public class Team2BoardDAO {
 		int a = ss.getMapper(Team2BoardMapper.class).updatecomment(t);
 		System.out.println("수정완료여부-----"+a);
 		return a;
-	} 
+	}
+
+
 	
 	
 	

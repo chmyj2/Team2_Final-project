@@ -25,6 +25,17 @@ where board_category = #{board_category}
 	insert into team2_board values(team2_board_seq.nextval, #{board_member_id}, #{board_category}, #{board_title}, #{board_txt}, sysdate, 0,#{board_img}, 0)
 </insert>
 
+<select id="getPostNum" resultType="int">
+select board_num from(
+	select board_num
+	from team2_board
+	where board_title = #{board_title}
+	and board_member_id = #{board_member_id}
+	and board_txt like '%'||#{board_txt}||'%' 
+	order by board_date desc
+)where rownum = 1
+</select>
+
 <select id="postDetail" resultType="com.team12.main.team2board.Team2BoardDTO">
 	select * from team2_board where board_num = #{board_num}
 </select>

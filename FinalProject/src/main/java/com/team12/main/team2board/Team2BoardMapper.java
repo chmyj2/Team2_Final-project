@@ -46,6 +46,8 @@ public interface Team2BoardMapper {
 
 	Team2BoardDTO getImgsName(Team2BoardDTO board);
 
+	int getPostNum(Team2BoardDTO board);
+
 	
 
 
