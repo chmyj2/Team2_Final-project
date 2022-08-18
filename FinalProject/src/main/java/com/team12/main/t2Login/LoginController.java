@@ -258,7 +258,27 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/t2myPage.go", method = RequestMethod.GET)
+	public String t2myPagego(HttpServletRequest req) {
+		//내정보페이지로 이동
+		
+		lDAO.loginCheck(req);
+		req.setAttribute("contentPage", "t2login/t2_myPage.jsp");
+		
+		
+		return "2Team/t2_index";
+	}
 	
+	@RequestMapping(value = "/myinformation.chgae", method = RequestMethod.GET)
+	public String myinformationchgae(HttpServletRequest req) {
+		//내정보페이지 바꾸기 페이지
+		
+		lDAO.loginCheck(req);
+		req.setAttribute("contentPage", "t2login/t2_myinforChage.jsp");
+		
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	
