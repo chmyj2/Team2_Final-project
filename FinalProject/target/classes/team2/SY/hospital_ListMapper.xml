@@ -3,7 +3,7 @@
 <mapper namespace="com.team12.main.t2.hospital.Hospital_ListMapper">
 
 
-	<select id="getDetailview" resultType="com.team12.main.t2.hospital.HospitalDTO">
+	<select id="getDetailview" resultType="HospitalDTO">
 		 select * from HOSPITAL_LIST where hospital_no = #{hospital_no}		
 		</select>
 
