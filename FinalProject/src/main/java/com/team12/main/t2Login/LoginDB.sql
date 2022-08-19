@@ -12,12 +12,14 @@ member_joinDate date not null,
 member_paper varchar2(30 char) not null
 );
 
+ALTER TABLE final_member MODIFY member_email varchar2(40 char);
 ALTER TABLE final_member MODIFY member_phoneNum varchar2(30 char);
 alter table final_member modify member_birth null;
 delete final_member where member_ID ='tn3651';
 
 drop table final_member;
 
+update FINAL_MEMBER set member_paper = '비동의' where member_ID = 'hansujin_1';
 
 select * from final_member;
 
