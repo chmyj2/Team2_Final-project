@@ -262,8 +262,13 @@ public class LoginController {
 	public String t2myPagego(HttpServletRequest req) {
 		//내정보페이지로 이동
 		
-		lDAO.loginCheck(req);
-		req.setAttribute("contentPage", "t2login/t2_myPage.jsp");
+		if(lDAO.loginCheck(req)) {
+			//주소 ! 기준으로 자르기
+			lDAO.splitAddr(req);
+			req.setAttribute("contentPage", "t2login/t2_myPage.jsp");
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");
+		}
 		
 		
 		return "2Team/t2_index";
@@ -273,13 +278,32 @@ public class LoginController {
 	public String myinformationchgae(HttpServletRequest req) {
 		//내정보페이지 바꾸기 페이지
 		
-		lDAO.loginCheck(req);
-		req.setAttribute("contentPage", "t2login/t2_myinforChage.jsp");
+		if(lDAO.loginCheck(req)) {			
+			lDAO.splitAddr(req);
+			req.setAttribute("contentPage", "t2login/t2_myinforChage.jsp");
+		}else {
+		req.setAttribute("contentPage", "t2login/t2_login.jsp");
+	}
 		
 		
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/myinforChange.do", method = RequestMethod.POST)
+	public String myinforChangedo(HttpServletRequest req,Membert2 m) {
+		//내정보 바꾸기
+		
+		if(lDAO.loginCheck(req)) {
+			lDAO.memberInfoUpdate(m,req);
+			lDAO.splitAddr(req);
+			req.setAttribute("contentPage", "t2login/t2_myPage.jsp");
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");			
+		}
+			
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	

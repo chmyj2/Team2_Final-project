@@ -380,6 +380,43 @@ public class LoginDAO {
 		
 	}
 
+
+
+	public void splitAddr(HttpServletRequest req) {
+		// 주소 ! 기준으로 자르기
+		Membert2 m = (Membert2) req.getSession().getAttribute("loginMember");
+		if (m.getMember_address() != null) {
+			String m_addr = m.getMember_address();
+			String[]  m_addr2 = m_addr.split("!");
+			req.setAttribute("addr", m_addr2);
+			
+		}
+		
+	}
+
+
+
+	public void memberInfoUpdate(Membert2 m, HttpServletRequest req) {
+		// 회원정보 수정하는 기능
+		Membert2 loginMember = (Membert2) req.getSession().getAttribute("loginMember");
+		
+		String addr1 = req.getParameter("m_addr1");
+		String addr2 = req.getParameter("m_addr2");
+		String addr3 = req.getParameter("m_addr3");
+		
+		
+		String member_address = addr1 +"!"+addr2+"!"+addr3;
+		m.setMember_address(member_address);
+		
+		if (ss.getMapper(Team2loginMapper.class).memberUpdate(m)==1) {
+			System.out.println("------------------정보수정완료");
+			req.getSession().setAttribute("loginMember", m);
+		}else {
+			System.out.println("-----------------------정보수정 실패");
+		}
+		
+	}
+
 	
 	
 	

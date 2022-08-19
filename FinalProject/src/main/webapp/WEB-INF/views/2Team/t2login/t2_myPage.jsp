@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
+	<div style="text-align: center;">
 		<h2>회원정보</h2>
 		<label>ID</label> <input type="text" readonly="readonly"
-			value="${sessionScope.loginMember.member_ID }" style="border: none;"><br>
+			value="${sessionScope.loginMember.member_ID }" style="border: none;" id="m_id"><br>
 
 		<label>이름</label> <input type="text" readonly="readonly"
 			value="${sessionScope.loginMember.member_name }" style="border: none;"><br>
@@ -25,7 +25,8 @@
 		<input type="text" readonly="readonly" value="${sessionScope.loginMember.member_phoneNum }" style="border: none;"><br> 
 		
 		<label>주소</label> 
-		<input type="text" readonly="readonly" value="${sessionScope.loginMember.member_address }" style="border: none; width: 300px;"><br> 
+		<input type="text" readonly="readonly" value="${addr[2]} ${addr[0]} ${addr[1]}" style="border: none; width: 300px;">
+		<br> 
 		
 		<label>이메일</label> 
 		<input type="text" readonly="readonly" value="${sessionScope.loginMember.member_email }"  style="border: none;"><br>
