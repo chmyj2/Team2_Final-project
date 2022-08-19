@@ -1,13 +1,13 @@
 @charset "UTF-8";
 /* -----------Store Main ------------- */
-
+/* -----------Store Main ------------- */
 .store_main_wrap{
     background-color: rgba(255, 255, 255, 0.6);
     width: 100%;
     height: auto;
     text-align: center;
     margin-bottom: 300px;
-    padding-top: 50px;
+    padding-top: 100px;
     padding-bottom: 10px;
 }
 
@@ -196,140 +196,6 @@
     letter-spacing: -1pt;
 }
 
-/* -----------Store for Dog----------- */
-.store_wrap{
-    background-color: rgba(255, 255, 255, 0.6);
-    width: 100%;
-    height: auto;
-    text-align: center;
-    margin-bottom: 300px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.store_header{ 
-    height: 400px;
-    width: 100%;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 200px;
-}
-
-.store_header h2{
-    font-size:50pt;
-}
-
-.store_for_dog_title{
-    width: 300px;
-    height: 40px;
-    margin: 0 auto;
-    margin-bottom: 50px;
-}
-
-.store_for_dog_title_food{
-    font-size: 30pt;
-}
-
-.store_for_dog_title_nutrients{
-    color: rgb(59, 59, 59);
-}
-
-/* -----제조사별/연령별 체크박스-------- */
-
-.store_for_dog_category_wrap{
-    height: 100px;
-    margin-bottom: 50px;
-}
-.store_foe_dog_category_select{
-    background-color: rgba(255, 255, 255, 0.6);
-    display: table;
-    text-align: center;
-    width: 400px;
-    margin: 0 auto;
-    height: 70px;
-    padding: 5px 10px 0px 15px;
-    border-radius: 20px;
-}
-
-.store_for_dog{
-    height: 200px;
-}
-
-.store_for_dog_img{
-    width: 200px;
-}
-
-.store_new_products_txt{
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 196, 0);
-    height: 80px;
-    width: 100%;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 50px;
-    padding-top: 0px;
-    margin-bottom: 80px;
-}
-
-.store_new_products_txt h2{
-    font-size: 20pt;
-    letter-spacing: -2pt;
-    font-weight: bolder;
-}
-.store_new_products_txt p{
-    font-size: 12pt;
-}
-/* ------------------상품 이미지 -------------- */
-
-.store_new_products{
-    height: 1000px;
-}
-
-.store_new_products_img{
-    display: inline-block;
-}
-
-.store_new_products_img>div{
-    float: left;
-    height: 580px;
-    width: 380px;
-}
-
-.store_new_products_img img{
-    height: 320px;
-    width: 320px;
-	object-fit: cover;
-    border-radius: 20px; 
-	margin: 20px 10px 10px 10px;
-    transition: all 0.2s ease-in-out;
-	/*
-	cursor:pointer;
-    display:block;
-    */
-}
-
-.store_new_products_img img:hover{
-    transform: scale(1.02);
-    border: 2px dashed ;
-}
-.store_new_products_ANF{
-    /* border: 1px solid ; */
-    border-top: 2px solid black;
-    padding-top: 50px;
-}
-
-.store_new_products_ANF p{
-    font-size: 12pt;
-    font-weight: bold;
-    color: rgb(255, 145, 0);
-}
-
-.store_new_products_ANF span{
-    font-size: 15pt;
-    letter-spacing: -1pt;
-}
-
-
 /* -----------Store detail--------------- */
 
 .store_product_detail_wrap{
@@ -457,6 +323,11 @@
     padding-bottom: 10px;
 }
 
+.store_product_detail_review{
+    height: 300px;
+}
+
+
 .store_product_detail_review h2{
     font-size: 25pt;
     letter-spacing: -1pt;
@@ -477,7 +348,7 @@
 /* 리뷰 게시판 */
 .store_product_detail_review_board{
     width: 100%;
-    height: 50px;
+    height: 60px;
 }
 
 .store_product_detail_review_board ul{
@@ -485,7 +356,6 @@
     align-items: center;
     width: 100%;
     height: 50px;
-    margin-left: 1%;
 }
 
 .store_product_detail_review_board ul li {
@@ -502,12 +372,197 @@
     display: block; 
     /* a링크 너비주려면 display block속성 이용 */
     width: 500px;
-    padding: 15px 0px 15px 0px;
+    padding: 20px 0px 20px 20px;
+    margin-bottom: none;
 }
+
+.store_product_detail_review_board ul li a:hover{
+    background-color: black;
+    color: white;
+}
+
+
 
 /* ------상품 상세정보 ------ */
 .store_product_detail_cont{
-    background-color: rgba(95, 158, 160, 0.308);
     width: 100%;
-    height: 800px;
+    height: 650px;
+}
+
+.store_product_detail_purchase_review{
+
+    width: 90%;
+    margin: 0 auto;
+    height: 700px;
+    text-align: left;
+    padding: 30px;
+}
+
+.store_product_detail_purchase_review_span{
+    font-weight: bold;
+}
+
+.store_product_detail_purchase_review_span hr{
+    height: 2px;
+    background-color: black;
+}
+
+.store_product_detail_purchase_review_star{
+    width: 1000px;
+    font-size: 30pt;
+    font-weight: bold;
+    height: 200px;
+    text-align: center;
+    position: relative;
+}
+
+.store_product_detail_purchase_review_center{
+    width: 400px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin-top: 20px;
+    position: absolute;
+    padding: 20px;
+}
+
+.store_product_detail_purchase_review_star img{
+    margin-top: 10px;
+    width: 40px;
+}
+.store_product_detail_purchase_review_star button{
+    background-color: rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.store_product_detail_purchase_rivew_stars img{
+    width: 10px;
+}
+
+.store_product_detail_purchase_review_alert p{
+	font-size: 10pt;
+}
+
+/* -------------tab메뉴 -------- */
+
+.tab_content{
+	width:100%;
+    height: 1000px;
+}
+
+.tab_content input[type="radio"]{
+	display:none;
+}
+
+.tab_content input[type="radio"] + label{
+	display:inline-block;
+	padding:20px;
+	background: #ffffff;
+	color: #999;
+	font-size: 14px;
+	cursor: pointer;
+	width: 480px;
+	font-size:15pt;
+	font-weight: bold;
+	border: 1px solid black;
+}
+
+.tab_content input[type="radio"]:checked + label {
+	background: #000000;
+	color: #ffffff;
+}
+
+.conbox{
+	width: 95%;
+	height: 600px;
+	margin: 0 auto;
+	display: none;
+}
+
+.tab_content input[id="tab01"]:checked ~ .con1{
+	display:block;
+}
+.tab_content input[id="tab02"]:checked ~ .con2{
+	display:block;
+}
+.tab_content input[id="tab03"]:checked ~ .con3{
+	display:block;
+}
+
+.store_product_detail_purchase_review_alert>a{
+	background: yellow;
+}
+
+
+.store_product_detail_purchase_review_cont{
+    background-color: rgba(255, 255, 255, 0.712);
+    font-size: 10pt;
+    padding: 10px;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-top: 20px;
+}
+
+.store_product_detail_purchase_review_cont input[type=text]{
+    background-color: rgba(255, 255, 255, 0);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid;
+    width: 300px;
+    margin-bottom: 20px;
+    height: 30px;
+}
+
+.store_product_detail_purchase_review_cont input[type=file]{
+    margin-top: 10px;
+}
+
+.store_product_detail_purchase_review_cont textarea{
+    border: 0;
+    background-color: rgba(218, 218, 218, 0.3);
+    width: 300px;
+    height: 250px;
+    margin-top: 3px;
+}
+
+/* 별점주기 */
+
+.store_review_rating{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.star_rating .rate_radio + label{
+    position: relative;
+    display: inline-block;
+    z-index: 5;
+    margin-left: -4px;
+    background-image: url('./resources/img/review_star.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+.star_rating .rate_radio:checked + label{
+    background-color: #ff8;
+}
+
+/* 리뷰 보여주기 */
+
+.store_product_detail_purchase_reviews{
+    background-color: #999;
+    width: 100%;
+    height: 500px;
+}
+
+.store_product_detail_purchase_reviews hr{
+    height: 2px;
+    background-color: black;
 }

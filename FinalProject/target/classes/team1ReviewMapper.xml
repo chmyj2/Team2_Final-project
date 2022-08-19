@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.team12.main.team1.shop.review.Team1ReviewMapper">
+<!-- 셀렉 -->
+<select id="getReviewList" resultType="com.team12.main.team1.shop.review.Team1ReviewDTO">
+	select * from team1_review_board
+</select>
+
+<!-- 리뷰쓰기 -->
+<insert id="writeReview" parameterType="map">
+	insert into team1_review_board values(
+	team1_review_board_seq.nextval,'mz',#{review_title},#{review_text}, sysdate, #{review_img}, 5)
+</insert>
+
+
+
+
 
 </mapper>
