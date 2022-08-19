@@ -68,7 +68,8 @@ public class ProductController {
 		//상품가져오는일
 		pDAO.getProduct(request,p);
 		lDAO.loginCheck(request);
-		request.setAttribute("contentPage", "YJ/detailProductPage.jsp");
+		//request.setAttribute("contentPage", "YJ/detailProductPage.jsp");
+		request.setAttribute("contentPage", "YJ/test.jsp");
 			
 		return "2Team/t2_index";
 	}

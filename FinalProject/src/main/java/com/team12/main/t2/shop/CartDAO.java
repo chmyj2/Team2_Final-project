@@ -1,6 +1,7 @@
 package com.team12.main.t2.shop;
 
 import java.net.InetAddress;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,24 +16,23 @@ public class CartDAO {
 	private SqlSession ss;
 
 	public int reqCart(Cart c) {
-		
+
 		try {
-			
-		if (c.getCart_UserID().equals("비회원")) {
-		InetAddress myIP = InetAddress.getLocalHost();
-		
-		// getHostAddress() 사용중인 PC의 IP주소를 얻어온다.
-		String strIPAddress = myIP.getHostAddress();
-		c.setCart_UserID(strIPAddress);
-		}
-		
+
+			if (c.getCart_UserID().equals("비회원")) {
+				InetAddress myIP = InetAddress.getLocalHost();
+
+				// getHostAddress() 사용중인 PC의 IP주소를 얻어온다.
+				String strIPAddress = myIP.getHostAddress();
+				c.setCart_UserID(strIPAddress);
+			}
+
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+
 		return ss.getMapper(ProductCartMapper.class).regCart(c);
-		
-		
+
 //		if (c.getCart_UserID().equals("비회원")) {
 //		
 //		Random rand = new Random();
@@ -50,79 +50,70 @@ public class CartDAO {
 	}
 
 	public boolean checkCart(Cart c) {
-		
-		
+
 		try {
-			
-			
+
 			InetAddress myIP = InetAddress.getLocalHost();
-			
+
 			// getHostAddress() 사용중인 PC의 IP주소를 얻어온다.
 			String strIPAddress = myIP.getHostAddress();
 			c.setCart_UserID(strIPAddress);
-			
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-			// 체킹하기
-			 if(ss.getMapper(ProductCartMapper.class).checkCart(c) == 1){
-				 System.out.println("asdasd");
-				 
-				 return true;
-				 
-			 }
-			
-			 return false;
-		
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		// 체킹하기
+		if (ss.getMapper(ProductCartMapper.class).checkCart(c) == 1) {
+			System.out.println("asdasd");
+
+			return true;
+
+		}
+
+		return false;
+
 	}
 
 	// 카트 받기
 	public void getCart(HttpServletRequest request, int productNum, String cart_UserID) {
-		
+
 		System.out.println(productNum);
 		Cart c = new Cart();
 		c.setCart_UserID(cart_UserID);
-		
-		request.setAttribute("Product",ss.getMapper(ProductCartMapper.class).getProductFromCart(c));
-		
+
+		request.setAttribute("Product", ss.getMapper(ProductCartMapper.class).getProductFromCart(c));
+
 	}
 
-	
-	
-	
 	// 카드 삭제
 	public int deleteCart(Cart c) {
-		
+
 		if (ss.getMapper(ProductCartMapper.class).deleteCart(c) == 1) {
 			return 1;
-			
-		}else {
+
+		} else {
 			return 0;
 		}
-		
+
 	}
 
-	public void goPurchasePage(HttpServletRequest request, Product p, Cart c, String cartqtAndNum) {
+	public void goPurchasePage(HttpServletRequest request) {
 
+		String[] thumbnails = request.getParameterValues("thumbnail");
+		String[] names = request.getParameterValues("name");
+		String[] prices = request.getParameterValues("price");
+		String[] quantitys = request.getParameterValues("quantity");
 
-		String[] ArraysStr = cartqtAndNum.split("@|,");
-		
-		
-		
-		for (String s : ArraysStr) {
-			System.out.println(s);
+		PurchasedProduct p = null;
+	ArrayList<PurchasedProduct> purchasedProducts = new ArrayList<PurchasedProduct>();
+		for (int i = 0; i < prices.length; i++) {
+			p = new PurchasedProduct(thumbnails[i], names[i], prices[i], quantitys[i]);
+			purchasedProducts.add(p);
 			
-			}
-			
-		
-		
-			//p.setProductNum(Integer.parseInt(s));
-			//ss.getMapper(ProductMapper.class).getProduct(p);
 		}
-		
+		request.setAttribute("purchasedProducts", purchasedProducts);
 		
 		
 	}
-	
-	
 
+}

@@ -48,14 +48,18 @@ public class ProductCartController {
 			return "2Team/t2_index";
 			}
 	
-		// 장바구니 가기
+		
+		// 카트에서 구매페이지가기
 		@RequestMapping(value = "/test", method = RequestMethod.GET)
-		public String test(HttpServletRequest request,Product p,Cart c,@RequestParam("cartqtAndNum")  String cartqtAndNum) {
-			
+		public String test(HttpServletRequest request) {
+			if (lDAO.loginCheck(request)) {
 			// 장바구니 가져오기
-			cDAO.goPurchasePage(request,p,c,cartqtAndNum);
-			
-		request.setAttribute("contentPage", "YJ/test.jsp");
+			cDAO.goPurchasePage(request);
+			request.setAttribute("contentPage", "YJ/purchasedPage.jsp");
+			}else {
+				System.out.println("로그인창으로보내기");
+				request.setAttribute("contentPage", "t2login/t2_login.jsp");
+			}
 			return "2Team/t2_index";
 		}
 	
