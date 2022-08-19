@@ -12,25 +12,7 @@
 
 $(function() {
 	
-	 $.ajax({
-			url : "delete.cart",
-			type : "GET",
-			dataType : "text",
-			data :	{"onExhibition" : 'Y'},
-			success : function(getData) {
-				console.log(getData);
-				if (getData == 1) {
-					console.log("성공");
-					
-					
-				}else {
-					console.log("실패");
-				}
-				
-			}
-			
-		});
-	
+	 
 	
 	
 	
