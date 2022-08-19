@@ -67,8 +67,8 @@ public class MemberDAO {
 
 	public void login(Member m, HttpServletRequest req) {
 		// TODO Auto-generated method stub
+		m.setMember_linkWhere(1);
 		Member dbMember = ss.getMapper(Team1joinMapper.class).getMemberByID(m);
-
 		if (dbMember != null) {
 			if (m.getMember_PW().equals(dbMember.getMember_PW())) {
 				req.getSession().setAttribute("loginMember", dbMember);
@@ -200,7 +200,7 @@ public class MemberDAO {
 	
 	
 	// 카카오 토큰 가져오기
-	public String getAccessToken (String authorize_code) {
+	private String getAccessToken (String authorize_code) {
         String access_Token = "";
         String refresh_Token = "";
         String reqURL = "https://kauth.kakao.com/oauth/token";
@@ -260,7 +260,7 @@ public class MemberDAO {
     }
 	
 	// 카카오 유저 정보 가져오기
-	public HashMap<String, Object> getUserInfo (String access_Token) {
+	private HashMap<String, Object>  getUserInfo (String access_Token) {
 
         //    요청하는 클라이언트마다 가진 정보가 다를 수 있기에 HashMap타입으로 선언
         HashMap<String, Object> userInfo = new HashMap<>();
@@ -309,6 +309,54 @@ public class MemberDAO {
     }
 
 	
+	public void joinKakao(HttpServletRequest req, String code) {
+		String tempToken = getAccessToken(code);
+		HashMap<String, Object> userInfo = getUserInfo(tempToken);
+		 
+//		kakaoMember tempMember = new kakaoMember();
+//		tempMember.setK_acTokken(tempToken);
+//		tempMember.setK_nickname(userInfo.get("nickname").toString());
+//		tempMember.setK_email(userInfo.get("email").toString());
+//		tempMember.setK_memberID("");
+		
+		Member tempMember = new Member();
+		tempMember.setMember_ID("");
+		tempMember.setMember_name(userInfo.get("nickname").toString());
+		tempMember.setMember_email(userInfo.get("email").toString());
+		tempMember.setMember_sex("");
+		tempMember.setMember_address("");
+		tempMember.setMember_PW("");
+		tempMember.setMember_linkWhere(3);
+		tempMember.setMember_phoneNum("");
+		
+		
+		
+		
+		
+		ss.getMapper(Team1joinMapper.class).kakaoJoin(tempMember);
+	}
+	
+//	String member_ID =req.getParameter("member_ID");
+//	String member_name = req.getParameter("member_name");
+//	String member_email = req.getParameter("member_email");
+//	String member_sex = req.getParameter("member_sex");
+//	
+//	String member_address = " ";
+//	String member_PW = " ";
+//	int member_linkWhere = 3;
+//	String member_phoneNum = " "; 
+//	
+//	
+//	m.setMember_ID(member_ID);
+//	m.setMember_PW(member_PW);
+//	m.setMember_linkWhere(member_linkWhere);
+//	m.setMember_name(member_name);
+//	m.setMember_sex(member_sex);
+//	m.setMember_phoneNum(member_phoneNum);
+//	m.setMember_email(member_email);
+//	m.setMember_address(member_address);
+//	m.setMember_birth(null);
+//	
 	
 	}
 

@@ -63,7 +63,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "/member.login", method = RequestMethod.POST)
 	public String memberLogin(Member m, HttpServletRequest req) {
-		
+		System.out.println(m.getMember_ID());
 		// 로그인
 		mDAO.login(m, req);
 		mDAO.loginCheck(req);
@@ -76,16 +76,16 @@ public class MemberController {
 	   @RequestMapping("member.kakao")
 	    public String home(@RequestParam(value = "code", required = false) String code, Member m, HttpServletRequest req, HttpSession session) throws Exception{
 		   System.out.println("#########" + code);
-	        String access_Token = kakaoService.getAccessToken(code);
-	        HashMap<String, Object> userInfo = kakaoService.getUserInfo(access_Token);
-	        System.out.println("###access_Token#### : " + access_Token);
-	        System.out.println("###userInfo#### : " + userInfo.get("email"));
-	        System.out.println("###nickname#### : " + userInfo.get("nickname"));
+//	        String access_Token = kakaoService.getAccessToken(code);
+//	        HashMap<String, Object> userInfo = kakaoService.getUserInfo(access_Token);
+//	        System.out.println("###access_Token#### : " + access_Token);
+//	        System.out.println("###userInfo#### : " + userInfo.get("email"));
+//	        System.out.println("###nickname#### : " + userInfo.get("nickname"));
 //	        System.out.println("###profile_image#### : " + userInfo.get("profile_image"));
 	        
 //	        req.setAttribute("loginPage", "../LDH/loginSuccess.jsp");
 //	        req.setAttribute("contentPage", "t1_home.jsp");
-	        
+	        mDAO.joinKakao(req, code);
 	        return "1Team/t1_index";
 	    }
 	

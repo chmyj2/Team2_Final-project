@@ -15,5 +15,6 @@ public interface Team1joinMapper {
 	
 	int checkIdKakao(Member m);
 
+	int kakaoJoin(Member m);
 
 }
