@@ -21,13 +21,8 @@ public class ShopManagerController {
 	MemberDAO mDAO;
 	
 	@Autowired
-	private Team1ReviewDAO rDAO;
+	private Team1ReviewDAO rDAO;	// YK 리뷰DAO입니다.
 	
-	
-//  YK : 오른쪽 상단 위에 로그인이랑, 장바구니 아이콘 뜨게 하려면,
-//	private MemberDAO mDAO; 이 친구 Autowired해야해요
-
-
 	
 	// YK Store 눌렀을때  페이지입니다 -> dog/cat페이지로 넘어갈 수 있게
 	@RequestMapping(value="/enter.team1MainShop", method = RequestMethod.GET)
@@ -69,13 +64,13 @@ public class ShopManagerController {
 	@RequestMapping(value="/get.aProductTeam1",method = RequestMethod.GET )
 	public String detailAProduct(Team1ReviewDTO review, ProductDTO p, HttpServletRequest req){
 		
+		//로그인체크
 		mDAO.loginCheck(req);
 		//리뷰 리스트 가져오기
 		rDAO.showReviewList(req, review);
 		//상품 하나 가져오기
 		pDAO.loadAProduct(p,req);
 		
-		//로그인체크
 		
 		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
 		return "1Team/t1_index";
