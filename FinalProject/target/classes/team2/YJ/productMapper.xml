@@ -7,6 +7,15 @@
 		select * from PRODUCT where onExhibition = #{onExhibition } and pet_category = #{pet_category }
 	</select>
 	
+	<select id="getSnack" parameterType="com.team12.main.t2.shop.Product" resultType="com.team12.main.t2.shop.Product">
+		select * from PRODUCT where toy_category = #{toy_category } and pet_category = #{pet_category }
+	</select>
+	
+	<select id="getToy" parameterType="com.team12.main.t2.shop.Product" resultType="com.team12.main.t2.shop.Product">
+		select * from PRODUCT where toy_category = #{toy_category } and pet_category = #{pet_category }
+	</select>
+	
+	
 	<select id="realGetAllProduct" resultType="com.team12.main.t2.shop.Product">
 		select * from PRODUCT
 	</select>

@@ -18,6 +18,9 @@ public interface ProductMapper {
 
 	public List<Product> getPetProduct(Product p);
 
+	public List<Snack> getSnack(Product p);
+
+	public List<Toy> getToy(Product p);
 
 
 	
