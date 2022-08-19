@@ -52,17 +52,22 @@
 
 		<br>
 		
-		
 		<c:choose>
-		<c:when test="${sessionScope.loginMember.member_linkWhere != 1}">
+		<c:when test="${sessionScope.loginMember.member_linkWhere != 1 && sessionScope.loginMember.member_paper =='비동의' }">
+		
 		<label class="agree" for="agree">
-		<input type="checkbox" id="agree" onchange="agree()">정보 수집을 하는 것을 동의합니다.
+		<input type="checkbox" id="agree" onchange="agree1()">정보 수집하는 것을 동의합니다
 		</label><br>
+		<input type="hidden" name="member_paper" value="동의">
 		<button id="join_btn" disabled="disabled">등록하기</button>
+		
 		</c:when>
 		
 		<c:otherwise>
-		<button>등록하기</button>		
+		
+		<input type="hidden" name="member_paper" value="동의">
+		<button>등록하기</button>	
+			
 		</c:otherwise>
 		</c:choose>
 		
@@ -72,9 +77,9 @@
 	</div>
 </body>
 <script type="text/javascript">
-	function agree() {
+	function agree1() {
 		let btn = document.getElementById('join_btn');
-		let a = btn.disabled;
+		let a = document.getElementById('join_btn').disabled;
 		if (a) {
 			btn.disabled = false;
 		} else {

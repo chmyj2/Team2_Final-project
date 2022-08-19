@@ -19,6 +19,7 @@ delete final_member where member_ID ='tn3651';
 
 drop table final_member;
 
+update FINAL_MEMBER set member_paper = '비동의' where member_ID = 'hansujin_1';
 
 select * from final_member;
 

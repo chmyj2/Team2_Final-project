@@ -295,6 +295,7 @@ public class LoginDAO {
 			String member_PW = " ";
 			int member_linkWhere = 3;
 			String member_phoneNum = " "; 
+			String member_paper="비동의";
 			
 			
 			m.setMember_ID(member_ID);
@@ -306,7 +307,7 @@ public class LoginDAO {
 			m.setMember_email(member_email);
 			m.setMember_address(member_address);
 			m.setMember_birth(null);
-			
+			m.setMember_paper(member_paper);
 			
 			if (ss.getMapper(Team2loginMapper.class).join(m) == 1) {
 				System.out.println("성공");
