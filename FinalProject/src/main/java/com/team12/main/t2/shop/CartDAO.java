@@ -76,6 +76,7 @@ public class CartDAO {
 		
 	}
 
+	// 카트 받기
 	public void getCart(HttpServletRequest request, int productNum, String cart_UserID) {
 		
 		System.out.println(productNum);
@@ -85,6 +86,43 @@ public class CartDAO {
 		request.setAttribute("Product",ss.getMapper(ProductCartMapper.class).getProductFromCart(c));
 		
 	}
+
 	
 	
-}
+	
+	// 카드 삭제
+	public int deleteCart(Cart c) {
+		
+		if (ss.getMapper(ProductCartMapper.class).deleteCart(c) == 1) {
+			return 1;
+			
+		}else {
+			return 0;
+		}
+		
+	}
+
+	public void goPurchasePage(HttpServletRequest request, Product p, Cart c, String cartqtAndNum) {
+
+
+		String[] ArraysStr = cartqtAndNum.split("@|,");
+		
+		
+		
+		for (String s : ArraysStr) {
+			System.out.println(s);
+			
+			}
+			
+		
+		
+			//p.setProductNum(Integer.parseInt(s));
+			//ss.getMapper(ProductMapper.class).getProduct(p);
+		}
+		
+		
+		
+	}
+	
+	
+

@@ -11,7 +11,12 @@
 </select>
 
 <select id="getProductFromCart" parameterType="com.team12.main.t2.shop.Cart" resultType="com.team12.main.t2.shop.Product">
-	select p1.*, p2.cart_ProductQuantity from product p1,product_cart p2 where p1.productnum = p2.cart_productnum and cart_userid = #{cart_UserID}
+	select p1.*, p2.cart_ProductQuantity,p2.cartNum from product p1,product_cart p2 where p1.productnum = p2.cart_productnum and cart_userid = #{cart_UserID}
 </select>
+
+<delete id="deleteCart" parameterType="com.team12.main.t2.shop.Cart">
+	DELETE  product_cart WHERE cartNum = #{cartNum}
+</delete>
+
 
 </mapper>

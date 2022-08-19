@@ -7,6 +7,8 @@ a {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: white;
+	border: 1px solid #f9f9f9;
 }
 
 .scriptCalendar>thead>tr>td {
@@ -19,7 +21,9 @@ a {
 }
 
 .scriptCalendar>thead>tr:last-child>td {
-	background-color: #90EE90;
+	/* background-color: #90EE90; */
+	border-bottom: 1px double black;
+	border-top: 1px double black;
 }
 
 .scriptCalendar>tbody>tr>td {
@@ -32,4 +36,171 @@ a {
 	margin-right:auto;
 	margin-left:auto;
 	
+
 }
+.reserve-main{
+	height: 900px;
+	
+}
+
+.abcdin{
+		display: flex;
+		padding:  80px 300px 100px 300px;
+	}
+
+	.patient-info{	
+		flex:1;
+	
+	}
+	.human-info{
+		
+		height: 50%;
+		
+	}
+	.pet-info{
+		margin-top:  60px;
+		height: 50%;
+	}
+	.calendar-selector{
+	
+		flex:1;
+		height: 528px;
+		margin-left: 20px;
+	}
+	.reserve-all-result{
+		flex:1;
+		height: 533px;
+		margin-left: 20px;
+	}
+
+	.reserve-div-title{
+		height: 15%; 
+		background-color: #5281d1; 
+		text-align: center;
+		
+	}
+	.reserve-div-title-text{
+		color:white;
+		font-weight : bold;
+		padding-top: 2%;
+		font-weight: bold;
+		font-size: 18px;
+
+	}
+	.reserve-div-title2{
+		height: 39px; 
+		background-color: #5281d1; 
+		text-align: center;
+		font-weight: bold;
+		font-size: 18px;
+
+	}
+
+	.reserve-box-sub{
+		height: 94%;
+		background-color: #f9f9f9;
+		padding-top: 20px;
+	}
+	.reserve-box-sub2{
+		height: 578px;
+		background-color: #f9f9f9;
+	}
+	.reserve-box-sub3{
+		height: 578px;
+		background-color: #f9f9f9;
+		padding-top: 20px;
+	}
+
+    .reservie-list4{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    align-items: stretch;
+    }
+	.span-text{
+    flex: 0 0 140px;
+    padding: 5px 30px 5px 20px;
+    line-height: 1.4;
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+    white-space: nowrap
+    }
+    .span-textin{
+
+    flex: 1 1 auto;
+    padding: 2px 0;
+    line-height: 1.7;
+    font-size: 18px;
+    font-weight: 300;
+    word-break: break-all;
+}
+
+.reserve-time-select{
+	
+	text-align: center;
+}
+.reserve-time-select-a{
+	background-color:white;
+	display: inline-block;
+	width : 100px;
+	height:30px;
+	margin-left: 15px;
+	margin-top:10px;
+	padding :1%;
+	cursor: pointer;
+	border : 1px solid black;
+	font-weight: bold;
+}
+.reserve-time-select-a-click {
+	background-color:#353535;
+	color: white;
+	display: inline-block;
+	width : 100px;
+	height:30px;
+	margin-left: 15px;
+	margin-top:10px;
+	padding :1%;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.span-text-input, .span-text-petName-input, .span-text-petAge-input, .span-text-petType-input{
+	font-size: 18px;
+    font-weight: 300;
+	border: none;
+	background-color: #f9f9f9;	
+	width: 150px;
+}
+
+.reserve-textarea{
+	margin-left: 22px;
+	margin-right: 22px;
+	width:100%;
+	height:220px;
+	margin-top: 10px;
+	resize:none
+}
+.reserve-confirm-div{
+	width: 15%;
+	margin-top : 20px;
+    margin-left: auto;
+    margin-right: auto;
+	
+}
+.reserve-confirm-btn{
+	display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+    border: 3px solid #eee;
+    border-radius: 10px;
+}
+
+.reserve-confirm-btn li a{
+	cursor: pointer;
+    font-size: 18px;
+    color: #5281d1;
+    font-weight: 700;
+}
+
