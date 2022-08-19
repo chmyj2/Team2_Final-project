@@ -205,9 +205,86 @@ function commentUpdate() {
 	
 }
 
+//답글 쓰기
+function childComment() {
+	let select = "";
+	
+	$(document).on("click", '.commentSpan', function() {
+		$(this).parent().parent().parent().children().last().fadeToggle('100');
+		select = $(this).parent().parent().parent().children().last();
+	});
+	
+	$(document).on("click", '.commentChildBtn', function() {
+		let txt = $(select).find('input').val();
+		let b_num = $('#boardNum').val();
+    	let m_id = $('#memberID').val();
+    	let p_num = $(this).attr('id')
+    	
+    	$.ajax({//댓글 삭제
+			type: "POST" ,
+			url : "child.comment.create",
+			data : {
+				"c_child_board_num" : b_num ,
+				"c_child_member_id" : m_id ,
+				"c_child_parent_num" : p_num ,
+				"c_child_txt" : txt 
+			},
+			success : function(data) {
+				if(data == 1){
+					console.log("등록 성공")
+					$(select).fadeToggle('100');
+				}
+				
+			}
+		
+		});//ajaxfunction
+    	
+		
+	});
+	
+}
 
-
-
+// 답글 얻기
+function getchildComment() {
+	let select = "";
+	
+	$(document).on("click", '.commentPtag', function() {
+		select = $(this).parent().parent().parent().children().last();
+		let p_num = $(select).find('button').attr('id');
+		
+    	$.ajax({
+			type: "GET" ,
+			url : "child.comment.get",
+			data : {
+				"c_child_parent_num" : p_num 
+			},
+			success : function(data) {
+					console.log(data)
+					
+	    			$.each(data.childComments, function(i, c) {
+	    		
+	    				
+	    				let c_num = c.c_child_num
+	    				let c_date = c.c_child_date
+	    				let c_txt = c.c_child_txt
+	    				
+	    			});
+					
+				
+			}
+		
+		});//ajaxfunction
+    	
+		
+		
+		
+		
+	});
+	
+	
+	
+	
+}
 
 
 
@@ -225,6 +302,8 @@ $(function() {
 	getComments();
 	deleteComment();
 	commentUpdate();
+	childComment();
+	getchildComment();
 });
 
 

@@ -48,6 +48,10 @@ public interface Team2BoardMapper {
 
 	int getPostNum(Team2BoardDTO board);
 
+	int creatChildComment(Team2ChildCommentDTO t);
+
+	List<Team2ChildCommentDTO> getChildComments(Team2ChildCommentDTO t);
+
 	
 
 

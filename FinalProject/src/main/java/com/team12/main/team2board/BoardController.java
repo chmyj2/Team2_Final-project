@@ -1,7 +1,5 @@
 package com.team12.main.team2board;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -61,7 +59,7 @@ public class BoardController {
 
 	// 글 디테일
 	@RequestMapping(value = "post.detail", method = RequestMethod.GET)
-	public String post_detail(HttpServletResponse res ,HttpServletRequest req, Team2BoardDTO board, Team2CommentDTO comment) {
+	public String post_detail(HttpServletResponse res ,HttpServletRequest req, Team2BoardDTO board, Team2CommentDTO comment, Team2ChildCommentDTO childComment) {
 		lDAO.loginCheck(req);
 		if(bDAO.countCheck(req, board) == 0) {
 			bDAO.updateCount(res ,req, board);
@@ -141,9 +139,19 @@ public class BoardController {
 		return bDAO.deleteComment(t);
 	}
 	
+	// 대댓글 작성 
+	@RequestMapping(value="/child.comment.create", method = RequestMethod.POST, produces = "application/json; charset=utf8")
+	@ResponseBody
+	public int childComment_create(Team2ChildCommentDTO t)  {
+		return bDAO.create_childComment(t);
+	}
 	
-	
-	
+	// 답글 가져오기
+	@RequestMapping(value="/child.comment.get", method = RequestMethod.GET, produces = "application/json; charset=utf8")
+	@ResponseBody
+	public ChildCommentJson childComment_get(Team2ChildCommentDTO t)  {
+		return bDAO.get_childComment(t);
+	}
 	
 	
 	

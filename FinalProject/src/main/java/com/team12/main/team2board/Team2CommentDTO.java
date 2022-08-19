@@ -9,7 +9,6 @@ public class Team2CommentDTO {
 	private String comment_member_id;
 	private String comment_txt;
 	private Date comment_date;
-	
 	private int page;
 	private int start;
 	private int end;

@@ -155,6 +155,41 @@ set comment_txt = #{comment_txt}
 where comment_num = #{comment_num}
 </update>
 
+<!-- 대댓글 관련 -->
+
+<!-- 대댓글 작성하기 -->
+<insert id="creatChildComment">
+insert into team2_child_comment
+values(team2_child_comment_seq.nextval, #{c_child_board_num}, #{c_child_member_id}, #{c_child_parent_num}, #{c_child_txt}, sysdate)
+</insert>
+
+<select id="getChildComments" resultType="com.team12.main.team2board.Team2ChildCommentDTO">
+select * from team2_child_comment 
+where c_child_parent_num = #{c_child_parent_num}
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </mapper>

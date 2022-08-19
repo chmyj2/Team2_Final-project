@@ -83,15 +83,18 @@
       <div class="commentDiv">
       <div class="col-sm-8 commentBorder">
         	<div>
-        	user : <strong class="cStrong">${c.comment_member_id}</strong> 
-        	<em class="cEm"><fmt:formatDate value="${c.comment_date}" pattern="MM-dd HH:mm"/></em>
+        		user : <strong class="cStrong">${c.comment_member_id}</strong> 
+        		<em class="cEm"><fmt:formatDate value="${c.comment_date}" pattern="MM-dd HH:mm"/></em>
         	</div>
         	
         	<div>
-        	<span class="commentSpan">${c.comment_txt}</span>	 
-        	<input class="form-control input-sm toggleInput" type="text"><button class="btn btn-success btn-sm togglebtn">완료</button>
-        	</div> 
+        		<span class="commentSpan">${c.comment_txt}</span>	 
+        		<input class="form-control input-sm toggleInput" type="text"><button class="btn btn-success btn-sm togglebtn">완료</button>
+        	</div>
         	
+        	<div>
+        		<p class="commentPtag">▼ 답글 보기</p>
+        	</div>
       </div>
       
       <div class="col-sm-1">
@@ -106,9 +109,27 @@
      		</c:if>
       </div>
       
+  
+      
+      <div class="childComment" style="display: none;">
+      	<div class="row">
+     		<div class="col-sm-6">
+     			<input class="form-control input-sm commentChildInput" type="text" placeholder="답글 입력...">
+      		</div>
+      		
+     		<div class="col-sm-2">
+      			<button id="${c.comment_num}" class="btn btn-success btn-sm commentChildBtn">완료</button>
+      		</div>
+      	</div>
+      </div>
+      
+ 
+      
       </div>
     </c:forEach>
     </div>
+    
+
     
 	<ul class="pagination pagination-sm">
 		<c:forEach var="i" begin="1" end="${r}">
@@ -120,18 +141,7 @@
 
 </div>
 
-<%-- 
-      <div class="col-sm-1">
-      
-      		<a id="${num}" class="deleteAtag">
-             	<i class="fa fa-times"> 삭제</i>
-      		</a>
-      		<a id="${num}" class="updateAtag">
-            	<i class="fa fa-edit"> 수정</i>
-     		</a>
-      </div>
 
- --%>
 
 
 </body>

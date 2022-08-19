@@ -299,6 +299,23 @@ public class Team2BoardDAO {
 		return a;
 	}
 
+	public int create_childComment(Team2ChildCommentDTO t) {
+		
+		int a = ss.getMapper(Team2BoardMapper.class).creatChildComment(t);
+		
+		return a;
+	}
+
+	public ChildCommentJson get_childComment(Team2ChildCommentDTO t) {
+		
+		List<Team2ChildCommentDTO> child = ss.getMapper(Team2BoardMapper.class).getChildComments(t);
+		
+		ChildCommentJson childComment = new ChildCommentJson();
+		childComment.setChildComments(child);
+		
+		return childComment;
+	}
+
 
 	
 	

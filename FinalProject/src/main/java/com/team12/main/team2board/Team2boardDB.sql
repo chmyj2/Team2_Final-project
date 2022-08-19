@@ -20,9 +20,9 @@ create table team2_like(
 	like_member_id 	varchar2(30 char) not null,
 
 	constraint board_num_fk foreign key(like_board_num)
-	references team2_board(board_num) on delete cascade,
+		references team2_board(board_num) on delete cascade,
 	constraint member_id_fk foreign key(like_member_id)
-	references final_member(member_ID) on delete cascade
+		references final_member(member_ID) on delete cascade
 )
 create sequence team2_like_seq;
 -------------------------------------------------------------------------------------------------------------
@@ -35,12 +35,36 @@ create table team2_comment(
 	comment_date 		date not null,
 	
 	constraint c_board_num_fk foreign key(comment_board_num)
-	references team2_board(board_num) on delete cascade,
+		references team2_board(board_num) on delete cascade,
 	constraint c_member_id_fk foreign key(comment_member_id)
-	references final_member(member_ID) on delete cascade
+		references final_member(member_ID) on delete cascade
 )
 create sequence team2_comment_seq;
 ---------------------------------------------------------------------------
+--대댓글
+create table team2_child_comment(
+	c_child_num			number(6) primary key,
+	c_child_board_num 	number(6) not null,
+	c_child_member_id 	varchar2(30 char) not null,
+	c_child_parent_num	number(6) not null,
+	c_child_txt			varchar2(300 char) not null,
+	c_child_date		date not null,
+	
+	constraint child_board_num_fk foreign key(c_child_board_num)
+		references team2_board(board_num) on delete cascade,
+	constraint child_member_id_fk foreign key(c_child_member_id)
+		references final_member(member_ID) on delete cascade,
+	constraint child_parent_num_fk foreign key(c_child_parent_num)
+		references team2_comment(comment_num) on delete cascade
+)
+create sequence team2_child_comment_seq;
+
+select * from team2_child_comment where c_child_parent_num = 139
+
+insert into team2_child_comment
+values(team2_child_comment_seq.nextval, 107, 'mz', 139, '안녕', sysdate)
+
+---------------------------------------------------------------------------------
 
 insert into team2_comment values(team2_comment_seq.nextval, 47, 'mz', 'hello', sysdate)
 
