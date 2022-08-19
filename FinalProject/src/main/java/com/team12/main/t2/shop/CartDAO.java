@@ -101,6 +101,28 @@ public class CartDAO {
 		}
 		
 	}
+
+	public void goPurchasePage(HttpServletRequest request, Product p, Cart c, String cartqtAndNum) {
+
+
+		String[] ArraysStr = cartqtAndNum.split("@|,");
+		
+		
+		
+		for (String s : ArraysStr) {
+			System.out.println(s);
+			
+			}
+			
+		
+		
+			//p.setProductNum(Integer.parseInt(s));
+			//ss.getMapper(ProductMapper.class).getProduct(p);
+		}
+		
+		
+		
+	}
 	
 	
-}
+

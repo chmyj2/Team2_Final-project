@@ -11,3 +11,14 @@ create table team1_review_board(
 create sequence team1_review_board_seq;
 select * from team1_review_board
 
+insert into team1_review_board 
+	values(team1_review_board_seq.nextval,'leeyoky','제목','내용', sysdate, 'about5.png', '1')
+
+		select * from (
+		select rownum as rn, review_num, review_id, review_title, review_txt,
+				review_date, review_img, review_star
+				from (
+				select * from team1_review_board
+				order by review_date desc
+				)
+	)

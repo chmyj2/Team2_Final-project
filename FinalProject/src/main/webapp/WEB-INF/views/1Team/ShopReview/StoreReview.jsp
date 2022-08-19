@@ -7,17 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-				<div>
-				  <h3>병원 이름 </h3>
-				  
-				  	<span>
-				  	<span>일반</span>
-				  	<span>2차 병원</span>
-				  	</span>
-				  	
-				  
-				</div>
-	
+뚜치따치뚜치따치
 </body>
 </html>

@@ -260,7 +260,7 @@ public class LoginDAO {
 		
 			//아이디있는 지 확인
 			System.out.println(m.getMember_ID());
-		return ss.getMapper(Team2loginMapper.class).checkIdNaver(m);
+		    return ss.getMapper(Team2loginMapper.class).checkIdNaver(m);
 	}
 
 
@@ -295,6 +295,7 @@ public class LoginDAO {
 			String member_PW = " ";
 			int member_linkWhere = 3;
 			String member_phoneNum = " "; 
+			String member_paper="비동의";
 			
 			
 			m.setMember_ID(member_ID);
@@ -306,7 +307,7 @@ public class LoginDAO {
 			m.setMember_email(member_email);
 			m.setMember_address(member_address);
 			m.setMember_birth(null);
-			
+			m.setMember_paper(member_paper);
 			
 			if (ss.getMapper(Team2loginMapper.class).join(m) == 1) {
 				System.out.println("성공");
@@ -377,6 +378,43 @@ public class LoginDAO {
 			System.out.println("2등록실패------------------------");
 		}
 		
+		
+	}
+
+
+
+	public void splitAddr(HttpServletRequest req) {
+		// 주소 ! 기준으로 자르기
+		Membert2 m = (Membert2) req.getSession().getAttribute("loginMember");
+		if (m.getMember_address() != null) {
+			String m_addr = m.getMember_address();
+			String[]  m_addr2 = m_addr.split("!");
+			req.setAttribute("addr", m_addr2);
+			
+		}
+		
+	}
+
+
+
+	public void memberInfoUpdate(Membert2 m, HttpServletRequest req) {
+		// 회원정보 수정하는 기능
+		Membert2 loginMember = (Membert2) req.getSession().getAttribute("loginMember");
+		
+		String addr1 = req.getParameter("m_addr1");
+		String addr2 = req.getParameter("m_addr2");
+		String addr3 = req.getParameter("m_addr3");
+		
+		
+		String member_address = addr1 +"!"+addr2+"!"+addr3;
+		m.setMember_address(member_address);
+		
+		if (ss.getMapper(Team2loginMapper.class).memberUpdate(m)==1) {
+			System.out.println("------------------정보수정완료");
+			req.getSession().setAttribute("loginMember", m);
+		}else {
+			System.out.println("-----------------------정보수정 실패");
+		}
 		
 	}
 
