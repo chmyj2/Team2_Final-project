@@ -79,7 +79,7 @@
 					<span>-프로필 사진-</span> <br>
 					<input class="my_photo1" name="m_photo" type="file">
 				</div> -->
-				
+				<input type="hidden" name="member_linkWhere" value="1">
 				<button class="join_btn">
 				<span>가입</span>
 				</button>
