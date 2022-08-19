@@ -6,7 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.oreilly.servlet.MultipartRequest;
 import com.team12.main.team1.join.MemberDAO;
 
 @Controller
@@ -17,13 +21,30 @@ public class Team1ReviewController {
 	
 	@Autowired
 	private Team1ReviewDAO rDAO;
+
 	
-	@RequestMapping(value = "/write.review", method = RequestMethod.GET)
-	public String writeReview(HttpServletRequest req) {
+	// 전체 리뷰 보기
+	@RequestMapping(value = "show.review", method = RequestMethod.GET)
+	public String showReview(HttpServletRequest req, Team1ReviewDTO review) {
 		
 		mDAO.loginCheck(req);
-//		jsp 아직 안만듦.
-		req.setAttribute("contentPage", "/review.jsp");
+		rDAO.showReviewList(req, review);
+		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
+		
+		return "1Team/t1_index";
+	}
+	
+	
+	
+	
+//	리뷰 쓰기
+	@RequestMapping(value = "write.review1", method = RequestMethod.POST)
+	public String writeReview(HttpServletRequest req, MultipartHttpServletRequest mr) {
+	
+		mDAO.loginCheck(req);
+		rDAO.writeReview(req, mr);
+	//	rDAO.showReviewList(req, review);
+		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail");
 		
 		return "1Team/t1_index";
 	}
