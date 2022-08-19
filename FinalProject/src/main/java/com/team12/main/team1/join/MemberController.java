@@ -1,7 +1,5 @@
 package com.team12.main.team1.join;
 
-import java.io.IOException;
-
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.team12.main.t2Login.Membert2;
-import com.team12.main.team1.join.*;
 @Controller
 public class MemberController {
 	
@@ -26,8 +22,9 @@ public class MemberController {
 	private	MemberDAO mDAO;
 	
 	
-	@Autowired
-	private HttpSession session;
+	 @Autowired
+	 private MemberDAO kakaoService;
+	
 	
 	
 	
@@ -66,7 +63,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "/member.login", method = RequestMethod.POST)
 	public String memberLogin(Member m, HttpServletRequest req) {
-		
+		System.out.println(m.getMember_ID());
 		// 로그인
 		mDAO.login(m, req);
 		mDAO.loginCheck(req);
@@ -76,36 +73,24 @@ public class MemberController {
 	}
 
 	
+	   @RequestMapping("member.kakao")
+	    public String home(@RequestParam(value = "code", required = false) String code, Member m, HttpServletRequest req, HttpSession session) throws Exception{
+		   System.out.println("#########" + code);
+//	        String access_Token = kakaoService.getAccessToken(code);
+//	        HashMap<String, Object> userInfo = kakaoService.getUserInfo(access_Token);
+//	        System.out.println("###access_Token#### : " + access_Token);
+//	        System.out.println("###userInfo#### : " + userInfo.get("email"));
+//	        System.out.println("###nickname#### : " + userInfo.get("nickname"));
+//	        System.out.println("###profile_image#### : " + userInfo.get("profile_image"));
+	        
+//	        req.setAttribute("loginPage", "../LDH/loginSuccess.jsp");
+//	        req.setAttribute("contentPage", "t1_home.jsp");
+	        mDAO.joinKakao(req, code);
+	        return "1Team/t1_index";
+	    }
 	
 	
-	@RequestMapping(value="/member.kakao", method=RequestMethod.GET)
-	public String kakaoLogin(@RequestParam(value = "code", required = false) String code) throws Exception {
-		System.out.println("#########" + code);
-		String access_Token = mDAO.getAccessToken(code);
-		
-		// userInfo의 타입을 Member로 변경 및 import.
-		Member userInfo = mDAO.getUserInfo(access_Token);
-		
-		System.out.println("###access_Token#### : " + access_Token);
-		System.out.println("###nickname#### : " + userInfo.getMember_name());
-		System.out.println("###email#### : " + userInfo.getMember_email());
-		
-		// 아래 코드가 추가되는 내용
-		session.invalidate();
-		// 위 코드는 session객체에 담긴 정보를 초기화 하는 코드.
-		session.setAttribute("kakaoN", userInfo.getMember_name());
-		session.setAttribute("kakaoE", userInfo.getMember_email());
-		// 위 2개의 코드는 닉네임과 이메일을 session객체에 담는 코드
-		// jsp에서 ${sessionScope.kakaoN} 이런 형식으로 사용할 수 있다.
-		
-		return "1Team/t1_index";
-    	
-	}
-	
-
-	
-	
-	
+	   
 
 	@RequestMapping(value = "member.info", method = RequestMethod.GET)
 	public String memberInfo(HttpServletRequest req) {

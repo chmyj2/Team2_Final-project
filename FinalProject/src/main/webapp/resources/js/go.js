@@ -9,7 +9,6 @@ function goJoin() {
 	alert(ddd);
 }
 
-
 function goMemberInfo() {
 	location.href = "member.info";
 }
