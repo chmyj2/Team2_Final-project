@@ -13,11 +13,12 @@ import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 
@@ -96,9 +97,12 @@ public class MemberDAO {
 	
 	public void splitAddr(HttpServletRequest req) {
 		Member m = (Member) req.getSession().getAttribute("loginMember");
-		String jm_addr = m.getMember_address();
-		String[] jm_addr2 = jm_addr.split("!");
-		req.setAttribute("addr", jm_addr2);
+		if (m.getMember_address() != null) {
+			
+			String jm_addr = m.getMember_address();
+			String[] jm_addr2 = jm_addr.split("!");
+			req.setAttribute("addr", jm_addr2);
+		}
 
 	}
 
@@ -132,15 +136,6 @@ public class MemberDAO {
    
 		m.setMember_address(jm_addr);
         m.setMember_email(req.getParameter("jm_email"));
-		
-//        System.out.println(m.getMember_ID());
-//        System.out.println(m.getMember_PW());
-//        System.out.println(m.getMember_name());
-//        System.out.println(m.getMember_phoneNum());
-//        System.out.println(jm_addr);
-//        System.out.println(m.getMember_email());
-//        
-
 
 
 		if (ss.getMapper(Team1joinMapper.class).update(m) == 1) {
@@ -260,11 +255,11 @@ public class MemberDAO {
     }
 	
 	// 카카오 유저 정보 가져오기
-	private HashMap<String, Object>  getUserInfo (String access_Token) {
+	private Member getUserInfo (String access_Token) {
 
         //    요청하는 클라이언트마다 가진 정보가 다를 수 있기에 HashMap타입으로 선언
-        HashMap<String, Object> userInfo = new HashMap<>();
         String reqURL = "https://kapi.kakao.com/v2/user/me";
+        Member m = null;
         try {
             URL url = new URL(reqURL);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -279,83 +274,80 @@ public class MemberDAO {
             BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 
             String line = "";
-            String result = "";
+            String result = br.readLine();
 
-            while ((line = br.readLine()) != null) {
-                result += line;
-            }
+            //while ((line = br.readLine()) != null) {
+              //  result += line;
+            //}
             System.out.println("response body : " + result);
 
-            JsonParser parser = new JsonParser();
+           /* JsonParser parser = new JsonParser();
             JsonElement element = parser.parse(result);
 
             JsonObject properties = element.getAsJsonObject().get("properties").getAsJsonObject();
             JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
+            JsonObject kakao_id = element.getAsJsonObject().get("id").getAsJsonObject();
 
+            String id = kakao_id.getAsJsonObject().get("id").getAsString();
             String nickname = properties.getAsJsonObject().get("nickname").getAsString();
 //            String profile_image = properties.getAsJsonObject().get("profile_image").getAsString();
             String email = kakao_account.getAsJsonObject().get("email").getAsString();
-
-            userInfo.put("nickname", nickname);
-            userInfo.put("email", email);
-//            userInfo.put("profile_image", profile_image);
-
-        } catch (IOException e) {
+*/
+            
+            JSONParser jp = new JSONParser();
+            JSONObject jo = (JSONObject) jp.parse(result);
+            System.out.println(jo);
+            
+            long id = (long) jo.get("id");
+            System.out.println(id);
+            
+            JSONObject kakaoaccount = (JSONObject) jo.get("kakao_account");
+            JSONObject profile = (JSONObject) kakaoaccount.get("profile");
+            String nickname = (String) profile.get("nickname");
+            System.out.println(nickname);
+            
+            String email = (String) kakaoaccount.get("email");
+            System.out.println(email);
+            
+            m = new Member();
+            m.setMember_ID(id+"");
+            m.setMember_name(nickname);
+            m.setMember_email(email);
+            m.setMember_linkWhere(2);
+            
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        return userInfo;
+        return m;
     }
 
 	
 	public void joinKakao(HttpServletRequest req, String code) {
 		String tempToken = getAccessToken(code);
-		HashMap<String, Object> userInfo = getUserInfo(tempToken);
-		 
+		Member m = getUserInfo(tempToken);
+		 System.out.println("유저 정보" + m);
 //		kakaoMember tempMember = new kakaoMember();
 //		tempMember.setK_acTokken(tempToken);
 //		tempMember.setK_nickname(userInfo.get("nickname").toString());
 //		tempMember.setK_email(userInfo.get("email").toString());
 //		tempMember.setK_memberID("");
-		
-		Member tempMember = new Member();
-		tempMember.setMember_ID("");
-		tempMember.setMember_name(userInfo.get("nickname").toString());
-		tempMember.setMember_email(userInfo.get("email").toString());
-		tempMember.setMember_sex("");
-		tempMember.setMember_address("");
-		tempMember.setMember_PW("");
-		tempMember.setMember_linkWhere(3);
-		tempMember.setMember_phoneNum("");
-		
-		
+		if(ss.getMapper(Team1joinMapper.class).getMemberByID(m) != null) {
+			System.out.println("----------------로그인 성공");
+			req.getSession().setAttribute("loginMember",m);
+			req.getSession().setMaxInactiveInterval(60 * 10);
+			
+		}else {
+			if(ss.getMapper(Team1joinMapper.class).kakaoJoin(m)==1) {
+				System.out.println("등록 성공!!!!!");
+			};
+		}
 		
 		
 		
-		ss.getMapper(Team1joinMapper.class).kakaoJoin(tempMember);
 	}
-	
-//	String member_ID =req.getParameter("member_ID");
-//	String member_name = req.getParameter("member_name");
-//	String member_email = req.getParameter("member_email");
-//	String member_sex = req.getParameter("member_sex");
-//	
-//	String member_address = " ";
-//	String member_PW = " ";
-//	int member_linkWhere = 3;
-//	String member_phoneNum = " "; 
-//	
-//	
-//	m.setMember_ID(member_ID);
-//	m.setMember_PW(member_PW);
-//	m.setMember_linkWhere(member_linkWhere);
-//	m.setMember_name(member_name);
-//	m.setMember_sex(member_sex);
-//	m.setMember_phoneNum(member_phoneNum);
-//	m.setMember_email(member_email);
-//	m.setMember_address(member_address);
-//	m.setMember_birth(null);
+
 //	
 	
 	}

@@ -8,8 +8,10 @@ insert into final_member values(#{member_ID},#{member_PW},#{member_linkWhere},#{
 </insert>
 
 <insert id="kakaoJoin">
-insert into kakao_table values(#{k_acTokken},#{k_email},#{k_nickname},#{k_memberID})
+insert into final_member values(#{member_ID},' ',2,#{member_name},CURRENT_DATE,' ',' ',' ',#{member_email},CURRENT_DATE,'비동의')
 </insert>
+
+
 
 <select id="getMemberByID" resultType="com.team12.main.team1.join.Member">
 
