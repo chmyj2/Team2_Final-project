@@ -54,9 +54,9 @@
            <li class="t2-indexDropdown">
            <a class="t2-indexDropbtn">상품 판매</a>
            <ul class="t2-indexDropdown-content">
-            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=dog">강아지</a></li>                     
-            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=cat">고양이</a></li>                 
-            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=etc">etc</a></li>                 
+            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=dog&toy_category=snack&toy=toy">강아지</a></li>                     
+            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=cat&toy_category=snack&toy=toy">고양이</a></li>                 
+            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=etc&toy_category=snack&toy=toy">etc</a></li>                 
             </ul>
            </li>
             <li class="t2-indexDropdown">

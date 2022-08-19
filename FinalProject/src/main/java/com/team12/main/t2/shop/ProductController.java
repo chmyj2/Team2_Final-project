@@ -31,14 +31,15 @@ public class ProductController {
 	
 	// 상품페이지
 	@RequestMapping(value = "/viewProductPage.go", method = RequestMethod.GET)
-	public String viewProductPage(HttpServletRequest request,Product p) {
+	public String viewProductPage(HttpServletRequest request,Product p,
+			@RequestParam("toy") String toy) {
 		// 진열된 상품가져오는일
 		
+		pDAO.getSnack(request,p);
+		pDAO.getToy(request,p,toy);
 		pDAO.getPetCategoryProduct(request,p);
-		
 		lDAO.loginCheck(request);
-		//request.setAttribute("contentPage", "YJ/viewProductPage.jsp");
-		request.setAttribute("contentPage", "YJ/test.jsp");
+		request.setAttribute("contentPage", "YJ/viewProductPage.jsp");
 		
 		
 		return "2Team/t2_index";
