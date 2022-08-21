@@ -27,8 +27,13 @@ $(function() {
 
 
 function goPurchasePage() {
-   
+	   
+	
 	$('#purchaseForm').submit();
+	
+	
+	
+	
 	
 }
 
@@ -125,11 +130,8 @@ $(document).ready(function(){
   });
   
   $(".qt-plus").click(function(){
-	let plusval = parseInt($(this).parent().children(".qt").html()) + 1;
-    $(this).parent().children(".qt").html(plusval);
-    $(this).parent().find('input').val(plusval);
+    $(this).parent().children(".qt").html(parseInt($(this).parent().children(".qt").html()) + 1);
     
-
     $(this).parent().children(".full-price").addClass("added");
     
     var el = $(this);
@@ -137,12 +139,11 @@ $(document).ready(function(){
   });
   
   $(".qt-minus").click(function(){
+    
     child = $(this).parent().children(".qt");
     
-    childInput = child.parent().find("input");
     if(parseInt(child.html()) > 1) {
       child.html(parseInt(child.html()) - 1);
-      childInput.val(parseInt(child.html()));
     }
     
     $(this).parent().children(".full-price").addClass("minused");
@@ -553,7 +554,7 @@ background: #f0f0f0;
 		<section id="cart" class="cart">  
 		
 		<form action="test" id="purchaseForm">
-		<c:forEach items="${Product }" var="p">
+		<c:forEach items="${purchasedProducts }" var="p">
 			<article class="product">
 				<header>
 					<a class="remove">
@@ -562,19 +563,17 @@ background: #f0f0f0;
 						<h3>Remove product</h3>
 						<input  type="hidden" name="thumbnail" value="${p.productThumbnail }">
 						<input  type="hidden" name="name" value="${p.productName }">
+						<input  type="hidden" name="quantity" value="${p.cart_ProductQuantity }">
 						<input  type="hidden" name="price" value="${p.productPrice }">
 					</a>
 					
 				</header>
 				<div class="content">
 					<h1>${p.productName }</h1>
-					${p.productInfo }
 				</div>
 				<footer class="content">
-				<input name="quantity" type="hidden" value="${p.cart_ProductQuantity }">
 					<span class="qt-minus">-</span>
-					<span class="qt">${p.cart_ProductQuantity } </span>
-						
+					<span class="qt">${p.cart_ProductQuantity }</span>
 					<span class="qt-plus">+</span>
 					<span class="full-price">${p.productPrice * p.cart_ProductQuantity }</span>
 					<h2 class="price">${p.productPrice}</h2>
