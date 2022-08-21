@@ -78,8 +78,8 @@ $(document).ready(function(){
 	
   $(".remove").click(function(){
 	  
-	  let cartNum = $(this).parent().find('input').val() 
-
+	  let cartNum = $(this).parent().find('.cartNum').val() 
+	alert(cartNum);
 	  
 	 $.ajax({
 			url : "delete.cart",
@@ -563,6 +563,7 @@ background: #f0f0f0;
 						<input  type="hidden" name="thumbnail" value="${p.productThumbnail }">
 						<input  type="hidden" name="name" value="${p.productName }">
 						<input  type="hidden" name="price" value="${p.productPrice }">
+						<input  type="hidden" class="cartNum" name="cartNum" value="${p.cartNum }">
 					</a>
 					
 				</header>
