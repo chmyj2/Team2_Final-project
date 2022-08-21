@@ -13,8 +13,8 @@
 <script type="text/javascript">
 
 function goPurchasePage(productNum) {
-	var quanId = document.getElementById("quantityInput");
-	location.href="purchasePage.go?productNum=" + productNum + "&quanId=" + quanId.value;
+	$('#purchaseForm').submit();
+	
 }
 
 function goCartView(productNum){
@@ -312,10 +312,16 @@ function goOrderViewController(){
   </style>
 </head>
 <body>
+
+
     <div class="container">
           <div class="heading-section">
+          <form action="test" id="purchaseForm">
               <h2>Product Details</h2>
               <input type="hidden" value="${Product.productNum }"id="cart_ProductNum" name="cart_ProductNum">
+              <input  type="hidden" name="thumbnail" value="${Product.productThumbnail }">
+						<input  type="hidden" name="name" value="${Product.productName }">
+						<input  type="hidden" name="price" value="${Product.productPrice }">
 					<c:choose>
 					<c:when test="${sessionScope.loginMember.member_ID !=null }">
 					<input type="hidden" value="${sessionScope.loginMember.member_ID }" id="cart_UserID" name="cart_UserID">
@@ -362,9 +368,12 @@ function goOrderViewController(){
                 <div class = "productStockDiv">
 					${Product.productName}
 					<input id="quantityInput" type = "number" onchange="quantityChange(this,${Product.productPrice },${Product.productStock})"
-					name = "cart_ProductQuantity" style ="width:50px" value = 1>개
+					name = "quantity" style ="width:50px" value = 1>개
 					<span id = "totalPrice">${Product.productPrice }</span> 원 재고 ${Product.productStock}개<br>
 				</div>
+				</form>
+				
+				
 				<div id="purchaseBtnDiv">
 					<c:choose>
 				<c:when test="${Product.productStock > 0}">

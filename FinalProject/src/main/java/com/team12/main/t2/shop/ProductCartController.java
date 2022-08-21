@@ -27,6 +27,8 @@ public class ProductCartController {
 	
 	
 	
+	
+	
 	// 이동--------------------------------------------------------------------------------------------------------------------------
 	
 	// 장바구니 가기
@@ -51,14 +53,15 @@ public class ProductCartController {
 		
 		// 카트에서 구매페이지가기
 		@RequestMapping(value = "/test", method = RequestMethod.GET)
-		public String test(HttpServletRequest request) {
+		public String test(HttpServletRequest request,Product p) {
+			
 			if (lDAO.loginCheck(request)) {
 			// 장바구니 가져오기
+			lDAO.splitAddr(request);
 			cDAO.goPurchasePage(request);
 			request.setAttribute("contentPage", "YJ/purchasedPage.jsp");
 			}else {
-				System.out.println("로그인창으로보내기");
-				request.setAttribute("contentPage", "t2login/t2_login.jsp");
+				request.setAttribute("contentPage", "YJ/purchasePageCheckMember.jsp");
 			}
 			return "2Team/t2_index";
 		}
