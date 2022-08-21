@@ -181,6 +181,7 @@ public class LoginController {
 		lDAO.joinBusiness(req,v);
 		
 		//로그인 체크
+		lDAO.login_business(req,v);
 		lDAO.loginCheck(req);
 		req.setAttribute("contentPage", "t2login/t2_login.jsp");
 		
