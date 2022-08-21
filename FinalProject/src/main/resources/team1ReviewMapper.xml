@@ -9,8 +9,13 @@
 <!-- 리뷰쓰기 -->
 <insert id="writeReview" parameterType="map">
 	insert into team1_review_board values(
-	team1_review_board_seq.nextval,'mz',#{review_title},#{review_text}, sysdate, #{review_img}, 5)
+	team1_review_board_seq.nextval,'leeyoky',#{review_title},#{review_text}, sysdate, #{review_img}, 5)
 </insert>
+
+<!-- 리뷰 삭제하기 -->
+<delete id="deleteReview">
+	delete from team1_review_board where review_num = #{review_num}
+</delete>
 
 
 

@@ -43,7 +43,7 @@ public class ShopManagerController {
 			//페이징하기
 			//로그인체크
 	
-		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopMain.jsp");
+		req.setAttribute("contentPage", "ShopPageYUJIN/team1ShopForDog.jsp");
 		return "1Team/t1_index";
 	}
 	// Yk Store For Cat Page입니다
