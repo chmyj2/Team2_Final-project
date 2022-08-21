@@ -21,6 +21,29 @@ $(function() {
 		     $('#totalPrice').text(total + 2500);
 		     
 		     
+		     
+		     
+		 $('#sameAddressControl').click(function(){
+			 $("#addrSearchBtn").css("display","inline");
+		     var same = this.checked;
+		     $('#billAddress').val(same ? $('#shipAddress').text():'');
+		     $('#billCity').val(same ? $('#shipCity').text():'');
+		     $('#billState').val(same ? $('#shipState').text():'');
+		     $('#billState1').val(same ? $('#shipState1').text():'');
+		     $('#billState2').val(same ? $('#shipState2').text():'');
+		     $('#billZip').val(same ? $('#shipZip').val():'');
+		    	  if(same == true){
+		    	      $('#billingAddress input').filter('input:text')
+		    	     	 .attr('readonly',true)
+		    	      	 .css('opacity', 0.5);
+		    	 	$("#addrSearchBtn").css("display","none");
+		    	      	}else{
+		    	      $('#billingAddress input').filter('input:text').attr('readonly',false)
+		    	      	 .css('opacity', 1);
+		    	   }
+		   });
+		     
+		     
         
 });
 
@@ -32,140 +55,16 @@ function goPurchasePage() {
 	$('#purchaseForm').submit();
 	
 	
-	
-	
-	
 }
 
 
 
-
-
-var check = false;
-
-function changeVal(el) {
-  var qt = parseFloat(el.parent().children(".qt").html());
-  var price = parseFloat(el.parent().children(".price").html());
-  var eq = Math.round(price * qt * 100) / 100;
   
-  el.parent().children(".full-price").html( eq );
-  
-  changeTotal();			
-}
-
-function changeTotal() {
-  
-  var price = 0;
-  
-  $(".full-price").each(function(index){
-    price += parseFloat($(".full-price").eq(index).html());
-  });
-  
-  price = Math.round(price * 100) / 100;
-  var tax = 2500
-  var fullPrice = Math.round((price + tax) *100) / 100;
-  
-  if(price == 0) {
-    fullPrice = 0;
-  }
-  
-  $(".subtotal span").html(price);
-  $(".tax span").html(tax);
-  $(".total span").html(fullPrice);
-}
-
-$(document).ready(function(){
-	
-	  let thisCategory = '';
-      $('input', $('.cart')).each(function(i, e){
-    	  
-      });
-	
-  $(".remove").click(function(){
-	  
-	  let cartNum = $(this).parent().find('input').val() 
-
-	  
-	 $.ajax({
-			url : "delete.cart",
-			type : "GET",
-			dataType : "text",
-			data :	{"cartNum" : cartNum},
-			success : function(getData) {
-				console.log(getData);
-				if (getData == 1) {
-					console.log("성공");
-					
-					
-				}else {
-					console.log("실패");
-				}
-				
-			}
-			
-		});
-	  
-	  
-	  var el = $(this);
-	    el.parent().parent().addClass("removed");
-	    window.setTimeout(
-	      function(){
-	        el.parent().parent().slideUp('fast', function() { 
-	          el.parent().parent().remove(); 
-	          if($(".product").length == 0) {
-	            if(check) {
-	              $("#cart").html("<h1>The shop does not function, yet!</h1><p>If you liked my shopping cart, please take a second and heart this Pen on <a href='https://codepen.io/ziga-miklic/pen/xhpob'>CodePen</a>. Thank you!</p>");
-	            } else {
-	              $("#cart").html("<h1>장바구니가 비어있어요!</h1>");
-	            }
-	          }
-	          changeTotal(); 
-	        });
-	      }, 200);
-   
-    
-    
-    
-    
-  });
-  
-  $(".qt-plus").click(function(){
-    $(this).parent().children(".qt").html(parseInt($(this).parent().children(".qt").html()) + 1);
-    
-    $(this).parent().children(".full-price").addClass("added");
-    
-    var el = $(this);
-    window.setTimeout(function(){el.parent().children(".full-price").removeClass("added"); changeVal(el);}, 150);
-  });
-  
-  $(".qt-minus").click(function(){
-    
-    child = $(this).parent().children(".qt");
-    
-    if(parseInt(child.html()) > 1) {
-      child.html(parseInt(child.html()) - 1);
-    }
-    
-    $(this).parent().children(".full-price").addClass("minused");
-    
-    var el = $(this);
-    window.setTimeout(function(){el.parent().children(".full-price").removeClass("minused"); changeVal(el);}, 150);
-  });
-  
-  window.setTimeout(function(){$(".is-open").removeClass("is-open")}, 1200);
-  
-  
-});
 
 </script>
 
 <style type="text/css">
 
-body {
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
-}
 
 .clearfix {
   content: "";
@@ -173,68 +72,10 @@ body {
   clear: both;	
 }
 
-#site-header, #site-footer {
-	background: #fff;
-}
-
-#site-header {
-	margin: 0 0 30px 0;
-}
-
-#site-header h1 {
-	font-size: 31px;
-	font-weight: 300;
-	padding: 40px 0;
-	position: relative;
-	margin: 0;
-}
-
-a {
-	color: #000;
-	text-decoration: none;
-
-	-webkit-transition: color .2s linear;
-	-moz-transition: color .2s linear;
-	-ms-transition: color .2s linear;
-	-o-transition: color .2s linear;
-	transition: color .2s linear;
-}
-
-a:hover {
-	color: #53b5aa;
-}
-
-#site-header h1 span {
-	color: #53b5aa;
-}
-
-#site-header h1 span.last-span {
-	background: #fff;
-	padding-right: 150px;
-	position: absolute;
-	left: 217px;
-
-	-webkit-transition: all .2s linear;
-	-moz-transition: all .2s linear;
-	-ms-transition: all .2s linear;
-	-o-transition: all .2s linear;
-	transition: all .2s linear;
-}
-
-#site-header h1:hover span.last-span, #site-header h1 span.is-open {
-	left: 363px;
-}
-
-#site-header h1 em {
-	font-size: 16px;
-	font-style: normal;
-	vertical-align: middle;
-}
-
 .container {
 	font-family: 'Open Sans', sans-serif;
 	margin: 0 auto;
-	width: 980px;
+	width: 100%;
 }
 
 #cart {
@@ -260,10 +101,6 @@ a:hover {
 	color: #000;
 }
 
-.product.removed {
-	margin-left: 980px !important;
-	opacity: 0;
-}
 
 .product {
 	border: 1px solid #eee;
@@ -301,37 +138,6 @@ a:hover {
 	height: 195px;
 }
 
-.product header:hover img {
-	opacity: .7;
-}
-
-.product header:hover h3 {
-	bottom: 73px;
-}
-
-.product header h3 {
-	background: #53b5aa;
-	color: #fff;
-	font-size: 22px;
-	font-weight: 300;
-	line-height: 49px;
-	margin: 0;
-	padding: 0 30px;
-	position: absolute;
-	bottom: -50px;
-	right: 0;
-	left: 0;
-
-	-webkit-transition: bottom .2s linear;
-	-moz-transition: bottom .2s linear;
-	-ms-transition: bottom .2s linear;
-	-o-transition: bottom .2s linear;
-	transition: bottom .2s linear;
-}
-
-.remove {
-	cursor: pointer;
-}
 
 .product .content {
 	box-sizing: border-box;
@@ -382,10 +188,6 @@ a:hover {
 	transition: margin .15s linear;
 }
 
-.qt, .qt-plus, .qt-minus {
-	display: block;
-	float: left;
-}
 
 .qt {
 	font-size: 19px;
@@ -394,29 +196,15 @@ a:hover {
 	text-align: center;
 }
 
-.qt-plus, .qt-minus {
-	background: #f0f0f0;
+.qt-minus {
 	border: none;
-	font-size: 30px;
-	font-weight: 300;
+	font-size: 25px;
+	font-weight: 200;
 	height: 100%;
 	padding: 0 20px;
-	-webkit-transition: background .2s linear;
-	-moz-transition: background .2s linear;
-	-ms-transition: background .2s linear;
-	-o-transition: background .2s linear;
-	transition: background .2s linear;
 }
 
-.qt-plus:hover, .qt-minus:hover {
-	background: #53b5aa;
-	color: #fff;
-	cursor: pointer;
-}
 
-.qt-plus {
-	line-height: 50px;
-}
 
 .qt-minus {
 	line-height: 47px;
@@ -499,24 +287,6 @@ a:hover {
 	position: absolute;
 }
 
-.color {
-	width: 40px;
-	height: 40px;
-	right: -40px;
-}
-
-.red {
-	background: #cb5a5e;
-}
-
-.yellow {
-	background: #f1c40f;
-}
-
-.blue {
-	background: #3598dc;
-}
-
 .minused {
 	margin: 0 50px 0 0 !important;
 }
@@ -537,6 +307,53 @@ background: #f0f0f0;
     padding: 0 30px;
 }
 
+
+div.minimalistBlack {
+  border: 3px solid red;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.divTable.minimalistBlack .divTableCell, .divTable.minimalistBlack .divTableHead {
+  border: 1px solid #000000;
+  padding: 5px 4px;
+}
+.divTable.minimalistBlack .divTableBody .divTableCell {
+  font-size: 13px;
+}
+.divTable.minimalistBlack .divTableHeading {
+  background: #CFCFCF;
+  background: -moz-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+  background: -webkit-linear-gradient(top, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+  background: linear-gradient(to bottom, #dbdbdb 0%, #d3d3d3 66%, #CFCFCF 100%);
+  border-bottom: 3px solid #000000;
+}
+.divTable.minimalistBlack .divTableHeading .divTableHead {
+  font-size: 15px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+}
+
+/* DivTable.com */
+.divTable{ display: table; }
+.divTableRow { display: table-row; }
+.divTableHeading { display: table-header-group;}
+.divTableCell, .divTableHead { display: table-cell;}
+.divTableHeading { display: table-header-group;}
+.divTableFoot { display: table-footer-group;}
+.divTableBody { display: table-row-group;}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+
 </style>
 
 
@@ -545,11 +362,95 @@ background: #f0f0f0;
 
 	<header id="site-header">
 		<div class="container">
-			<h1>Shopping cart <span>[</span> <em><a href="https://codepen.io/tag/rodeo-007" target="_blank">CodePen Challange</a></em> <span class="last-span is-open">]</span></h1>
+			<h1>배송 및 구매</h1>
 		</div>
 	</header>
-
-	<div class="container">
+	
+	
+	<c:choose>
+	<c:when test="${sessionScope.loginMember !=null }">
+<fieldset>
+<div style="margin: 50px;">
+      <div style=" margin-bottom: 20px;border: 3px solid #000000;">
+      	<div>Order / Payment</div>
+      </div>
+      <div style=" margin-top: 20px;border: 3px solid #000000;">
+      	<div>회원 정보</div>
+      </div>
+      <div class="divTable minimalistBlack" id="shippingAddress">
+      	<div class="divTableHeading">
+    		<div class="divTableRow">
+    		<div class="divTableHead">Recipient Info</div>
+    		<div class="divTableHead">주문자 정보</div>
+    		</div>
+  		</div>
+  		<div class="divTableBody">
+    		<div class="divTableRow">
+      			<div class="divTableCell">주문자</div>
+      			<div class="divTableCell"><span name="shipAddress" id="shipAddress">${sessionScope.loginMember.member_ID }</span></div>
+      		</div>
+    		<div class="divTableRow">
+      			<div class="divTableCell">휴대전화</div>
+      			<div class="divTableCell"><span name="shipCity" id="shipCity">${sessionScope.loginMember.member_phoneNum }</span></div>
+    		</div>
+    		<div class="divTableRow">
+      			<div class="divTableCell">주소</div>
+      			<div class="divTableCell"><span name="shipState" id="shipState">${addr[2]}</span>
+      									  <span name="shipState1" id="shipState1">${addr[0]}</span>
+      									  <span name="shipState2" id="shipState2">${addr[1]}</span>
+      									</div>
+    		</div>
+    		<div class="divTableRow">
+      			<div class="divTableCell">배송 시 메모</div>
+      			<div class="divTableCell"> <input type="text" name="shipZip" id="shipZip"/></div>
+    		</div>
+  	</div>
+	</div>
+	
+	
+	<div style=" margin-top: 20px;border: 3px solid #000000;">
+      	<div>배송 정보
+      	<input type="checkbox" id="sameAddressControl"/>회원정보와 동일합니다.</div>
+      </div>
+      <div class="divTable minimalistBlack" id="billingAddress">
+      
+      	<div class="divTableHeading">
+    		<div class="divTableRow">
+    		<div class="divTableHead">Orderer Info</div>
+    		<div class="divTableHead">주문자 정보</div>
+    		</div>
+  		</div>
+  		<div class="divTableBody">
+    		<div class="divTableRow">
+      			<div class="divTableCell">수령인</div>
+      			<div class="divTableCell"><input type="text" name="billAddress"
+                     id="billAddress"/></div>
+      		</div>
+    		<div class="divTableRow">
+      			<div class="divTableCell">휴대전화</div>
+      			<div class="divTableCell"><input type="text" name="billCity" id="billCity"/></div>
+    		</div>
+    		<div class="divTableRow">
+      			<div class="divTableCell">배송지 주소</div>
+      			<div class="divTableCell"><input type="text" name="billState" id="billState" placeholder="우편번호"  style="width: 200px;"/>
+      									  <input type="text" name="billState1" id="billState1" placeholder="도로명주소" style="width: 200px;"/>
+      									  <input type="text" name="billState2" id="billState2" placeholder="상세주소" style="width: 200px;"/>
+      									  <span id="addrSearchBtn" style="display:inline;">[검색]</span></div>
+    		</div>
+    		<div class="divTableRow">
+      			<div class="divTableCell">배송 시 메모</div>
+      			<div class="divTableCell"><input type="text" name="billZip" id="billZip"/></div>
+    		</div>
+    	
+  	</div>
+  	
+  	</div>
+      <div style=" margin-top: 20px;border: 3px solid #000000;">
+      	<div>상품 정보</div>
+      </div>
+      
+      <div class="divTable minimalistBlack">
+      	<div class="container">
 
 		<section id="cart" class="cart">  
 		
@@ -557,24 +458,19 @@ background: #f0f0f0;
 		<c:forEach items="${purchasedProducts }" var="p">
 			<article class="product">
 				<header>
-					<a class="remove">
 						<img src="resources/t2_yj_files/${p.productThumbnail }">
-						
-						<h3>Remove product</h3>
 						<input  type="hidden" name="thumbnail" value="${p.productThumbnail }">
 						<input  type="hidden" name="name" value="${p.productName }">
 						<input  type="hidden" name="quantity" value="${p.cart_ProductQuantity }">
 						<input  type="hidden" name="price" value="${p.productPrice }">
-					</a>
 					
 				</header>
 				<div class="content">
 					<h1>${p.productName }</h1>
 				</div>
 				<footer class="content">
-					<span class="qt-minus">-</span>
+					<span class="qt-minus">수량 : </span>
 					<span class="qt">${p.cart_ProductQuantity }</span>
-					<span class="qt-plus">+</span>
 					<span class="full-price">${p.productPrice * p.cart_ProductQuantity }</span>
 					<h2 class="price">${p.productPrice}</h2>
 					<h2 class="onePriceWon">가격 : </h2>
@@ -586,6 +482,140 @@ background: #f0f0f0;
 		</section>
 
 	</div>
+</div>
+</fieldset>
+	</c:when>
+	<c:when test="${sessionScope.loginMember_business !=null }">
+      <%-- <span class="loginOK-dropbtn">${sessionScope.loginMember_business.vet_ID }님</span>
+      <span class="loginOK-dropbtn">${sessionScope.loginMember_business.vet_address }님</span>
+      <span class="loginOK-dropbtn">${sessionScope.loginMember_business.vet_phoneNum }님</span> --%>
+      
+      <fieldset>
+<div style="margin: 50px;">
+      <form name="testForm">
+      <div style=" margin-bottom: 20px;border: 3px solid #000000;">
+      	<div>Order / Payment</div>
+      </div>
+      <div style=" margin-top: 20px;border: 3px solid #000000;">
+      	<div>회원 정보</div>
+      </div>
+      <div class="divTable minimalistBlack" id="shippingAddress">
+      	<div class="divTableHeading">
+    		<div class="divTableRow">
+    		<div class="divTableHead">Recipient Info</div>
+    		<div class="divTableHead">주문자 정보</div>
+    		</div>
+  		</div>
+  		<div class="divTableBody">
+    		<div class="divTableRow">
+      			<div class="divTableCell">주문자</div>
+      			<div class="divTableCell"><span name="shipAddress" id="shipAddress">${sessionScope.loginMember_business.vet_ID }님</span></div>
+      		</div>
+    		<div class="divTableRow">
+      			<div class="divTableCell">휴대전화</div>
+      			<div class="divTableCell"><span name="shipCity" id="shipCity">${sessionScope.loginMember_business.vet_phoneNum }</span></div>
+    		</div>
+    		<div class="divTableRow">
+      			<div class="divTableCell">주소</div>
+      			<div class="divTableCell"><span name="shipState" id="shipState">${sessionScope.loginMember_business.vet_address }</span></div>
+    		</div>
+    		<div class="divTableRow">
+      			<div class="divTableCell">배송 시 메모</div>
+      			<div class="divTableCell"> <input type="text" name="shipZip" id="shipZip"/></div>
+    		</div>
+  	</div>
+	</div>
+	
+	
+	<div style=" margin-top: 20px;border: 3px solid #000000;">
+      	<div>배송 정보
+      	<input type="checkbox" id="sameAddressControl"/>회원정보와 동일합니다.</div>
+		butt
+      </div>
+      <div class="divTable minimalistBlack" id="billingAddress">
+      
+      	<div class="divTableHeading">
+    		<div class="divTableRow">
+    		<div class="divTableHead">Orderer Info</div>
+    		<div class="divTableHead">주문자 정보</div>
+    		</div>
+  		</div>
+  		<div class="divTableBody">
+    		<div class="divTableRow">
+      			<div class="divTableCell">수령인</div>
+      			<div class="divTableCell"><input type="text" name="billAddress"
+                     id="billAddress"/></div>
+      		</div>
+    		<div class="divTableRow">
+      			<div class="divTableCell">휴대전화</div>
+      			<div class="divTableCell"><input type="text" name="billCity" id="billCity"/></div>
+    		</div>
+    		<div class="divTableRow">
+      			<div class="divTableCell">배송지 주소</div>
+      			<div class="divTableCell"><input type="text" name="billState" id="billState"/></div>
+    		</div>
+    		<div class="divTableRow">
+      			<div class="divTableCell">배송 시 메모</div>
+      			<div class="divTableCell"><input type="text" name="billZip" id="billZip"/></div>
+    		</div>
+    	
+  	</div>
+  	
+  	</div>
+	
+	
+	
+	
+      
+      <div style=" margin-top: 20px;border: 3px solid #000000;">
+      	<div>상품 정보</div>
+      </div>
+      
+      <div class="divTable minimalistBlack">
+      	<div class="container">
+
+		<section id="cart" class="cart">  
+		
+		<form action="test" id="purchaseForm">
+		<c:forEach items="${purchasedProducts }" var="p">
+			<article class="product">
+				<header>
+						<img src="resources/t2_yj_files/${p.productThumbnail }">
+						<input  type="hidden" name="thumbnail" value="${p.productThumbnail }">
+						<input  type="hidden" name="name" value="${p.productName }">
+						<input  type="hidden" name="quantity" value="${p.cart_ProductQuantity }">
+						<input  type="hidden" name="price" value="${p.productPrice }">
+					
+				</header>
+				<div class="content">
+					<h1>${p.productName }</h1>
+				</div>
+				<footer class="content">
+					<span class="qt-minus">수량 : </span>
+					<span class="qt">${p.cart_ProductQuantity }</span>
+					<span class="full-price">${p.productPrice * p.cart_ProductQuantity }</span>
+					<h2 class="price">${p.productPrice}</h2>
+					<h2 class="onePriceWon">가격 : </h2>
+				</footer>
+			</article>
+</c:forEach>
+		</form>
+
+		</section>
+
+	</div>
+</div>
+</fieldset>
+      
+      
+	</c:when>
+	<c:otherwise>
+      <span class="loginOK-dropbtn">${sessionScope.loginMember_business.vet_ID }님</span>
+      <span class="loginOK-dropbtn">${sessionScope.loginMember_business.vet_address }님</span>
+      <span class="loginOK-dropbtn">${sessionScope.loginMember_business.vet_phoneNum }님</span>
+	</c:otherwise>
+</c:choose>
+	
 
 	<footer id="site-footer">
 		<div class="container clearfix">

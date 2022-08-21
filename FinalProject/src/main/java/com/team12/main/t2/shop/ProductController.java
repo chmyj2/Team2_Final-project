@@ -24,6 +24,9 @@ public class ProductController {
 	@Autowired
 	private LoginDAO lDAO;
 	
+	@Autowired
+	private CartDAO cDAO;
+	
 	
 	
 //	이동 -------------------------------------------------------------------------
@@ -68,8 +71,7 @@ public class ProductController {
 		//상품가져오는일
 		pDAO.getProduct(request,p);
 		lDAO.loginCheck(request);
-		//request.setAttribute("contentPage", "YJ/detailProductPage.jsp");
-		request.setAttribute("contentPage", "YJ/test.jsp");
+		request.setAttribute("contentPage", "YJ/detailProductPage.jsp");
 			
 		return "2Team/t2_index";
 	}
@@ -113,15 +115,14 @@ public class ProductController {
 	
 	// 로그인 후 페이지(개인)
 	@RequestMapping(value = "/t2LoginDO.purchase", method = RequestMethod.POST)
-	public String LoginPurchase(HttpServletRequest request,Product p,Membert2 m,
-			@RequestParam("quanId") int quanId) {
+	public String LoginPurchase(HttpServletRequest request,Product p,Membert2 m) {
 		//상품가져오는일
 		pDAO.getProduct(request,p);
 		//일반 로그인하기
-		System.out.println(quanId);
 			if(lDAO.login(request,m)) {
-				request.setAttribute("quanId", quanId);
-				request.setAttribute("contentPage", "YJ/purchasePage.jsp");
+				
+				cDAO.goPurchasePage(request);
+				request.setAttribute("contentPage", "YJ/purchasedPage.jsp");
 			}else {
 				request.setAttribute("r", "로그인 실패");
 				request.setAttribute("contentPage", "YJ/purchasePageCheckMember.jsp");
@@ -138,16 +139,14 @@ public class ProductController {
 	
 	// 로그인 후 페이지(기업)
 	@RequestMapping(value = "/t2LoginDO.business.purchase", method = RequestMethod.POST)
-	public String LoginBusinessPurchase(HttpServletRequest request,Product p,vet v,
-			@RequestParam("quanId") int quanId) {
+	public String LoginBusinessPurchase(HttpServletRequest request,Product p,vet v) {
 		//상품가져오는일
 		pDAO.getProduct(request,p);
 		
-		System.out.println(quanId);
 		//비지니스 로그인하기
 			if(lDAO.login_business(request,v)) {
-				request.setAttribute("quanId", quanId);
-				request.setAttribute("contentPage", "YJ/purchasePage.jsp");
+				cDAO.goPurchasePage(request);
+				request.setAttribute("contentPage", "YJ/purchasedPage.jsp");
 			}else {
 				request.setAttribute("rb", "로그인 실패");
 				request.setAttribute("contentPage", "YJ/purchasePageCheckMember.jsp");
@@ -166,6 +165,7 @@ public class ProductController {
 		@RequestMapping(value = "/purchasePage.NonMembers", method = RequestMethod.GET)
 		public String purchasePageNonMembers(HttpServletRequest request,Product p) {
 			//상품가져오는일
+			
 			pDAO.getProduct(request,p);
 			
 			request.setAttribute("contentPage", "YJ/purchasePageNon-members.jsp");
