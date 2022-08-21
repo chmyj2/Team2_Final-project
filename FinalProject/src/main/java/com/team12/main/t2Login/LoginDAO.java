@@ -40,7 +40,7 @@ public class LoginDAO {
 		if (dbMember != null) {
 			if (m.getMember_PW().equals(dbMember.getMember_PW())) {
 				req.getSession().setAttribute("loginMember", dbMember);
-				req.getSession().setMaxInactiveInterval(60 * 10);
+				req.getSession().setMaxInactiveInterval(60 * 60);
 				
 				return true;
 			}else {
@@ -115,7 +115,7 @@ public class LoginDAO {
 		if(dbvet != null) {
 			if(v.getVet_PW().equals(dbvet.getVet_PW())) {
 				req.getSession().setAttribute("loginMember_business", dbvet);
-				req.getSession().setMaxInactiveInterval(60 * 10);
+				req.getSession().setMaxInactiveInterval(60 * 60);
 				return true;
 			}else {
 				return false;
@@ -272,7 +272,7 @@ public class LoginDAO {
 		
 		if (dbMember != null) {
 				req.getSession().setAttribute("loginMember", dbMember);
-				req.getSession().setMaxInactiveInterval(60 * 10);
+				req.getSession().setMaxInactiveInterval(60 * 60);
 		}else {
 			System.out.println("--------111------------실패");
 		}
