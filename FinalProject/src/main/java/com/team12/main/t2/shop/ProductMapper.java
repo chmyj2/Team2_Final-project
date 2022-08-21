@@ -8,7 +8,7 @@ public interface ProductMapper {
 
 	void regProduct(Product p);
 
-	public Object getProduct(Product p);
+	public Product getProduct(Product p);
 
 	void updateProduct(Product p);
 
