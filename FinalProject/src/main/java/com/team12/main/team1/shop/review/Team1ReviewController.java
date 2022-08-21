@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.team12.main.team1.join.MemberDAO;
+import com.team12.main.team2board.Team2BoardDTO;
 
 @Controller
 public class Team1ReviewController {
@@ -37,14 +38,27 @@ public class Team1ReviewController {
 	
 	
 	
-//	리뷰 쓰기
+	//	리뷰 쓰기
 	@RequestMapping(value = "write.review1", method = RequestMethod.POST)
-	public String writeReview(HttpServletRequest req, MultipartHttpServletRequest mr) {
-	
+	public String writeReview(HttpServletRequest req, MultipartHttpServletRequest mr,Team1ReviewDTO review) {
 		mDAO.loginCheck(req);
 		rDAO.writeReview(req, mr);
-	//	rDAO.showReviewList(req, review);
-		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail");
+		rDAO.showReviewList(req, review);
+		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
+		
+		return "1Team/t1_index";
+	}
+	
+	// 리뷰 삭제하기
+	
+	@RequestMapping(value = "review.delete", method = RequestMethod.GET)
+	public String reviewDelete(HttpServletRequest req, Team1ReviewDTO review) {
+	
+		mDAO.loginCheck(req);
+		rDAO.deleteReview(req, review);
+		rDAO.showReviewList(req, review);
+		
+		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
 		
 		return "1Team/t1_index";
 	}
