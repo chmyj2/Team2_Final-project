@@ -36,7 +36,7 @@
 	<script type="text/javascript" src="resources/t2_js/board.js"></script>
 	<script type="text/javascript" src="resources/t2_js/board_comment.js"></script>
 	<link href='resources/t2_css/board.css' rel="stylesheet" type="text/css">
-
+	
 </head>
 <body>
 			<nav class="index_nav"><div class="index-nav-login"><jsp:include page="${loginPage }"></jsp:include></div></nav>

@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div style="text-align: center; margin-top: 10px;">
-<span style="font-size: 20px; font-weight: 15px;">"산책가자"이용약관</span><br>
+<div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+<span style="font-size: 30px; font-weight: 30px;">"산책가자"이용약관</span><br>
 <c:choose>
 <c:when test="${param.member == 1 }">
 <span>-개인-</span>
@@ -18,9 +18,9 @@
 <span>-기업-</span></c:otherwise>
 </c:choose>
 <div>
-<div>회원약관</div>
+<div style="padding-top: 10px; padding-bottom: 10px; font-size: 20px; font-weight: 20px;">회원약관</div>
 
-<textarea rows="10" cols="150">
+<textarea rows="20" cols="140">
 제1조 (목적)
 이 약관은 산책가자에서 제공하는 인터넷 관련 서비스(이하 “서비스”)를 이용함에 있어 이용자와 산책가자의 권리․의무 및 책임사항을 규정함을 목적으로 합니다.
 제2조 (정의)
@@ -45,8 +45,33 @@
 2. 본 이용약관에 대한 동의는 이용신청 당시 해당 누리집의 '동의함' 버튼을 누름으로써 의사표시를 합니다.
 제5조(회원가입 및 탈퇴)
 1. 회원가입은 신청자가 온라인으로 산책가자에서 제공하는 소정의 가입신청 양식에서 요구하는 사항을 기록하여 가입을 완료하는 것으로 성립됩니다.
+2.정보 동의:산책자에 저장한 내용은 언제든지 담당자(MZ)가 볼 수 있습니다.
 
 위 약관을 모두 숙지하였으며 회원가입에 동의합니다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -55,9 +80,9 @@
 </div>
 
 <div>
-<div>개인정보 수집동의</div>
+<div style="padding-top: 10px; padding-bottom: 10px; font-size: 20px;font-weight: 20px;">개인정보 수집동의</div>
 
-<textarea rows="10" cols="150">
+<textarea rows="20" cols="140">
 가. 수집하는 개인정보의 항목첫째, 회사는 회원가 입, 원활한 고객상담, 각종 서비스의 제공을 위해 최초 회원가입 당시 아래와 같은 최소한의 개인정보를 필수항목으로 수집하고 있습니다.
 회원가입
 - 이름, 생년월일, 성별, 아이디, 비밀번호, 별명, 연락처(메일주소, 휴대폰 번호 중 선택), 가입인증정보

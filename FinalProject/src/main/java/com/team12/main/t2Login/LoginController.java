@@ -181,6 +181,7 @@ public class LoginController {
 		lDAO.joinBusiness(req,v);
 		
 		//로그인 체크
+		lDAO.login_business(req,v);
 		lDAO.loginCheck(req);
 		req.setAttribute("contentPage", "t2login/t2_login.jsp");
 		
@@ -305,6 +306,20 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/t2Test.go", method = RequestMethod.GET)
+	public String t2Test(HttpServletRequest req,Membert2 m) {
+		//test용으로 나중에 삭제할것!
+		
+		lDAO.loginCheck(req);
+		
+			req.setAttribute("contentPage", "t2login/joinOK.jsp");			
+		
+		
+		
+		return "2Team/t2_index";
+	}
+	
+
 	
 	
 	
