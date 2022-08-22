@@ -36,6 +36,10 @@
 	<script type="text/javascript" src="resources/t2_js/board.js"></script>
 	<script type="text/javascript" src="resources/t2_js/board_comment.js"></script>
 	<link href='resources/t2_css/board.css' rel="stylesheet" type="text/css">
+	<!-- shop -->
+	<script type="text/javascript" src="resources/t2_js/shop_function.js"></script>
+	<link href='resources/t2_css/shopDetailPage.css' rel="stylesheet" type="text/css">
+	
 	
 </head>
 <body>

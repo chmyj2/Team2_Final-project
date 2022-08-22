@@ -91,24 +91,24 @@ public class ProductController {
 	
 	
 	
-	// 구매페이지
-	@RequestMapping(value = "/purchasePage.go", method = RequestMethod.GET)
-	public String purchasePageGo(HttpServletRequest request,Product p,
-			@RequestParam("quanId") int quanId) {
-		//상품가져오는일
-		pDAO.getProduct(request,p);
-		
-		if (lDAO.loginCheck(request)) {
-			request.setAttribute("quanId", quanId);
-			request.setAttribute("contentPage", "YJ/purchasePage.jsp");
-		}else {
-			request.setAttribute("contentPage", "YJ/purchasePageCheckMember.jsp");
-			
-		}
-		
-		
-		return "2Team/t2_index";
-	}
+//	// 구매페이지
+//	@RequestMapping(value = "/purchasePage.go", method = RequestMethod.GET)
+//	public String purchasePageGo(HttpServletRequest request,Product p,
+//			@RequestParam("quanId") int quanId) {
+//		//상품가져오는일
+//		pDAO.getProduct(request,p);
+//		
+//		if (lDAO.loginCheck(request)) {
+//			request.setAttribute("quanId", quanId);
+//			request.setAttribute("contentPage", "YJ/purchasePage.jsp");
+//		}else {
+//			request.setAttribute("contentPage", "YJ/purchasePageCheckMember.jsp");
+//			
+//		}
+//		
+//		
+//		return "2Team/t2_index";
+//	}
 	
 	
 	
@@ -120,7 +120,7 @@ public class ProductController {
 		pDAO.getProduct(request,p);
 		//일반 로그인하기
 			if(lDAO.login(request,m)) {
-				
+				lDAO.splitAddr(request);
 				cDAO.goPurchasePage(request);
 				request.setAttribute("contentPage", "YJ/purchasedPage.jsp");
 			}else {
@@ -145,6 +145,7 @@ public class ProductController {
 		
 		//비지니스 로그인하기
 			if(lDAO.login_business(request,v)) {
+				//lDAO.splitAddr(request);
 				cDAO.goPurchasePage(request);
 				request.setAttribute("contentPage", "YJ/purchasedPage.jsp");
 			}else {
