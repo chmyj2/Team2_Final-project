@@ -44,7 +44,7 @@ public class Team1ReviewDAO {
 			System.out.println(mr.getParameter("review_text"));
 			System.out.println(mr.getParameter("review_title"));
 			System.out.println(mr.getFile("review_img"));
-			System.out.println(mr.getFile("review_star"));
+			System.out.println(mr.getParameter("review_star"));
 			MultipartFile img = mr.getFile("review_img");
 //			System.out.println("파일이름 -------:"+img.getOriginalFilename());
 			

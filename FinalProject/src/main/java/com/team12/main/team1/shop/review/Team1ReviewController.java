@@ -62,5 +62,5 @@ public class Team1ReviewController {
 		
 		return "1Team/t1_index";
 	}
-
+	
 }

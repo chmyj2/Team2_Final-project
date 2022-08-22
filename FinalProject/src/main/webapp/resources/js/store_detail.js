@@ -15,7 +15,7 @@ Rating.prototype.setRate = function(newrate){
 
 let rating = new Rating(); // 별점 인스턴스 생성
 
-document.addEventListener('DOMContentLoaded',function() {
+$(document).addEventListener('DOMContentLoaded',function() {
 	//별점선택 이벤트 리스너
 	document.querySelector('.star_rating').addEventListener('click', function(e){
 	 let elem = e.target;
