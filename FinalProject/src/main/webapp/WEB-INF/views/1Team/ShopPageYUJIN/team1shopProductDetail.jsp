@@ -162,15 +162,15 @@ function rrrr() {
 									<!-- 별점주기 -->
 									<div class="store_review_rating">
 										<div class="star_rating">
-											<input type="checkbox" name="rating" id="rating1" value="1"
+											<input type="checkbox" name="review_star" id="rating1" value="1"
 												class="rate_radio" title="1점"> <label for="rating1"></label>
-											<input type="checkbox" name="rating" id="rating2" value="2"
+											<input type="checkbox" name="review_star" id="rating2" value="2"
 												class="rate_radio" title="2점"> <label for="rating2"></label>
-											<input type="checkbox" name="rating" id="rating3" value="3"
+											<input type="checkbox" name="review_star" id="rating3" value="3"
 												class="rate_radio" title="3점"> <label for="rating3"></label>
-											<input type="checkbox" name="rating" id="rating4" value="4"
+											<input type="checkbox" name="review_star" id="rating4" value="4"
 												class="rate_radio" title="4점"> <label for="rating4"></label>
-											<input type="checkbox" name="rating" id="rating5" value="5"
+											<input type="checkbox" name="review_star" id="rating5" value="5"
 												class="rate_radio" title="5점"> <label for="rating5"></label>
 
 										</div>
@@ -197,9 +197,33 @@ function rrrr() {
 						<div class="store_review_tbody">
 							<div class="store_review_header">
 								<div class="store_review_star">
-								<!-- 별점 받기 ${r.review_star}-->★★★★★
+									<c:if test="${r.review_star == 5}">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									</c:if>
+									<c:if test="${r.review_star == 4}">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									</c:if>
+									<c:if test="${r.review_star == 3}">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									</c:if>
+									<c:if test="${r.review_star == 2}">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									</c:if>
+									<c:if test="${r.review_star == 1}">
+									<img alt="" src="resources/img/review_star.png">
+									</c:if>
 								</div>
-								<div clss="store_review_title">
+								<div class="store_review_title">
 									${r.review_title}
 								</div>
 								<div class="store_review_id_cont">
@@ -221,8 +245,10 @@ function rrrr() {
 								<div class="store_review_btn_stat">
 									<div>
 									<!-- 수정 Ajax -->
+									<%-- <c:if test="${sessionScope.loginMember == r.review_id }"> --%>
 										<button class="reviewUpadate">수정</button>
 										<button class="reviewDelete" onsubmit="rrrr()" onclick="location.href='review.delete?review_num=${r.review_num}'">삭제</button>
+									<%-- </c:if> --%>
 									</div>
 								</div>
 							</div>
