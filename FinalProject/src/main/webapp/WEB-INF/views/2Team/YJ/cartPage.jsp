@@ -27,29 +27,8 @@ $(function() {
 
 
 function goPurchasePage() {
-	   
-	
-	
-	var cartqtAndNum = new Array();
-	$("#cart .qtAndNum").each(function( i, e ) {
-     
-		cartqtAndNum.push($(this).parent().find('.qtAndNum').val());
-	      
-        //thisCategory = e.value + '!'
-     });
-	
-     alert(cartqtAndNum);
-	
-	
-	
-	location.href="test?cartqtAndNum=" + cartqtAndNum;
-
-	
-	
-	
-	
-	
-	
+   
+	$('#purchaseForm').submit();
 	
 }
 
@@ -99,8 +78,8 @@ $(document).ready(function(){
 	
   $(".remove").click(function(){
 	  
-	  let cartNum = $(this).parent().find('input').val() 
-
+	  let cartNum = $(this).parent().find('.cartNum').val() 
+	alert(cartNum);
 	  
 	 $.ajax({
 			url : "delete.cart",
@@ -146,8 +125,11 @@ $(document).ready(function(){
   });
   
   $(".qt-plus").click(function(){
-    $(this).parent().children(".qt").html(parseInt($(this).parent().children(".qt").html()) + 1);
+	let plusval = parseInt($(this).parent().children(".qt").html()) + 1;
+    $(this).parent().children(".qt").html(plusval);
+    $(this).parent().find('input').val(plusval);
     
+
     $(this).parent().children(".full-price").addClass("added");
     
     var el = $(this);
@@ -155,11 +137,12 @@ $(document).ready(function(){
   });
   
   $(".qt-minus").click(function(){
-    
     child = $(this).parent().children(".qt");
     
+    childInput = child.parent().find("input");
     if(parseInt(child.html()) > 1) {
       child.html(parseInt(child.html()) - 1);
+      childInput.val(parseInt(child.html()));
     }
     
     $(this).parent().children(".full-price").addClass("minused");
@@ -178,7 +161,6 @@ $(document).ready(function(){
 <style type="text/css">
 
 body {
-	background: #eee;
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
@@ -570,6 +552,7 @@ background: #f0f0f0;
 
 		<section id="cart" class="cart">  
 		
+		<form action="test" id="purchaseForm">
 		<c:forEach items="${Product }" var="p">
 			<article class="product">
 				<header>
@@ -577,24 +560,22 @@ background: #f0f0f0;
 						<img src="resources/t2_yj_files/${p.productThumbnail }">
 						
 						<h3>Remove product</h3>
-						<input class="cartNum" type="hidden" id="cartNum" value="${p.cartNum }">
-						<input class="qtAndNum" type="hidden" id="qtAndNum" value="${p.productNum }@${p.cart_ProductQuantity }">
+						<input  type="hidden" name="thumbnail" value="${p.productThumbnail }">
+						<input  type="hidden" name="name" value="${p.productName }">
+						<input  type="hidden" name="price" value="${p.productPrice }">
+						<input  type="hidden" class="cartNum" name="cartNum" value="${p.cartNum }">
 					</a>
 					
 				</header>
-
 				<div class="content">
-
 					<h1>${p.productName }</h1>
-
 					${p.productInfo }
-
-					
 				</div>
-
 				<footer class="content">
+				<input name="quantity" type="hidden" value="${p.cart_ProductQuantity }">
 					<span class="qt-minus">-</span>
-					<span class="qt">${p.cart_ProductQuantity }</span>
+					<span class="qt">${p.cart_ProductQuantity } </span>
+						
 					<span class="qt-plus">+</span>
 					<span class="full-price">${p.productPrice * p.cart_ProductQuantity }</span>
 					<h2 class="price">${p.productPrice}</h2>
@@ -602,6 +583,7 @@ background: #f0f0f0;
 				</footer>
 			</article>
 </c:forEach>
+		</form>
 
 		</section>
 

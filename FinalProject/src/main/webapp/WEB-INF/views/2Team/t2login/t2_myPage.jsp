@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +36,11 @@
 		
 		<input type="button" value="수정하기" id="modify" onclick="location.href='myinformation.chgae'"> 
 		<input type="button" value="펫 관리하기"> 
+		
+		<c:if test="${sessionScope.loginMember.member_linkWhere == 1 }">
 		<input type="button" value="비밀번호바꾸기"> 
+		</c:if>
+		
 		<input type="button" value="탈퇴하기">
 	
 		
