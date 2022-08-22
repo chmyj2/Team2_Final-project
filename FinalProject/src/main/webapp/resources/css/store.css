@@ -601,6 +601,10 @@ input
     margin-left: 5%;
 }
 
+.store_review_title{
+	font-weight: bold;
+}
+
 .store_review_id_cont{
     vertical-align: top;
     box-sizing: border-box;
@@ -623,9 +627,10 @@ input
 }
 
 .store_review_txt{
+	background-color:rgba(255,255,255,0.8);
     font-size: 15px;
     position: absolute;
-    width: 750px;
+    width: 1000px;
     height: 150px;
     margin-left: 20%;
     text-align: left;

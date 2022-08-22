@@ -196,7 +196,12 @@ function rrrr() {
 						<c:forEach var="r" items="${r}">
 						<div class="store_review_tbody">
 							<div class="store_review_header">
-								<div class="store_review_star">${r.review_title}</div>
+								<div class="store_review_star">
+								<!-- 별점 받기 ${r.review_star}-->★★★★★
+								</div>
+								<div clss="store_review_title">
+									${r.review_title}
+								</div>
 								<div class="store_review_id_cont">
 									<div class="store_review_id">
 										<span>${r.review_id}</span>님의 후기입니다.
@@ -210,13 +215,12 @@ function rrrr() {
 
 							<div class="store_review_txt_cont">
 								<div class="store_review_img_cont">
-									<div class="store_review_img">
-                                            ${r.review_img}
-                                        </div>
+									<img class="store_review_img" src="resources/reviewFile/${r.review_img}" alt="">
 								</div>
 								<div class="store_review_txt">${r.review_txt}</div>
 								<div class="store_review_btn_stat">
 									<div>
+									<!-- 수정 Ajax -->
 										<button class="reviewUpadate">수정</button>
 										<button class="reviewDelete" onsubmit="rrrr()" onclick="location.href='review.delete?review_num=${r.review_num}'">삭제</button>
 									</div>

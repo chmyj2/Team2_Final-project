@@ -37,7 +37,7 @@ public class Team1ReviewDAO {
 	
 	public void writeReview(HttpServletRequest req, MultipartHttpServletRequest mr) {
 
-		String path =	req.getSession().getServletContext().getRealPath("resources/reviewFile");
+		String path = req.getSession().getServletContext().getRealPath("resources/reviewFile");
 		System.out.println("path :"+path);
 		
 		try {
