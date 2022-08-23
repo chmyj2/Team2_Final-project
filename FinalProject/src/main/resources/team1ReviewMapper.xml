@@ -9,7 +9,7 @@
 <!-- 리뷰쓰기 -->
 <insert id="writeReview" parameterType="map">
 	insert into team1_review_board values(
-	team1_review_board_seq.nextval,'leeyoky',#{review_title},#{review_text}, sysdate, #{review_img}, 5)
+	team1_review_board_seq.nextval,'leeyoky',#{review_title},#{review_text}, sysdate, #{review_img}, #{review_star})
 </insert>
 
 <!-- 리뷰 삭제하기 -->
