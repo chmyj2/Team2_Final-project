@@ -10,13 +10,27 @@
 <script type="text/javascript">
 $(function(){
 	$('#payment').click(function(){
+		 /* var checkArr = new Array();
+		 $("#product header").each(function( i, e ) {
+		checkArr.push($(".name").val());
+					 
+		});
+		
+		alert(checkArr); */
+		
+		var totalPrice = $('#totalPrice').text();
 		$.ajax({
 			url:'kakaopay',
 			type : "POST",
 			dataType:'json',
+			data :	{"totalPrice" : totalPrice},
 			success:function(data){
 				var box = data.next_redirect_pc_url;
-				window.open(box); // 새창 열기
+				window.open(box,"_blank", "width=450, height=200, top=100, left=100, popup=yes);
+				//payInfoDB(); 
+				{
+					
+				}
 			},
 			error:function(error){
 				alert("실패");
@@ -24,6 +38,12 @@ $(function(){
 		});
 	});
 });
+
+
+
+function payInfoDB() {
+	alert("asd")
+};
 
 
 
@@ -126,11 +146,11 @@ $(function(){
 		
 		<form action="test" id="purchaseForm">
 		<c:forEach items="${purchasedProducts }" var="p">
-			<article class="product">
+			<article id="product" class="product">
 				<header>
 						<img src="resources/t2_yj_files/${p.productThumbnail }">
 						<input  type="hidden" name="thumbnail" value="${p.productThumbnail }">
-						<input  type="hidden" name="name" value="${p.productName }">
+						<input  type="hidden" name="name" class="name" id="name" value="${p.productName }">
 						<input  type="hidden" name="quantity" value="${p.cart_ProductQuantity }">
 						<input  type="hidden" name="price" value="${p.productPrice }">
 					
@@ -251,7 +271,7 @@ $(function(){
 				<header>
 						<img src="resources/t2_yj_files/${p.productThumbnail }">
 						<input  type="hidden" name="thumbnail" value="${p.productThumbnail }">
-						<input  type="hidden" name="name" value="${p.productName }">
+						<input  type="hidden" name="name" class="name" id="name" value="${p.productName }">
 						<input  type="hidden" name="quantity" value="${p.cart_ProductQuantity }">
 						<input  type="hidden" name="price" value="${p.productPrice }">
 					

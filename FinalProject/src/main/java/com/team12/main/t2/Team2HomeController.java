@@ -19,8 +19,14 @@ public class Team2HomeController {
 	@RequestMapping(value = "/team2Main", method = RequestMethod.GET)
 	public String home(HttpServletRequest req) {
 		
-		lDAO.loginCheck(req);
-		req.setAttribute("contentPage", "t2_home.jsp");
+		System.out.println(req.getParameter("pg_token"));
+		if (req.getParameter("pg_token") == null) {
+			lDAO.loginCheck(req);
+			req.setAttribute("contentPage", "t2_home.jsp");
+		}else {
+			lDAO.loginCheck(req);
+			req.setAttribute("contentPage", "YJ/afterPayment.jsp");
+		}
 		
 		return "2Team/t2_index";
 	}
