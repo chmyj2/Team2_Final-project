@@ -54,7 +54,25 @@ function detail_map(coords) {
          	position : coords,
          	image: markerImage // 마커이미지 설정 
          }); 
-        
-        
         	
     } 
+
+
+function reservego_logincheck(id, no) {
+
+
+	if (id != "") {
+
+		location.href="hospitalReserveGo?hospital_no="+no+"&member_ID="+id;
+
+	} else {
+		alert('로그인이 필요합니다.');
+		location.href="t2LoginGO";
+	}
+
+
+
+
+
+}
+
