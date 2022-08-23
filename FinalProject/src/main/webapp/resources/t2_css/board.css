@@ -1,3 +1,7 @@
+::selection {
+color: white;	
+background: #29c05e;
+}
 
 .toggleInput{
 	width: 70%;
@@ -42,11 +46,34 @@
 
 .commentPtag{
 	color: blue;
+	cursor: Pointer;
+}
+
+.replyIMG{
+	margin-left: 30px;
+	cursor: Pointer;
+}
+
+.childCmtCon span{ 	
+	margin-bottom: 50px; 
+}
+
+.childCmtCon{
+	margin: 15px 0;
+}
+
+.childCmtCon{
+	margin-left: 20px;
 }
 
 
-
-
-
-
-
+.childDeleteAtag{
+	color: #A51D13;
+	margin-left: 10px;
+	cursor: Pointer;
+}
+.childUpdateAtag{
+	color: #C18F11;
+	margin-left: 10px;
+	cursor: Pointer;
+}

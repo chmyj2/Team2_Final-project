@@ -8,6 +8,7 @@ public class CommentBean {
 	private String comment_member_id;
 	private String comment_txt;
 	private String comment_date;
+	private int comment_child_total;
 	
 	public CommentBean() {
 		// TODO Auto-generated constructor stub
@@ -53,16 +54,27 @@ public class CommentBean {
 		this.comment_date = comment_date;
 	}
 
+	public int getComment_child_total() {
+		return comment_child_total;
+	}
+
+	public void setComment_child_total(int comment_child_total) {
+		this.comment_child_total = comment_child_total;
+	}
+
 	public CommentBean(int comment_num, int comment_board_num, String comment_member_id, String comment_txt,
-			String comment_date) {
+			String comment_date, int comment_child_total) {
 		super();
 		this.comment_num = comment_num;
 		this.comment_board_num = comment_board_num;
 		this.comment_member_id = comment_member_id;
 		this.comment_txt = comment_txt;
 		this.comment_date = comment_date;
+		this.comment_child_total = comment_child_total;
 	}
-
+	
+	
+	
 
 	
 }

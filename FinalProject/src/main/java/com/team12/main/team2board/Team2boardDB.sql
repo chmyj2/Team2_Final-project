@@ -12,6 +12,9 @@ create table team2_board(
 )
 create sequence team2_board_seq;  
 
+select board_num, board_member_id, board_category, board_title, board_txt, board_date
+,board_count,board_img,board_like
+
 -----------------------------------------------------------------------------------------------------------
 --좋아요 DB
 create table team2_like(
@@ -33,6 +36,7 @@ create table team2_comment(
 	comment_member_id 	varchar2(30 char) not null,
 	comment_txt 		varchar2(300 char) not null,
 	comment_date 		date not null,
+	comment_child_total number(6) default 0 not null,
 	
 	constraint c_board_num_fk foreign key(comment_board_num)
 		references team2_board(board_num) on delete cascade,
@@ -40,6 +44,10 @@ create table team2_comment(
 		references final_member(member_ID) on delete cascade
 )
 create sequence team2_comment_seq;
+
+
+select * from team2_comment where comment_board_num = 114
+
 ---------------------------------------------------------------------------
 --대댓글
 create table team2_child_comment(
@@ -58,11 +66,6 @@ create table team2_child_comment(
 		references team2_comment(comment_num) on delete cascade
 )
 create sequence team2_child_comment_seq;
-
-select * from team2_child_comment where c_child_parent_num = 139
-
-insert into team2_child_comment
-values(team2_child_comment_seq.nextval, 107, 'mz', 139, '안녕', sysdate)
 
 ---------------------------------------------------------------------------------
 

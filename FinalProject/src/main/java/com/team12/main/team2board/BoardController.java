@@ -139,7 +139,7 @@ public class BoardController {
 		return bDAO.deleteComment(t);
 	}
 	
-	// 대댓글 작성 
+	// 답글 작성 
 	@RequestMapping(value="/child.comment.create", method = RequestMethod.POST, produces = "application/json; charset=utf8")
 	@ResponseBody
 	public int childComment_create(Team2ChildCommentDTO t)  {
@@ -151,6 +151,14 @@ public class BoardController {
 	@ResponseBody
 	public ChildCommentJson childComment_get(Team2ChildCommentDTO t)  {
 		return bDAO.get_childComment(t);
+	}
+	
+	// 답글 수정 
+	
+	@RequestMapping(value="/child.comment.update", method = RequestMethod.POST, produces = "application/json; charset=utf8")
+	@ResponseBody
+	public int childComment_update(Team2ChildCommentDTO t)  {
+		return bDAO.updateChildComment(t);
 	}
 	
 	

@@ -101,7 +101,7 @@ insert into team2_comment
 values(team2_comment_seq.nextval, 
  		#{comment_board_num}, 
 		#{comment_member_id}, 
-		#{comment_txt}, sysdate)
+		#{comment_txt}, sysdate,0)
 </insert>
 <!-- 글쓰기 후 댓글 pk 가져오기 -->
 <select id="getCommentNum" resultType="com.team12.main.team2board.Team2CommentDTO">
@@ -120,7 +120,7 @@ select comment_num from(
 <select id="getcomment" resultType="com.team12.main.team2board.Team2CommentDTO">
 select * 
 from (
-    select rownum as rn, comment_num, comment_board_num, comment_member_id, comment_txt, comment_date 
+    select rownum as rn, comment_num, comment_board_num, comment_member_id, comment_txt, comment_date, comment_child_total 
      from(
      select * from team2_comment
      where comment_board_num = #{comment_board_num}
@@ -132,7 +132,7 @@ from (
 <select id="getcommentJson" resultType="com.team12.main.team2board.CommentBean">
 select * 
 from (
-    select rownum as rn, comment_num, comment_board_num, comment_member_id, comment_txt, comment_date 
+    select rownum as rn, comment_num, comment_board_num, comment_member_id, comment_txt, comment_date, comment_child_total 
      from(
      select * from team2_comment
      where comment_board_num = #{comment_board_num}
@@ -155,18 +155,31 @@ set comment_txt = #{comment_txt}
 where comment_num = #{comment_num}
 </update>
 
-<!-- 대댓글 관련 -->
+<!-- 답글 관련 -->
 
-<!-- 대댓글 작성하기 -->
+<!-- 답글 작성하기 -->
 <insert id="creatChildComment">
 insert into team2_child_comment
 values(team2_child_comment_seq.nextval, #{c_child_board_num}, #{c_child_member_id}, #{c_child_parent_num}, #{c_child_txt}, sysdate)
 </insert>
+<!-- 작성 후 comment_child_total +1 -->
+<update id="countUpComment">
+update team2_comment 
+set comment_child_total = comment_child_total + 1 
+where comment_num = #{c_child_parent_num} 
+</update>
 
 <select id="getChildComments" resultType="com.team12.main.team2board.Team2ChildCommentDTO">
 select * from team2_child_comment 
 where c_child_parent_num = #{c_child_parent_num}
 </select>
+
+<!-- 답글 수정하기 -->
+<update id="updatechildComment">
+update team2_child_comment 
+set c_child_txt = #{c_child_txt}
+where c_child_num = #{c_child_num} 
+</update>
 
 
 

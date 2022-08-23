@@ -258,7 +258,7 @@ public class Team2BoardDAO {
 		return a;
 	}
 	
-	// 코멘트 10개 ajax 가져오기
+	// 코멘트 10개  가져오기
 	public void getComment(HttpServletRequest req, Team2BoardDTO board, Team2CommentDTO comment) {
 		comment.setComment_board_num(board.getBoard_num());
 		
@@ -303,6 +303,11 @@ public class Team2BoardDAO {
 		
 		int a = ss.getMapper(Team2BoardMapper.class).creatChildComment(t);
 		
+		if(a == 1) {
+			ss.getMapper(Team2BoardMapper.class).countUpComment(t);
+		}
+		
+		
 		return a;
 	}
 
@@ -314,6 +319,15 @@ public class Team2BoardDAO {
 		childComment.setChildComments(child);
 		
 		return childComment;
+	}
+
+	public int updateChildComment(Team2ChildCommentDTO t) {
+		
+		int result = ss.getMapper(Team2BoardMapper.class).updatechildComment(t);
+		
+		
+		
+		return result;
 	}
 
 

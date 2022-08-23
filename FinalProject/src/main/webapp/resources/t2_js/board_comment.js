@@ -43,7 +43,7 @@ function createComment() {
     				
     				let date = month +"-"+ day +"  "+ hour +":"+ minute
     				
-    				let inputData = `<div class="commentDiv"><div class="col-sm-8 commentBorder"><div>user : <strong class="cStrong">${id}</strong> <em class="cEm">${date}</em></div><div><span class="commentSpan">${txt}</span> <input class="form-control input-sm toggleInput" type="text"><button class="btn btn-success btn-sm togglebtn">완료</button></div></div><div class="col-sm-1"><a id="${commentPK}" class="deleteAtag"><i class="fa fa-times">삭제</i></a> <a id="${commentPK}" class="updateAtag"><i class="fa fa-edit">수정</i></a></div></div>`
+    				let inputData = `<div class="commentDiv"><div class="col-sm-8 commentBorder"><div>user : <strong class="cStrong">${id}</strong> <em class="cEm">${date}</em></div><div style="margin-bottom: 10px"><span class="commentSpan">${txt}</span> <img class="replyIMG" src="resources/img/reply.png"> <input class="form-control input-sm toggleInput" type="text"> <button class="btn btn-success btn-sm togglebtn">완료</button></div></div><div><p class="commentPtag" style="display: none" name="0">답글 보기 (0)</p><div class="childCmtCon"></div></div><div class="col-sm-1"><a id="${commentPK}" class="deleteAtag"><i class="fa fa-times">삭제</i></a> <a id="${commentPK}" class="updateAtag"><i class="fa fa-edit">수정</i></a></div><div class="childComment" style="display: none"><div class="row"><div class="col-sm-6"><input class="form-control input-sm commentChildInput" type="text" placeholder="답글 입력..."></div><div class="col-sm-2"><button id="${commentPK}" class="btn btn-success btn-sm commentChildBtn">완료</button></div></div></div></div>`
     				
     				$('#commentContainer').prepend(inputData);
     				
@@ -60,12 +60,7 @@ function createComment() {
     	
 
 			
-		/*let btn = `<a id="${num}" class="deleteAtag"><i class="fa fa-times">삭제</i></a> <a id="${num}" class="updateAtag"><i class="fa fa-edit">수정</i></a>`
-		let buttonDiv = `<div class="col-sm-1"></div>`
-			if(loginid != id){
-				btn= buttonDiv;
-			}*/
-		
+
 		
 
     	
@@ -102,6 +97,7 @@ function getComments() {
     				let id = c.comment_member_id;
     				let txt = c.comment_txt
     				let date = c.comment_date;
+    				let total = c.comment_child_total;
     				let inputData = `<div class="commentDiv"><div class="col-sm-8 commentBorder"><div>user : <strong class="cStrong">${id}</strong> <em class="cEm">${date}</em></div><div><span class="commentSpan">${txt}</span> <input class="form-control input-sm toggleInput" type="text"><button class="btn btn-success btn-sm togglebtn">완료</button></div></div><div class="col-sm-1"><a id="${commentPK}" class="deleteAtag"><i class="fa fa-times">삭제</i></a> <a id="${commentPK}" class="updateAtag"><i class="fa fa-edit">수정</i></a></div></div>`
     				
     				if(loginid != id){ //본인 작성 댓글에만 수정 삭제버튼 노출 
@@ -206,10 +202,10 @@ function commentUpdate() {
 }
 
 //답글 쓰기
-function childComment() {
+function createChildComment() {
 	let select = "";
 	
-	$(document).on("click", '.commentSpan', function() {
+	$(document).on("click", '.replyIMG', function() {
 		$(this).parent().parent().parent().children().last().fadeToggle('100');
 		select = $(this).parent().parent().parent().children().last();
 	});
@@ -220,7 +216,7 @@ function childComment() {
     	let m_id = $('#memberID').val();
     	let p_num = $(this).attr('id')
     	
-    	$.ajax({//댓글 삭제
+    	$.ajax({//답글달기
 			type: "POST" ,
 			url : "child.comment.create",
 			data : {
@@ -233,6 +229,8 @@ function childComment() {
 				if(data == 1){
 					console.log("등록 성공")
 					$(select).fadeToggle('100');
+					
+					
 				}
 				
 			}
@@ -246,15 +244,23 @@ function childComment() {
 
 // 답글 얻기
 function getchildComment() {
+	
+	
 	let select = "";
+	let ptag = "";
 	
 	$(document).on("click", '.commentPtag', function() {
-		select = $(this).parent().parent().parent().children().last();
-		let p_num = $(select).find('button').attr('id');
+	
 		
-    	$.ajax({
+		let p_num = $(this).parent().parent().parent().children().last().find('button').attr('id');
+			select = $(this).parent().parent()
+			
+			$(this).toggle();
+			
+		$.ajax({
 			type: "GET" ,
 			url : "child.comment.get",
+			async: false,
 			data : {
 				"c_child_parent_num" : p_num 
 			},
@@ -262,24 +268,85 @@ function getchildComment() {
 					console.log(data)
 					
 	    			$.each(data.childComments, function(i, c) {
-	    		
+	    				let b_num = c.c_child_board_num;
 	    				
-	    				let c_num = c.c_child_num
-	    				let c_date = c.c_child_date
-	    				let c_txt = c.c_child_txt
+	    				let c_num = c.c_child_num;
+	    				let c_id = c.c_child_member_id;
+	    				let c_txt = c.c_child_txt;
+	    				let c_parent = c.c_child_parent_num;
+	    				let c_date = c.c_child_date;
+	    				
+	    				let inputData = `<div><strong class="cStrong">● ${c_id}</strong> <em class="cEm">${c_date}</em> <a id="${c_num}" class="childUpdateAtag"><i class="fa fa-edit">수정</i></a> <a id="${c_num}" class="childDeleteAtag"><i class="fa fa-times">삭제</i></a><br>&nbsp; <span class="commentSpan">${c_txt}</span><div class="row" style="display:none"><div class="col-sm-5"><input class="form-control input-sm"></div><div class="col-sm-1"><button class="btn btn-success btn-sm editChildBtn">완료</button></div></div></div>`
+	    				
+	    				$(select).last().append(inputData);
 	    				
 	    			});
-					
 				
 			}
 		
 		});//ajaxfunction
-    	
 		
+	});
+	
+	
+}
+
+
+function childCommentUpdate() {
+	
+	let loginid = $('#memberID').val();
+	if(loginid.length == 0){
+		alert('로그인 후 댓글을 작성해 주세요')
+		return false;
+	}
+	
+	
+	let c_comment_num = "";
+	let select = "";
+	
+	$(document).on("click", '.childUpdateAtag', function() {
+		 let txt = $(this).parent().find('span').text();
+		 c_comment_num = $(this).attr('id');
+		 
+		 $(this).parent().find('span').toggle();
+		 $(this).next().next().next().next().toggle();
+		select = $(this);
+	});
+	
+	
+	$(document).on("click", '.editChildBtn', function() {
+		let txt = $(this).parent().parent().find('input').val()
+		
+		$.ajax({   // 답글 수정 
+			type: "POST" ,
+			url : "child.comment.update",
+			async: false,
+			data : {
+				"c_child_txt" : txt ,
+				"c_child_num" : c_comment_num
+			},
+			success : function(data) {
+					console.log(data)
+					
+					if(data == 0){
+						alert('오류발생')
+					}
+					
+					 $(select).parent().find('span').toggle();
+					 $(select).next().next().next().next().toggle();
+					 $(select).parent().find('span').text(txt);
+					 
+					
+	
+				
+			}
+		
+		});//ajaxfunction
 		
 		
 		
 	});
+	
 	
 	
 	
@@ -293,17 +360,14 @@ function getchildComment() {
 
 
 
-
-
-
-
 $(function() {
 	createComment();
 	getComments();
 	deleteComment();
 	commentUpdate();
-	childComment();
+	createChildComment();
 	getchildComment();
+	childCommentUpdate();
 });
 
 
