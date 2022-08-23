@@ -8,13 +8,12 @@
 </head>
 <body>
 <div class="t2-join-outdiv">
-<form action="petInformationReg.do" method="POST" class="joinForm" enctype="multipart/form-data"> <!-- onsubmit="return joinCheck()"  -->
+<form action="petInformationReg.do" method="POST" class="joinForm" enctype="multipart/form-data"> 
                                                                                                
       <h2>펫 등록하기</h2>
       <div class="join-textForm brith" style="text-align: center;">   
-        <img id="image" style="width: 80px;height: 80px; display: none;">
-        <input name="baby_img" type="file" class="join-name" id="baby_img"> 
-        	펫 이미지
+        <img id="image" style="width: 100px;height: 100px; display: none; border-radius: 50%;">
+        <input name="baby_img" type="file" class="join-name" id="baby_img" style="padding-bottom: 30px;"> 
       </div>
       
       <div class="join-textForm">   

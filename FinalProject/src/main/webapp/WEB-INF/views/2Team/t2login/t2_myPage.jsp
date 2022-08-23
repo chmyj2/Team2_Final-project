@@ -35,7 +35,7 @@
 		<br>
 		
 		<input type="button" value="수정하기" id="modify" onclick="location.href='myinformation.chgae'"> 
-		<input type="button" value="펫 관리하기"> 
+		<input type="button" value="펫 관리하기" onclick="location.href='mypetInformation.go'"> 
 		
 		<c:if test="${sessionScope.loginMember.member_linkWhere == 1 }">
 		<input type="button" value="비밀번호바꾸기"> 
