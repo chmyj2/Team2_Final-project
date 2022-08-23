@@ -11,7 +11,7 @@
 	<div style="text-align: center;">
 		<h2>회원정보</h2>
 		<label>ID</label> <input type="text" readonly="readonly"
-			value="${sessionScope.loginMember.member_ID }" style="border: none;" id="m_id"><br>
+			value="${sessionScope.loginMember.member_ID }" style="border: none;" name="member_ID"><br>
 
 		<label>이름</label> <input type="text" readonly="readonly"
 			value="${sessionScope.loginMember.member_name }" style="border: none;"><br>

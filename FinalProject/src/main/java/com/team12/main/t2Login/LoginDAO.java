@@ -418,6 +418,22 @@ public class LoginDAO {
 		
 	}
 
+
+
+	public void petinfoGet(HttpServletRequest req, pet p) {
+		// 펫 정보 출력하기
+		Membert2 loginMember = (Membert2) req.getSession().getAttribute("loginMember");
+		
+		String ID = loginMember.getMember_ID();
+		
+		System.out.println("---------------------"+ID);
+		p.setBaby_memberID(ID);
+		
+		req.setAttribute("petInfo",ss.getMapper(Team2loginMapper.class).getPetInfo(p)); 
+			
+		
+	}
+
 	
 	
 	

@@ -22,6 +22,10 @@ public interface Team2loginMapper {
 
 	int memberUpdate(Membert2 m);
 
+	pet getPetInfo(pet p);
+
+	
+
 
 	
 
