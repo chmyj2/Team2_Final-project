@@ -36,7 +36,7 @@ $(function() {
 	$('.starRev span').click(function(){
 		  $(this).parent().children('span').removeClass('on');
 		  $(this).addClass('on').prevAll('span').addClass('on');
-		  alert($(this).attr("value"));
+//		  alert($(this).attr("value"));
 		let  a = $(this).attr("value")
 		  $('#starrr').attr('value', a)
 		  return false;
@@ -138,26 +138,7 @@ $(function() {
 						</div>
 						<div class="store_product_detail_purchase_review">
 							<div class="store_product_detail_purchase_review_star">
-								<div class="store_product_detail_purchase_review_center">
-									<span> 
-										<img src="resources/img/review_star.png" alt="">
-									</span> 
-									<span> <!-- 총 별점 평균 점수 알려주기 --> 
-										${avg}
-									</span> 
-									<br>
-									<button onclick="review">상품리뷰 작성하기</button>
-									<div class="store_product_detail_purchase_review_alert">
-										<c:if test="${sessionScope.loginMember == null }">
-											<p>
-												상품 리뷰는 <a href="loginandjoin.go"
-													style="background-color: yellow;">로그인</a>후 에 작성 가능합니다
-											</p>
-										</c:if>
-									</div>
-								</div>
-
-								<form action="write.review1" method="post" enctype="multipart/form-data">
+																<form action="write.review1" method="post" enctype="multipart/form-data">
 								<div class="store_product_detail_purchase_review_cont">
 									<h2>REVIEW</h2>
 									<!-- 제목 -->
@@ -180,6 +161,44 @@ $(function() {
 										<button>리뷰작성완료</button>
 									</div>
 								</form>
+								
+								
+								
+								
+								<div class="store_product_detail_purchase_review_center">
+									<span> 
+										<img src="resources/img/review_star.png" alt="">
+									</span> 
+									<span> <!-- 총 별점 평균 점수 알려주기 --> 
+										${avg}
+									</span> 
+									<br>
+									<button onclick="review">상품리뷰 작성하기</button>
+									<div class="store_product_detail_purchase_review_alert">
+										<c:if test="${sessionScope.loginMember == null }">
+											<p>
+												상품 리뷰는 <a href="loginandjoin.go"
+													style="background-color: yellow;">로그인</a>후 에 작성 가능합니다
+											</p>
+										</c:if>
+									<div class="store_product_detail_purchase_review_center_sub">
+										<ul> 
+										<li><span>★★★★★</span> 아주 만족해요</li>
+										<li><span>★★★★</span> 만족해요</li>
+										<li><span>★★★</span> 보통이에요</li>
+										<li><span>★★</span>  그냥 그래요</li>
+										<li><span>★</span> 별로에요</li>
+										</ul>
+									</div>
+									</div>
+								</div>
+								
+								
+						
+								
+								
+
+
 							</div>
 						</div>
 						

@@ -2,6 +2,7 @@ package com.team12.main.team1.shop.review;
 
 
 import java.io.File;
+import java.text.Format;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -133,9 +134,10 @@ public class Team1ReviewDAO {
 
 	// 리뷰글 평점 평균
 	public void showAllReviewAvg(HttpServletRequest req) {
-		int avg = ss.getMapper(Team1ReviewMapper.class).getAllReviewAvg();
-		req.setAttribute("avg", avg);
-		System.out.println(avg);
+		double avg = ss.getMapper(Team1ReviewMapper.class).getAllReviewAvg();
+		String result = String.format("%.1f", avg); 
+		req.setAttribute("avg", result );
+		System.out.println(result);
 		
 	}
 
