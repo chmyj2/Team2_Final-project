@@ -32,6 +32,7 @@ $(function() {
             		<!-- id -->
                     <input readonly="readonly" value="${sessionScope.loginMember.member_ID }" name="jm_id" id="updateMemberIDInput">
                 	<br>
+                	
                 	<c:choose>
                 	<c:when test="${sessionScope.loginMember.member_linkWhere == 1 }">
                 	<!-- pw  -->
@@ -44,7 +45,7 @@ $(function() {
                 </c:when>
                 
                 <c:otherwise>
-                    <input class="join_input_pw" value="${sessionScope.loginMember.member_PW }" name="jm_pw" placeholder="Password *" type="hidden" maxlength="10" autocomplete="off" >
+                    <input class="join_input_pw" value=" " name="jm_pw" placeholder="Password *" type="hidden" maxlength="10" autocomplete="off" >
                 
                 </c:otherwise>
                 
@@ -58,7 +59,7 @@ $(function() {
                 	<br>
 
                 	<!-- phoneNum -->
-                    <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum" placeholder="Phone Number *" type="text" maxlength="10" autocomplete="off">
+                    <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum" id="telInput" placeholder="Phone Number *" type="text" maxlength="13" autocomplete="off">
                 	<br>
 
                 	

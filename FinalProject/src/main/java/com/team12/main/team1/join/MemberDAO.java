@@ -340,6 +340,9 @@ public class MemberDAO {
 			
 		}else {
 			if(ss.getMapper(Team1joinMapper.class).kakaoJoin(m)==1) {
+				ss.getMapper(Team1joinMapper.class).getMemberByID(m);
+				req.getSession().setAttribute("loginMember",m);
+				req.getSession().setMaxInactiveInterval(60 * 10);
 				System.out.println("등록 성공!!!!!");
 			};
 		}
