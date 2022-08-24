@@ -119,7 +119,7 @@ a {
     align-items: stretch;
     }
 	.span-text{
-    flex: 0 0 140px;
+    flex: 0 0 180px;
     padding: 5px 30px 5px 20px;
     line-height: 1.4;
     font-size: 18px;
@@ -135,6 +135,8 @@ a {
     font-size: 18px;
     font-weight: 300;
     word-break: break-all;
+    border: none;
+    background-color: #f9f9f9;
 }
 
 .reserve-time-select{
