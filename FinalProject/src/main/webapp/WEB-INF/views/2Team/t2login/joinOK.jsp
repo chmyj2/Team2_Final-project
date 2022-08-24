@@ -15,8 +15,8 @@
 			<span style="font-size: 30px;">성공적으로 회원가입이 되었습니다.</span><br> 
 			<span>저희 "산책가자" 사이트에 회원이 되어주셔서 감사합니다.</span><br>
 			<br> <span>펫 등록 하시겠습니까?</span><br>
-			<br> <a href="petRegistration" class="">등록하러 가기</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			&nbsp; <a href="team2Main">Home</a>
+			<br> <a href="petRegistration" class="myPetPage-txt2">펫 등록하러 가기</a> &nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp; <a href="team2Main" class="myPetPage-txt2">Home</a>
 			</div>
 			<img src="resources/t2_img/말풍선.png" class="t2JoinOkDog">
 			<span class="t2JoinOKDogTalk">멍멍(반가워)</span>

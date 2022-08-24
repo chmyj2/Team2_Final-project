@@ -324,7 +324,6 @@ public class LoginController {
 		//강아지 정보 보러가는 페이지
 		
 		lDAO.petinfoGet(req,p);
-		System.out.println(p.getBaby_name());
 		lDAO.loginCheck(req);
 		
 		req.setAttribute("contentPage", "t2login/myPetInfo.jsp");			

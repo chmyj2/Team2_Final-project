@@ -326,11 +326,10 @@ public class LoginDAO {
 	public void petReg(HttpServletRequest req, MultipartFile baby_img, String baby_name, Double baby_weight, Date baby_birth, String baby_sex, String baby_type, String baby_typeDetail, String baby_neut, String baby_memberID) {
 		// 펫등록하기
 		String path = req.getSession().getServletContext().getRealPath("resources/t2_sj_petFiles");
-		
-		System.out.println("여기오는거니???????????");
+		System.out.println(path);
+
 		
 		try {
-			System.out.println("왜 안되는 거냐구 왜!!!");
 			
 			String fileName = baby_img.getOriginalFilename();
 			
@@ -363,11 +362,13 @@ public class LoginDAO {
 			p.setBaby_typeDetail(baby_typeDetail);
 			p.setBaby_weight(baby_weight);
 			
-			if (ss.getMapper(Team2loginMapper.class).petReg(p)==1) {
-				System.out.println("등록 성공-----------");
-			}else {
-				System.out.println("1등록 실패-----------");
+			if (!baby_img.getOriginalFilename().isEmpty()) {
+				//실제 업로드 코드
+				baby_img.transferTo(new File(path,saveFileName));
+				ss.getMapper(Team2loginMapper.class).petReg(p);
+				System.out.println("펫 등록 성공");
 			}
+			
 			
 			
 			
@@ -428,8 +429,11 @@ public class LoginDAO {
 		
 		System.out.println("---------------------"+ID);
 		p.setBaby_memberID(ID);
+		pet petInfo = ss.getMapper(Team2loginMapper.class).getPetInfo(p);
 		
-		req.setAttribute("petInfo",ss.getMapper(Team2loginMapper.class).getPetInfo(p)); 
+		
+		
+		req.setAttribute("petInfo",petInfo); 
 			
 		
 	}

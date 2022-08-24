@@ -54,10 +54,10 @@ drop table pet_information;
 drop SEQUENCE pet_information_seq;
 create SEQUENCE pet_information_seq INCREMENT by 1 start with 1;
 
-delete PET_INFORMATION where baby_num= 2;
+delete PET_INFORMATION where baby_num= 42;
 
 select * from PET_INFORMATION;
-select * from PET_INFORMATION where baby_memberID = 'mz' ;
+select * from PET_INFORMATION where baby_memberID = 'hansujin_1' ;
 
 create table vet_member(
 vet_ID varchar2(30 char)primary key,
