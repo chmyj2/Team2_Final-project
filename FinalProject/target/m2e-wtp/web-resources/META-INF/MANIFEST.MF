@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: gks36
 Build-Jdk: 14
+=======
+Built-By: mitakeran
+Build-Jdk: 14.0.2
+>>>>>>> a6a58e54a17127c1207b9d699aeaca7add4b70ce
 Created-By: Maven Integration for Eclipse
 
