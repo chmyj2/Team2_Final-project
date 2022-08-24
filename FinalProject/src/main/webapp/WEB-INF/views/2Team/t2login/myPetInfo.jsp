@@ -24,30 +24,33 @@
 
 <tr>
 <td>생일</td>
-<td>${petInfo.baby_name }</td>
+<td>${petInfo.baby_birth }</td>
 </tr>
 
 <tr>
 <td>성별</td>
-<td>${petInfo.baby_name }</td>
+<td>${petInfo.baby_sex }</td>
 </tr>
 
 <tr>
 <td>종류</td>
-<td>${petInfo.baby_name }</td>
+<td>${petInfo.baby_type }</td>
 </tr>
 
 <tr>
 <td>품종</td>
-<td>${petInfo.baby_name }</td>
+<td>${petInfo.baby_typeDetail }</td>
 </tr>
 
 <tr>
 <td>중성화</td>
-<td>${petInfo.baby_name }</td>
+<td>${petInfo.baby_neut }</td>
 </tr>
 
 </table>
+
+<button>펫 정보 수정하기</button> &nbsp;&nbsp;
+<button>펫 정보 삭제하기</button>
 
 
 </c:when>
