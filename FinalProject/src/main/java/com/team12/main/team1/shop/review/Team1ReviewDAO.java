@@ -37,13 +37,14 @@ public class Team1ReviewDAO {
 	
 	public void writeReview(HttpServletRequest req, MultipartHttpServletRequest mr) {
 
-		String path =	req.getSession().getServletContext().getRealPath("resources/reviewFile");
+		String path = req.getSession().getServletContext().getRealPath("resources/reviewFile");
 		System.out.println("path :"+path);
 		
 		try {
 			System.out.println(mr.getParameter("review_text"));
 			System.out.println(mr.getParameter("review_title"));
 			System.out.println(mr.getFile("review_img"));
+			System.out.println(mr.getParameter("review_star"));
 			MultipartFile img = mr.getFile("review_img");
 //			System.out.println("파일이름 -------:"+img.getOriginalFilename());
 			
@@ -51,9 +52,9 @@ public class Team1ReviewDAO {
 			Map<String, String> review = new HashMap();
 			
 			review.put("review_title", mr.getParameter("review_title"));
-		//	review.put("review_id", mr.getParameter("review_id"));
 			review.put("review_img", img.getOriginalFilename());
 			review.put("review_text", mr.getParameter("review_text"));
+			review.put("review_star", mr.getParameter("review_star"));
 			
 			
 			File f = new File(path+"/"+img.getOriginalFilename());
