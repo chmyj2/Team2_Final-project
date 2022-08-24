@@ -29,21 +29,35 @@
 		/* ------------------------------------ */		
 	/* --READY------------ */	
 	});
-
+</script>
+<script type="text/javascript">
+$(function() {
 	
+	$('.starRev span').click(function(){
+		  $(this).parent().children('span').removeClass('on');
+		  $(this).addClass('on').prevAll('span').addClass('on');
+		  alert($(this).attr("value"));
+		let  a = $(this).attr("value")
+		  $('#starrr').attr('value', a)
+		  return false;
+		});
 	
-	 //업데이트 버튼
+});
+</script>
+<script type="text/javascript">
+$(function() {
 	$(".reviewUpdate").click(function() {
-
 		let txt = $(this).parent().parent().find('span').text();
 		$(this).parent().parent().find('span').toggle();
 		$(this).parent().parent().find('input').toggle();
 		$(this).parent().parent().find('input').val(txt);
 	});
+});
 </script>
 </head>
 <body>
 		<!-- YK : product detail -->
+		
 	
 	    <div class="store_product_detail_wrap">
         <div class="store_product_detail_contents">
@@ -119,8 +133,7 @@
 						<div class="store_product_detail_purchase_review_span">
 							<span>REVIEW</span> 
 							<span> 
-							<!-- 리뷰 게시물 총 갯수 알려주기 --> 
-							(10)
+							 (${p})
 							</span>
 						</div>
 						<div class="store_product_detail_purchase_review">
@@ -130,7 +143,7 @@
 										<img src="resources/img/review_star.png" alt="">
 									</span> 
 									<span> <!-- 총 별점 평균 점수 알려주기 --> 
-										4.8
+										${avg}
 									</span> 
 									<br>
 									<button onclick="review">상품리뷰 작성하기</button>
@@ -156,7 +169,7 @@
 									<!-- 별점주기 -->
 
 									<div class="starRev">
-										<span class="starR on" value="1">★</span> 
+										<span class="starR" value="1">★</span> 
 										<span class="starR" value="2">★</span> 
 										<span class="starR" value="3">★</span> 
 										<span class="starR" value="4">★</span>
@@ -167,29 +180,9 @@
 										<button>리뷰작성완료</button>
 									</div>
 								</form>
-
-								
-<script type="text/javascript">
-$(function() {
-	
-	$('.starRev span').click(function(){
-		  $(this).parent().children('span').removeClass('on');
-		  $(this).addClass('on').prevAll('span').addClass('on');
-		  alert($(this).attr("value"));
-		let  a = $(this).attr("value")
-		  $('#starrr').attr('value', a)
-		  return false;
-		});
-	
-	
-});
-</script>
-		
-
-
-
 							</div>
 						</div>
+						
 					</div>
 
 
@@ -202,7 +195,6 @@ $(function() {
 								</li>
 							</ul>
 						</div>
-							
 						<c:forEach var="r" items="${r}">
 						<div class="store_review_tbody">
 							<div class="store_review_header">
@@ -255,40 +247,26 @@ $(function() {
 											src="resources/reviewFile/${r.review_img}" alt="">
 									</div>
 									<div class="store_review_txt">
-										<div>
-											<span>${r.review_txt}</span>
-										</div>
-										 <input style="display: none;" class="store_review_list_update" type="text"> 
+										<span id="r">${r.review_txt}</span>
+										<input style="display: none;" class="store_review_list_update" type="text"> 
 									</div>
-									
-
 									<div class="store_review_btn_stat">
-											<!-- 수정 Ajax -->
-											<%-- <c:if test="${sessionScope.loginMember == r.review_id }"> --%>
-											<button class="reviewUpdate">수정</button>
-											<button class="reviewDelete"
-												onclick="location.href='review.delete?review_num=${r.review_num}'">삭제</button>
-											<%-- </c:if> --%>
+										<!-- 수정 Ajax -->
+										<button class="reviewUpdate">수정</button>
+										<button class="reviewDelete" onclick="location.href='review.delete?review_num=${r.review_num}'">삭제</button>
 									</div>
-									<script type="text/javascript">
-									$(".reviewUpdate").click(function() {
-
-										let txt = $(this).parent().parent().find('span').text();
-										$(this).parent().parent().find('span').toggle();
-										$(this).parent().parent().find('input').toggle();
-										$(this).parent().parent().find('input').val(txt);
-									});
-									</script>
 								</div>
-						</div>
+							</div>
 						</c:forEach>
-
-						
-
-
 					</div>
-
 				</div>
+					<div class="store_review_paging">
+							<a href="get.aProductTeam1?page=1">◀</a>
+						<c:forEach var="r" begin="1" end="${pageCount}">
+							<a href="get.aProductTeam1?page=${r}">${r}</a>
+						</c:forEach>
+							<a href="get.aProductTeam1?page=${pageCount}">▶</a>
+					</div>
 				<!-- 컨박스 -->
 
 
@@ -314,7 +292,7 @@ $(function() {
 	</div>
 
     
-	<div>
+	<%-- <div>
 	<h1>${p.num_PK}</h1>
 	<h1>${p.num_PK}</h1>
 	<h1>${p.num_PK}</h1>
@@ -355,7 +333,7 @@ $(function() {
 					<div> <button id="buy_btn">Buy</button></div>
 				</div>
 			</div>
-	</div>
+	</div> --%>
 	
 
 

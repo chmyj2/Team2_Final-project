@@ -85,7 +85,7 @@
         </div>
         <div class="about_sub_donate_img">
             <p class="go_store">
-                <a href="enter.team1Shop">→ Go Store</a>
+                <a href="enter.team1MainShop">→ Go Store</a>
             </p>
             <div class="about_sub_donate_img_wrapper1">
                 <img class="about_sub_donate_img_dog1" src="resources/img/store_cat.jpg"
