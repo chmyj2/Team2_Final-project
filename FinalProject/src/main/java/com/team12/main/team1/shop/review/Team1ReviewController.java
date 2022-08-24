@@ -44,6 +44,7 @@ public class Team1ReviewController {
 		mDAO.loginCheck(req);
 		rDAO.writeReview(req, mr);
 //		rDAO.showReviewList(req, review);
+//		rDAO.showAllReviewCnt(req);
 		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
 		
 		return "1Team/t1_index";

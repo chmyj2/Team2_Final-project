@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.team12.main.team1.shop.review.Team1ReviewMapper">
-<!-- 셀렉 -->
+<!-- 전체 리뷰 보여주기 -->
 <select id="getReviewList" resultType="com.team12.main.team1.shop.review.Team1ReviewDTO">
-	select * from team1_review_board
+	select * from (
+	select rownum as rn, review_num, review_id, review_title, review_txt,
+		review_date, review_img, review_star 
+		from (
+		select * from team1_review_board order by review_date desc)
+		) where rn between #{start_data} and #{end_data}
 </select>
 
 <!-- 리뷰쓰기 -->
@@ -17,6 +22,15 @@
 	delete from team1_review_board where review_num = #{review_num}
 </delete>
 
+<!-- 전체 리뷰 갯수 구하기 -->
+<select id="getAllReviewCnt" resultType="int">
+	select count(*) from team1_review_board
+</select>
+
+<!-- 전체 리뷰 평점 구하기  -->
+<select id="getAllReviewAvg" resultType="double">
+	select avg(review_star) from team1_review_board
+</select>
 
 
 

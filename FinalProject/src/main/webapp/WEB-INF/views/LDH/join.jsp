@@ -70,7 +70,7 @@
 							검색</span><br> 
 					<input class="input_addr" id="jm_addr1Input" readonly="readonly" name="m_addr1"
 							maxlength="30" autocomplete="off" placeholder="주소"><br> 
-					<input class="input_addr" name="m_addr2" maxlength="30" autocomplete="off"	placeholder="상세주소">
+					<input class="input_addr" name="m_addr2" maxlength="30" autocomplete="off"	placeholder="상세주소  *">
 				</div>
 				
 				<br>
