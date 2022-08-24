@@ -137,9 +137,9 @@
 >>>>>>> 811b0b57e92852262eb84b6cc2a2caf171349522
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
-			value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<beans:property name="username" value="leeyoky" />
-		<beans:property name="password" value="leeyoky" />
+			value="jdbc:oracle:thin:@db202204301707_high?TNS_ADMIN=C:/Users/soldesk/Downloads/Wallet_DB202204301707" />
+		<beans:property name="username" value="SYP" />
+		<beans:property name="password" value="YJ802soldesk" />
 	</beans:bean>
 <<<<<<< HEAD
 <<<<<<< HEAD

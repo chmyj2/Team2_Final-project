@@ -62,6 +62,7 @@
       </div>
       
       <input type="hidden" name="member_linkWhere" value="1">
+      <input type="hidden" name="member_paper" value="동의">
       <input type="submit" class="join-btn" value="J O I N"/>
     </form>
     </div>

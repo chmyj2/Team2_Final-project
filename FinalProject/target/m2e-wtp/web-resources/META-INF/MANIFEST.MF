@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Built-By: mitakeran
 Build-Jdk: 14.0.2
@@ -38,3 +39,10 @@ Build-Jdk: 14
 Created-By: Maven Integration for Eclipse
 
 >>>>>>> 811b0b57e92852262eb84b6cc2a2caf171349522
+=======
+Manifest-Version: 1.0
+Built-By: soldesk
+Build-Jdk: 14
+Created-By: Maven Integration for Eclipse
+
+>>>>>>> a521c7f7eb471a19e4beb9dd75f4c9917d826d26

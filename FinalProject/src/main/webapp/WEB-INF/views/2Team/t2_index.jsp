@@ -25,6 +25,7 @@
 	<link href='resources/t2_css/hospital_main.css' rel='stylesheet' type='text/css'> 
 	<link href='resources/t2_css/hospital_detail.css' rel="stylesheet" type="text/css">
 	<link href='resources/t2_css/hospital_reserve.css' rel="stylesheet" type="text/css">
+	<link href='resources/t2_css/hospital_reserve_lookup.css' rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="resources/t2_js/jQuery.js"></script>
 	<!-- 주소 js -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -36,7 +37,7 @@
 	<script type="text/javascript" src="resources/t2_js/board.js"></script>
 	<script type="text/javascript" src="resources/t2_js/board_comment.js"></script>
 	<link href='resources/t2_css/board.css' rel="stylesheet" type="text/css">
-
+	
 </head>
 <body>
 			<nav class="index_nav"><div class="index-nav-login"><jsp:include page="${loginPage }"></jsp:include></div></nav>

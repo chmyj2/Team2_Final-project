@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,7 @@
 <title>Insert title here</title>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="resources/js/StoreTapMenu.js"></script>
+<script type="text/javascript" src="resources/js/store_detail.js"></script>
 <script type="text/javascript">
 	<!-- add cart -->
 	$(function() {
@@ -26,6 +28,17 @@
 			});
 		/* ------------------------------------ */		
 	/* --READY------------ */	
+	});
+
+	
+	
+	 //업데이트 버튼
+	$(".reviewUpdate").click(function() {
+
+		let txt = $(this).parent().parent().find('span').text();
+		$(this).parent().parent().find('span').toggle();
+		$(this).parent().parent().find('input').toggle();
+		$(this).parent().parent().find('input').val(txt);
 	});
 </script>
 </head>
@@ -84,9 +97,9 @@
 <!-- 상품상세정보/사용후기/QnA -->
 
 				<div class="tab_content">
-					<input type="radio" name="tabmenu" id="tab01" checked>
+					<input type="radio" name="tabmenu" id="tab01" >
 					<label for="tab01">상품상세정보</label>
-					<input type="radio" name="tabmenu" id="tab02">
+					<input type="radio" name="tabmenu" id="tab02" checked>
 					<label for="tab02">사용후기</label>
 					<input type="radio" name="tabmenu" id="tab03">
 					<label for="tab03">Q&A</label>
@@ -100,104 +113,187 @@
 					
 					
 					
-                    <!-- 사용후기 -->
-					<div class="conbox con2">
-						<div class="store_product_detail_cont">
-                    <div class="store_product_detail_purchase_review">
-                        <div class="store_product_detail_purchase_review_span">
-                            <span>REVIEW</span>
-                            <span>
-                                <!-- 리뷰 게시물 총 갯수 알려주기 -->
-                                (10)
-                            </span>
-                            <hr>
-                        </div>
-                        <div class="store_product_detail_purchase_review_star">
-                            <div class="store_product_detail_purchase_review_center">
-                                <span>
-                                    <img src="resources/img/review_star.png" alt="">
-                                </span>
-                                <span>
-                                    <!-- 총 별점 평균 점수 알려주기 -->
-                                    4.8
-                                </span>
-                                <br>
-                                <button onclick="review">상품리뷰 작성하기</button>
-                                <div class="store_product_detail_purchase_review_alert">
-                                    <c:if test="${sessionScope.loginMember == null }">
-                                    <p>상품 리뷰는 <a href="loginandjoin.go" style="background-color: yellow;">로그인</a>후 에 작성 가능합니다</p>
-                                    </c:if>
-                                </div>
-                            </div>
-                            
-							<form action="write.review1" method="post" enctype="multipart/form-data">
-                            <div class="store_product_detail_purchase_review_cont"> 
-                                <h2>REVIEW</h2>
-                                <!-- 제목 -->
-                                <input type="text" name="review_title"> <br>
-                                <!-- 내용 -->
-                                <textarea name="review_text" id="" placeholder="write text">
-                                </textarea>
-                                <!-- 파일첨부 -->
-                                <input name="review_img" type="file">
-                                <!-- 별점주기 -->
-                                <div class="store_review_rating">
-                                    <div class="star_rating">
-                                        <input type="checkbox" name="review_star" id="rating1" value="1" class="rate_radio" title="1점">
-                                        <label for="rating1"></label>
-                                        <input type="checkbox" name="review_star" id="rating2" value="2" class="rate_radio" title="2점">
-                                        <label for="rating2"></label>
-                                        <input type="checkbox" name="review_star" id="rating3" value="3" class="rate_radio" title="3점">
-                                        <label for="rating3"></label>
-                                        <input type="checkbox" name="review_star" id="rating4" value="4" class="rate_radio" title="4점">
-                                        <label for="rating4"></label>
-                                        <input type="checkbox" name="review_star" id="rating5" value="5" class="rate_radio" title="5점">
-                                        <label for="rating5"></label>
-                                    </div>
-                                </div>
-                                <button>리뷰작성완료</button>
-                            </div>
-							</form>
-							
-							
-                        </div>
-
-
-                    </div>
-                </div>
-					<!-- 리뷰 보여주기 -->
-					<div class="store_product_detail_purchase_reviews">
-						<hr>
-						<div class="store_review_state">
-							<ul>
-								<li>평점순</li>
-							</ul>
+                                        <!-- 사용후기 -->
+				<div class="conbox con2">
+					<div class="store_product_detail_cont">
+						<div class="store_product_detail_purchase_review_span">
+							<span>REVIEW</span> 
+							<span> 
+							<!-- 리뷰 게시물 총 갯수 알려주기 --> 
+							(10)
+							</span>
 						</div>
-						
-						<div class="store_review_tbody">
-						<c:forEach var="r" items="${r}">
-							<div>
-								<!-- 별점 -->
-								★★★★★
+						<div class="store_product_detail_purchase_review">
+							<div class="store_product_detail_purchase_review_star">
+								<div class="store_product_detail_purchase_review_center">
+									<span> 
+										<img src="resources/img/review_star.png" alt="">
+									</span> 
+									<span> <!-- 총 별점 평균 점수 알려주기 --> 
+										4.8
+									</span> 
+									<br>
+									<button onclick="review">상품리뷰 작성하기</button>
+									<div class="store_product_detail_purchase_review_alert">
+										<c:if test="${sessionScope.loginMember == null }">
+											<p>
+												상품 리뷰는 <a href="loginandjoin.go"
+													style="background-color: yellow;">로그인</a>후 에 작성 가능합니다
+											</p>
+										</c:if>
+									</div>
+								</div>
+
+								<form action="write.review1" method="post" enctype="multipart/form-data">
+								<div class="store_product_detail_purchase_review_cont">
+									<h2>REVIEW</h2>
+									<!-- 제목 -->
+									<input type="text" name="review_title"> <br>
+									<!-- 내용 -->
+									<textarea name="review_text" id="" placeholder="write text"></textarea>
+									<!-- 파일첨부 -->
+									<input type="file" name="review_img">
+									<!-- 별점주기 -->
+
+									<div class="starRev">
+										<span class="starR on" value="1">★</span> 
+										<span class="starR" value="2">★</span> 
+										<span class="starR" value="3">★</span> 
+										<span class="starR" value="4">★</span>
+										<span class="starR" value="5">★</span> 
+										<input type="hidden" name="review_star" id="starrr" value="0">
+									</div>
+									
+										<button>리뷰작성완료</button>
+									</div>
+								</form>
+
+								
+<script type="text/javascript">
+$(function() {
+	
+	$('.starRev span').click(function(){
+		  $(this).parent().children('span').removeClass('on');
+		  $(this).addClass('on').prevAll('span').addClass('on');
+		  alert($(this).attr("value"));
+		let  a = $(this).attr("value")
+		  $('#starrr').attr('value', a)
+		  return false;
+		});
+	
+	
+});
+</script>
+		
+
+
+
 							</div>
-							<div>글번호</div>
-							<div>아이디</div>
-							<div>제목</div>
-							<div>내용 ${r.review_txt}</div>
-							<div>날짜 ${r.review_date}</div>
-							<div>이미지</div>
-							<div>평점</div>
-						</c:forEach>
 						</div>
-
 					</div>
 
 
+					<!-- 리뷰 보여주기 -->
+					<div class="store_product_detail_purchase_reviews">
+						<div class="store_review_state">
+							<ul>
+								<li>
+									<!-- 평점 순 정리하기 --> 평점순
+								</li>
+							</ul>
+						</div>
+							
+						<c:forEach var="r" items="${r}">
+						<div class="store_review_tbody">
+							<div class="store_review_header">
+								<div class="store_review_star">
+									<c:if test="${r.review_star == 5}">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									</c:if>
+									<c:if test="${r.review_star == 4}">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									</c:if>
+									<c:if test="${r.review_star == 3}">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									</c:if>
+									<c:if test="${r.review_star == 2}">
+									<img alt="" src="resources/img/review_star.png">
+									<img alt="" src="resources/img/review_star.png">
+									</c:if>
+									<c:if test="${r.review_star == 1}">
+									<img alt="" src="resources/img/review_star.png">
+									</c:if>
+								</div>
+								<div class="store_review_title">
+									${r.review_title}
+								</div>
+								<div class="store_review_id_cont">
+									<div class="store_review_id">
+										<span>${r.review_id}</span>님의 후기입니다.
+									</div>
+									<div class="store_review_date">
+									<fmt:formatDate value="${r.review_date}" pattern="yy-MM-dd HH:mm"/>
+									
+									</div>
+								</div>
+							</div>
+
+
+
+							<div class="store_review_txt_cont">
+									<div class="store_review_img_cont">
+										<img class="store_review_img"
+											src="resources/reviewFile/${r.review_img}" alt="">
+									</div>
+									<div class="store_review_txt">
+										<div>
+											<span>${r.review_txt}</span>
+										</div>
+										 <input style="display: none;" class="store_review_list_update" type="text"> 
+									</div>
+									
+
+									<div class="store_review_btn_stat">
+											<!-- 수정 Ajax -->
+											<%-- <c:if test="${sessionScope.loginMember == r.review_id }"> --%>
+											<button class="reviewUpdate">수정</button>
+											<button class="reviewDelete"
+												onclick="location.href='review.delete?review_num=${r.review_num}'">삭제</button>
+											<%-- </c:if> --%>
+									</div>
+									<script type="text/javascript">
+									$(".reviewUpdate").click(function() {
+
+										let txt = $(this).parent().parent().find('span').text();
+										$(this).parent().parent().find('span').toggle();
+										$(this).parent().parent().find('input').toggle();
+										$(this).parent().parent().find('input').val(txt);
+									});
+									</script>
+								</div>
+						</div>
+						</c:forEach>
+
+						
+
+
+					</div>
+
 				</div>
-					
-					
-					
-					<!------------------ Q&A 영역 ------------------>
+				<!-- 컨박스 -->
+
+
+
+				<!------------------ Q&A 영역 ------------------>
 					<div class="conbox con3">
 					컨텐츠탭 내용03
 					</div>
@@ -261,9 +357,6 @@
 			</div>
 	</div>
 	
-
-
-
 
 
 

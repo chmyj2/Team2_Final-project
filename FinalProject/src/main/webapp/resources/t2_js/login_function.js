@@ -5,6 +5,8 @@ function connectAddrSearchEvent() {
 			oncomplete : function(data) {
 				$("#join_addr3Input").val(data.zonecode);
 				$("#join_addr1Input").val(data.roadAddress);
+				$("#billState1").val(data.roadAddress);
+				$("#billState").val(data.zonecode);
 			}
 		}).open();
 	});
