@@ -31,6 +31,7 @@
 						<input  type="hidden" name="name" value="${p.productName }">
 						<input  type="hidden" name="price" value="${p.productPrice }">
 						<input  type="hidden" class="cartNum" name="cartNum" value="${p.cartNum }">
+						<input  type="hidden" class="productNum" name="productNum" value="${p.productNum }">
 					</a>
 					
 				</header>

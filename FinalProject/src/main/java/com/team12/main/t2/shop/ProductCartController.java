@@ -169,6 +169,25 @@ public class ProductCartController {
 		
 		
 		
+		
+		// 구매 후 DB에서 상품 삭제
+		@ResponseBody
+		@RequestMapping(value = "/delete.purchasedProduct", method = RequestMethod.GET)
+		public int deletePurchasedProduct(HttpServletRequest request) {
+		
+			// 상품 카드에서 삭제하는 일
+		
+			String productNumArr = request.getParameter("productNumArr");
+			System.out.println(productNumArr);
+			
+			//return cDAO.deletePurcahsedCart();
+			return 0 ;
+		}
+		
+		
+		
+		
+		
 	
 
 }

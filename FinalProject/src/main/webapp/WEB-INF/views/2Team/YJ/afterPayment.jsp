@@ -5,8 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+function asd() {
+	console.log('sad');
+}
+
+
+</script>
 </head>
 <body>
-결재후
+<button onclick="asd()"></button>
 </body>
 </html>

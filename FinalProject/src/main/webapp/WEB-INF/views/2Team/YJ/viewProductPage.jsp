@@ -88,8 +88,6 @@
          </c:forEach>
      </div>
     </div>
-				
-				
 			</article>
 
 

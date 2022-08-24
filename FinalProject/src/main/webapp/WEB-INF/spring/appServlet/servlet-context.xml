@@ -33,15 +33,11 @@
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
-<<<<<<< HEAD
 			value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=/Users/choeyongjun/Wallet_DB202204301707" />
 		<beans:property name="username" value="CYJ" />
-=======
-			value="jdbc:oracle:thin:@db202204301707_high?TNS_ADMIN=C:/Users/soldesk/Downloads/Wallet_DB202204301707" />
-		<beans:property name="username" value="SYP" />
->>>>>>> a521c7f7eb471a19e4beb9dd75f4c9917d826d26
 		<beans:property name="password" value="YJ802soldesk" />
 	</beans:bean>
+	
 	
 	
 	<beans:bean id="transactionManager"

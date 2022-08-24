@@ -9,25 +9,53 @@
 <link href='resources/t2_css/purchasedPage.css' rel="stylesheet" type="text/css">
 <script type="text/javascript">
 $(function(){
+	
+	var totalPrice = $('#totalPrice').text(); // 총금액
+	var shipAddress = $('#shipAddress').text();	// 회원 정보
+	var Recipient = document.getElementById("billAddress").value; // 받는사람
+	var phoneNum = document.getElementById("billCity").value; // 받는사람 전화번호
+	var billState = document.getElementById("billState").value; // 우편번호
+	var billState1 = document.getElementById("billState1").value; // 도로명주소
+	var billState2 = document.getElementById("billState2").value; // 상세주소
+	var memo = document.getElementById("billZip").value; // 메모
+	
+	var productNum = document.getElementsByName("productNum"); // 상품pk
+	var productName = document.getElementsByName("name"); // 상품이름
+	var quantity = document.getElementsByName("quantity"); // 수량
+	var price = document.getElementsByName("price"); // 상품 금액
+	
+	var productNumArr = new Array();
+	var produckNameArr = new Array();
+	var quantityArr = new Array();
+	var pricekArr = new Array();
+	
+	$(".product").each(function( i, e ) {
+		productNumArr.push(productNum[i].value);
+		produckNameArr.push(productName[i].value);
+		quantityArr.push(quantity[i].value);
+		pricekArr.push(price[i].value);
+				 
+	});
+	
+	
 	$('#payment').click(function(){
-		 /* var checkArr = new Array();
-		 $("#product header").each(function( i, e ) {
-		checkArr.push($(".name").val());
-					 
-		});
 		
-		alert(checkArr); */
 		
-		var totalPrice = $('#totalPrice').text();
-		$.ajax({
+		
+		
+		
+			$.ajax({
 			url:'kakaopay',
 			type : "POST",
 			dataType:'json',
 			data :	{"totalPrice" : totalPrice},
 			success:function(data){
 				var box = data.next_redirect_pc_url;
-				window.open(box,"_blank", "width=450, height=200, top=100, left=100, popup=yes);
-				//payInfoDB(); 
+				var kakaoPop= window.open(box,'kakaoPay','width=500, height=800');
+				kakaoPop.addEventListener('beforeunload', () => {
+					   console.log('asd')
+				deleteProductInfo(); 
+					})
 				{
 					
 				}
@@ -41,8 +69,24 @@ $(function(){
 
 
 
-function payInfoDB() {
-	alert("asd")
+function deleteProductInfo() {
+	alert("여기옴");
+	$.ajax({
+		url : "delete.purchasedProduct",
+		type : "GET",
+		dataType : "text",
+		data :	{"productNumArr" : productNumArr},
+		success : function(getData) {
+			console.log(getData);
+			if (getData == 1) {
+				console.log("삭제 성공");
+			}else {
+				console.log("삭제 실패");
+			}
+		}
+	});
+	
+	
 };
 
 
@@ -92,7 +136,7 @@ function payInfoDB() {
     		</div>
     		<div class="divTableRow">
       			<div class="divTableCell">배송 시 메모</div>
-      			<div class="divTableCell"> <input type="text" name="shipZip" id="shipZip"/></div>
+      			<div class="divTableCell"> <input type="text" name="shipZip" id="shipZip" value="빠른 배송 부탁드립니다.""/></div>
     		</div>
   	</div>
 	</div>
@@ -129,7 +173,7 @@ function payInfoDB() {
     		</div>
     		<div class="divTableRow">
       			<div class="divTableCell">배송 시 메모</div>
-      			<div class="divTableCell"><input type="text" name="billZip" id="billZip"/></div>
+      			<div class="divTableCell"><input type="text" name="billZip" id="billZip" placeholder="빠른 배송 부탁드립니다."/></div>
     		</div>
     	
   	</div>
@@ -146,17 +190,20 @@ function payInfoDB() {
 		
 		<form action="test" id="purchaseForm">
 		<c:forEach items="${purchasedProducts }" var="p">
-			<article id="product" class="product">
+		<div  id="product" class="product">
+			<article>
 				<header>
 						<img src="resources/t2_yj_files/${p.productThumbnail }">
 						<input  type="hidden" name="thumbnail" value="${p.productThumbnail }">
 						<input  type="hidden" name="name" class="name" id="name" value="${p.productName }">
 						<input  type="hidden" name="quantity" value="${p.cart_ProductQuantity }">
 						<input  type="hidden" name="price" value="${p.productPrice }">
+						<input  type="hidden" name="cartNum" value="${p.cartNum }">
+						<input  type="hidden" name="productNum" value="${p.productNum }">
 					
 				</header>
 				<div class="content">
-					<h1>${p.productName }</h1>
+					<span class="p_name">${p.productName }</span>
 				</div>
 				<footer class="content">
 					<span class="qt-minus">수량 : </span>
@@ -166,6 +213,7 @@ function payInfoDB() {
 					<h2 class="onePriceWon">가격 : </h2>
 				</footer>
 			</article>
+			</div>
 </c:forEach>
 		</form>
 
@@ -271,7 +319,7 @@ function payInfoDB() {
 				<header>
 						<img src="resources/t2_yj_files/${p.productThumbnail }">
 						<input  type="hidden" name="thumbnail" value="${p.productThumbnail }">
-						<input  type="hidden" name="name" class="name" id="name" value="${p.productName }">
+						<input  type="hidden" name="name"value="${p.productName }">
 						<input  type="hidden" name="quantity" value="${p.cart_ProductQuantity }">
 						<input  type="hidden" name="price" value="${p.productPrice }">
 					

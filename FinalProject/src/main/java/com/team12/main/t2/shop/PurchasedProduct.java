@@ -6,6 +6,8 @@ public class PurchasedProduct {
 	private String productName;
 	private String productPrice;
 	private String cart_ProductQuantity;
+	private String cartNum;
+	private String productNum;
 	
 	
 	public PurchasedProduct() {
@@ -14,12 +16,14 @@ public class PurchasedProduct {
 
 
 	public PurchasedProduct(String productThumbnail, String productName, String productPrice,
-			String cart_ProductQuantity) {
+			String cart_ProductQuantity, String cartNum, String productNum) {
 		super();
 		this.productThumbnail = productThumbnail;
 		this.productName = productName;
 		this.productPrice = productPrice;
 		this.cart_ProductQuantity = cart_ProductQuantity;
+		this.cartNum = cartNum;
+		this.productNum = productNum;
 	}
 
 
@@ -63,10 +67,25 @@ public class PurchasedProduct {
 	}
 
 
-	
-	
-	
-	
-	
+	public String getCartNum() {
+		return cartNum;
+	}
+
+
+	public void setCartNum(String cartNum) {
+		this.cartNum = cartNum;
+	}
+
+
+	public String getProductNum() {
+		return productNum;
+	}
+
+
+	public void setProductNum(String productNum) {
+		this.productNum = productNum;
+	}
+
+
 	
 }
