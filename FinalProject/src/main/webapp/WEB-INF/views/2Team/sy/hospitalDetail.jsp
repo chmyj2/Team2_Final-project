@@ -10,7 +10,7 @@
 <script type="text/javascript" src="resources/t2_js/hospital_detail_function.js"></script>
 </head>
 <body>
-
+	
 			<div>
 				<div class="detail-top-menu">
 					<input type="hidden" id="detail_addr" value="${Hospital.hospital_addr}"/>
@@ -55,7 +55,7 @@
 				  		<div class="detail-info-place-3">
 				  			<ul class="detail-reserve-ul">
 				  				<li>
-									<a href="hospitalReserveGo?hospital_no=${Hospital.hospital_no}">예약하기</a>	  				
+									<a onclick="reservego_logincheck('${sessionScope.loginMember.member_ID}','${Hospital.hospital_no }')">예약하기</a>	  				
 				  				</li>					  			
 				  			</ul>
 				  		</div>
@@ -141,6 +141,8 @@
 								
 			</div>	
 			
+			
+		
 			
 </body>
 </html>

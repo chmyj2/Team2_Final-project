@@ -30,8 +30,13 @@
  		<a id="custom-login-btn" href="https://kauth.kakao.com/oauth/authorize?client_id=64c1168aec7c4fd20862f02cda8f9856&redirect_uri=http://localhost:8080/main/member.kakao&response_type=code">
         <button  class="signUp_kakao_btn">카카오 연결</button>
     	</a>
+<<<<<<< HEAD
   <a href="https://kauth.kakao.com/oauth/authorize?client_id=64c1168aec7c4fd20862f02cda8f9856&redirect_uri=http://localhost:8080/main/member.kakao&response_type=code">카카오 로그인</a>
  
+=======
+ 
+  <a href="https://kauth.kakao.com/oauth/authorize?client_id=64c1168aec7c4fd20862f02cda8f9856&redirect_uri=http://localhost:8080/main/member.kakao&response_type=code">카카오 로그인</a>
+>>>>>>> a521c7f7eb471a19e4beb9dd75f4c9917d826d26
  
 
 <hr class="login_hr">

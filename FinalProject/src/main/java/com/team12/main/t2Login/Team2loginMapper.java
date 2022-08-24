@@ -20,7 +20,8 @@ public interface Team2loginMapper {
 
 	int petReg(pet p);
 
-	
+	int memberUpdate(Membert2 m);
+
 
 
 	

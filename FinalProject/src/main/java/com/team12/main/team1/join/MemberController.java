@@ -86,9 +86,11 @@ public class MemberController {
 //	        req.setAttribute("loginPage", "../LDH/loginSuccess.jsp");
 //	        req.setAttribute("contentPage", "t1_home.jsp");
 	        mDAO.joinKakao(req, code);
+
 	        //mDAO.login(m, req);
 	        mDAO.loginCheck(req);
 			req.setAttribute("contentPage", "t1_home.jsp");
+
 	        return "1Team/t1_index";
 	    }
 	

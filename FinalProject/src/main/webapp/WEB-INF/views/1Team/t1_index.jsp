@@ -17,6 +17,7 @@
 <script type="text/javascript" src="resources/js/aqicn.js"></script>
 <script type="text/javascript" src="resources/js/validCheck.js"></script>
 <script type="text/javascript" src="resources/js/check.js"></script>
+<script type="text/javascript" src="resources/js/store_detail.js"></script>
 <script type="text/javascript" src="resources/js/rememberID.js"></script>
  
 <!-- <script type="text/javascript" src="resources/js/kakaoLogin.js"></script> --> 

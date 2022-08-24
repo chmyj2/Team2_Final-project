@@ -5,7 +5,9 @@
  <insert id="join">
 
 insert into final_member values(#{member_ID},#{member_PW},#{member_linkWhere},#{member_name},#{member_birth, jdbcType=DATE},#{member_sex},#{member_phoneNum},#{member_address},#{member_email},CURRENT_DATE,'동의')
+
 </insert>
+
 
 <insert id="kakaoJoin">
 insert into final_member values(#{member_ID},' ',2,#{member_name},CURRENT_DATE,' ',' ',' ',#{member_email},CURRENT_DATE,'비동의')
@@ -37,7 +39,7 @@ select * from final_member where member_ID = #{member_ID} and member_linkWhere =
 		select count(*) from final_member where member_ID = #{member_ID}
 	</select>
 	
-	
+
 	
 
 </mapper> 

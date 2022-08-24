@@ -19,7 +19,7 @@
 	</select>
 	
 	<insert id="join" parameterType="com.team12.main.t2Login.Membert2">
-	insert into final_member values(#{member_ID},#{member_PW},#{member_linkWhere},#{member_name},#{member_birth, jdbcType=DATE},#{member_sex},#{member_phoneNum},#{member_address},#{member_email},sysdate,'동의')
+	insert into final_member values(#{member_ID},#{member_PW},#{member_linkWhere},#{member_name},#{member_birth, jdbcType=DATE},#{member_sex},#{member_phoneNum},#{member_address},#{member_email},sysdate,#{member_paper})
 	</insert>
 	
 	<select id="businessNumCheck" resultType="int">
@@ -38,5 +38,8 @@
 	insert into PET_INFORMATION values(pet_information_seq.nextval,#{baby_memberID},#{baby_name},#{baby_birth},#{baby_sex},#{baby_weight},#{baby_type},#{baby_typeDetail},#{baby_neut},#{baby_img})
 	</insert>
 	
+	<update id="memberUpdate" parameterType="com.team12.main.t2Login.Membert2">
+	update FINAL_MEMBER set member_name =#{member_name},member_birth =#{member_birth},member_sex =#{member_sex},member_phoneNum =#{member_phoneNum},member_address =#{member_address},member_email=#{member_email}, member_paper =#{member_paper} where member_ID = #{member_ID}
+	</update>
 	
 </mapper>

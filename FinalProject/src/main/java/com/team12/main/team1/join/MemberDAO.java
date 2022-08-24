@@ -255,11 +255,17 @@ public class MemberDAO {
     }
 	
 	// 카카오 유저 정보 가져오기
+
 	private Member getUserInfo (String access_Token) {
 
         //    요청하는 클라이언트마다 가진 정보가 다를 수 있기에 HashMap타입으로 선언
         String reqURL = "https://kapi.kakao.com/v2/user/me";
         Member m = null;
+        
+
+        //    요청하는 클라이언트마다 가진 정보가 다를 수 있기에 HashMap타입으로 선언
+        HashMap<String, Object> userInfo = new HashMap<String, Object>();
+      
         try {
             URL url = new URL(reqURL);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -276,23 +282,9 @@ public class MemberDAO {
             String line = "";
             String result = br.readLine();
 
-            //while ((line = br.readLine()) != null) {
-              //  result += line;
-            //}
             System.out.println("response body : " + result);
 
-           /* JsonParser parser = new JsonParser();
-            JsonElement element = parser.parse(result);
-
-            JsonObject properties = element.getAsJsonObject().get("properties").getAsJsonObject();
-            JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
-            JsonObject kakao_id = element.getAsJsonObject().get("id").getAsJsonObject();
-
-            String id = kakao_id.getAsJsonObject().get("id").getAsString();
-            String nickname = properties.getAsJsonObject().get("nickname").getAsString();
-//            String profile_image = properties.getAsJsonObject().get("profile_image").getAsString();
-            String email = kakao_account.getAsJsonObject().get("email").getAsString();
-*/
+ 
             
             JSONParser jp = new JSONParser();
             JSONObject jo = (JSONObject) jp.parse(result);
@@ -315,24 +307,27 @@ public class MemberDAO {
             m.setMember_email(email);
             m.setMember_linkWhere(2);
             
+        
+
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
         return m;
-    }
+//        return userInfo;
+    
+	}
 
 	
 	public void joinKakao(HttpServletRequest req, String code) {
+		// TODO Auto-generated method stub
 		String tempToken = getAccessToken(code);
 		Member m = getUserInfo(tempToken);
 		 System.out.println("유저 정보" + m);
-//		kakaoMember tempMember = new kakaoMember();
-//		tempMember.setK_acTokken(tempToken);
-//		tempMember.setK_nickname(userInfo.get("nickname").toString());
-//		tempMember.setK_email(userInfo.get("email").toString());
-//		tempMember.setK_memberID("");
+//		HashMap<String, Object> userInfo = getUserInfo(tempToken);
+		 
+
 		if(ss.getMapper(Team1joinMapper.class).getMemberByID(m) != null) {
 			System.out.println("----------------로그인 성공");
 			req.getSession().setAttribute("loginMember",m);
@@ -351,7 +346,8 @@ public class MemberDAO {
 		
 	}
 
-//	
+	
+
 	
 	}
 

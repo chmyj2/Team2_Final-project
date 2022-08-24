@@ -22,65 +22,70 @@
 			<article id="item-1" class="menu__item item-active">
 				<h3>개인 로그인</h3>
 				
-<form action="t2LoginDO.purchase" method="post" name="loginForm">
+<form action="t2LoginDO.purchase" method="post" name="loginForm" onsubmit="return logincheckCall()">
 
 		<div class="login_txt">
 			<h2 class="login_h2">Welcome!</h2>
 			<div class="login-social">
 				<a href=""><i class="fa fa-kakao">kakao</i></a>
-				<a href=""><i class="fa fa-naver">naver</i></a>
+				<div id="naver_id_login"></div>
 				<a href=""><i class="fa fa-google-plus"></i></a>
 							</div>
 			
 			<label class="login_label"> <span>ID</span> 
 			<input class="login_input" name="member_ID" />
 			</label> <label class="login_label"> <span>Password</span> 
-			<input class="login_input" name="member_PW" />
+			<input class="login_input1" name="member_PW" />
 			</label>
+			<input name="member_linkWhere" value="1" type="hidden">
 			<span class="pw_alert">${r}</span>
 			<input type="checkbox" id="login_idSave">아이디 기억하기
-			<button class="forgot-pass" type="button"  style="font-size: 12px;" onclick="location.href='t2join' ">회원가입</button>
+			<p class="forgot-pass" type="button"  style="font-size: 12px;" onclick="location.href='acceptgo?member=1' ">회원가입</p>
 			<p class="forgot-pass"  style="font-size: 12px;">아이디를 잊으셨나요?</p>
 			<p class="forgot-pass"  style="font-size: 12px;">비밀번호를 잊으셨나요?</p>
 			<div class="box bg-1">
 			<input type="submit" class="login-btn" value="L o g i n"/>
-			<input type="hidden" value="${Product.productNum }" name="productNum"/>
-			<input type="hidden" value="${param.quanId }" name="quanId"/>
 			</div>
 		</div>
+			<input type="hidden" value="${param.thumbnail }" name="thumbnail"/>
+			<input type="hidden" value="${param.name }" name="name"/>
+			<input type="hidden" value="${param.price }" name="price"/>
+			<input type="hidden" value="${param.quantity }" name="quantity"/>
 </form>
 
 			</article>
 			
 			<article id="item-2" class="menu__item">
 				<h3>기업 로그인</h3>
-	<form action="t2LoginDO.business.purchase" method="post" name="loginForm">
+	<form action="t2LoginDO.business.purchase" method="post" name="loginFormBusiness" onsubmit="return loginCheck_business()">
 
 		<div class="login_txt">
 			<h2 class="login_h2">Welcome!</h2>
 			
 			<label class="login_label"> <span>ID</span> 
-			<input class="login_input" name="vet_ID" />
+			<input class="login_input3" name="vet_ID" />
 			</label> <label class="login_label"> <span>Password</span> 
-			<input class="login_input" name="vet_PW" />
+			<input class="login_input1" name="vet_PW" />
 			</label>
 			<span class="pw_alert">${rb}</span>
-			<input type="checkbox" id="login_idSave">아이디 기억하기
-			<p class="forgot-pass"  style="font-size: 12px;">회원가입</p>
+			<input type="checkbox" id="login_idSave1">아이디 기억하기
+			<p class="forgot-pass"  style="font-size: 12px;" onclick="location.href='acceptgo?member=2' ">회원가입</p>
 			<p class="forgot-pass"  style="font-size: 12px;">아이디를 잊으셨나요?</p>
 			<p class="forgot-pass"  style="font-size: 12px;">비밀번호를 잊으셨나요?</p>
 			<div class="box bg-1">
 			<input type="submit" class="login-btn" value="L o g i n"/>
-			<input type="hidden" value="${Product.productNum }" name="productNum"/>
-			<input type="hidden" value="${param.quanId }" name="quanId"/>
 			</div>
 		</div>
+		<input type="hidden" value="${param.thumbnail }" name="thumbnail"/>
+		<input type="hidden" value="${param.name }" name="name"/>
+		<input type="hidden" value="${param.price }" name="price"/>
+		<input type="hidden" value="${param.quantity }" name="quantity"/>
 </form>
 			</article>
 			
 			<article id="item-3" class="menu__item">
 				<h3>비회원 구매</h3>
-<form action="t2LoginDO.business" method="post" name="loginForm">
+<form action="purchasePage.NonMembers" method="get" name="loginForm">
 
 		<div class="login_txt">
 			<div style="overflow:auto; width:100%; height:150px;">
@@ -119,12 +124,11 @@
                     <br>동의 거부시 불이익 귀하는 개인정보 수집 및 이용 등에 관해 동의하지 않을 권리가 있습니다. 다만, 필수수집 동의를 하지 않을 경우 구매가 제한될 수 있습니다.</br>
                     <br>고객의 동의를 받아 보유하고 있는 거래정보 등을 고객께서 열람을 요구하는 경우 산책가자는 지체 없이 그 정보를 열람·확인 할 수 있도록 조치합니다.
 			</div>
-			<input type="hidden" value="${param.quanId }" name="quanId"/>
 		<input type="checkbox" id="agree" name="agree" onchange="changeBtn()">
 		안내 사항을 모두 확인하였으며, 이에 동의합니다.
 	</label><br><br>
   		<button type="button" id="checkButton" name="checkButton" disabled="disabled"
-  		 onclick="location.href='purchasePage.NonMembers?productNum=${Product.productNum }'">구매하기</button>
+  		 onclick="location.href='purchasePage.NonMembers?productNum=${param.productNum }'">구매하기</button>
 		</div>
 </form>
 			</article>
