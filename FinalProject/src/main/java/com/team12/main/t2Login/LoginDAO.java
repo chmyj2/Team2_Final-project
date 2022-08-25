@@ -434,11 +434,7 @@ public class LoginDAO {
 		
 		
 		req.setAttribute("petInfo",petInfo); 
-<<<<<<< HEAD
 
-=======
->>>>>>> 9ff0ebb605a1622fa42509ede73e810c551a0dec
-			
 		
 	}
 
