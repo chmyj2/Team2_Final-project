@@ -32,7 +32,6 @@
 </script>
 <script type="text/javascript">
 $(function() {
-	
 	$('.starRev span').click(function(){
 		  $(this).parent().children('span').removeClass('on');
 		  $(this).addClass('on').prevAll('span').addClass('on');
@@ -41,7 +40,6 @@ $(function() {
 		  $('#starrr').attr('value', a)
 		  return false;
 		});
-	
 });
 </script>
 <script type="text/javascript">
@@ -51,6 +49,18 @@ $(function() {
 		$(this).parent().parent().find('span').toggle();
 		$(this).parent().parent().find('input').toggle();
 		$(this).parent().parent().find('input').val(txt);
+		
+		$.ajax({
+			// 서버로 보낼 주소 입력
+			url: "review.update",
+			type: "post",
+//			data: ,
+//			success : 
+			
+		});
+		
+		
+		
 	});
 });
 </script>
@@ -138,33 +148,6 @@ $(function() {
 						</div>
 						<div class="store_product_detail_purchase_review">
 							<div class="store_product_detail_purchase_review_star">
-																<form action="write.review1" method="post" enctype="multipart/form-data">
-								<div class="store_product_detail_purchase_review_cont">
-									<h2>REVIEW</h2>
-									<!-- 제목 -->
-									<input type="text" name="review_title"> <br>
-									<!-- 내용 -->
-									<textarea name="review_text" id="" placeholder="write text"></textarea>
-									<!-- 파일첨부 -->
-									<input type="file" name="review_img">
-									<!-- 별점주기 -->
-
-									<div class="starRev">
-										<span class="starR" value="1">★</span> 
-										<span class="starR" value="2">★</span> 
-										<span class="starR" value="3">★</span> 
-										<span class="starR" value="4">★</span>
-										<span class="starR" value="5">★</span> 
-										<input type="hidden" name="review_star" id="starrr" value="0">
-									</div>
-									
-										<button>리뷰작성완료</button>
-									</div>
-								</form>
-								
-								
-								
-								
 								<div class="store_product_detail_purchase_review_center">
 									<span> 
 										<img src="resources/img/review_star.png" alt="">
@@ -193,12 +176,35 @@ $(function() {
 									</div>
 								</div>
 								
-								
-						
+								<!-- 콘텐츠 세로줄  -->
+							<!-- <div class="vertical_line">
+							</div> -->
 								
 								
 
+								<form action="write.review1" method="post" enctype="multipart/form-data">
+								<div class="store_product_detail_purchase_review_cont">
+									<h2>REVIEW</h2>
+									<!-- 제목 -->
+									<input type="text" name="review_title"> <br>
+									<!-- 내용 -->
+									<textarea name="review_text" id="" placeholder="write text"></textarea>
+									<!-- 파일첨부 -->
+									<input type="file" name="review_img">
+									<!-- 별점주기 -->
 
+									<div class="starRev">
+										<span class="starR" value="1">★</span> 
+										<span class="starR" value="2">★</span> 
+										<span class="starR" value="3">★</span> 
+										<span class="starR" value="4">★</span>
+										<span class="starR" value="5">★</span> 
+										<input type="hidden" name="review_star" id="starrr" value="0">
+									</div>
+									
+										<button>리뷰작성완료</button>
+									</div>
+								</form>
 							</div>
 						</div>
 						

@@ -23,6 +23,9 @@ public interface Team1ReviewMapper {
 	// 전체 별점 평균 구하기
 	double getAllReviewAvg();
 	
+	// 리뷰 수정하기
+	String updateReview(Team1ReviewDTO review);
+	
 	
 
 
