@@ -290,7 +290,7 @@ public class MemberDAO {
             JSONObject jo = (JSONObject) jp.parse(result);
             System.out.println(jo);
             
-            long id = (long) jo.get("id");
+            long id = (Long) jo.get("id");
             System.out.println(id);
             
             JSONObject kakaoaccount = (JSONObject) jo.get("kakao_account");
