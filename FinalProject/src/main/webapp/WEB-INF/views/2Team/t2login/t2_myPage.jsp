@@ -11,7 +11,7 @@
 	<div style="text-align: center;">
 		<h2>회원정보</h2>
 		<label>ID</label> <input type="text" readonly="readonly"
-			value="${sessionScope.loginMember.member_ID }" style="border: none;" id="m_id"><br>
+			value="${sessionScope.loginMember.member_ID }" style="border: none;" name="member_ID"><br>
 
 		<label>이름</label> <input type="text" readonly="readonly"
 			value="${sessionScope.loginMember.member_name }" style="border: none;"><br>
@@ -35,7 +35,7 @@
 		<br>
 		
 		<input type="button" value="수정하기" id="modify" onclick="location.href='myinformation.chgae'"> 
-		<input type="button" value="펫 관리하기"> 
+		<input type="button" value="펫 관리하기" onclick="location.href='t2mypetInformation.go'"> 
 		
 		<c:if test="${sessionScope.loginMember.member_linkWhere == 1 }">
 		<input type="button" value="비밀번호바꾸기"> 
