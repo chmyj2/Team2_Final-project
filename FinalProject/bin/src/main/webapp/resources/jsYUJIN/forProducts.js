@@ -2,9 +2,7 @@
 		$(function() {
 			/*ready!*/
 		});
-		
-		
-		
+
 		function selectACategory() {
 			var categoryNum = document.getElementById('categoryNumSelect');
 			var cv = categoryNum.options[categoryNum.selectedIndex].value;

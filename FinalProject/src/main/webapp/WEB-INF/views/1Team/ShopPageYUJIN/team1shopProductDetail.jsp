@@ -49,15 +49,24 @@ $(function() {
 		$(this).parent().parent().find('span').toggle();
 		$(this).parent().parent().find('input').toggle();
 		$(this).parent().parent().find('input').val(txt);
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 7aa6fba06c754f21ca7d74417574729bf923171e
 		$.ajax({
 			// 서버로 보낼 주소 입력
 			url: "review.update",
 			type: "post",
+<<<<<<< HEAD
 			data: "review_text" + txt ,
 			dataType: "html"
 			success : function (html) {
 				$()
 			}
+=======
+//			data: ,
+//			success : 
+>>>>>>> 7aa6fba06c754f21ca7d74417574729bf923171e
 			
 		});
 		
@@ -158,7 +167,11 @@ $(function() {
 										${avg}
 									</span> 
 									<br>
+<<<<<<< HEAD
 									<!-- <button onclick="review">상품리뷰 작성하기</button> -->
+=======
+									<button onclick="review">상품리뷰 작성하기</button>
+>>>>>>> 7aa6fba06c754f21ca7d74417574729bf923171e
 									<div class="store_product_detail_purchase_review_alert">
 										<c:if test="${sessionScope.loginMember == null }">
 											<p>
@@ -190,7 +203,11 @@ $(function() {
 									<!-- 제목 -->
 									<input type="text" name="review_title"> <br>
 									<!-- 내용 -->
+<<<<<<< HEAD
 									<textarea name="review_text" id="review_text" placeholder="write text"></textarea>
+=======
+									<textarea name="review_text" id="" placeholder="write text"></textarea>
+>>>>>>> 7aa6fba06c754f21ca7d74417574729bf923171e
 									<!-- 파일첨부 -->
 									<input type="file" name="review_img">
 									<!-- 별점주기 -->
@@ -202,6 +219,7 @@ $(function() {
 										<span class="starR" value="4">★</span>
 										<span class="starR" value="5">★</span> 
 										<input type="hidden" name="review_star" id="starrr" value="0">
+<<<<<<< HEAD
 										<input type="hidden" name="review_id">
 									</div>
 									
@@ -213,6 +231,11 @@ $(function() {
 									<c:if test="${sessionScope.loginMember != null }">
 										<button>리뷰작성완료</button>
 									</c:if>
+=======
+									</div>
+									
+										<button>리뷰작성완료</button>
+>>>>>>> 7aa6fba06c754f21ca7d74417574729bf923171e
 									</div>
 								</form>
 							</div>
