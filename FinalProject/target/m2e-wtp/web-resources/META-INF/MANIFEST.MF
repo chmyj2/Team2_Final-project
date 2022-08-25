@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Built-By: mitakeran
 Build-Jdk: 14.0.2
@@ -26,11 +27,14 @@ Created-By: Maven Integration for Eclipse
 
 >>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
 =======
+=======
+>>>>>>> af8b8efb1348f40938db88e9ce6fd586a2641319
 Manifest-Version: 1.0
 Built-By: gks36
 Build-Jdk: 14
 Created-By: Maven Integration for Eclipse
 
+<<<<<<< HEAD
 >>>>>>> 5443c468c76f76e74daebd7aa3ebc4233adc77db
 =======
 Manifest-Version: 1.0
@@ -46,3 +50,5 @@ Build-Jdk: 14
 Created-By: Maven Integration for Eclipse
 
 >>>>>>> a521c7f7eb471a19e4beb9dd75f4c9917d826d26
+=======
+>>>>>>> af8b8efb1348f40938db88e9ce6fd586a2641319
