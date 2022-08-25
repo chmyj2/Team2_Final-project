@@ -10,23 +10,6 @@
 <body>
 	<div class="memberInfoPage-outline">
 		<h2>회원정보</h2>
-<<<<<<< HEAD
-=======
-		<label>ID</label> <input type="text" readonly="readonly"
-			value="${sessionScope.loginMember.member_ID }" style="border: none;" name="member_ID"><br>
-
-		<label>이름</label> <input type="text" readonly="readonly"
-			value="${sessionScope.loginMember.member_name }" style="border: none;"><br>
-
-		<label>생일</label> <input type="text" readonly="readonly"
-			value="${sessionScope.loginMember.member_birth }" style="border: none;"><br>
-
-		<label>성별</label> <input type="text" readonly="readonly"
-			value="${sessionScope.loginMember.member_sex }" style="border: none;"><br>
-
-		<label>전화번호</label>
-		<input type="text" readonly="readonly" value="${sessionScope.loginMember.member_phoneNum }" style="border: none;"><br> 
->>>>>>> 9ff0ebb605a1622fa42509ede73e810c551a0dec
 		
 		<table class="memberInfoPage-table">
 		
