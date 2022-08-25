@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="resources/css/style.css">
 <link rel="stylesheet" href="resources/css/about.css">
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 <link rel="stylesheet"
@@ -86,7 +85,7 @@
         </div>
         <div class="about_sub_donate_img">
             <p class="go_store">
-                <a href="enter.team1Shop">→ Go Store</a>
+                <a href="enter.team1MainShop">→ Go Store</a>
             </p>
             <div class="about_sub_donate_img_wrapper1">
                 <img class="about_sub_donate_img_dog1" src="resources/img/store_cat.jpg"

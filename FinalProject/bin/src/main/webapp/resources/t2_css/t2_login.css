@@ -135,13 +135,14 @@ a {
 }
 
 
-.login_input, .login_bt {
+.login_input,.login_input1,.login_input3, .login_bt {
 	/* login input 버튼 */
 	border: none;
 	outline: none;
 	background: none;
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
+
 
 .login_cont {
 	/*로그인 div 페이지  */
@@ -344,6 +345,26 @@ a {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 	text-align: left;
 }
+.login_input1 {
+	/* login input */
+	display: block;
+	width: 100%;
+	margin-top: 5px;
+	padding-bottom: 5px;
+	font-size: 16px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+	text-align: left;
+}
+.login_input3 {
+	/* login input */
+	display: block;
+	width: 100%;
+	margin-top: 5px;
+	padding-bottom: 5px;
+	font-size: 16px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+	text-align: left;
+}
 
 .pw_alert {/* 패스워드 오류시 경고문 */
 	color: red;
@@ -443,6 +464,15 @@ a {
   height:25px;
   background: none;
 }
+.join-pw2 {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
 
 .join-name {
   width: 100%;
@@ -485,6 +515,16 @@ a {
 }
 
 .join-cellphoneNo {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.vet_businessNum {
   width: 100%;
   border:none;
   outline:none;

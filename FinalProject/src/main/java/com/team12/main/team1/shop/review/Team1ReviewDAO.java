@@ -138,6 +138,11 @@ public class Team1ReviewDAO {
 		String result = String.format("%.1f", avg); 
 		req.setAttribute("avg", result );
 		System.out.println(result);
+
+//		int avg = ss.getMapper(Team1ReviewMapper.class).getAllReviewAvg();  병합충돌 나서 주석 처리 했습니다 - 동훈 -
+		req.setAttribute("avg", avg);
+		System.out.println(avg);
+
 		
 	}
 
@@ -145,6 +150,7 @@ public class Team1ReviewDAO {
 	public void updateReview(HttpServletRequest req, Team1ReviewDTO review) {
 		String update = ss.getMapper(Team1ReviewMapper.class).updateReview(review);
 		System.out.println("수정완료!" + update);
+
 		
 	}
 
