@@ -28,11 +28,7 @@
 </select>
 
 <!-- 전체 리뷰 평점 구하기  -->
-<<<<<<< HEAD
-<select id="getAllReviewAvg" resultType="double">
-=======
 <select id="getAllReviewAvg" resultType="int">
->>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
 	select avg(review_star) from team1_review_board
 </select>
 

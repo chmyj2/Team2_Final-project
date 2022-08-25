@@ -134,10 +134,16 @@ public class Team1ReviewDAO {
 
 	// 리뷰글 평점 평균
 	public void showAllReviewAvg(HttpServletRequest req) {
+<<<<<<< HEAD
 		double avg = ss.getMapper(Team1ReviewMapper.class).getAllReviewAvg();
 		String result = String.format("%.1f", avg); 
 		req.setAttribute("avg", result );
 		System.out.println(result);
+=======
+		int avg = ss.getMapper(Team1ReviewMapper.class).getAllReviewAvg();
+		req.setAttribute("avg", avg);
+		System.out.println(avg);
+>>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
 		
 	}
 
