@@ -98,11 +98,10 @@ function getComments() {
     				let txt = c.comment_txt
     				let date = c.comment_date;
     				let total = c.comment_child_total;
-    				let inputData = `<div class="commentDiv"><div class="col-sm-8 commentBorder"><div>user : <strong class="cStrong">${id}</strong> <em class="cEm">${date}</em></div><div><span class="commentSpan">${txt}</span> <input class="form-control input-sm toggleInput" type="text"><button class="btn btn-success btn-sm togglebtn">완료</button></div></div><div class="col-sm-1"><a id="${commentPK}" class="deleteAtag"><i class="fa fa-times">삭제</i></a> <a id="${commentPK}" class="updateAtag"><i class="fa fa-edit">수정</i></a></div></div>`
+    				let inputData = `<div class="commentDiv"><div class="col-sm-8 commentBorder"><div>user : <strong class="cStrong">${id}</strong> <em class="cEm">${date}</em></div><div style="margin-bottom: 10px"><span class="commentSpan">${txt}</span> <img class="replyIMG" src="resources/img/reply.png"> <input class="form-control input-sm toggleInput" type="text"> <button class="btn btn-success btn-sm togglebtn">완료</button></div></div><div><p class="commentPtag" style="display: none" name="0">답글 보기 (0)</p><div class="childCmtCon"></div></div><div class="col-sm-1"><a id="${commentPK}" class="deleteAtag"><i class="fa fa-times">삭제</i></a> <a id="${commentPK}" class="updateAtag"><i class="fa fa-edit">수정</i></a></div><div class="childComment" style="display: none"><div class="row"><div class="col-sm-6"><input class="form-control input-sm commentChildInput" type="text" placeholder="답글 입력..."></div><div class="col-sm-2"><button id="${commentPK}" class="btn btn-success btn-sm commentChildBtn">완료</button></div></div></div></div>`
     				
     				if(loginid != id){ //본인 작성 댓글에만 수정 삭제버튼 노출 
-    					inputData = `<div class="commentDiv"><div class="col-sm-8 commentBorder"><div>user : <strong class="cStrong">${id}</strong> <em class="cEm">${date}</em></div><div><span class="commentSpan">${txt}</span> <input class="form-control input-sm toggleInput" type="text"><button class="btn btn-success btn-sm togglebtn">완료</button></div></div><div class="col-sm-1"></div></div>
-`
+    				    inputData = `<div class="commentDiv"><div class="col-sm-8 commentBorder"><div>user : <strong class="cStrong">${id}</strong> <em class="cEm">${date}</em></div><div style="margin-bottom: 10px"><span class="commentSpan">${txt}</span> <img class="replyIMG" src="resources/img/reply.png"> <input class="form-control input-sm toggleInput" type="text"> <button class="btn btn-success btn-sm togglebtn">완료</button></div></div><div><p class="commentPtag" style="display: none" name="0">답글 보기 (0)</p><div class="childCmtCon"></div></div><div class="col-sm-1"></div><div class="childComment" style="display: none"><div class="row"><div class="col-sm-6"><input class="form-control input-sm commentChildInput" type="text" placeholder="답글 입력..."></div><div class="col-sm-2"><button id="${commentPK}" class="btn btn-success btn-sm commentChildBtn">완료</button></div></div></div></div>`
     				}
     				
     					
@@ -293,28 +292,38 @@ function getchildComment() {
 
 
 function childCommentUpdate() {
-	
-	let loginid = $('#memberID').val();
-	if(loginid.length == 0){
-		alert('로그인 후 댓글을 작성해 주세요')
-		return false;
-	}
-	
+	let loginid = "";
 	
 	let c_comment_num = "";
 	let select = "";
 	
 	$(document).on("click", '.childUpdateAtag', function() {
-		 let txt = $(this).parent().find('span').text();
+		
+		 loginid = $('#memberID').val();
+		if(loginid.length == 0){
+			alert('로그인 후 댓글을 작성해 주세요')
+			return false;
+		}
+		
+		let txt = $(this).parent().find('span').text();
 		 c_comment_num = $(this).attr('id');
 		 
 		 $(this).parent().find('span').toggle();
 		 $(this).next().next().next().next().toggle();
 		select = $(this);
+		
+		
 	});
 	
 	
 	$(document).on("click", '.editChildBtn', function() {
+		
+		 loginid = $('#memberID').val();
+			if(loginid.length == 0){
+				alert('로그인 후 댓글을 작성해 주세요')
+				return false;
+			}
+		
 		let txt = $(this).parent().parent().find('input').val()
 		
 		$.ajax({   // 답글 수정 
@@ -336,8 +345,6 @@ function childCommentUpdate() {
 					 $(select).next().next().next().next().toggle();
 					 $(select).parent().find('span').text(txt);
 					 
-					
-	
 				
 			}
 		
