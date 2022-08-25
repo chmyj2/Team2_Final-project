@@ -22,8 +22,8 @@ function btnCorrection()  {
 		$(".span-text-input").css('border', 'none');
 		
 		phNmbBtn.src="resources/t2_img/free-icon-edit-8036025 (1).png"
-		const innerphNmb = document.getElementById('reserve-phNmn');
-		innerphNmb.innerText =phNmb;
+		const innerphNmb = document.getElementById('reserve-memberphNmn');
+		innerphNmb.value =phNmb;
 		
 		phNmbBtn.value = "수정"
 	}
@@ -59,7 +59,7 @@ if (petNameBtn.value=="수정") {
 	
 	petNameBtn.src="resources/t2_img/free-icon-edit-8036025 (1).png"
 	const innerpetName = document.getElementById('reserve-pet-name');
-	innerpetName.innerText =petName;
+	innerpetName.value =petName;
 	
 	petNameBtn.value = "수정"
 }
@@ -85,16 +85,16 @@ function petAgebtnCorrection() {
 	}else if (petAgeBtn.value=="확인") {
 		
 		
-		let petAge = $(".span-text-petAge-input").val()+"살";
+		let petAge = $(".span-text-petAge-input").val();
 		
 		$(".span-text-petAge-input").attr("disabled", true);
 		$(".span-text-petAge-input").css('background-color', '#f9f9f9');
 		$(".span-text-petAge-input").css('border', 'none');
 		
 		petAgeBtn.src="resources/t2_img/free-icon-edit-8036025 (1).png"
-		const innerpetAge = document.getElementById('reserve-pet-age');
+		const innerpetAge = document.getElementById('reserve-pet-birth');
 		
-		innerpetAge.innerText = petAge;
+		innerpetAge.value = petAge;
 		
 		petAgeBtn.value = "수정"
 	}
@@ -126,7 +126,7 @@ function petTypebtnCorrection() {
 		
 		petTypeBtn.src="resources/t2_img/free-icon-edit-8036025 (1).png"
 		const innerpetType = document.getElementById('reserve-pet-type');
-		innerpetType.innerText = petType;
+		innerpetType.value = petType;
 		
 		petTypeBtn.value = "수정"
 	}

@@ -14,11 +14,21 @@ select * from team1_review_board
 insert into team1_review_board 
 	values(team1_review_board_seq.nextval,'leeyoky','제목','내용', sysdate, 'about5.png', '1')
 
-		select * from (
-		select rownum as rn, review_num, review_id, review_title, review_txt,
-				review_date, review_img, review_star
-				from (
-				select * from team1_review_board
-				order by review_date desc
-				)
-	)
+-----페이징	
+select * from (
+	select rownum as rn, review_num, review_id, review_title, review_txt,
+		review_date, review_img, review_star 
+		from (
+		select * from team1_review_board order by review_date desc)
+		) where rn between #{start_data} and #{end_data}
+
+		
+-----전체 글의 갯수 구하기
+
+select count(*) from team1_review_board
+
+-----전체 별점 평균 구하기
+
+select avg(review_star) from team1_review_board
+
+
