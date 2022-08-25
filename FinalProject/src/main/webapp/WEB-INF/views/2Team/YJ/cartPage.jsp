@@ -28,7 +28,7 @@
 						
 						<h3>Remove product</h3>
 						<input  type="hidden" name="thumbnail" value="${p.productThumbnail }">
-						<input  type="hidden" name="name" value="${p.productName }">
+						<input  type="hidden" name="name" id="name" value="${p.productName }">
 						<input  type="hidden" name="price" value="${p.productPrice }">
 						<input  type="hidden" class="cartNum" name="cartNum" value="${p.cartNum }">
 						<input  type="hidden" class="productNum" name="productNum" value="${p.productNum }">
@@ -67,7 +67,7 @@
 
 			<div class="right">
 				<h1 class="total">총 금액: <span id="totalPrice">0</span>원</h1>
-				<a class="CheckOutbtn" onclick="CheckOutFunc()" >Check Out</a>
+				<a class="CheckOutbtn" onclick="return CheckOutFunc()" >Check Out</a>
 			</div>
 
 		</div>

@@ -19,4 +19,9 @@
 </delete>
 
 
+<delete id="deletePurchasedProduct" parameterType="com.team12.main.t2.shop.Cart">
+	DELETE  product_cart WHERE cartNum = #{cartNum}
+</delete>
+
+
 </mapper>

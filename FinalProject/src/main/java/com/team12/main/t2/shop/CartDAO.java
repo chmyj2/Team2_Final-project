@@ -134,4 +134,15 @@ public class CartDAO {
 		
 	}
 
+	public void deletePurchasedProduct(String[] cartNumArr) {
+		Cart c = new Cart();
+		for (int i = 0; i < cartNumArr.length; i++) {
+			c.setCartNum(Integer.parseInt( cartNumArr[i]));
+			ss.getMapper(ProductCartMapper.class).deletePurchasedProduct(c);
+		}
+		
+		
+		
+	}
+
 }

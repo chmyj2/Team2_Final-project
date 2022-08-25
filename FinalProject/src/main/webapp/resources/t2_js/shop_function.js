@@ -115,7 +115,13 @@ function loadPrice(){
 
 
 function CheckOutFunc() {
+  if(document.getElementById("name") == null){
+    alert("장바구니가 비어있습니다.")
+    return false;
+
+  }else{
 	$('#CheckOutForm').submit();
+}
 }
 
 

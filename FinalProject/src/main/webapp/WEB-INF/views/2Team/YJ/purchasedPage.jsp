@@ -10,6 +10,7 @@
 <script type="text/javascript">
 $(function(){
 	
+	
 	var totalPrice = $('#totalPrice').text(); // 총금액
 	var shipAddress = $('#shipAddress').text();	// 회원 정보
 	var Recipient = document.getElementById("billAddress").value; // 받는사람
@@ -37,7 +38,6 @@ $(function(){
 				 
 	});
 	
-	
 	$('#payment').click(function(){
 		
 		
@@ -52,10 +52,8 @@ $(function(){
 			success:function(data){
 				var box = data.next_redirect_pc_url;
 				var kakaoPop= window.open(box,'kakaoPay','width=500, height=800');
-				kakaoPop.addEventListener('beforeunload', () => {
-					   console.log('asd')
-				deleteProductInfo(); 
-					})
+				kakaoPop.document.getElementById("aaa").value = document.getElementById("billAddress").value;
+				//deleteProductInfo(); 
 				{
 					
 				}
@@ -65,36 +63,16 @@ $(function(){
 			}
 		});
 	});
+	
+	
+	
+	
+	
+	
 });
-
-
-
-function deleteProductInfo() {
-	alert("여기옴");
-	$.ajax({
-		url : "delete.purchasedProduct",
-		type : "GET",
-		dataType : "text",
-		data :	{"productNumArr" : productNumArr},
-		success : function(getData) {
-			console.log(getData);
-			if (getData == 1) {
-				console.log("삭제 성공");
-			}else {
-				console.log("삭제 실패");
-			}
-		}
-	});
-	
-	
-};
-
-
-
 </script>
 </head>
 <body>
-
 	<header id="site-header">
 		<div class="container">
 			<h1>배송 및 구매</h1>
@@ -166,7 +144,7 @@ function deleteProductInfo() {
     		</div>
     		<div class="divTableRow">
       			<div class="divTableCell">배송지 주소</div>
-      			<div class="divTableCell"><input type="text" name="billState" id="billState" placeholder="우편번호"  style="width: 200px;"/>
+      			<div class="divTableCell"><input type="text" name="billState" id="billState" class="billState" placeholder="우편번호"  style="width: 200px;"/>
       									  <input type="text" name="billState1" id="billState1" placeholder="도로명주소" style="width: 200px;"/>
       									  <input type="text" name="billState2" id="billState2" placeholder="상세주소" style="width: 200px;"/>
       									  <span id="addrSearchBtn" style="display:inline;">[검색]</span></div>
@@ -372,4 +350,65 @@ function deleteProductInfo() {
 
 
 </body>
+<script type="text/javascript">
+
+function deletANDINsert(){
+	
+	
+	var totalPrice = $('#totalPrice').text(); // 총금액
+	var shipAddress = $('#shipAddress').text();	// 회원 정보 */
+	var Recipient = document.getElementById("billAddress").value; // 받는사람
+	var phoneNum = document.getElementById("billCity").value; // 받는사람 전화번호
+	var billState = document.getElementById("billState").value; // 우편번호
+	var billState1 = document.getElementById("billState1").value; // 도로명주소
+	var billState2 = document.getElementById("billState2").value; // 상세주소
+	var memo = document.getElementById("billZip").value; // 메모
+	
+	var productNum = document.getElementsByName("productNum"); // 상품pk
+	var productName = document.getElementsByName("name"); // 상품이름
+	var quantity = document.getElementsByName("quantity"); // 수량
+	var price = document.getElementsByName("price"); // 상품 금액
+	
+	var productNumArr = new Array();
+	var produckNameArr = new Array();
+	var quantityArr = new Array();
+	var pricekArr = new Array(); */
+	
+	$(".product").each(function( i, e ) {
+		productNumArr.push(productNum[i].value);
+		produckNameArr.push(productName[i].value);
+		quantityArr.push(quantity[i].value);
+		pricekArr.push(price[i].value);
+				 
+	});
+	
+	alert(totalPrice);
+	alert(shipAddress);
+	alert(Recipient);
+	alert(phoneNum);
+	alert(billState);
+	alert(billState1);
+	alert(billState2);
+	alert(memo);
+	alert(productNumArr);
+	alert(produckNameArr);
+	alert(quantityArr);
+	alert(pricekArr);
+	
+	
+	
+	
+	
+	var cartNum = document.getElementsByName("cartNum");
+	var cartNumArr = new Array();
+	$(".product").each(function( i, e ) {
+		cartNumArr.push(cartNum[i].value);
+	});
+	
+	alert(cartNum);
+	//location.href='deleteAndInserPurchasedProduct?cartNumArr=' + cartNumArr;
+	};
+
+
+</script>
 </html>

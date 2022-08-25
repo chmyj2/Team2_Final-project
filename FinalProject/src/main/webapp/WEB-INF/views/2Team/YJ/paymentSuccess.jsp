@@ -5,15 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-function asd() {
-	console.log('sad');
-}
-
-
-</script>
 </head>
 <body>
-<button onclick="asd()"></button>
+결재가 완료되었습니다.
+구매감사합니다.
+
 </body>
 </html>

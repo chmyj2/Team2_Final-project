@@ -137,7 +137,7 @@ public class ProductCartController {
 						+ "&total_amount="+ totalPrice // 총 금액
 						+ "&vat_amount=0" // 부가세
 						+ "&tax_free_amount=0" // 상품 비과세 금액
-						+ "&approval_url=http://localhost:8080/main/team2Main" // 결제 성공 시
+						+ "&approval_url=http://localhost:8080/main/kakaoSuccess" // 결제 성공 시
 						+ "&fail_url=http://localhost:8080/kakaoPayCancel" // 결제 실패 시
 						+ "&cancel_url=http://localhost:8080/kakaoPaySuccessFail"; // 결제 취소 시
 				OutputStream send = connection.getOutputStream(); // 이제 뭔가를 를 줄 수 있다.
@@ -187,7 +187,26 @@ public class ProductCartController {
 		
 		
 		
+		// 자식창 이동
+		@RequestMapping(value = "/kakaoSuccess", method = RequestMethod.GET)
+		public String kakaoSuccess(HttpServletRequest request) {
+		return "2Team/YJ/kakaoPayClose";
+		}
 		
+		
+		
+		
+		// 장바구니 삭제
+		@RequestMapping(value = "/deleteAndInserPurchasedProduct", method = RequestMethod.GET)
+		public String deleteCart(HttpServletRequest request,@RequestParam("cartNumArr") String [] cartNumArr) {
+			System.out.println("여기까지오냐");
+			cDAO.deletePurchasedProduct(cartNumArr);
+			lDAO.loginCheck(request);
+			
+			request.setAttribute("contentPage", "YJ/paymentSuccess.jsp");
+			
+			return "2Team/t2_index";
+		}
 	
 
 }
