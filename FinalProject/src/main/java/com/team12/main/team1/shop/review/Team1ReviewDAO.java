@@ -142,6 +142,13 @@ public class Team1ReviewDAO {
 		
 	}
 
+	// 리뷰 글 수정
+	public void updateReview(HttpServletRequest req, Team1ReviewDTO review) {
+		String update = ss.getMapper(Team1ReviewMapper.class).updateReview(review);
+		System.out.println("수정완료!" + update);
+		
+	}
+
 
 
 

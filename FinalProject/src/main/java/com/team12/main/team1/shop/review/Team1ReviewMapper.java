@@ -25,6 +25,9 @@ public interface Team1ReviewMapper {
 	int getAllReviewAvg();
 
 	
+	// 리뷰 수정하기
+	String updateReview(Team1ReviewDTO review);
+	
 	
 
 

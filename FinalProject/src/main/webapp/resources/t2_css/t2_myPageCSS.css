@@ -28,13 +28,18 @@
 }
 
 .myPetPage-table{
+<<<<<<< HEAD
 	
+=======
+	border: 2px solid;
+>>>>>>> 9ff0ebb605a1622fa42509ede73e810c551a0dec
 	margin-left: auto;
 	margin-right: auto;
 	width: 300px;
     height: 250px;
     margin-bottom: 20px;
 }
+<<<<<<< HEAD
 
 /*  내 정보페이지 CSS */
 
@@ -91,3 +96,5 @@
 	width: 120px;
     text-align: center;	
 }
+=======
+>>>>>>> 9ff0ebb605a1622fa42509ede73e810c551a0dec

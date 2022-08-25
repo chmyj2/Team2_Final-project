@@ -332,6 +332,7 @@ public class LoginController {
 		
 		return "2Team/t2_index";
 	}
+<<<<<<< HEAD
 	
 	@RequestMapping(value = "/petInfoChange.go", method = RequestMethod.GET)
 	public String petInfoChangego(HttpServletRequest req,pet p) {
@@ -346,6 +347,8 @@ public class LoginController {
 		
 		return "2Team/t2_index";
 	}
+=======
+>>>>>>> 9ff0ebb605a1622fa42509ede73e810c551a0dec
 
 	
 	
