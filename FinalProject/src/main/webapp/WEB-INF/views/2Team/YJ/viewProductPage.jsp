@@ -9,9 +9,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-.row {
-   margin: 0px auto; /*가운데 정렬*/
-}
+
 </style>
 </head>
 <body>
@@ -90,8 +88,6 @@
          </c:forEach>
      </div>
     </div>
-				
-				
 			</article>
 
 
@@ -102,35 +98,4 @@
 
 
 </body>
-
-<script type="text/javascript">
-$(function() {
-
-	// Menu Tabular
-	var $menu_tabs = $('.menu__tabs li a'); 
-	$menu_tabs.on('click', function(e) {
-		e.preventDefault();
-		$menu_tabs.removeClass('active');
-		$(this).addClass('active');
-
-		$('.menu__item').fadeOut(300);
-		$(this.hash).delay(300).fadeIn();
-	});
-	
-
-	
-
-});
-
-function changeBtn() {
-	let btn = document.getElementById('checkButton');
-	let disabled = btn.disabled;
-	if(disabled){
-	btn.disabled = false;
-	}else{
-	btn.disabled = true;		
-	}	
-}
-
-</script>
 </html>
