@@ -30,7 +30,7 @@
 </select>
 
 <!-- 전체 리뷰 평점 구하기  -->
-<select id="getAllReviewAvg" resultType="double">
+<select id="getAllReviewAvg" resultType="int">
 	select avg(review_star) from team1_review_board
 </select>
 

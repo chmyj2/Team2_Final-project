@@ -425,7 +425,15 @@
     height: 400px;
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    position: absolute;
+>>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
+    padding: 20px;
+=======
     padding: 30px;
+>>>>>>> 9ff0ebb605a1622fa42509ede73e810c551a0dec
 }
 
 .store_product_detail_purchase_review_star img{
@@ -537,8 +545,16 @@ input
     width: 500px;
     height: 450px;
     position: absolute;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    left: 60%;
+=======
     left: 50%;
+>>>>>>> 9ff0ebb605a1622fa42509ede73e810c551a0dec
     top:0%;
+=======
+    left: 50%;
+>>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
 }
 
 .store_product_detail_purchase_review_cont input[type=text]{
@@ -723,6 +739,9 @@ input
 	
 }
 
+<<<<<<< HEAD
 /*  */
 
+=======
+>>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
 

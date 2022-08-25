@@ -332,6 +332,21 @@ public class LoginController {
 		
 		return "2Team/t2_index";
 	}
+	
+	@RequestMapping(value = "/petInfoChange.go", method = RequestMethod.GET)
+	public String petInfoChangego(HttpServletRequest req,pet p) {
+		//강아지 정보 보러가는 페이지
+		
+		lDAO.petinfoGet(req,p);
+		lDAO.loginCheck(req);
+		
+		req.setAttribute("contentPage", "t2login/myPetInfo.jsp");			
+		
+		
+		
+		return "2Team/t2_index";
+	}
+
 
 	
 	
