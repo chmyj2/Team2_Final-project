@@ -9,13 +9,12 @@ pom.properties
 *.classpath
 .settings
 
-pom.properties
 
 FinalProject/bin/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 FinalProject/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 01_Team1Final/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 /MANIFEST.MF/
-*.properties
+
 *.name
 *.container
 FinalProject/target/test-classes/log4j.xml
