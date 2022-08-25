@@ -40,7 +40,7 @@ public class LoginDAO {
 		if (dbMember != null) {
 			if (m.getMember_PW().equals(dbMember.getMember_PW())) {
 				req.getSession().setAttribute("loginMember", dbMember);
-				req.getSession().setMaxInactiveInterval(60 * 10);
+				req.getSession().setMaxInactiveInterval(60 * 60);
 				
 				return true;
 			}else {
@@ -115,7 +115,7 @@ public class LoginDAO {
 		if(dbvet != null) {
 			if(v.getVet_PW().equals(dbvet.getVet_PW())) {
 				req.getSession().setAttribute("loginMember_business", dbvet);
-				req.getSession().setMaxInactiveInterval(60 * 10);
+				req.getSession().setMaxInactiveInterval(60 * 60);
 				return true;
 			}else {
 				return false;
@@ -272,7 +272,7 @@ public class LoginDAO {
 		
 		if (dbMember != null) {
 				req.getSession().setAttribute("loginMember", dbMember);
-				req.getSession().setMaxInactiveInterval(60 * 10);
+				req.getSession().setMaxInactiveInterval(60 * 60);
 		}else {
 			System.out.println("--------111------------실패");
 		}
@@ -326,11 +326,10 @@ public class LoginDAO {
 	public void petReg(HttpServletRequest req, MultipartFile baby_img, String baby_name, Double baby_weight, Date baby_birth, String baby_sex, String baby_type, String baby_typeDetail, String baby_neut, String baby_memberID) {
 		// 펫등록하기
 		String path = req.getSession().getServletContext().getRealPath("resources/t2_sj_petFiles");
-		
-		System.out.println("여기오는거니???????????");
+		System.out.println(path);
+
 		
 		try {
-			System.out.println("왜 안되는 거냐구 왜!!!");
 			
 			String fileName = baby_img.getOriginalFilename();
 			
@@ -363,11 +362,13 @@ public class LoginDAO {
 			p.setBaby_typeDetail(baby_typeDetail);
 			p.setBaby_weight(baby_weight);
 			
-			if (ss.getMapper(Team2loginMapper.class).petReg(p)==1) {
-				System.out.println("등록 성공-----------");
-			}else {
-				System.out.println("1등록 실패-----------");
+			if (!baby_img.getOriginalFilename().isEmpty()) {
+				//실제 업로드 코드
+				baby_img.transferTo(new File(path,saveFileName));
+				ss.getMapper(Team2loginMapper.class).petReg(p);
+				System.out.println("펫 등록 성공");
 			}
+			
 			
 			
 			
@@ -415,6 +416,25 @@ public class LoginDAO {
 		}else {
 			System.out.println("-----------------------정보수정 실패");
 		}
+		
+	}
+
+
+
+	public void petinfoGet(HttpServletRequest req, pet p) {
+		// 펫 정보 출력하기
+		Membert2 loginMember = (Membert2) req.getSession().getAttribute("loginMember");
+		
+		String ID = loginMember.getMember_ID();
+		
+		System.out.println("---------------------"+ID);
+		p.setBaby_memberID(ID);
+		pet petInfo = ss.getMapper(Team2loginMapper.class).getPetInfo(p);
+		
+		
+		
+		req.setAttribute("petInfo",petInfo); 
+			
 		
 	}
 

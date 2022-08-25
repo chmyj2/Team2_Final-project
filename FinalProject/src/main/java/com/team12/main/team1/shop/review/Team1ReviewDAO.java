@@ -2,10 +2,10 @@ package com.team12.main.team1.shop.review;
 
 
 import java.io.File;
+import java.text.Format;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -19,23 +19,60 @@ import com.team12.main.team1.join.MemberDAO;
 
 @Service
 public class Team1ReviewDAO {
-
+	
 	@Autowired
 	private SqlSession ss;
 	
+	@Autowired
 	private MemberDAO mDAO;
+	
 	
 	// 전체 리뷰 보여주기
 	public void showReviewList(HttpServletRequest req, Team1ReviewDTO review) {
 		
+		int page = review.getPage();
+		
+		if(page == 0) {
+			page = 1;
+		}
+		
+		// 보여주고 싶은 리뷰 수
+		int cnt = 5;
+		// 총 리뷰 수
+		int allReview = ss.getMapper(Team1ReviewMapper.class).getAllReviewCnt(review);
+		req.setAttribute("p", allReview);
+		
+		System.out.println("댓글 합 ---------"+allReview);
+		// 총 페이지 수
+		int totalPage = (int) Math.ceil((double)allReview / cnt);
+		req.setAttribute("pageCount", totalPage);
+		
+		
+		// 총데이터 수 - (한페이지당보여줄개수 * (페이지번호 - 1));
+		
+		int start = (page - 1) * cnt + 1;
+	
+		// (페이지번호 == 총페이지수) ? 총데이터수 : 시작데이터번호 + 한페이지당보여줄 개수 -1;
+		int end = (page == totalPage) ? allReview  : start + cnt - 1 ;
+		
+		review.setStart_data(start);
+		review.setEnd_data(end);
+		
+		if(page == 1) {
+			review.setStart_data(1);
+			review.setEnd_data(5);
+		}
+		
 		List<Team1ReviewDTO> reviews = ss.getMapper(Team1ReviewMapper.class).getReviewList(review);
-			System.out.println("title:"+review.getReview_title());
 		req.setAttribute("r", reviews);
+		
+		
 	}
 
+	
 	//글쓰기
 	
-	public void writeReview(HttpServletRequest req, MultipartHttpServletRequest mr) {
+	public void writeReview(HttpServletRequest req, MultipartHttpServletRequest mr ) {
 
 		String path = req.getSession().getServletContext().getRealPath("resources/reviewFile");
 		System.out.println("path :"+path);
@@ -77,14 +114,40 @@ public class Team1ReviewDAO {
 		
 	}
 
+	// 게시글 삭제
 	public void deleteReview(HttpServletRequest req, Team1ReviewDTO review) {
-		
 		if (ss.getMapper(Team1ReviewMapper.class).deleteReview(review) == 1) {
 			System.out.println("삭제성공");
 		} else {
 			System.out.println("삭제실패");
 		}
 	}
+	
+	
+	// 리뷰글 개수
+/*	public void showAllReviewCnt(HttpServletRequest req) {
+	int a = ss.getMapper(Team1ReviewMapper.class).getAllReview();
+		req.setAttribute("p", a);	
+		System.out.println(a);
+	
+	}*/
+
+	// 리뷰글 평점 평균
+	public void showAllReviewAvg(HttpServletRequest req) {
+		double avg = ss.getMapper(Team1ReviewMapper.class).getAllReviewAvg();
+		String result = String.format("%.1f", avg); 
+		req.setAttribute("avg", result );
+		System.out.println(result);
+//		int avg = ss.getMapper(Team1ReviewMapper.class).getAllReviewAvg();  병합충돌 나서 주석 처리 했습니다 - 동훈 -
+		req.setAttribute("avg", avg);
+		System.out.println(avg);
+		
+	}
+
+
+
+
+	
 	
 	
 }

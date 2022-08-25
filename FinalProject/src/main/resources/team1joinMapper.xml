@@ -45,4 +45,6 @@ select * from final_member where member_ID = #{member_ID} and member_linkWhere =
 	
 
 
+	
+
 </mapper> 

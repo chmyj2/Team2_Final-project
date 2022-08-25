@@ -33,7 +33,7 @@ public class ShopManagerController {
 		return "1Team/t1_index";
 	}
 	
-	//	처음에 숍을 클릭했을 때 // -> Dog 눌렀을때 페이지로 변경하려 해요 YK
+	//	처음에 숍을 클릭했을 때 // -> 8/23 우리 커뮤니티 카테고리 dog1/cat2로 나눌까요?
 	@RequestMapping(value="/enter.team1StoreForDog", method = RequestMethod.GET)
 	public String shopEntering(ProductDTO p, HttpServletRequest req) {
 			
@@ -41,7 +41,6 @@ public class ShopManagerController {
 			//모든 상품 불러오기
 		pDAO.loadProducts(p, req);
 			//페이징하기
-			//로그인체크
 	
 		req.setAttribute("contentPage", "ShopPageYUJIN/team1ShopForDog.jsp");
 		return "1Team/t1_index";
@@ -54,7 +53,6 @@ public class ShopManagerController {
 			//모든 상품 불러오기
 			pDAO.loadProducts(p, req);
 			//페이징하기
-			//로그인체크
 		req.setAttribute("contentPage", "ShopPageYUJIN/team1ShopForCat.jsp");
 		return "1Team/t1_index";
 	}
@@ -68,8 +66,10 @@ public class ShopManagerController {
 		mDAO.loginCheck(req);
 		//리뷰 리스트 가져오기
 		rDAO.showReviewList(req, review);
+		//전체 리뷰 평균 가져오기
+		rDAO.showAllReviewAvg(req);
 		//상품 하나 가져오기
-		pDAO.loadAProduct(p,req);
+		//pDAO.loadAProduct(p,req);
 		
 		
 		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");

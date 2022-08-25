@@ -21,4 +21,8 @@ public interface Team1joinMapper {
 
 	
 
+
+	
+
+
 }

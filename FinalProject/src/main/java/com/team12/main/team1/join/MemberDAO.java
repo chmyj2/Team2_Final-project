@@ -353,6 +353,7 @@ public class MemberDAO {
 		public String find_id(String email) throws Exception{
 			return sqlsession.selectOne("com.team12.main.team1.join.Team1joinMapper.find_id", email);
 		}
+	
 
 	
 	}

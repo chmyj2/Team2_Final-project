@@ -10,12 +10,12 @@
 
 <table id="loginSuccessTable">
 		<tr>
-			<td rowspan="2" style="width: 70px;"><img
-				src="resources/files/${sessionScope.loginMember.m_photo }"></td>
-			<td style="height: 20px;">${sessionScope.loginMember.m_id }</td>
+			<td rowspan="2" style="width: 70px;">
+			<%-- <img src="resources/files/${sessionScope.loginMember.m_photo }"></td> --%>
+			<td style="height: 20px;">${sessionScope.loginMember.member_ID }</td>
 		</tr>
 		<tr>
-			<td align="right" valign="top">(${sessionScope.loginMember.m_name })</td>
+			<td align="right" valign="top">(${sessionScope.loginMember.member_name })</td>
 		</tr>
 		<tr>
 			<td colspan="2" align="center">
