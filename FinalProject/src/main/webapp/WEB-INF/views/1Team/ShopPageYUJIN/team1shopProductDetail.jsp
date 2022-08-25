@@ -49,13 +49,15 @@ $(function() {
 		$(this).parent().parent().find('span').toggle();
 		$(this).parent().parent().find('input').toggle();
 		$(this).parent().parent().find('input').val(txt);
-		
 		$.ajax({
 			// 서버로 보낼 주소 입력
 			url: "review.update",
 			type: "post",
-//			data: ,
-//			success : 
+			data: "review_text" + txt ,
+			dataType: "html"
+			success : function (html) {
+				$()
+			}
 			
 		});
 		
@@ -97,7 +99,7 @@ $(function() {
                     </div>
                     <!-- 결과창 -->
                     <div class="store_product_detail_result">
-                        총액(수량):
+                       	 총액(수량):
                     </div>
                     <div class="store_product_detail_btn">
                         <button class="store_buy_btn" onclick="">구매하기</button>
@@ -156,7 +158,7 @@ $(function() {
 										${avg}
 									</span> 
 									<br>
-									<button onclick="review">상품리뷰 작성하기</button>
+									<!-- <button onclick="review">상품리뷰 작성하기</button> -->
 									<div class="store_product_detail_purchase_review_alert">
 										<c:if test="${sessionScope.loginMember == null }">
 											<p>
@@ -188,7 +190,7 @@ $(function() {
 									<!-- 제목 -->
 									<input type="text" name="review_title"> <br>
 									<!-- 내용 -->
-									<textarea name="review_text" id="" placeholder="write text"></textarea>
+									<textarea name="review_text" id="review_text" placeholder="write text"></textarea>
 									<!-- 파일첨부 -->
 									<input type="file" name="review_img">
 									<!-- 별점주기 -->
@@ -200,9 +202,17 @@ $(function() {
 										<span class="starR" value="4">★</span>
 										<span class="starR" value="5">★</span> 
 										<input type="hidden" name="review_star" id="starrr" value="0">
+										<input type="hidden" name="review_id">
 									</div>
 									
+									<c:if test="${sessionScope.loginMember == null }">
+										<p>상품 리뷰는 <a href="loginandjoin.go" style="background-color: yellow;">
+										로그인</a>후 에 작성 가능합니다
+										</p>
+									</c:if>
+									<c:if test="${sessionScope.loginMember != null }">
 										<button>리뷰작성완료</button>
+									</c:if>
 									</div>
 								</form>
 							</div>
