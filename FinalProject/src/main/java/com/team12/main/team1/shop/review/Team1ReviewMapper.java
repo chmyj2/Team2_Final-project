@@ -6,15 +6,30 @@ import java.util.Map;
 public interface Team1ReviewMapper {
 	
 	// 전체 리뷰 보여주기
-	public List<Team1ReviewDTO> getReviewList(Team1ReviewDTO review);
-	public Team1ReviewDTO showReview(Team1ReviewDTO review);
+	 List<Team1ReviewDTO> getReviewList(Team1ReviewDTO review);
+	 Team1ReviewDTO showReview(Team1ReviewDTO review);
 	
-	public int getAllReviewCnt(Team1ReviewDTO review);
+	 int getAllReviewCnt(Team1ReviewDTO review);
 	// 리뷰 쓰기
-	public int writeReview(Map<String, String> review);
+	 int writeReview(Map<String, String> review);
 	
 	// 리뷰 삭제하기
 	int deleteReview(Team1ReviewDTO review);
+	
+	// 전체 리뷰 갯수 구하기
+//	int getAllReview();
+	int getAllReview(Team1ReviewDTO review);
+	
+	// 전체 별점 평균 구하기
+	double getAllReviewAvg();
+
+//	int getAllReviewAvg();
+	
+	// 리뷰 수정하기
+	String updateReview(Team1ReviewDTO review);
+
+	
+	
 
 
 	

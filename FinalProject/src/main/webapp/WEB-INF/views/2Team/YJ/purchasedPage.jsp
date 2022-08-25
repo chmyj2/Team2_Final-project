@@ -52,8 +52,6 @@ $(function(){
 			success:function(data){
 				var box = data.next_redirect_pc_url;
 				var kakaoPop= window.open(box,'kakaoPay','width=500, height=800');
-				kakaoPop.document.getElementById("aaa").value = document.getElementById("billAddress").value;
-				//deleteProductInfo(); 
 				{
 					
 				}

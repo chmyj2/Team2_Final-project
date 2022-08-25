@@ -41,6 +41,8 @@
 	<script type="text/javascript" src="resources/t2_js/shop_function.js"></script>
 	<link href='resources/t2_css/shopDetailPage.css' rel="stylesheet" type="text/css">
 	
+	<!-- 로그인 내 정보페이지 -->
+	<link href="resources/t2_css/t2_myPageCSS.css" rel="stylesheet" type="text/css">
 	
 </head>
 <body>

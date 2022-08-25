@@ -422,12 +422,10 @@
 
 .store_product_detail_purchase_review_center{
     width: 400px;
-    height: 150px;
+    height: 400px;
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
-    margin-top: 20px;
-    position: absolute;
-    padding: 20px;
+    padding: 30px;
 }
 
 .store_product_detail_purchase_review_star img{
@@ -451,6 +449,32 @@
 .store_product_detail_purchase_review_alert p{
 	font-size: 10pt;
 }
+
+.store_product_detail_purchase_review_center_sub{
+    font-size: 11pt;
+    text-align: left;
+    padding: 20px;
+    line-height: 25px;
+    background-color:  rgba(218, 218, 218, 0.3);
+    margin-top:40px;
+}
+
+.store_product_detail_purchase_review_center_sub ul li{
+	list-style-type: none;
+}
+
+.store_product_detail_purchase_review_center_sub span{
+	color: #ffe600;
+	font-size: 15pt;
+	display: inline-block;
+	width: 140px;
+}
+
+.vertical_line{
+	border-left: 0.5px solid black;
+	height: 200px;
+}
+
 
 /* -------------tab메뉴 -------- */
 
@@ -511,10 +535,10 @@ input
     font-size: 10pt;
     padding: 10px;
     width: 500px;
-    height: 530px;
+    height: 450px;
     position: absolute;
     left: 50%;
-    margin-top: 20px;
+    top:0%;
 }
 
 .store_product_detail_purchase_review_cont input[type=text]{
@@ -525,7 +549,7 @@ input
     border-bottom: 1px solid;
     width: 300px;
     margin-bottom: 20px;
-    height: 30px;
+    height: 20px;
 }
 
 .store_product_detail_purchase_review_cont input[type=file]{
@@ -535,8 +559,8 @@ input
 .store_product_detail_purchase_review_cont textarea{
     border: 0;
     background-color: rgba(218, 218, 218, 0.3);
-    width: 300px;
-    height: 250px;
+    width: 340px;
+    height: 200px;
     margin-top: 3px;
 }
 
@@ -550,7 +574,7 @@ input
 .starR{
   background: url('starrate.png');
   background-repeat: no-repeat;
-  background-color: #f0f0f0;
+  background-color: #d2d2d2;
   background-size: auto 100%;
   width: 30px;
   height: 30px;
@@ -583,6 +607,8 @@ input
     display: inline-block;
     width: 50px;
     margin-top: 10px;
+    font-size: 11pt;
+    font-weight: bold;
 }
 
 /* 리뷰 리스트 보여주기 */
@@ -685,5 +711,18 @@ input
     border-radius: 10px;
     margin-right: 5px;
 }
+
+
+/* 리뷰 페이징 */
+
+.store_review_paging{
+	background-color: rgba(255,255,255,0.5);
+	width: 100%;
+	height: 100px;
+	align-items: center;
+	
+}
+
+/*  */
 
 

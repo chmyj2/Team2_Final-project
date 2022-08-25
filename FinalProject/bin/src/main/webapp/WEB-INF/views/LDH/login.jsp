@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<!--  <a href="member.info"> <img class="icon_login" src="resources/img/LOGIN.png"></a> -->
+
 </body>
 </html>
