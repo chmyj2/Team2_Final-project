@@ -21,11 +21,10 @@ public interface Team1ReviewMapper {
 	int getAllReview(Team1ReviewDTO review);
 	
 	// 전체 별점 평균 구하기
-<<<<<<< HEAD
 	double getAllReviewAvg();
-=======
-	int getAllReviewAvg();
->>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
+	
+	// 리뷰 수정하기
+	String updateReview(Team1ReviewDTO review);
 	
 	
 
