@@ -19,6 +19,7 @@ public class MemberServiceImpl implements MemberService {
 	// 아이디 찾기
 		@Override
 		public String find_id(HttpServletResponse response, String email, HttpServletRequest req) throws Exception {
+
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
 			String id = manager.find_id(email);
