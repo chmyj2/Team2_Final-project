@@ -335,10 +335,7 @@ public class LoginController {
 			req.setAttribute("contentPage", "t2login/t2_login.jsp");			
 			
 		}
-		
-		
-		
-		
+	
 		return "2Team/t2_index";
 	}
 	
