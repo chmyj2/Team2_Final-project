@@ -20,7 +20,7 @@
 			<article id="item-1" class="menu__item ">
 				<h3>개인</h3>
 				
-				<form action="t2LoginDO" method="post" name="loginForm">
+				<form action="t2LoginDO" method="post" name="loginForm" onsubmit="return logincheckCall()">
 
 		<div class="login_txt">
 			<h2 class="login_h2">Welcome!</h2>
@@ -33,11 +33,11 @@
 			<label class="login_label"> <span>ID</span> 
 			<input class="login_input" name="member_ID" />
 			</label> <label class="login_label"> <span>Password</span> 
-			<input class="login_input" name="member_PW" />
+			<input class="login_input1" name="member_PW" />
 			</label>
 			<span class="pw_alert">${r}</span>
 			<input type="checkbox" id="login_idSave">아이디 기억하기
-			<button class="forgot-pass" type="button"  style="font-size: 12px;" onclick="location.href='t2join' ">회원가입</button>
+			<p class="forgot-pass" type="button"  style="font-size: 12px;" onclick="location.href='acceptgo?member_linkWhere=1' ">회원가입</p>
 			<p class="forgot-pass"  style="font-size: 12px;">아이디를 잊으셨나요?</p>
 			<p class="forgot-pass"  style="font-size: 12px;">비밀번호를 잊으셨나요?</p>
 			<div class="box bg-1">
@@ -50,19 +50,19 @@
 			
 			<article id="item-2" class="menu__item item-active">
 				<h3>기업</h3>
-			<form action="t2LoginDO.business" method="post" name="loginForm">
+			<form action="t2LoginDO.business" method="post" name="loginFormBusiness" onsubmit="return loginCheck_business()">
 
 		<div class="login_txt">
 			<h2 class="login_h2">Welcome!</h2>
 			
 			<label class="login_label"> <span>ID</span> 
-			<input class="login_input" name="vet_ID" />
+			<input class="login_input3" name="vet_ID" />
 			</label> <label class="login_label"> <span>Password</span> 
-			<input class="login_input" name="vet_PW" />
+			<input class="login_input1" name="vet_PW" />
 			</label>
 			<span class="pw_alert">${rb}</span>
-			<input type="checkbox" id="login_idSave">아이디 기억하기
-			<p class="forgot-pass"  style="font-size: 12px;">회원가입</p>
+			<input type="checkbox" id="login_idSave1">아이디 기억하기
+			<p class="forgot-pass"  style="font-size: 12px;" onclick="location.href='acceptgo?member=2' ">회원가입</p>
 			<p class="forgot-pass"  style="font-size: 12px;">아이디를 잊으셨나요?</p>
 			<p class="forgot-pass"  style="font-size: 12px;">비밀번호를 잊으셨나요?</p>
 			<div class="box bg-1">

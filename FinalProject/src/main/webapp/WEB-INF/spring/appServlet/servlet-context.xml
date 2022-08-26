@@ -143,11 +143,13 @@
 		<beans:property name="password" value="YJ802soldesk" />
 =======
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
-
 		<beans:property name="username" value="c##sj" />
 		<beans:property name="password" value="sj" />
+<<<<<<< HEAD
 
 >>>>>>> af8b8efb1348f40938db88e9ce6fd586a2641319
+=======
+>>>>>>> c2b1de990a62ea9d1caea6945342771736319d52
 	</beans:bean>
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -258,6 +260,7 @@
 =======
 	
 >>>>>>> c3361159dac98f9778b741a1826dbb83df65a40a
+	
 	
 	<beans:bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

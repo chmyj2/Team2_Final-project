@@ -74,10 +74,14 @@ $(function() {
 
                 	<!-- phoneNum -->
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum" placeholder="Phone Number *" type="text" maxlength="10" autocomplete="off">
 <<<<<<< HEAD
 =======
 >>>>>>> 78da7b1 (2022/08/11 커밋)
+=======
+                    <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum"  placeholder="Phone Number *" type="text" maxlength="13" autocomplete="off">
+>>>>>>> c2b1de990a62ea9d1caea6945342771736319d52
 =======
                     <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum" id="telInput" placeholder="Phone Number *" type="text" maxlength="13" autocomplete="off">
 >>>>>>> af8b8efb1348f40938db88e9ce6fd586a2641319

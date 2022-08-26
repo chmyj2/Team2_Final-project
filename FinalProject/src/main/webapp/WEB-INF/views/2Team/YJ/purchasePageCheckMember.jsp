@@ -8,9 +8,6 @@
 <link rel="stylesheet" href="resources/t2_css/yj_purchaseLogin.css">
 </head>
 <body>
-
-	
-
 	<div class="login_didididiv">
 	
 	<ul class="menu__tabs">
@@ -51,9 +48,9 @@
 			<input type="hidden" value="${param.name }" name="name"/>
 			<input type="hidden" value="${param.price }" name="price"/>
 			<input type="hidden" value="${param.quantity }" name="quantity"/>
-</form>
-
+	</form>
 			</article>
+			
 			
 			<article id="item-2" class="menu__item">
 				<h3>기업 로그인</h3>
@@ -124,10 +121,10 @@
                     <br>동의 거부시 불이익 귀하는 개인정보 수집 및 이용 등에 관해 동의하지 않을 권리가 있습니다. 다만, 필수수집 동의를 하지 않을 경우 구매가 제한될 수 있습니다.</br>
                     <br>고객의 동의를 받아 보유하고 있는 거래정보 등을 고객께서 열람을 요구하는 경우 산책가자는 지체 없이 그 정보를 열람·확인 할 수 있도록 조치합니다.
 			</div>
-		<input type="checkbox" id="agree" name="agree" onchange="changeBtn()">
+		<input type="checkbox" id="agree" name="agree" onchange="agreeChangeBtn()">
 		안내 사항을 모두 확인하였으며, 이에 동의합니다.
 	</label><br><br>
-  		<button type="button" id="checkButton" name="checkButton" disabled="disabled"
+  		<button type="button" id="nonmember_checkButton" name="nonmember_checkButton" disabled="disabled"
   		 onclick="location.href='purchasePage.NonMembers?productNum=${param.productNum }'">구매하기</button>
 		</div>
 </form>
@@ -140,34 +137,4 @@
 </div>
 
 </body>
-<script type="text/javascript">
-$(function() {
-
-	// Menu Tabular
-	var $menu_tabs = $('.menu__tabs li a'); 
-	$menu_tabs.on('click', function(e) {
-		e.preventDefault();
-		$menu_tabs.removeClass('active');
-		$(this).addClass('active');
-
-		$('.menu__item').fadeOut(300);
-		$(this.hash).delay(300).fadeIn();
-	});
-	
-
-	
-
-});
-
-function changeBtn() {
-	let btn = document.getElementById('checkButton');
-	let disabled = btn.disabled;
-	if(disabled){
-	btn.disabled = false;
-	}else{
-	btn.disabled = true;		
-	}	
-}
-
-</script>
 </html>

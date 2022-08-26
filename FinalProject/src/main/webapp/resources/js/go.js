@@ -6,7 +6,10 @@ function goHome() {
 
 function goJoin() {
 	location.href = "member.join.go";
-	alert(ddd);
+}
+
+function goFindId() {
+	location.href = "member.findId.go";
 }
 
 function goMemberInfo() {
