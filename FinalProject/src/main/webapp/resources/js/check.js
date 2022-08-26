@@ -44,6 +44,8 @@ function joinCheck() {
 	var addr3Input = document.joinForm.m_addr3;
 	var emailInput = document.joinForm.member_email;
 	
+
+
 	if (isEmpty(idInput) || containsHS(idInput)
 			|| $("#member_IDInput").css("color") == "rgb(244, 67, 54)") {
 		alert("ID를 입력해주세요.");
@@ -150,6 +152,7 @@ function updateMemberCheck() {
 	var addr2Input = document.joinForm.m_addr2;
 	var addr3Input = document.joinForm.m_addr3;
 	var emailInput = document.joinForm.member_email;
+
 
 	if (isEmpty(pwInput) || notEquals(pwInput, pwChkInput)
 			|| notContains(pwInput, "1234567890")) {
