@@ -51,7 +51,7 @@
 
 
 <button onclick="location.href='petInfoChange.go'">펫 수정하기</button> &nbsp;&nbsp;
-<button>펫 삭제하기</button> &nbsp;&nbsp;
+<button onclick="location.href='petInfoDelete'">펫 삭제하기</button> &nbsp;&nbsp;
 <input type="button" onclick="history.back()" value="뒤로가기">
 
 

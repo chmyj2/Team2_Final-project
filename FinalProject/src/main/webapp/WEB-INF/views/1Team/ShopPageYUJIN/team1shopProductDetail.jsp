@@ -35,11 +35,11 @@ $(function() {
 	$('.starRev span').click(function(){
 		  $(this).parent().children('span').removeClass('on');
 		  $(this).addClass('on').prevAll('span').addClass('on');
-<<<<<<< HEAD
-//		  alert($(this).attr("value"));
-=======
+
+//alert($(this).attr("value"));
+
 		  alert($(this).attr("value"));
->>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
+
 		let  a = $(this).attr("value")
 		  $('#starrr').attr('value', a)
 		  return false;

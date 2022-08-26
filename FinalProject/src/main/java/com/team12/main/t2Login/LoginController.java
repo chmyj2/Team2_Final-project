@@ -306,46 +306,42 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
-	@RequestMapping(value = "/t2Test.go", method = RequestMethod.GET)
-	public String t2Test(HttpServletRequest req,Membert2 m) {
-		//test용으로 나중에 삭제할것!
-		
-		lDAO.loginCheck(req);
-		
-			req.setAttribute("contentPage", "t2login/joinOK.jsp");			
-		
-		
-		
-		return "2Team/t2_index";
-	}
 	
 	@RequestMapping(value = "/t2mypetInformation.go", method = RequestMethod.GET)
 	public String mypetInformationgo(HttpServletRequest req,pet p) {
 		//강아지 정보 보러가는 페이지
 		
-		lDAO.petinfoGet(req,p);
-		lDAO.loginCheck(req);
+		if(lDAO.loginCheck(req)) {
+			lDAO.petinfoGet(req,p);
+			req.setAttribute("contentPage", "t2login/myPetInfo.jsp");			
+			
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");			
+			
+		}
 		
-		req.setAttribute("contentPage", "t2login/myPetInfo.jsp");			
+				
+		return "2Team/t2_index";
+	}
+	
+	@RequestMapping(value = "/petInfoChange.go", method = RequestMethod.GET)
+	public String petInfoChangego(HttpServletRequest req,pet p) {
+		//강아지 정보 수정 페이지로 가는 controller
+		
+		if(lDAO.loginCheck(req)) {
+			lDAO.petinfoGet(req,p);
+			req.setAttribute("contentPage", "t2login/t2_petInfoChage.jsp");						
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");			
+			
+		}
+		
 		
 		
 		
 		return "2Team/t2_index";
 	}
 	
-	@RequestMapping(value = "/petInfoChange.go", method = RequestMethod.GET)
-	public String petInfoChangego(HttpServletRequest req,pet p) {
-		//강아지 정보 보러가는 페이지
-		
-		lDAO.petinfoGet(req,p);
-		lDAO.loginCheck(req);
-		
-		req.setAttribute("contentPage", "t2login/myPetInfo.jsp");			
-		
-		
-		
-		return "2Team/t2_index";
-	}
 
 
 	
