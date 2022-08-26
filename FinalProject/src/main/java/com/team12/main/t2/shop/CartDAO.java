@@ -105,6 +105,7 @@ public class CartDAO {
 		String[] prices = request.getParameterValues("price");
 		String[] quantitys = request.getParameterValues("quantity");
 		String[] cartNum = null;
+		String[] productNum = null;
 		PurchasedProduct p = new PurchasedProduct();
 		ArrayList<PurchasedProduct> purchasedProducts = new ArrayList<PurchasedProduct>();
 		
@@ -114,11 +115,12 @@ public class CartDAO {
 				p.setProductName(names[i]);
 				p.setProductPrice(prices[i]);
 				p.setCart_ProductQuantity(quantitys[i]);
+				p.setProductNum(request.getParameter("productNum"));
 				purchasedProducts.add(p);
 			}
 			
 		}else {
-			String[] productNum = request.getParameterValues("productNum");
+			productNum = request.getParameterValues("productNum");
 			cartNum = request.getParameterValues("cartNum");
 			for (int i = 0; i < prices.length; i++) {
 				p = new PurchasedProduct(thumbnails[i], names[i], prices[i], quantitys[i],cartNum[i],productNum[i]);
@@ -133,15 +135,31 @@ public class CartDAO {
 		
 		
 	}
-
+	
+	
+	// 구매완료한 제품 장바구니삭제
 	public void deletePurchasedProduct(String[] cartNumArr) {
 		Cart c = new Cart();
 		for (int i = 0; i < cartNumArr.length; i++) {
 			c.setCartNum(Integer.parseInt( cartNumArr[i]));
-			ss.getMapper(ProductCartMapper.class).deletePurchasedProduct(c);
+			ss.getMapper(ProductCartMapper.class).deleteCart(c);
 		}
 		
 		
+		
+	}
+
+	
+	// 구매완료 후 재고 수정
+	public void updatePurchasedProduct(String[] productNumArr, String[] quantityArr) {
+
+		Product p = new Product();
+		
+			for (int i = 0; i < productNumArr.length; i++) {
+				p.setProductNum(Integer.parseInt(productNumArr[i]));
+				p.setCart_ProductQuantity(Integer.parseInt(quantityArr[i]));
+				ss.getMapper(ProductCartMapper.class).updatePurchasedProduct(p);
+		}
 		
 	}
 

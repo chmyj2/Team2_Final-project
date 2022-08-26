@@ -58,13 +58,12 @@ public class ProductCartController {
 			return "2Team/t2_index";
 			}
 	
-		
 		@RequestMapping(value = "/purchasePage.go", method = RequestMethod.GET)
 		public String test(HttpServletRequest request,Product p) {
 			
 			if (lDAO.loginCheck(request)) {
 			// 장바구니 가져오기
-			lDAO.splitAddr(request);
+			//lDAO.splitAddr(request);
 			cDAO.goPurchasePage(request);
 			request.setAttribute("contentPage", "YJ/purchasedPage.jsp");
 			}else {
@@ -197,10 +196,12 @@ public class ProductCartController {
 		
 		
 		// 장바구니 삭제
-		@RequestMapping(value = "/deleteAndInserPurchasedProduct", method = RequestMethod.GET)
-		public String deleteCart(HttpServletRequest request,@RequestParam("cartNumArr") String [] cartNumArr) {
-			System.out.println("여기까지오냐");
+		@RequestMapping(value = "/deleteAndInserAndUpdatePurchasedProduct", method = RequestMethod.GET)
+		public String deleteCart(HttpServletRequest request,@RequestParam("cartNumArr") String [] cartNumArr,
+				@RequestParam("productNumArr") String [] productNumArr,
+				@RequestParam("quantityArr") String [] quantityArr) {
 			cDAO.deletePurchasedProduct(cartNumArr);
+			cDAO.updatePurchasedProduct(productNumArr,quantityArr);
 			lDAO.loginCheck(request);
 			
 			request.setAttribute("contentPage", "YJ/paymentSuccess.jsp");

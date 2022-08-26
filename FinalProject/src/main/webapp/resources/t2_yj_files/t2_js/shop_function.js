@@ -40,22 +40,22 @@ $("#cart .full-price").each(function( i, e ) {
 function addressClick(){
  $('#sameAddressControl').click(function(){
      $("#addrSearchBtn").css("display","inline");
-     var same = this.checked;
-     $('#billAddress').val(same ? $('#shipAddress').text():'');
+     var same = this.checked;
+     $('#billAddress').val(same ? $('#shipAddress').text():'');
      $('#billCity').val(same ? $('#shipCity').text():'');
      $('#billState').val(same ? $('#shipState').text():'');
      $('#billState1').val(same ? $('#shipState1').text():'');
      $('#billState2').val(same ? $('#shipState2').text():'');
      $('#billZip').val(same ? $('#shipZip').val():'');
-          if(same == true){
-              $('#billingAddress input').filter('input:text')
-             	 .attr('readonly',true)
-              	 .css('opacity', 0.5);
+          if(same == true){
+              $('#billingAddress input').filter('input:text')
+             	 .attr('readonly',true)
+             	 .css('opacity', 0.5);
              $("#addrSearchBtn").css("display","none");
-              	}else{
-              $('#billingAddress input').filter('input:text').attr('readonly',false)
-              	 .css('opacity', 1);
-           }
+             	}else{
+              $('#billingAddress input').filter('input:text').attr('readonly',false)
+           	 .css('opacity', 1);
+          }
    });
 }
 
@@ -115,7 +115,13 @@ function loadPrice(){
 
 
 function CheckOutFunc() {
+  if(document.getElementById("name") == null){
+    alert("장바구니가 비어있습니다.")
+    return false;
+
+  }else{
 	$('#CheckOutForm').submit();
+}
 }
 
 
@@ -170,7 +176,7 @@ $(document).ready(function(){
 $(".remove").click(function(){
     
     let cartNum = $(this).parent().find('.cartNum').val() 
-
+  alert(cartNum);
     
    $.ajax({
           url : "delete.cart",

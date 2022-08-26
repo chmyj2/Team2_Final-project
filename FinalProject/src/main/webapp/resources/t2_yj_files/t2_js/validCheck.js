@@ -15,7 +15,7 @@ function lessThan(input, len) {
 // <input>을 넣었을때
 // 영어, 숫자이외의 것이 있으면 true, 아니면 false
 function containsHS(input) {
-	var txt = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM@_.";
+	var txt = "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
 	for (var i = 0; i < input.value.length; i++) {
 		if (txt.indexOf(input.value[i]) == -1) {
 			return true;
@@ -23,8 +23,6 @@ function containsHS(input) {
 	}
 	return false;
 }
-
-
 
 // <input> 두 개 넣었을때
 // 두 개 내용이 다르면 true, 같으면 false

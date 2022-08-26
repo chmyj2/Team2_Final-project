@@ -48,6 +48,7 @@
 			<input type="hidden" value="${param.name }" name="name"/>
 			<input type="hidden" value="${param.price }" name="price"/>
 			<input type="hidden" value="${param.quantity }" name="quantity"/>
+			<input type="hidden" value="${param.productNum }" name="productNum"/>
 	</form>
 			</article>
 			
@@ -74,9 +75,10 @@
 			</div>
 		</div>
 		<input type="hidden" value="${param.thumbnail }" name="thumbnail"/>
-		<input type="hidden" value="${param.name }" name="name"/>
-		<input type="hidden" value="${param.price }" name="price"/>
-		<input type="hidden" value="${param.quantity }" name="quantity"/>
+			<input type="hidden" value="${param.name }" name="name"/>
+			<input type="hidden" value="${param.price }" name="price"/>
+			<input type="hidden" value="${param.quantity }" name="quantity"/>
+			<input type="hidden" value="${param.productNum }" name="productNum"/>s
 </form>
 			</article>
 			

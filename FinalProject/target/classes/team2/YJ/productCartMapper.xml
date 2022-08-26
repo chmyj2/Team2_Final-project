@@ -18,10 +18,8 @@
 	DELETE  product_cart WHERE cartNum = #{cartNum}
 </delete>
 
-
-<delete id="deletePurchasedProduct" parameterType="com.team12.main.t2.shop.Cart">
-	DELETE  product_cart WHERE cartNum = #{cartNum}
-</delete>
-
+<update id="updatePurchasedProduct" parameterType="com.team12.main.t2.shop.Product">
+	UPDATE  PRODUCT set productStock = productStock - #{cart_ProductQuantity} where productNum = #{productNum}
+</update>
 
 </mapper>

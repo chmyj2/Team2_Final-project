@@ -13,6 +13,6 @@ public interface ProductCartMapper {
 
 	int deleteCart(Cart c);
 
-	void deletePurchasedProduct(Cart c);
+	void updatePurchasedProduct(Product p);
 
 }
