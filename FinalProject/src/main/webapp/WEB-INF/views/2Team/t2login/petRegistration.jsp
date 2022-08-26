@@ -51,7 +51,7 @@
       
        <div class="join-textForm brith">
       	중성화 &nbsp;&nbsp;
-        <input name="baby_neut" type="radio" class="join-sex" value="yse" checked="checked">함
+        <input name="baby_neut" type="radio" class="join-sex" value="yes" checked="checked">함
         &nbsp;&nbsp;<input name="baby_neut" type="radio" class="join-sex" value="no">안함
       </div>
       

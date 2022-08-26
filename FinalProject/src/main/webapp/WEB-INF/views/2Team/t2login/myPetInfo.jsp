@@ -23,6 +23,12 @@
 </tr>
 
 <tr>
+<td>몸무게</td>
+<td>${petInfo.baby_weight }kg</td>
+</tr>
+
+
+<tr>
 <td>생일</td>
 <td>${petInfo.baby_birth }</td>
 </tr>
@@ -67,14 +73,22 @@
 
 <tr>
 <td>중성화</td>
-<td>${petInfo.baby_neut }</td>
+<c:choose>
+<c:when test="${petInfo.baby_neut =='yes' }">
+
+<td>함</td>
+</c:when>
+<c:otherwise>
+<td>안함</td>
+</c:otherwise>
+</c:choose>
 </tr>
 
 </table>
 
 
 <button onclick="location.href='petInfoChange.go'">펫 수정하기</button> &nbsp;&nbsp;
-<button onclick="location.href='petInfoDelete'">펫 삭제하기</button> &nbsp;&nbsp;
+<button onclick="petInfoDelete()">펫 삭제하기</button> &nbsp;&nbsp;
 <input type="button" onclick="history.back()" value="뒤로가기">
 
 
@@ -88,4 +102,12 @@
 </c:choose>
 </div>
 </body>
+<script type="text/javascript">
+function petInfoDelete() {
+	var ok = confirm("삭제하시겠습니까?");
+	if(ok){
+		location.href="petInfoDelete";
+	}
+}
+</script>
 </html>

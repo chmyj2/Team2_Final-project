@@ -249,11 +249,16 @@ public class LoginController {
 	         @RequestParam("baby_neut") String baby_neut,
 	         @RequestParam("baby_memberID") String baby_memberID){
 		//펫등록하기
-		System.out.println("-----------------------");
-		lDAO.petReg(req,baby_img,baby_name,baby_weight,baby_birth,baby_sex,baby_type,baby_typeDetail,baby_neut,baby_memberID);
-		
-		lDAO.loginCheck(req);
-		req.setAttribute("contentPage", "t2_home.jsp");
+		if (lDAO.loginCheck(req)) {
+			
+			lDAO.petReg(req,baby_img,baby_name,baby_weight,baby_birth,baby_sex,baby_type,baby_typeDetail,baby_neut,baby_memberID);
+			
+			lDAO.petinfoGet(req);
+			req.setAttribute("contentPage", "t2login/myPetInfo.jsp");
+			
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");
+		}
 		
 		
 		return "2Team/t2_index";
@@ -339,8 +344,44 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/petInfoChage.do", method = RequestMethod.POST)
+	public String petInfoChageDo(HttpServletRequest req,@RequestParam("baby_img") MultipartFile baby_img,
+	         @RequestParam("baby_name") String baby_name,
+	         @RequestParam("baby_weight") Double baby_weight,
+	         @RequestParam("baby_birth") Date baby_birth,
+	         @RequestParam("baby_sex") String baby_sex,
+	         @RequestParam("baby_type") String baby_type,
+	         @RequestParam("baby_typeDetail") String baby_typeDetail,
+	         @RequestParam("baby_neut") String baby_neut) {
+		//강아지 정보 수정 하는 기능
+		
+		if(lDAO.loginCheck(req)) {
+			lDAO.petInfoUpdate(req,baby_img,baby_name,baby_weight,baby_birth,baby_sex,baby_type,baby_typeDetail,baby_neut);
+			lDAO.petinfoGet(req);
+			req.setAttribute("contentPage", "t2login/myPetInfo.jsp");
+			 
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");			
+			
+		}
+		
+		return "2Team/t2_index";
+	}
 
+	@RequestMapping(value = "/petInfoDelete", method = RequestMethod.GET)
+	public String petInfoDelete(HttpServletRequest req,pet p) {
+		//강아지 정보 삭제하는 기능
+		
+		if(lDAO.loginCheck(req)) {
+			lDAO.petDelete(req,p);
+			req.setAttribute("contentPage", "t2login/myPetInfo.jsp");						
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");			
+			
+		}
 	
+		return "2Team/t2_index";
+	}
 
 
 	

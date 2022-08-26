@@ -10,6 +10,8 @@
 <body>
 	<div class="petInfoChange-outline">
 		<h1>수정하기</h1>
+		
+		<form action="petInfoChage.do" method="post" enctype="multipart/form-data">
 		<img src="resources/t2_sj_petFiles/${petInfo.baby_img }"
 			class="myPetPage-img" id="image"><br>
 		<br> <input type="file" name="baby_img"
@@ -21,6 +23,11 @@
 				<td>이름</td>
 				<td><input name="baby_name" value="${petInfo.baby_name }"
 					style="width: 100px;"></td>
+			</tr>
+			
+			<tr>
+			<td>몸무게</td>
+			<td><input name="baby_weight" value="${petInfo.baby_weight }" style="width: 80px;">kg</td>
 			</tr>
 
 			<tr>
@@ -87,7 +94,7 @@
 			<tr>
 				<td>중성화</td>
 				<c:choose>
-				<c:when test="${petInfo.baby_neut =='yes' }">
+				<c:when test="${petInfo.baby_neut == 'yes' }">
 				<td>
 				<input type="radio" name="baby_neut" value="yes" checked="checked">함
 				<input type="radio" name="baby_neut" value="no">안함
@@ -106,9 +113,10 @@
 		</table>
 
 
-		<button onclick="location.href='#'">저장하기</button>
+		<button>저장하기</button>
 		&nbsp;&nbsp; <input type="button" onclick="history.back()"
 			value="뒤로가기">
+			</form>
 	</div>
 </body>
 <script type="text/javascript">
