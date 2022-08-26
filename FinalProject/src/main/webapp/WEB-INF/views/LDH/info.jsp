@@ -59,6 +59,7 @@ $(function() {
                 	<br>
 
                 	<!-- phoneNum -->
+
                     <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum"  placeholder="Phone Number *" type="text" maxlength="13" autocomplete="off">
 
                 	<br>

@@ -149,9 +149,6 @@ public class Team1ReviewDAO {
     }
 
 
-//		int avg = ss.getMapper(Team1ReviewMapper.class).getAllReviewAvg();  병합충돌 나서 주석 처리 했습니다 - 동훈 -
-
-
 		
 
 	// 리뷰 글 수정
