@@ -75,6 +75,7 @@ $(function() {
                 	<!-- phoneNum -->
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum" placeholder="Phone Number *" type="text" maxlength="10" autocomplete="off">
 <<<<<<< HEAD
 =======
@@ -85,6 +86,10 @@ $(function() {
 =======
                     <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum" id="telInput" placeholder="Phone Number *" type="text" maxlength="13" autocomplete="off">
 >>>>>>> af8b8efb1348f40938db88e9ce6fd586a2641319
+=======
+                    <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum"  placeholder="Phone Number *" type="text" maxlength="13" autocomplete="off">
+
+>>>>>>> 0ef69b535f9131587775c5625a7cb3593b170c47
                 	<br>
 
 <<<<<<< HEAD
