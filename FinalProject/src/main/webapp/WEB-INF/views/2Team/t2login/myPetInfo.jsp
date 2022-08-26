@@ -29,12 +29,35 @@
 
 <tr>
 <td>성별</td>
-<td>${petInfo.baby_sex }</td>
+<c:choose>
+<c:when test="${petInfo.baby_sex == 'm' }">
+
+<td>남아</td>
+
+</c:when>
+<c:otherwise>
+
+<td>여아</td>
+
+</c:otherwise>
+</c:choose>
 </tr>
 
 <tr>
 <td>종류</td>
-<td>${petInfo.baby_type }</td>
+<c:choose>
+<c:when test="${petInfo.baby_type == 'dog'}">
+
+<td>강아지</td>
+
+</c:when>
+<c:when test="${petInfo.baby_type == 'cat' }">
+<td>고양이</td>
+</c:when>
+<c:otherwise>
+<td>기타</td>
+</c:otherwise>
+</c:choose>
 </tr>
 
 <tr>

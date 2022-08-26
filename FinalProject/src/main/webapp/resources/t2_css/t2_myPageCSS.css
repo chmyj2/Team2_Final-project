@@ -92,3 +92,9 @@
     text-align: center;	
 }
 
+/* 펫 정보 수정하기 페이지 CSS */
+.petInfoChange-outline{
+	margin-bottom: 50px;
+	margin-top: 50px;
+	text-align: center;
+}
