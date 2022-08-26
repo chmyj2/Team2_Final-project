@@ -425,24 +425,8 @@
     height: 400px;
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     position: absolute;
->>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
-=======
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c2b1de990a62ea9d1caea6945342771736319d52
-    position: absolute;
->>>>>>> 0ef69b535f9131587775c5625a7cb3593b170c47
-    padding: 20px;
-=======
     padding: 30px;
->>>>>>> 9ff0ebb605a1622fa42509ede73e810c551a0dec
 }
 
 .store_product_detail_purchase_review_star img{
@@ -551,25 +535,11 @@ input
     background-color: rgba(255, 255, 255, 0.712);
     font-size: 10pt;
     padding: 10px;
-    width: 500px;
+    width: 50%;
     height: 450px;
     position: absolute;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    left: 60%;
-=======
     left: 50%;
->>>>>>> 9ff0ebb605a1622fa42509ede73e810c551a0dec
     top:0%;
-=======
-    left: 50%;
->>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
-=======
-    left: 60%;
-    top:0%;
-    
->>>>>>> 0ef69b535f9131587775c5625a7cb3593b170c47
 }
 
 .store_product_detail_purchase_review_cont input[type=text]{
@@ -756,10 +726,13 @@ input
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*  */
 
 =======
 >>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
 =======
 >>>>>>> 0ef69b535f9131587775c5625a7cb3593b170c47
+=======
+>>>>>>> b170716bec75cd7266b4be5e63cb983bbe839303
 

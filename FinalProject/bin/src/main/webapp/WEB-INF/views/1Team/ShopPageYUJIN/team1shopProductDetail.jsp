@@ -35,16 +35,11 @@ $(function() {
 	$('.starRev span').click(function(){
 		  $(this).parent().children('span').removeClass('on');
 		  $(this).addClass('on').prevAll('span').addClass('on');
-<<<<<<< HEAD
+
 
 //alert($(this).attr("value"));
 
 		  alert($(this).attr("value"));
-
-=======
-//		  alert($(this).attr("value"));
-		  alert($(this).attr("value"));
->>>>>>> 0ef69b535f9131587775c5625a7cb3593b170c47
 		let  a = $(this).attr("value")
 		  $('#starrr').attr('value', a)
 		  return false;
@@ -157,14 +152,9 @@ $(function() {
 						</div>
 						<div class="store_product_detail_purchase_review">
 							<div class="store_product_detail_purchase_review_star">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-																<form action="write.review1" method="post" enctype="multipart/form-data">
-=======
-=======
-									<form action="write.review1" method="post" enctype="multipart/form-data">
->>>>>>> 0ef69b535f9131587775c5625a7cb3593b170c47
+
+								<form action="write.review1" method="post" enctype="multipart/form-data">
+
 								<div class="store_product_detail_purchase_review_center">
 									<span> 
 										<img src="resources/img/review_star.png" alt="">
@@ -184,11 +174,8 @@ $(function() {
 									</div>
 								</div>
 
-<<<<<<< HEAD
+
 								<form action="write.review1" method="post" enctype="multipart/form-data">
->>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
-=======
->>>>>>> 0ef69b535f9131587775c5625a7cb3593b170c47
 								<div class="store_product_detail_purchase_review_cont">
 									<h2>REVIEW</h2>
 									<!-- 제목 -->
@@ -211,19 +198,10 @@ $(function() {
 										<button>리뷰작성완료</button>
 									</div>
 								</form>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0ef69b535f9131587775c5625a7cb3593b170c47
+
 								
 								
-								
-								
-<<<<<<< HEAD
-=======
->>>>>>> 9ff0ebb605a1622fa42509ede73e810c551a0dec
-=======
->>>>>>> 0ef69b535f9131587775c5625a7cb3593b170c47
+						
 								<div class="store_product_detail_purchase_review_center">
 									<span> 
 										<img src="resources/img/review_star.png" alt="">
@@ -269,10 +247,6 @@ $(function() {
 									<input type="file" name="review_img">
 									<!-- 별점주기 -->
 
-<<<<<<< HEAD
-=======
->>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
-=======
 									<div class="starRev">
 										<span class="starR" value="1">★</span> 
 										<span class="starR" value="2">★</span> 
@@ -285,7 +259,6 @@ $(function() {
 										<button>리뷰작성완료</button>
 									</div>
 								</form>
->>>>>>> 9ff0ebb605a1622fa42509ede73e810c551a0dec
 							</div>
 						</div>
 						
