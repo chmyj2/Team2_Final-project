@@ -49,8 +49,14 @@
 
 </table>
 
-<button>펫 정보 수정하기</button> &nbsp;&nbsp;
-<button>펫 정보 삭제하기</button>
+
+<button onclick="location.href='petInfoChange.go'">펫 수정하기</button> &nbsp;&nbsp;
+<<<<<<< HEAD
+<button onclick="location.href='petInfoDelete'">펫 삭제하기</button> &nbsp;&nbsp;
+=======
+<button>펫 삭제하기</button> &nbsp;&nbsp;
+>>>>>>> 0ef69b535f9131587775c5625a7cb3593b170c47
+<input type="button" onclick="history.back()" value="뒤로가기">
 
 
 </c:when>

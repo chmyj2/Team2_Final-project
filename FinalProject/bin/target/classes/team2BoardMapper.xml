@@ -101,7 +101,7 @@ select comment_num from(
 	and comment_member_id = #{comment_member_id}
 	and comment_txt like '%'||#{comment_txt}||'%' 
 	order by comment_date desc
-)where rownum = 1
+) where rownum = 1
 </select>
 
 

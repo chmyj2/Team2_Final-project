@@ -19,7 +19,6 @@
         <a href="#">장바구니</a>
         <a href="hospitalReserveLookupgo?member_ID=${sessionScope.loginMember.member_ID}">예약확인</a>
         <a href="t2logout">로그아웃</a>
-        <a href="t2Test.go">조인 확인용</a>
       </div>
     </div> 
 

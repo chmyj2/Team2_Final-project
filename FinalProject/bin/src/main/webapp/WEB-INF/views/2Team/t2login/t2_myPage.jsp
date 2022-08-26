@@ -8,31 +8,58 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div style="text-align: center;">
+	<div class="memberInfoPage-outline">
 		<h2>회원정보</h2>
-		<label>ID</label> <input type="text" readonly="readonly"
-			value="${sessionScope.loginMember.member_ID }" style="border: none;" name="member_ID"><br>
-
-		<label>이름</label> <input type="text" readonly="readonly"
-			value="${sessionScope.loginMember.member_name }" style="border: none;"><br>
-
-		<label>생일</label> <input type="text" readonly="readonly"
-			value="${sessionScope.loginMember.member_birth }" style="border: none;"><br>
-
-		<label>성별</label> <input type="text" readonly="readonly"
-			value="${sessionScope.loginMember.member_sex }" style="border: none;"><br>
-
-		<label>전화번호</label>
-		<input type="text" readonly="readonly" value="${sessionScope.loginMember.member_phoneNum }" style="border: none;"><br> 
 		
-		<label>주소</label> 
-		<input type="text" readonly="readonly" value="${addr[2]} ${addr[0]} ${addr[1]}" style="border: none; width: 300px;">
-		<br> 
+		<table class="memberInfoPage-table">
 		
-		<label>이메일</label> 
-		<input type="text" readonly="readonly" value="${sessionScope.loginMember.member_email }"  style="border: none;"><br>
-
-		<br>
+		<tr class="memberInfoPage-tr">
+		<td>ID</td>
+		<td>${sessionScope.loginMember.member_ID }</td>
+		</tr>
+		
+		<tr class="memberInfoPage-tr">
+		<td>이름</td>
+		<td>${sessionScope.loginMember.member_name }</td>
+		</tr>
+		
+		<tr class="memberInfoPage-tr">
+		<td>생일</td>
+		<td>${sessionScope.loginMember.member_birth }</td>
+		</tr>
+		
+		<tr class="memberInfoPage-tr">
+		<td>성별</td>
+		
+		<c:choose>
+		<c:when test="${sessionScope.loginMember.member_sex =='m'}">
+		<td>남자</td>
+		</c:when>
+		<c:otherwise>
+		<td>여자</td>
+		</c:otherwise>
+		</c:choose>
+		
+		</tr>
+		
+		<tr class="memberInfoPage-tr">
+		<td>전화번호</td>
+		<td>${sessionScope.loginMember.member_phoneNum }</td>
+		</tr>
+		
+		<tr class="memberInfoPage-tr">
+		<td>주소</td>
+		<td>${addr[2]} ${addr[0]} ${addr[1]}</td>
+		</tr>
+		
+		<tr class="memberInfoPage-tr">
+		<td>e-mail</td>
+		<td>${sessionScope.loginMember.member_email }</td>
+		</tr>
+		
+		
+		</table>
+		
 		
 		<input type="button" value="수정하기" id="modify" onclick="location.href='myinformation.chgae'"> 
 		<input type="button" value="펫 관리하기" onclick="location.href='t2mypetInformation.go'"> 

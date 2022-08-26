@@ -61,8 +61,7 @@ function emailCheck() {
 					$('#emailcheckResult').text("사용불가");
 					$('#emailcheckResult').css('color','red');
 				}else {
-					$('#emailcheckResult').text("사용가능");
-					$('#emailcheckResult').css('color','green');
+					
 					joinEmail_check();
 				}
 				
@@ -91,7 +90,7 @@ function joinEmail_check() {
 				data:{"member_email":email},
 				success : function (data) {
 					console.log("data : " +  data);
-					checkNum.attr('disabled',false);
+					checkNum.attr('type','');
 					code =data;
 					alert('인증번호가 전송되었습니다.')
 				}			
@@ -107,8 +106,7 @@ function joinEmail_numCheck() {
 		var result = $('#mail-check-warn');
 		
 		if (inputNum == code) {
-			result.html("인증번호가 일치합니다.")
-			result.css('color','green');
+			
 			$('#join_num_check').val("emailcheck");
 			
 		}else {
