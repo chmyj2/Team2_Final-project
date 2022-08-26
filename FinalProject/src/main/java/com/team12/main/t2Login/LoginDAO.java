@@ -631,20 +631,21 @@ public class LoginDAO {
 	public void petDelete(HttpServletRequest req, pet p) {
 		// 펫 정보 삭제하는 기능
 		
+		try {
 		Membert2 loginMember = (Membert2) req.getSession().getAttribute("loginMember");
 		String ID = loginMember.getMember_ID();
 		p.setBaby_memberID(ID);
 		if (ss.getMapper(Team2loginMapper.class).petDelete(p)==1) {
 			System.out.println("삭제성공");
-			String path = req.getSession().getServletContext().getRealPath("resources/t2_sj_petFiles");
-			String baby_img = p.getBaby_img();
-			try {
+			/*String path = req.getSession().getServletContext().getRealPath("resources/t2_sj_petFiles");
+				String baby_img = p.getBaby_img();
+				System.out.println(baby_img+"---------------");
 				baby_img = URLDecoder.decode(baby_img, "utf-8");
-				new File(path+"/"+baby_img).delete();
-			} catch (Exception e) {
+				new File(path+"/"+baby_img).delete();*/
+			} 
+			}catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
 			
 		}
 		
