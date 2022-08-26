@@ -22,7 +22,6 @@ public interface Team1ReviewMapper {
 	
 	// 전체 별점 평균 구하기
 	double getAllReviewAvg();
-//	int getAllReviewAvg();
 	
 	
 

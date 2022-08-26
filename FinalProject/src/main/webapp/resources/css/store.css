@@ -425,10 +425,7 @@
     height: 360px;
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
-<<<<<<< HEAD
-=======
     position: absolute;
->>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
     padding: 20px;
 }
 
@@ -535,12 +532,9 @@ input
     width: 700px;
     height: 530px;
     position: absolute;
-<<<<<<< HEAD
     left: 60%;
     top:0%;
-=======
-    left: 50%;
->>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
+    
 }
 
 .store_product_detail_purchase_review_cont input[type=text]{
@@ -725,9 +719,4 @@ input
 	
 }
 
-<<<<<<< HEAD
-/*  */
-
-=======
->>>>>>> efd3a059434634a4da9e3a08331ce7fc11f89d81
 
