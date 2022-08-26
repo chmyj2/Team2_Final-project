@@ -49,25 +49,6 @@ public class MemberDAO {
 			Date jm_date = Date.valueOf(req.getParameter("member_birth"));
 
 
-<<<<<<< HEAD
-
-			m.setMember_ID(req.getParameter("member_ID"));
-			m.setMember_PW(req.getParameter("member_PW"));
-			m.setMember_name(req.getParameter("member_name"));
-			m.setMember_birth(jm_date);
-			m.setMember_sex(req.getParameter("member_sex"));
-			m.setMember_phoneNum(req.getParameter("member_phoneNum"));
-	        m.setMember_address(jm_addr);
-	        m.setMember_email(req.getParameter("member_email"));
-
-
-
-	m.setMember_address(jm_addr);
-	m.setMember_birth(jm_date);
-//	m.setMember_joinDate(jm_joinDate);
-//	m.setMember_paper(jm_paper);
-=======
->>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
 			m.setMember_ID(req.getParameter("member_ID"));
 			m.setMember_PW(req.getParameter("member_PW"));
 			m.setMember_name(req.getParameter("member_name"));
@@ -158,39 +139,7 @@ public class MemberDAO {
    
 		m.setMember_address(jm_addr);
         m.setMember_email(req.getParameter("jm_email"));
-<<<<<<< HEAD
-		
-//        System.out.println(m.getMember_ID());
-//        System.out.println(m.getMember_PW());
-//        System.out.println(m.getMember_name());
-//        System.out.println(m.getMember_phoneNum());
-//        System.out.println(jm_addr);
-//        System.out.println(m.getMember_email());
-//        
-<<<<<<< HEAD
-//        
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-=======
-=======
-<<<<<<< HEAD
 
-	
-=======
->>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
-=======
->>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
->>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
-=======
->>>>>>> c0c2bb4629554ff1d0b2eb27d53a92a9dcf06cf3
-=======
-
-=======
->>>>>>> af8b8efb1348f40938db88e9ce6fd586a2641319
-
->>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
 
 		if (ss.getMapper(Team1joinMapper.class).update(m) == 1) {
 			req.setAttribute("result", "수정성공");
@@ -201,43 +150,12 @@ public class MemberDAO {
 	} catch (Exception e) {
 		e.printStackTrace();
 		req.setAttribute("result", "수정실패");
-<<<<<<< HEAD
-		
-		// TODO: handle exception
-	}
-	}
-	
-		
-	
-	
-
-		
-
-=======
 		// TODO: handle exception
 	}
 		
 	}
 	
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-		
-
-=======
->>>>>>> a456549 (아이디 기억, 로그인, 로그아웃, 회원정보 수정, 회원탈퇴 기능 구현)
-=======
->>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
->>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
-=======
->>>>>>> c0c2bb4629554ff1d0b2eb27d53a92a9dcf06cf3
-=======
-
->>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
 	public void bye(HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		

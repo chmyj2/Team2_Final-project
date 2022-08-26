@@ -1,55 +1,16 @@
-<<<<<<< HEAD
-/.metadata/
-
-/Servers/
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b3254c3 (ㅐㅐ)
-=======
->>>>>>> 05fefaa (ㅇㄸㄹ)
-=======
->>>>>>> b3254c3 (ㅐㅐ)
-=======
-
->>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
-*.class
-pom.properties
-
-*.classpath
-.settings
-
-pom.properties
-
-<<<<<<< HEAD
-FinalProject/bin/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
-FinalProject/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
-01_Team1Final/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
-=======
-/MANIFEST.MF/
-*.properties
-*.name
-*.container
->>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
-=======
 /.metadata/
 
 /Servers/
 
 
 *.class
-pom.properties
 
 *.classpath
 
 
-pom.properties
 
 
+/FinalProject/target/m2e-wtp/web-resources/META-INF/maven/com.team12/main/pom.properties
 FinalProject/bin/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 FinalProject/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 01_Team1Final/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
@@ -59,4 +20,3 @@ FinalProject/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 *.name
 *.container
 FinalProject/target/test-classes/log4j.xml
->>>>>>> c0c2bb4629554ff1d0b2eb27d53a92a9dcf06cf3

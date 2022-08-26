@@ -1,72 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-<<<<<<< HEAD
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.team12</groupId>
-	<artifactId>main</artifactId>
-	<name>FinalProject</name>
-	<packaging>war</packaging>
-	<version>1.0.0-BUILD-SNAPSHOT</version>
-	<properties>
-		<java-version>1.6</java-version>
-		<org.springframework-version>3.1.1.RELEASE</org.springframework-version>
-		<org.aspectj-version>1.6.10</org.aspectj-version>
-		<org.slf4j-version>1.6.6</org.slf4j-version>
-	</properties>
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-	
-	<dependencies>
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-	<dependencies>
-=======
->>>>>>> 996190cffbc50ccd1a037e5ef775c81f05b81377
-
-	<dependencies>
-
-<<<<<<< HEAD
->>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
-
-=======
->>>>>>> 996190cffbc50ccd1a037e5ef775c81f05b81377
-<!-- Kakao Login -->
-<dependency>
-	<groupId>com.googlecode.json-simple</groupId>
-	<artifactId>json-simple</artifactId>
-	<version>1.1.1</version>
-</dependency>
-
-<dependency>
-	<groupId>com.google.code.gson</groupId>
-	<artifactId>gson</artifactId>
-	<version>2.8.7</version>
-	</dependency>
-<<<<<<< HEAD
-	
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
->>>>>>> 08efc03 (퐆)
-=======
->>>>>>> 08efc03 (퐆)
->>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
-=======
-
->>>>>>> 996190cffbc50ccd1a037e5ef775c81f05b81377
-	<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
-<dependency>
-    <groupId>javax.mail</groupId>
-    <artifactId>mail</artifactId>
-    <version>1.4</version>
-</dependency>
-=======
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 
@@ -85,7 +18,6 @@
    </properties>
    <dependencies>
 
->>>>>>> c2b1de990a62ea9d1caea6945342771736319d52
 
 		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
 		<dependency>
@@ -105,23 +37,6 @@
 
 
 
-<<<<<<< HEAD
-
-
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 08efc03 (퐆)
-=======
-
->>>>>>> 08efc03 (퐆)
->>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
-=======
->>>>>>> 996190cffbc50ccd1a037e5ef775c81f05b81377
 		<!--Spring 환경에서 ORMFramework사용 가능하게 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -340,26 +255,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 	
->>>>>>> 08efc03 (퐆)
-=======
-	
->>>>>>> 08efc03 (퐆)
->>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
-=======
-
->>>>>>> 996190cffbc50ccd1a037e5ef775c81f05b81377
-=======
-	
->>>>>>> c2b1de990a62ea9d1caea6945342771736319d52
 	<build>
 	
 		<plugins>

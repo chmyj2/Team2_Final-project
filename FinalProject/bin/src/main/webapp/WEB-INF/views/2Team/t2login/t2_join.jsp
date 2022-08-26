@@ -55,7 +55,7 @@
        <div class="join-textForm">
         <input name="member_email" type="email" id="join-email" placeholder="이메일"> 
         <button type="button" id="join_mail_check">이메일인증</button><br>
-        <input placeholder="인증번호를 입력해주세요" id="join_mail_num" disabled="disabled">
+        <input placeholder="인증번호를 입력해주세요" id="join_mail_num" type="hidden">
         <input type="hidden" id="join_num_check" value="emailUnCheck">
       <span id="mail-check-warn"></span> <!-- 인증코드 확인 -->
       <span id="emailcheckResult"></span> <!-- 중복확인 -->
