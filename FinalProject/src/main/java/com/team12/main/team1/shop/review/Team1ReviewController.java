@@ -36,8 +36,6 @@ public class Team1ReviewController {
 	}
 	
 	
-	
-	
 	//	리뷰 쓰기
 	@RequestMapping(value = "write.review1", method = RequestMethod.POST)
 	public String writeReview(HttpServletRequest req, MultipartHttpServletRequest mr) {
@@ -63,5 +61,21 @@ public class Team1ReviewController {
 		
 		return "1Team/t1_index";
 	}
+	
+	// 리뷰 수정하기
+	@RequestMapping(value = "review.update", method = RequestMethod.GET)
+	public String reviewUpdate(HttpServletRequest req, Team1ReviewDTO review) {
+	
+		mDAO.loginCheck(req);
+		rDAO.updateReview(req, review);
+		rDAO.showReviewList(req, review);
+		
+		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
+		
+		return "1Team/t1_index";
+	}
+	
+	
+	
 	
 }

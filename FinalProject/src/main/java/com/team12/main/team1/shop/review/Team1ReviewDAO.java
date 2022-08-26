@@ -2,7 +2,6 @@ package com.team12.main.team1.shop.review;
 
 
 import java.io.File;
-import java.text.Format;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -140,6 +139,20 @@ public class Team1ReviewDAO {
         System.out.println(result);
 
     }
+
+
+//		int avg = ss.getMapper(Team1ReviewMapper.class).getAllReviewAvg();  병합충돌 나서 주석 처리 했습니다 - 동훈 -
+
+
+		
+
+	// 리뷰 글 수정
+	public void updateReview(HttpServletRequest req, Team1ReviewDTO review) {
+		String update = ss.getMapper(Team1ReviewMapper.class).updateReview(review);
+		System.out.println("수정완료!" + update);
+
+		
+	}
 
 
 
