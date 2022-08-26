@@ -19,13 +19,7 @@
 	<context:annotation-config />
 	<tx:annotation-driven />
 	<resources mapping="/resources/**" location="/resources/" />
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 996190cffbc50ccd1a037e5ef775c81f05b81377
-   <beans:bean
+<beans:bean
       class="org.springframework.web.servlet.view.InternalResourceViewResolver">
       <beans:property name="prefix" value="/WEB-INF/views/" />
       <beans:property name="suffix" value=".jsp" />
@@ -35,8 +29,6 @@
       base-package="com.team12.main" />
       
    <!-- //////////DB연결관련!///////////// -->
-<<<<<<< HEAD
-<<<<<<< HEAD
 <beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
@@ -47,11 +39,6 @@
 
 
 
-=======
-=======
->>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
-=======
->>>>>>> 811b0b57e92852262eb84b6cc2a2caf171349522
 	<beans:bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
@@ -59,117 +46,25 @@
 	</beans:bean>
 	
 	<context:component-scan
-		base-package="com.team12.main" />
-		
-<<<<<<< HEAD
-<<<<<<< HEAD
+		base-package="com.team12.main" />		
 		
 		
-		
-		
-		
-		
-		
-=======
->>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
-	<!-- //////////DB연결관련!///////////// -->
-	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
-		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-<<<<<<< HEAD
-		<beans:property name="url"
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-			value="jdbc:oracle:thin:@db20220512150004_high?TNS_ADMIN=/Users/mitakeran/LDH/Wallet_DB20220512150004" />
-		<beans:property name="username" value="ADMIN" />
-		<beans:property name="password" value="LDHsoldesk802" />
-	</beans:bean>
-
-
-=======
-			value="jdbc:oracle:thin:@localhost:1521:xe" />
-
-		<beans:property name="username" value="leeyoky" />
-		<beans:property name="password" value="leeyoky" />
-	</beans:bean>
-	<!-- //////////DB연결관련!///////////// -->
->>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
 	
-
-=======
-			value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<beans:property name="username" value="c##sj" />
-		<beans:property name="password" value="sj" />
-=======
-		<beans:property name="url" value="jdbc:oracle:thin:@db20220512150004_high?TNS_ADMIN=/Users/mitakeran/LDH/Wallet_DB20220512150004" />
-		<beans:property name="username" value="ADMIN" />
-		<beans:property name="password" value="LDHsoldesk802" />
->>>>>>> 0ef69b535f9131587775c5625a7cb3593b170c47
 	</beans:bean>
 	
-	
->>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
-	<beans:bean id="transactionManager"
-		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<beans:property name="dataSource" ref="dataSource" />
-	</beans:bean>  
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-<<<<<<< HEAD
    
 <!--    
    <beans:bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
       <beans:property name="dataSource" ref="dataSource" />
    </beans:bean>  
  -->
-   
-   
-=======
-
-=======
-   <beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
-      <beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-      <beans:property name="url"
-         value="jdbc:oracle:thin:@localhost:1521:xe" />
-      <beans:property name="username" value="leeyoky" />
-      <beans:property name="password" value="leeyoky" />
-   </beans:bean>
->>>>>>> c0c2bb4629554ff1d0b2eb27d53a92a9dcf06cf3
-=======
-  <beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
-=======
-	<!-- //////////DB연결관련!///////////// -->
-	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
->>>>>>> 811b0b57e92852262eb84b6cc2a2caf171349522
-		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<beans:property name="url"
-			value="jdbc:oracle:thin:@db202204301707_high?TNS_ADMIN=C:/Users/soldesk/Downloads/Wallet_DB202204301707" />
-		<beans:property name="username" value="SYP" />
-		<beans:property name="password" value="YJ802soldesk" />
-=======
-			value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<beans:property name="username" value="c##sj" />
-		<beans:property name="password" value="sj" />
-<<<<<<< HEAD
-
->>>>>>> af8b8efb1348f40938db88e9ce6fd586a2641319
-=======
->>>>>>> c2b1de990a62ea9d1caea6945342771736319d52
-	</beans:bean>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 996190cffbc50ccd1a037e5ef775c81f05b81377
-   
+    <beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
    
 
    <beans:bean id="transactionManager"
       class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
       <beans:property name="dataSource" ref="dataSource" />
    </beans:bean>  
-<<<<<<< HEAD
-   
    
 
    <beans:bean id="sqlSessionFactory"
@@ -189,126 +84,18 @@
          </beans:list>
       </beans:property>
    </beans:bean>
-<<<<<<< HEAD
->>>>>>> 3c7aac14b5df00e1e791e78734e602f2e19acd20
-=======
-<beans:bean id="sqlSessionFactory"
-=======
-   
-   
-
-	<beans:bean id="sqlSessionFactory"
->>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
-		class="org.mybatis.spring.SqlSessionFactoryBean">
-		<beans:property name="dataSource" ref="dataSource" />
-		<beans:property name="typeAliasesPackage"
-			value="com.team12.main" />
-		<beans:property name="mapperLocations">
-			<beans:list>
-				<beans:value>classpath:testmapper.xml</beans:value>
-				<beans:value>classpath:team2/YJ/productMapper.xml</beans:value>
-<<<<<<< HEAD
-
-				<beans:value>classpath:team2/SY/hospital_ListMapper.xml</beans:value>
->>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
-
-=======
-				<beans:value>classpath:team2/YJ/productCartMapper.xml</beans:value>
-				<beans:value>classpath:team2/SY/hospital_ListMapper.xml</beans:value>
->>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
-				<beans:value>classpath:team1joinMapper.xml</beans:value>
-				<beans:value>classpath:team2BoardMapper.xml</beans:value>
-				<beans:value>classpath:team2loginMapper.xml</beans:value>
-				<beans:value>classpath:shopteam1Mapper.xml</beans:value>
-			</beans:list>
-		</beans:property>
 	</beans:bean>
-<<<<<<< HEAD
->>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
 
 	<beans:bean id="sqlSession"
 		class="org.mybatis.spring.SqlSessionTemplate">
 		<beans:constructor-arg name="sqlSessionFactory"
 			ref="sqlSessionFactory" />
 	</beans:bean>
-=======
->>>>>>> c0c2bb4629554ff1d0b2eb27d53a92a9dcf06cf3
-=======
->>>>>>> 09b9aa5e3af66a574ff7b734d4ed2f5d4a22dff2
-=======
-   
 
-<<<<<<< HEAD
-   <beans:bean id="sqlSessionFactory"
-      class="org.mybatis.spring.SqlSessionFactoryBean">
-      <beans:property name="dataSource" ref="dataSource" />
-      <beans:property name="typeAliasesPackage"
-         value="com.team12.main" />
-      <beans:property name="mapperLocations">
-         <beans:list>
-            <beans:value>classpath:testmapper.xml</beans:value>
-            <beans:value>classpath:team2/YJ/productMapper.xml</beans:value>
-            <beans:value>classpath:team2/SY/hospital_ListMapper.xml</beans:value>
-            <beans:value>classpath:team1joinMapper.xml</beans:value>
-            <beans:value>classpath:team2BoardMapper.xml</beans:value>
-            <beans:value>classpath:team2loginMapper.xml</beans:value>
-            <beans:value>classpath:shopteam1Mapper.xml</beans:value>
-         </beans:list>
-      </beans:property>
-   </beans:bean>
->>>>>>> 996190cffbc50ccd1a037e5ef775c81f05b81377
-=======
-=======
-	
-=======
-
->>>>>>> 829c7665325889bfb3072bc0611de0e1bd11936e
-=======
-	
->>>>>>> c3361159dac98f9778b741a1826dbb83df65a40a
-	
-	
-	<beans:bean id="transactionManager"
+  	<beans:bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<beans:property name="dataSource" ref="dataSource" />
 	</beans:bean>  
-   
-<<<<<<< HEAD
- 
->>>>>>> 811b0b57e92852262eb84b6cc2a2caf171349522
-=======
-   
-
->>>>>>> c3361159dac98f9778b741a1826dbb83df65a40a
-	<beans:bean id="sqlSessionFactory"
-		class="org.mybatis.spring.SqlSessionFactoryBean">
-		<beans:property name="dataSource" ref="dataSource" />
-		<beans:property name="typeAliasesPackage"
-			value="com.team12.main" />
-		<beans:property name="mapperLocations">
-			<beans:list>
-				<beans:value>classpath:testmapper.xml</beans:value>
-				<beans:value>classpath:team2/YJ/productMapper.xml</beans:value>
-				<beans:value>classpath:team2/YJ/productCartMapper.xml</beans:value>
-				<beans:value>classpath:team2/SY/hospital_ListMapper.xml</beans:value>
-				<beans:value>classpath:team1joinMapper.xml</beans:value>
-				<beans:value>classpath:team2BoardMapper.xml</beans:value>
-				<beans:value>classpath:team2loginMapper.xml</beans:value>
-				<beans:value>classpath:shopteam1Mapper.xml</beans:value>
-				<beans:value>classpath:team1ReviewMapper.xml</beans:value>
-			</beans:list>
-		</beans:property>
-	</beans:bean>
-
-<<<<<<< HEAD
->>>>>>> 5443c468c76f76e74daebd7aa3ebc4233adc77db
-=======
-	<beans:bean id="sqlSession"
-		class="org.mybatis.spring.SqlSessionTemplate">
-		<beans:constructor-arg name="sqlSessionFactory"
-			ref="sqlSessionFactory" />
-	</beans:bean>
->>>>>>> 811b0b57e92852262eb84b6cc2a2caf171349522
 
 	<!-- 이메일 인증 관련 빈 등록 -->
 	<beans:bean id="mailSender"
@@ -330,7 +117,7 @@
 				</beans:prop>
 			</beans:props>
 		</beans:property>
-	</beans:bean>
+S	</beans:bean>
 
 
 	<beans:bean id="multipartResolver"
