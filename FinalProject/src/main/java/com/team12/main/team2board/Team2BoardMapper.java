@@ -56,6 +56,12 @@ public interface Team2BoardMapper {
 
 	int updatechildComment(Team2ChildCommentDTO t);
 
+	int getchildCommentPK(Team2ChildCommentDTO t);
+
+	int deletechildComment(Team2ChildCommentDTO t);
+
+	void countDownTotalComment(Team2ChildCommentDTO t);
+
 	
 
 

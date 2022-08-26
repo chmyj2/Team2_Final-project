@@ -66,7 +66,6 @@ create table team2_child_comment(
 		references team2_comment(comment_num) on delete cascade
 )
 create sequence team2_child_comment_seq;
-
 ---------------------------------------------------------------------------------
 
 insert into team2_comment values(team2_comment_seq.nextval, 47, 'mz', 'hello', sysdate)

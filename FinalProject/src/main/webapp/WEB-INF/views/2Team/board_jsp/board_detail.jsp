@@ -103,13 +103,13 @@
         	</c:otherwise>
         	</c:choose>
         		<div class="childCmtCon">
-        			
-        <%-- 		답글 영역	
-        			<div>
+        		</div>
+
+							<%-- 		답글 영역	
+        			        			<div>
 						<strong class="cStrong">● ${c_id}</strong>
 						<em class="cEm">${c_date}</em>
-						<a id="${c_num}" class="childUpdateAtag"><i class="fa fa-edit">수정</i></a>
-						<a id="${c_num}" class="childDeleteAtag"><i class="fa fa-times">삭제</i></a>
+						${btn}
 						<br>&nbsp;
 						<span class="commentSpan">${c_txt}</span>
 	
@@ -121,10 +121,9 @@
 							<button class="btn btn-success btn-sm editChildBtn">완료</button>
 						</div>
 					</div>
-					</div> --%> 
-        		
-        		</div>
-        	</div>
+					</div> --%>
+
+						</div>
       </div>
 
 
@@ -180,32 +179,32 @@
 
 
 
-
-<%-- 
+<%--   댓글 main
       <div class="commentDiv">
       <div class="col-sm-8 commentBorder">
         	<div>
-        		user : <strong class="cStrong">${id}</strong> 
+        		<strong class="cStrong">${id}</strong> 
         		<em class="cEm">${date}</em>
         	</div>
         	
         	<div style="margin-bottom: 10px;">
-        		<span class="commentSpan">${txt}
-        		<img class="replyIMG" src="resources/img/reply.png"></span>	 
+        		<span class="commentSpan">${txt}</span>
+        		<img class="replyIMG" src="resources/img/reply.png">	 
         		<input class="form-control input-sm toggleInput" type="text">
         		<button class="btn btn-success btn-sm togglebtn">완료</button>
         	</div>
         	
+        	<div>
+        		${total}
+        		<div class="childCmtCon"></div>
+        	</div>
+        	
       </div>
+
+
       
       <div class="col-sm-1">
-      
-      		<a id="${commentPK}" class="deleteAtag">
-             	<i class="fa fa-times"> 삭제</i>
-      		</a>
-      		<a id="${commentPK}" class="updateAtag">
-            	<i class="fa fa-edit"> 수정</i>
-     		</a>
+      	${btn}
       </div>
       
   
@@ -222,54 +221,34 @@
       	</div>
       </div>
       
-      </div> 
+ 
       
-      --%>
-
-
-<%-- 
-
-			<hr>
-        	<div>
-        		<strong class="cStrong">${c.comment_member_id}</strong> 
-        		<em class="cEm"><fmt:formatDate value="${c.comment_date}" pattern="MM-dd HH:mm"/></em>
-        	</div>
-        	
-        	<div style="margin-bottom: 10px;">
-        		<span class="commentSpan">${c.comment_txt}
-        		<img class="replyIMG" src="resources/img/reply.png"></span>
-        		<i class="fa fa-edit"> 수정</i><i class="fa fa-times"> 삭제</i>	 
-        	</div>
+      </div>
+ --%>
 
 
 
-
-
---%>
-
-
-
-
-
-<div>
-
-	<div>
-	<strong class="cStrong">● ${c_id}</strong>
-	<em class="cEm">${c_date}</em>
-	<a id="${c_num}" class="childUpdateAtag"><i class="fa fa-edit">수정</i></a>
-	<a id="${c_num}" class="childDeleteAtag"><i class="fa fa-times">삭제</i></a>
-	<br>&nbsp;
-	<span class="commentSpan">${c_txt}</span>
-	</div>
+<%--
+				대댓글 수정삭제버튼
+         			<div>
+         				<h6 style="display: none">${c_parent}</h6>
+						<strong class="cStrong">● ${c_id}</strong>
+						<em class="cEm">${c_date}</em>
+						${btn}
+						<br>&nbsp;
+						<span class="commentSpan">${c_txt}</span>
 	
-	<div>
-	<input class="form-control input-sm">
-	<button class="btn btn-success btn-sm"></button>
-	</div>
-
-</div>
-
-
+					<div class="row" style="display: none;">
+						<div class="col-sm-5">
+							<input class="form-control input-sm">
+						</div>
+						<div class="col-sm-1">
+							<button class="btn btn-success btn-sm editChildBtn">완료</button>
+							
+						</div>
+					</div>
+					</div>
+ --%>
 
 
 

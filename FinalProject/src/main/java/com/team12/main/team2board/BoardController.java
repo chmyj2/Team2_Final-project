@@ -160,7 +160,12 @@ public class BoardController {
 	public int childComment_update(Team2ChildCommentDTO t)  {
 		return bDAO.updateChildComment(t);
 	}
-	
+	// 답글 삭제
+	@RequestMapping(value="/child.comment.delete", method = RequestMethod.POST, produces = "application/json; charset=utf8")
+	@ResponseBody
+	public int childComment_delete(Team2ChildCommentDTO t)  {
+		return bDAO.deleteChildComment(t);
+	}
 	
 	
 	

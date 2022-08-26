@@ -305,7 +305,9 @@ public class Team2BoardDAO {
 		
 		if(a == 1) {
 			ss.getMapper(Team2BoardMapper.class).countUpComment(t);
+			a = ss.getMapper(Team2BoardMapper.class).getchildCommentPK(t);
 		}
+		
 		
 		
 		return a;
@@ -330,6 +332,18 @@ public class Team2BoardDAO {
 		return result;
 	}
 
+	public int deleteChildComment(Team2ChildCommentDTO t) {
+		
+		int result = ss.getMapper(Team2BoardMapper.class).deletechildComment(t);
+		
+		if(result == 1) {
+			ss.getMapper(Team2BoardMapper.class).countDownTotalComment(t);
+		}
+		
+		return result;
+	}
+
+	
 
 	
 	
