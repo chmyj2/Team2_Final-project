@@ -98,3 +98,24 @@
 	margin-top: 50px;
 	text-align: center;
 }
+
+/* 비밀번호 바꾸기 전 비밀번호 확인하는 페이지 */
+.PWChangeBefore-outline{
+	margin-bottom: 50px;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.PWChangeBefore-result{
+	color: red;
+}
+
+/* 비밀번호 바꾸는 페이지 */
+.PWChange-outline{
+	margin-bottom: 50px;
+	margin-top: 50px;
+	text-align: center;
+}
+.pwChange-Guide{
+	font-size: 5pt;
+}

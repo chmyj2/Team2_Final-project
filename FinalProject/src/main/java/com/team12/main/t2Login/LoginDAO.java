@@ -576,8 +576,17 @@ public class LoginDAO {
 
 	public boolean pwCheck(HttpServletRequest req, Membert2 m) {
 		// 비밀번호 일치하는 지 확인하는 기능
+		Membert2 loginMember = (Membert2) req.getSession().getAttribute("loginMember");
 		
-		return false;
+		String PW = loginMember.getMember_PW();
+		String PWInput = m.getMember_PW();
+		
+		if (PW.equals(PWInput)) {
+			return true;
+		}else {
+			req.setAttribute("result", "비밀번호가 일치하지 않습니다.");
+			return false;
+		}
 	}
 
 

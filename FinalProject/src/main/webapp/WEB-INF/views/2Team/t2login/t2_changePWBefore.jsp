@@ -7,14 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="PWChangeBefore-outline">
 <form action="pwchangeBefore.check" method="post">
-<h1>비밀번호 확인</h1>
 
-<input name="member_PW" >
-${result}
+<h1>비밀번호 확인</h1> <br>
+
+<input name="member_PW" placeholder="비밀번호" > <br>
+<span class="PWChangeBefore-result">${result} </span><br><br>
 
 <button>확인</button>
 
 </form>
+</div>
 </body>
 </html>
