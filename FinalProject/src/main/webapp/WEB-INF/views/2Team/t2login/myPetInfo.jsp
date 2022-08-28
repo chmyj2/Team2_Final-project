@@ -88,7 +88,7 @@
 
 
 <button onclick="location.href='petInfoChange.go'">펫 수정하기</button> &nbsp;&nbsp;
-<button onclick="petInfoDelete()">펫 삭제하기</button> &nbsp;&nbsp;
+<button onclick="petInfoDelete('${petInfo.baby_img }')">펫 삭제하기</button> &nbsp;&nbsp;
 <input type="button" onclick="history.back()" value="뒤로가기">
 
 
@@ -103,10 +103,10 @@
 </div>
 </body>
 <script type="text/javascript">
-function petInfoDelete() {
+function petInfoDelete(p) {
 	var ok = confirm("삭제하시겠습니까?");
 	if(ok){
-		location.href="petInfoDelete";
+		location.href="petInfoDelete?baby_img="+p;
 	}
 }
 </script>

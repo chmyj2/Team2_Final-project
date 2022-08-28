@@ -637,11 +637,12 @@ public class LoginDAO {
 		p.setBaby_memberID(ID);
 		if (ss.getMapper(Team2loginMapper.class).petDelete(p)==1) {
 			System.out.println("삭제성공");
-			/*String path = req.getSession().getServletContext().getRealPath("resources/t2_sj_petFiles");
+			String path = req.getSession().getServletContext().getRealPath("resources/t2_sj_petFiles");
+			
 				String baby_img = p.getBaby_img();
 				System.out.println(baby_img+"---------------");
 				baby_img = URLDecoder.decode(baby_img, "utf-8");
-				new File(path+"/"+baby_img).delete();*/
+				new File(path+"/"+baby_img).delete();
 			} 
 			}catch (Exception e) {
 				// TODO Auto-generated catch block
