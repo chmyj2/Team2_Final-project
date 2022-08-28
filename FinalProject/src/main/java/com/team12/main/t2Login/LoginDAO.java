@@ -442,93 +442,6 @@ public class LoginDAO {
 
 
 
-	/*public void petInfoUpdate(HttpServletRequest req, pet p) {
-		// 펫정보 업데이트하기
-		
-		String path = req.getSession().getServletContext().getRealPath("resources/t2_sj_petFiles");
-		MultipartRequest mr = null;
-		Membert2 member = (Membert2) req.getSession().getAttribute("loginMember");
-		//사용자 ID 가져오기
-		String ID = member.getMember_ID();
-		
-		//사용자 ID에 일치하는 펫 사진 가져오기
-		p.setBaby_memberID(ID);
-		pet petInfo = ss.getMapper(Team2loginMapper.class).getPetInfo(p);
-		
-		String oldFile = petInfo.getBaby_img();
-		String newFile = null;
-		try {
-			
-			mr = new MultipartRequest(req, path,10 * 1024 * 1024,
-					"utf-8",new DefaultFileRenamePolicy());
-			newFile = mr.getFilesystemName("b_img");
-			if (newFile == null) {
-				newFile = oldFile;
-			}else {
-				newFile = URLEncoder.encode(newFile, "utf-8");
-				newFile = newFile.replace("+", " ");
-			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("수정실패했습니다 (1)");
-		}
-		
-		try {
-			//새 정보들 가져오기
-			String baby_name = mr.getParameter("b_name");
-			String date = mr.getParameter("b_bitrh");
-			Date baby_birth = Date.valueOf(date);
-			String baby_sex = mr.getParameter("b_sex");
-			String baby_type = mr.getParameter("b_type");
-			String baby_typeDetail = mr.getParameter("b_typeDetail");
-			String baby_neut = mr.getParameter("b_neut");
-			double baby_weight =Double.valueOf(mr.getParameter("b_weight"));
-			
-			//값 태워보내기
-			p.setBaby_name(baby_name);
-			p.setBaby_birth(baby_birth);
-			p.setBaby_img(newFile);
-			p.setBaby_neut(baby_neut);
-			p.setBaby_sex(baby_sex);
-			p.setBaby_type(baby_type);
-			p.setBaby_typeDetail(baby_typeDetail);
-			p.setBaby_weight(baby_weight);
-			
-			if (ss.getMapper(Team2loginMapper.class).petInfoUpdate(p) ==1) {
-				System.out.println("pet info GOOD");
-				if (!oldFile.equals(newFile)) {
-					newFile = URLDecoder.decode(oldFile, "utf-8");
-					new File(path+"/"+oldFile).delete();
-				}
-			}else {
-				System.out.println("펫 정보 수정 실패(2)");
-				if (!oldFile.equals(newFile)) {
-					newFile = URLDecoder.decode(newFile, "utf-8");
-					new File(path + "/" + newFile).delete();
-				}
-			}
-			
-			
-			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-			if (!oldFile.equals(newFile)) {
-				try {
-					newFile = URLDecoder.decode(newFile, "utf-8");
-				} catch (UnsupportedEncodingException e1) {
-				}
-				new File(path + "/" + newFile).delete();
-			}
-		}
-		
-		
-		
-		
-	}*/
-
-
 
 	public void petInfoUpdate(HttpServletRequest req, MultipartFile baby_img, String baby_name, Double baby_weight,
 			Date baby_birth, String baby_sex, String baby_type, String baby_typeDetail, String baby_neut) {
@@ -547,13 +460,19 @@ public class LoginDAO {
 				pet petInfo = ss.getMapper(Team2loginMapper.class).getPetInfo(p);
 				
 				String oldFile = petInfo.getBaby_img();
-				String newFile = null;
+				String newFile = "1";
 				
-					newFile = baby_img.getOriginalFilename();
-					if (newFile == null) {
+				newFile = baby_img.getOriginalFilename();
+				System.out.println("oldFile:"+oldFile);
+				System.out.println("newFile"+newFile);
+				
+					if (newFile == "") {
 						newFile = oldFile;
+						System.out.println("여기가니???????????????");
 					}else {
+						System.out.println("왜 여기를 오니?????");
 						newFile= UUID.randomUUID().toString()+newFile.substring(newFile.lastIndexOf("."));
+						
 					}
 					
 
@@ -570,13 +489,14 @@ public class LoginDAO {
 					p.setBaby_typeDetail(baby_typeDetail);
 					p.setBaby_weight(baby_weight);
 					
-					if (!baby_img.getOriginalFilename().isEmpty()) {
+					if (!newFile.isEmpty()) {
 						//실제 업로드 코드
-						baby_img.transferTo(new File(path,newFile));
 						
 						if (ss.getMapper(Team2loginMapper.class).petInfoUpdate(p) ==1) {
 							System.out.println("pet info GOOD");
 						if (!oldFile.equals(newFile)) {
+							baby_img.transferTo(new File(path,newFile));
+							System.out.println("너..여기 오는거야?");
 							newFile = URLDecoder.decode(oldFile, "utf-8");
 							new File(path+"/"+oldFile).delete();
 						}
@@ -591,7 +511,7 @@ public class LoginDAO {
 					}
 					}
 					
-					
+					System.out.println("호오옥시 바로 여기 오니?");
 					
 					
 				} catch (Exception e) {
@@ -651,6 +571,18 @@ public class LoginDAO {
 		}
 		
 	}
+
+
+
+	public boolean pwCheck(HttpServletRequest req, Membert2 m) {
+		// 비밀번호 일치하는 지 확인하는 기능
+		
+		return false;
+	}
+
+
+
+	
 
 	
 	

@@ -335,7 +335,7 @@ public class LoginController {
 		
 		if(lDAO.loginCheck(req)) {
 			lDAO.petinfoGet(req,p);
-			req.setAttribute("contentPage", "t2login/t2_petInfoChage.jsp");						
+			req.setAttribute("contentPage", "t2login/t2_petInfoChange.jsp");						
 		}else {
 			req.setAttribute("contentPage", "t2login/t2_login.jsp");			
 			
@@ -383,7 +383,37 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 
+	@RequestMapping(value = "/changePW.go", method = RequestMethod.GET)
+	public String chagePW(HttpServletRequest req, Membert2 m) {
+		//비밀번호 바꾸기 전 비밀번호 확인 페이지
+		
+		if(lDAO.loginCheck(req)) {
+			req.setAttribute("contentPage", "t2login/t2_changePWBefore.jsp");						
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");			
+			
+		}
+		
+		return "2Team/t2_index";
+	}
 
+	@RequestMapping(value = "/pwchangeBefore.check", method = RequestMethod.POST)
+	public String pwChangeBeforecheck(HttpServletRequest req, Membert2 m) {
+		//비밀번호 일치하는 지 확인
+		
+		if(lDAO.loginCheck(req)) {
+			if(lDAO.pwCheck(req,m)) {
+				req.setAttribute("contentPage", "t2login/t2_changePW.jsp");										
+			}else {
+				req.setAttribute("contentPage", "t2login/t2_changePWBefore.jsp");
+			}
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");			
+			
+		}
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	

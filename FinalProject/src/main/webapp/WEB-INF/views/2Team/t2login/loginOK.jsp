@@ -6,12 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="resources/t2_css/t2_login.css">
+<link href="resources/t2_css/menuCss.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <c:choose>
 <c:when test="${sessionScope.loginMember !=null }">
-
 <div class="loginOK-dropdown" >
       <span class="loginOK-dropbtn">${sessionScope.loginMember.member_ID }님</span>
       <div class="loginOK-dropdown-content">
@@ -37,4 +36,13 @@
 </c:choose>
 
 </body>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 </html>
