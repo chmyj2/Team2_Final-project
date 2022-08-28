@@ -67,9 +67,9 @@ function goPurchasePage(productNum) {
 	
 }
 
-function goCartView(productNum){
+function goCartView(){
 	var cart_UserID = document.getElementById("cart_UserID").value;
-	location.href = "CartView.go?productNum=" + productNum + "&cart_UserID=" + cart_UserID;
+	location.href = "CartView.go?cart_UserID=" + cart_UserID;
 }
 
 var prevStock = 0;
@@ -115,7 +115,16 @@ function loadPrice(){
 
 
 function CheckOutFunc() {
-	$('#CheckOutForm').submit();
+
+  var name = document.getElementById("name").value;
+  if(name == ""){
+	console.log("장바구니가 비어있습니다.");
+    return false;
+
+  }else{
+    $('#CheckOutForm').submit();
+    
+  }
 }
 
 

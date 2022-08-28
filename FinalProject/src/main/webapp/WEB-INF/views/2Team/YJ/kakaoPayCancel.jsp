@@ -7,9 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-주문번호 : ${order_Num } 
-결재가 완료되었습니다.
-구매감사합니다.
-
+	결재 취소
+	<button onclick="check()">닫기</button>
 </body>
+<script type="text/javascript">
+function check() {
+	window.close();
+	}
+
+</script>
+
 </html>

@@ -22,4 +22,11 @@
 	UPDATE  PRODUCT set productStock = productStock - #{cart_ProductQuantity} where productNum = #{productNum}
 </update>
 
+<insert id="insertPurchasedProduct" parameterType="com.team12.main.t2.shop.OrderDTO">
+	INSERT INTO order_Table (Order_Num, Order_User_ID, Order_ProductNum,Order_PhoneNumber,Product_Quantity,Order_Date,Shipping_Address,Order_DeliverState,Order_State,Order_PaymentState,Product_Price,Order_TotalPrice,Recipient,Order_PK,Shipping_Memo)
+	VALUES(#{Order_Num}, #{Order_User_ID}, #{Order_ProductNum},#{Order_PhoneNumber},#{Product_Quantity},sysdate,#{Shipping_Address},'출고 처리중','주문 완료','결재 완료',#{Product_Price},#{Order_TotalPrice},#{Recipient},Order_PK_seq.nextval,#{Shipping_Memo})
+</insert>
+
+
+
 </mapper>

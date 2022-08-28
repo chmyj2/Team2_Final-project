@@ -100,7 +100,7 @@
 				<c:when test="${Product.productStock > 0}">
 					<button onclick="goPurchasePage('${Product.productNum}')">구매하기</button>
 					<button id="cartAddBtn" class = "shopDetailButton">장바구니에 추가</button>
-					<button class = "shopDetailButton" onclick = "goCartView(${Product.productNum })">장바구니 바로가기 </button>
+					<button class = "shopDetailButton" onclick = "goCartView()">장바구니 바로가기 </button>
 					<span id="spanCart"></span>
 		
 				</c:when>

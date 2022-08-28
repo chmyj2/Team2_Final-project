@@ -2,6 +2,7 @@ package com.team12.main.t2.shop;
 
 import java.net.InetAddress;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -75,9 +76,8 @@ public class CartDAO {
 	}
 
 	// 카트 받기
-	public void getCart(HttpServletRequest request, int productNum, String cart_UserID) {
+	public void getCart(HttpServletRequest request,String cart_UserID) {
 
-		System.out.println(productNum);
 		Cart c = new Cart();
 		c.setCart_UserID(cart_UserID);
 
@@ -160,6 +160,68 @@ public class CartDAO {
 				p.setCart_ProductQuantity(Integer.parseInt(quantityArr[i]));
 				ss.getMapper(ProductCartMapper.class).updatePurchasedProduct(p);
 		}
+		
+	}
+
+	
+	// 주문테이블 등록
+	public void insertPurchasedProduct(HttpServletRequest request, String[] productNumArr, String[] quantityArr, String shipAddress,
+			String phoneNum, String billState, String billState1, String billState2, String memo, String[] pricekArr,
+			String totalPrice, String recipient) {
+
+		
+		OrderDTO o = new OrderDTO();
+		
+		String productNum = "";
+		String quantity = "";
+		String price = "";
+		String address = billState + "!" + billState1 + "!" + billState2;
+		
+		
+		
+		for (String a : productNumArr) {
+			productNum += a + "!";
+		}
+		
+		for (String b : quantityArr) {
+			quantity += b + "!";
+		}
+		
+		for (String c : pricekArr) {
+			price += c + "!";
+		}
+		
+		
+		Random rand = new Random();
+		
+			String temp = Integer.toString( rand.nextInt(10) + 1);
+			for (int i = 0; i < 9; i++) {
+			    temp+= Integer.toString(rand.nextInt(11));
+			}
+			
+		
+			
+		o.setOrder_Num(temp);
+		o.setOrder_User_ID(shipAddress);
+		o.setOrder_ProductNum(productNum);
+		o.setOrder_PhoneNumber(phoneNum);
+		o.setProduct_Quantity(quantity);
+		o.setShipping_Address(address);
+		o.setShipping_Memo(memo);
+		o.setProduct_Price(price);
+		o.setOrder_TotalPrice(totalPrice);
+		o.setRecipient(recipient);
+		if ( ss.getMapper(ProductCartMapper.class).insertPurchasedProduct(o) == 1) {
+			System.out.println("등록 성공");
+		}else {
+			System.out.println("등록 실패");
+		}
+		
+		
+		request.setAttribute("order_Num", temp);
+		
+		
+		
 		
 	}
 

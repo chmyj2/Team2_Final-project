@@ -15,4 +15,6 @@ public interface ProductCartMapper {
 
 	void updatePurchasedProduct(Product p);
 
+	int insertPurchasedProduct(OrderDTO o);
+
 }

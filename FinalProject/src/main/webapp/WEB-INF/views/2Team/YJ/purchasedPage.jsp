@@ -356,24 +356,67 @@ $(function(){
 
 function deletANDINsert(){
 	
-	var cartNum = document.getElementsByName("cartNum");
+	var cartNum = document.getElementsByName("cartNum");	// 카트 번호(삭제할때 씀)
 	var productNum = document.getElementsByName("productNum"); // 상품pk
-	var quantity = document.getElementsByName("quantity");
+	var quantity = document.getElementsByName("quantity");	// 상품 수량
+	
+	var totalPrice = $('#totalPrice').text(); // 총금액
+	var shipAddress = $('#shipAddress').text();	// 회원 id
+	var Recipient = document.getElementById("billAddress").value; // 받는사람 이름
+	var phoneNum = document.getElementById("billCity").value; // 받는사람 전화번호
+	var billState = document.getElementById("billState").value; // 우편번호
+	var billState1 = document.getElementById("billState1").value; // 도로명주소
+	var billState2 = document.getElementById("billState2").value; // 상세주소
+	var memo = document.getElementById("billZip").value; // 메모
+	var productName = document.getElementsByName("name"); // 상품이름
+	var price = document.getElementsByName("price"); // 상품 금액
+	
 	
 	var cartNumArr = new Array();
 	var productNumArr = new Array();
 	var quantityArr = new Array();
+	var pricekArr = new Array();
+	var produckNameArr = new Array();
 		
 	$(".product").each(function( i, e ) {
 		cartNumArr.push(cartNum[i].value);
 		productNumArr.push(productNum[i].value);
 		quantityArr.push(quantity[i].value);
+		pricekArr.push(price[i].value);
+		produckNameArr.push(productName[i].value);
 		
 	});
 	
-	console.log(productNumArr);
-	console.log(quantityArr);
-	location.href='deleteAndInserAndUpdatePurchasedProduct?cartNumArr=' + cartNumArr + "&productNumArr=" + productNumArr + "&quantityArr=" + quantityArr;
+	
+	console.log("3" + shipAddress);
+	console.log("10" + productNumArr);
+	console.log("5" + phoneNum);
+	console.log("11" + quantityArr);
+	console.log("6" + billState);
+	console.log("7" + billState1);
+	console.log("8" + billState2);
+	console.log("9" + memo);
+	console.log("12" + pricekArr);
+	console.log("2" + totalPrice);
+	console.log("4" + Recipient);
+	
+	
+	
+	
+	
+	location.href='deleteAndInserAndUpdatePurchasedProduct?cartNumArr=' + cartNumArr + 
+			"&productNumArr=" + productNumArr + 
+			"&quantityArr=" + quantityArr +
+			"&shipAddress=" + shipAddress + 
+			"&phoneNum=" + phoneNum + 
+			"&billState=" + billState + 
+			"&billState1=" + billState1 + 
+			"&billState2=" + billState2 + 
+			"&memo=" + memo + 
+			"&pricekArr=" + pricekArr + 
+			"&totalPrice=" + totalPrice + 
+			"&Recipient=" + Recipient
+			
 	};
 
 
