@@ -12,9 +12,10 @@
 <body>
     
 	<div class="container">
+    	
     	<div class="row">
     	<form action="team2.boardlist">
-    		<div>
+    		<div style="text-align: center;">
     			<input type="text" id="searchInput" name="search" placeholder="Search for titles..">
     			<input type="hidden" name="board_category" value="${param.board_category}">
     			<button id="searchBtn" class="btn btn-success btn-sm">완료</button>
@@ -24,7 +25,7 @@
 		</div>
 		
 		<div>
-			<a id="writeBtn" href='team2.createPostPage?board_category=${param.board_category}' class="btn btn-success ">글쓰기</a>
+			<a id="writeBtn" href='team2.createPostPage?board_category=${param.board_category}' class="btn btn-success writeBtn" style="float: right;">글쓰기</a>
 		</div>
 		
 		<table class="table table-striped table-hover">
@@ -54,14 +55,14 @@
 		</table>
 		<hr>
 		
-			<ul class="pagination pagination-sm">
+	</div>
+	
+			<ul class="pagination pagination-sm" style="padding-left: 40%;padding-bottom: 20px;">
 				<!-- <li class="page-item active" aria-current="page"> <span class="page-link">1</span> </li> -->
 			<c:forEach var="i" begin="1" end="${r}">
 				<li class="page-item"><a class="page-link" href="team2.boardlist?board_category=${param.board_category}&vpage=${i}&search=${search}&sort=${sort}">${i}</a> </li>
 			</c:forEach>
 			</ul>
-		
-	</div>
 
       
       <input id="loginCheckId" type="hidden" value="${sessionScope.loginMember.member_ID}">

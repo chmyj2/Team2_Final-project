@@ -79,20 +79,25 @@ background: #29c05e;
 }
 
 #searchInput {
-  width: 70%; /* Full-width */
-  height: 50%;
-  font-size: 16px; /* Increase font-size */
-  padding: 12px 20px 12px 40px; /* Add some padding */
-  border: 1px solid #ddd; /* Add a grey border */
-  margin-bottom: 12px; /* Add some space below the input */
-  margin-top: 12px; /* Add some space below the input */
+    width: 40%;
+    height: 50%;
+    font-size: 16px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-top: 50px;
+    text-align: left;
 }
 
 #searchBtn {
-	height: 45px;	
-  width: 5%; /* Full-width */
-  font-size: 16px; /* Increase font-size */
-  border: 1px solid #ddd; /* Add a grey border */
-  margin-bottom: 12px; /* Add some space below the input */
-  margin-top: 12px; /* Add some space below the input */
+	height: 30px;
+    padding: 0xp 0px 5px 0px;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    float: revert;
+}
+.writeBtn{
+	float: right;
 }

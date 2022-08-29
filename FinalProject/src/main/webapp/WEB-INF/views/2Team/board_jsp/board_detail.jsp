@@ -75,7 +75,7 @@
 </div>
 
 
-<div class="container" id="commentParent" style="margin-top: 50px; margin-bottom: 50px;">
+<div class="container" id="commentParent">
   
     <div class="row" id="commentContainer">
     <c:forEach var="c" items="${comments}">
@@ -160,17 +160,15 @@
     </c:forEach>
     </div>
     
+</div>
 
-    
-	<ul class="pagination pagination-sm">
+	<ul class="pagination pagination-sm" style="padding-left: 40%;padding-bottom: 20px;">
 		<c:forEach var="i" begin="1" end="${r}">
 			<li class="page-item">
 				<a class="commentPage">${i}</a> 
 			</li>
 		</c:forEach>
 	</ul>
-
-</div>
 
 
 

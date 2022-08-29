@@ -70,6 +70,8 @@ public class Team2BoardDAO {
 			req.setAttribute("sort", 1);
 		} else if (board.getSort() == 2) {
 			req.setAttribute("sort", 2);
+		} else {
+			req.setAttribute("sort", 0);
 		}
 		
 		
