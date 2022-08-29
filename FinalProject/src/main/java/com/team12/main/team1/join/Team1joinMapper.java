@@ -13,9 +13,13 @@ public interface Team1joinMapper {
 
 	int getMemberNum(Member m);
 	
-	int checkIdKakao(Member m);
 
 	int kakaoJoin(Member m);
+	
+	String find_id(Member m);
+ 
+
+	
 
 
 	

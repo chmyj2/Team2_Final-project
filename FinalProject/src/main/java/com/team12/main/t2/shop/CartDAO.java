@@ -99,19 +99,48 @@ public class CartDAO {
 
 	public void goPurchasePage(HttpServletRequest request) {
 
+		
 		String[] thumbnails = request.getParameterValues("thumbnail");
 		String[] names = request.getParameterValues("name");
 		String[] prices = request.getParameterValues("price");
 		String[] quantitys = request.getParameterValues("quantity");
-
-		PurchasedProduct p = null;
-	ArrayList<PurchasedProduct> purchasedProducts = new ArrayList<PurchasedProduct>();
-		for (int i = 0; i < prices.length; i++) {
-			p = new PurchasedProduct(thumbnails[i], names[i], prices[i], quantitys[i]);
-			purchasedProducts.add(p);
+		String[] cartNum = null;
+		PurchasedProduct p = new PurchasedProduct();
+		ArrayList<PurchasedProduct> purchasedProducts = new ArrayList<PurchasedProduct>();
+		
+		if (request.getParameterValues("cartNum") == null) {
+			for (int i = 0; i < prices.length; i++) {
+				p.setProductThumbnail(thumbnails[i]);
+				p.setProductName(names[i]);
+				p.setProductPrice(prices[i]);
+				p.setCart_ProductQuantity(quantitys[i]);
+				purchasedProducts.add(p);
+			}
 			
-		}
+		}else {
+			String[] productNum = request.getParameterValues("productNum");
+			cartNum = request.getParameterValues("cartNum");
+			for (int i = 0; i < prices.length; i++) {
+				p = new PurchasedProduct(thumbnails[i], names[i], prices[i], quantitys[i],cartNum[i],productNum[i]);
+				purchasedProducts.add(p);
+				
+			}
+			
+		};
+		
+		
 		request.setAttribute("purchasedProducts", purchasedProducts);
+		
+		
+	}
+
+	public void deletePurchasedProduct(String[] cartNumArr) {
+		Cart c = new Cart();
+		for (int i = 0; i < cartNumArr.length; i++) {
+			c.setCartNum(Integer.parseInt( cartNumArr[i]));
+			ss.getMapper(ProductCartMapper.class).deletePurchasedProduct(c);
+		}
+		
 		
 		
 	}
