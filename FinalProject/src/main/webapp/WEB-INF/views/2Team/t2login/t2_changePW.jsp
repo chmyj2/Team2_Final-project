@@ -10,7 +10,7 @@
 <div class="PWChange-outline">
 <h1>비밀번호 변경하기</h1><br>
 
-<form action="pwChange.do" method="post">
+<form action="pwChange.do" method="post" name="pwChange" onsubmit="return pwChange_check()">
 
 
 <input name="member_PW" placeholder="비밀번호" id="pw1"><br>

@@ -119,3 +119,10 @@ function joinCheck() {
 	
 	
 }
+
+function pwChange_check() {
+	let pw1 = document.pwChange.pw1;
+	let pw2 = document.pwChange.pw2;
+	
+	
+}
