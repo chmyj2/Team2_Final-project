@@ -58,4 +58,8 @@
 	update final_member set member_PW =#{member_PW} where member_ID=#{member_ID}
 	</update>
 	
+	<delete id="deleteMember">
+	delete final_member where member_ID=#{member_ID}
+	</delete>
+	
 </mapper>

@@ -432,7 +432,7 @@ public class LoginController {
 	
 	@RequestMapping(value = "/DeleteMember.check", method = RequestMethod.GET)
 	public String DeleteMemberCheck(HttpServletRequest req, Membert2 m) {
-		//탈퇴하기 전 비밀번호 확인하기
+		//탈퇴하기 전 비밀번호 확인페이지로 가기
 		
 		if(lDAO.loginCheck(req)) {
 			req.setAttribute("contentPage", "t2login/t2_DeleteBeforePWCheck.jsp");						
@@ -444,6 +444,36 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/deleteMember.PWCheck", method = RequestMethod.POST)
+	public String deleteMemberPWCheck(HttpServletRequest req, Membert2 m) {
+		//탈퇴하기 전 비밀번호 확인하는 기능 + 회원탈퇴 동의서로 가는 페이지
+		
+		if(lDAO.loginCheck(req)) {
+			if(lDAO.pwCheck(req, m)) {
+				lDAO.petinfoGet(req);
+				req.setAttribute("contentPage", "t2login/t2_DeleteMemberInfo_agree.jsp");										
+			}else {
+				req.setAttribute("contentPage", "t2login/t2_DeleteBeforePWCheck.jsp");	
+			}
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");			
+			
+		}
+		
+		return "2Team/t2_index";
+	}
+	
+	@RequestMapping(value = "/deleteMember.Do", method = RequestMethod.GET)
+	public String deleteMemberDo(HttpServletRequest req) {
+		//멤버정보 삭제 + 삭제 완료 페이지
+			
+			
+			lDAO.deleteMember(req);
+			req.setAttribute("contentPage", "t2_home.jsp");						
+		
+		
+		return "2Team/t2_index";
+	}
 	
 	
 }

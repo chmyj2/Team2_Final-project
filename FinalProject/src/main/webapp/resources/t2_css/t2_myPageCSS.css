@@ -119,3 +119,43 @@
 .pwChange-Guide{
 	font-size: 5pt;
 }
+
+/* 회원 탈퇴 동의서 페이지 */
+.memberDeleteAgree-outline{
+	margin-bottom: 20px;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.memberDeleteAgree-outline2{
+	margin-bottom: 80px;
+    text-align: center;
+    margin-top: -15px;
+}
+
+.memberDeleteAgree-text{
+	font-size: 9pt;
+	position: relative;
+    left: 320px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

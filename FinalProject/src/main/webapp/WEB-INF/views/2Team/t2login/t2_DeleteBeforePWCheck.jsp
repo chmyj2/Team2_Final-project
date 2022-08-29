@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="PWChangeBefore-outline">
-<form action="#" method="post">
+<form action="deleteMember.PWCheck" method="post">
 
 <h1>탈퇴 비밀번호 확인</h1> <br>
 

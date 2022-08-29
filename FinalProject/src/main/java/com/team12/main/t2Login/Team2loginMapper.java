@@ -30,6 +30,8 @@ public interface Team2loginMapper {
 
 	int memberPWChange(Membert2 m);
 
+	int deleteMember(Membert2 m);
+
 	
 
 

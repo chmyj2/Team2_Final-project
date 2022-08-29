@@ -342,7 +342,7 @@ public class LoginDAO {
 			
 			
 			
-			System.out.println(baby_memberID);
+			/*System.out.println(baby_memberID);
 			System.out.println(saveFileName);
 			System.out.println(baby_name);
 			System.out.println(baby_weight);
@@ -350,7 +350,7 @@ public class LoginDAO {
 			System.out.println(baby_sex);
 			System.out.println(baby_type);
 			System.out.println(baby_typeDetail);
-			System.out.println(baby_neut);
+			System.out.println(baby_neut);*/
 			
 			//값세팅하기
 			pet p = new pet();
@@ -429,7 +429,7 @@ public class LoginDAO {
 		
 		String ID = loginMember.getMember_ID();
 		
-		System.out.println("---------------------"+ID);
+		//System.out.println("---------------------"+ID);
 		p.setBaby_memberID(ID);
 		pet petInfo = ss.getMapper(Team2loginMapper.class).getPetInfo(p);
 		
@@ -468,9 +468,9 @@ public class LoginDAO {
 				
 					if (newFile == "") {
 						newFile = oldFile;
-						System.out.println("여기가니???????????????");
+						
 					}else {
-						System.out.println("왜 여기를 오니?????");
+						
 						newFile= UUID.randomUUID().toString()+newFile.substring(newFile.lastIndexOf("."));
 						
 					}
@@ -496,7 +496,7 @@ public class LoginDAO {
 							System.out.println("pet info GOOD");
 						if (!oldFile.equals(newFile)) {
 							baby_img.transferTo(new File(path,newFile));
-							System.out.println("너..여기 오는거야?");
+							
 							newFile = URLDecoder.decode(oldFile, "utf-8");
 							new File(path+"/"+oldFile).delete();
 						}
@@ -511,7 +511,7 @@ public class LoginDAO {
 					}
 					}
 					
-					System.out.println("호오옥시 바로 여기 오니?");
+					
 					
 					
 				} catch (Exception e) {
@@ -560,7 +560,7 @@ public class LoginDAO {
 			String path = req.getSession().getServletContext().getRealPath("resources/t2_sj_petFiles");
 			
 				String baby_img = p.getBaby_img();
-				System.out.println(baby_img+"---------------");
+				
 				baby_img = URLDecoder.decode(baby_img, "utf-8");
 				new File(path+"/"+baby_img).delete();
 			} 
@@ -580,7 +580,6 @@ public class LoginDAO {
 		
 		String PW = loginMember.getMember_PW();
 		String PWInput = m.getMember_PW();
-		
 		if (PW.equals(PWInput)) {
 			return true;
 		}else {
@@ -605,6 +604,32 @@ public class LoginDAO {
 			
 			Membert2 dbMember= ss.getMapper(Team2loginMapper.class).getMemberByID(m);
 			req.getSession().setAttribute("loginMember", dbMember);
+		}
+	}
+
+
+
+	public void deleteMember(HttpServletRequest req) {
+		// 일반회원 탈퇴하는 기능
+		
+		Membert2 m = (Membert2) req.getSession().getAttribute("loginMember");
+		
+		if (ss.getMapper(Team2loginMapper.class).deleteMember(m)==1) {
+			System.out.println("탈퇴 성공하였다!!!");
+			
+			String path = req.getSession().getServletContext().getRealPath("resources/t2_sj_petFiles");
+			
+			String baby_img=req.getParameter("baby_img");
+			System.out.println(baby_img);
+			try {
+				baby_img = URLDecoder.decode(baby_img, "utf-8");
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			new File(path+"/"+baby_img).delete();
+			logout(req);
+			loginCheck(req);
 		}
 	}
 
