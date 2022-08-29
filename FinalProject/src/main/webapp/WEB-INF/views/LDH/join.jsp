@@ -4,6 +4,44 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script>
+	$(function(){
+		
+		$("#jm_idInput").keyup(function() {
+			$.ajax({
+				url : "check_id.do",
+				type : "POST",
+				data : {id : $("#jm_idInput").val()},
+				success : function(result) {
+					if (result == 1) {
+						$("#id_check").html("중복된 아이디가 있습니다.");
+						$("#joinBtn").attr("disabled", "disabled");
+					} else {
+						$("#id_check").html("");
+						$("#joinBtn").removeAttr("disabled");
+					}
+				},
+			})
+		});
+		
+		$("#member_email").keyup(function(){
+			$.ajax({
+				url : "check_email.do",
+				type : "POST",
+				data : {
+					email : $("#member_email").val()
+				},
+				success : function(result) {
+					if (result == 1) {
+						$("#email_check").html("중복된 이메일이 있습니다.");
+					} else {
+						$("#email_check").html("");
+					}
+				},
+			})
+		});
+	})
+</script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -20,6 +58,8 @@
 				<!-- id 입력 -->
 				<input class="join_input_id" id="jm_idInput" name="member_ID" placeholder="ID *"
 					maxlength="10" autocomplete="off" autofocus="autofocus">
+					<br>
+					<span id="id_check" class="w3-text-red"></span>
 				<p class="required_txt">10글자 이하</p>
 
 				<!-- pw 입력 -->
@@ -33,13 +73,15 @@
 				<br>
 				
 				<!-- 이름 입력 -->
-					<input class="input_name"name="member_name" placeholder="Name *" maxlength="10"
+					<input class="input_name" name="member_name" placeholder="Name *" maxlength="10"
 						autocomplete="off">
 				<br>
 				
 				<!-- 이메일 -->
-				<input class="input_email"name="member_email" placeholder="Email *" type="email" maxlength="30"
+				<input class="input_email"name="member_email"id="member_email" placeholder="Email *" type="email" maxlength="30"
 						autocomplete="off">
+						<br>
+				<span id="email_check" class="w3-text-red"></span>
 				<br>
 
                 <!-- 생년월일 입력 -->
@@ -80,7 +122,7 @@
 					<input class="my_photo1" name="m_photo" type="file">
 				</div> -->
 				<input type="hidden" name="member_linkWhere" value="1">
-				<button class="join_btn">
+				<button class="join_btn" id="joinBtn">
 				<span>가입</span>
 				</button>
 				<div class="join_img">

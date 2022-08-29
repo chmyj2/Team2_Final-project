@@ -51,6 +51,18 @@ public class MemberController {
 		return "1Team/t1_index";
 	}
 	
+	// 아이디 중복 검사(AJAX)
+		@RequestMapping(value = "/check_id.do", method = RequestMethod.POST)
+		public void check_id(@RequestParam("id") String id, HttpServletResponse response, HttpServletRequest req, Member m) throws Exception{
+			service.check_id(id, response, req, m);
+		}
+		
+		// 이메일 중복 검사(AJAX)
+		@RequestMapping(value = "/check_email.do", method = RequestMethod.POST)
+		public void check_email(@RequestParam("email") String email, HttpServletResponse response, HttpServletRequest req, Member m) throws Exception{
+			service.check_email(email, response, req, m);
+		}
+	
 	
 	// 아이디 찾기 폼
 	@RequestMapping(value = "/member.findId.go", method = RequestMethod.GET)
@@ -63,9 +75,8 @@ public class MemberController {
 	
 	// 아이디 찾기
 		@RequestMapping(value = "/member.find_id.do", method = RequestMethod.POST)
-
-		public String find_id(HttpServletResponse response, @RequestParam("email") String email, Model md, HttpServletRequest req) throws Exception{
-			md.addAttribute("id", service.find_id(response, email, req));
+		public String find_id(HttpServletResponse response, @RequestParam("email") String email, Model md, HttpServletRequest req, Member m) throws Exception{
+			md.addAttribute("id", service.find_id(response, email, req, m));
 
 
 			return "LDH/findIdResult";

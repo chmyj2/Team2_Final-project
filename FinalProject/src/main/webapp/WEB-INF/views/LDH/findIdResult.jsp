@@ -24,7 +24,7 @@
 			</div>
 			<div>
 			<c:choose>
-			<c:when test="${sessionScope.loginMember.member_linkWhere == 1 }">
+			<c:when test="${sessionScope.loginMember.member_linkWhere != 1 }">
 			     <h5>
 					${ id }
 				</h5>

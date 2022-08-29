@@ -353,7 +353,16 @@ public class MemberDAO {
 		public String find_id(String email) throws Exception{
 			return sqlsession.selectOne("com.team12.main.team1.join.Team1joinMapper.find_id", email);
 		}
-	
+		
+		// 아이디 중복 검사
+		public int check_id(String id) throws Exception{
+			return sqlsession.selectOne("com.team12.main.team1.join.Team1joinMapper.check_id", id);
+		}
+		
+		// 이메일 중복 검사
+		public int check_email(String email) throws Exception{
+			return sqlsession.selectOne("com.team12.main.team1.join.Team1joinMapper.check_email", email);
+		}
 
 	
 	}

@@ -16,6 +16,7 @@
 				<div>
 					<p>
 						<label>Email</label>
+						<!-- <input class="w3-input" type="text" id="email" name="email" required> -->
 						<input class="w3-input" type="text" id="email" name="email" required>
 					</p>
 					<p class="w3-center">
