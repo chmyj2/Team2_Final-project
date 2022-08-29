@@ -28,6 +28,8 @@ public interface Team2loginMapper {
 
 	int petDelete(pet p);
 
+	int memberPWChange(Membert2 m);
+
 	
 
 

@@ -593,7 +593,19 @@ public class LoginDAO {
 
 	public void PWChange(HttpServletRequest req, Membert2 m) {
 		// 비밀번호를 바꾸는 작업을 하는 기능
+		System.out.println(m.getMember_PW());
+		Membert2 loginMember = (Membert2) req.getSession().getAttribute("loginMember");
+		m.setMember_ID(loginMember.getMember_ID());
 		
+		if(ss.getMapper(Team2loginMapper.class).memberPWChange(m)==1) {
+			System.out.println("비밀번호 업데이트 완료");
+			m.setMember_linkWhere(1);
+			
+			//바꾼 정보 다시 넣기
+			
+			Membert2 dbMember= ss.getMapper(Team2loginMapper.class).getMemberByID(m);
+			req.getSession().setAttribute("loginMember", dbMember);
+		}
 	}
 
 

@@ -15,7 +15,7 @@
 		<img src="resources/t2_sj_petFiles/${petInfo.baby_img }"
 			class="myPetPage-img" id="image"><br>
 		<br> <input type="file" name="baby_img"
-			value="${petInfo.baby_img }" id="baby_img">
+			value="${petInfo.baby_img }" id="baby_img" style="margin: 0 auto;">
 
 		<table class="myPetPage-table">
 
