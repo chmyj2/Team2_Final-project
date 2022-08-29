@@ -52,11 +52,18 @@ html{
     font-weight: 900;
     color: rgb(255, 255, 255);
     font-size: 15px;
-    cursor: pointer;
+    cursor: url(cursor_pointer.png), url(cursor_pointer.cur), pointer;
     background-color: black;
     margin:auto;
     margin-bottom: 10px;
 }
+
+.findID_btn{
+	border: none;
+    font-size: 10pt;
+    background: none;
+}
+
 
 .signUp_btn{
     display: block;
@@ -579,3 +586,60 @@ hr.login_hr{
     font-weight: bold;
 }
 
+
+/* 아이디 찾기 */
+
+.w3-content {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.w3-container {
+    background-color: rgba(255, 255, 255, 0.575);
+    height: 250px;
+    width: 400px;
+    align-items: center;
+    margin: 0 auto;
+    border: 5px solid black;
+    border-radius: 50px 50px 50px 50px;
+    margin-top: 250px;
+    margin-bottom: 250px;
+    padding: 20px;
+}
+
+.w3-container label{
+	font-size:10pt;
+	margin-right: 20px;
+}
+
+.w3-container h5{
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+.w3-container button{
+	display: block;
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    cursor: url(cursor_pointer.png), url(cursor_pointer.cur), pointer;
+    background-color: black;
+    margin:auto;
+    margin-bottom: 10px;
+}
+
+.w3-input{
+    position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 30px;
+    border-radius: 30px;
+    border: none;
+}

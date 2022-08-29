@@ -6,6 +6,7 @@ import java.text.Format;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,7 +16,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.team12.main.team1.join.Member;
 import com.team12.main.team1.join.MemberDAO;
+import com.team12.main.team1.join.Team1joinMapper;
 
 @Service
 public class Team1ReviewDAO {
@@ -63,8 +66,22 @@ public class Team1ReviewDAO {
 			review.setEnd_data(5);
 		}
 		
-		List<Team1ReviewDTO> reviews = ss.getMapper(Team1ReviewMapper.class).getReviewList(review);
-		req.setAttribute("r", reviews);
+		
+		if(review.getArray()==0) {
+			
+		}
+		
+		
+		
+		if(review.getArray() != 2) {
+			List<Team1ReviewDTO> reviews = ss.getMapper(Team1ReviewMapper.class).getReviewList(review);
+			req.setAttribute("r", reviews);
+			req.setAttribute("array", "1");
+		} else {
+			List<Team1ReviewDTO> reviews = ss.getMapper(Team1ReviewMapper.class).orderByReview(review);
+			req.setAttribute("r", reviews);
+			req.setAttribute("array", "2");
+		}
 		
 		
 	}
@@ -73,11 +90,16 @@ public class Team1ReviewDAO {
 	//글쓰기
 	
 	public void writeReview(HttpServletRequest req, MultipartHttpServletRequest mr ) {
-
+		
 		String path = req.getSession().getServletContext().getRealPath("resources/reviewFile");
 		System.out.println("path :"+path);
+		String uuid = UUID.randomUUID().toString();
 		
 		try {
+			
+			Member m = (Member) req.getSession().getAttribute("loginMember");
+			String r_id = m.getMember_ID(); 
+			
 			System.out.println(mr.getParameter("review_id"));
 			System.out.println(mr.getParameter("review_text"));
 			System.out.println(mr.getParameter("review_title"));
@@ -89,7 +111,7 @@ public class Team1ReviewDAO {
 			
 			Map<String, String> review = new HashMap();
 			
-			review.put("review_id", mr.getParameter("review_id"));
+			review.put("review_id", r_id);
 			review.put("review_title", mr.getParameter("review_title"));
 			review.put("review_img", img.getOriginalFilename());
 			review.put("review_text", mr.getParameter("review_text"));
@@ -101,6 +123,7 @@ public class Team1ReviewDAO {
 			img.transferTo(f);
 			
 			int a = ss.getMapper(Team1ReviewMapper.class).writeReview(review);
+			
 			
 			if(a == 1) {
 				System.out.println("등록성공");
@@ -148,6 +171,12 @@ public class Team1ReviewDAO {
 		String update = ss.getMapper(Team1ReviewMapper.class).updateReview(review);
 		System.out.println("수정완료!" + update);
 		
+	}
+
+
+	public void reviewOrderBy(HttpServletRequest req, Team1ReviewDTO review) {
+		List<Team1ReviewDTO> orderBy = ss.getMapper(Team1ReviewMapper.class).orderByReview(review);
+		req.setAttribute("ob", orderBy);
 	}
 
 

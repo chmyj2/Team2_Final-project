@@ -59,7 +59,7 @@
 <body>
     <div class="master_product_update_wrap">
             <h2>STORE 상품 등록</h2>
-            <form id="master_update_form" enctype="multipart/form-data" method="post" action="">
+            <form action="master.reg" id="master_update_form" enctype="multipart/form-data" method="post">
 			<div class="master_product_update_tbl">
 				<div>
 					<h3>상품카테고리</h3>

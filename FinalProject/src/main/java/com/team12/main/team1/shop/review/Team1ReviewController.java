@@ -74,6 +74,22 @@ public class Team1ReviewController {
 		return "1Team/t1_index";
 	}
 	
+	// 리뷰 추천순 정렬
+	@RequestMapping(value = "review.orderBy", method = RequestMethod.GET)
+	public String reviewOrderBy(HttpServletRequest req, Team1ReviewDTO review) {
+	
+		mDAO.loginCheck(req);
+		System.out.println("1111");
+		rDAO.reviewOrderBy(req, review);
+		System.out.println("2222");
+		rDAO.showReviewList(req, review);
+		System.out.println("머고정렬을해라...");
+		
+		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
+		
+		return "1Team/t1_index";
+	}
+	
 	
 	
 	

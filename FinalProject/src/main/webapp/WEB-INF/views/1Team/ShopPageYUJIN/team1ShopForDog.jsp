@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 /* 상품 디테일 페이지로 이동 */
 	function gotoDetail(num) {
 			location.href="enter.productDetail"?num_PK="+num;
@@ -20,7 +20,7 @@
 			var cv = categoryNum.options[categoryNum.selectedIndex].value;
 			location.href="get.team1byCategory?categoryNum="+cv;
 		};		
-</script>
+</script> -->
 
 </head>
 <body>
@@ -46,7 +46,6 @@
 
 
                 <!-- 제조사별/연령별 체크박스 -->
-                <!-- table로 할까...? -->
                 <div class="store_for_dog_category_wrap">
                     <div class="store_foe_dog_category_select">
                         <div class="store_for_dog_categoty_row">
@@ -73,7 +72,7 @@
             <div class="store_new_products_img">
                 <div class="store_new_products_ANF">
                     <!-- a링크 타고 상품디테일.jsp로 이동 -->
-                <a href="get.aProductTeam1">
+                <a href="get.aProductTeam1?array=1">
                     <img src="resources/img/food/ANF_유기농식스프리+소고기연어.jpg" alt="">
                 </a>
 

@@ -31,4 +31,12 @@ select count(*) from team1_review_board
 
 select avg(review_star) from team1_review_board
 
+-- 추천순 정렬하기
+
+select * from (
+	select rownum as rn, review_num, review_id, review_title, review_txt,
+		review_date, review_img, review_star 
+		from (
+		select * from team1_review_board order by review_star desc)
+		) where rn between #{start_data} and #{end_data}
 

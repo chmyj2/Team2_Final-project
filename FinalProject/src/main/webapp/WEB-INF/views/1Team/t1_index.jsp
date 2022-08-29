@@ -41,7 +41,10 @@
             </h1>
             
         	<span id="resultArea">${result }</span>
-        
+        	
+        	<div class="master_page">
+        		<a href="master.reg"> 상품등록(임시작업용) </a>
+        	</div>
            <div class="log_state">
            		<jsp:include page="${loginPage }"></jsp:include> 
            </div>
@@ -66,8 +69,8 @@
                 
                 <li class="store_drop"><a href="enter.team1MainShop">STORE</a>  
                     <ul class="store_drop_content">
-                        <li><a href="enter.team1StoreForDog">Dog</a></li>
-                        <li><a href="enter.team1StoreForCat">Cat</a></li>
+                        <li><a href="enter.team1StoreFor">Dog</a></li>
+                        <li><a href="enter.team1StoreFor">Cat</a></li>
                     </ul>
                 </li>
                 <li><a href="team1.community">COMMUNITY</a>  

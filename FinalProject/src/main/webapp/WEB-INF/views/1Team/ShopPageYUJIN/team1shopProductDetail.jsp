@@ -49,24 +49,18 @@ $(function() {
 		$(this).parent().parent().find('span').toggle();
 		$(this).parent().parent().find('input').toggle();
 		$(this).parent().parent().find('input').val(txt);
-<<<<<<< HEAD
-=======
 		
->>>>>>> 7aa6fba06c754f21ca7d74417574729bf923171e
 		$.ajax({
 			// 서버로 보낼 주소 입력
 			url: "review.update",
 			type: "post",
-<<<<<<< HEAD
 			data: "review_text" + txt ,
-			dataType: "html"
+//			dataType: "html"
 			success : function (html) {
 				$()
 			}
-=======
 //			data: ,
 //			success : 
->>>>>>> 7aa6fba06c754f21ca7d74417574729bf923171e
 			
 		});
 		
@@ -167,11 +161,8 @@ $(function() {
 										${avg}
 									</span> 
 									<br>
-<<<<<<< HEAD
 									<!-- <button onclick="review">상품리뷰 작성하기</button> -->
-=======
 									<button onclick="review">상품리뷰 작성하기</button>
->>>>>>> 7aa6fba06c754f21ca7d74417574729bf923171e
 									<div class="store_product_detail_purchase_review_alert">
 										<c:if test="${sessionScope.loginMember == null }">
 											<p>
@@ -203,11 +194,7 @@ $(function() {
 									<!-- 제목 -->
 									<input type="text" name="review_title"> <br>
 									<!-- 내용 -->
-<<<<<<< HEAD
 									<textarea name="review_text" id="review_text" placeholder="write text"></textarea>
-=======
-									<textarea name="review_text" id="" placeholder="write text"></textarea>
->>>>>>> 7aa6fba06c754f21ca7d74417574729bf923171e
 									<!-- 파일첨부 -->
 									<input type="file" name="review_img">
 									<!-- 별점주기 -->
@@ -219,8 +206,7 @@ $(function() {
 										<span class="starR" value="4">★</span>
 										<span class="starR" value="5">★</span> 
 										<input type="hidden" name="review_star" id="starrr" value="0">
-<<<<<<< HEAD
-										<input type="hidden" name="review_id">
+										<input type="hidden" name="review_id" value="${sessionScope.loginMember}">
 									</div>
 									
 									<c:if test="${sessionScope.loginMember == null }">
@@ -231,13 +217,10 @@ $(function() {
 									<c:if test="${sessionScope.loginMember != null }">
 										<button>리뷰작성완료</button>
 									</c:if>
-=======
-									</div>
-									
-										<button>리뷰작성완료</button>
->>>>>>> 7aa6fba06c754f21ca7d74417574729bf923171e
 									</div>
 								</form>
+									
+									</div>
 							</div>
 						</div>
 						
@@ -246,13 +229,20 @@ $(function() {
 
 					<!-- 리뷰 보여주기 -->
 					<div class="store_product_detail_purchase_reviews">
+						<form action="get.aProductTeam1" method="get">
 						<div class="store_review_state">
 							<ul>
 								<li>
-									<!-- 평점 순 정리하기 --> 평점순
+									<!-- 평점 순 정리하기 --> 
+									<button>평점순</button>
+									<input type="hidden" name="array" value="2">
+								</li>
+								<li>
+									<button onsubmit="">최근순</button>
 								</li>
 							</ul>
 						</div>
+						</form>
 						<c:forEach var="r" items="${r}">
 						<div class="store_review_tbody">
 							<div class="store_review_header">
@@ -292,36 +282,37 @@ $(function() {
 									</div>
 									<div class="store_review_date">
 									<fmt:formatDate value="${r.review_date}" pattern="yy-MM-dd HH:mm"/>
-									
 									</div>
 								</div>
 							</div>
-
-
 
 							<div class="store_review_txt_cont">
-									<div class="store_review_img_cont">
-										<img class="store_review_img"
+								<div class="store_review_img_cont">
+									<img class="store_review_img"
 											src="resources/reviewFile/${r.review_img}" alt="">
-									</div>
-									<div class="store_review_txt">
-										<span id="r">${r.review_txt}</span>
-										<input style="display: none;" class="store_review_list_update" type="text"> 
-									</div>
-									<div class="store_review_btn_stat">
-										<!-- 수정 Ajax -->
-										<button class="reviewUpdate">수정</button>
-										<button class="reviewDelete" onclick="location.href='review.delete?review_num=${r.review_num}'">삭제</button>
-									</div>
 								</div>
+								<div class="store_review_txt">
+									<span id="r">${r.review_txt}</span>
+									<input style="display: none;" class="store_review_list_update" type="text"> 
+								</div>
+								
+									<!-- 수정 Ajax -->
+								<div class="store_review_btn_stat">
+								<c:if test="${sessionScope.loginMember == r.review_id }">
+									<button class="reviewUpdate">수정</button>
+									<button class="reviewDelete" onclick="location.href='review.delete?review_num=${r.review_num}'">삭제</button>
+								</c:if>
+								</div>
+								
 							</div>
-						</c:forEach>
-					</div>
+						</div>
+					</c:forEach>
+				</div>
 				</div>
 					<div class="store_review_paging">
 							<a href="get.aProductTeam1?page=1">◀</a>
 						<c:forEach var="r" begin="1" end="${pageCount}">
-							<a href="get.aProductTeam1?page=${r}">${r}</a>
+							<a href="get.aProductTeam1?page=${r}&array=${array}">${r}</a>
 						</c:forEach>
 							<a href="get.aProductTeam1?page=${pageCount}">▶</a>
 					</div>
@@ -347,7 +338,6 @@ $(function() {
 
 			
 		</div>
-	</div>
 
     
 	<%-- <div>

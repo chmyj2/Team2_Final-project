@@ -26,6 +26,9 @@ public interface Team1ReviewMapper {
 	// 리뷰 수정하기
 	String updateReview(Team1ReviewDTO review);
 	
+	// 리뷰 별점순 정렬
+	List<Team1ReviewDTO> orderByReview(Team1ReviewDTO review);
+	
 	
 
 
