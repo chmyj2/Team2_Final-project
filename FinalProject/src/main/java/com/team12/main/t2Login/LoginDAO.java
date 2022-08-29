@@ -591,6 +591,13 @@ public class LoginDAO {
 
 
 
+	public void PWChange(HttpServletRequest req, Membert2 m) {
+		// 비밀번호를 바꾸는 작업을 하는 기능
+		
+	}
+
+
+
 	
 
 	

@@ -415,6 +415,23 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/pwChange.do", method = RequestMethod.POST)
+	public String pwChangeDo(HttpServletRequest req, Membert2 m) {
+		//비밀번호 변경하는 작업을 하는 controller
+		
+		if(lDAO.loginCheck(req)) {
+			lDAO.PWChange(req,m);
+			req.setAttribute("contentPage", "t2login/t2_myPage.jsp");
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");			
+			
+		}
+		
+		return "2Team/t2_index";
+	}
+	
+	
+	
 	
 	
 }
