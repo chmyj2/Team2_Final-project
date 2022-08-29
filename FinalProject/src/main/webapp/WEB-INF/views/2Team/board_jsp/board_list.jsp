@@ -16,7 +16,7 @@
     	<div class="row">
     	<form action="team2.boardlist">
     		<div style="text-align: center;">
-    			<input type="text" id="searchInput" name="search" placeholder="Search for titles..">
+    			<input type="text" id="searchInput" name="search" placeholder="Search for title..">
     			<input type="hidden" name="board_category" value="${param.board_category}">
     			<button id="searchBtn" class="btn btn-success btn-sm">완료</button>
     		</div>
