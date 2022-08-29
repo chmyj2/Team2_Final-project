@@ -430,7 +430,19 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
-	
+	@RequestMapping(value = "/DeleteMember.check", method = RequestMethod.GET)
+	public String DeleteMemberCheck(HttpServletRequest req, Membert2 m) {
+		//탈퇴하기 전 비밀번호 확인하기
+		
+		if(lDAO.loginCheck(req)) {
+			req.setAttribute("contentPage", "t2login/t2_DeleteBeforePWCheck.jsp");						
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");			
+			
+		}
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	

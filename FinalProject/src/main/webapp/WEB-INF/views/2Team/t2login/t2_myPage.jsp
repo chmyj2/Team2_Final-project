@@ -68,7 +68,7 @@
 		<input type="button" value="비밀번호바꾸기" onclick="location.href='changePW.go'"> 
 		</c:if>
 		
-		<input type="button" value="탈퇴하기">
+		<input type="button" value="탈퇴하기" onclick="location.href='DeleteMember.check'">
 	
 		
 	</div>
