@@ -10,9 +10,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>board</h1>
     
 	<div class="container">
+    <input type="text" id="myInput" placeholder="Search for names..">
 		<div>
 			<a id="writeBtn" href='team2.createPostPage?board_category=${param.board_category}' class="btn btn-success ">글쓰기</a>
 		</div>
