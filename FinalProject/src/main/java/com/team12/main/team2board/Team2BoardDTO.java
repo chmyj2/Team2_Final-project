@@ -13,7 +13,8 @@ public class Team2BoardDTO {
 	private int board_count;
 	private String board_img; 
 	private int board_like;
-	
+	private String search;
+	private int sort;
 	
 	private int rnStart;
 	private int rnEnd;
@@ -94,6 +95,22 @@ public class Team2BoardDTO {
 		this.board_like = board_like;
 	}
 
+	public String getSearch() {
+		return search;
+	}
+
+	public void setSearch(String search) {
+		this.search = search;
+	}
+
+	public int getSort() {
+		return sort;
+	}
+
+	public void setSort(int sort) {
+		this.sort = sort;
+	}
+
 	public int getRnStart() {
 		return rnStart;
 	}
@@ -111,8 +128,8 @@ public class Team2BoardDTO {
 	}
 
 	public Team2BoardDTO(int board_num, String board_member_id, String board_category, String board_title,
-			String board_txt, Date board_date, int board_count, String board_img, int board_like, int rnStart,
-			int rnEnd) {
+			String board_txt, Date board_date, int board_count, String board_img, int board_like, String search,
+			int sort, int rnStart, int rnEnd) {
 		super();
 		this.board_num = board_num;
 		this.board_member_id = board_member_id;
@@ -123,9 +140,13 @@ public class Team2BoardDTO {
 		this.board_count = board_count;
 		this.board_img = board_img;
 		this.board_like = board_like;
+		this.search = search;
+		this.sort = sort;
 		this.rnStart = rnStart;
 		this.rnEnd = rnEnd;
 	}
+
+	
 	
 	
 }

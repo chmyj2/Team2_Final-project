@@ -60,9 +60,21 @@ public class Team2BoardDAO {
 
 	public void showPostList(HttpServletRequest req, Team2BoardDTO board) {
 		
-		if(board.getBoard_category() == null) {
-			board.setBoard_category((String) req.getAttribute("board_category"));
+		if(board.getSearch() == null) {            //검색기능
+			board.setSearch("");
+		} else {
+			req.setAttribute("search", board.getSearch());
 		}
+		
+		if(board.getSort() == 1) {                 // 1 == 조회수 , 2 == 좋아요  정렬
+			req.setAttribute("sort", 1);
+		} else if (board.getSort() == 2) {
+			req.setAttribute("sort", 2);
+		}
+		
+		
+		
+		
 		System.out.println("board category :"+board.getBoard_category());
 		int allPost = ss.getMapper(Team2BoardMapper.class).getAllpostCount(board);
 		int totalPage = (int) Math.ceil((double) allPost / 10);
@@ -83,6 +95,8 @@ public class Team2BoardDAO {
 			board.setRnEnd(10);
 		}
 
+		
+		
 		List<Team2BoardDTO> posts = ss.getMapper(Team2BoardMapper.class).getPostList(board);
 
 		req.setAttribute("posts", posts);

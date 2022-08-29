@@ -7,6 +7,7 @@
 select count(*)
 from team2_board
 where board_category = #{board_category}
+and board_title like '%'||#{search}||'%' 
 </select>
 
 <select id="getPostList" resultType="com.team12.main.team2board.Team2BoardDTO">
@@ -16,7 +17,18 @@ where board_category = #{board_category}
      	from(
      	select * from team2_board
      	where board_category = #{board_category}
-     	order by board_date desc 
+     	and board_title like '%'||#{search}||'%' 
+     	<choose>
+     	 	<when test="sort == 1">
+     			order by board_count desc 
+     	 	</when>
+     	 	<when test="sort == 2">
+     			order by board_like desc 
+     	 	</when>
+     	 	<otherwise>
+     	 		order by board_date desc 
+     	 	</otherwise>
+     	 </choose>
    		)
 	) where rn between #{rnStart} and #{rnEnd}
 </select>
