@@ -37,9 +37,16 @@ select * from final_member where member_ID = #{member_ID} and member_linkWhere =
 
 <select id="getMemberNum" 	parameterType="com.team12.main.team1.join.Member"	resultType="java.lang.Integer">
 		select count(*) from final_member where member_ID = #{member_ID}
+<<<<<<< HEAD
 	</select>
 	
 <<<<<<< HEAD
+=======
+
+	</select>
+	
+
+>>>>>>> Dev
 <select id="find_id" parameterType="String" resultType="String">
 		select * from final_member where member_email = #{member_email}
 	</select>
@@ -48,6 +55,16 @@ select * from final_member where member_ID = #{member_ID} and member_linkWhere =
 =======
 
 	
+<<<<<<< HEAD
 >>>>>>> af8b8efb1348f40938db88e9ce6fd586a2641319
 
+=======
+	
+
+<select id="find_id" parameterType="String" resultType="String">
+		select * from final_member where member_email = #{member_email}
+	</select>
+	
+
+>>>>>>> Dev
 </mapper> 

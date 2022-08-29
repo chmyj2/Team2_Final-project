@@ -22,13 +22,15 @@
 	delete from team1_review_board where review_num = #{review_num}
 </delete>
 
+<!-- 리뷰 업데이트 하기 -->
+
 <!-- 전체 리뷰 갯수 구하기 -->
 <select id="getAllReviewCnt" resultType="int">
 	select count(*) from team1_review_board
 </select>
 
 <!-- 전체 리뷰 평점 구하기  -->
-<select id="getAllReviewAvg" resultType="int">
+<select id="getAllReviewAvg" resultType="double">
 	select avg(review_star) from team1_review_board
 </select>
 
