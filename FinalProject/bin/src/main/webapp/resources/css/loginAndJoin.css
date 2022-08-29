@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400%7CLora%22");
 /* --------------로그인---------------- */
 .container{
@@ -8,7 +9,6 @@
     padding-bottom: 400px;
     /* 푸터... don't bother me.... */
 }
-
 html{
 	height : 100%;
 }
@@ -120,7 +120,7 @@ hr.login_hr{
 
  #joinTable{
     background-color: rgba(255, 255, 255, 0.3);
-    height: 750px;
+    height: 850px;
     width: 800px;
     align-items: center;
     text-align: center;
@@ -189,7 +189,98 @@ hr.login_hr{
     padding: 10px 10px 10px 10px;
     border-radius: 30px;
     border: none;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */      /* 동훈 수정 영경님 맘대로 다시 바꾸셔도 무관 */
+    margin-bottom: 20px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+}
+
+.input_birth{                           
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+	
+}
+.join-cellphoneNo{                          
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+	
+}
+.input_email{                          
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+	
+=======
+>>>>>>> ec7a82d (풀 하기 위한 커밋)
+}
+
+.input_birth{                           
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+	
+}
+.join-cellphoneNo{                          
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+	
+}
+.input_email{                          
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+	
+=======
+>>>>>>> ec7a82d (풀 하기 위한 커밋)
+=======
+>>>>>>> d3707ba24bffcf1b4bed1164e787137b007d297e
+}
+
+.input_birth{                           
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+	
+}
+.join-cellphoneNo{                          
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+	
+}
+.input_email{                          
+	position: relative;
+    width: 280px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+	margin-bottom: 20px;
 }
 
 .input_addr1{
@@ -261,7 +352,7 @@ hr.login_hr{
 .join_img_pet{
 	position: absolute;
     width: 350px;
-    top:730px;
+    top:830px;
     left: 950px;
 }
 
@@ -365,4 +456,126 @@ hr.login_hr{
 	font-size:15pt;
 }
 
+/* ---------my pet info --------------- */
+
+.myPet_info_wrap{
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 300px;
+    padding-top: 100px;
+    padding-bottom: 10px;
+}
+.myPet_info_wrap h2{
+    font-size: 40pt;
+    letter-spacing: -2pt;
+    font-weight: bolder;
+}
+
+.myPet_info_wrap label{
+    font-size: 15pt;
+    font-weight: bold;
+}
+
+.myPet_info_update{
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 750px;
+    width: 800px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    border: 5px solid black;
+    border-radius: 50px 50px 50px 50px;
+    margin-top: 100px;	
+    margin-bottom: 300px;
+    padding-bottom: 100px;
+}
+
+ .myPet_info_photo_wrap label {
+    display: inline-block;
+    color: rgb(68, 68, 68);
+    padding: 5px;
+    font-size: 10pt;
+    background-color: #fdfdfd;
+    cursor: url(cursor_pointer.png), url(myBall.cur), auto;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+} 
+
+.myPet_info_photo_wrap input[type="file"] {  /* 파일 필드 숨기기 */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border: 0;
+}
+
+.myPet_info_photo_wrap .myPet_info_photo_name {
+    display: inline-block;
+    color: rgb(68, 68, 68);
+    padding: 5px;
+    font-size: 10pt;
+    background-color: #fdfdfd;
+    border: 1px solid #ebebeb;
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#view{
+    width: auto;
+    height: 150px;
+    margin-top: 20px;
+}
+
+.myPet_info_photo_wrap{
+    margin-bottom: 20px;
+}
+
+.myPet_info_photo_wrap p{
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+.myPet_info_photo{
+    margin-top: 10px;
+}
+
+.myPet_info_name{
+    position: relative;
+    width: 200px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.myPet_info_birth_wrap{
+    margin-bottom: 20px;
+}
+
+.myPet_info_birth{
+    margin-top: 10px;
+}
+
+.myPet_info_sex{
+    margin-top: 10px;
+}
+
+.myPet_info_update_btn{
+    margin-top: 50px;
+    background: #000000;
+    color: white;
+    font-size: 20pt;
+    border-radius: 25px;
+    padding: 0px 20px 0px 20px;
+    height: 45px;
+    width: 300px;
+    font-weight: bold;
+}
 

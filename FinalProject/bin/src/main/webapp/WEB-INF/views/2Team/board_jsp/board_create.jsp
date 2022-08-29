@@ -8,6 +8,7 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/lang/summernote-ko-KR.min.js"></script>
     <script type="text/javascript">var $j341 = jQuery.noConflict();</script>
 </head>
 
@@ -21,7 +22,8 @@
 			<label for="title">Title:</label>
 			<input type="text" class="form-control" placeholder="title" id="title" name="board_title">
             <input name="board_category" value="${param.board_category}" type="hidden">
-            <%-- <input name="board_member_id" value="${sessionScope.loginMember.member_ID}" type="hidden"> --%>
+            <input name="board_member_id" value="${sessionScope.loginMember.member_ID}" type="hidden"> 
+            <input id="board_img_input" name="board_img" value="-" type="hidden"> 
 		</div>
 	
 		<div class="form-group">
@@ -29,7 +31,7 @@
 			<textarea class="form-control" rows="5" id="summernote" name="board_txt"></textarea>
 		</div>
 	
-		<button type="submit" class="btn btn-primary">글쓰기 등록</button>
+		<button type="submit" id="createPostBtn" class="btn btn-primary">글쓰기 등록</button>
 	</form>
 </div>
 
@@ -42,6 +44,7 @@
 </body>
 
 <script type="text/javascript">
+var imgs = "";
 var toolbar = [
     // 글꼴 설정
     ['fontname', ['fontname']],
@@ -81,12 +84,11 @@ var setting = {
     }
  };
 
-$j341(function(){
-console.log('loaded')	
-});
+
 $j341('#summernote').summernote(setting);
 
 function uploadSummernoteImageFile(file, el) {
+
 data = new FormData();
 data.append("file", file);
 $.ajax({
@@ -96,13 +98,21 @@ $.ajax({
 	contentType : false,
 	enctype : 'multipart/form-data',
 	processData : false,
+	async:false,
 	success : function(data) {
-		console.log(data);
-		
 		$j341(el).summernote('editor.insertImage', data.url);
-	  
+		
+		imgs = imgs +data.url/* .replace(/(.png|.jpg|.jpeg|.gif)$/, '') */+"!";
+		imgs = imgs.replace('resources/team2_files/', '')
+		$j341('#board_img_input').attr('value', imgs);
+
+		console.log(imgs);
 	} 
+	
 });
+	
+	
+	
 }
 
 

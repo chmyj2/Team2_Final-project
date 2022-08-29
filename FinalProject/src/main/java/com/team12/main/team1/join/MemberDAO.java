@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.ibatis.session.SqlSession;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,8 @@ public class MemberDAO {
 	@Autowired
 	private SqlSession ss;
 	
+	@Autowired
+	SqlSession sqlsession = null;
 
 	public void join(Member m, HttpServletRequest req){
 		// TODO Auto-generated method stub
@@ -290,7 +293,7 @@ public class MemberDAO {
             JSONObject jo = (JSONObject) jp.parse(result);
             System.out.println(jo);
             
-            long id = (Long) jo.get("id");
+            long id = (long) jo.get("id");
             System.out.println(id);
             
             JSONObject kakaoaccount = (JSONObject) jo.get("kakao_account");
@@ -346,6 +349,10 @@ public class MemberDAO {
 		
 	}
 
+	// 아이디 찾기
+		public String find_id(String email) throws Exception{
+			return sqlsession.selectOne("com.team12.main.team1.join.Team1joinMapper.find_id", email);
+		}
 	
 
 	

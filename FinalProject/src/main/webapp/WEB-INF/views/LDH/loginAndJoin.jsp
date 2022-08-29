@@ -21,23 +21,23 @@
             <input type="checkbox" id="remember" /><label for="remember">remember me</label>
           </div>
           <div class="find_info">
-              <a href="">아이디 찾기</a> |
+              <button type="button" class="findID_btn" onclick="goFindId()">아이디 찾기</button>
               <a href="">비밀번호찾기</a>
           </div>
 
         <button  class="login_btn">로그인</button>
         <button type="button" class="signUp_btn"  onclick="goJoin()">회원가입</button>
- 		<a id="custom-login-btn" href="https://kauth.kakao.com/oauth/authorize?client_id=64c1168aec7c4fd20862f02cda8f9856&redirect_uri=http://localhost:8080/main/member.kakao&response_type=code">
+
+ 		<a id="custom-login-btn" >
         <button  class="signUp_kakao_btn">카카오 연결</button>
     	</a>
-<<<<<<< HEAD
+
   <a href="https://kauth.kakao.com/oauth/authorize?client_id=64c1168aec7c4fd20862f02cda8f9856&redirect_uri=http://localhost:8080/main/member.kakao&response_type=code">카카오 로그인</a>
  
-=======
+
  
-  <a href="https://kauth.kakao.com/oauth/authorize?client_id=64c1168aec7c4fd20862f02cda8f9856&redirect_uri=http://localhost:8080/main/member.kakao&response_type=code">카카오 로그인</a>
->>>>>>> a521c7f7eb471a19e4beb9dd75f4c9917d826d26
  
+
 
 <hr class="login_hr">
         <button class="non_members_check_order">비회원 주문조회</button>

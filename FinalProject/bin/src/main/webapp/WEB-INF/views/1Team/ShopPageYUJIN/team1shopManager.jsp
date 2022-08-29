@@ -26,6 +26,7 @@
 			</tr>	
 		</c:forEach>	
 	</table>
+	
 	<!-- ------------------------------------------ -->
 	<form action="shopManager.upload" method="post" enctype="multipart/form-data">
 		<h2>관리자 상품등록 </h2>
@@ -66,9 +67,9 @@
 			<div style="color:fuchsia; display: inline-block;" >
 			상품 카테고리(선택)
 			<select id="categoryNumSelect" name="categoryNum" onchange="selectACategory()">
-					<option value="01">공용</option>
-					<option value="02">강아지용</option>
-					<option value="03">고양이용</option>
+					<option value="01">영양제</option>
+					<option value="02">간식</option>
+					<option value="03">사료</option>
 			</select>
 			</div>
 	<!-- ------------------------------------------ -->
