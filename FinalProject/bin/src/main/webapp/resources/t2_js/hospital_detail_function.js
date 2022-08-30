@@ -1,6 +1,5 @@
 $(function() {
 	coords_map();
-<<<<<<< HEAD
 })
 
 
@@ -56,8 +55,7 @@ function detail_map(coords) {
          	image: markerImage // 마커이미지 설정 
          }); 
         	
-=======
-})
+}
 
 
 function coords_map() {
@@ -112,7 +110,6 @@ function detail_map(coords) {
          	image: markerImage // 마커이미지 설정 
          }); 
         	
->>>>>>> Dev
     } 
 
 
@@ -133,8 +130,3 @@ function reservego_logincheck(id, no) {
 
 
 }
-<<<<<<< HEAD
-
-=======
-
->>>>>>> Dev
