@@ -32,16 +32,11 @@
 	<!-- //////////DB연결관련!///////////// -->
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-<<<<<<< HEAD
 		<beans:property name="url"
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<beans:property name="username" value="c##sj" />
 		<beans:property name="password" value="sj" />
-=======
-		<beans:property name="url" value="jdbc:oracle:thin:@db20220512150004_high?TNS_ADMIN=/Users/mitakeran/LDH/Wallet_DB20220512150004" />
-		<beans:property name="username" value="ADMIN" />
-		<beans:property name="password" value="LDHsoldesk802" />
->>>>>>> 0ef69b535f9131587775c5625a7cb3593b170c47
+
 	</beans:bean>
 	
 	
