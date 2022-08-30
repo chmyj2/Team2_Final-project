@@ -1,7 +1,5 @@
 package com.team12.main.team2board;
 
-import java.util.Date;
-
 public class Team2ChildCommentDTO {
 	private int c_child_num;
 	private int c_child_board_num;

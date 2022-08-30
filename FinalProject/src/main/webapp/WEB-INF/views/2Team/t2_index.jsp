@@ -31,6 +31,7 @@
 	<!-- 로그인 JS -->
 	<script type="text/javascript" src="resources/t2_js/validCheck.js"></script>
 	<script type="text/javascript" src="resources/t2_js/login_checkJS.js"></script>
+	<script type="text/javascript" src="resources/t2_js/kakaoLogin.js"></script>
 	<!-- board  -->
 	<script type="text/javascript" src="resources/t2_js/board.js"></script>
 	<script type="text/javascript" src="resources/t2_js/board_comment.js"></script>
