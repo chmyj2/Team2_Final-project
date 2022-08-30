@@ -139,13 +139,37 @@
     left: 320px;
 }
 
+/* 아이디 찾기 페이지 */
+.findID-outline{
+	margin-bottom: 100px;
+	margin-top: 100px;
+	text-align: center;
+	display: flex;
+}
 
+.findID-email{
+	margin-left: auto;
+	margin-right: 150px;
+	
+}
 
+.findID-phoneNum{
+	margin-right: auto;
+	margin-left: 150px;
+}
 
+.findID-line{
+	border-left: 1px solid gray;
+    height: 150px;
+}
 
+.findID-email-tr , .findID-phoneNum-tr{
+	height: 50px;
+}
 
-
-
+.findID-phoneNum-td , .findID-email-td{
+	width: 80px;
+}
 
 
 

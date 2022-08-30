@@ -475,5 +475,25 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/t2FindID.go", method = RequestMethod.GET)
+	public String t2FindIDGo(HttpServletRequest req) {
+		//멤버 아이디 찾으러가는 페이지로 이동
+		
+		lDAO.loginCheck(req);
+		
+		req.setAttribute("contentPage", "t2login/t2_findIDgo.jsp");						
+		
+		
+		return "2Team/t2_index";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
