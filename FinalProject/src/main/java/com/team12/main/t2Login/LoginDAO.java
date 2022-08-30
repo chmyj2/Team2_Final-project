@@ -664,7 +664,10 @@ public class LoginDAO {
 			System.out.println(dbMember.getMember_linkWhere());
 			req.setAttribute("tellID", dbMember);
 		}else {
-			req.setAttribute("result","소셜 로그인로 가입하셨거나" );
+			if (ss.getMapper(Team2loginMapper.class).findmemberID(m) >= 1) {
+				
+				req.setAttribute("result","소셜 로그인로 가입하셨거나" );
+			}
 		}
 		
 	}

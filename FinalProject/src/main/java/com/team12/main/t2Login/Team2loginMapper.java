@@ -36,7 +36,9 @@ public interface Team2loginMapper {
 
 	Membert2 getMemberByPhone(Membert2 m);
 
-	Membert2 getMemberID(Membert2 m);
+	int findmemberID(Membert2 m);
+
+	
 
 	
 
