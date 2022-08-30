@@ -504,7 +504,17 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
-	
+	@RequestMapping(value = "/t2FindPW.go", method = RequestMethod.GET)
+	public String t2FindPWGo(HttpServletRequest req) {
+		//멤버 비밀번호 찾으러가는 페이지로 이동
+		
+		lDAO.loginCheck(req);
+		
+		req.setAttribute("contentPage", "t2login/t2_findPWGO.jsp");						
+		
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	

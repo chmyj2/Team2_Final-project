@@ -194,8 +194,13 @@
     padding-top: 15px;
 }
 
-
-
+/* 비밀번호 찾는 페이지 */
+.findPW-outline{
+	margin-bottom: 100px;
+	margin-top: 100px;
+	text-align: center;
+	
+}
 
 
 
