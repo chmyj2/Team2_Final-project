@@ -635,6 +635,42 @@ public class LoginDAO {
 
 
 
+	public void IDfindByEmail(HttpServletRequest req, Membert2 m) {
+		// 아이디 찾기 이메일, 이름으로
+		
+		Membert2 dbMember= ss.getMapper(Team2loginMapper.class).IDfindByEmail(m);
+
+		
+		
+		if (dbMember != null) {
+			System.out.println(dbMember.getMember_ID());
+			System.out.println(dbMember.getMember_linkWhere());
+			req.setAttribute("tellID", dbMember);
+		}else {
+			System.out.println("존재하지 않는 회원입니다만");
+		}
+		
+	}
+
+
+
+	public void IDfindByPhoneNum(HttpServletRequest req, Membert2 m) {
+		// 전화번호랑 이름으로  아이디 찾기
+		
+		Membert2 dbMember = ss.getMapper(Team2loginMapper.class).getMemberByPhone(m);
+		
+		if (dbMember != null) {
+			System.out.println(dbMember.getMember_ID());
+			System.out.println(dbMember.getMember_linkWhere());
+			req.setAttribute("tellID", dbMember);
+		}else {
+			req.setAttribute("result","소셜 로그인로 가입하셨거나" );
+		}
+		
+	}
+
+
+
 	
 
 	

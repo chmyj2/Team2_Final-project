@@ -62,4 +62,15 @@
 	delete final_member where member_ID=#{member_ID}
 	</delete>
 	
+	<select id="IDfindByEmail" parameterType="com.team12.main.t2Login.Membert2" resultType="com.team12.main.t2Login.Membert2">
+	select member_ID , member_linkWhere from final_member where member_name=#{member_name} and member_email =#{member_email}
+	</select>
+	
+	<select id="getMemberByPhone" parameterType="com.team12.main.t2Login.Membert2" resultType="com.team12.main.t2Login.Membert2">
+	select member_ID , member_linkWhere from final_member where member_name=#{member_name} and member_phoneNum =#{member_phoneNum}
+	</select>
+	
+	<select id="getMemberID" parameterType="com.team12.main.t2Login.Membert2" resultType="com.team12.main.t2Login.Membert2">
+	select member_ID  from final_member where member_name=#{member_name} and member_linkWhere =#{member_linkWhere}
+	</select>
 </mapper>

@@ -487,6 +487,22 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/findID.DO", method = RequestMethod.POST)
+	public String findIDDO(HttpServletRequest req,Membert2 m) {
+		//멤버 아이디 찾는 기능
+		
+		lDAO.loginCheck(req);
+		
+		if (m.getMember_email() != null) {
+			lDAO.IDfindByEmail(req,m);
+		}else {
+			lDAO.IDfindByPhoneNum(req,m);
+		}
+		
+		req.setAttribute("contentPage", "t2login/t2_tellID.jsp");
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	

@@ -32,6 +32,12 @@ public interface Team2loginMapper {
 
 	int deleteMember(Membert2 m);
 
+	Membert2 IDfindByEmail(Membert2 m);
+
+	Membert2 getMemberByPhone(Membert2 m);
+
+	Membert2 getMemberID(Membert2 m);
+
 	
 
 

@@ -36,7 +36,7 @@
 		<div class="findID-line"></div>
 		
 		<div class="findID-phoneNum">
-		<form action="#" method="POST">
+		<form action="findID.DO" method="POST">
 		<fieldset>
 		<legend>전화번호로 찾기</legend>
 		
