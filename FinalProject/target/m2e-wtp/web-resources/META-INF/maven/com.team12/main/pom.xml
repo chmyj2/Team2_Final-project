@@ -258,9 +258,10 @@
 	
 	<build>
 	
-<plugins>
 
-         <plugin>
+		<plugins>
+	
+		 <plugin>
                 <artifactId>maven-eclipse-plugin</artifactId>
                 <version>2.9</version>
                 <configuration>
@@ -289,6 +290,14 @@
     </configuration>
 </plugin>
 
-        </plugins>
+         
+		</plugins>
+          
+        
+        
+      
+		
+		
+		
 	</build>
 </project>
