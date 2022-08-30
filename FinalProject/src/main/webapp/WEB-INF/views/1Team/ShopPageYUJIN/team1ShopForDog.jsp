@@ -50,16 +50,16 @@
                     <div class="store_foe_dog_category_select">
                         <div class="store_for_dog_categoty_row">
                             <strong>By Company</strong>
-                            <input type="checkbox" name="" value="">Royal Canin
-                            <input type="checkbox" name="" value="">Natural Core
-                            <input type="checkbox" name="" value="">ANF
+                            <input type="checkbox" name="royal_canin" value="royal_canin">Royal Canin
+                            <input type="checkbox" name="natural_core" value="natural_core">Natural Core
+                            <input type="checkbox" name="anf" value="anf">ANF
                         </div>
                         <br>
                         <div class="store_for_dog_category_col">
                             <strong>By Age</strong>
-                            <input type="checkbox" name="" value="">Puppy
-                            <input type="checkbox" name="" value="">Adult
-                            <input type="checkbox" name="" value="">Senior
+                            <input type="checkbox" name="puppy" value="puppy">Puppy
+                            <input type="checkbox" name="adult" value="adult">Adult
+                            <input type="checkbox" name="senior" value="senior">Senior
                         </div>
                     </div>
                     <!-- 영양제링크 -->

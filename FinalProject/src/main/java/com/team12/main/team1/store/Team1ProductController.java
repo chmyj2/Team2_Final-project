@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.team12.main.team1.join.MemberDAO;
 
@@ -13,17 +14,26 @@ import com.team12.main.team1.join.MemberDAO;
 public class Team1ProductController {
 
 	@Autowired
-	MemberDAO mDAO;
+	private MemberDAO mDAO;
 	
 	@Autowired
-	private Team1ProductDAO pDAO;
+	private Team1ProductDAO mpDAO;
 	
 	// 마스터 상품등록 페이지 상품 등록
-	@RequestMapping(value = "master.reg", method = RequestMethod.POST)
-	public String masterReg(HttpServletRequest req, Team1ProductDTO product) {
+	@RequestMapping(value = "/master.reg", method = RequestMethod.GET)
+	public String masterReg(HttpServletRequest req) {
 		
 		mDAO.loginCheck(req);
-//		pDAO.productReg(req, product);
+		req.setAttribute("contentPage", "master/masterProductUpdate.jsp");
+		
+		return "1Team/t1_index";
+	}
+	
+	@RequestMapping(value = "/master.create", method = RequestMethod.POST)
+	public String masterCreate(HttpServletRequest req, MultipartHttpServletRequest mr) {
+		
+		mDAO.loginCheck(req);
+		mpDAO.productReg(req, mr);
 		req.setAttribute("contentPage", "master/masterProductUpdate.jsp");
 		
 		return "1Team/t1_index";

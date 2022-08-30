@@ -36,7 +36,6 @@ $(function() {
 		  $(this).parent().children('span').removeClass('on');
 		  $(this).addClass('on').prevAll('span').addClass('on');
 //		  alert($(this).attr("value"));
-		  alert($(this).attr("value"));
 		let  a = $(this).attr("value")
 		  $('#starrr').attr('value', a)
 		  return false;
@@ -56,7 +55,7 @@ $(function() {
 			url: "review.update",
 			type: "post",
 			data: "review_text" + txt ,
-//			dataType: "html"
+//			dataType: 
 			success : function (html) {
 				$()
 			}
@@ -154,52 +153,6 @@ $(function() {
 						</div>
 						<div class="store_product_detail_purchase_review">
 							<div class="store_product_detail_purchase_review_star">
-									<form action="write.review1" method="post" enctype="multipart/form-data">
-								<div class="store_product_detail_purchase_review_center">
-									<span> 
-										<img src="resources/img/review_star.png" alt="">
-									</span> 
-									<span> <!-- 총 별점 평균 점수 알려주기 --> 
-										${avg}
-									</span> 
-									<br>
-									<button onclick="review">상품리뷰 작성하기</button>
-									<div class="store_product_detail_purchase_review_alert">
-										<c:if test="${sessionScope.loginMember == null }">
-											<p>
-												상품 리뷰는 <a href="loginandjoin.go"
-													style="background-color: yellow;">로그인</a>후 에 작성 가능합니다
-											</p>
-										</c:if>
-									</div>
-								</div>
-
-								<div class="store_product_detail_purchase_review_cont">
-									<h2>REVIEW</h2>
-									<!-- 제목 -->
-									<input type="text" name="review_title"> <br>
-									<!-- 내용 -->
-									<textarea name="review_text" id="" placeholder="write text"></textarea>
-									<!-- 파일첨부 -->
-									<input type="file" name="review_img">
-									<!-- 별점주기 -->
-
-									<div class="starRev">
-										<span class="starR" value="1">★</span> 
-										<span class="starR" value="2">★</span> 
-										<span class="starR" value="3">★</span> 
-										<span class="starR" value="4">★</span>
-										<span class="starR" value="5">★</span> 
-										<input type="hidden" name="review_star" id="starrr" value="0">
-									</div>
-									
-										<button>리뷰작성완료</button>
-									</div>
-								</form>
-								
-								
-								
-								
 								<div class="store_product_detail_purchase_review_center">
 									<span> 
 										<img src="resources/img/review_star.png" alt="">
@@ -211,7 +164,7 @@ $(function() {
 									<!-- <button onclick="review">상품리뷰 작성하기</button> -->
 									<button onclick="review">상품리뷰 작성하기</button>
 									<div class="store_product_detail_purchase_review_alert">
-										<c:if test="${sessionScope.loginMember == null }">
+										<c:if test="${sessionScope.loginMember.member_ID == null }">
 											<p>
 												상품 리뷰는 <a href="loginandjoin.go"
 													style="background-color: yellow;">로그인</a>후 에 작성 가능합니다
@@ -253,15 +206,15 @@ $(function() {
 										<span class="starR" value="4">★</span>
 										<span class="starR" value="5">★</span> 
 										<input type="hidden" name="review_star" id="starrr" value="0">
-										<input type="hidden" name="review_id" value="${sessionScope.loginMember}">
+										<input type="hidden" name="review_id" value="${sessionScope.loginMember.member_ID}">
 									</div>
 									
-									<c:if test="${sessionScope.loginMember == null }">
+									<c:if test="${sessionScope.loginMember.member_ID == null }">
 										<p>상품 리뷰는 <a href="loginandjoin.go" style="background-color: yellow;">
 										로그인</a>후 에 작성 가능합니다
 										</p>
 									</c:if>
-									<c:if test="${sessionScope.loginMember != null }">
+									<c:if test="${sessionScope.loginMember.member_ID != null }">
 										<button>리뷰작성완료</button>
 									</c:if>
 									</div>
@@ -283,9 +236,6 @@ $(function() {
 									<!-- 평점 순 정리하기 --> 
 									<button>평점순</button>
 									<input type="hidden" name="array" value="2">
-								</li>
-								<li>
-									<button onsubmit="">최근순</button>
 								</li>
 							</ul>
 						</div>
@@ -345,8 +295,8 @@ $(function() {
 								
 									<!-- 수정 Ajax -->
 								<div class="store_review_btn_stat">
-								<c:if test="${sessionScope.loginMember == r.review_id }">
-									<button class="reviewUpdate">수정</button>
+								<c:if test="${sessionScope.loginMember.member_ID == r.review_id }">
+									<button class="reviewUpdate" onclick="location.href='review.update?review_num=${r.review_num}'">수정</button>
 									<button class="reviewDelete" onclick="location.href='review.delete?review_num=${r.review_num}'">삭제</button>
 								</c:if>
 								</div>
