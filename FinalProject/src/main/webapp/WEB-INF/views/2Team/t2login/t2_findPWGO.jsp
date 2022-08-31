@@ -11,20 +11,20 @@
 <h1>패스워드 찾기</h1>
 
 <form action="#" method="post">
-<table>
+<table class="findPW-table">
 
-<tr>
-<td>ID</td>
+<tr class="findPW-table-tr">
+<td class="findPW-table-td">ID</td>
 <td><input name="member_ID" type="text"></td>
 </tr>
 
-<tr>
-<td>이름</td>
+<tr class="findPW-table-tr">
+<td class="findPW-table-td">이름</td>
 <td><input name="member_name" type="text"></td>
 </tr>
 
-<tr>
-<td>email</td>
+<tr class="findPW-table-tr">
+<td class="findPW-table-td">email</td>
 <td><input name="member_email" type="text"></td>
 </tr>
 
