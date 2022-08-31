@@ -516,6 +516,17 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/sendPW.Do", method = RequestMethod.POST)
+	public String sendPWDo(HttpServletRequest req,Membert2 m) {
+		//멤버 비밀번호 (가 비밀번호 생성 후 보내는) controller
+		
+		lDAO.loginCheck(req);
+		lDAO.findPWbyEmail(req, m);
+		req.setAttribute("contentPage", "t2_home.jsp");						
+		
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	

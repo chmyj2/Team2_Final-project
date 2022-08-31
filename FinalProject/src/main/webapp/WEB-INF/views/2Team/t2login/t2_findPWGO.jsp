@@ -10,7 +10,7 @@
 <div class="findPW-outline">
 <h1>패스워드 찾기</h1>
 
-<form action="#" method="post">
+<form action="sendPW.Do" method="post">
 <table class="findPW-table">
 
 <tr class="findPW-table-tr">

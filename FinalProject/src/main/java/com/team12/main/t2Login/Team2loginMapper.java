@@ -38,6 +38,8 @@ public interface Team2loginMapper {
 
 	int findmemberID(Membert2 m);
 
+	Membert2 checkMember(Membert2 m);
+
 	
 
 	

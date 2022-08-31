@@ -73,4 +73,8 @@
 	<select id="findmemberID" parameterType="com.team12.main.t2Login.Membert2" resultType="int">
 	select count(member_ID) from final_member where member_name=#{member_name}
 	</select>
+	
+	<select id="checkMember" parameterType="com.team12.main.t2Login.Membert2" resultType="com.team12.main.t2Login.Membert2">
+	select member_linkWhere from final_member where member_ID =#{member_ID} and member_name =#{member_name} and member_email=#{member_email}
+	</select>
 </mapper>

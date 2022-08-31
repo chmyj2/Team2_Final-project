@@ -674,6 +674,76 @@ public class LoginDAO {
 
 
 
+	public void findPWbyEmail(HttpServletRequest req, Membert2 m) {
+		// 패스워드 찾기 (이메일로 가 비밀번호 보내주기)
+		
+		Membert2 dbMember = ss.getMapper(Team2loginMapper.class).checkMember(m);
+		
+		if (dbMember != null) {
+			
+		if (dbMember.getMember_linkWhere() == 1) {
+			System.out.println("1------>"+m.getMember_email());
+			Random rnd = new Random();
+			StringBuffer buf = new StringBuffer();
+			for (int i = 0; i < 6; i++) {
+				//rnd.nextBoolean() -> 랜덤으로 true,false를 리턴함
+				if (rnd.nextBoolean()) {
+					//랜덤으로 소문자
+					buf.append((char)((int)(rnd.nextInt(26))+97));
+					//랜덤으로 대문자
+					buf.append((char)((int)(rnd.nextInt(26))+65));
+				}else {
+					//랜덤으로 숫자 나오기
+					buf.append((rnd.nextInt(10)));
+				}
+				System.out.println(buf);
+			}
+			
+			String setFrom = "tn3651@naver.com"; // 설정한 내 이메일
+	        String toMail = m.getMember_email();
+	        String title = "산책가자 새 비밀번호 입니다.";
+	        String content = 
+	                "산책가자를 새 비밀번호." +
+	                "비밀번호는 " + buf + "입니다." + 
+	                "해당 비밀번호로 로그인 후 비밀번호를 바꿔주세요";
+	        
+	        //이메일 전송을 위한 코드
+	        
+	        try {
+	        	MimeMessage mes =mailSender.createMimeMessage();
+	        	MimeMessageHelper helper = new MimeMessageHelper(mes,true,"utf-8");
+	        	helper.setFrom(setFrom);
+	        	helper.setTo(toMail);
+	        	helper.setSubject(title);
+	        	helper.setText(content);
+	        	mailSender.send(mes);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+	        String newPW = buf.toString();
+	        m.setMember_PW(newPW);
+	        if (ss.getMapper(Team2loginMapper.class).memberPWChange(m) ==1) {
+				
+				System.out.println("성공?");
+			}else {
+				System.out.println("실패");
+			}
+			
+			
+		}else if (dbMember.getMember_linkWhere() ==2 || dbMember.getMember_linkWhere() == 3) {
+			System.out.println("2------>"+m.getMember_email());
+			req.setAttribute("PWresult", "소셜 로그인로 가입하신 회원입니다.");
+		}
+		}else {
+			System.out.println("없는 회원입니다");
+			req.setAttribute("PWresult", "일치하는 회원이 없습니다.");
+		}
+		
+	}
+
+
+
 	
 
 	
