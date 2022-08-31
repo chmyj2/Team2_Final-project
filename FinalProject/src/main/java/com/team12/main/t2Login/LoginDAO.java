@@ -726,6 +726,7 @@ public class LoginDAO {
 	        if (ss.getMapper(Team2loginMapper.class).memberPWChange(m) ==1) {
 				
 				System.out.println("성공?");
+				req.setAttribute("contentPage", "t2login/t2_login.jsp");	
 			}else {
 				System.out.println("실패");
 			}
@@ -733,11 +734,14 @@ public class LoginDAO {
 			
 		}else if (dbMember.getMember_linkWhere() ==2 || dbMember.getMember_linkWhere() == 3) {
 			System.out.println("2------>"+m.getMember_email());
-			req.setAttribute("PWresult", "소셜 로그인로 가입하신 회원입니다.");
+			req.setAttribute("linkeWhere", dbMember.getMember_linkWhere());
+			
+			req.setAttribute("contentPage", "t2login/t2_tellPWfail.jsp");	
 		}
 		}else {
 			System.out.println("없는 회원입니다");
-			req.setAttribute("PWresult", "일치하는 회원이 없습니다.");
+			
+			req.setAttribute("contentPage", "t2login/t2_tellPWfail.jsp");	
 		}
 		
 	}

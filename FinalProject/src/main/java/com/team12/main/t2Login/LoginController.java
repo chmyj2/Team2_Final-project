@@ -522,7 +522,7 @@ public class LoginController {
 		
 		lDAO.loginCheck(req);
 		lDAO.findPWbyEmail(req, m);
-		req.setAttribute("contentPage", "t2_home.jsp");						
+							
 		
 		
 		return "2Team/t2_index";

@@ -214,3 +214,9 @@
 	width: 60px;	
 }
 
+/* 비밀번호 찾기 한 후 페이지 */
+.tellPW-result-outline{
+	margin-bottom: 100px;
+	margin-top: 100px;
+	text-align: center;
+}
