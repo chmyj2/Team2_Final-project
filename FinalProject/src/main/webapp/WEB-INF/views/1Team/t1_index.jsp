@@ -68,6 +68,7 @@
                     <ul class="store_drop_content">
                         <li><a href="enter.team1StoreForDog">Dog</a></li>
                         <li><a href="enter.team1StoreForCat">Cat</a></li>
+                        <li><a href="productReg.go">상품등록</a></li>
                     </ul>
                 </li>
                 <li><a href="team1.community">COMMUNITY</a>  

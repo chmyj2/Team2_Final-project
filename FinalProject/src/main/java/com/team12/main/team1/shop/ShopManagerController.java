@@ -77,6 +77,7 @@ public class ShopManagerController {
 	}
 	
 	
+	
 	// 상품 카테고리별 출력
 	@RequestMapping(value = "/loadByCategory.go", method = RequestMethod.GET)
 	public String loadProductsByCategory(ProductDTO p, HttpServletRequest req) {
@@ -88,7 +89,14 @@ public class ShopManagerController {
 	
 	
 	
-	
+	// 상품등록페이지
+	@RequestMapping(value = "/productReg.go", method = RequestMethod.GET)
+	public String productRegGo(ProductDTO p, HttpServletRequest req) {
+		
+		pDAO.loadProducts(p, req);
+		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopManager.jsp");
+		return "1Team/t1_index";
+	}
 	
 	
 	
@@ -102,9 +110,11 @@ public class ShopManagerController {
 //	------------------------------------------------------------
 	// button 등록합시다를 눌렀을 때.
 	@RequestMapping(value = "/shopManager.upload", method = RequestMethod.POST)
-	public String maincall(ProductDTO p, HttpServletRequest req) {
-		pDAO.regProduct(p,req);
-		return "team1_shop_input";
+	public String maincall(HttpServletRequest req) {
+		System.out.println("여기는 오냐");
+		pDAO.regProduct(req);
+		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopManager.jsp");
+		return "1Team/t1_index";
 	}
 //	------------------------------------------------------------
 	// button Load All Products를 눌렀을 때.

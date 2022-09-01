@@ -3,23 +3,23 @@
 <mapper namespace="com.team12.main.team1.shop.Shopteam1Mapper">
 
 	<insert id="regProduct" parameterType="com.team12.main.team1.shop.ProductDTO">
-		insert into productTbl values(
-		#{num_PK}, #{categoryNum}, #{name}, #{price}, #{vat}, #{contents}, #{thumbnail}, #{img1}, #{img2}, #{img3}, #{tag}, #{onsale}, #{stock})
+		insert into finalProduct values(
+		#{num_PK}, #{categoryNum}, #{name}, #{price}, #{vat}, #{contents}, #{thumbnail}, #{tag}, #{onsale}, #{stock})
 	</insert>
 	
 	<select id="loadProducts" resultType="com.team12.main.team1.shop.ProductDTO">
-		select * from productTbl	
+		select * from finalProduct	
 	</select>
 	<select id="loadAProduct" resultType="com.team12.main.team1.shop.ProductDTO">
-		select * from productTbl where num_PK= #{num_PK}
+		select * from finalProduct where num_PK= #{num_PK}
 	</select>
 
 	<select id="loadProductsByCategory" resultType="com.team12.main.team1.shop.ProductDTO">
-		select * from productTbl where categoryNum = #{categoryNum}
+		select * from finalProduct where categoryNum = #{categoryNum}
 	</select>
 
 	<select id="searchProductsByWord" resultType="com.team12.main.team1.shop.ProductDTO">
-		select * from productTbl where name like '%'||#{name}||'%'
+		select * from finalProduct where name like '%'||#{name}||'%'
 	</select>
 	
 </mapper>

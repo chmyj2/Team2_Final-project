@@ -20,6 +20,8 @@ public interface Team1joinMapper {
 	int check_id(Member m);
 
 	int check_email(Member m);
+
+	
 	
 
 

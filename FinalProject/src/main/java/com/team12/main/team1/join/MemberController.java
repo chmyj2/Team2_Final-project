@@ -1,16 +1,21 @@
 package com.team12.main.team1.join;
 
+import java.util.Random;
+
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 
 @Controller
 public class MemberController {
@@ -71,7 +76,18 @@ public class MemberController {
 		req.setAttribute("contentPage", "../LDH/findID.jsp");
 		return "1Team/t1_index";
 	}
+	
+	// 비밀번호 찾기 폼
+//	@RequestMapping(value = "/member.findPw.go", method = RequestMethod.GET)
+//	public String findPwGo(Member m, HttpServletRequest req){
+//		
+//		req.setAttribute("contentPage", "../LDH/findPW.jsp");
+//		return "1Team/t1_index";
+//	}
 
+	
+	
+	
 	
 	// 아이디 찾기
 		@RequestMapping(value = "/member.find_id.do", method = RequestMethod.POST)
@@ -119,13 +135,50 @@ public class MemberController {
 //	        req.setAttribute("loginPage", "../LDH/loginSuccess.jsp");
 //	        req.setAttribute("contentPage", "t1_home.jsp");
 	        mDAO.joinKakao(req, code);
-
+    
 	        //mDAO.login(m, req);
 	        mDAO.loginCheck(req);
 			req.setAttribute("contentPage", "t1_home.jsp");
 
 	        return "1Team/t1_index";
 	    }
+	   
+	   
+	   
+//	   @ResponseBody
+//		@RequestMapping(value = "/emailAuth", method = RequestMethod.POST)
+//		public String emailAuth(String email) {		
+//			Random random = new Random();
+//			int checkNum = random.nextInt(888888) + 111111;
+//
+//			/* 이메일 보내기 */
+//	        String setFrom = "자신의 이메일을 입력해주세요";
+//	        String toMail = email;
+//	        String title = "회원가입 인증 이메일 입니다.";
+//	        String content = 
+//	                "홈페이지를 방문해주셔서 감사합니다." +
+//	                "<br><br>" + 
+//	                "인증 번호는 " + checkNum + "입니다." + 
+//	                "<br>" + 
+//	                "해당 인증번호를 인증번호 확인란에 기입하여 주세요.";
+//	        
+//	        try {
+//	            
+//	            MimeMessage message = mailSender.createMimeMessage();
+//	            MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
+//	            helper.setFrom(setFrom);
+//	            helper.setTo(toMail);
+//	            helper.setSubject(title);
+//	            helper.setText(content,true);
+//	            mailSender.send(message);
+//	            
+//	        }catch(Exception e) {
+//	            e.printStackTrace();
+//	        }
+//	        
+//	        return Integer.toString(checkNum);
+//	 
+//		}
 	
 
 	@RequestMapping(value = "member.info", method = RequestMethod.GET)

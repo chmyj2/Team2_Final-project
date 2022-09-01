@@ -13,5 +13,7 @@ public interface MemberService {
 	public void check_id(String id, HttpServletResponse response, HttpServletRequest req, Member m) throws Exception;
 
 	public void check_email(String email, HttpServletResponse response, HttpServletRequest req, Member m) throws Exception;
+	
+	
 
 }

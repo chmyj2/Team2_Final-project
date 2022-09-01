@@ -18,6 +18,7 @@ import org.json.simple.parser.JSONParser;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
@@ -209,10 +210,11 @@ public class MemberDAO {
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
             //    POST 요청을 위해 기본값이 false인 setDoOutput을 true로
-
             conn.setRequestMethod("POST");
             conn.setDoOutput(true);
 
+            
+            
             //    POST 요청에 필요로 요구하는 파라미터 스트림을 통해 전송
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
             StringBuilder sb = new StringBuilder();
@@ -364,6 +366,12 @@ public class MemberDAO {
 			return sqlsession.selectOne("com.team12.main.team1.join.Team1joinMapper.check_email", email);
 		}
 
+		// 비밀번호 변경
+//		@Transactional
+//		public int update_pw(Member m) throws Exception{
+//			return sqlsession.update("com.team12.main.team1.join.Team1joinMapper.update_pw", m);
+//		}
+		
 	
 	}
 

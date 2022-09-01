@@ -23,7 +23,7 @@
           </div>
           <div class="find_info">
               <button type="button" class="findID_btn" onclick="goFindId()">아이디 찾기</button>
-              <a href="">비밀번호찾기</a>
+              <button type="button" class="findID_btn" onclick="goFindPw()">비밀번호 찾기</button>
           </div>
 
         <button  class="login_btn">로그인</button>

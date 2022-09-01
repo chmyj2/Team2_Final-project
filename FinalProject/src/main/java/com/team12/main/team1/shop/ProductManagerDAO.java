@@ -3,7 +3,6 @@ package com.team12.main.team1.shop;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,14 +17,14 @@ public class ProductManagerDAO {
 	@Autowired
 	private SqlSession ss;
 	
-	public void regProduct(ProductDTO p, HttpServletRequest req) {
+	public void regProduct(HttpServletRequest req) {
 		
-		try {
 		// 인코딩 타입 바꿔줘서 파라미터 받아야 함.
 			String path = req.getSession().getServletContext().getRealPath("resources/team1ProductImgs");
-			MultipartRequest mr = null;
-
-			mr = new MultipartRequest(
+			System.out.println(path);
+			try {
+			
+			  MultipartRequest mr = new MultipartRequest(
 					req, path, 10 * 1024 * 1024, 
 					"utf-8", new DefaultFileRenamePolicy());
 		
@@ -39,9 +38,9 @@ public class ProductManagerDAO {
 					 String contents = mr.getParameter("contents");
 					
 					 String thumbnail = mr.getFilesystemName("thumbnail");
-					 String img1 = mr.getFilesystemName("img1");
-					 String img2 = mr.getFilesystemName("img2");
-					 String img3 = mr.getFilesystemName("img3");
+					// String img1 = mr.getFilesystemName("img1");
+					 //String img2 = mr.getFilesystemName("img2");
+					 //String img3 = mr.getFilesystemName("img3");
 					
 					 String tag = mr.getParameter("tag");
 					 String onsale = mr.getParameter("onsale");
@@ -49,9 +48,22 @@ public class ProductManagerDAO {
 					 
 					 // 경로 확인용
 					 System.out.println(path);
+					 System.out.println(num_PK);
+					 System.out.println(categoryNum);
+					 System.out.println(name);
+					 System.out.println(price);
+					 System.out.println(vat);
+					 System.out.println(contents);
+					 System.out.println(thumbnail);
+					 //System.out.println(img1);
+					 //System.out.println(img2);
+					 //System.out.println(img3);
+					 System.out.println(tag);
+					 System.out.println(onsale);
+					 System.out.println(stock);
 					 
 					 // setter 설정
-					 
+					ProductDTO p = new ProductDTO();
 					p.setNum_PK(num_PK);
 					p.setCategoryNum(categoryNum);
 					p.setContents(contents);
@@ -61,20 +73,22 @@ public class ProductManagerDAO {
 					p.setVat(vat);
 					
 					p.setThumbnail(thumbnail);
-					p.setImg1(img1);
-					p.setImg2(img2);
-					p.setImg3(img3);
+				//	p.setImg1(img1);
+				//	p.setImg2(img2);
+				//	p.setImg3(img3);
 					
 					p.setTag(tag);
 					p.setOnsale(onsale);
 					p.setStock(stock);
 				
 					// ---------- sql문 실행.					
+					
 					if (ss.getMapper(Shopteam1Mapper.class).regProduct(p) == 1	) {
 						req.setAttribute("result", "등록성공");
 					} else {
 						req.setAttribute("result", "등록실패(서버 문제)");
 					}
+			 
 				} catch (Exception e) {
 					e.printStackTrace();
 					req.setAttribute("result", "등록실패(서버나 sql 문제)");	

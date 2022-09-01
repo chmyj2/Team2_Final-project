@@ -101,6 +101,7 @@ $(function() {
                         총액(수량):
                     </div>
                     <div class="store_product_detail_btn">
+                    
                         <button class="store_buy_btn" onclick="">구매하기</button>
                         <button class="store_bag_btn" onclick="">장바구니</button>
                     </div>
