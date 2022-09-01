@@ -44,6 +44,8 @@ public interface Team2loginMapper {
 
 	int businessPWUpdate(vet v);
 
+	int deleteBusiness(vet v);
+
 	
 
 	

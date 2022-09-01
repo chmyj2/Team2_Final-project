@@ -40,7 +40,7 @@
 		
 		<input type="button" value="비밀번호바꾸기" onclick="location.href='businessPWchange.go'"> 
 		
-		<input type="button" value="탈퇴하기" onclick="location.href='#'">
+		<input type="button" value="탈퇴하기" onclick="location.href='businessDeletePWCheck.go'">
 	
 		
 	</div>

@@ -822,6 +822,21 @@ public class LoginDAO {
 
 
 
+	public void businessDelete(HttpServletRequest req) {
+		// 비즈니스 멤버 탈퇴하는 기능
+		
+		vet v = (vet) req.getSession().getAttribute("loginMember_business");
+		
+		if (ss.getMapper(Team2loginMapper.class).deleteBusiness(v)==1) {
+			System.out.println("비즈니스 탈퇴 성공");
+			
+			logout(req);
+			loginCheck(req);
+		}
+	}
+
+
+
 	
 
 	

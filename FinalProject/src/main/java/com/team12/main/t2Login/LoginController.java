@@ -636,8 +636,71 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/businessDeletePWCheck.go", method = RequestMethod.GET)
+	public String businessDeletePWCheckGo(HttpServletRequest req,vet v ) {
+		//비즈니스 탈퇴하기 전 패스워드 확인하는 페이지가는 controller
+		
+		if(lDAO.loginCheck(req)) {
+			req.setAttribute("contentPage", "t2login/t2_businessDeletePWCheck.jsp");
+		}else {
+			req.setAttribute("contentPage", "t2login/login_business.jsp");
+		}
+		
+		
+		
+		
+		return "2Team/t2_index";
+	}
 	
+	@RequestMapping(value = "/businessDeletePWCheck.DO", method = RequestMethod.POST)
+	public String businessDeletePWCheckDO(HttpServletRequest req,vet v ) {
+		//비즈니스 탈퇴 전 패스워드 일치하는 지 확인하는 기능이 있는 controller
+		
+		if(lDAO.loginCheck(req)) {
+			if(lDAO.businessPWCheck(req,v)) {
+				req.setAttribute("contentPage", "t2login/t2_businessDelete_agree.jsp");				
+			}else {
+				req.setAttribute("result", "비밀번호가 일치하지 않습니다.");
+				req.setAttribute("contentPage", "t2login/t2_businessDeletePWCheck.jsp");				
+			}
+		}else {
+			req.setAttribute("contentPage", "t2login/login_business.jsp");
+		}
+		
+		
+		
+		
+		return "2Team/t2_index";
+	}
 	
+	@RequestMapping(value = "/businessDelte.DO", method = RequestMethod.GET)
+	public String businessDelteDO(HttpServletRequest req,vet v ) {
+		//비즈니스 멤버 탈퇴하는 기능이 있는 controller
+		
+		if(lDAO.loginCheck(req)) {
+			lDAO.businessDelete(req);
+			req.setAttribute("contentPage", "t2_home.jsp");
+		}else {
+			req.setAttribute("contentPage", "t2login/login_business.jsp");
+		}
+		
+		
+		
+		
+		return "2Team/t2_index";
+	}
+	
+	@RequestMapping(value = "/businessIDFind.go", method = RequestMethod.GET)
+	public String businessIDFindgo(HttpServletRequest req,vet v ) {
+		//비즈니스 멤버 아이디 찾는 페이지로 넘어가는 controller
+		
+		lDAO.loginCheck(req);
+		
+		req.setAttribute("contentPage", "t2login/t2_businessFindID.jsp");
+		
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	

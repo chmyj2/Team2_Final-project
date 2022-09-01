@@ -85,4 +85,9 @@
 	<update id="businessPWUpdate" parameterType="com.team12.main.t2Login.vet">
 	update vet_member set vet_PW=#{vet_PW} where vet_ID =#{vet_ID}
 	</update>
+	
+	<delete id="deleteBusiness" parameterType="com.team12.main.t2Login.vet">
+	delete vet_member where vet_ID =#{vet_ID}
+	</delete>
+	
 </mapper>
