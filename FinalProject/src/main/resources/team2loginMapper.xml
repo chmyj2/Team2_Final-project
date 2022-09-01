@@ -90,4 +90,12 @@
 	delete vet_member where vet_ID =#{vet_ID}
 	</delete>
 	
+	<select id="getBusinessIDbyBusinessNum" parameterType="com.team12.main.t2Login.vet" resultType="com.team12.main.t2Login.vet">
+	select vet_ID from vet_member where vet_businessNum =#{vet_businessNum}
+	</select>
+	
+	<select id="getBusinessIDbyPhoneNum" parameterType="com.team12.main.t2Login.vet" resultType="com.team12.main.t2Login.vet">
+	select vet_ID from vet_member where vet_phoneNum =#{vet_phoneNum}
+	</select>
+	
 </mapper>

@@ -837,6 +837,42 @@ public class LoginDAO {
 
 
 
+	public void businessFindIDbybusinessNum(HttpServletRequest req, vet v) {
+		// 비즈니스 아이디 사업자 번호로 찾기
+		
+		vet dbVet = ss.getMapper(Team2loginMapper.class).getBusinessIDbyBusinessNum(v);
+		
+		if (dbVet != null) {
+			System.out.println(dbVet.getVet_ID());
+			System.out.println("비즈니스 아이디 찾기 완료");
+			String ID = dbVet.getVet_ID();
+			req.setAttribute("ID", ID);
+		}else {
+			System.out.println("비즈니스 아이디 없음");
+			req.setAttribute("result", "회원가입한 이력이 없는 회원입니다.");
+		}
+	}
+
+
+
+	public void businessFindIDbyphoneNum(HttpServletRequest req, vet v) {
+		// 비즈니스 아이디 전화번호로 찾기
+		
+		vet dbVet = ss.getMapper(Team2loginMapper.class).getBusinessIDbyPhoneNum(v);
+		
+		if (dbVet != null) {
+			System.out.println(dbVet.getVet_ID());
+			System.out.println("비즈니스 아이디 폰번호로 찾기");
+			String id = dbVet.getVet_ID();
+			req.setAttribute("ID", id );
+		}else {
+			req.setAttribute("result", "회원가입한 이력이 없는 회원입니다.");
+		}
+		
+	}
+
+
+
 	
 
 	

@@ -46,6 +46,10 @@ public interface Team2loginMapper {
 
 	int deleteBusiness(vet v);
 
+	vet getBusinessIDbyBusinessNum(vet v);
+
+	vet getBusinessIDbyPhoneNum(vet v);
+
 	
 
 	

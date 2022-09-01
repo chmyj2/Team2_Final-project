@@ -702,6 +702,22 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/businessIDFind.do", method = RequestMethod.POST)
+	public String businessIDFinddo(HttpServletRequest req,vet v ) {
+		//비즈니스 멤버 아이디 찾는 기능으로 연결해주는 controller
+		
+		lDAO.loginCheck(req);
+		if (v.getVet_businessNum() != null) {
+			lDAO.businessFindIDbybusinessNum(req,v);
+		}else {
+			lDAO.businessFindIDbyphoneNum(req,v);
+		}
+		
+		req.setAttribute("contentPage", "t2login/t2_businesstellID.jsp");
+		
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	
