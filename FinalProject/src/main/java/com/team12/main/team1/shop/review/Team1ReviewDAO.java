@@ -167,17 +167,24 @@ public class Team1ReviewDAO {
 	}
 
 	// 리뷰 글 수정
-	public void updateReview(HttpServletRequest req, Team1ReviewDTO review) {
-		String update = ss.getMapper(Team1ReviewMapper.class).updateReview(review);
+	public int updateReview(Team1ReviewDTO review) {
+		System.out.println(review.getReview_num());
+		System.out.println(review.getReview_txt());
+		int update = ss.getMapper(Team1ReviewMapper.class).updatereview(review);
 		System.out.println("수정완료!" + update);
-		
+		return update;
 	}
 
-
+	// 리뷰 글 정렬
 	public void reviewOrderBy(HttpServletRequest req, Team1ReviewDTO review) {
 		List<Team1ReviewDTO> orderBy = ss.getMapper(Team1ReviewMapper.class).orderByReview(review);
 		req.setAttribute("ob", orderBy);
 	}
+
+
+
+
+
 
 
 

@@ -40,3 +40,7 @@ select * from (
 		select * from team1_review_board order by review_star desc)
 		) where rn between #{start_data} and #{end_data}
 
+		
+--- 리뷰 수정하기
+update team1_review_board set review_txt = '까꿍'
+	where review_num = 5

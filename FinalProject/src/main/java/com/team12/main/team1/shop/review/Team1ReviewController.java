@@ -7,12 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.team12.main.team1.join.MemberDAO;
 import com.team12.main.team2board.Team2BoardDTO;
+import com.team12.main.team2board.Team2CommentDTO;
 
 @Controller
 public class Team1ReviewController {
@@ -61,7 +63,7 @@ public class Team1ReviewController {
 		return "1Team/t1_index";
 	}
 	
-	// 리뷰 수정하기
+/*	// 리뷰 수정하기
 	@RequestMapping(value = "review.update", method = RequestMethod.GET)
 	public String reviewUpdate(HttpServletRequest req, Team1ReviewDTO review) {
 	
@@ -72,7 +74,7 @@ public class Team1ReviewController {
 		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
 		
 		return "1Team/t1_index";
-	}
+	}*/
 	
 	// 리뷰 추천순 정렬
 	@RequestMapping(value = "review.orderBy", method = RequestMethod.GET)
@@ -90,6 +92,13 @@ public class Team1ReviewController {
 		return "1Team/t1_index";
 	}
 	
+	// 리뷰 수정
+	
+	@RequestMapping(value="/review.update", method = RequestMethod.POST, produces = "application/json; charset=utf8")
+	@ResponseBody
+	public int review_update(Team1ReviewDTO r)  {
+		return rDAO.updateReview(r);
+	}
 	
 	
 	

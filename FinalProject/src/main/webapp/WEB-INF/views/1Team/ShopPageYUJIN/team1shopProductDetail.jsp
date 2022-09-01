@@ -44,28 +44,49 @@ $(function() {
 </script>
 <script type="text/javascript">
 $(function() {
+	let select=''
+	
 	$(".reviewUpdate").click(function() {
-		let txt = $(this).parent().parent().find('span').text();
+		
+		let txt = $(this).parent().parent().find('span').text(); // 변경전 값
 		$(this).parent().parent().find('span').toggle();
 		$(this).parent().parent().find('input').toggle();
-		$(this).parent().parent().find('input').val(txt);
+		$(this).parent().parent().find('input').val(txt);  // 원래 있던 값을 input에 넣어주는 거
+		$(this).toggle();
+		$(this).next().toggle();
+		//$(this).parent().parent().find('input').html(txt);
+		select = $(this).parent().parent().find('input')
+	});
+	
+	$('.reviewUpdate2').click(function() {
+	   let txt = $(select).val();
+	   let num = $(this).attr('id');
+	   
+	  let tlqkf = $(this).parent().parent().find('span')
+	   
 		
 		$.ajax({
 			// 서버로 보낼 주소 입력
 			url: "review.update",
 			type: "post",
-			data: "review_text" + txt ,
-//			dataType: 
-			success : function (html) {
-				$()
+			async : false,
+			data: {
+				"review_txt" 	: txt  ,
+				"review_num" 	: num  },
+			success : function (data) {
+				if (data == 1) {
+					$(select).toggle();
+					console.log("수정성공")
+				}
 			}
-//			data: ,
-//			success : 
-			
 		});
-		
-		
-		
+	  
+	 $(this).parent().parent().find('span').toggle();
+	 $(this).parent().parent().find('span').text(txt)
+	 $(this).toggle();
+	 $(this).prev().toggle();
+	 
+	  
 	});
 });
 </script>
@@ -296,7 +317,8 @@ $(function() {
 									<!-- 수정 Ajax -->
 								<div class="store_review_btn_stat">
 								<c:if test="${sessionScope.loginMember.member_ID == r.review_id }">
-									<button class="reviewUpdate" onclick="location.href='review.update?review_num=${r.review_num}'">수정</button>
+									<button class="reviewUpdate" onclick="location.href='review.update">수정</button>
+									<button id="${r.review_num}" class="reviewUpdate2" style="display: none;">완료</button>
 									<button class="reviewDelete" onclick="location.href='review.delete?review_num=${r.review_num}'">삭제</button>
 								</c:if>
 								</div>
