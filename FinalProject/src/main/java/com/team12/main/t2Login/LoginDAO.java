@@ -787,6 +787,41 @@ public class LoginDAO {
 
 
 
+	public boolean businessPWCheck(HttpServletRequest req, vet v) {
+		// 비즈니스 비밀번호 일치하는 지 확인하는 기능
+		
+		vet business = (vet) req.getSession().getAttribute("loginMember_business");
+		String PW = business.getVet_PW();
+		String inPutPW = v.getVet_PW();
+		
+		if (inPutPW.equals(PW)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+
+
+	public void businessPWUpdate(HttpServletRequest req, vet v) {
+		// 비즈니스 비밀번호 바꾸는 기능
+		
+		vet business = (vet) req.getSession().getAttribute("loginMember_business");
+		if (business != null) {
+			v.setVet_ID(business.getVet_ID());
+		}
+		
+		if (ss.getMapper(Team2loginMapper.class).businessPWUpdate(v)==1) {
+			System.out.println("비밀번호 업데이트 성공");
+			
+			//바뀐 정보 다시 넣기
+			business = ss.getMapper(Team2loginMapper.class).getVetByID(v);
+			req.getSession().setAttribute("loginMember_business", business);
+		}
+	}
+
+
+
 	
 
 	

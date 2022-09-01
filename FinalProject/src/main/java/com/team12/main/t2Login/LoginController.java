@@ -536,7 +536,7 @@ public class LoginController {
 			lDAO.splitAddr_bus(req);
 			req.setAttribute("contentPage", "t2login/t2_businessMypage.jsp");
 		}else {
-			req.setAttribute("contentPage", "t2login/t2_login.jsp");
+			req.setAttribute("contentPage", "t2login/login_business.jsp");
 		}
 		
 								
@@ -553,7 +553,7 @@ public class LoginController {
 			lDAO.splitAddr_bus(req);
 			req.setAttribute("contentPage", "t2login/t2_businessInfoChange.jsp");
 		}else {
-			req.setAttribute("contentPage", "t2login/t2_login.jsp");
+			req.setAttribute("contentPage", "t2login/login_business.jsp");
 		}
 		
 		
@@ -571,7 +571,7 @@ public class LoginController {
 			lDAO.splitAddr_bus(req);
 			req.setAttribute("contentPage", "t2login/t2_businessMypage.jsp");
 		}else {
-			req.setAttribute("contentPage", "t2login/t2_login.jsp");
+			req.setAttribute("contentPage", "t2login/login_business.jsp");
 		}
 		
 		
@@ -580,8 +580,61 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/businessPWchange.go", method = RequestMethod.GET)
+	public String businessPWchangeGo(HttpServletRequest req ) {
+		//비즈니스 비밀번호 바꾸기 전 비밀번호 체크하는 페이지로 이동하는 controller
+		
+		if(lDAO.loginCheck(req)) {
+			
+			req.setAttribute("contentPage", "t2login/t2_businessPWChangeBefore.jsp");
+		}else {
+			req.setAttribute("contentPage", "t2login/login_business.jsp");
+		}
+		
+		
+		
+		
+		return "2Team/t2_index";
+	}
 	
+	@RequestMapping(value = "/businessPWCheck.do", method = RequestMethod.POST)
+	public String businessPWCheckDo(HttpServletRequest req,vet v ) {
+		//비즈니스 비밀번호 찾기 전 비밀번호 확인하는 기능있는 controller
+		
+		if(lDAO.loginCheck(req)) {
+			if(lDAO.businessPWCheck(req,v)) {
+				req.setAttribute("contentPage", "t2login/t2_BusinessChangePW.jsp");				
+			}else {
+				req.setAttribute("result", "비밀번호가 일치하지 않습니다.");
+				req.setAttribute("contentPage", "t2login/t2_businessPWChangeBefore.jsp");				
+			}
+		}else {
+			req.setAttribute("contentPage", "t2login/login_business.jsp");
+		}
+		
+		
+		
+		
+		return "2Team/t2_index";
+	}
 	
+	@RequestMapping(value = "/businessPWchange.DO", method = RequestMethod.POST)
+	public String businessPWChangeDo(HttpServletRequest req,vet v ) {
+		//비즈니스 비밀번호 바꾸는 기능을 하는 controller
+		
+		if(lDAO.loginCheck(req)) {
+			lDAO.businessPWUpdate(req,v);
+			lDAO.splitAddr_bus(req);
+			req.setAttribute("contentPage", "t2login/t2_businessMypage.jsp");
+		}else {
+			req.setAttribute("contentPage", "t2login/login_business.jsp");
+		}
+		
+		
+		
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	

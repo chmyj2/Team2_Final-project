@@ -38,7 +38,7 @@
 		
 		<input type="button" value="수정하기" id="modify" onclick="location.href='businessInfoChange.go'"> 
 		
-		<input type="button" value="비밀번호바꾸기" onclick="location.href='#'"> 
+		<input type="button" value="비밀번호바꾸기" onclick="location.href='businessPWchange.go'"> 
 		
 		<input type="button" value="탈퇴하기" onclick="location.href='#'">
 	
