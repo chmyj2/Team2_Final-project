@@ -83,13 +83,18 @@
 	text-align: left;
 }
 
-.myInfoChage-input{
+.myInfoChage-input , .vet_businessNum{
 	border: none;
 	border-bottom: 0.5px solid gray;
 }
 .myInfoChage-td1{
 	width: 120px;
     text-align: center;	
+}
+
+.myInfoChage-tr-addr{
+	height: 40px;
+	text-align: left;
 }
 
 /* 펫 정보 수정하기 페이지 CSS */

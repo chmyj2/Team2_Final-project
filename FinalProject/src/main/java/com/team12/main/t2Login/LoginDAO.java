@@ -745,6 +745,45 @@ public class LoginDAO {
 		}
 		
 	}
+	
+	public void splitAddr_bus(HttpServletRequest req) {
+        // 주소 ! 기준으로 자르기 비즈니스용
+        vet v = (vet) req.getSession().getAttribute("loginMember_business");
+
+        if (v.getVet_address() != null) {
+            String v_addr = v.getVet_address();
+            String[]  v_addr2 = v_addr.split("!");
+            req.setAttribute("addr", v_addr2);
+
+        }
+
+    }
+
+
+
+	public void businessInfoUpdate(HttpServletRequest req, vet v) {
+		// 비즈니스 회원 정보 수정하는 기능
+		
+		//아이디 가져오기
+		vet business = (vet) req.getSession().getAttribute("loginMember_business");
+		v.setVet_ID(business.getVet_ID());
+		
+		String addr1 = req.getParameter("m_addr1");
+		String addr2 = req.getParameter("m_addr2");
+		String addr3 = req.getParameter("m_addr3");
+		
+		
+		String vet_address = addr1 +"!"+addr2+"!"+addr3;
+		v.setVet_address(vet_address); 
+		System.out.println(v.getVet_phoneNum());
+		
+		if(ss.getMapper(Team2loginMapper.class).businessUpdate(v) ==1) {
+			System.out.println("비즈니스 정보 수정 성공");
+			req.getSession().setAttribute("loginMember_business", v);
+		}else {
+			System.out.println("비즈니스 정보 수정 실패");
+		}
+	}
 
 
 

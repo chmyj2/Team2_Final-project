@@ -528,6 +528,66 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/t2VetMyPage.go", method = RequestMethod.GET)
+	public String t2VetMyPageGo(HttpServletRequest req) {
+		//비즈니스 마이 페이지로 가기
+		
+		if(lDAO.loginCheck(req)) {
+			lDAO.splitAddr_bus(req);
+			req.setAttribute("contentPage", "t2login/t2_businessMypage.jsp");
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");
+		}
+		
+								
+		
+		
+		return "2Team/t2_index";
+	}
+
+	@RequestMapping(value = "/businessInfoChange.go", method = RequestMethod.GET)
+	public String businessInfoChangego(HttpServletRequest req) {
+		//비즈니스 정보 수정 창으로 이동하는 controller
+		
+		if(lDAO.loginCheck(req)) {
+			lDAO.splitAddr_bus(req);
+			req.setAttribute("contentPage", "t2login/t2_businessInfoChange.jsp");
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");
+		}
+		
+		
+		
+		
+		return "2Team/t2_index";
+	}
+	
+	@RequestMapping(value = "/businessInfoChange.DO", method = RequestMethod.POST)
+	public String businessInfoChangeDO(HttpServletRequest req , vet v) {
+		//비즈니스 정보 수정하는 기능이 있는 controller
+		
+		if(lDAO.loginCheck(req)) {
+			lDAO.businessInfoUpdate(req,v);
+			lDAO.splitAddr_bus(req);
+			req.setAttribute("contentPage", "t2login/t2_businessMypage.jsp");
+		}else {
+			req.setAttribute("contentPage", "t2login/t2_login.jsp");
+		}
+		
+		
+		
+		
+		return "2Team/t2_index";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

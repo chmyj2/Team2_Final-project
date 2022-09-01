@@ -40,6 +40,8 @@ public interface Team2loginMapper {
 
 	Membert2 checkMember(Membert2 m);
 
+	int businessUpdate(vet v);
+
 	
 
 	

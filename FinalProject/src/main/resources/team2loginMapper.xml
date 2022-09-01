@@ -77,4 +77,8 @@
 	<select id="checkMember" parameterType="com.team12.main.t2Login.Membert2" resultType="com.team12.main.t2Login.Membert2">
 	select member_linkWhere from final_member where member_ID =#{member_ID} and member_name =#{member_name} and member_email=#{member_email}
 	</select>
+	
+	<update id="businessUpdate" parameterType="com.team12.main.t2Login.vet">
+	update vet_member set vet_businessNum =#{vet_businessNum} , vet_phoneNum =#{vet_phoneNum} , vet_address=#{vet_address} where vet_ID =#{vet_ID}
+	</update>
 </mapper>
