@@ -29,7 +29,7 @@
 		<div class="login_txt">
 			<h2 class="login_h2">Welcome!</h2>
 			<div class="login-social">
-				<a onclick="kakaoLogin()">
+				<a onclick="kakaoLogin()"> <!-- 카카오 로그인 -->
 					<img src="//k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="110" alt="카카오 로그인 버튼"/>
 				</a>
 				<div id="naver_id_login"></div>
