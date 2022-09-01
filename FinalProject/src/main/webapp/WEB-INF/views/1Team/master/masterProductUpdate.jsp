@@ -26,27 +26,27 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#addBtn").click(function() {
-			var master_category = $("#mater_category").val();
-			var productName1 = $("#productName1").val();
-			var productPrice1 = $("#productPrice1").val();
-			var productOption1 = $("#productOption1").val();
-			var productImg = $("productImg").val();
+			var product_category = $("#product_category").val();
+			var product_title = $("#product_title").val();
+			var product_price = $("#product_price").val();
+			var product_stock = $("#product_stock").val();
+			var product_thumnail = $("product_thumnail").val();
 			
-			if (productName1 == "") {
+			if (product_title == "") {
 				alert("상품명을 입력해주세요")
-				productName1.focus();
-			} else if (productPrice1 == "") {
+				product_title.focus();
+			} else if (product_price == "") {
 				alert("상품가격을 입력해주세요")
-				productPrice1.focus();
-			} else if (productOption1 == "") {
-				alert("상품옵션을 입력해주세요")
-				productOption1.focus();
-			} else if (productImg =="") {
+				product_price.focus();
+			} else if (product_stock == "") {
+				alert("상품 수량을 입력해주세요")
+				product_stock.focus();
+			} else if (product_stock =="") {
 				alert("상품 이미지를 등록해주세요")
-				productImg.focus();
-			} else if (master_category == "") {
+				product_stock.focus();
+			} else if (product_category == "") {
 				alert("상품 카테고리를 선택해주세요")
-				master_category.focus();
+				product_category.focus();
 			}
 			// 상품 정보 전송
 			// 상품 등록 버튼 클릭 이벤트 발생시 폼 안의 유효성 검사 후 서버로 전송
@@ -59,12 +59,12 @@
 <body>
     <div class="master_product_update_wrap">
             <h2>STORE 상품 등록</h2>
-            <form id="master_update_form" enctype="multipart/form-data" method="post" action="">
+            <form action="master.create" id="master_update_form" enctype="multipart/form-data" method="POST">
 			<div class="master_product_update_tbl">
 				<div>
 					<h3>상품카테고리</h3>
-					<select name="master_category" id="master_category">
-						<option value="">----Select----</option>
+					<select name="product_category" id="master_category">
+						<option>----Select----</option>
 						<option value="dog">Dog</option>
 						<option value="cat">Cat</option>
 					</select>
@@ -73,37 +73,37 @@
 				<div>
 					<h3>상품사진</h3>
 					<input class="master_product_update_img_select" type="file"
-						name="productImg" id="productImg"> <br> <img
+						name="product_thumnail" id="productImg"> <br> <img
 						id="view" src="" alt="product Img">
 				</div>
 				<div>
-					<span>상품명1</span> <input type="text" name="productName1"
-						id="productName1">
+					<span>상품명1</span> <input type="text" name="product_title"
+						id="product_title">
 				</div>
 				<div>
-					<span>상품명2</span> <input type="text" name="productName2"
-						id="productName2">
+					<span>상품명2</span> <input type="text" name="product_title2"
+						id="product_title2">
 				</div>
 				<br>
 				<div>
-					<span>상품가격1</span> <input type="text" name="productPrice1"
-						id="productPrice1">
+					<span>상품가격1</span> <input type="text" name="product_price"
+						id="product_price">
 				</div>
 				<div>
-					<span>상품가격2</span> <input type="text" name="productPrice2"
-						id="productPrice2">
+					<span>상품수량</span> <input type="text" name="product_stock"
+						id="product_stock">
 				</div>
 				<br>
 				<div>
-					<span>상품옵션1</span> <input type="text" name="productOption1"
-						id="productOption1">
+					<span>상품설명</span> <input type="text" name="product_info"
+						id="product_info">
 				</div>
 				<div>
-					<span>상품옵션2</span> <input type="text" name="productOption2"
-						id="productOption2">
+					<span>제조사</span> <input type="text" name="product_manufactor"
+						id="product_manufactor" placeholder="상품가격 2 옵션(kg)">
 				</div>
-				<br> <input type="button" value="등록"
-					class="master_product_update_btn">
+				<br> 
+				<button	class="master_product_update_btn">등록</button>
 			</div>
 		</form>
     </div>

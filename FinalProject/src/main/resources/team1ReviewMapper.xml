@@ -14,7 +14,7 @@
 <!-- 리뷰쓰기 -->
 <insert id="writeReview" parameterType="map">
 	insert into team1_review_board values(
-	team1_review_board_seq.nextval,'leeyoky',#{review_title},#{review_text}, sysdate, #{review_img}, #{review_star})
+	team1_review_board_seq.nextval,#{review_id},#{review_title},#{review_text}, sysdate, #{review_img}, #{review_star})
 </insert>
 
 <!-- 리뷰 삭제하기 -->
@@ -30,11 +30,25 @@
 </select>
 
 <!-- 전체 리뷰 평점 구하기  -->
-<select id="getAllReviewAvg" resultType="int">
+<select id="getAllReviewAvg" resultType="double">
 	select avg(review_star) from team1_review_board
 </select>
 
+<!-- 리뷰 추천순 정렬 -->
+<select id="orderByReview" resultType="com.team12.main.team1.shop.review.Team1ReviewDTO">
+	select * from (
+	select rownum as rn, review_num, review_id, review_title, review_txt,
+		review_date, review_img, review_star 
+		from (
+		select * from team1_review_board order by review_star desc)
+		) where rn between #{start_data} and #{end_data}
+</select>
 
-
+<!-- 댓글 수정  -->
+<update id="updatereview">
+	update team1_review_board 
+	set review_txt = #{review_txt}
+	where review_num = #{review_num}
+</update>
 
 </mapper>
