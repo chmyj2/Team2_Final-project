@@ -19,7 +19,7 @@ public class Team1ProductController {
 	@Autowired
 	private Team1ProductDAO mpDAO;
 	
-	// 마스터 상품등록 페이지 상품 등록
+	// 마스터 상품등록 페이지 이동
 	@RequestMapping(value = "/master.reg", method = RequestMethod.GET)
 	public String masterReg(HttpServletRequest req) {
 		
@@ -29,6 +29,8 @@ public class Team1ProductController {
 		return "1Team/t1_index";
 	}
 	
+	
+	// 상품등록하기
 	@RequestMapping(value = "/master.create", method = RequestMethod.POST)
 	public String masterCreate(HttpServletRequest req, MultipartHttpServletRequest mr) {
 		

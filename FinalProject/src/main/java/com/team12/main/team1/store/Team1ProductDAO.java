@@ -2,6 +2,7 @@ package com.team12.main.team1.store;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,18 +27,20 @@ public class Team1ProductDAO {
 		
 		try {
 			
-			System.out.println(mr.getParameter("product_num"));
 			System.out.println(mr.getParameter("product_category"));
-			System.out.println(mr.getParameter("product_title"));
 			System.out.println(mr.getFile("product_thumnail"));
+			System.out.println(mr.getParameter("product_title"));
+			System.out.println(mr.getParameter("product_title2"));
 			System.out.println(mr.getParameter("product_price"));
+			System.out.println(mr.getParameter("product_stock"));
+			System.out.println(mr.getParameter("product_info"));
+			System.out.println(mr.getParameter("product_manufactor"));
 			MultipartFile img = mr.getFile("product_thumnail");
 			System.out.println("파일이름 -------:"+img.getOriginalFilename());
 			
 			
 			Map<String, String> products = new HashMap();
 			
-			products.put("product_num", mr.getParameter("product_num"));
 			products.put("product_category", mr.getParameter("product_category"));
 			products.put("product_thumnail", img.getOriginalFilename());
 			products.put("product_title", mr.getParameter("product_title"));
@@ -67,6 +70,13 @@ public class Team1ProductDAO {
 			e.printStackTrace();
 			req.setAttribute("result", "등록실패");
 		}
+	}
+	// 전체 상품 리스트 보여주기
+	public void showAllProduct(HttpServletRequest req, Team1ProductDTO product) {
+		
+		List<Team1ProductDAO> products = ss.getMapper(Team1ProductMapper.class).getProductList(product);
+		
+		
 	}
 
 }

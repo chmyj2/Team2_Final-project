@@ -108,6 +108,23 @@
                 </div>
 
             </div>
+            
+           <!-- 상품 리스트 보여주기 -->
+           <c:forEach var="" items="">
+            <div class="store_new_products_ANF tbody">
+            	<img>
+            	<h2></h2>
+            	<p>
+            	<span>
+            		<strong> </strong>
+            	</span><br>
+            	<span>
+            	</span>
+            </div>
+           </c:forEach>
+            
+            
+            
         </div>
     </div>
 

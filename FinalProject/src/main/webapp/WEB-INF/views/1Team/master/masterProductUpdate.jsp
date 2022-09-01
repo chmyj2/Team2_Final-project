@@ -63,7 +63,6 @@
 			<div class="master_product_update_tbl">
 				<div>
 					<h3>상품카테고리</h3>
-					<input type="hidden" name="product_num">
 					<select name="product_category" id="master_category">
 						<option>----Select----</option>
 						<option value="dog">Dog</option>

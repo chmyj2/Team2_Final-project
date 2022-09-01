@@ -26,6 +26,9 @@ public class ShopManagerController {
 	@Autowired
 	private Team1ReviewDAO rDAO; 
 	
+	@Autowired
+	private Team1ProductDAO pdDAO;
+	
 	
 	// 메인 샵 들어가기
 	@RequestMapping(value="/enter.team1MainShop", method = RequestMethod.GET)
@@ -40,11 +43,11 @@ public class ShopManagerController {
 	
 	// 스토어 메인
 	@RequestMapping(value="/enter.team1StoreFor", method = RequestMethod.GET)
-	public String shopEntering(ProductDTO p, HttpServletRequest req) {
+	public String shopEntering(Team1ProductDTO product, HttpServletRequest req) {
 			
 		mDAO.loginCheck(req);
 		// 모든 상품 불러오기
-		pDAO.loadProducts(p, req);
+		pdDAO.showAllProduct(req,product);
 	
 		req.setAttribute("contentPage", "ShopPageYUJIN/team1ShopForDog.jsp");
 		return "1Team/t1_index";
