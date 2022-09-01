@@ -480,6 +480,16 @@ public class LoginDAO {
 			
 			if(join == 1) {
 				System.out.println("회원가입 성공");
+				
+				Membert2 dbMember = ss.getMapper(Team2loginMapper.class).getMemberByID(m);
+				
+				if (dbMember != null) { // 회원가입 후 로그인
+						req.getSession().setAttribute("loginMember", dbMember);
+						req.getSession().setMaxInactiveInterval(60 * 60);
+				}else {
+					System.out.println("--------111------------실패");
+				}
+				
 			} else {
 				System.out.println("회원가입 실패");
 			}
