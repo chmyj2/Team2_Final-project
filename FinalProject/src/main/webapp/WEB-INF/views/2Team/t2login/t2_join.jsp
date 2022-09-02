@@ -38,6 +38,7 @@
       </div>
       
       <div class="join-textForm brith">
+      <span class="jointxt-only-birth">*필수</span><br>
       	생일&nbsp;&nbsp;<input name="member_birth" type="date" class="join-birth" >
       </div> 
       

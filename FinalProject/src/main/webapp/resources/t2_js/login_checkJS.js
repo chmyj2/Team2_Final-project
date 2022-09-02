@@ -52,6 +52,9 @@ function joinCheck() {
 	let PWCheck = document.getElementById('join_PWCheck');
 	let name = document.joinForm.member_name;
 	let phone = document.joinForm.member_phoneNum;
+	let addr1 = document.joinForm.m_addr3;
+	let addr3 = document.joinForm.m_addr2;
+	let emailCheck = document.getElementById('join_emailCheckNum');
 	
 	if (isEmpty(ID)||lessThan(ID,5)||containsHS(ID)) {
 		//ID 유형에 맞게 작성했는 지 확인하는 기능
@@ -111,7 +114,30 @@ function joinCheck() {
 		return false;
 	}
 	
+	if (isEmpty(addr1)) {
+		//주소 빈칸 방지하기
+		
+		alert("주소를 입력해주세요")
+		addr1.focus();
+			
+		return false;
+	}
 	
+	if (isEmpty(addr3)) {
+		//주소 빈칸 방지하기
+		
+		alert("주소를 입력해주세요")
+		addr3.focus();
+		addr3.value=""
+			
+			return false;
+	}
+	
+	if (emailCheck.value != 'emailcheck') {
+		alert("이메일 인증을 해주세요");
+		
+		return false;
+	}
 	
 }
 

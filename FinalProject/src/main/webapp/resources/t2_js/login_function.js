@@ -49,30 +49,35 @@ function emailCheck() {
 	//이메일 중복체크
 	$('#join_mail_check').click(function() {
 		let emailInput = $('#join-email').val();
-		alert(emailInput);
 		
-		$.ajax({
-			url:"email.check",
-			type:"GET",
-			dataType :"text",
-			data:{"member_email":emailInput},
-			success: function(getData) {
-				console.log(getData);
-				if (getData ==1) {
-					$('#emailcheckResult').text("사용불가");
-					$('#emailcheckResult').css('color','red');
-				}else {
-					$('#emailcheckResult').text("");
-					joinEmail_check();
+		if (emailInput !="") {
+		
+			$.ajax({
+				url:"email.check",
+				type:"GET",
+				dataType :"text",
+				data:{"member_email":emailInput},
+				success: function(getData) {
+					console.log(getData);
+					if (getData ==1) {
+						$('#emailcheckResult').text("사용불가");
+						$('#emailcheckResult').css('color','red');
+					}else {
+						$('#emailcheckResult').text("");
+						joinEmail_check();
+					}
+					
+					//$('span').text(idInput+"이미 사용중입니다.");
+				},
+				error : function(request,status,error) {
+					console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					
 				}
-				
-				//$('span').text(idInput+"이미 사용중입니다.");
-			},
-			error : function(request,status,error) {
-				console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-				
-			}
-		}); // ajax끝
+			}); // ajax끝
+		}else {
+			alert("이메일을 입력해주세요");
+		}
+		
 	})
 }//이메일 중복체크
 
