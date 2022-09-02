@@ -359,6 +359,21 @@ public class Team2BoardDAO {
 		return result;
 	}
 
+	public void my_Post(HttpServletRequest req, Team2BoardDTO board, int result) {
+		
+		
+		if(result == 1) {
+			List<Team2BoardDTO> post= ss.getMapper(Team2BoardMapper.class).myPostList(board);
+			req.setAttribute("postList", post);
+		}else {
+			List<Team2BoardDTO> post= ss.getMapper(Team2BoardMapper.class).myLikeList(board);
+			req.setAttribute("postList", post);
+
+		}
+		
+		
+		
+	}
 	
 
 	

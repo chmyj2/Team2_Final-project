@@ -218,9 +218,17 @@ where comment_num = #{c_child_parent_num}
 </update>
 
 
-
-
-
+<!--내가 쓴 글 -->
+<select id="myPostList" resultType="com.team12.main.team2board.Team2BoardDTO">
+select * from team2_board 
+where board_member_id = #{board_member_id} 
+</select>
+<!--내가 좋아요 누른 글 -->
+<select id="myLikeList" resultType="com.team12.main.team2board.Team2BoardDTO">
+select * from team2_board 
+where board_num 
+in (select like_board_num from team2_like where like_member_id = #{board_member_id})
+</select>
 
 
 

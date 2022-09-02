@@ -167,7 +167,16 @@ public class BoardController {
 		return bDAO.deleteChildComment(t);
 	}
 	
-	
+	// 내가 쓴 글  혹은 내가 좋아요한 글
+	@RequestMapping(value = "myPost", method = RequestMethod.GET)
+	public String myPost(HttpServletRequest req, Team2BoardDTO board, @RequestParam("result")int result) {
+		lDAO.loginCheck(req);
+		System.out.println("리절트"+result+"boaardnum = :"+board.getBoard_member_id());
+		bDAO.my_Post(req, board, result);
+		req.setAttribute("contentPage", "board_jsp/myPost.jsp");
+
+		return "2Team/t2_index";
+	}
 	
 	
 

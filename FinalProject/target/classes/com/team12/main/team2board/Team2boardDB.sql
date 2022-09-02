@@ -11,10 +11,6 @@ create table team2_board(
 	board_like 		number(6) default 0
 )
 create sequence team2_board_seq;  
-
-select board_num, board_member_id, board_category, board_title, board_txt, board_date
-,board_count,board_img,board_like
-
 -----------------------------------------------------------------------------------------------------------
 --좋아요 DB
 create table team2_like(
@@ -44,10 +40,6 @@ create table team2_comment(
 		references final_member(member_ID) on delete cascade
 )
 create sequence team2_comment_seq;
-
-
-select * from team2_comment where comment_board_num = 114
-
 ---------------------------------------------------------------------------
 --대댓글
 create table team2_child_comment(
@@ -67,82 +59,3 @@ create table team2_child_comment(
 )
 create sequence team2_child_comment_seq;
 ---------------------------------------------------------------------------------
-
-insert into team2_comment values(team2_comment_seq.nextval, 47, 'mz', 'hello', sysdate)
-
-select * from team2_comment
-
-update team2_comment 
-set comment_txt = 'why'
-where comment_num = 107
-
-
-
-select comment_num from(
-	select comment_num
-	from team2_comment
-	where comment_board_num = 61
-	and comment_member_id = 'mz'
-	and comment_txt like '%why%'
-	order by comment_date desc
-)where rownum = 1
-
-
-
-select * 
-from (
-    select rownum as rn, comment_num, comment_board_num, comment_member_id, comment_txt, comment_date 
-     from(
-     select * from team2_comment
-     where comment_board_num = 47
-     order by comment_date desc 
-   )
-) where rn between 1 and 10
-
-select count(*) from team2_comment where comment_board_num = 47
-
-
-
-
-
-
-insert into team2_board values(team2_board_seq.nextval, 'mz', '1', 'title12', 'txt', sysdate, 0,'karina.jpg', 0)
-
-
-select * 
-from (
-    select rownum as rn, board_num, board_member_id, board_category, board_title, board_txt, board_date, board_img
-     from(
-     select * from team2_board
-     where board_category = '1'
---     and board_title like '%%'
-     order by board_date desc 
-   )
-) where rn between 11 and 20
-
-select count(*)
-from team2_board
-where board_category = '1'
-and board_title like '%%'
-
-select count(*) from team2_like 
-where like_board_num = 33 
-and   like_member_id= 'mz'
-
-select * from team2_like
-
-select board_like from team2_board
-where board_num = 39
-
-delete from team2_like
-where like_board_num = 45 and like_member_id = 'mz'
-
-
-
-
-
-
-
-
-
-

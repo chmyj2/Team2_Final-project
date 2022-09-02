@@ -62,6 +62,10 @@ public interface Team2BoardMapper {
 
 	void countDownTotalComment(Team2ChildCommentDTO t);
 
+	List<Team2BoardDTO> myPostList(Team2BoardDTO board);
+
+	List<Team2BoardDTO> myLikeList(Team2BoardDTO board);
+
 	
 
 
