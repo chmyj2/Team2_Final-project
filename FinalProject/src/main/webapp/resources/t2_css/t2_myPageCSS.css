@@ -239,5 +239,40 @@
 	display: flex;
 }
 
+/* join 페이지 글자 CSS */
+.jointxt{
+	font-size: 2pt;
+	position: relative;
+	left: -99px;
+}
 
+.jointxt-only{
+	font-size: 2pt;
+	position: relative;
+	left: -150px;
+}
 
+.jointxt-only-addr{
+	font-size: 2pt;
+	
+}
+
+#join-email{
+	width: 250px;
+    position: relative;
+    left: -45px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+#join_mail_check{
+	position: relative;
+    left: 130px;
+    top: -30px;
+}
+
+#join_mail_num{
+	position: relative;
+    left: -66px;
+    width: 200px;
+}

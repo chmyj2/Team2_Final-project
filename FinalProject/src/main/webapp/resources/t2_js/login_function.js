@@ -29,9 +29,10 @@ function idCheck() {
 					if (getData >=1) {
 						$('#idcheckResult').text("사용불가");
 						$('#idcheckResult').css('color','red');
+						$('#join_IDCheck').val('IDUnCheck');
 					}else {
-						$('#idcheckResult').text("사용가능");
-						$('#idcheckResult').css('color','green');
+						$('#idcheckResult').text("");
+						$('#join_IDCheck').val('IDcheck');
 					}
 					
 					//$('span').text(idInput+"이미 사용중입니다.");
@@ -61,7 +62,7 @@ function emailCheck() {
 					$('#emailcheckResult').text("사용불가");
 					$('#emailcheckResult').css('color','red');
 				}else {
-					
+					$('#emailcheckResult').text("");
 					joinEmail_check();
 				}
 				
@@ -107,7 +108,7 @@ function joinEmail_numCheck() {
 		
 		if (inputNum == code) {
 			
-			$('#join_num_check').val("emailcheck");
+			$('#join_emailCheckNum').val("emailcheck");
 			
 		}else {
 			result.html("인증번호가 불일치합니다.")
@@ -128,8 +129,10 @@ function pwcheck() {
 		if (pw1 != pw2) {
 			result.html("패스워드불일치");
 			result.css('color','red');
+			$('#join_PWCheck').val("PWUnCheck");
 		}else {
 			result.html("");
+			$('#join_PWCheck').val("PWCheck");
 			
 		}
 	})
