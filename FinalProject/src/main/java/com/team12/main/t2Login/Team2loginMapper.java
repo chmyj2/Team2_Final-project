@@ -50,6 +50,12 @@ public interface Team2loginMapper {
 
 	vet getBusinessIDbyPhoneNum(vet v);
 
+	int getBusinessPWbybusinessNum(vet v);
+
+	int getBusinessPWbyPhoneNum(vet v);
+
+	
+
 	
 
 	

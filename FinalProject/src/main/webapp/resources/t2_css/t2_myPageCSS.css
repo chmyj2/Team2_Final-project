@@ -225,3 +225,19 @@
 	margin-top: 100px;
 	text-align: center;
 }
+
+/* 비즈니스 회원 비밀번호 찾는 페이지 */
+.findPWBusiness-outline{
+	margin-bottom:80px;
+	margin-top: 80px;
+	text-align: center;
+}
+
+.findPWBusniess-inline{
+	margin-top:50px;
+	text-align: center;
+	display: flex;
+}
+
+
+

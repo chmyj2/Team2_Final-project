@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +10,16 @@
 <body>
 <div class="PWChange-outline">
 <h1>비밀번호 변경하기</h1><br>
-
+<c:choose>
+<c:when test="${sessionScope.loginMember_business != null }">
 <form action="businessPWchange.DO" method="post" name="pwChange">
+</c:when>
+<c:otherwise>
+<form action="businessFindPWchange.DO" method="post" name="pwChange">
+</c:otherwise>
+</c:choose>
 
+<input type="hidden" name="vet_ID" value="${ID }">
 
 <input name="vet_PW" placeholder="비밀번호" id="pw1"><br>
 <span class="pwChange-Guide">＊5자 이상 영어,숫자만 포함해주세요</span>

@@ -873,6 +873,40 @@ public class LoginDAO {
 
 
 
+	public boolean businessFIndPWBybusinessNum(HttpServletRequest req, vet v) {
+		// 비즈니스 회원 비밀번호 변경전 일치하는 회원이 있는 지 확인하는 기능
+		
+		
+		if (ss.getMapper(Team2loginMapper.class).getBusinessPWbybusinessNum(v) == 1) {
+			System.out.println("일치하는 회원이 있는 비즈니스 멤버");
+			String id = v.getVet_ID();
+			req.setAttribute("ID", id);
+			return true;
+		}else {
+			System.out.println("일치하는 회원이 없는 비즈니스 멤버");
+			return false;
+		}
+		
+	}
+
+
+
+	public boolean businessFindPWbyPhoneNum(HttpServletRequest req, vet v) {
+		// 비즈니스 회원 비밀번호 변경전 일치하는 회원이 있는지 확인하는 기능 by phoneNum
+		
+		if (ss.getMapper(Team2loginMapper.class).getBusinessPWbyPhoneNum(v) == 1) {
+			System.out.println("일치하는 회원이 있는 비즈니스 멤버");
+			String id = v.getVet_ID();
+			req.setAttribute("ID", id);
+			return true;
+		}else {
+			System.out.println("일치하는 회원이 없는 비즈니스 멤버");
+			return false;
+		}
+	}
+
+
+
 	
 
 	

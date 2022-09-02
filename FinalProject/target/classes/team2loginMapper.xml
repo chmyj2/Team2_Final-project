@@ -98,4 +98,12 @@
 	select vet_ID from vet_member where vet_phoneNum =#{vet_phoneNum}
 	</select>
 	
+	<select id="getBusinessPWbybusinessNum" parameterType="com.team12.main.t2Login.vet" resultType="int">
+	select count(*) from vet_member where vet_ID =#{vet_ID} and vet_businessNum =#{vet_businessNum}
+	</select>
+	
+	<select id="getBusinessPWbyPhoneNum" parameterType="com.team12.main.t2Login.vet" resultType="int">
+	select count(*) from vet_member where vet_ID =#{vet_ID} and vet_phoneNum =#{vet_phoneNum}
+	</select>
+	
 </mapper>

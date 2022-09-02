@@ -719,8 +719,51 @@ public class LoginController {
 		return "2Team/t2_index";
 	}
 	
+	@RequestMapping(value = "/businessPWFind.go", method = RequestMethod.GET)
+	public String businessPWFindgo(HttpServletRequest req,vet v ) {
+		//비즈니스 멤버 비밀번호 찾으러 가는 controller
+		
+		lDAO.loginCheck(req);
+		req.setAttribute("contentPage", "t2login/t2_businessFindPW.jsp");
+		
+		return "2Team/t2_index";
+	}
 	
+	@RequestMapping(value = "/businessFindPW.DO", method = RequestMethod.POST)
+	public String businessFindPWDO(HttpServletRequest req,vet v ) {
+		//비즈니스 멤버 패스워드변경 전 일치하는 회원이 있는 지 확인하는 기능을 가진 controller
+		
+		lDAO.loginCheck(req);
+		if (v.getVet_businessNum() != null) {
+			if (lDAO.businessFIndPWBybusinessNum(req,v)) {
+				req.setAttribute("contentPage", "t2login/t2_BusinessChangePW.jsp");
+			}else {
+				req.setAttribute("contentPage", "t2login/t2_businessTellPW.jsp");
+				
+			}
+		}else {
+			if (lDAO.businessFindPWbyPhoneNum(req,v)) {
+				req.setAttribute("contentPage", "t2login/t2_BusinessChangePW.jsp");
+			}else {
+				req.setAttribute("contentPage", "t2login/t2_businessTellPW.jsp");
+			}
+		}
+		
+		
+		
+		return "2Team/t2_index";
+	}
 	
+	@RequestMapping(value = "/businessFindPWchange.DO", method = RequestMethod.POST)
+	public String businessFindPWchangeDO(HttpServletRequest req,vet v ) {
+		//비즈니스 멤버 비밀번호 찾으러 가는 controller
+		
+		lDAO.loginCheck(req);
+		lDAO.businessPWUpdate(req,v);
+		req.setAttribute("contentPage", "t2login/login_business.jsp");
+		
+		return "2Team/t2_index";
+	}
 	
 	
 	
