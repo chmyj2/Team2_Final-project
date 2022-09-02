@@ -10,7 +10,7 @@
 <body>
 <div class="t2-join-outdiv">
 <form action="joinDo" method="POST" class="joinForm" name="joinForm" onsubmit="return joinCheck()"> 
-        <input class="validCheck"  id="join_IDCheck" value="IDUnCheck">    
+        <input class="validCheck" type="hidden" id="join_IDCheck" value="IDUnCheck">    
         <input class="validCheck" type="hidden" id="join_emailCheckNum" value="emailUnCheck">                                                                                   
         <input class="validCheck" type="hidden" id="join_PWCheck" value="PWUnCheck">                                                                                   
       <h2>회원가입</h2>

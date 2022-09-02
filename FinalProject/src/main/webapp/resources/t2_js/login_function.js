@@ -142,6 +142,24 @@ function pwcheck() {
 		}
 	})
 	
+	$('.join-pw').keyup(function() {
+		if ($('.join-pw2').val() != "") {
+			
+			let pw1 = $('.join-pw').val();
+			let pw2 = $('.join-pw2').val();
+			
+			if (pw1 != pw2) {
+				result.html("패스워드불일치");
+				result.css('color','red');
+				$('#join_PWCheck').val("PWUnCheck");
+			}else {
+				result.html("");
+				$('#join_PWCheck').val("PWCheck");
+				
+			}
+		}
+	})
+	
 }//패스워드일치불일치
 
 function businessNumCheck() {
@@ -159,8 +177,10 @@ function businessNumCheck() {
 					if (getData >=1) {
 						$('.businessNumResult').text("일치하는 사업자 번호가 있습니다.");
 						$('.businessNumResult').css('color','red');
+						$('#join_BusinessNumCheck').val('BusinessNumUncheck');
 					}else {
 						$('.businessNumResult').text("");
+						$('#join_BusinessNumCheck').val('BusinessNumcheck');
 					}
 					
 					//$('span').text(idInput+"이미 사용중입니다.");

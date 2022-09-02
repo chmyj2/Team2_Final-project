@@ -45,6 +45,7 @@ function loginCheck_business() {
 }
 
 function joinCheck() {
+	//일반 멤버 회원가입 유효성 검사
 	let ID =document.joinForm.member_ID;
 	let IDCheck = document.getElementById('join_IDCheck');
 	let PW = document.joinForm.member_PW;
@@ -181,8 +182,130 @@ function joinIdvalild() {
 	
 }
 
+function businessJoinCheck() {
+	//비즈니스 회원가입 유효성 검사
+	let ID =document.busniessjoinForm.vet_ID;
+	let IDCheck = document.getElementById('join_IDCheck');
+	let PWCheck = document.getElementById('join_PWCheck');
+	let PW = document.busniessjoinForm.vet_PW;
+	let busniessNum = document.busniessjoinForm.vet_businessNum;
+	let businessNumCheck =document.getElementById('join_BusinessNumCheck');
+	let phone = document.busniessjoinForm.vet_phoneNum
+	let addr1 = document.busniessjoinForm.m_addr3;
+	let addr3 = document.busniessjoinForm.m_addr2;
+	
+	if (isEmpty(ID)||lessThan(ID,5)||containsHS(ID)) {
+		//ID 유형에 맞게 작성했는 지 확인하는 기능
+		alert("아이디를 옳바르게 입력해주세요");
+		ID.focus();
+		ID.value=""
+		
+		return false;
+	}
+	
+	if (IDCheck.value != 'IDcheck') {
+		//중복된 ID를 사용할 경우 막기
+		alert("중복된 ID입니다.")
+		ID.focus();
+		ID.value=""
+			
+		return false;
+	}
+	
+	if (PWCheck.value != 'PWCheck' || isEmpty(PW)) {
+		//형식이 맞지 않게 쓴PW 막기
+		alert("비밀번호 또는 비밀번호 확인값을 확인해주세요");
+		PW.focus();
+		
+		
+		return false;
+	}
+	
+	if (businessNumCheck.value != 'BusinessNumcheck' || isEmpty(busniessNum)) {
+		//사업자 번호 중복시 막기
+		alert("사업자 번호를 확인해 주세요");
+		busniessNum.focus();
+		busniessNum.value="";
+		
+		return false;
+	}
+	
+	if (isEmpty(phone)||isNotNumber(phone)) {
+		//전화번호 빈칸 방지하기
+		
+		alert("전화번호을 형식에 맞게 입력해주세요")
+		phone.focus();
+		phone.value=""
+			
+		return false;
+	}
+	
+	if (isEmpty(addr1)) {
+		//주소 빈칸 방지하기
+		
+		alert("주소를 입력해주세요")
+		addr1.focus();
+			
+		return false;
+	}
+	
+	if (isEmpty(addr3)) {
+		//주소 빈칸 방지하기
+		
+		alert("주소를 입력해주세요")
+		addr3.focus();
+		addr3.value=""
+			
+			return false;
+	}
+	
+	
+}
+
+function joinBusinessCheck() {
+	
+	//비즈니스 회원가입 ID 유효성 검사(1)
+	$('#joinbusiness_ID').keyup(function() {
+		let ID = document.busniessjoinForm.vet_ID;
+		
+		if (lessThan(ID,5)) {
+			$('#idcheckResult').text('5자 이하입니다.');
+			$('#idcheckResult').css('color','red')
+		}else {
+			$('#idcheckResult').text('');
+		}
+		
+	})
+	
+	//비즈니스 회원가입 ID 유효성 검사(2)
+	$('#joinbusiness_ID').blur(function() {
+		let ID = document.busniessjoinForm.vet_ID;
+		if (containsHS(ID)) {
+			$('#IDValidCheck').text('숫자 영어만 입력해주세요');
+			$('#IDValidCheck').css('color','red');
+		}else {
+			$('#IDValidCheck').text('');			
+		}
+	})
+	
+	//멤버 회원가입 PW 유효성검사(1)
+	$('#joinMember_PW').blur(function() {
+		let PW = document.joinForm.joinMember_PW;
+		
+		if (lessThan(PW,5)||containsHS(PW)) {
+			$('#PWCheckResult').text('5자 이상 숫자 영어만 입력해주세요');
+			$('#PWCheckResult').css('color','red');
+			$('#join_PWCheck').val("PWUncheck");
+		}else {
+			$('#PWCheckResult').text('');			
+			$('#join_PWCheck').val("PWcheck");
+		}
+	})
+	
+}
+
 $(function() {
 	joinIdvalild();
-	
+	joinBusinessCheck();
 	
 })

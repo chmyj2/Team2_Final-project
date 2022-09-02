@@ -8,16 +8,22 @@
 </head>
 <body>
 <div class="t2-join-outdiv">
-<form action="joinDo.business" method="POST" class="joinForm" name="joinForm"> <!-- onsubmit="return joinCheck()"  -->
+<form action="joinDo.business" method="POST" class="joinForm" name="busniessjoinForm" onsubmit="return businessJoinCheck()">
+       <input type="hidden" id="join_IDCheck" value="IDUnCheck">
+       <input  id="join_PWCheck" value="PWUncheck">
+       <input type="hidden" id="join_BusinessNumCheck" value="BusinessNumUncheck">
+       
                                                                                                
       <h2>회원가입</h2>
       <div class="join-textForm">
-        <input name="vet_ID" type="text" class="join-id" placeholder="아이디">
-        <span id="idcheckResult"></span>
+        <input name="vet_ID" type="text" class="join-id" placeholder="아이디" id="joinbusiness_ID">
+        <span id="idcheckResult"></span> <br>
+        <span id="IDValidCheck"></span>
       </div>
       
       <div class="join-textForm">
         <input name="vet_PW"  class="join-pw" placeholder="비밀번호">
+        <span id="PWCheckResult"></span>
       </div>
       
        <div class="join-textForm">
