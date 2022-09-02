@@ -55,7 +55,7 @@ public class MemberController {
 	// 아이디 찾기 폼
 	@RequestMapping(value = "/member.findId.go", method = RequestMethod.GET)
 	public String findIdGo(Member m, HttpServletRequest req){
-		
+		mDAO.loginCheck(req);
 		req.setAttribute("contentPage", "../LDH/findID.jsp");
 		return "1Team/t1_index";
 	}

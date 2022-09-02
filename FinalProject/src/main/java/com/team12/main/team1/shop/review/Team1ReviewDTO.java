@@ -14,6 +14,7 @@ public class Team1ReviewDTO {
 	private int start_data;
 	private int end_data;
 	private int page;
+	private int array;
 	
 
 	public Team1ReviewDTO() {
@@ -22,7 +23,7 @@ public class Team1ReviewDTO {
 
 
 	public Team1ReviewDTO(int review_num, String review_id, String review_title, String review_txt, Date review_date,
-			String review_img, int review_star, int start_data, int end_data, int page) {
+			String review_img, int review_star, int start_data, int end_data, int page, int array) {
 		super();
 		this.review_num = review_num;
 		this.review_id = review_id;
@@ -34,6 +35,7 @@ public class Team1ReviewDTO {
 		this.start_data = start_data;
 		this.end_data = end_data;
 		this.page = page;
+		this.array = array;
 	}
 
 
@@ -135,6 +137,18 @@ public class Team1ReviewDTO {
 	public void setPage(int page) {
 		this.page = page;
 	}
+
+
+	public int getArray() {
+		return array;
+	}
+
+
+	public void setArray(int array) {
+		this.array = array;
+	}
+
+
 	
 	
 

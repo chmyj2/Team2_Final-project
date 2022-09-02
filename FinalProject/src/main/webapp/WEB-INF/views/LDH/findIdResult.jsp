@@ -6,6 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/css/index.css">
+<link rel="stylesheet" href="resources/css/loginAndJoin.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
 	$(function(){
@@ -17,7 +19,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="w3-content w3-container w3-margin-top">
+<div class="w3-content w3-margin-top">
 		<div class="w3-container w3-card-4">
 			<div class="w3-center w3-large w3-margin-top">
 				<h3>아이디 찾기 검색결과</h3>

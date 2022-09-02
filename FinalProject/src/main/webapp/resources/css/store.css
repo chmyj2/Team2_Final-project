@@ -425,17 +425,8 @@
     height: 400px;
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c2b1de990a62ea9d1caea6945342771736319d52
     position: absolute;
-    padding: 20px;
-=======
     padding: 30px;
->>>>>>> 9ff0ebb605a1622fa42509ede73e810c551a0dec
 }
 
 .store_product_detail_purchase_review_star img{
@@ -504,7 +495,7 @@
 	color: #999;
 	font-size: 14px;
 	cursor: pointer;
-	width: 480px;
+	width: 30%;
 	font-size:15pt;
 	font-weight: bold;
 	border: 1px solid black;
@@ -544,12 +535,11 @@ input
     background-color: rgba(255, 255, 255, 0.712);
     font-size: 10pt;
     padding: 10px;
-    width: 500px;
+    width: 50%;
     height: 450px;
     position: absolute;
-    left: 60%;
+    left: 50%;
     top:0%;
-    
 }
 
 .store_product_detail_purchase_review_cont input[type=text]{
@@ -603,14 +593,20 @@ input
 /* 리뷰 보여주기 */
 
 .store_product_detail_purchase_reviews{
-    /* background-color: rgba(0, 255, 255, 0.185); */
-    margin-top: 90px;
-    padding: 0 30px;
+    padding: 0 60px;
 }
 
 .store_review_state{
     /* background-color: rgb(4, 255, 255); */
     text-align: left;
+}
+
+.store_review_state button{
+	background: none;
+	border: none;
+	font-size : 11pt;
+	width: 100px;
+	font-weight: bolder;
 }
 
 .store_review_state ul li{
@@ -727,11 +723,14 @@ input
 /* 리뷰 페이징 */
 
 .store_review_paging{
-	background-color: rgba(255,255,255,0.5);
-	width: 100%;
-	height: 100px;
-	align-items: center;
+    width: 100%;
+    height: 30px;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 	
 }
+
+/*  */
 
 

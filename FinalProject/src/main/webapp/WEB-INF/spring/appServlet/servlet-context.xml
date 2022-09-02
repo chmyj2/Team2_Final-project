@@ -34,8 +34,8 @@
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<beans:property name="username" value="kwb" />
-		<beans:property name="password" value="kwb" />
+		<beans:property name="username" value="leeyoky" />
+		<beans:property name="password" value="leeyoky" />
 	</beans:bean>
 	
 	
@@ -62,6 +62,7 @@
 				<beans:value>classpath:team2loginMapper.xml</beans:value>
 				<beans:value>classpath:shopteam1Mapper.xml</beans:value>
 				<beans:value>classpath:team1ReviewMapper.xml</beans:value>
+				<beans:value>classpath:team1ProductMapper.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>

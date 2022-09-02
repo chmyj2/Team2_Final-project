@@ -36,7 +36,6 @@ $(function() {
 		  $(this).parent().children('span').removeClass('on');
 		  $(this).addClass('on').prevAll('span').addClass('on');
 //		  alert($(this).attr("value"));
-		  alert($(this).attr("value"));
 		let  a = $(this).attr("value")
 		  $('#starrr').attr('value', a)
 		  return false;
@@ -45,23 +44,49 @@ $(function() {
 </script>
 <script type="text/javascript">
 $(function() {
+	let select=''
+	
 	$(".reviewUpdate").click(function() {
-		let txt = $(this).parent().parent().find('span').text();
+		
+		let txt = $(this).parent().parent().find('span').text(); // 변경전 값
 		$(this).parent().parent().find('span').toggle();
 		$(this).parent().parent().find('input').toggle();
-		$(this).parent().parent().find('input').val(txt);
+		$(this).parent().parent().find('input').val(txt);  // 원래 있던 값을 input에 넣어주는 거
+		$(this).toggle();
+		$(this).next().toggle();
+		//$(this).parent().parent().find('input').html(txt);
+		select = $(this).parent().parent().find('input')
+	});
+	
+	$('.reviewUpdate2').click(function() {
+	   let txt = $(select).val();
+	   let num = $(this).attr('id');
+	   
+	  let tlqkf = $(this).parent().parent().find('span')
+	   
 		
 		$.ajax({
 			// 서버로 보낼 주소 입력
 			url: "review.update",
 			type: "post",
-//			data: ,
-//			success : 
-			
+			async : false,
+			data: {
+				"review_txt" 	: txt  ,
+				"review_num" 	: num  },
+			success : function (data) {
+				if (data == 1) {
+					$(select).toggle();
+					console.log("수정성공")
+				}
+			}
 		});
-		
-		
-		
+	  
+	 $(this).parent().parent().find('span').toggle();
+	 $(this).parent().parent().find('span').text(txt)
+	 $(this).toggle();
+	 $(this).prev().toggle();
+	 
+	  
 	});
 });
 </script>
@@ -98,7 +123,7 @@ $(function() {
                     </div>
                     <!-- 결과창 -->
                     <div class="store_product_detail_result">
-                        총액(수량):
+                       	 총액(수량):
                     </div>
                     <div class="store_product_detail_btn">
                         <button class="store_buy_btn" onclick="">구매하기</button>
@@ -149,7 +174,6 @@ $(function() {
 						</div>
 						<div class="store_product_detail_purchase_review">
 							<div class="store_product_detail_purchase_review_star">
-									<form action="write.review1" method="post" enctype="multipart/form-data">
 								<div class="store_product_detail_purchase_review_center">
 									<span> 
 										<img src="resources/img/review_star.png" alt="">
@@ -158,54 +182,10 @@ $(function() {
 										${avg}
 									</span> 
 									<br>
+									<!-- <button onclick="review">상품리뷰 작성하기</button> -->
 									<button onclick="review">상품리뷰 작성하기</button>
 									<div class="store_product_detail_purchase_review_alert">
-										<c:if test="${sessionScope.loginMember == null }">
-											<p>
-												상품 리뷰는 <a href="loginandjoin.go"
-													style="background-color: yellow;">로그인</a>후 에 작성 가능합니다
-											</p>
-										</c:if>
-									</div>
-								</div>
-
-								<div class="store_product_detail_purchase_review_cont">
-									<h2>REVIEW</h2>
-									<!-- 제목 -->
-									<input type="text" name="review_title"> <br>
-									<!-- 내용 -->
-									<textarea name="review_text" id="" placeholder="write text"></textarea>
-									<!-- 파일첨부 -->
-									<input type="file" name="review_img">
-									<!-- 별점주기 -->
-
-									<div class="starRev">
-										<span class="starR" value="1">★</span> 
-										<span class="starR" value="2">★</span> 
-										<span class="starR" value="3">★</span> 
-										<span class="starR" value="4">★</span>
-										<span class="starR" value="5">★</span> 
-										<input type="hidden" name="review_star" id="starrr" value="0">
-									</div>
-									
-										<button>리뷰작성완료</button>
-									</div>
-								</form>
-								
-								
-								
-								
-								<div class="store_product_detail_purchase_review_center">
-									<span> 
-										<img src="resources/img/review_star.png" alt="">
-									</span> 
-									<span> <!-- 총 별점 평균 점수 알려주기 --> 
-										${avg}
-									</span> 
-									<br>
-									<button onclick="review">상품리뷰 작성하기</button>
-									<div class="store_product_detail_purchase_review_alert">
-										<c:if test="${sessionScope.loginMember == null }">
+										<c:if test="${sessionScope.loginMember.member_ID == null }">
 											<p>
 												상품 리뷰는 <a href="loginandjoin.go"
 													style="background-color: yellow;">로그인</a>후 에 작성 가능합니다
@@ -235,7 +215,7 @@ $(function() {
 									<!-- 제목 -->
 									<input type="text" name="review_title"> <br>
 									<!-- 내용 -->
-									<textarea name="review_text" id="" placeholder="write text"></textarea>
+									<textarea name="review_text" id="review_text" placeholder="write text"></textarea>
 									<!-- 파일첨부 -->
 									<input type="file" name="review_img">
 									<!-- 별점주기 -->
@@ -247,11 +227,21 @@ $(function() {
 										<span class="starR" value="4">★</span>
 										<span class="starR" value="5">★</span> 
 										<input type="hidden" name="review_star" id="starrr" value="0">
+										<input type="hidden" name="review_id" value="${sessionScope.loginMember.member_ID}">
 									</div>
 									
+									<c:if test="${sessionScope.loginMember.member_ID == null }">
+										<p>상품 리뷰는 <a href="loginandjoin.go" style="background-color: yellow;">
+										로그인</a>후 에 작성 가능합니다
+										</p>
+									</c:if>
+									<c:if test="${sessionScope.loginMember.member_ID != null }">
 										<button>리뷰작성완료</button>
+									</c:if>
 									</div>
 								</form>
+									
+									</div>
 							</div>
 						</div>
 						
@@ -260,13 +250,17 @@ $(function() {
 
 					<!-- 리뷰 보여주기 -->
 					<div class="store_product_detail_purchase_reviews">
+						<form action="get.aProductTeam1" method="get">
 						<div class="store_review_state">
 							<ul>
 								<li>
-									<!-- 평점 순 정리하기 --> 평점순
+									<!-- 평점 순 정리하기 --> 
+									<button>평점순</button>
+									<input type="hidden" name="array" value="2">
 								</li>
 							</ul>
 						</div>
+						</form>
 						<c:forEach var="r" items="${r}">
 						<div class="store_review_tbody">
 							<div class="store_review_header">
@@ -306,36 +300,38 @@ $(function() {
 									</div>
 									<div class="store_review_date">
 									<fmt:formatDate value="${r.review_date}" pattern="yy-MM-dd HH:mm"/>
-									
 									</div>
 								</div>
 							</div>
-
-
 
 							<div class="store_review_txt_cont">
-									<div class="store_review_img_cont">
-										<img class="store_review_img"
+								<div class="store_review_img_cont">
+									<img class="store_review_img"
 											src="resources/reviewFile/${r.review_img}" alt="">
-									</div>
-									<div class="store_review_txt">
-										<span id="r">${r.review_txt}</span>
-										<input style="display: none;" class="store_review_list_update" type="text"> 
-									</div>
-									<div class="store_review_btn_stat">
-										<!-- 수정 Ajax -->
-										<button class="reviewUpdate">수정</button>
-										<button class="reviewDelete" onclick="location.href='review.delete?review_num=${r.review_num}'">삭제</button>
-									</div>
 								</div>
+								<div class="store_review_txt">
+									<span id="r">${r.review_txt}</span>
+									<input style="display: none;" class="store_review_list_update" type="text"> 
+								</div>
+								
+									<!-- 수정 Ajax -->
+								<div class="store_review_btn_stat">
+								<c:if test="${sessionScope.loginMember.member_ID == r.review_id }">
+									<button class="reviewUpdate" onclick="location.href='review.update">수정</button>
+									<button id="${r.review_num}" class="reviewUpdate2" style="display: none;">완료</button>
+									<button class="reviewDelete" onclick="location.href='review.delete?review_num=${r.review_num}'">삭제</button>
+								</c:if>
+								</div>
+								
 							</div>
-						</c:forEach>
-					</div>
+						</div>
+					</c:forEach>
+				</div>
 				</div>
 					<div class="store_review_paging">
 							<a href="get.aProductTeam1?page=1">◀</a>
 						<c:forEach var="r" begin="1" end="${pageCount}">
-							<a href="get.aProductTeam1?page=${r}">${r}</a>
+							<a href="get.aProductTeam1?page=${r}&array=${array}">${r}</a>
 						</c:forEach>
 							<a href="get.aProductTeam1?page=${pageCount}">▶</a>
 					</div>
@@ -361,7 +357,6 @@ $(function() {
 
 			
 		</div>
-	</div>
 
     
 	<%-- <div>
