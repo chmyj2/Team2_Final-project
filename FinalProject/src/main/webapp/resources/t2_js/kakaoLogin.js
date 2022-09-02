@@ -75,15 +75,3 @@ function checkEmail(email, gender, nickname, birthday) {
 
 
 
-
-
-
-/*console.log(kakao_account)
-console.log(kakao_email)
-console.log(kakao_birthday)
-console.log(kakao_gender)
-
-	location.href="https://kauth.kakao.com/oauth/authorize?client_id=e801cc16ba9bc9f8aa554045a9ee6545&redirect_uri=http://localhost:8080/main/team2.member.kakao&response_type=code"
-
-
-*/
