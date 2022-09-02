@@ -304,8 +304,64 @@ function joinBusinessCheck() {
 	
 }
 
+function memberInfoChangeCheck() {
+	let name = document.memberInfoChange.member_name;
+	let phone = document.memberInfoChange.member_phoneNum;
+	let addr1 = document.memberInfoChange.m_addr3;
+	let addr3 = document.memberInfoChange.m_addr2;
+	let emailCheck = document.getElementById('join_emailCheckNum');
+	
+	if (isEmpty(name)) {
+		alert('이름을 입력해주세요');
+		name.focus();
+		
+		return false;
+	}
+	
+	if (isEmpty(phone)||isNotNumber(phone)) {
+		//전화번호 빈칸 방지하기
+		
+		alert("전화번호을 형식에 맞게 입력해주세요")
+		phone.focus();
+		phone.value=""
+			
+		return false;
+	}
+	
+	if (isEmpty(addr1)) {
+		//주소 빈칸 방지하기
+		
+		alert("주소를 입력해주세요")
+		addr1.focus();
+			
+		return false;
+	}
+	
+	if (isEmpty(addr3)) {
+		//주소 빈칸 방지하기
+		
+		alert("주소를 입력해주세요")
+		addr3.focus();
+		addr3.value=""
+			
+			return false;
+	}
+	
+	if (emailCheck != 'emailcheck') {
+		alert("이메일 인증을 해주세요");
+		
+		return false;
+	}
+}
+
+function memberInfoChange() {
+	$('#join-email').keyup(function() {
+		$('#join_emailCheckNum').val('emailUnCheck');
+	})
+}
+
 $(function() {
 	joinIdvalild();
 	joinBusinessCheck();
-	
+	memberInfoChange();
 })
