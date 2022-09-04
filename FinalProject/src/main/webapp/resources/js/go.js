@@ -12,12 +12,6 @@ function goFindId() {
 	location.href = "member.findId.go";
 }
 
-function goFindPw() {
-	location.href = "member.findPw.go";
-}
-
-
-
 function goMemberInfo() {
 	location.href = "member.info";
 }

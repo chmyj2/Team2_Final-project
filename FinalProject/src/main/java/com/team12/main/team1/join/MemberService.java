@@ -7,13 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 public interface MemberService {
 
 
+	String find_id(HttpServletResponse response, String email, HttpServletRequest req) throws Exception;
 
-	String find_id(HttpServletResponse response, String email, HttpServletRequest req, Member m) throws Exception;
 
-	public void check_id(String id, HttpServletResponse response, HttpServletRequest req, Member m) throws Exception;
-
-	public void check_email(String email, HttpServletResponse response, HttpServletRequest req, Member m) throws Exception;
-	
-	
 
 }

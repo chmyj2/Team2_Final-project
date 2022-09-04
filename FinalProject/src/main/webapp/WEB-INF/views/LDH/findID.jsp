@@ -7,17 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="w3-content w3-container w3-margin-top">
+<div class="w3-content w3-margin-top">
 		<div class="w3-container w3-card-4">
 			<form action="member.find_id.do" method="post">
 				<div class="w3-center w3-large w3-margin-top">
-				<br> <br> <br> <br> <br>	<h3>아이디 찾기</h3>
+					<h3>아이디 찾기</h3>
 				</div>
 				<div>
 					<p>
-						<label>Email</label>
-						<!-- <input class="w3-input" type="text" id="email" name="email" required> -->
-						<input class="w3-input" type="text" id="email" name="email" required>
+						<!-- <label>Email</label> -->
+						<input class="w3-input" type="text" id="email" name="email" placeholder="E-mail" required>
 					</p>
 					<p class="w3-center">
 

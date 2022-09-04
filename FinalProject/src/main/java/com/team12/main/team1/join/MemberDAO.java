@@ -18,7 +18,6 @@ import org.json.simple.parser.JSONParser;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
@@ -58,6 +57,7 @@ public class MemberDAO {
 			m.setMember_phoneNum(req.getParameter("member_phoneNum"));
 	        m.setMember_address(jm_addr);
 	        m.setMember_email(req.getParameter("member_email"));
+
 
 
 
@@ -123,7 +123,7 @@ public class MemberDAO {
 	public void update(Member m, HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		
-	try {
+	
 		
 	
 		String jm_address1 = req.getParameter("jm_addr1");
@@ -141,22 +141,31 @@ public class MemberDAO {
 		m.setMember_address(jm_addr);
         m.setMember_email(req.getParameter("jm_email"));
 
+		
+//        System.out.println(m.getMember_ID());
+//        System.out.println(m.getMember_PW());
+//        System.out.println(m.getMember_name());
+//        System.out.println(m.getMember_phoneNum());
+//        System.out.println(jm_addr);
+//        System.out.println(m.getMember_email());
+//        
+//     
+//		Date jm_date = Date.valueOf(req.getParameter("member_birth"));
+
+//		m.setMember_birth(jm_date);
+//       
+    
+    
 
 		if (ss.getMapper(Team1joinMapper.class).update(m) == 1) {
 			req.setAttribute("result", "수정성공");
 			req.getSession().setAttribute("loginMember", m);
 		} else {
 			req.setAttribute("result", "수정실패");
-		}
-	} catch (Exception e) {
-		e.printStackTrace();
-		req.setAttribute("result", "수정실패");
-		// TODO: handle exception
-	}
 		
 	}
+}
 	
-
 	public void bye(HttpServletRequest req) {
 		// TODO Auto-generated method stub
 		
@@ -210,11 +219,10 @@ public class MemberDAO {
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
             //    POST 요청을 위해 기본값이 false인 setDoOutput을 true로
+
             conn.setRequestMethod("POST");
             conn.setDoOutput(true);
 
-            
-            
             //    POST 요청에 필요로 요구하는 파라미터 스트림을 통해 전송
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
             StringBuilder sb = new StringBuilder();
@@ -355,23 +363,8 @@ public class MemberDAO {
 		public String find_id(String email) throws Exception{
 			return sqlsession.selectOne("com.team12.main.team1.join.Team1joinMapper.find_id", email);
 		}
-		
-		// 아이디 중복 검사
-		public int check_id(String id) throws Exception{
-			return sqlsession.selectOne("com.team12.main.team1.join.Team1joinMapper.check_id", id);
-		}
-		
-		// 이메일 중복 검사
-		public int check_email(String email) throws Exception{
-			return sqlsession.selectOne("com.team12.main.team1.join.Team1joinMapper.check_email", email);
-		}
+	
 
-		// 비밀번호 변경
-//		@Transactional
-//		public int update_pw(Member m) throws Exception{
-//			return sqlsession.update("com.team12.main.team1.join.Team1joinMapper.update_pw", m);
-//		}
-		
 	
 	}
 

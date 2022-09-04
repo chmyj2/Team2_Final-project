@@ -12,7 +12,7 @@
 	
 <body>	
 	
-	<%-- <table border="1">
+	<table border="1">
 		<c:forEach var="products" items="${products}">
 			<tr> 
 				<td><img alt="product_img" src="resources/img/${products.thumbnail}"></td>
@@ -25,26 +25,21 @@
 				<td>${products.categoryNum }</td>
 			</tr>	
 		</c:forEach>	
-	</table> --%>
-	
-	<table style="height: 100px;">
-		<tr>
-			<td></td>
-		</tr>
 	</table>
 	
 	<!-- ------------------------------------------ -->
 	<form action="shopManager.upload" method="post" enctype="multipart/form-data">
 		<h2>관리자 상품등록 </h2>
+		<button>등록합시다</button> 등록결과: ${result}
 		<table border="3">
 			<tr><td>상품명 <input name="name" id="name"></td></tr>
 			<tr><td>상품판매가격 <input name="price" id="price"></td></tr>
 			<tr><td>상품설명 <input name="contents" id="contents"> </td></tr>
 			<tr><td>상품태그 <input name="tag" id="tag">(!로 구분)</td></tr>
 			<tr><td>상품 썸네일 <input type="file" name="thumbnail" id="thumbnail"></td></tr>
-			<!-- <tr><td>상품 이미지1 <input type="file" name="img1" id="img1"></td></tr>
+			<tr><td>상품 이미지1 <input type="file" name="img1" id="img1"></td></tr>
 			<tr><td>상품 이미지2 <input type="file" name="img2" id="img2"></td></tr>
-			<tr><td>상품 이미지3 <input type="file" name="img3" id="img3"></td></tr> -->
+			<tr><td>상품 이미지3 <input type="file" name="img3" id="img3"></td></tr>
 			<tr><td>상품코드(5자리 숫자) <input type="text" name="num_PK" id="num_PK"></td></tr>
 			<tr><td>
 			상품 카테고리(선택)
@@ -61,12 +56,7 @@
 					<option value="close">비공개</option>
 				</select>
 			</td></tr>
-			<tr>
-			<td>
 			
-		<button type="submit">등록합시다</button> 등록결과: ${result}
-			</td>
-			</tr>			
 		</table>
 	</form>
 	<!-- ------------------------------------------ -->
