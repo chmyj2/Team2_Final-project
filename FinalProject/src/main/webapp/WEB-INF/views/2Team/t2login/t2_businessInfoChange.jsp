@@ -10,7 +10,7 @@
 <div class="myInfoChange-outline">
 <form action="businessInfoChange.DO" method="post">
 		<h2>비즈니스 회원정보 수정</h2>
-		
+		<input type="hidden" id="join_BusinessNumCheck" value="BusinessNumcheck">
 		<table class="myInfoChange-table">
 				
 		<tr class="myInfoChage-tr">

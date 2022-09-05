@@ -10,7 +10,7 @@
 <body>
 <div class="myInfoChange-outline">
 <form action="myinforChange.do" method="post" name="memberInfoChange" onsubmit="return memberInfoChangeCheck()">
-<input class="validCheck" type="hidden" id="join_emailCheckNum" value="emailUnCheck">
+<input class="validCheck" type="hidden" id="join_emailCheckNum" value="emailCheck">
 
 		<h2>회원정보 수정</h2>
 		
