@@ -460,9 +460,79 @@ function businessInfoChangeCheck() {
 	
 }
 
+function memberChangePW() {
+	$('#pw1').blur(function() {
+		let pw1 = document.pwChange.pw1
+		if(lessThan(pw1,5)||containsHS(pw1)){
+			$('#result').text('5자 이하 영어 숫자만 입력해주세요');
+			$('#result').css('color','red');
+			$('#join_PWCheck2').val("PWUnCheck");
+		}else{
+			$('#result').text('');
+			$('#join_PWCheck2').val("PWCheck");
+		}	
+	})
+	
+	let result = $('#result3');
+	$('#pw2').keyup(function() {
+		let pw1 = $('#pw1').val();
+		let pw2 = $('#pw2').val();
+		
+		if (pw1 != pw2) {
+			result.html("패스워드불일치");
+			result.css('color','red');
+			$('#join_PWCheck').val("PWUnCheck");
+		}else {
+			result.html("");
+			$('#join_PWCheck').val("PWCheck");
+			
+		}
+	})
+	
+	$('#pw1').keyup(function() {
+		if ($('#pw2').val() != "") {
+			
+			let pw1 = $('#pw1').val();
+			let pw2 = $('#pw2').val();
+			
+			if (pw1 != pw2) {
+				result.html("패스워드불일치");
+				result.css('color','red');
+				$('#join_PWCheck').val("PWUnCheck");
+			}else {
+				result.html("");
+				$('#join_PWCheck').val("PWCheck");
+				
+			}
+		}
+	})
+	
+}
+
+function memberPWChange() {
+	let pw1 = document.pwChange.pw1;
+	let pw2 = document.pwChange.pw2;
+	let check1=document.getElementById('join_PWCheck');
+	let check2=document.getElementById('join_PWCheck2');
+	
+	if (isEmpty(pw1)||check2.value != 'PWCheck') {
+		alert("비밀번호를 확인해주세요 ");
+		pw1.focus();
+		return false;
+	}
+	
+	if (isEmpty(pw2)||check1.value != 'PWCheck') {
+		alert("재확인 비밀번호 부분을 확인해주세요 ");
+		pw2.focus();
+		
+		return false;
+	}
+}
+
 $(function() {
 	joinIdvalild();
 	joinBusinessCheck();
 	memberInfoChange();
 	businessInfoCheck();
+	memberChangePW();
 })

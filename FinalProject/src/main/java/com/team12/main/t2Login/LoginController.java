@@ -421,6 +421,7 @@ public class LoginController {
 		
 		if(lDAO.loginCheck(req)) {
 			lDAO.PWChange(req,m);
+			lDAO.splitAddr(req);
 			req.setAttribute("contentPage", "t2login/t2_myPage.jsp");
 		}else {
 			req.setAttribute("contentPage", "t2login/t2_login.jsp");			

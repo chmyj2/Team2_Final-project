@@ -414,7 +414,8 @@ public class LoginDAO {
 		
 		if (ss.getMapper(Team2loginMapper.class).memberUpdate(m)==1) {
 			System.out.println("------------------정보수정완료");
-			req.getSession().setAttribute("loginMember", m);
+			Membert2 dbmember = ss.getMapper(Team2loginMapper.class).memberGetinfo(m);
+			req.getSession().setAttribute("loginMember", dbmember);
 		}else {
 			System.out.println("-----------------------정보수정 실패");
 		}

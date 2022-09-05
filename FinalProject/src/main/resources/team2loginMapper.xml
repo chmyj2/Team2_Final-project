@@ -106,4 +106,8 @@
 	select count(*) from vet_member where vet_ID =#{vet_ID} and vet_phoneNum =#{vet_phoneNum}
 	</select>
 	
+	<select id="memberGetinfo" parameterType="com.team12.main.t2Login.Membert2" resultType="com.team12.main.t2Login.Membert2">
+	select * from final_member where member_ID =#{member_ID}
+	</select>
+	
 </mapper>

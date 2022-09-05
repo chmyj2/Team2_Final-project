@@ -54,6 +54,8 @@ public interface Team2loginMapper {
 
 	int getBusinessPWbyPhoneNum(vet v);
 
+	Membert2 memberGetinfo(Membert2 m);
+
 	
 
 	
