@@ -347,7 +347,7 @@ function memberInfoChangeCheck() {
 			return false;
 	}
 	
-	if (emailCheck != 'emailcheck') {
+	if (emailCheck.value != 'emailcheck') {
 		alert("이메일 인증을 해주세요");
 		
 		return false;
@@ -356,12 +356,113 @@ function memberInfoChangeCheck() {
 
 function memberInfoChange() {
 	$('#join-email').keyup(function() {
-		$('#join_emailCheckNum').val('emailUnCheck');
+		let original = document.getElementById('join_emailOriginal');
+		let changeEmail = document.getElementById('join-email');
+		
+		if (original.value != changeEmail.value) {
+			businessNumChage()
+			$('#join_emailCheckNum').val('emailUnCheck');
+		}else {
+			
+			$('#join_emailCheckNum').val('emailcheck');
+			
+		}
 	})
+}
+
+function businessNumChage() {
+	let businessNum = $('.vet_businessNum2').val();
+	
+	$.ajax({
+			url:"businessNum.check",
+			type:"GET",
+			dataType :"text",
+			data:{"vet_businessNum":businessNum},
+			success: function(getData) {
+				console.log(getData);
+				if (getData >=1) {
+					$('.businessNumResult').text("일치하는 사업자 번호가 있습니다.");
+					$('.businessNumResult').css('color','red');
+					$('#join_BusinessNumCheck').val('BusinessNumUncheck');
+				}else {
+					$('.businessNumResult').text("");
+					$('#join_BusinessNumCheck').val('BusinessNumcheck');
+				}
+				
+				//$('span').text(idInput+"이미 사용중입니다.");
+			},
+			error : function(request,status,error) {
+				console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+				
+			}
+		}); // ajax끝
+}
+
+function businessInfoCheck() {
+	$('.vet_businessNum2').keyup(function() {
+		let original = document.getElementById('join_BusinessNum');
+		let changeBusiness = document.businessInfoChange.vet_businessNum;
+		
+		if (original.value != changeBusiness.value) {
+			businessNumChage();
+			
+		}else {
+			$('.businessNumResult').text("");
+			$('#join_BusinessNumCheck').val('BusinessNumcheck');
+			
+		}
+	})
+}
+
+function businessInfoChangeCheck() {
+	let businessNumCheck = document.getElementById('join_BusinessNumCheck');
+	let businessNum = document.businessInfoChange.vet_businessNum;
+	let phone = document.businessInfoChange.vet_phoneNum;
+	let addr1 = document.businessInfoChange.m_addr3;
+	let addr3 = document.businessInfoChange.m_addr2;
+	
+	if (businessNumCheck.value != 'BusinessNumcheck' || isEmpty(businessNum)) {
+		alert('사업자번호를 확인해주세요');
+		businessNum.focus();
+		businessNum.value=""
+			
+		return false;
+		
+	}
+	
+	if (isEmpty(phone) || isNotNumber(phone)) {
+		alert('전화번호를 확인해주세요');
+		phone.focus();
+		phone.value=""
+			
+		return false;
+	}
+	
+	if (isEmpty(addr1)) {
+		//주소 빈칸 방지하기
+		
+		alert("주소를 입력해주세요")
+		addr1.focus();
+			
+		return false;
+	}
+	
+	if (isEmpty(addr3)) {
+		//주소 빈칸 방지하기
+		
+		alert("주소를 입력해주세요")
+		addr3.focus();
+		addr3.value=""
+			
+			return false;
+	}
+	
+	
 }
 
 $(function() {
 	joinIdvalild();
 	joinBusinessCheck();
 	memberInfoChange();
+	businessInfoCheck();
 })

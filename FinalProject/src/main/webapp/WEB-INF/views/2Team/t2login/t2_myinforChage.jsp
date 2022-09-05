@@ -10,8 +10,8 @@
 <body>
 <div class="myInfoChange-outline">
 <form action="myinforChange.do" method="post" name="memberInfoChange" onsubmit="return memberInfoChangeCheck()">
-<input class="validCheck" type="hidden" id="join_emailCheckNum" value="emailCheck">
-
+<input class="validCheck" type="hidden"  id="join_emailCheckNum" value="emailcheck">
+<input id="join_emailOriginal" type="hidden" value="${sessionScope.loginMember.member_email }">
 		<h2>회원정보 수정</h2>
 		
 		<input name="member_ID" type="hidden" readonly="readonly" value="${sessionScope.loginMember.member_ID }">

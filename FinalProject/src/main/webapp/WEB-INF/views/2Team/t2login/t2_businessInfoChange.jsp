@@ -8,15 +8,16 @@
 </head>
 <body>
 <div class="myInfoChange-outline">
-<form action="businessInfoChange.DO" method="post">
+<form action="businessInfoChange.DO" name="businessInfoChange" method="post" onsubmit="return businessInfoChangeCheck()">
 		<h2>비즈니스 회원정보 수정</h2>
-		<input type="hidden" id="join_BusinessNumCheck" value="BusinessNumcheck">
+		<input  id="join_BusinessNumCheck" value="BusinessNumcheck">
+		<input  id="join_BusinessNum" value="${sessionScope.loginMember_business.vet_businessNum }">
 		<table class="myInfoChange-table">
 				
 		<tr class="myInfoChage-tr">
 		<td class="myInfoChage-td1">사업자 번호</td>
-		<td><input name="vet_businessNum" type="number" value="${sessionScope.loginMember_business.vet_businessNum }" class="vet_businessNum"> 
-		<span class="businessNumResult"></span>
+		<td><input name="vet_businessNum" type="number" value="${sessionScope.loginMember_business.vet_businessNum }" class="vet_businessNum2"> 
+		<br><span class="businessNumResult"></span>
 		</td>		
 		</tr>
 		
