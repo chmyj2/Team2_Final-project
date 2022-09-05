@@ -402,12 +402,11 @@ public class LoginDAO {
 
 	public void memberInfoUpdate(Membert2 m, HttpServletRequest req) {
 		// 회원정보 수정하는 기능
-		Membert2 loginMember = (Membert2) req.getSession().getAttribute("loginMember");
+		//Membert2 loginMember = (Membert2) req.getSession().getAttribute("loginMember");
 		
 		String addr1 = req.getParameter("m_addr1");
 		String addr2 = req.getParameter("m_addr2");
 		String addr3 = req.getParameter("m_addr3");
-		
 		
 		String member_address = addr1 +"!"+addr2+"!"+addr3;
 		m.setMember_address(member_address);
