@@ -10,9 +10,11 @@
 <body>
 <div class="PWChange-outline">
 <h1>비밀번호 변경하기</h1><br>
+<input class="validCheck"  id="join_PWCheck" value="PWUnCheck"> 
+<input class="validCheck"  id="join_PWCheck2" value="PWUnCheck"> 
 <c:choose>
 <c:when test="${sessionScope.loginMember_business != null }">
-<form action="businessPWchange.DO" method="post" name="pwChange">
+<form action="businessPWchange.DO" method="post" name="pwChange" onsubmit="return businessPWchange()">
 </c:when>
 <c:otherwise>
 <form action="businessFindPWchange.DO" method="post" name="pwChange">
@@ -26,7 +28,7 @@
 <br>
 <span style="font-size: 2pt;" id="result"></span><br><br>
 <input placeholder="비밀번호 재 확인" id="pw2"> <br>
-<span id="result2"></span>
+<span id="result3"></span>
 <br><br>
 
 <button>변경하기</button>
@@ -36,36 +38,4 @@
 
 </div>
 </body>
-<script type="text/javascript">
-$(function() {
-	$('#pw1').keyup(function() {
-		let pw1 = $('#pw1').val();
-		
-		if(pw1.length<5){
-			$('#result').text('5자 이하입니다.');
-			$('#result').css('color','red');
-			
-		}else{
-			$('#result').text('');
-		}
-		
-		
-		
-	})
-	
-	$('#pw2').keyup(function() {
-		let pw1 = $('#pw1').val();
-		let pw2 = $('#pw2').val();
-		
-		if (pw2 != pw1) {
-			$('#result2').text('일치하지않습니다.');			
-			$('#result2').css('font-size','2pt');
-			$('#result2').css('color','red');
-		}else{
-			$('#result2').text('');
-		}
-	})
-	
-})
-</script>
 </html>

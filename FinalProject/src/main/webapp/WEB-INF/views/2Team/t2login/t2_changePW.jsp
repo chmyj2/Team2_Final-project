@@ -9,8 +9,8 @@
 <body>
 <div class="PWChange-outline">
 <h1>비밀번호 변경하기</h1><br>
-<input class="validCheck"  id="join_PWCheck" value="PWUnCheck"> 
-<input class="validCheck"  id="join_PWCheck2" value="PWUnCheck"> 
+<input class="validCheck" type="hidden" id="join_PWCheck" value="PWUnCheck"> 
+<input class="validCheck" type="hidden"  id="join_PWCheck2" value="PWUnCheck"> 
 
 <form action="pwChange.do" method="post" name="pwChange" onsubmit="return memberPWChange()">
 

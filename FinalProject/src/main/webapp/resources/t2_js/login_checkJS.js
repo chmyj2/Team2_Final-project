@@ -529,6 +529,26 @@ function memberPWChange() {
 	}
 }
 
+function businessPWchange() {
+	let pw1 = document.pwChange.pw1;
+	let pw2 = document.pwChange.pw2;
+	let check1=document.getElementById('join_PWCheck');
+	let check2=document.getElementById('join_PWCheck2');
+	
+	if (isEmpty(pw1)||check2.value != 'PWCheck') {
+		alert("비밀번호를 확인해주세요 ");
+		pw1.focus();
+		return false;
+	}
+	
+	if (isEmpty(pw2)||check1.value != 'PWCheck') {
+		alert("재확인 비밀번호 부분을 확인해주세요 ");
+		pw2.focus();
+		
+		return false;
+	}
+}
+
 $(function() {
 	joinIdvalild();
 	joinBusinessCheck();
