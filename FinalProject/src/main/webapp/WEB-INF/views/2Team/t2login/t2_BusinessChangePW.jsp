@@ -17,7 +17,7 @@
 <form action="businessPWchange.DO" method="post" name="pwChange" onsubmit="return businessPWchange()">
 </c:when>
 <c:otherwise>
-<form action="businessFindPWchange.DO" method="post" name="pwChange">
+<form action="businessFindPWchange.DO" method="post" name="pwChange" onsubmit="return businessPWchange()">
 </c:otherwise>
 </c:choose>
 

@@ -25,7 +25,7 @@
 
 <tr class="findPW-table-tr">
 <td class="findPW-table-td">email</td>
-<td><input name="member_email" type="text"></td>
+<td><input name="member_email" type="email"></td>
 </tr>
 
 </table><br><br>

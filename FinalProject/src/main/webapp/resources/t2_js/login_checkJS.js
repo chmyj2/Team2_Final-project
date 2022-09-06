@@ -549,6 +549,44 @@ function businessPWchange() {
 	}
 }
 
+function memberfindID() {
+	let name = document.findID.name;
+	let email = document.findID.email;
+	
+	if (isEmpty(name)) {
+		alert('이름을 작성해주세요');
+		name.focus();
+		
+		return false;
+	}
+	
+	if (isEmpty(email)) {
+		alert('이메일을 작성해주세요');
+		email.focus();
+		
+		return false;
+	}
+}
+
+function IDfindbyphone() {
+	let name = document.findID2.name;
+	let phone = document.findID2.phoneNum;
+	
+	if (isEmpty(name)) {
+		alert('이름을 작성해주세요');
+		name.focus();
+		
+		return false;
+	}
+	
+	if (isEmpty(phone)) {
+		alert('전화번호를  입력해주세요');
+		phone.focus();
+		
+		return false;
+	}
+}
+
 $(function() {
 	joinIdvalild();
 	joinBusinessCheck();
