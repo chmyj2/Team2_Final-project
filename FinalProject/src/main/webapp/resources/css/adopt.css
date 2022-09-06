@@ -1,0 +1,132 @@
+
+/* 분양게시판 */
+
+.adopt_gallary_wrap{
+    background-color: rgba(255, 255, 255, 0.575);
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 300px;
+    padding-top: 10px;
+    padding-bottom: 100px;
+}
+
+.board_header{
+    padding: 5px;
+    font-size: 40pt;
+    display:block;
+    margin-top: 100px;
+}
+
+.adopt_cont{
+    width: 200px;
+    margin: 10px;
+    padding-right: 40px;
+    padding-top: 10px;
+}
+
+.adopt_cont>li{
+    margin-bottom: 20px;
+}
+
+.adopt_gallary_wrap ul li{
+    list-style-type: none;
+}
+
+.adopt_header_wrap{
+    position: relative;
+    display: flex;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 950px;
+    padding-top: 20px;
+    letter-spacing: -1pt;
+    padding-bottom: 20px;
+}
+
+.adopt_header_wrap img{
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.adopt_header_wrap img:hover{
+    transform: scale(1.05);
+    transition: transform .35s;
+}
+
+.adopt_text{
+    text-align: left;
+    padding-left: 0;
+}
+
+.adopt_text ul{
+    padding: none;
+}
+
+.adopt_cont_drop button{
+    float: right;
+    font-size: 10pt;
+    margin-top: 5px;
+    width: 23px;
+    height: 20px;
+    background: black;
+    color: white;
+    font-weight: bolder;
+}
+
+.adopt_cont_drop button:hover{
+    background: white;
+    color: black;
+}
+
+.adopt_cont_drop{
+    width: 800px;
+    background-color: rgba(240, 248, 255, 0.726);
+    height: auto;
+    margin: 0 auto;
+    text-align: left;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    margin-top: 50px;
+    padding: 10px 20px;
+    font-size: 11pt;
+    position: relative;
+}
+
+.adopt_cont_drop_txt{
+    width: 600px;
+    height: 200px;
+    line-height: 20pt;
+    margin-left: 80px;
+    margin-bottom: 80px;
+}
+
+.adopt_cont_drop h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 35pt;
+    margin-bottom: 50px;
+}
+
+.adopt_cont_drop_imgs{
+    position: relative;
+}
+
+.adopt_cont_drop img{
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    position: absolute;
+    left: 55%;
+}
+
+.adopt_cont_drop_textarea{
+    width: 600px;
+    height: 100px;
+    line-height: 20pt;
+    margin-left: 80px;
+    margin-bottom: 50px;
+}
+
