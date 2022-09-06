@@ -587,6 +587,33 @@ function IDfindbyphone() {
 	}
 }
 
+function memberPWfind() {
+	let id = document.memberPWfindCheck.memberID;
+	let name = document.memberPWfindCheck.memberName;
+	let email = document.memberPWfindCheck.memberEmail;
+	
+	if (isEmpty(id)) {
+		alert('ID를 입력해주세요');
+		id.focus();
+		
+		return false;
+	}
+	
+	if (isEmpty(name)) {
+		alert('이름을 입력해주세요');
+		name.focus();
+		
+		return false;
+	}
+	
+	if (isEmpty(email)) {
+		alert('이메일을 입력해주세요');
+		email.focus();
+		
+		return false;
+	}
+}
+
 $(function() {
 	joinIdvalild();
 	joinBusinessCheck();
