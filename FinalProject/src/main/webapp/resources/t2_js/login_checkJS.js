@@ -614,6 +614,148 @@ function memberPWfind() {
 	}
 }
 
+function businessfindIDBybusinessNum() {
+	let num = document.businessfindID.businessnum;
+	
+	if (isEmpty(num)) {
+		alert('사업자 번호를 입력해주세요');
+		num.focus();
+		
+		return false;
+	}
+}
+
+function businessfindIDbyPhone() {
+let num = document.businessfindIDbyphone.businessPhoneNum;
+	
+	if (isEmpty(num)) {
+		alert('전화 번호를 입력해주세요');
+		num.focus();
+		
+		return false;
+	}
+}
+
+function businessPWfindBybunsimessNum() {
+	let id = document.businessPWfindbybusinessNum.businessID;
+	let businessNum = document.businessPWfindbybusinessNum.businessNum;
+	
+	if (isEmpty(id)) {
+		alert('아이디를 입력해주세요');
+		id.focus();
+		
+		return false;
+	}
+	
+	if (isEmpty(businessNum)) {
+		alert('사업자번호를 입력해주세요');
+		businessNum.focus();
+		
+		return false;
+	}
+}
+
+function businessPWfindbyPhoneNum() {
+	let id = document.businessPWFindbyphonNum.businessID;
+	let phoneNum = document.businessPWFindbyphonNum.businessPhoneNum;
+	
+	if (isEmpty(id)) {
+		alert('아이디를 입력해주세요');
+		id.focus();
+		
+		return false;
+	}
+	
+	if (isEmpty(phoneNum)) {
+		alert('사업자번호를 입력해주세요');
+		phoneNum.focus();
+		
+		return false;
+	}
+}
+
+function petRegDO() {
+	let img = document.petReg.baby_img;
+	let name = document.petReg.babyName;
+	let weight = document.petReg.babyWeight;
+	let birth = document.petReg.babyBirth;
+	let type = document.petReg.babyDetail;
+	
+	if (isEmpty(img)) {
+		alert('사진을 넣어주세요');
+		
+		return false;
+	}else if (isNotType(img, "png") && isNotType(img, "gif")
+			&& isNotType(img, "jpg") && isNotType(img, "bmp")) {
+		alert('올릴 수 없는 파일입니다.');
+		
+		return false;
+	}
+	
+	if (isEmpty(name)) {
+		alert('이름을 입력해주세요');
+		
+		return false;
+	}
+	
+	if (isEmpty(weight)||isNotNumber(weight)) {
+		alert('몸무게를 확인해주세요');
+		weight.focus();
+		weight.value="";
+		
+		return false;
+	}
+	if (isEmpty(birth)) {
+		alert('생일을 입력해주세요');
+		
+		return false;
+	}
+	
+	if (isEmpty(type)) {
+		alert('품종을 입력해주세요');
+		
+		return false;
+	}
+	
+	
+}
+
+function petInfoChange() {
+	let img = document.petinfoChange.baby_img;
+	let name = document.petinfoChange.babyname;
+	let weight = document.petinfoChange.babyweight;
+	let birth = document.petinfoChange.babybirth;
+	let type = document.petinfoChange.babytype;
+	
+	
+	if (isEmpty(name)) {
+		alert('이름을 입력해주세요');
+		
+		return false;
+	}
+	
+	if (isEmpty(weight)||isNotNumber(weight)) {
+		alert('몸무게를 확인해주세요');
+		weight.focus();
+		weight.value="";
+		
+		return false;
+	}
+	if (isEmpty(birth)) {
+		alert('생일을 입력해주세요');
+		
+		return false;
+	}
+	
+	if (isEmpty(type)) {
+		alert('품종을 입력해주세요');
+		
+		return false;
+	}
+}
+
+
+
 $(function() {
 	joinIdvalild();
 	joinBusinessCheck();

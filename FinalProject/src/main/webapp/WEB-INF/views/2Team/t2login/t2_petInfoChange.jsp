@@ -11,29 +11,28 @@
 	<div class="petInfoChange-outline">
 		<h1>수정하기</h1>
 		
-		<form action="petInfoChage.do" method="post" enctype="multipart/form-data">
+		<form action="petInfoChage.do" method="post" enctype="multipart/form-data" name="petinfoChange" onsubmit="return petInfoChange()">
 		<img src="resources/t2_sj_petFiles/${petInfo.baby_img }"
 			class="myPetPage-img" id="image"><br>
-		<br> <input type="file" name="baby_img"
-			value="${petInfo.baby_img }" id="baby_img" style="margin: 0 auto;">
+		<br> <input type="file" name="baby_img" value="${petInfo.baby_img }" id="baby_img" style="margin: 0 auto;">
 
 		<table class="myPetPage-table">
 
 			<tr>
 				<td>이름</td>
 				<td><input name="baby_name" value="${petInfo.baby_name }"
-					style="width: 100px;"></td>
+					style="width: 100px;" id="babyname"></td>
 			</tr>
 			
 			<tr>
 			<td>몸무게</td>
-			<td><input name="baby_weight" value="${petInfo.baby_weight }" style="width: 80px;">kg</td>
+			<td><input name="baby_weight" value="${petInfo.baby_weight }" style="width: 80px;" id="babyweight">kg</td>
 			</tr>
 
 			<tr>
 				<td>생일</td>
 				<td><input type="date" name="baby_birth"
-					value="${petInfo.baby_birth }"></td>
+					value="${petInfo.baby_birth }" id="babybirth"></td>
 			</tr>
 
 			<tr>
@@ -87,7 +86,7 @@
 
 			<tr>
 				<td>품종</td>
-				<td><input name="baby_typeDetail" value="${petInfo.baby_typeDetail }">
+				<td><input name="baby_typeDetail" value="${petInfo.baby_typeDetail }" id="babytype">
 				</td>
 			</tr>
 
