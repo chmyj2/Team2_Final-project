@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+
+<c:choose>
+<c:when test="">
+<div>
+회원님의 아이디는 <span></span> 입니다.
+</div>
+</c:when>
+<c:otherwise>
+
+소셜 로그인로 가입하셨습니다. 
+소셜 로그인 기능을 이용해주세요.
+
+</c:otherwise>
+</c:choose>
+
+</div>
+
+</body>
+</html>

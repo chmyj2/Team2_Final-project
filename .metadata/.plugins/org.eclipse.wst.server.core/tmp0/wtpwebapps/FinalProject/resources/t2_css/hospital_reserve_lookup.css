@@ -1,0 +1,95 @@
+.reserve-lookup-div{
+	height:1000px;
+	
+}
+
+.reserve-lookup-menutab-div{
+	margin-top : 50px;
+	width: 63%;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+.reserve-lookup-section{
+	padding: 30px 0;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+
+.reserve-div-inner{
+	display: flex;
+    flex-wrap: wrap;
+    margin: 0 -50px;
+}
+
+.reserve-lookup-info-place-1{
+    padding: 6px 110px;
+    border-right: 1px solid gray;
+}
+
+.reserve-lookup-info-place-2{
+    padding: 6px 50px;
+    border-right: 1px solid gray;
+
+}
+
+.reserve-lookup-info-place-3{
+    padding: 6px 50px;
+    border-right: 1px solid gray;
+}
+.reserve-lookup-info-place-4{
+    padding: 6px 50px;
+    border-right: 1px solid gray;
+
+}
+.reserve-lookup-info-place-5{
+    padding: 6px 40px;
+    border-right: 1px solid gray;
+}
+
+.reserve-lookup-info-place-6{
+    padding: 6px 40px;
+   
+}
+
+
+.reserve-lookup-info-list1{
+	display: flex;
+    margin: -5px 0;
+    padding: 0px 0px 0px 40px;
+}
+.reserve-lookup-info-list2{
+	display: flex;
+    margin: -5px 0;
+    padding: 0px 0px 0px 10px;
+}
+.reserve-lookup-info-list3{
+	display: flex;
+    margin: -5px 0;
+    padding: 0px 0px 0px 0px;
+}
+.reserve-lookup-info-list4{
+	display: flex;
+    margin: -5px 0;
+    padding: 0px 0px 0px 10px;
+}
+.reserve-lookup-info-list5{
+	display: flex;
+    margin: -5px 0;
+    padding: 0px 0px 0px 0px;
+}
+.reserve-lookup-info-list6{
+	display: flex;
+    margin: -5px 0;
+    padding: 0px 0px 0px 0px;
+}
+
+.reserve-lookup-info-list-title{
+    line-height: 1.4;
+    font-size: 18px;
+    color: #5281d1;
+    font-weight: 700;
+    white-space: nowrap;
+	
+}

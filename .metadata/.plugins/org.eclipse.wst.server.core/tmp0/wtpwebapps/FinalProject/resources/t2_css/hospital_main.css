@@ -1,0 +1,32 @@
+#map {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1200px;
+	height: 600px;
+	border: 10px solid #5281d1;
+}
+
+.main-hospital-list {
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+.main-hospital-list td{
+	
+	font-size : 14pt;
+	text-align : center
+	width: 200px;
+}
+
+.customoverlay {
+	position: relative;
+	bottom: 70px;
+	border-radius: 6px;
+	border: 1px solid #ccc;
+	border-bottom: 2px solid #ddd;
+	float: left;
+	background-color: white;
+	width:100px;
+	text-align: center;
+}
+

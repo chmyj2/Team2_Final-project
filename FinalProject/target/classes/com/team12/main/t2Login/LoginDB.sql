@@ -45,6 +45,8 @@ constraint baby_ownerID foreign key(baby_memberID)
 
 )
 
+
+
 create sequence pet_information_seq;
 
 insert into PET_INFORMATION values(pet_information_seq.nextval,'mz','동이','2021-05-01','암컷',20.1,'강아지','진돗개','무','a.jpg');
@@ -54,7 +56,7 @@ drop table pet_information;
 drop SEQUENCE pet_information_seq;
 create SEQUENCE pet_information_seq INCREMENT by 1 start with 1;
 
-delete PET_INFORMATION where baby_num= 42;
+delete PET_INFORMATION where baby_num= 61;
 
 select * from PET_INFORMATION;
 select * from PET_INFORMATION where baby_memberID = 'hansujin_1' ;

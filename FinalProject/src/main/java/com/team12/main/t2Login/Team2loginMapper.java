@@ -24,6 +24,43 @@ public interface Team2loginMapper {
 
 	int checkEmail(Membert2 m);
 
+	int petInfoUpdate(pet p);
+
+	int petDelete(pet p);
+
+	int memberPWChange(Membert2 m);
+
+	int deleteMember(Membert2 m);
+
+	Membert2 IDfindByEmail(Membert2 m);
+
+	Membert2 getMemberByPhone(Membert2 m);
+
+	int findmemberID(Membert2 m);
+
+	Membert2 checkMember(Membert2 m);
+
+	int businessUpdate(vet v);
+
+	int businessPWUpdate(vet v);
+
+	int deleteBusiness(vet v);
+
+	vet getBusinessIDbyBusinessNum(vet v);
+
+	vet getBusinessIDbyPhoneNum(vet v);
+
+	int getBusinessPWbybusinessNum(vet v);
+
+	int getBusinessPWbyPhoneNum(vet v);
+
+	Membert2 memberGetinfo(Membert2 m);
+
+	
+
+	
+
+
 	
 
 	// kakao 로그인 시 db에서 중복 된 id가 있는지 확인
