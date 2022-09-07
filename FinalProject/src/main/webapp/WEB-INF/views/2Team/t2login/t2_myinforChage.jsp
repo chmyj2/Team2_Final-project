@@ -9,7 +9,9 @@
 </head>
 <body>
 <div class="myInfoChange-outline">
-<form action="myinforChange.do" method="post">
+<form action="myinforChange.do" method="post" name="memberInfoChange" onsubmit="return memberInfoChangeCheck()">
+<input class="validCheck" type="hidden"  id="join_emailCheckNum" value="emailcheck">
+<input id="join_emailOriginal" type="hidden" value="${sessionScope.loginMember.member_email }">
 		<h2>회원정보 수정</h2>
 		
 		<input name="member_ID" type="hidden" readonly="readonly" value="${sessionScope.loginMember.member_ID }">
@@ -61,8 +63,8 @@
 		
 		<tr class="myInfoChage-tr">
 		<td class="myInfoChage-td1">e-mail</td>
-		<td><input name="member_email" type="email" id="join-email"  value="${sessionScope.loginMember.member_email }" class="myInfoChage-input" >
-		<button type="button" id="join_mail_check">이메일인증</button>
+		<td><input name="member_email" type="email" id="join-email" style="width: 180px; left: 0px"  value="${sessionScope.loginMember.member_email }" class="myInfoChage-input" >
+		<button type="button" id="join_mail_check" style="left: 0px; top: 0px;">이메일인증</button>
 		
       	
 		
@@ -72,7 +74,6 @@
 		<tr>
 		<td colspan="2">
 		<input placeholder="인증번호를 입력해주세요" id="join_mail_num" type="hidden">
-        <input type="hidden" id="join_num_check" value="emailUnCheck">
       	</td>
 		</tr>
 
