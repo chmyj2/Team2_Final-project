@@ -98,8 +98,8 @@ $(function() {
 </script>
 </head>
 <body>
-<form action="purchasePage.go_team1" id="purchaseForm">
-              <h2>Product Details</h2>
+          <form action="purchasePage.go_team1" id="purchaseForm">
+             <!--  <h2>Product Details</h2> -->
               <input type="hidden" value="${product.product_num }"id="cart_ProductNum" name="product_num">
 					<c:choose>
 					<c:when test="${sessionScope.loginMember.member_ID !=null }">
@@ -109,14 +109,15 @@ $(function() {
 					<input type="hidden" value="비회원" id="cart_UserID" name="cart_UserID">
 					</c:otherwise>
 					</c:choose>
-					
+					   
 		<!-- YK : product detail -->
 		
 	    <div class="store_product_detail_wrap">
         <div class="store_product_detail_contents">
             <div class="store_product_detail_img">
+            
                 <!-- 누른 해당 이미지 상품 보여주기 -->
-               <img src="resources/reviewFile/${product.product_thumnail }" style="height: 600px;width:600px">
+               <img src="resources/reviewFile/${product.product_thumnail }" >
             </div>
             
             <div class="store_product_detail_text">
@@ -125,7 +126,8 @@ $(function() {
                 <hr>
                 <!-- 제품명2 -->
                 <p>${product.product_title2 }</p>
-                    <strong>￦${product.product_price }원</strong>
+                    <strong>￦<fmt:formatNumber value="${product.product_price }" pattern="#,###" />원</strong>
+                    
                     <div class="store_product_detail_option">
                     <h2> 상품설명 : ${product.product_info }</h2> 
                     <h2> 제조사 : ${product.product_manufactor }</h2>
@@ -135,16 +137,17 @@ $(function() {
                             <option value="">1.8kg ￦15,340</option>
                         </select> -->
                         <p>배송비 ￦3,000원 </p>
-                    </div>
+                     </div>
                     <div class = "productStockDiv">
 					${product.product_title}
 					<input id="quantityInput" type = "number" onchange="quantityChange(this,${product.product_price },${product.product_stock})"
 					name = "quantity" style ="width:50px" value = 1>개
-					<span id = "totalPrice">${product.product_price}</span> 원 재고 ${product.product_stock}개<br>
+					<span id = "totalPrice"><fmt:formatNumber value="${product.product_price }" pattern="#,###" /></span> 원 재고 ${product.product_stock}개<br>
+					
 				</div>
                     <!-- 결과창 -->
                     <div class="store_product_detail_result">
-                       	 총액(수량 + 배송비):<span id = "totalPrice2">${product.product_price +3000}</span>
+                       	 총액(수량 + 배송비):<span id = "totalPrice2"><fmt:formatNumber value="${product.product_price +3000}" pattern="#,###" /></span>
                     </div>
                     <div class="store_product_detail_btn">
                         <button class="store_buy_btn" onclick="purchasePageGo(${product.product_num })">구매하기</button>
@@ -160,11 +163,17 @@ $(function() {
                     </div>
             </div>
         </div>
-        </form>
+        </div>
+                     </form>
+
+
+
+
+
 <!-- 리뷰 넣을건지? -->
 		<div class="store_product_detail_review_wrap">
 			<div class="store_product_detail_review">
-				<h2>BEST REVIEW</h2>
+			<h2>BEST REVIEW</h2>
 				<!-- 최근 리뷰 5개만 보여줄지/ 페이징으로 5개씩 늘려나갈지? -->
 				<div class="store_product_detail_review_img_wrap">
 					<img src="resources/img/food/ANF_유기농식스프리+소고기연어.jpg" alt="리뷰이미지">
@@ -177,11 +186,11 @@ $(function() {
 <!-- 상품상세정보/사용후기/QnA -->
 
 				<div class="tab_content">
-					<input type="radio" name="tabmenu" id="tab01" >
+					<input type="radio" name="tabmenu" id="tab01" value="1">
 					<label for="tab01">상품상세정보</label>
 					<input type="radio" name="tabmenu" id="tab02" checked>
 					<label for="tab02">사용후기</label>
-					<input type="radio" name="tabmenu" id="tab03">
+					<input type="radio" name="tabmenu" id="tab03" value="3">
 					<label for="tab03">Q&A</label>
 					
 					
@@ -189,6 +198,12 @@ $(function() {
 					<!------------- 상품 상세 정보 란 ------------->
 					<div class="conbox con1">
 					상품상세정보
+						 <c:forTokens var="item" items="${product.product_detail }"
+									delims="!">
+									<img src="resources/reviewFile/${item }" style="width: 600px">
+									<br>
+								</c:forTokens> 
+						
 					</div>
 					
 					
@@ -282,12 +297,14 @@ $(function() {
 					<div class="store_product_detail_purchase_reviews">
 						<form action="get.aProductTeam1" method="get">
 						<div class="store_review_state">
+							
 							<ul>
 								<li>
 									<!-- 평점 순 정리하기 --> 
 									<button>평점순</button>
 									<input type="hidden" name="array" value="2">
-								</li>
+								
+							</li>
 							</ul>
 						</div>
 						</form>
@@ -358,6 +375,7 @@ $(function() {
 					</c:forEach>
 				</div>
 				</div>
+				
 					<div class="store_review_paging">
 							<a href="get.aProductTeam1?page=1">◀</a>
 						<c:forEach var="r" begin="1" end="${pageCount}">
@@ -386,7 +404,7 @@ $(function() {
 			
 
 			
-		</div>
+	
 
     
 	<%-- <div>
@@ -432,7 +450,6 @@ $(function() {
 			</div>
 	</div> --%>
 	
-
 
 
 

@@ -67,6 +67,7 @@ $(function(){
 }); 
 
 
+
 function UpdateANDINsert() {
 	
 	var totalPrice = $('#totalPrice').text(); // 총금액
@@ -172,8 +173,7 @@ function UpdateANDINsert() {
   		<div class="divTableBody">
     		<div class="divTableRow">
       			<div class="divTableCell">수령인</div>
-      			<div class="divTableCell"><input type="text" name="billAddress"
-                     id="billAddress"/></div>
+      			<div class="divTableCell"><input type="text" name="billAddress" id="billAddress"/></div>
       		</div>
     		<div class="divTableRow">
       			<div class="divTableCell">휴대전화</div>
@@ -190,6 +190,7 @@ function UpdateANDINsert() {
       			<div class="divTableCell">배송 시 메모</div>
       			<div class="divTableCell"><input type="text" name="billZip" id="billZip" placeholder="빠른 배송 부탁드립니다."/></div>
     		</div>
+    		
     	
   	</div>
   	
@@ -208,6 +209,12 @@ function UpdateANDINsert() {
 				<header>
 						<img src="resources/reviewFile/${product.product_thumnail }">
 				</header>
+				<div>
+    			<input type="hidden" value="${sessionScope.loginMember.member_ID }" id="Order_User_ID">
+    			<input type="hidden" value="${product.product_num }" id="Order_ProductNum">
+    			<input type="hidden" value="${product.product_price * param.quantity + 3000}" id="Order_TotalPrice">
+    			<input type="hidden" value="${product.product_thumnail }" id="Order_thumbnail">
+    		</div>
 				<div class="content">
 					<span class="p_name" id="p_name">${product.product_title }</span>
 				</div>
@@ -246,4 +253,42 @@ function UpdateANDINsert() {
 
 
 </body>
+<script type="text/javascript">
+
+function orderInsert(){
+	
+	
+	var Order_User_ID = document.getElementById("Order_User_ID").value; // 주문자
+	var phoneNum = document.getElementById("billCity").value; // 폰넘버
+	var quantity = document.getElementById("quantity").value; // 수량
+	var Order_ProductNum = document.getElementById("Order_ProductNum").value; // 수량
+	var billState = document.getElementById("billState").value; // 우편번호
+	var billState1 = document.getElementById("billState1").value; // 도로명주소
+	var billState2 = document.getElementById("billState2").value; // 상세주소
+	
+	var ProductPrice = document.getElementById("ProductPrice").value; // 상품1개 가격
+	var Order_TotalPrice = document.getElementById("Order_TotalPrice").value; // 상품1개 가격
+	var memo = document.getElementById("billZip").value; // 메모
+	var Recipient = document.getElementById("billAddress").value; // 수령인
+	var Order_thumbnail = document.getElementById("Order_thumbnail").value; // 메모
+	
+	
+	
+	location.href='orderInsert.do?Order_User_ID=' + Order_User_ID +
+			'&Order_ProductNum=' + Order_ProductNum +
+			'&Order_PhoneNumber=' + phoneNum +
+			'&Product_Quantity=' + quantity +
+			'&billState=' + billState +
+			'&billState1=' + billState1 +
+			'&billState2=' + billState2 +
+			'&Product_Price=' + ProductPrice +
+			'&Order_TotalPrice=' + Order_TotalPrice +
+			'&Shipping_Memo=' + memo +
+			'&Recipient=' + Recipient +
+			'&Order_thumbnail=' + Order_thumbnail;
+	};
+
+
+</script>
+
 </html>

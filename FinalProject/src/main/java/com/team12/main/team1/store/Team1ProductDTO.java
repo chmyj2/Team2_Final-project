@@ -4,6 +4,7 @@ package com.team12.main.team1.store;
 public class Team1ProductDTO {
 	private int product_num; 
 	private String product_category; 
+	private String product_sub_category; 
 	private String product_title; 
 	private String product_title2; 
 	private int product_price; 
@@ -17,12 +18,13 @@ public class Team1ProductDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Team1ProductDTO(int product_num, String product_category, String product_title, String product_title2,
-			int product_price, int product_stock, String product_thumnail, String product_detail, String product_info,
-			String product_manufactor) {
+	public Team1ProductDTO(int product_num, String product_category, String product_sub_category, String product_title,
+			String product_title2, int product_price, int product_stock, String product_thumnail, String product_detail,
+			String product_info, String product_manufactor) {
 		super();
 		this.product_num = product_num;
 		this.product_category = product_category;
+		this.product_sub_category = product_sub_category;
 		this.product_title = product_title;
 		this.product_title2 = product_title2;
 		this.product_price = product_price;
@@ -47,6 +49,14 @@ public class Team1ProductDTO {
 
 	public void setProduct_category(String product_category) {
 		this.product_category = product_category;
+	}
+
+	public String getProduct_sub_category() {
+		return product_sub_category;
+	}
+
+	public void setProduct_sub_category(String product_sub_category) {
+		this.product_sub_category = product_sub_category;
 	}
 
 	public String getProduct_title() {
@@ -113,8 +123,6 @@ public class Team1ProductDTO {
 		this.product_manufactor = product_manufactor;
 	}
 
-	
-	
 	
 	
 	

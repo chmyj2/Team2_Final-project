@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.team12.main.t2.shop.ProductMapper;
 
 @Service
 public class Team1ProductDAO {
@@ -32,6 +33,7 @@ public class Team1ProductDAO {
 		try {
 			
 			System.out.println(mr.getParameter("product_category"));
+			System.out.println(mr.getFile("product_sub_category"));
 			System.out.println(mr.getFile("product_thumnail"));
 			System.out.println(mr.getParameter("product_title"));
 			System.out.println(mr.getParameter("product_title2"));
@@ -78,6 +80,7 @@ public class Team1ProductDAO {
 			
 			Team1ProductDTO p = new Team1ProductDTO();
 			p.setProduct_category(mr.getParameter("product_category"));
+			p.setProduct_sub_category(mr.getParameter("product_sub_category"));
 			p.setProduct_thumnail(img.getOriginalFilename());
 			p.setProduct_detail(changeFile);
 			p.setProduct_title(mr.getParameter("product_title"));
@@ -116,10 +119,46 @@ public class Team1ProductDAO {
 		req.setAttribute("products",ss.getMapper(Team1ProductMapper.class).getProductList(product));
 		
 	}
+	
 	public void loadAProduct(Team1ProductDTO p, HttpServletRequest req) {
 
 		req.setAttribute("product",ss.getMapper(Team1ProductMapper.class).getProduct(p));
 		
+	}
+	
+	// 사료 가져오기
+	public void getfood(HttpServletRequest req, Team1ProductDTO product) {
+		System.out.println("1");
+		
+		req.setAttribute("foods",ss.getMapper(Team1ProductMapper.class).getFoodProduct(product));
+		
+	}
+	// 상품 가져오기
+	public void getProduct(HttpServletRequest req, String product_sub_category2, Team1ProductDTO product) {
+		System.out.println("2");
+		Team1ProductDTO p = new Team1ProductDTO();
+		p.setProduct_sub_category(product_sub_category2);
+		p.setProduct_category(req.getParameter("product_category"));
+		req.setAttribute("toys",ss.getMapper(Team1ProductMapper.class).getToyProduct(p));
+		
+	}
+	public void insertOrder(HttpServletRequest req, Order o, String billState, String billState1, String billState2) {
+		
+		String Shipping_Address = billState + billState1 + billState2;
+		o.setShipping_Address(Shipping_Address);
+		
+		if (ss.getMapper(Team1ProductMapper.class).orderInsert(o) == 1) {
+			System.out.println("등록성공");
+		}else {
+			System.out.println("등록실패");
+			
+		}
+		
+		
+	}
+	public void getOrder(HttpServletRequest req, Order o) {
+		
+		req.setAttribute("orders", ss.getMapper(Team1ProductMapper.class).getOrderList(o));		
 	}
 
 }

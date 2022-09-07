@@ -71,14 +71,14 @@
                     <ul class="store_drop_content">
                     <c:choose>
                 	<c:when test="${sessionScope.loginMember.member_ID == 'admin' }">
-                	    <li><a href="enter.team1StoreFor?product_category=dog">Dog</a></li>
-                        <li><a href="enter.team1StoreFor?product_category=cat">Cat</a></li>
-                        <li><a href="master.reg"> 상품등록 </a></li>
+                	    <li><a href="enter.team1StoreFor?product_category=dog&product_sub_category=food&product_sub_category2=product">Dog</a></li>
+                        <li><a href="enter.team1StoreFor?product_category=cat&product_sub_category=food&product_sub_category2=product">Cat</a></li>
+                        <li><a href="master.reg">상품등록</a></li>
                 </c:when>
                 
                 <c:otherwise>
-                        <li><a href="enter.team1StoreFor?product_category=dog">Dog</a></li>
-                        <li><a href="enter.team1StoreFor?product_category=cat">Cat</a></li>
+                        <li><a href="enter.team1StoreFor?product_category=dog&product_sub_category=food&product_sub_category2=product">Dog</a></li>
+                        <li><a href="enter.team1StoreFor?product_category=cat&product_sub_category=food&product_sub_category2=product">Cat</a></li>
                 
                 </c:otherwise>
                 
@@ -106,7 +106,7 @@
 		
 	</div>
 	
-	
+
 	
 	<!-- footer 영역 -->
 	

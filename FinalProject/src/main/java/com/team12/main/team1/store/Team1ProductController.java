@@ -23,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.team12.main.team1.join.MemberDAO;
+import com.team12.main.team1.shop.review.Team1ReviewDAO;
 import com.team12.main.team1.shop.review.Team1ReviewDTO;
 
 @Controller
@@ -30,6 +31,9 @@ public class Team1ProductController {
 
 	@Autowired
 	private MemberDAO mDAO;
+	
+	@Autowired
+    private Team1ReviewDAO rDAO;
 	
 	@Autowired
 	private Team1ProductDAO mpDAO;
@@ -57,13 +61,15 @@ public class Team1ProductController {
 	}
 	
 	
-	// 강아지 가져오기
 		@RequestMapping(value="/enter.team1StoreFor", method = RequestMethod.GET)
-		public String shopEntering(Team1ProductDTO product, HttpServletRequest req) {
+		public String shopEntering(Team1ProductDTO product, HttpServletRequest req,@RequestParam("product_sub_category2") String product_sub_category2) {
 				
 			mDAO.loginCheck(req);
+			
 			// 모든 상품 불러오기
 			mpDAO.showAllProduct(req,product);
+			mpDAO.getfood(req,product);
+			mpDAO.getProduct(req,product_sub_category2,product);
 			
 			if (req.getParameter("product_category").equals("dog")) {
 				req.setAttribute("contentPage", "master/team1ShopForDog.jsp");
@@ -79,11 +85,16 @@ public class Team1ProductController {
 	
 		// 상품 디테일 페이지로 이동
 		@RequestMapping(value="/get.aProductTeam1",method = RequestMethod.GET )
-		public String detailAProduct(Team1ReviewDTO review, Team1ProductDTO p, HttpServletRequest req){
+		public String detailAProduct(Team1ReviewDTO review, Team1ProductDTO p, HttpServletRequest req, Order o){
 			
 			//로그인체크
 			mDAO.loginCheck(req);
+			
 			//리뷰 리스트 가져오기
+	        rDAO.showReviewList(req, review);
+	        
+	        //전체 리뷰 평균 가져오기
+	        rDAO.showAllReviewAvg(req);
 			
 			//상품 하나 가져오기
 			mpDAO.loadAProduct(p,req);
@@ -101,7 +112,9 @@ public class Team1ProductController {
 			
 			//로그인체크
 			if (mDAO.loginCheck(req)) {
+				
 				//리뷰 리스트 가져오기
+				
 				
 				//상품 하나 가져오기
 				mpDAO.loadAProduct(p,req);
@@ -174,5 +187,55 @@ public class Team1ProductController {
 				public String kakaoSuccess(HttpServletRequest request) {
 				return "1Team/master/kakaoPayClose";
 				}
+				
+				
+				// 구매완료 페이지로 이동
+				@RequestMapping(value = "/team1PaymentSuccess.go", method = RequestMethod.GET)
+				public String team1PaymentSuccess(HttpServletRequest request) {
+					System.out.println("여기까지오냐");
+					mDAO.loginCheck(request);
+					
+					request.setAttribute("contentPage", "master/team1PaymentSuccess.jsp");
+					
+					return "1Team/t1_index";
+				}
+					
+				
+					//주문 저장
+					@RequestMapping(value="/orderInsert.do",method = RequestMethod.GET )
+					public String orderInsertDo(HttpServletRequest req,Order o,@RequestParam("billState") String billState,
+							@RequestParam("billState") String billState1,
+							@RequestParam("billState") String billState2){
+						
+						mpDAO.insertOrder(req,o,billState,billState1,billState2);
+						
+						return "redirect:orderRedirect.go";
+					}
+					
+					
+					@RequestMapping(value="/orderRedirect.go",method = RequestMethod.GET )
+					public String orderRedirectGo(HttpServletRequest req){
+						
+						System.out.println("요기옴?");
+						mDAO.loginCheck(req);
+						
+						req.setAttribute("contentPage", "master/team1PaymentSuccess.jsp");
+						return "1Team/t1_index";
+					}
+					
+					@RequestMapping(value="/Purchased.Info",method = RequestMethod.GET )
+					public String orderRedirectGo(HttpServletRequest req, Order o){
+						
+						mDAO.loginCheck(req);
+						mpDAO.getOrder(req,o);
+						
+						req.setAttribute("contentPage", "master/team1OrderInfo.jsp");
+						return "1Team/t1_index";
+					}
+					
+					
+					
+					
+			
 	
 }

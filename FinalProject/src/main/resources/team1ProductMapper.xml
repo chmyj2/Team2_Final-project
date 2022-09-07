@@ -12,14 +12,31 @@
 	<insert id="productReg" parameterType="com.team12.main.team1.store.Team1ProductDTO" >
 		insert into finalProduct values(
 		finalProduct_seq.nextval,
-		#{product_category},'1',#{product_title},#{product_title2},
-		#{product_price}, #{product_stock}, #{product_thumnail}, #{product_info}, #{product_manufactor},#{product_detail})
+		#{product_category},#{product_sub_category},#{product_title},#{product_title2},
+		#{product_price}, #{product_stock}, #{product_thumnail},#{product_detail}, #{product_info}, #{product_manufactor})
 	</insert>
 	
 	<select id="getProduct" parameterType="com.team12.main.team1.store.Team1ProductDTO" resultType="com.team12.main.team1.store.Team1ProductDTO">
 		select * from finalProduct where product_num = #{product_num}
 	</select>
 	
+	<select id="getFoodProduct" parameterType="com.team12.main.team1.store.Team1ProductDTO" resultType="com.team12.main.team1.store.Team1ProductDTO">
+		select * from finalProduct where product_category = #{product_category} and product_sub_category = #{product_sub_category}
+	</select>
+	
+	<select id="getToyProduct" parameterType="com.team12.main.team1.store.Team1ProductDTO" resultType="com.team12.main.team1.store.Team1ProductDTO">
+		select * from finalProduct where product_category = #{product_category} and product_sub_category = #{product_sub_category}
+	</select>
+	
+	
+	<insert id="orderInsert" parameterType="com.team12.main.team1.store.Order"> 
+			INSERT into order_Table VALUES(Order_Num_seq.nextval,#{Order_User_ID},#{Order_ProductNum},#{Order_PhoneNumber},#{Product_Quantity},CURRENT_DATE,#{Shipping_Address},'출고 처리중','주문완료','결제완료',#{Product_Price},#{Order_TotalPrice},#{Shipping_Memo},#{Recipient},#{Order_thumbnail})
+	</insert>
+	
+	
+	 <select id="getOrderList" parameterType="com.team12.main.team1.store.Order" resultType="com.team12.main.team1.store.Order"> 
+		select * from order_Table where Order_User_ID = #{Order_User_ID}
+	</select>	
 	
 
 </mapper>

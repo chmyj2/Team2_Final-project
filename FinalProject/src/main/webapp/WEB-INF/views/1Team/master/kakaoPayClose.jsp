@@ -12,8 +12,8 @@
 </body>
 <script type="text/javascript">
 function check() {
-	opener.parent.UpdateANDINsert();
-	//window.close();
+	opener.parent.orderInsert();
+	window.close();
 	}
 
 </script>

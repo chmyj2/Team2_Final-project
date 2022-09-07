@@ -62,13 +62,22 @@
             <form action="master.create" id="master_update_form" enctype="multipart/form-data" method="POST">
 			<div class="master_product_update_tbl">
 				<div>
-					<h3>상품카테고리</h3>
+					<h3>카테고리</h3>
 					<select name="product_category" id="master_category">
 						<option>----Select----</option>
 						<option value="dog">Dog</option>
 						<option value="cat">Cat</option>
 					</select>
 				</div>
+				<div>
+					<h3>상품분류</h3>
+					<select name="product_sub_category" id="master_category">
+						<option>----Select----</option>
+						<option value="food">food</option>
+						<option value="product">product</option>
+					</select>
+				</div>
+				
 				
 				<div>
 					<h3>상품사진</h3>
@@ -100,8 +109,7 @@
 				</div>
 				<br>
 				<div>
-					<span>상품설명</span> <input type="text" name="product_info"
-						id="product_info">
+					<span>상품설명<textarea id="product_info" name="product_info" rows="4" cols="50"></textarea></span>
 				</div>
 				<div>
 					<span>제조사</span> <input type="text" name="product_manufactor"
