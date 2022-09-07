@@ -31,12 +31,12 @@ public class MasterPageController {
 		return "1Team/t1_index";
 	}
 	
-	@RequestMapping(value = "/adopt.go", method = RequestMethod.GET)
-	public String adoptGo(HttpServletRequest req) {
-		
-		mDAO.loginCheck(req);
-		req.setAttribute("contentPage", "master/adopt.jsp");
-		
-		return "1Team/t1_index";
-	}
+//	@RequestMapping(value = "/enter.team1Adopt", method = RequestMethod.GET)
+//	public String adoptGo(HttpServletRequest req) {
+//		
+//		mDAO.loginCheck(req);
+//		req.setAttribute("contentPage", "t1_Adopt/adopt.jsp");
+//		
+//		return "1Team/t1_index";
+//	}
 }
