@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.team12.main.team1.store.Team1ProductDAO;
+import com.team12.main.team1.store.Team1ProductDTO;
+
 @Controller
 public class MemberController {
 	
@@ -22,6 +25,8 @@ public class MemberController {
 	@Autowired
 	private	MemberDAO mDAO;
 	
+	@Autowired
+	private Team1ProductDAO mpDAO;
 	
 	 @Autowired
 	 private MemberDAO kakaoService;
@@ -87,9 +92,24 @@ public class MemberController {
 	public String memberLogin(Member m, HttpServletRequest req) {
 		System.out.println(m.getMember_ID());
 		// 로그인
-		mDAO.login(m, req);
-		mDAO.loginCheck(req);
-		req.setAttribute("contentPage", "t1_home.jsp");
+		
+		System.out.println(req.getParameter("product_num"));
+		if (req.getParameter("product_num") == "") {
+			mDAO.login(m, req);
+			mDAO.loginCheck(req);
+			req.setAttribute("contentPage", "t1_home.jsp");
+			
+		}else {
+			mDAO.login(m, req);
+			mDAO.loginCheck(req);
+			Team1ProductDTO p = new Team1ProductDTO();
+			p.setProduct_num(Integer.parseInt(req.getParameter("product_num")));
+			mpDAO.loadAProduct(p, req);
+			req.setAttribute("contentPage", "master/team1shopProductDetail.jsp");
+			
+		}
+		
+		
 		
 		return "1Team/t1_index";
 	}

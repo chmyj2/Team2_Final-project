@@ -8,7 +8,7 @@
 <script src="http://madalla.kr/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
         //----썸네일 미리보기---- 
-        $(function() {
+       /*  $(function() {
             $("#productImg").on('change', function(){
             readURL(this);
             });
@@ -21,7 +21,7 @@
                 }
                 reader.readAsDataURL(input.files[0]);
             }
-        }
+        } */
 </script>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -62,19 +62,33 @@
             <form action="master.create" id="master_update_form" enctype="multipart/form-data" method="POST">
 			<div class="master_product_update_tbl">
 				<div>
-					<h3>상품카테고리</h3>
+					<h3>카테고리</h3>
 					<select name="product_category" id="master_category">
 						<option>----Select----</option>
 						<option value="dog">Dog</option>
 						<option value="cat">Cat</option>
 					</select>
 				</div>
+				<div>
+					<h3>상품분류</h3>
+					<select name="product_sub_category" id="master_category">
+						<option>----Select----</option>
+						<option value="food">food</option>
+						<option value="product">product</option>
+					</select>
+				</div>
+				
 				
 				<div>
 					<h3>상품사진</h3>
 					<input class="master_product_update_img_select" type="file"
 						name="product_thumnail" id="productImg"> <br> <img
 						id="view" src="" alt="product Img">
+				</div>
+				<div>
+					<h3>상품디테일사진</h3>
+					<input class="master_product_update_img_select" type="file"
+						name="product_detail" id="productImg" multiple="multiple">
 				</div>
 				<div>
 					<span>상품명1</span> <input type="text" name="product_title"
@@ -95,8 +109,7 @@
 				</div>
 				<br>
 				<div>
-					<span>상품설명</span> <input type="text" name="product_info"
-						id="product_info">
+					<span>상품설명<textarea id="product_info" name="product_info" rows="4" cols="50"></textarea></span>
 				</div>
 				<div>
 					<span>제조사</span> <input type="text" name="product_manufactor"

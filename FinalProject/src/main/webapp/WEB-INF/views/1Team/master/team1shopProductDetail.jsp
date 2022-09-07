@@ -10,6 +10,7 @@
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="resources/js/StoreTapMenu.js"></script>
 <script type="text/javascript" src="resources/js/store_detail.js"></script>
+<script type="text/javascript" src="resources/js/purchasePage.js"></script>
 <script type="text/javascript">
 	<!-- add cart -->
 	$(function() {
@@ -36,14 +37,12 @@ $(function() {
 		  $(this).parent().children('span').removeClass('on');
 		  $(this).addClass('on').prevAll('span').addClass('on');
 //		  alert($(this).attr("value"));
-
 		let  a = $(this).attr("value")
 		  $('#starrr').attr('value', a)
 		  return false;
 		});
 });
 </script>
-
 <script type="text/javascript">
 $(function() {
 	let select=''
@@ -91,52 +90,90 @@ $(function() {
 	  
 	});
 });
+
+
+
+
+
 </script>
 </head>
 <body>
+          <form action="purchasePage.go_team1" id="purchaseForm">
+             <!--  <h2>Product Details</h2> -->
+              <input type="hidden" value="${product.product_num }"id="cart_ProductNum" name="product_num">
+					<c:choose>
+					<c:when test="${sessionScope.loginMember.member_ID !=null }">
+					<input type="hidden" value="${sessionScope.loginMember.member_ID }" id="cart_UserID" name="cart_UserID">
+					</c:when>
+					<c:otherwise>
+					<input type="hidden" value="비회원" id="cart_UserID" name="cart_UserID">
+					</c:otherwise>
+					</c:choose>
+					   
 		<!-- YK : product detail -->
 		
-	
 	    <div class="store_product_detail_wrap">
         <div class="store_product_detail_contents">
             <div class="store_product_detail_img">
+            
                 <!-- 누른 해당 이미지 상품 보여주기 -->
-                <img src="resources/img/food/ANF_유기농식스프리+소고기연어.jpg" alt="">
+               <img src="resources/reviewFile/${product.product_thumnail }" >
             </div>
             
             <div class="store_product_detail_text">
                 <!-- 제품명 -->
-                <h2>ANF MADE WITH ORGANIC 6Free+</h2>
+              <h2>${product.product_title }</h2>
                 <hr>
                 <!-- 제품명2 -->
-                <p>Beef&Salmon</p>
-                <span>5.6kg 
-                    <strong>￦43,850</strong>
-                </span><br>
-                <span>1.8kg 
-                    <strong>￦15,340</strong></span>
+                <p>${product.product_title2 }</p>
+                    <strong>￦<fmt:formatNumber value="${product.product_price }" pattern="#,###" />원</strong>
+                    
                     <div class="store_product_detail_option">
-                        <select name="store_option" id="" class="store_product_datail_select">
+                    <h2> 상품설명 : ${product.product_info }</h2> 
+                    <h2> 제조사 : ${product.product_manufactor }</h2>
+                       <!--  <select name="store_option" id="" class="store_product_datail_select">
                             <option value="">--- (필수)옵션선택 ---</option>
                             <option value="">5.6kg ￦43,850</option>
                             <option value="">1.8kg ￦15,340</option>
-                        </select>
-                        <p>배송비 ￦3,000원 (￦30,000 이상 무료배송)</p>
-                    </div>
+                        </select> -->
+                        <p>배송비 ￦3,000원 </p>
+                     </div>
+                    <div class = "productStockDiv">
+					${product.product_title}
+					<input id="quantityInput" type = "number" onchange="quantityChange(this,${product.product_price },${product.product_stock})"
+					name = "quantity" style ="width:50px" value = 1>개
+					<span id = "totalPrice"><fmt:formatNumber value="${product.product_price }" pattern="#,###" /></span> 원 재고 ${product.product_stock}개<br>
+					
+				</div>
                     <!-- 결과창 -->
                     <div class="store_product_detail_result">
-                       	 총액(수량):
+                       	 총액(수량 + 배송비):<span id = "totalPrice2"><fmt:formatNumber value="${product.product_price +3000}" pattern="#,###" /></span>
                     </div>
                     <div class="store_product_detail_btn">
-                        <button class="store_buy_btn" onclick="">구매하기</button>
-                        <button class="store_bag_btn" onclick="">장바구니</button>
+                        <button class="store_buy_btn" onclick="purchasePageGo(${product.product_num })">구매하기</button>
+                    <c:choose>
+					<c:when test="${sessionScope.loginMember.member_ID !=null }">
+					<input id="aaa" type="hidden" value="1">
+					</c:when>
+					<c:otherwise>
+					<input id="aaa" type="hidden" value="0">
+					</c:otherwise>
+					</c:choose>
+                        <!-- <button class="store_bag_btn">장바구니</button> -->
                     </div>
             </div>
         </div>
+        </div>
+                     </form>
+
+
+
+
+
 <!-- 리뷰 넣을건지? -->
 		<div class="store_product_detail_review_wrap">
 			<div class="store_product_detail_review">
-				<h2>BEST REVIEW</h2>
+			<h2>BEST REVIEW</h2>
 				<!-- 최근 리뷰 5개만 보여줄지/ 페이징으로 5개씩 늘려나갈지? -->
 				<div class="store_product_detail_review_img_wrap">
 					<img src="resources/img/food/ANF_유기농식스프리+소고기연어.jpg" alt="리뷰이미지">
@@ -149,11 +186,11 @@ $(function() {
 <!-- 상품상세정보/사용후기/QnA -->
 
 				<div class="tab_content">
-					<input type="radio" name="tabmenu" id="tab01" >
+					<input type="radio" name="tabmenu" id="tab01" value="1">
 					<label for="tab01">상품상세정보</label>
 					<input type="radio" name="tabmenu" id="tab02" checked>
 					<label for="tab02">사용후기</label>
-					<input type="radio" name="tabmenu" id="tab03">
+					<input type="radio" name="tabmenu" id="tab03" value="3">
 					<label for="tab03">Q&A</label>
 					
 					
@@ -161,6 +198,12 @@ $(function() {
 					<!------------- 상품 상세 정보 란 ------------->
 					<div class="conbox con1">
 					상품상세정보
+						 <c:forTokens var="item" items="${product.product_detail }"
+									delims="!">
+									<img src="resources/reviewFile/${item }" style="width: 600px">
+									<br>
+								</c:forTokens> 
+						
 					</div>
 					
 					
@@ -176,7 +219,6 @@ $(function() {
 						</div>
 						<div class="store_product_detail_purchase_review">
 							<div class="store_product_detail_purchase_review_star">
-
 								<div class="store_product_detail_purchase_review_center">
 									<span> 
 										<img src="resources/img/review_star.png" alt="">
@@ -255,12 +297,14 @@ $(function() {
 					<div class="store_product_detail_purchase_reviews">
 						<form action="get.aProductTeam1" method="get">
 						<div class="store_review_state">
+							
 							<ul>
 								<li>
 									<!-- 평점 순 정리하기 --> 
 									<button>평점순</button>
 									<input type="hidden" name="array" value="2">
-								</li>
+								
+							</li>
 							</ul>
 						</div>
 						</form>
@@ -320,7 +364,7 @@ $(function() {
 									<!-- 수정 Ajax -->
 								<div class="store_review_btn_stat">
 								<c:if test="${sessionScope.loginMember.member_ID == r.review_id }">
-									<button class="reviewUpdate" onclick="location.href='review.update'">수정</button>
+									<button class="reviewUpdate" onclick="location.href='review.update">수정</button>
 									<button id="${r.review_num}" class="reviewUpdate2" style="display: none;">완료</button>
 									<button class="reviewDelete" onclick="location.href='review.delete?review_num=${r.review_num}'">삭제</button>
 								</c:if>
@@ -331,6 +375,7 @@ $(function() {
 					</c:forEach>
 				</div>
 				</div>
+				
 					<div class="store_review_paging">
 							<a href="get.aProductTeam1?page=1">◀</a>
 						<c:forEach var="r" begin="1" end="${pageCount}">
@@ -359,7 +404,7 @@ $(function() {
 			
 
 			
-		</div>
+	
 
     
 	<%-- <div>
@@ -405,7 +450,6 @@ $(function() {
 			</div>
 	</div> --%>
 	
-
 
 
 
