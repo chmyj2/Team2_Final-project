@@ -258,8 +258,7 @@
 	
 	<build>
 	
-		<plugins>
-
+<plugins>
 
          <plugin>
                 <artifactId>maven-eclipse-plugin</artifactId>
@@ -281,6 +280,7 @@
     <version>2.5</version>
 </plugin>
 
+
 <plugin>
     <artifactId>maven-compiler-plugin</artifactId>
     <version>2.3.2</version> 
@@ -290,6 +290,7 @@
     </configuration>
 </plugin>
 
+         
 		</plugins>
           
         
@@ -298,6 +299,5 @@
 		
 		
 		
-
 	</build>
 </project>

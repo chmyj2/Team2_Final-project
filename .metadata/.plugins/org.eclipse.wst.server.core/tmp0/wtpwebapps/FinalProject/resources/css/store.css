@@ -67,18 +67,22 @@
     background-color: rgba(255, 255, 255, 0.6);
     width: 100%;
     height: auto;
-    text-align: center;
+    /* text-align: center; */    /* 동훈 주석 2022/09/05 */
     margin-bottom: 300px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 300px;
+   
+    
 }
 
 .store_header{ 
-    height: 400px;
+    /* height: 400px; */    /* 동훈 주석 2022/09/06 */
     width: 100%;
     align-items: center;
     margin: 0 auto;
-    margin-top: 200px;
+ /*    margin-top: 200px; */  /* 동훈 주석 2022/09/06 */
+    margin-top: 150px;
+    text-align: center;
 }
 
 .store_header h2{
@@ -135,6 +139,8 @@
     margin-top: 50px;
     padding-top: 0px;
     margin-bottom: 80px;
+    text-align: center;
+    
 }
 
 .store_new_products_txt h2{
@@ -148,7 +154,9 @@
 /* ------------------상품 이미지 -------------- */
 
 .store_new_products{
-    height: 1000px;
+    height: 3000px;
+    text-align: center;
+    padding-bottom: 200px;
 }
 
 .store_new_products_img{
@@ -158,7 +166,7 @@
 .store_new_products_img>div{
     float: left;
     height: 580px;
-    width: 380px;
+    
 }
 
 .store_new_products_img img{
@@ -180,7 +188,7 @@
 }
 .store_new_products_ANF{
     /* border: 1px solid ; */
-    border-top: 2px solid black;
+    
     padding-top: 50px;
 }
 
@@ -193,6 +201,14 @@
 .store_new_products_ANF span{
     font-size: 15pt;
     letter-spacing: -1pt;
+}
+
+.login_didididiv{
+	width : 100%;
+	height : auto;
+	margin: 0 auto;
+	margin-bottom: 1100px;
+	padding-bottom: 1100px;
 }
 
 /* -----------Store detail--------------- */
@@ -731,8 +747,9 @@ input
 	
 }
 
-
 /*  */
-
-
-
+.col-md-3{
+  float: left;
+  margin-left: 110px;
+  
+}

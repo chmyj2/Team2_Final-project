@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="resources/t2_css/t2_login.css">
   <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-  
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 </head>
 <body>
 
@@ -29,10 +29,12 @@
 		<div class="login_txt">
 			<h2 class="login_h2">Welcome!</h2>
 			<div class="login-social">
-				<a href=""><i class="fa fa-kakao">kakao</i></a>
+				<a onclick="kakaoLogin()"> <!-- 카카오 로그인 -->
+					<img src="//k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="110" alt="카카오 로그인 버튼"/>
+				</a>
 				<div id="naver_id_login"></div>
 				<a href=""><i class="fa fa-google-plus"></i></a>
-							</div>
+			</div>
 			
 			<label class="login_label"> <span>ID</span> 
 			<input class="login_input" name="member_ID" />

@@ -1,30 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="false" key="isRegEx"/>
-		<item value="spli" key="selection"/>
-		<item value="false" key="casesensitive"/>
-		<item value="false" key="incremental"/>
-		<item value="true" key="wrap"/>
-		<item value="false" key="wholeword"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<item key="selection" value="purchasePage.go"/>
 		<list key="findhistory">
-			<item value="spli"/>
-			<item value="businessPWchange.DO"/>
-			<item value="find"/>
-			<item value="delete"/>
-			<item value="result"/>
-			<item value="sample"/>
-			<item value="maven-resources-plugin"/>
-			<item value="org.apache.maven.plugins"/>
+			<item value="purchasePage.go"/>
+			<item value="h2"/>
+			<item value="&lt;h2&gt;"/>
+			<item value="get.aProductTeam1"/>
+			<item value="team1PaymentSuccess"/>
+			<item value="check"/>
+			<item value="purchaseForm"/>
+			<item value="di"/>
+			<item value="400"/>
+			<item value="header"/>
+			<item value="menu__wrapper "/>
+			<item value="white"/>
+			<item value="wtite"/>
+			<item value="store_wrap"/>
+			<item value="enter.team1MainShop"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="340" key="DIALOG_WIDTH"/>
-		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
-		<item value="454" key="DIALOG_HEIGHT"/>
-		<item value="818" key="DIALOG_X_ORIGIN"/>
-		<item value="374" key="DIALOG_Y_ORIGIN"/>
+		<item key="DIALOG_X_ORIGIN" value="53"/>
+		<item key="DIALOG_Y_ORIGIN" value="9"/>
+		<item key="DIALOG_WIDTH" value="292"/>
+		<item key="DIALOG_HEIGHT" value="402"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
 	</section>
 </section>

@@ -36,7 +36,6 @@
                 <div class="caption">
                   <p>${fn:length(p.productName)>20?fn:substring(p.productName,0,20)+="...":p.productName }</p>
                   <p><fmt:formatNumber value="${p.productPrice }" pattern="#,###" />원</p>
-                   
                 </div>
             </div></a>
            </div>

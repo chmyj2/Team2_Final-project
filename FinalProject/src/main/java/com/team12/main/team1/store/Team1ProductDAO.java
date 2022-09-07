@@ -168,7 +168,6 @@ public class Team1ProductDAO {
 	public void getOrder(HttpServletRequest req, Order o) {
 		
 		req.setAttribute("orders", ss.getMapper(Team1ProductMapper.class).getOrderList(o));		
-		List<Team1ProductDAO> products = ss.getMapper(Team1ProductMapper.class).getProductList(product);
 		
 		
 	}
