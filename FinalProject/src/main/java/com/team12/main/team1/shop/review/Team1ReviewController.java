@@ -13,6 +13,8 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.team12.main.team1.join.MemberDAO;
+import com.team12.main.team1.store.Team1ProductDAO;
+import com.team12.main.team1.store.Team1ProductDTO;
 import com.team12.main.team2board.Team2BoardDTO;
 import com.team12.main.team2board.Team2CommentDTO;
 
@@ -24,6 +26,10 @@ public class Team1ReviewController {
 	
 	@Autowired
 	private Team1ReviewDAO rDAO;
+	
+	@Autowired
+	private Team1ProductDAO mpDAO;
+	
 
 	
 	// 전체 리뷰 보기
@@ -32,7 +38,7 @@ public class Team1ReviewController {
 		
 		mDAO.loginCheck(req);
 		rDAO.showReviewList(req, review);
-		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
+		req.setAttribute("contentPage", "master/team1shopProductDetail.jsp");
 		
 		return "1Team/t1_index";
 	}
@@ -40,11 +46,11 @@ public class Team1ReviewController {
 	
 	//	리뷰 쓰기
 	@RequestMapping(value = "write.review1", method = RequestMethod.POST)
-	public String writeReview(HttpServletRequest req, MultipartHttpServletRequest mr) {
+	public String writeReview(HttpServletRequest req, MultipartHttpServletRequest mr, Team1ProductDTO p) {
 		mDAO.loginCheck(req);
 		rDAO.writeReview(req, mr);
 //		rDAO.showReviewList(req, review);
-		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
+		req.setAttribute("contentPage", "master/team1shopProductDetail.jsp");
 		
 		return "1Team/t1_index";
 	}
@@ -58,7 +64,7 @@ public class Team1ReviewController {
 		rDAO.deleteReview(req, review);
 		rDAO.showReviewList(req, review);
 		
-		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
+		req.setAttribute("contentPage", "master/team1shopProductDetail.jsp");
 		
 		return "1Team/t1_index";
 	}
@@ -87,7 +93,7 @@ public class Team1ReviewController {
 		rDAO.showReviewList(req, review);
 		System.out.println("머고정렬을해라...");
 		
-		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
+		req.setAttribute("contentPage", "master/team1shopProductDetail.jsp");
 		
 		return "1Team/t1_index";
 	}

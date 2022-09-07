@@ -18,8 +18,6 @@
 	<link href='https://fonts.googleapis.com/css?family=Oswald:400,700|Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<!-- Include Medirev CSS -->
 	<link href='resources/t2_css/style.css' rel='stylesheet' type='text/css'>
-	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-	<link rel="stylesheet" type="text/css" href="css/settings.css" media="screen" />
 	<link rel="stylesheet" href="resources/t2_css/t2_login.css">
 	<!-- Hospital MAIN CSS  -->
 	<link href='resources/t2_css/hospital_main.css' rel='stylesheet' type='text/css'> 
@@ -33,6 +31,7 @@
 	<!-- 로그인 JS -->
 	<script type="text/javascript" src="resources/t2_js/validCheck.js"></script>
 	<script type="text/javascript" src="resources/t2_js/login_checkJS.js"></script>
+	<script type="text/javascript" src="resources/t2_js/kakaoLogin.js"></script>
 	<!-- board  -->
 	<script type="text/javascript" src="resources/t2_js/board.js"></script>
 	<script type="text/javascript" src="resources/t2_js/board_comment.js"></script>
@@ -146,13 +145,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-    <script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>   
-    <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
 	<!-- Waypoint -->
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-	<script src="js/jquery.counterup.min.js"></script>
-	<!-- Include Medirev JavaScript -->
-	<script src="js/script.js"></script>
 </body>
 </html>

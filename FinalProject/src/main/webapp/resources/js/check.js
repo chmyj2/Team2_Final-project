@@ -43,9 +43,11 @@ function joinCheck() {
 	var addr2Input = document.joinForm.m_addr2;
 	var addr3Input = document.joinForm.m_addr3;
 	var emailInput = document.joinForm.member_email;
-	
 
 
+
+
+	/*var photoInput = document.joinForm.m_photo;*/
 	if (isEmpty(idInput) || containsHS(idInput)
 			|| $("#member_IDInput").css("color") == "rgb(244, 67, 54)") {
 		alert("ID를 입력해주세요.");
@@ -89,6 +91,14 @@ function joinCheck() {
 		return false;
 	}
 
+	/* else if (isEmpty(photoInput)
+			|| (isNotType(photoInput, "png") && isNotType(photoInput, "gif")
+					&& isNotType(photoInput, "jpg") && isNotType(photoInput, "bmp"))) {
+		alert("사진?");
+		return false;
+	} */
+
+	
 	return true;
 }
 
@@ -144,14 +154,16 @@ function snsWriteReplyCheck(f) {
 }
 */
 function updateMemberCheck() {
-	var pwInput = document.joinForm.member_PW;
-	var pwChkInput = document.joinForm.m_pwChk;
-	var nameInput = document.joinForm.member_name;
+
+	var pwInput = document.updateMemberForm.m_pw;
+	var pwChkInput = document.updateMemberForm.m_pwChk;
+	var nameInput = document.updateMemberForm.m_name;
 	var phoneNumInput = document.joinForm.member_phoneNum;
-	var addr1Input = document.joinForm.m_addr1;
-	var addr2Input = document.joinForm.m_addr2;
-	var addr3Input = document.joinForm.m_addr3;
-	var emailInput = document.joinForm.member_email;
+	var addr1Input = document.updateMemberForm.m_addr1;
+	var addr2Input = document.updateMemberForm.m_addr2;
+	var addr3Input = document.updateMemberForm.m_addr3;
+	var emailInput = document.updateMemberForm.member_email;
+	
 
 
 	if (isEmpty(pwInput) || notEquals(pwInput, pwChkInput)
@@ -186,5 +198,13 @@ function updateMemberCheck() {
 		return false;
 	}
 	
+	/*else if (isEmpty(photoInput)) {
+		return true;
+	} else if (isNotType(photoInput, "png") && isNotType(photoInput, "gif")
+			&& isNotType(photoInput, "jpg") && isNotType(photoInput, "bmp")) {
+		alert("사진?");
+		return false;
+	}*/
+
 	return true;
 }

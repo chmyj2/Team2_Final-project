@@ -7,8 +7,9 @@
 select count(*)
 from team2_board
 where board_category = #{board_category}
+and board_title like '%'||#{search}||'%' 
 </select>
-
+<!-- 리스트 페이징 -->
 <select id="getPostList" resultType="com.team12.main.team2board.Team2BoardDTO">
 	select * 
 	from (
@@ -16,7 +17,18 @@ where board_category = #{board_category}
      	from(
      	select * from team2_board
      	where board_category = #{board_category}
-     	order by board_date desc 
+     	and board_title like '%'||#{search}||'%' 
+     	<choose>
+     	 	<when test="sort == 1">
+     			order by board_count desc 
+     	 	</when>
+     	 	<when test="sort == 2">
+     			order by board_like desc 
+     	 	</when>
+     	 	<otherwise>
+     	 		order by board_date desc 
+     	 	</otherwise>
+     	 </choose>
    		)
 	) where rn between #{rnStart} and #{rnEnd}
 </select>
@@ -24,6 +36,17 @@ where board_category = #{board_category}
 <insert id="writePost" parameterType="com.team12.main.team2board.Team2BoardDTO">
 	insert into team2_board values(team2_board_seq.nextval, #{board_member_id}, #{board_category}, #{board_title}, #{board_txt}, sysdate, 0,#{board_img}, 0)
 </insert>
+<!-- 글 쓰고 해당 글 pk 얻기 -->
+<select id="getPostNum" resultType="int">
+select board_num from(
+	select board_num
+	from team2_board
+	where board_title = #{board_title}
+	and board_member_id = #{board_member_id}
+	and board_txt like '%'||#{board_txt}||'%' 
+	order by board_date desc
+)where rownum = 1
+</select>
 
 <select id="postDetail" resultType="com.team12.main.team2board.Team2BoardDTO">
 	select * from team2_board where board_num = #{board_num}
@@ -90,7 +113,7 @@ insert into team2_comment
 values(team2_comment_seq.nextval, 
  		#{comment_board_num}, 
 		#{comment_member_id}, 
-		#{comment_txt}, sysdate)
+		#{comment_txt}, sysdate,0)
 </insert>
 <!-- 글쓰기 후 댓글 pk 가져오기 -->
 <select id="getCommentNum" resultType="com.team12.main.team2board.Team2CommentDTO">
@@ -109,7 +132,7 @@ select comment_num from(
 <select id="getcomment" resultType="com.team12.main.team2board.Team2CommentDTO">
 select * 
 from (
-    select rownum as rn, comment_num, comment_board_num, comment_member_id, comment_txt, comment_date 
+    select rownum as rn, comment_num, comment_board_num, comment_member_id, comment_txt, comment_date, comment_child_total 
      from(
      select * from team2_comment
      where comment_board_num = #{comment_board_num}
@@ -121,7 +144,7 @@ from (
 <select id="getcommentJson" resultType="com.team12.main.team2board.CommentBean">
 select * 
 from (
-    select rownum as rn, comment_num, comment_board_num, comment_member_id, comment_txt, comment_date 
+    select rownum as rn, comment_num, comment_board_num, comment_member_id, comment_txt, comment_date, comment_child_total 
      from(
      select * from team2_comment
      where comment_board_num = #{comment_board_num}
@@ -143,6 +166,82 @@ update team2_comment
 set comment_txt = #{comment_txt}
 where comment_num = #{comment_num}
 </update>
+
+<!-- 답글 관련 -->
+
+<!-- 답글 작성하기 -->
+<insert id="creatChildComment">
+insert into team2_child_comment
+values(team2_child_comment_seq.nextval, #{c_child_board_num}, #{c_child_member_id}, #{c_child_parent_num}, #{c_child_txt}, sysdate)
+</insert>
+<!-- 작성 후 comment_child_total +1 -->
+<update id="countUpComment">
+update team2_comment 
+set comment_child_total = comment_child_total + 1 
+where comment_num = #{c_child_parent_num} 
+</update>
+<!-- 답글 작성 후 pk 얻기  -->
+<select id="getchildCommentPK" resultType="int">
+select c_child_num from(
+	select c_child_num
+	from team2_child_comment
+	where c_child_board_num = #{c_child_board_num}
+	and c_child_member_id = #{c_child_member_id}
+	and c_child_txt like '%'||#{c_child_txt}||'%' 
+	order by c_child_date desc
+) where rownum = 1
+</select>
+
+
+<select id="getChildComments" resultType="com.team12.main.team2board.Team2ChildCommentDTO">
+select * from team2_child_comment 
+where c_child_parent_num = #{c_child_parent_num}
+</select>
+
+<!-- 답글 수정하기 -->
+<update id="updatechildComment">
+update team2_child_comment 
+set c_child_txt = #{c_child_txt}
+where c_child_num = #{c_child_num} 
+</update>
+
+<!-- 답글 삭제하기 -->
+<delete id="deletechildComment">
+delete from team2_child_comment 
+where c_child_num = #{c_child_num}
+</delete>
+<!-- 답글 삭제 후 countdown -->
+<update id="countDownTotalComment">
+update team2_comment 
+set comment_child_total = comment_child_total - 1 
+where comment_num = #{c_child_parent_num} 
+</update>
+
+
+<!--내가 쓴 글 -->
+<select id="myPostList" resultType="com.team12.main.team2board.Team2BoardDTO">
+select * from team2_board 
+where board_member_id = #{board_member_id} 
+</select>
+<!--내가 좋아요 누른 글 -->
+<select id="myLikeList" resultType="com.team12.main.team2board.Team2BoardDTO">
+select * from team2_board 
+where board_num 
+in (select like_board_num from team2_like where like_member_id = #{board_member_id})
+</select>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

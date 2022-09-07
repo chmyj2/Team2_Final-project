@@ -46,6 +46,10 @@
 	select * from PET_INFORMATION where baby_memberID = #{baby_memberID}  
 	</select>
 	
+	<select id="checkKakaoID" resultType="int">
+	select count(*) from final_member where member_ID = #{member_ID}
+	</select>
+
 	<update id="petInfoUpdate" parameterType="com.team12.main.t2Login.pet" >
 	update pet_information set baby_name=#{baby_name},baby_birth= #{baby_birth},baby_sex=#{baby_sex},baby_weight=#{baby_weight},baby_type=#{baby_type},baby_typeDetail=#{baby_typeDetail},baby_neut=#{baby_neut},baby_img=#{baby_img} where baby_memberID=#{baby_memberID}
 	</update>

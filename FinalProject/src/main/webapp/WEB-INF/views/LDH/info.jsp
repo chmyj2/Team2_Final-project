@@ -37,6 +37,7 @@ $(function() {
                 	<c:when test="${sessionScope.loginMember.member_linkWhere == 1 }">
                 	<!-- pw  -->
                     <input class="join_input_pw" value="${sessionScope.loginMember.member_PW }" name="jm_pw" placeholder="Password *" type="password" maxlength="10" autocomplete="off" >
+
                 	<p class="required_txt">* 숫자 하나 이상</p>
                 	
                 	<!-- pw 재확인 -->
@@ -58,12 +59,13 @@ $(function() {
                     <input class="input_name" value="${sessionScope.loginMember.member_name }" name="jm_name" placeholder="Name *" maxlength="10" autocomplete="off">
                 	<br>
 
+
+
                 	<!-- phoneNum -->
-
-                    <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum"  placeholder="Phone Number *" type="text" maxlength="13" autocomplete="off">
-
+                    <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum" placeholder="Phone Number *" type="text" maxlength="10" autocomplete="off">
                 	<br>
 
+                	
                 	
                 	<!-- 주소  -->
                         <input class="input_addr1" id="jm_addr3Input" readonly="readonly" value="${addr[2] }"  name="jm_addr3" maxlength="5" autocomplete="off" placeholder="우편번호">
@@ -71,6 +73,8 @@ $(function() {
                         <br>
                         <input class="input_addr" id="jm_addr1Input" readonly="readonly" value="${addr[0] }"  name="jm_addr1" maxlength="30" autocomplete="off" placeholder="주소"><br>
                         <input class="input_addr" value="${addr[1] }"  name="jm_addr2" maxlength="30" autocomplete="off" placeholder="상세주소">
+                           
+                
                            <br>
                            
                 	<!-- email -->
@@ -78,7 +82,7 @@ $(function() {
                 	<br>
                 	
                 	
-
+             
                 
                 <div>
                     <div class="update_box">

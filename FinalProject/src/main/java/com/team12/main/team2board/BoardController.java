@@ -1,7 +1,5 @@
 package com.team12.main.team2board;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -55,17 +53,13 @@ public class BoardController {
 	@RequestMapping(value = "team2.createPost", method = RequestMethod.POST)
 	public String post_create(HttpServletRequest req, Team2BoardDTO board) {
 		lDAO.loginCheck(req);
-		bDAO.createPost(req, board); 
-		bDAO.showPostList(req, board);
-		req.setAttribute("contentPage", "board_jsp/board_list.jsp");
-
-		return "2Team/t2_index";
+		return "redirect:post.detail?board_num="+bDAO.createPost(req, board);
 	}
 
 
 	// 글 디테일
 	@RequestMapping(value = "post.detail", method = RequestMethod.GET)
-	public String post_detail(HttpServletResponse res ,HttpServletRequest req, Team2BoardDTO board, Team2CommentDTO comment) {
+	public String post_detail(HttpServletResponse res ,HttpServletRequest req, Team2BoardDTO board, Team2CommentDTO comment, Team2ChildCommentDTO childComment) {
 		lDAO.loginCheck(req);
 		if(bDAO.countCheck(req, board) == 0) {
 			bDAO.updateCount(res ,req, board);
@@ -145,12 +139,44 @@ public class BoardController {
 		return bDAO.deleteComment(t);
 	}
 	
+	// 답글 작성 
+	@RequestMapping(value="/child.comment.create", method = RequestMethod.POST, produces = "application/json; charset=utf8")
+	@ResponseBody
+	public int childComment_create(Team2ChildCommentDTO t)  {
+		return bDAO.create_childComment(t);
+	}
 	
+	// 답글 가져오기
+	@RequestMapping(value="/child.comment.get", method = RequestMethod.GET, produces = "application/json; charset=utf8")
+	@ResponseBody
+	public ChildCommentJson childComment_get(Team2ChildCommentDTO t)  {
+		return bDAO.get_childComment(t);
+	}
 	
+	// 답글 수정 
 	
+	@RequestMapping(value="/child.comment.update", method = RequestMethod.POST, produces = "application/json; charset=utf8")
+	@ResponseBody
+	public int childComment_update(Team2ChildCommentDTO t)  {
+		return bDAO.updateChildComment(t);
+	}
+	// 답글 삭제
+	@RequestMapping(value="/child.comment.delete", method = RequestMethod.POST, produces = "application/json; charset=utf8")
+	@ResponseBody
+	public int childComment_delete(Team2ChildCommentDTO t)  {
+		return bDAO.deleteChildComment(t);
+	}
 	
-	
-	
+	// 내가 쓴 글  혹은 내가 좋아요한 글
+	@RequestMapping(value = "myPost", method = RequestMethod.GET)
+	public String myPost(HttpServletRequest req, Team2BoardDTO board, @RequestParam("result")int result) {
+		lDAO.loginCheck(req);
+		System.out.println("리절트"+result+"boaardnum = :"+board.getBoard_member_id());
+		bDAO.my_Post(req, board, result);
+		req.setAttribute("contentPage", "board_jsp/myPost.jsp");
+
+		return "2Team/t2_index";
+	}
 	
 	
 

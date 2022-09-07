@@ -1,8 +1,10 @@
 package com.team12.main.t2Login;
 
 import java.sql.Date;
+import java.text.ParseException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.team12.main.t2.Team2HomeController;
+import com.team12.main.team1.join.Member;
+import com.team12.main.team2board.Team2ChildCommentDTO;
 
 
 @Controller
@@ -545,6 +549,29 @@ public class LoginController {
 		
 		return "2Team/t2_index";
 	}
+	
+	
+	
+	@RequestMapping(value="/team2KakaoLogin", method = RequestMethod.POST, produces = "application/json; charset=utf8")
+	@ResponseBody
+	public int childComment_delete(
+	@RequestParam("email")String email,
+	@RequestParam("gender")String gender,
+	@RequestParam("nickname")String nickname,
+	@RequestParam("birthday")int birthday,
+	HttpServletRequest req,
+	Membert2 m) throws ParseException  {
+		int a = lDAO.checkKakaoEmail(email,gender,nickname,birthday,req,m);
+		lDAO.loginCheck(req);
+		return a;
+	}
+	
+	
+	
+	
+	
+	
+	
 
 	@RequestMapping(value = "/businessInfoChange.go", method = RequestMethod.GET)
 	public String businessInfoChangego(HttpServletRequest req) {

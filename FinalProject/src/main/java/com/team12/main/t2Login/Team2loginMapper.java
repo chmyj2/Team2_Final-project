@@ -8,8 +8,6 @@ public interface Team2loginMapper {
 
 	int checkId(Membert2 m);
 
-	int checkEmail(Membert2 m);
-
 	int join(Membert2 m);
 
 	int businessNumCheck(vet v);
@@ -23,6 +21,8 @@ public interface Team2loginMapper {
 	int memberUpdate(Membert2 m);
 
 	pet getPetInfo(pet p);
+
+	int checkEmail(Membert2 m);
 
 	int petInfoUpdate(pet p);
 
@@ -60,11 +60,12 @@ public interface Team2loginMapper {
 
 	
 
+
 	
 
-
-
-
+	// kakao 로그인 시 db에서 중복 된 id가 있는지 확인
+	int checkKakaoID(Membert2 m);
+	
 	
 
 }

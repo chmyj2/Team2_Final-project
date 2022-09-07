@@ -1,3 +1,7 @@
+::selection {
+color: white;	
+background: #29c05e;
+}
 
 .toggleInput{
 	width: 70%;
@@ -38,4 +42,62 @@
 }
 .updateAtag{
 	color: #C18F11;
+}
+
+.commentPtag{
+	color: blue;
+	cursor: Pointer;
+}
+
+.replyIMG{
+	margin-left: 30px;
+	cursor: Pointer;
+}
+
+.childCmtCon span{ 	
+	margin-bottom: 50px; 
+}
+
+.childCmtCon{
+	margin: 15px 0;
+}
+
+.childCmtCon{
+	margin-left: 20px;
+}
+
+
+.childDeleteAtag{
+	color: #A51D13;
+	margin-left: 10px;
+	cursor: Pointer;
+}
+.childUpdateAtag{
+	color: #C18F11;
+	margin-left: 10px;
+	cursor: Pointer;
+}
+
+#searchInput {
+    width: 40%;
+    height: 50%;
+    font-size: 16px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-top: 50px;
+    text-align: left;
+}
+
+#searchBtn {
+	height: 30px;
+    padding: 0xp 0px 5px 0px;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    float: revert;
+}
+.writeBtn{
+	float: right;
 }

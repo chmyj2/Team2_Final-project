@@ -28,10 +28,10 @@
 
         <button class="login_btn">로그인</button>
         <button type="button" class="signUp_btn"  onclick="goJoin()">회원가입</button>
- 		<a id="custom-login-btn" href="https://kauth.kakao.com/oauth/authorize?client_id=64c1168aec7c4fd20862f02cda8f9856&redirect_uri=http://localhost:8080/main/member.kakao&response_type=code">
         <button  class="signUp_kakao_btn">카카오 연결</button>
-    	</a>
- 
+ 		<a id="custom-login-btn" href="https://kauth.kakao.com/oauth/authorize?client_id=64c1168aec7c4fd20862f02cda8f9856&redirect_uri=http://localhost:8080/main/member.kakao&response_type=code">
+    	카카오로그인</a>
+ <input type="hidden" value="${param.product_num }" name="product_num"> 
  
  
  
