@@ -11,7 +11,7 @@
  <div class="store_main_wrap">
         <div class="store_main_header">
             <div class="store_main_for_dog">
-            <a href="enter.team1StoreFor">
+            <a href="enter.team1StoreFor?product_category=dog&product_sub_category=food&product_sub_category2=product">
                 <img class="store_main_for_dog_img" src="resources/img/about3.png" alt="">
                 <h2>
                     FOR DOG
@@ -19,7 +19,7 @@
             </a>
             </div>
             <div class="store_main_for_cat">
-            <a href="enter.team1StoreFor?category=2">
+            <a href="enter.team1StoreFor?product_category=cat&product_sub_category=food&product_sub_category2=product">
                 <img class="store_main_for_cat_img" src="resources/img/about4.png" alt="">
                 <h2>
                     FOR CAT
