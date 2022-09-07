@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="resources/css/member.css">
 <link rel="stylesheet" href="resources/css/store.css">
 <link rel="stylesheet" href="resources/css/master.css">
+<link rel="stylesheet" href="resources/css/adopt.css">
 <title>Insert title here</title>
 <script type="text/javascript" src="resources/js/jQuery.js"></script>
 <script type="text/javascript" src="resources/js/loginAndJoin.js"></script>
@@ -45,11 +46,16 @@
         	<div class="master_page">
         		<a href="master.reg"> 상품등록(임시작업용) </a>
         	</div>
+        	
+        	<!-- adopt페이지 이동용(임시) -->
+        	<div>
+        		<a href="enter.team1Adopt">입양관련페이지(임시작업용)</a>
+        	</div>
+        	<!-- -------------------  -->
+        	
            <div class="log_state">
            		<jsp:include page="${loginPage }"></jsp:include> 
            </div>
-           
-           
            
            
         </div>
