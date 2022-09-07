@@ -73,11 +73,6 @@ function loginChekBoard() {
 }
 
 
-function summerNote() {
-	
-	
-	
-}
 
 
 
@@ -94,7 +89,6 @@ function summerNote() {
 
 $(function() {
 	loginChekBoard();
-	summerNote();
 });
 
 

@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="tellPW-result-outline">
+${PWresult }
+<br><br>
+<c:choose>
+<c:when test="${linkeWhere != null}">
+<span>소셜  계정으로 회원가입하신 회원입니다.</span><br>
+<label>소셜 로그인을 이용해주시기를 바랍니다.</label><br><br>
+
+<a href="t2LoginGO">로그인 하러가기</a>
+</c:when>
+<c:otherwise>
+<a onclick="location.href='acceptgo?member=1' ">회원가입하러 가기</a>
+</c:otherwise>
+</c:choose>
+</div>
+</body>
+</html>

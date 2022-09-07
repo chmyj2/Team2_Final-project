@@ -1,0 +1,287 @@
+function connectAddrSearchEvent() {
+	//회원가입 주소 찾기 기능
+	$("#addrSearchBtn").click(function() {
+		new daum.Postcode({
+			oncomplete : function(data) {
+				$("#join_addr3Input").val(data.zonecode);
+				$("#join_addr1Input").val(data.roadAddress);
+				$("#billState1").val(data.roadAddress);
+				$("#billState").val(data.zonecode);
+			}
+		}).open();
+	});
+}//회원가입 주소 찾기 기능
+
+function idCheck() {
+	//아이디 중복체크
+	
+	$('.join-id').blur(function() {
+		let idInput =$('.join-id').val();
+		//alert(idInput);
+		
+			$.ajax({
+				url:"id.check",
+				type:"GET",
+				dataType :"text",
+				data:{"member_ID":idInput},
+				success: function(getData) {
+					console.log(getData);
+					if (getData >=1) {
+						$('#idcheckResult').text("사용불가");
+						$('#idcheckResult').css('color','red');
+						$('#join_IDCheck').val('IDUnCheck');
+					}else {
+						$('#idcheckResult').text("");
+						$('#join_IDCheck').val('IDcheck');
+					}
+					
+					//$('span').text(idInput+"이미 사용중입니다.");
+				},
+				error : function(request,status,error) {
+					console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					
+				}
+			}); // ajax끝
+		});
+}//아이디 중복체크
+
+function emailCheck() {
+	//이메일 중복체크
+	$('#join_mail_check').click(function() {
+		let emailInput = $('#join-email').val();
+		
+		if (emailInput !="") {
+		
+			$.ajax({
+				url:"email.check",
+				type:"GET",
+				dataType :"text",
+				data:{"member_email":emailInput},
+				success: function(getData) {
+					console.log(getData);
+					if (getData ==1) {
+						$('#emailcheckResult').text("사용불가");
+						$('#emailcheckResult').css('color','red');
+					}else {
+						$('#emailcheckResult').text("");
+						joinEmail_check();
+					}
+					
+					//$('span').text(idInput+"이미 사용중입니다.");
+				},
+				error : function(request,status,error) {
+					console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					
+				}
+			}); // ajax끝
+		}else {
+			alert("이메일을 입력해주세요");
+		}
+		
+	})
+}//이메일 중복체크
+
+
+function joinEmail_check() {
+	//이메일 인증번호 발송
+	
+		var email = $('#join-email').val();
+		console.log(email); // 입력한 값 넘어오는지 확인
+			var checkNum = $('#join_mail_num');
+			
+			$.ajax({
+				url:"emailcheck",
+				type:"GET",
+				dataType :"text",
+				data:{"member_email":email},
+				success : function (data) {
+					console.log("data : " +  data);
+					checkNum.attr('type','');
+					code =data;
+					alert('인증번호가 전송되었습니다.')
+				}			
+			}); //ajax끝
+		
+
+}//이메일 인증번호 발송
+
+function joinEmail_numCheck() {
+	//이메일 인증번호 일치 확인
+	$("#join_mail_num").blur(function() {
+		var inputNum = $(this).val();
+		var result = $('#mail-check-warn');
+		
+		if (inputNum == code) {
+			
+			$('#join_emailCheckNum').val("emailcheck");
+			
+		}else {
+			result.html("인증번호가 불일치합니다.")
+			result.css('color','red');
+		}
+		
+	})
+}//이메일 인증번호 일치 확인
+
+function pwcheck() {
+	//패스워드일치불일치
+	
+	let result = $('.pwCheckResult');
+	$('.join-pw2').keyup(function() {
+		let pw1 = $('.join-pw').val();
+		let pw2 = $('.join-pw2').val();
+		
+		if (pw1 != pw2) {
+			result.html("패스워드불일치");
+			result.css('color','red');
+			$('#join_PWCheck').val("PWUnCheck");
+		}else {
+			result.html("");
+			$('#join_PWCheck').val("PWCheck");
+			
+		}
+	})
+	
+	$('.join-pw').keyup(function() {
+		if ($('.join-pw2').val() != "") {
+			
+			let pw1 = $('.join-pw').val();
+			let pw2 = $('.join-pw2').val();
+			
+			if (pw1 != pw2) {
+				result.html("패스워드불일치");
+				result.css('color','red');
+				$('#join_PWCheck').val("PWUnCheck");
+			}else {
+				result.html("");
+				$('#join_PWCheck').val("PWCheck");
+				
+			}
+		}
+	})
+	
+}//패스워드일치불일치
+
+function businessNumCheck() {
+	//사업자 번호 일치확인
+	$('.vet_businessNum').blur(function() {
+		let businessNum = $(this).val();
+		
+		$.ajax({
+				url:"businessNum.check",
+				type:"GET",
+				dataType :"text",
+				data:{"vet_businessNum":businessNum},
+				success: function(getData) {
+					console.log(getData);
+					if (getData >=1) {
+						$('.businessNumResult').text("일치하는 사업자 번호가 있습니다.");
+						$('.businessNumResult').css('color','red');
+						$('#join_BusinessNumCheck').val('BusinessNumUncheck');
+					}else {
+						$('.businessNumResult').text("");
+						$('#join_BusinessNumCheck').val('BusinessNumcheck');
+					}
+					
+					//$('span').text(idInput+"이미 사용중입니다.");
+				},
+				error : function(request,status,error) {
+					console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					
+				}
+			}); // ajax끝
+	})
+	
+}//사업자 번호 일치확인
+
+$(document).ready(function(){
+	 
+    // 저장된 쿠키값을 가져와서 ID 칸에 넣어준다. 없으면 공백으로 들어감.
+    var key = getCookie("key");
+    $(".login_input").val(key); 
+     
+    if($(".login_input").val() != ""){ // 그 전에 ID를 저장해서 처음 페이지 로딩 시, 입력 칸에 저장된 ID가 표시된 상태라면,
+        $("#login_idSave").attr("checked", true); // ID 저장하기를 체크 상태로 두기.
+    }
+     
+    $("#login_idSave").change(function(){ // 체크박스에 변화가 있다면,
+        if($("#login_idSave").is(":checked")){ // ID 저장하기 체크했을 때,
+            setCookie("key", $(".login_input").val(), 7); // 7일 동안 쿠키 보관
+        }else{ // ID 저장하기 체크 해제 시,
+            deleteCookie("key");
+        }
+    });
+     
+    // ID 저장하기를 체크한 상태에서 ID를 입력하는 경우, 이럴 때도 쿠키 저장.
+    $(".login_input").keyup(function(){ // ID 입력 칸에 ID를 입력할 때,
+        if($("#login_idSave").is(":checked")){ // ID 저장하기를 체크한 상태라면,
+            setCookie("key", $(".login_input").val(), 7); // 7일 동안 쿠키 보관
+        }
+    });
+    
+    
+});
+$(document).ready(function(){
+	
+	// 저장된 쿠키값을 가져와서 ID 칸에 넣어준다. 없으면 공백으로 들어감.
+	var key = getCookie("key");
+	$(".login_input3").val(key); 
+	
+	if($(".login_input3").val() != ""){ // 그 전에 ID를 저장해서 처음 페이지 로딩 시, 입력 칸에 저장된 ID가 표시된 상태라면,
+		$("#login_idSave1").attr("checked", true); // ID 저장하기를 체크 상태로 두기.
+	}
+	
+	$("#login_idSave1").change(function(){ // 체크박스에 변화가 있다면,
+		if($("#login_idSave1").is(":checked")){ // ID 저장하기 체크했을 때,
+			setCookie("key", $(".login_input3").val(), 7); // 7일 동안 쿠키 보관
+		}else{ // ID 저장하기 체크 해제 시,
+			deleteCookie("key");
+		}
+	});
+	
+	// ID 저장하기를 체크한 상태에서 ID를 입력하는 경우, 이럴 때도 쿠키 저장.
+	$(".login_input3").keyup(function(){ // ID 입력 칸에 ID를 입력할 때,
+		if($("#login_idSave1").is(":checked")){ // ID 저장하기를 체크한 상태라면,
+			setCookie("key", $(".login_input3").val(), 7); // 7일 동안 쿠키 보관
+		}
+	});
+	
+});
+ 
+function setCookie(cookieName, value, exdays){
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+    document.cookie = cookieName + "=" + cookieValue;
+}
+ 
+function deleteCookie(cookieName){
+    var expireDate = new Date();
+    expireDate.setDate(expireDate.getDate() - 1);
+    document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+}
+ 
+function getCookie(cookieName) {
+    cookieName = cookieName + '=';
+    var cookieData = document.cookie;
+    var start = cookieData.indexOf(cookieName);
+    var cookieValue = '';
+    if(start != -1){
+        start += cookieName.length;
+        var end = cookieData.indexOf(';', start);
+        if(end == -1)end = cookieData.length;
+        cookieValue = cookieData.substring(start, end);
+    }
+    return unescape(cookieValue);
+}
+
+
+
+$(function() {
+	connectAddrSearchEvent();
+	idCheck();
+	joinEmail_numCheck();
+	emailCheck();
+	pwcheck();
+	businessNumCheck();
+})

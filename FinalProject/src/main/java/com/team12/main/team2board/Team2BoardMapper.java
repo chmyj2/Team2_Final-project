@@ -46,6 +46,26 @@ public interface Team2BoardMapper {
 
 	Team2BoardDTO getImgsName(Team2BoardDTO board);
 
+	int getPostNum(Team2BoardDTO board);
+
+	int creatChildComment(Team2ChildCommentDTO t);
+
+	List<Team2ChildCommentDTO> getChildComments(Team2ChildCommentDTO t);
+
+	void countUpComment(Team2ChildCommentDTO t);
+
+	int updatechildComment(Team2ChildCommentDTO t);
+
+	int getchildCommentPK(Team2ChildCommentDTO t);
+
+	int deletechildComment(Team2ChildCommentDTO t);
+
+	void countDownTotalComment(Team2ChildCommentDTO t);
+
+	List<Team2BoardDTO> myPostList(Team2BoardDTO board);
+
+	List<Team2BoardDTO> myLikeList(Team2BoardDTO board);
+
 	
 
 

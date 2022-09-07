@@ -1,0 +1,472 @@
+@charset "UTF-8";
+
+.about_wrapper{
+    background-color: rgba(255, 255, 255, 0.575);
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* DengStiny Give Pet Happiness */
+.about_main{ 
+	background-color: rgb(255, 212, 193);
+    height: 250px;
+    width: 1000px;
+    align-items: center;
+    margin: 0 auto;
+    border: 5px solid black;
+    border-radius: 50px 50px 50px 50px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.about_main_txt{
+    height: 130pt;
+    color: black;
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+}
+
+.about_wrapper h2{
+    font-size: 40pt;
+    letter-spacing: -2pt;
+    font-weight: bolder;
+}
+
+.about_main p{
+    font-size: 13pt;
+    font-weight: bolder;
+    line-height: 0.5em;
+}
+
+.about_main span{
+    background-color: yellow;
+    font-size: 13pt;
+}
+
+.about_main label{
+    font-weight: bolder;
+}
+
+
+/* 메인 이미지 */
+.about_main_img{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 1500px;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.about_main_pet1{
+    position: absolute;
+    width: 350px;
+    left: 100px;
+}
+
+.about_main_pet2{
+    position: absolute;
+    top:100px;
+    width: 200px;
+    left: 450px;
+}
+
+.about_main_pet3{
+    position: absolute;
+    width: 300px;
+    top:200px;
+    left: 550px;
+}
+
+.about_main_pet4{
+    position: absolute;
+    width: 230px;
+    top: 70px;
+    left: 890px;
+}
+
+.about_main_pet5{
+    position: absolute;
+    width: 150px;
+    top:130px;
+    left: 1190px;
+}
+
+/* 메인 이미지 애니메이션 */
+.about_main_pet1 {
+    animation: top 1s ease-in-out infinite both;
+}
+
+  @keyframes top {
+    0% {
+        top:0px;
+    }
+    25%{
+        top:5px;
+        transform: rotate(-1deg);
+    }
+    50% {
+        top:10px;
+        transform: rotate(-2deg);
+    }
+    75% {
+        top:5px;
+        transform: rotate(-1deg);
+    }
+    100%{
+        top:0px;
+    }
+  }
+
+.about_main_pet2 {
+    animation: top2 1s ease-in-out infinite both;
+}
+
+  @keyframes top2 {
+    0% {
+        top:100px;
+    }
+    25%{
+        top:105px;
+        transform: rotate(1deg);
+    }
+    50% {
+        top:110px;
+        transform: rotate(2deg);
+    }
+    75% {
+        top:105px;
+        transform: rotate(1deg);
+    }
+    100%{
+        top:100px;
+    }
+  }
+
+.about_main_pet3 {
+    animation: top3 1s ease-in-out infinite both;
+}
+
+  @keyframes top3 {
+    0% {
+        top:200px;
+    }
+    25%{
+        top:205px;
+        transform: rotate(-1deg);
+    }
+    50% {
+        top:210px;
+        transform: rotate(-2deg);
+    }
+    75% {
+        top:205px;
+        transform: rotate(-1deg);
+    }
+    100%{
+        top:200px;
+    }
+  }
+
+.about_main_pet4 {
+    animation: top4 1s ease-in-out infinite both;
+}
+
+  @keyframes top4 {
+    0% {
+        top:70px;
+    }
+    25%{
+        top:75px;
+        transform: rotate(1deg);
+    }
+    50% {
+        top:80px;
+        transform: rotate(2deg);
+    }
+    75% {
+        top:75px;
+        transform: rotate(1deg);
+    }
+    100%{
+        top:70px;
+    }
+  } 
+
+.about_main_pet5 {
+    animation: top5 1s ease-in-out infinite both;
+}
+
+  @keyframes top5 {
+    0% {
+        top:120px;
+    }
+    25%{
+        top:125px;
+        transform: rotate(-1deg);
+    }
+    50% {
+        top:130px;
+        transform: rotate(-2deg);
+    }
+    75% {
+        top:125px;
+        transform: rotate(-1deg);
+    }
+    100%{
+        top:120px;
+    }
+  } 
+
+  /* We Are Support Abandoned Pet! */
+.about_sub{
+    background-color: rgb(255, 212, 193);
+    height: 230px;
+    width: 1000px;
+    align-items: center;
+    margin: 0 auto;
+    border: 5px solid black;
+    border-radius: 50px 50px 50px 50px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.about_sub p{
+    font-size: 13pt;
+    font-weight: bolder;
+}
+
+/* 서브 컨텐츠 이미지 */
+.about_sub_img{
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.about_sub_img_dog{
+    border-radius: 500px 500px 500px 500px;
+    position: absolute;
+    width: 1000px;
+    height: auto;
+    right: 20%;
+    transform: scale(1.0);
+    transition: transform .5s;
+}
+
+.about_sub_img_dog:hover{
+    transform: scale(1.05);
+    transition: transform .5s;
+    overflow: hidden;
+}
+
+.dog_drop{
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    left: 28%;
+    top: 55%;
+    opacity: 0;
+}
+
+.dog_drop3{
+    position: absolute;
+    z-index: 1;
+    top: 48%;
+    left: 61%;
+    width: 100px;
+    opacity: 0;
+}
+
+.about_sub_img:hover .dog_drop{
+    opacity: 1;
+}
+
+.about_sub_img:hover .dog_drop3{
+    opacity: 1;
+}
+
+#about_sub_p{
+    position: absolute;
+    z-index: 1;
+    font-size: 40pt;
+    background-color: rgb(255, 255, 247);
+    color: black;
+    font-weight: 500;
+    top: 55%;
+    left: 62%;
+    opacity: 0;
+    border-radius: 0px 30px 30px 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 5px solid black;
+}
+
+.about_sub_img:hover #about_sub_p{
+    opacity: 1;
+}
+
+
+
+  /* DengStiny is Always with Abandoned Pet */
+.about_sub_care{
+    background-color: rgb(255, 212, 193);
+    height: 260px;
+    width: 1000px;
+    align-items: center;
+    margin: 0 auto;
+    border: 5px solid black;
+    border-radius: 50px 50px 50px 50px;
+    margin-top: 300px;
+}
+
+.about_sub_care p{
+    font-size: 13pt;
+    font-weight: bolder;
+    line-height: 20pt;
+}
+
+.about_sub_care_img{
+    position: relative;
+    width: 100%;
+    height: 580px;
+    margin: 0 auto;
+    margin-top: 250px;
+    margin-bottom: 250px;
+}
+
+.about_sub_care_img_dog1{
+    /* 오른쪽 아이 */
+    position: absolute;
+    width: 450px;
+    height: 600px;
+    margin-left: 40px;
+    object-fit: cover;
+    border-radius: 0px 200px 200px 0px;
+    filter: brightness(1);
+}
+
+.about_sub_care_img_dog2{
+    position: relative;
+    width: 450px;
+    float: left;
+    margin-left: 20%;
+    border-radius: 200px 0px 0px 200px;
+    filter: brightness(1);
+}
+
+#black_footprint{
+    position: absolute;
+    z-index: 1;
+    margin-right: 10px;
+    left: 17%;
+    width: 80px;
+    animation: footprint 1s ease-in-out infinite both;
+}
+
+#pink_footprint{
+    position: absolute;
+    z-index: 1;
+    margin-left: 28%;
+    margin-top: 30%;
+    width: 80px;
+    animation: footprint 1s ease-in-out infinite both;
+}
+
+  @keyframes footprint {
+    0% {
+        transform: rotate(-5deg);
+    }
+    25%{
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(-5deg);
+    }
+  }
+
+
+  /* Donation of abandoned Pet */
+
+.about_sub_donate{
+    background-color: rgb(255, 212, 193);
+    height: 260px;
+    width: 1000px;
+    align-items: center;
+    margin: 0 auto;
+    border: 5px solid black;
+    border-radius: 50px 50px 50px 50px;
+    margin-top: 200px;
+}
+
+.about_sub_donate p{
+    font-size: 13pt;
+    font-weight: bolder;
+    line-height: 20pt;
+}
+
+.about_sub_donate_img{
+    position: relative;
+    width: 100%;
+    height: 780px;
+    margin: 0 auto;
+    margin-top: 200px;
+    margin-bottom: 300px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.go_store{
+    font-size: 50pt;
+    font-weight: bold;
+    position: absolute;
+    z-index: 1;
+    left: 45%;
+    top: 2%;
+    background-color: yellow;
+    padding-right: 500px;
+    padding-bottom: 10px;
+}
+
+.go_donate{
+    font-size : 50pt;
+    font-weight: bold;
+    position: absolute;
+    left: 3%;
+    top: 68%;
+    z-index: 1;
+    background-color: yellow;
+    padding-left: 450px;
+    padding-bottom: 10px;
+}
+
+.about_sub_donate_img_dog1{
+    position: absolute;
+    width: 450px;
+    height: 600px;
+    object-fit: cover;
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+.about_sub_donate_img_dog2{
+    position: relative;
+    width: 450px;
+    float: left;
+    margin-left: 22%;
+}

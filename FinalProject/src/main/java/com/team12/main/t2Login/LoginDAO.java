@@ -1,12 +1,20 @@
 package com.team12.main.t2Login;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.sql.Date;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
+import java.util.HashMap;
 import java.util.Random;
 import java.util.UUID;
 
@@ -14,14 +22,20 @@ import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.team12.main.team1.join.Member;
+import com.team12.main.team1.join.Team1joinMapper;
 
 import oracle.jdbc.driver.T2CConnection;
 
@@ -442,6 +456,70 @@ public class LoginDAO {
 
 
 
+
+	public int checkKakaoEmail(String email, String gender, String nickname, int birthday, HttpServletRequest req, Membert2 m) throws ParseException {
+		
+		m.setMember_ID(email);
+		
+		int result = ss.getMapper(Team2loginMapper.class).checkKakaoID(m);
+		
+		if(result == 0) {
+			if(gender==null) {gender = " ";}
+			if(nickname==null) {nickname = "**";}
+			m.setMember_name(nickname);
+			m.setMember_email(email);
+			m.setMember_sex(gender);
+			m.setMember_address(" ");
+			m.setMember_PW(" ");
+			m.setMember_linkWhere(2);
+			m.setMember_phoneNum(" ");
+			m.setMember_paper("비동의");
+			
+			Date sqlDate = new Date(birthday, 00, 00);
+			m.setMember_birth(sqlDate);
+			
+			
+			int join = ss.getMapper(Team2loginMapper.class).join(m);
+			
+			if(join == 1) {
+				System.out.println("회원가입 성공");
+				
+				Membert2 dbMember = ss.getMapper(Team2loginMapper.class).getMemberByID(m);
+				
+				if (dbMember != null) { // 회원가입 후 로그인
+						req.getSession().setAttribute("loginMember", dbMember);
+						req.getSession().setMaxInactiveInterval(60 * 60);
+				}else {
+					System.out.println("--------111------------실패");
+				}
+				
+			} else {
+				System.out.println("회원가입 실패");
+			}
+			
+		} else {
+			
+			m.setMember_linkWhere(2);
+			Membert2 dbMember = ss.getMapper(Team2loginMapper.class).getMemberByID(m);
+			
+			if (dbMember != null) {
+					req.getSession().setAttribute("loginMember", dbMember);
+					req.getSession().setMaxInactiveInterval(60 * 60);
+			}else {
+				System.out.println("--------111------------실패");
+			}
+			
+			
+		}
+		
+		
+		
+		
+		
+		return result;
+	}
+	
+	
 
 	public void petInfoUpdate(HttpServletRequest req, MultipartFile baby_img, String baby_name, Double baby_weight,
 			Date baby_birth, String baby_sex, String baby_type, String baby_typeDetail, String baby_neut) {
@@ -909,8 +987,10 @@ public class LoginDAO {
 
 	
 
+
 	
 	
 	
+
 
 }

@@ -18,6 +18,8 @@
         <a href="#">장바구니</a>
         <a href="hospitalReserveLookupgo?member_ID=${sessionScope.loginMember.member_ID}">예약확인</a>
         <a href="t2logout">로그아웃</a>
+        <a href="myPost?result=1&board_member_id=${sessionScope.loginMember.member_ID}">내가 쓴 글</a>
+        <a href="myPost?result=2&board_member_id=${sessionScope.loginMember.member_ID}">좋아요 한 글</a>
       </div>
     </div> 
 

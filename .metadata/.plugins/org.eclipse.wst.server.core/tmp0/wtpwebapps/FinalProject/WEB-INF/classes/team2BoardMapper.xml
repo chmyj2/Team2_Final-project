@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team12.main.team2board.Team2BoardMapper">
+<!-- 글쓰기관련  -->
+<!-- 총 글 개수 -->
+<select id="getAllpostCount" resultType="int">
+select count(*)
+from team2_board
+where board_category = #{board_category}
+</select>
+
+<select id="getPostList" resultType="com.team12.main.team2board.Team2BoardDTO">
+	select * 
+	from (
+    	select rownum as rn, board_num, board_member_id, board_category, board_title, board_txt, board_date, board_img, board_count, board_like
+     	from(
+     	select * from team2_board
+     	where board_category = #{board_category}
+     	order by board_date desc 
+   		)
+	) where rn between #{rnStart} and #{rnEnd}
+</select>
+<!-- 글쓰기 -->
+<insert id="writePost" parameterType="com.team12.main.team2board.Team2BoardDTO">
+	insert into team2_board values(team2_board_seq.nextval, #{board_member_id}, #{board_category}, #{board_title}, #{board_txt}, sysdate, 0,#{board_img}, 0)
+</insert>
+
+<select id="postDetail" resultType="com.team12.main.team2board.Team2BoardDTO">
+	select * from team2_board where board_num = #{board_num}
+</select>
+
+<select id="getImgsName" resultType="com.team12.main.team2board.Team2BoardDTO">  <!-- 글 삭제 전 이미지 파일 이름 얻기-->
+	select board_img
+	from team2_board
+	where board_num = #{board_num}
+</select>
+
+<delete id="deletePost">
+	delete from team2_board where board_num = #{board_num}
+</delete>
+
+
+<update id="updatepost" parameterType="com.team12.main.team2board.Team2BoardDTO">
+	update team2_board
+	set board_title = #{board_title}, 
+		board_txt = #{board_txt},
+		board_img = #{board_img}
+	where board_num = #{board_num}
+</update>
+
+<!-- 조회수  -->
+<update id="updatecount">
+	update team2_board set board_count = board_count + 1 where board_num = #{board_num}
+</update>
+
+<!-- 좋아요  -->
+<select id="checkLike" resultType="int">
+select count(*) from team2_like 
+where like_board_num = #{like_board_num} 
+and   like_member_id= #{like_member_id}
+</select>
+
+<update id="countUpTotalLike">
+update team2_board set board_like = board_like + 1 where board_num = #{like_board_num} 
+</update>
+
+<update id="countDownTotalLike">
+update team2_board set board_like = board_like - 1 where board_num = #{like_board_num} 
+</update>
+
+<insert id="insertInfoLike">
+insert into team2_like values(team2_like_seq.nextval, #{like_board_num}, #{like_member_id})
+</insert>
+
+<select id="getTotalLike" resultType="com.team12.main.team2board.Team2BoardLikeDTO">
+select board_like from team2_board
+where board_num = #{like_board_num}
+</select>
+
+<delete id="deleteInfoLike">
+delete  from team2_like
+where 	like_board_num = #{like_board_num}
+and 	like_member_id = #{like_member_id}
+</delete>
+
+<!-- 댓글 관련-->
+
+<insert id="createcomment">  <!-- 댓글 쓰기-->
+insert into team2_comment 
+values(team2_comment_seq.nextval, 
+ 		#{comment_board_num}, 
+		#{comment_member_id}, 
+		#{comment_txt}, sysdate)
+</insert>
+<!-- 글쓰기 후 댓글 pk 가져오기 -->
+<select id="getCommentNum" resultType="com.team12.main.team2board.Team2CommentDTO">
+select comment_num from(
+	select comment_num
+	from team2_comment
+	where comment_board_num = #{comment_board_num}
+	and comment_member_id = #{comment_member_id}
+	and comment_txt like '%'||#{comment_txt}||'%' 
+	order by comment_date desc
+) where rownum = 1
+</select>
+
+
+ <!-- 댓글 가져오기 -->
+<select id="getcomment" resultType="com.team12.main.team2board.Team2CommentDTO">
+select * 
+from (
+    select rownum as rn, comment_num, comment_board_num, comment_member_id, comment_txt, comment_date 
+     from(
+     select * from team2_comment
+     where comment_board_num = #{comment_board_num}
+     order by comment_date desc
+   )
+) where rn between #{start} and #{end}
+</select>
+ <!-- 댓글 가져오기 ajax -->
+<select id="getcommentJson" resultType="com.team12.main.team2board.CommentBean">
+select * 
+from (
+    select rownum as rn, comment_num, comment_board_num, comment_member_id, comment_txt, comment_date 
+     from(
+     select * from team2_comment
+     where comment_board_num = #{comment_board_num}
+     order by comment_date desc
+   )
+) where rn between #{start} and #{end}
+</select>
+
+<select id="getTotalCommentCount" resultType="int">
+select count(*) from team2_comment where comment_board_num = #{comment_board_num}
+</select>
+
+<delete id="deletecomment">
+delete from team2_comment where comment_num = #{comment_num}
+</delete>
+
+<update id="updatecomment">
+update team2_comment 
+set comment_txt = #{comment_txt}
+where comment_num = #{comment_num}
+</update>
+
+
+
+</mapper>

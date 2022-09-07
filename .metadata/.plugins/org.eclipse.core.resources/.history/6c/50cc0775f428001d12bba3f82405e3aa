@@ -1,0 +1,217 @@
+@charset "UTF-8";
+
+.myPetPage-OutLine{
+	text-align: center; 
+	margin-bottom: 90px; 
+	margin-top: 50px;
+	height: auto;
+	
+}
+
+/* 펫 등록 안한 사람이 보는 페이지 css */
+.myPetPage-txt{
+	font-size: 15pt;
+}
+
+.myPetPage-txt2:hover{
+	font-size: 12pt;
+	color: #4183d7;
+	
+}
+
+/* 펫 등록한 사람이 보는 페이지 css */
+
+.myPetPage-img{
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+}
+
+.myPetPage-table{
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+
+/*  내 정보페이지 CSS */
+
+.memberInfoPage-table{
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+	height: 300px;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+.memberInfoPage-outline{
+	margin-bottom: 50px;
+    margin-top: 50px;
+	text-align: center;
+}
+
+.memberInfoPage-tr{
+	height: 50px;
+    border-bottom: 0.1px solid;
+    border-bottom-color: gray;
+}
+
+/* 내 정보 수정하기 페이지 CSS  */
+
+.myInfoChange-outline{
+	margin-bottom: 50px;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.myInfoChange-table{
+	margin-left: auto;
+	margin-right: auto;
+	width: 400px;
+	height: 400px;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+.myInfoChage-tr{
+	/* border-bottom: 0.5px solid;
+	border-bottom-color: gray; */
+	height: 50px;
+	text-align: left;
+}
+
+.myInfoChage-input{
+	border: none;
+	border-bottom: 0.5px solid gray;
+}
+.myInfoChage-td1{
+	width: 120px;
+    text-align: center;	
+}
+
+/* 펫 정보 수정하기 페이지 CSS */
+.petInfoChange-outline{
+	margin-bottom: 50px;
+	margin-top: 50px;
+	text-align: center;
+}
+
+/* 비밀번호 바꾸기 전 비밀번호 확인하는 페이지 */
+.PWChangeBefore-outline{
+	margin-bottom: 50px;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.PWChangeBefore-result{
+	color: red;
+}
+
+/* 비밀번호 바꾸는 페이지 */
+.PWChange-outline{
+	margin-bottom: 50px;
+	margin-top: 50px;
+	text-align: center;
+}
+.pwChange-Guide{
+	font-size: 5pt;
+}
+
+/* 회원 탈퇴 동의서 페이지 */
+.memberDeleteAgree-outline{
+	margin-bottom: 20px;
+	margin-top: 50px;
+	text-align: center;
+}
+
+.memberDeleteAgree-outline2{
+	margin-bottom: 80px;
+    text-align: center;
+    margin-top: -15px;
+}
+
+.memberDeleteAgree-text{
+	font-size: 9pt;
+	position: relative;
+    left: 320px;
+}
+
+/* 아이디 찾기 페이지 */
+.findID-outline{
+	margin-bottom: 100px;
+	margin-top: 100px;
+	text-align: center;
+	display: flex;
+}
+
+.findID-email{
+	margin-left: auto;
+	margin-right: 150px;
+	
+}
+
+.findID-phoneNum{
+	margin-right: auto;
+	margin-left: 150px;
+}
+
+.findID-line{
+	border-left: 1px solid gray;
+    height: 150px;
+}
+
+.findID-email-tr , .findID-phoneNum-tr{
+	height: 50px;
+}
+
+.findID-phoneNum-td , .findID-email-td{
+	width: 80px;
+}
+
+/* 찾은 아이디 보여주는 페이지 */
+.tellId-outline{
+	margin-bottom: 100px;
+	margin-top: 100px;
+	text-align: center;
+}
+
+.tellId-tellIdDiv{
+	width: 500px;
+    height: 50px;
+    margin: 0 auto;
+    border: 1px solid gray;
+    padding-top: 15px;
+}
+
+.tellId-tellIdDiv1{
+	width: 500px;
+    height: 70px;
+    margin: 0 auto;
+    border: 1px solid gray;
+    padding-top: 15px;
+}
+
+/* 비밀번호 찾는 페이지 */
+.findPW-outline{
+	margin-bottom: 100px;
+	margin-top: 100px;
+	text-align: center;
+	
+}
+
+.findPW-table{
+	margin: 0 auto;
+}
+
+.findPW-table-tr{
+	height: 40px;	
+}
+
+.findPW-table-td{
+	width: 60px;	
+}
+
+/* 비밀번호 찾기 한 후 페이지 */
