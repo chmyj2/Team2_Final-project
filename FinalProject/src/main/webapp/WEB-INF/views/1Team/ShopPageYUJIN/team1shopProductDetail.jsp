@@ -36,12 +36,14 @@ $(function() {
 		  $(this).parent().children('span').removeClass('on');
 		  $(this).addClass('on').prevAll('span').addClass('on');
 //		  alert($(this).attr("value"));
+
 		let  a = $(this).attr("value")
 		  $('#starrr').attr('value', a)
 		  return false;
 		});
 });
 </script>
+
 <script type="text/javascript">
 $(function() {
 	let select=''
@@ -174,6 +176,7 @@ $(function() {
 						</div>
 						<div class="store_product_detail_purchase_review">
 							<div class="store_product_detail_purchase_review_star">
+
 								<div class="store_product_detail_purchase_review_center">
 									<span> 
 										<img src="resources/img/review_star.png" alt="">
@@ -317,7 +320,7 @@ $(function() {
 									<!-- 수정 Ajax -->
 								<div class="store_review_btn_stat">
 								<c:if test="${sessionScope.loginMember.member_ID == r.review_id }">
-									<button class="reviewUpdate" onclick="location.href='review.update">수정</button>
+									<button class="reviewUpdate" onclick="location.href='review.update'">수정</button>
 									<button id="${r.review_num}" class="reviewUpdate2" style="display: none;">완료</button>
 									<button class="reviewDelete" onclick="location.href='review.delete?review_num=${r.review_num}'">삭제</button>
 								</c:if>

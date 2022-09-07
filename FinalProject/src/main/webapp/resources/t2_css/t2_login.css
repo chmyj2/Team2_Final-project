@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
 .login_didididiv{
-	width:100%;
-	height: auto;
-	text-align: center;
+	width: 80%;
+    height: auto;
+    text-align: center;
+    margin: 0 auto;
 	
 }
 
@@ -167,27 +168,6 @@ a {
 	align-items: center;
 }
 
-
-
-/* .login_bt {
-	로그인 버튼 
-	display: block;
-	margin: 0 auto;
-	width: 300px;
-	height: 40px;
-	border-radius: 30px;
-	font-weight: 900;
-	color: rgb(255, 255, 255);
-	font-size: 15px;
-	cursor: pointer;
-	border: solid #ffffff;
-}
-
-.login_bt:hover{
-	background: black;
-	color:white;
-	border:solid #ffffff ;
-} */
 
 /* ----------------------------------------------------------------*/
 
@@ -415,7 +395,7 @@ a {
   padding: 0px;
   text-decoration: none;
   font-family:sans-serif;
-  height: 1000px;
+  height: 1273px;
 }
 
 

@@ -65,10 +65,10 @@
 		<input type="button" value="펫 관리하기" onclick="location.href='t2mypetInformation.go'"> 
 		
 		<c:if test="${sessionScope.loginMember.member_linkWhere == 1 }">
-		<input type="button" value="비밀번호바꾸기"> 
+		<input type="button" value="비밀번호바꾸기" onclick="location.href='changePW.go'"> 
 		</c:if>
 		
-		<input type="button" value="탈퇴하기">
+		<input type="button" value="탈퇴하기" onclick="location.href='DeleteMember.check'">
 	
 		
 	</div>

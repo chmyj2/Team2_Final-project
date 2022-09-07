@@ -23,18 +23,47 @@
 </tr>
 
 <tr>
+<td>몸무게</td>
+<td>${petInfo.baby_weight }kg</td>
+</tr>
+
+
+<tr>
 <td>생일</td>
 <td>${petInfo.baby_birth }</td>
 </tr>
 
 <tr>
 <td>성별</td>
-<td>${petInfo.baby_sex }</td>
+<c:choose>
+<c:when test="${petInfo.baby_sex == 'm' }">
+
+<td>남아</td>
+
+</c:when>
+<c:otherwise>
+
+<td>여아</td>
+
+</c:otherwise>
+</c:choose>
 </tr>
 
 <tr>
 <td>종류</td>
-<td>${petInfo.baby_type }</td>
+<c:choose>
+<c:when test="${petInfo.baby_type == 'dog'}">
+
+<td>강아지</td>
+
+</c:when>
+<c:when test="${petInfo.baby_type == 'cat' }">
+<td>고양이</td>
+</c:when>
+<c:otherwise>
+<td>기타</td>
+</c:otherwise>
+</c:choose>
 </tr>
 
 <tr>
@@ -44,14 +73,22 @@
 
 <tr>
 <td>중성화</td>
-<td>${petInfo.baby_neut }</td>
+<c:choose>
+<c:when test="${petInfo.baby_neut =='yes' }">
+
+<td>함</td>
+</c:when>
+<c:otherwise>
+<td>안함</td>
+</c:otherwise>
+</c:choose>
 </tr>
 
 </table>
 
 
 <button onclick="location.href='petInfoChange.go'">펫 수정하기</button> &nbsp;&nbsp;
-<button>펫 삭제하기</button> &nbsp;&nbsp;
+<button onclick="petInfoDelete('${petInfo.baby_img }')">펫 삭제하기</button> &nbsp;&nbsp;
 <input type="button" onclick="history.back()" value="뒤로가기">
 
 
@@ -65,4 +102,12 @@
 </c:choose>
 </div>
 </body>
+<script type="text/javascript">
+function petInfoDelete(p) {
+	var ok = confirm("삭제하시겠습니까?");
+	if(ok){
+		location.href="petInfoDelete?baby_img="+p;
+	}
+}
+</script>
 </html>
