@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="t2-join-outdiv">
-<form action="petInformationReg.do" method="POST" class="joinForm" enctype="multipart/form-data"> 
+<form action="petInformationReg.do" method="POST" class="joinForm" enctype="multipart/form-data" name="petReg" onsubmit="return petRegDO()"> 
                                                                                                
       <h2>펫 등록하기</h2>
       <h6>대표 한마리만 등록이 가능합니다</h6>
@@ -18,17 +18,17 @@
       </div>
       
       <div class="join-textForm">   
-        <input name="baby_name" type="text" class="join-name" placeholder="펫이름">      
+        <input name="baby_name" type="text" class="join-name" placeholder="펫이름" id="babyName">      
         <span id="idcheckResult"></span>
       </div>
       
       
       <div class="join-textForm brith">
-        <input name="baby_weight"  class="join-name" placeholder="몸무게" style="width: 80px;">kg
+        <input name="baby_weight"  class="join-name" placeholder="몸무게" style="width: 80px;" id="babyWeight">kg
       </div>
       
       <div class="join-textForm brith">
-      	생일&nbsp;&nbsp;<input name="baby_birth" type="date" class="join-birth" >
+      	생일&nbsp;&nbsp;<input name="baby_birth" type="date" class="join-birth" id="babyBirth">
       </div> 
       
       <div class="join-textForm brith">
@@ -46,12 +46,12 @@
       
       <div class="join-textForm brith">
       	품종 &nbsp;&nbsp;
-        <input name="baby_typeDetail" class="join-cellphoneNo" placeholder="품종" style="width: 250px;">
+        <input name="baby_typeDetail" class="join-cellphoneNo" placeholder="품종" style="width: 250px;" id="babyDetail">
       </div>
       
        <div class="join-textForm brith">
       	중성화 &nbsp;&nbsp;
-        <input name="baby_neut" type="radio" class="join-sex" value="yse" checked="checked">함
+        <input name="baby_neut" type="radio" class="join-sex" value="yes" checked="checked">함
         &nbsp;&nbsp;<input name="baby_neut" type="radio" class="join-sex" value="no">안함
       </div>
       

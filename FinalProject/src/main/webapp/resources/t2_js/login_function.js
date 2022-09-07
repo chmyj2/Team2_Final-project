@@ -29,9 +29,10 @@ function idCheck() {
 					if (getData >=1) {
 						$('#idcheckResult').text("사용불가");
 						$('#idcheckResult').css('color','red');
+						$('#join_IDCheck').val('IDUnCheck');
 					}else {
-						$('#idcheckResult').text("사용가능");
-						$('#idcheckResult').css('color','green');
+						$('#idcheckResult').text("");
+						$('#join_IDCheck').val('IDcheck');
 					}
 					
 					//$('span').text(idInput+"이미 사용중입니다.");
@@ -48,30 +49,35 @@ function emailCheck() {
 	//이메일 중복체크
 	$('#join_mail_check').click(function() {
 		let emailInput = $('#join-email').val();
-		alert(emailInput);
 		
-		$.ajax({
-			url:"email.check",
-			type:"GET",
-			dataType :"text",
-			data:{"member_email":emailInput},
-			success: function(getData) {
-				console.log(getData);
-				if (getData ==1) {
-					$('#emailcheckResult').text("사용불가");
-					$('#emailcheckResult').css('color','red');
-				}else {
+		if (emailInput !="") {
+		
+			$.ajax({
+				url:"email.check",
+				type:"GET",
+				dataType :"text",
+				data:{"member_email":emailInput},
+				success: function(getData) {
+					console.log(getData);
+					if (getData ==1) {
+						$('#emailcheckResult').text("사용불가");
+						$('#emailcheckResult').css('color','red');
+					}else {
+						$('#emailcheckResult').text("");
+						joinEmail_check();
+					}
 					
-					joinEmail_check();
+					//$('span').text(idInput+"이미 사용중입니다.");
+				},
+				error : function(request,status,error) {
+					console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					
 				}
-				
-				//$('span').text(idInput+"이미 사용중입니다.");
-			},
-			error : function(request,status,error) {
-				console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-				
-			}
-		}); // ajax끝
+			}); // ajax끝
+		}else {
+			alert("이메일을 입력해주세요");
+		}
+		
 	})
 }//이메일 중복체크
 
@@ -107,7 +113,7 @@ function joinEmail_numCheck() {
 		
 		if (inputNum == code) {
 			
-			$('#join_num_check').val("emailcheck");
+			$('#join_emailCheckNum').val("emailcheck");
 			
 		}else {
 			result.html("인증번호가 불일치합니다.")
@@ -128,9 +134,29 @@ function pwcheck() {
 		if (pw1 != pw2) {
 			result.html("패스워드불일치");
 			result.css('color','red');
+			$('#join_PWCheck').val("PWUnCheck");
 		}else {
 			result.html("");
+			$('#join_PWCheck').val("PWCheck");
 			
+		}
+	})
+	
+	$('.join-pw').keyup(function() {
+		if ($('.join-pw2').val() != "") {
+			
+			let pw1 = $('.join-pw').val();
+			let pw2 = $('.join-pw2').val();
+			
+			if (pw1 != pw2) {
+				result.html("패스워드불일치");
+				result.css('color','red');
+				$('#join_PWCheck').val("PWUnCheck");
+			}else {
+				result.html("");
+				$('#join_PWCheck').val("PWCheck");
+				
+			}
 		}
 	})
 	
@@ -151,8 +177,10 @@ function businessNumCheck() {
 					if (getData >=1) {
 						$('.businessNumResult').text("일치하는 사업자 번호가 있습니다.");
 						$('.businessNumResult').css('color','red');
+						$('#join_BusinessNumCheck').val('BusinessNumUncheck');
 					}else {
 						$('.businessNumResult').text("");
+						$('#join_BusinessNumCheck').val('BusinessNumcheck');
 					}
 					
 					//$('span').text(idInput+"이미 사용중입니다.");
