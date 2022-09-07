@@ -6033,3 +6033,9 @@ Caused by: java.io.FileNotFoundException: C:\Users\gks36\jin\Git\mingw64\share\g
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2022-09-07 20:08:08.229
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-09-07 20:12:13.892
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-09-07 20:12:13.895
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
