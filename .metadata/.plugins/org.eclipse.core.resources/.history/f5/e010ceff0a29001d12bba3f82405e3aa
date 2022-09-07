@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team12.main.t2Login.Team2loginMapper">
+	
+	<select id="getMemberByID" resultType="com.team12.main.t2Login.Membert2">
+	select * from final_member where member_ID =#{member_ID} and member_linkWhere = #{member_linkWhere}
+	</select>
+	
+	<select id="getVetByID" resultType="com.team12.main.t2Login.vet">
+	select * from vet_member where vet_ID =#{vet_ID}
+	</select>
+	
+	<select id="checkId" resultType="int">
+	select count(*) from FINAL_MEMBER , VET_MEMBER where vet_ID = #{member_ID} or member_ID = #{member_ID}
+	</select>
+	
+	<select id="checkEmail" resultType="int">
+	select count(*) from FINAL_MEMBER where member_email = #{member_email}
+	</select>
+	
+	<insert id="join" parameterType="com.team12.main.t2Login.Membert2">
+	insert into final_member values(#{member_ID},#{member_PW},#{member_linkWhere},#{member_name},#{member_birth, jdbcType=DATE},#{member_sex},#{member_phoneNum},#{member_address},#{member_email},sysdate,#{member_paper})
+	</insert>
+	
+	<select id="businessNumCheck" resultType="int">
+	select count(*) from VET_MEMBER where vet_businessNum = #{vet_businessNum}
+	</select>
+	
+	<insert id="joinBusiness" parameterType="com.team12.main.t2Login.vet">
+	insert into vet_member values(#{vet_ID},#{vet_PW},#{vet_businessNum},#{vet_address},#{vet_phoneNum},sysdate)
+	</insert>
+	
+	<select id="checkIdNaver" resultType="int">
+	select count(*) from final_member where member_ID =#{member_ID} and member_linkWhere = 3
+	</select>
+	
+	<insert id="petReg" parameterType="com.team12.main.t2Login.pet">
+	insert into PET_INFORMATION values(pet_information_seq.nextval,#{baby_memberID},#{baby_name},#{baby_birth},#{baby_sex},#{baby_weight},#{baby_type},#{baby_typeDetail},#{baby_neut},#{baby_img})
+	</insert>
+	
+	<update id="memberUpdate" parameterType="com.team12.main.t2Login.Membert2">
+	update FINAL_MEMBER set member_name =#{member_name},member_birth =#{member_birth},member_sex =#{member_sex},member_phoneNum =#{member_phoneNum},member_address =#{member_address},member_email=#{member_email}, member_paper =#{member_paper} where member_ID = #{member_ID}
+	</update>
+	
+	<select id="getPetInfo" parameterType="com.team12.main.t2Login.pet" resultType="com.team12.main.t2Login.pet">
+	select * from PET_INFORMATION where baby_memberID = #{baby_memberID}  
+	</select>
+	
+	<update id="petInfoUpdate" parameterType="com.team12.main.t2Login.pet" >
+	update pet_information set baby_name=#{baby_name},baby_birth= #{baby_birth},baby_sex=#{baby_sex},baby_weight=#{baby_weight},baby_type=#{baby_type},baby_typeDetail=#{baby_typeDetail},baby_neut=#{baby_neut},baby_img=#{baby_img} where baby_memberID=#{baby_memberID}
+	</update>
+	
+	<delete id="petDelete" parameterType="com.team12.main.t2Login.pet">
+	delete pet_information where baby_memberID = #{baby_memberID}
+	</delete>
+	
+	<update id="memberPWChange" parameterType="com.team12.main.t2Login.Membert2">
+	update final_member set member_PW =#{member_PW} where member_ID=#{member_ID}
+	</update>
+	
+	<delete id="deleteMember">
+	delete final_member where member_ID=#{member_ID}
+	</delete>
+	
+	<select id="IDfindByEmail" parameterType="com.team12.main.t2Login.Membert2" resultType="com.team12.main.t2Login.Membert2">
+	select member_ID , member_linkWhere from final_member where member_name=#{member_name} and member_email =#{member_email}
+	</select>
+	
+	<select id="getMemberByPhone" parameterType="com.team12.main.t2Login.Membert2" resultType="com.team12.main.t2Login.Membert2">
+	select member_ID , member_linkWhere from final_member where member_name=#{member_name} and member_phoneNum =#{member_phoneNum}
+	</select>
+	
+	<select id="findmemberID" parameterType="com.team12.main.t2Login.Membert2" resultType="int">
+	select count(member_ID) from final_member where member_name=#{member_name}
+	</select>
+	
+	<select id="checkMember" parameterType="com.team12.main.t2Login.Membert2" resultType="com.team12.main.t2Login.Membert2">
+	select member_linkWhere from final_member where member_ID =#{member_ID} and member_name =#{member_name} and member_email=#{member_email}
+	</select>
+</mapper>

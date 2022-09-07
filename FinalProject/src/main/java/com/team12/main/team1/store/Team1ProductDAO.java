@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
@@ -91,6 +90,16 @@ public class Team1ProductDAO {
 			p.setProduct_manufactor(mr.getParameter("product_manufactor"));
 			
 			
+			Map<String, String> products = new HashMap();
+			
+			products.put("product_category", mr.getParameter("product_category"));
+			products.put("product_thumnail", img.getOriginalFilename());
+			products.put("product_title", mr.getParameter("product_title"));
+			products.put("product_title2", mr.getParameter("product_title2"));
+			products.put("product_price", mr.getParameter("product_price"));
+			products.put("product_stock", mr.getParameter("product_stock"));
+			products.put("product_info", mr.getParameter("product_info"));
+			products.put("product_manufactor", mr.getParameter("product_manufactor"));
 			
 			
 			File f = new File(path+"/"+img.getOriginalFilename());
@@ -159,6 +168,9 @@ public class Team1ProductDAO {
 	public void getOrder(HttpServletRequest req, Order o) {
 		
 		req.setAttribute("orders", ss.getMapper(Team1ProductMapper.class).getOrderList(o));		
+		List<Team1ProductDAO> products = ss.getMapper(Team1ProductMapper.class).getProductList(product);
+		
+		
 	}
 
 }

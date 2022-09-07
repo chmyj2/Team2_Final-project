@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<h1>패스워드 찾기</h1>
+<table>
+
+<tr>
+<td>ID</td>
+<td><input name="member_ID"></td>
+</tr>
+
+<tr>
+<td>이름</td>
+<td><input name="member_name"></td>
+</tr>
+
+<tr>
+<td>email</td>
+<td><input name="member_email"></td>
+</tr>
+
+</table>
+</div>
+</body>
+</html>

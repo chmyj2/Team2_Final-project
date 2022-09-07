@@ -66,9 +66,7 @@ var setting = {
     }
  };
 
-$j341(function(){
-console.log('loaded')	
-});
+
 $j341('#summernote').summernote(setting);
 
 function uploadSummernoteImageFile(file, el) {
@@ -94,7 +92,8 @@ $.ajax({
 	success : function(data) {
 		$j341(el).summernote('editor.insertImage', data.url);
 			
-		imgs = imgs + data.url.replace(/(.png|.jpg|.jpeg|.gif)$/, '')+"!";
+		imgs = imgs + data.url+"!";
+		imgs = imgs.replace('resources/team2_files/', '')
 		$j341('#board_img_input').attr('value', imgs);
 		console.log(imgs);
 

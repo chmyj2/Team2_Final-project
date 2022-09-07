@@ -50,7 +50,6 @@ public class Team1ReviewController {
 		mDAO.loginCheck(req);
 		rDAO.writeReview(req, mr);
 //		rDAO.showReviewList(req, review);
-		
 		req.setAttribute("contentPage", "master/team1shopProductDetail.jsp");
 		
 		return "1Team/t1_index";
