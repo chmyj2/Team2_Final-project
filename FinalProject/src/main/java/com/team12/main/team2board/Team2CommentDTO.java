@@ -9,22 +9,13 @@ public class Team2CommentDTO {
 	private String comment_member_id;
 	private String comment_txt;
 	private Date comment_date;
-	
+	private int comment_child_total;
 	private int page;
 	private int start;
 	private int end;
 	
 	public Team2CommentDTO() {
 		// TODO Auto-generated constructor stub
-	}
-
-	public int getPage() {
-		return page;
-	}
-
-
-	public void setPage(int page) {
-		this.page = page;
 	}
 
 	public int getComment_num() {
@@ -67,6 +58,22 @@ public class Team2CommentDTO {
 		this.comment_date = comment_date;
 	}
 
+	public int getComment_child_total() {
+		return comment_child_total;
+	}
+
+	public void setComment_child_total(int comment_child_total) {
+		this.comment_child_total = comment_child_total;
+	}
+
+	public int getPage() {
+		return page;
+	}
+
+	public void setPage(int page) {
+		this.page = page;
+	}
+
 	public int getStart() {
 		return start;
 	}
@@ -84,17 +91,19 @@ public class Team2CommentDTO {
 	}
 
 	public Team2CommentDTO(int comment_num, int comment_board_num, String comment_member_id, String comment_txt,
-			Date comment_date, int page, int start, int end) {
+			Date comment_date, int comment_child_total, int page, int start, int end) {
 		super();
 		this.comment_num = comment_num;
 		this.comment_board_num = comment_board_num;
 		this.comment_member_id = comment_member_id;
 		this.comment_txt = comment_txt;
 		this.comment_date = comment_date;
+		this.comment_child_total = comment_child_total;
 		this.page = page;
 		this.start = start;
 		this.end = end;
 	}
+
 	
 
 }

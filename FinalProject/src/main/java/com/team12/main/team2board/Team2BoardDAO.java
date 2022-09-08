@@ -59,7 +59,25 @@ public class Team2BoardDAO {
 	}
 
 	public void showPostList(HttpServletRequest req, Team2BoardDTO board) {
-
+		
+		if(board.getSearch() == null) {            //검색기능
+			board.setSearch("");
+		} else {
+			req.setAttribute("search", board.getSearch());
+		}
+		
+		if(board.getSort() == 1) {                 // 1 == 조회수 , 2 == 좋아요  정렬
+			req.setAttribute("sort", 1);
+		} else if (board.getSort() == 2) {
+			req.setAttribute("sort", 2);
+		} else {
+			req.setAttribute("sort", 0);
+		}
+		
+		
+		
+		
+		System.out.println("board category :"+board.getBoard_category());
 		int allPost = ss.getMapper(Team2BoardMapper.class).getAllpostCount(board);
 		int totalPage = (int) Math.ceil((double) allPost / 10);
 		req.setAttribute("r", totalPage); // r = 총 페이지 수
@@ -79,24 +97,34 @@ public class Team2BoardDAO {
 			board.setRnEnd(10);
 		}
 
+		
+		
 		List<Team2BoardDTO> posts = ss.getMapper(Team2BoardMapper.class).getPostList(board);
 
 		req.setAttribute("posts", posts);
 
 	}
 
-	public void createPost(HttpServletRequest req, Team2BoardDTO board) {
-
+	public int createPost(HttpServletRequest req, Team2BoardDTO board) {
+		int numResult = 0;
+		
 		if (board.getBoard_category() == null) {
 			board.setBoard_category((String) req.getAttribute("board_category"));
 		}
+		
 
 		if (ss.getMapper(Team2BoardMapper.class).writePost(board) == 1) {
 			System.out.println("등록성공");
 			req.setAttribute("board_category", board.getBoard_category());
+			
+			numResult = ss.getMapper(Team2BoardMapper.class).getPostNum(board);
+			System.out.println("numResult  : "+numResult);
+			
 		} else {
 			System.out.println("등록실패");
 		}
+		
+		return numResult;
 
 	}
 
@@ -246,7 +274,7 @@ public class Team2BoardDAO {
 		return a;
 	}
 	
-	// 코멘트 10개 ajax 가져오기
+	// 코멘트 10개  가져오기
 	public void getComment(HttpServletRequest req, Team2BoardDTO board, Team2CommentDTO comment) {
 		comment.setComment_board_num(board.getBoard_num());
 		
@@ -285,7 +313,69 @@ public class Team2BoardDAO {
 		int a = ss.getMapper(Team2BoardMapper.class).updatecomment(t);
 		System.out.println("수정완료여부-----"+a);
 		return a;
-	} 
+	}
+
+	public int create_childComment(Team2ChildCommentDTO t) {
+		
+		int a = ss.getMapper(Team2BoardMapper.class).creatChildComment(t);
+		
+		if(a == 1) {
+			ss.getMapper(Team2BoardMapper.class).countUpComment(t);
+			a = ss.getMapper(Team2BoardMapper.class).getchildCommentPK(t);
+		}
+		
+		
+		
+		return a;
+	}
+
+	public ChildCommentJson get_childComment(Team2ChildCommentDTO t) {
+		
+		List<Team2ChildCommentDTO> child = ss.getMapper(Team2BoardMapper.class).getChildComments(t);
+		
+		ChildCommentJson childComment = new ChildCommentJson();
+		childComment.setChildComments(child);
+		
+		return childComment;
+	}
+
+	public int updateChildComment(Team2ChildCommentDTO t) {
+		
+		int result = ss.getMapper(Team2BoardMapper.class).updatechildComment(t);
+		
+		
+		
+		return result;
+	}
+
+	public int deleteChildComment(Team2ChildCommentDTO t) {
+		
+		int result = ss.getMapper(Team2BoardMapper.class).deletechildComment(t);
+		
+		if(result == 1) {
+			ss.getMapper(Team2BoardMapper.class).countDownTotalComment(t);
+		}
+		
+		return result;
+	}
+
+	public void my_Post(HttpServletRequest req, Team2BoardDTO board, int result) {
+		
+		
+		if(result == 1) {
+			List<Team2BoardDTO> post= ss.getMapper(Team2BoardMapper.class).myPostList(board);
+			req.setAttribute("postList", post);
+		}else {
+			List<Team2BoardDTO> post= ss.getMapper(Team2BoardMapper.class).myLikeList(board);
+			req.setAttribute("postList", post);
+
+		}
+		
+		
+		
+	}
+	
+
 	
 	
 	

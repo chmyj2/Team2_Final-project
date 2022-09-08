@@ -1,0 +1,80 @@
+@charset "UTF-8";
+.board_wrapper{
+    background-color: rgba(255, 255, 255, 0.575);
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.board_title{
+    height: 250px;
+    width: 1000px;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.board_header{
+    /* community */
+    font-size: 50pt;
+    font-weight: bold;
+    margin-top: 200px;
+    margin-bottom: 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.board_write{
+    float: right;
+    height: 30px;
+    margin-top: 10px;
+    width: 70px;
+}
+
+.board_pencil{
+    width: 20px;
+    height: auto;
+    float: right;
+}
+
+.write_btn{
+    border: none;
+    background:none;
+    border-radius: 10px;
+    font-size: 11pt;
+    font-weight: bold;
+    padding: 5px 0px 5px 8px;
+    text-decoration: underline 1px;
+    text-underline-position: under;
+}
+
+.board_wrapper table{
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    width: 100%;
+    line-height: 2;
+    border-collapse:collapse; /* 셀 간 간격 없애기 */
+    margin-bottom: 500px;
+}
+
+table tr th{
+    background-color: rgb(255, 212, 193);
+    color: rgb(0, 0, 0);
+    border-bottom: 3px solid black;
+}
+
+tbody tr td{
+    border-bottom: 1px solid black;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+tbody tr:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
