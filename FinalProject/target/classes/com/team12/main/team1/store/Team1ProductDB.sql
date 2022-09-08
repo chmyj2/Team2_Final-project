@@ -23,6 +23,10 @@ insert into team1Product_tbl
 	values(team1Product_tbl_seq.nextval,'1','1','ANF MADE WITH ORGANIC 6Free+','전연령용', 
 	'20000', '10', 'about1.png', '전연령용 사료입니다', 'ANF' )
 	
+
+------------ 동훈 DB ------------
+
+	
 	
 	
 	

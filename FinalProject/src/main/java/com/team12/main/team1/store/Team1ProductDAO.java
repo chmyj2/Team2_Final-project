@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.team12.main.t2.shop.Product;
 import com.team12.main.t2.shop.ProductMapper;
 
 @Service
@@ -168,7 +169,7 @@ public class Team1ProductDAO {
 	public void getOrder(HttpServletRequest req, Order o) {
 		
 		req.setAttribute("orders", ss.getMapper(Team1ProductMapper.class).getOrderList(o));		
-		List<Team1ProductDAO> products = ss.getMapper(Team1ProductMapper.class).getProductList(product);
+		
 		
 		
 	}
