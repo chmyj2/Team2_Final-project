@@ -11,8 +11,7 @@
 <body>
 	<div class="success-page">
    <img  src="http://share.ashiknesin.com/green-checkmark.png" class="center" alt="" />
-  <p class="successful">Payment Successful</p>
-				<a onclick="check()" title="Button fade blue/green" class="button btnFade btnBlueGreen">결재완료</a>
+				<button onclick="check()" class="SuccessBtn">결제완료</button>
 </div>
 </div>
 
@@ -52,7 +51,7 @@
 <script type="text/javascript">
 function check() {
 	opener.parent.deletANDINsert();
-	//window.close();
+	window.close();
 	}
 
 </script>

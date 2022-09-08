@@ -1,0 +1,107 @@
+.regTxt{
+	
+	font-size: 31px;
+	font-weight: 300;
+	
+}
+
+
+.regDiv{
+	 margin-left: 200px;
+	 margin-right:200px;
+	 background-color: #EEEEEE;
+	
+}
+
+.regTbl{
+	
+	line-height: 50px;
+}
+
+.regTr{
+	font-size:15px;
+	padding-left:40px;
+}
+
+.regInput{
+	width: 300px;
+	height: 30px;
+	border-style:none; 
+	border-radius: 10px;
+	margin-bottom: 1px;
+	
+}
+
+.regInfo{
+	
+	width:300px; 
+	height:100px; 
+    resize:none;
+    border-style:none; 
+	border-radius: 10px;
+    
+	
+}
+
+.DeleteBtn{
+	border-style: none;
+	border-radius:10px;
+	width: 80px;
+	height: 30px;
+	background-color: #FFC9C9;
+	text-align: center;
+	
+}
+
+
+
+.addTag{
+	margin-top:10px;
+	margin-left:40px;
+	border-style: none;
+	width: 80px;
+	height: 30px;
+	background-color: #BDC4FF;
+	border-radius: 5px;
+	
+}
+
+.confirmBtn{
+	margin-top:15px;
+	margin-left:40px;
+	border-style: none;
+	width: 120px;
+	height: 40px;
+	color:white;
+	background-color: black;
+	border-radius: 5px;
+	margin-bottom: 40px;
+	
+}
+
+
+
+.updateBtn{
+	border-style: none;
+	width: 50px;
+	height: 35px;
+	color:white;
+	background-color: #9ada8a;
+	border-radius: 5px;
+	
+}
+
+.deleteBtn{
+	border-style: none;
+	width: 50px;
+	height: 35px;
+	color:white;
+	background-color: #f6aac6;
+	border-radius: 5px;
+	
+}
+
+
+	
+	
+}

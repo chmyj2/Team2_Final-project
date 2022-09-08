@@ -3,6 +3,7 @@ package com.team12.main.team1.join;
 import java.io.PrintWriter;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Service;
@@ -17,7 +18,8 @@ public class MemberServiceImpl implements MemberService {
 	
 	// 아이디 찾기
 		@Override
-		public String find_id(HttpServletResponse response, String email) throws Exception {
+		public String find_id(HttpServletResponse response, String email, HttpServletRequest req) throws Exception {
+
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
 			String id = manager.find_id(email);
@@ -30,8 +32,12 @@ public class MemberServiceImpl implements MemberService {
 				out.close();
 				return null;
 			} else {
-				return id;
+				req.setAttribute("id", id);
+//				req.setAttribute("linkwhere", linkwhere);
+				
 			}
+			return id;
+
 		}
 
 }

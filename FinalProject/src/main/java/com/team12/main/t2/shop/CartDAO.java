@@ -1,7 +1,9 @@
 package com.team12.main.t2.shop;
 
 import java.net.InetAddress;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,46 +36,8 @@ public class CartDAO {
 
 		return ss.getMapper(ProductCartMapper.class).regCart(c);
 
-//		if (c.getCart_UserID().equals("비회원")) {
-//		
-//		Random rand = new Random();
-//
-//		String temp = Integer.toString( rand.nextInt(8) + 1);
-//
-//		for (int i = 0; i < 7; i++) {
-//		    temp+= Integer.toString(rand.nextInt(9));
-//		}
-//		
-//		System.out.println(temp);
-//		c.setCart_UserID(temp);
-//		}
-
 	}
 
-	public boolean checkCart(Cart c) {
-
-		try {
-
-			InetAddress myIP = InetAddress.getLocalHost();
-
-			// getHostAddress() 사용중인 PC의 IP주소를 얻어온다.
-			String strIPAddress = myIP.getHostAddress();
-			c.setCart_UserID(strIPAddress);
-
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		// 체킹하기
-		if (ss.getMapper(ProductCartMapper.class).checkCart(c) == 1) {
-			System.out.println("asdasd");
-
-			return true;
-
-		}
-
-		return false;
-
-	}
 
 	// 카트 받기
 	public void getCart(HttpServletRequest request,String cart_UserID) {
@@ -139,10 +103,13 @@ public class CartDAO {
 	
 	// 구매완료한 제품 장바구니삭제
 	public void deletePurchasedProduct(String[] cartNumArr) {
+		
 		Cart c = new Cart();
 		for (int i = 0; i < cartNumArr.length; i++) {
-			c.setCartNum(Integer.parseInt( cartNumArr[i]));
+			c.setCartNum(Integer.parseInt(cartNumArr[i]));
+			System.out.println(c.getCartNum());
 			ss.getMapper(ProductCartMapper.class).deleteCart(c);
+			System.out.println("삭제성공");
 		}
 		
 		
@@ -159,6 +126,7 @@ public class CartDAO {
 				p.setProductNum(Integer.parseInt(productNumArr[i]));
 				p.setCart_ProductQuantity(Integer.parseInt(quantityArr[i]));
 				ss.getMapper(ProductCartMapper.class).updatePurchasedProduct(p);
+				System.out.println("재고수정성공");
 		}
 		
 	}
@@ -167,7 +135,7 @@ public class CartDAO {
 	// 주문테이블 등록
 	public void insertPurchasedProduct(HttpServletRequest request, String[] productNumArr, String[] quantityArr, String shipAddress,
 			String phoneNum, String billState, String billState1, String billState2, String memo, String[] pricekArr,
-			String totalPrice, String recipient) {
+			String totalPrice, String recipient, String[] thumbnailArr) {
 
 		
 		OrderDTO o = new OrderDTO();
@@ -175,6 +143,7 @@ public class CartDAO {
 		String productNum = "";
 		String quantity = "";
 		String price = "";
+		String thumbnail = "";
 		String address = billState + "!" + billState1 + "!" + billState2;
 		
 		
@@ -191,6 +160,10 @@ public class CartDAO {
 			price += c + "!";
 		}
 		
+		for (String d : thumbnailArr) {
+			thumbnail += d + "!";
+		}
+		
 		
 		Random rand = new Random();
 		
@@ -200,17 +173,23 @@ public class CartDAO {
 			}
 			
 		
-			
 		o.setOrder_Num(temp);
 		o.setOrder_User_ID(shipAddress);
 		o.setOrder_ProductNum(productNum);
 		o.setOrder_PhoneNumber(phoneNum);
 		o.setProduct_Quantity(quantity);
 		o.setShipping_Address(address);
-		o.setShipping_Memo(memo);
+		if (memo == "") {
+			o.setShipping_Memo("빠른 배송부탁드립니다.");
+		}else {
+			o.setShipping_Memo(memo);
+		}
 		o.setProduct_Price(price);
 		o.setOrder_TotalPrice(totalPrice);
 		o.setRecipient(recipient);
+		o.setThumbnail(thumbnail);
+		
+		
 		if ( ss.getMapper(ProductCartMapper.class).insertPurchasedProduct(o) == 1) {
 			System.out.println("등록 성공");
 		}else {
@@ -218,11 +197,52 @@ public class CartDAO {
 		}
 		
 		
+		
 		request.setAttribute("order_Num", temp);
 		
 		
 		
+		}
+
+
+	public void getCart2(HttpServletRequest request) {
+		
+		Cart c = new Cart();
+		
+		if (request.getParameter("member_ID") == null) {
+			c.setCart_UserID(request.getParameter("vet_ID"));
+		}else {
+			c.setCart_UserID(request.getParameter("member_ID"));
+		}
+
+		request.setAttribute("Product", ss.getMapper(ProductCartMapper.class).getProductFromCart(c));
+		
+		
 		
 	}
+
+
+	public String getOrderNum(OrderDTO o) {
+		
+		return ss.getMapper(ProductCartMapper.class).getOrderNum(o);
+	}
+
+
+	public void getOrder(OrderDTO o, HttpServletRequest request) {
+		request.setAttribute("order", ss.getMapper(ProductCartMapper.class).getOrder(o));
+		
+	}
+	
+	
+
+
+
+
+
+	
+	
+
+
+
 
 }

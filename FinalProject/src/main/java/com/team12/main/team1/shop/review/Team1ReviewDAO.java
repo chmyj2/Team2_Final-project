@@ -2,7 +2,6 @@ package com.team12.main.team1.shop.review;
 
 
 import java.io.File;
-import java.text.Format;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -83,7 +82,7 @@ public class Team1ReviewDAO {
 			System.out.println(mr.getFile("review_img"));
 			System.out.println(mr.getParameter("review_star"));
 			MultipartFile img = mr.getFile("review_img");
-//			System.out.println("파일이름 -------:"+img.getOriginalFilename());
+			System.out.println("파일이름 -------:"+img.getOriginalFilename());
 			
 			
 			Map<String, String> review = new HashMap();
@@ -134,17 +133,17 @@ public class Team1ReviewDAO {
 
 	// 리뷰글 평점 평균
 	public void showAllReviewAvg(HttpServletRequest req) {
-		double avg = ss.getMapper(Team1ReviewMapper.class).getAllReviewAvg();
-		String result = String.format("%.1f", avg); 
-		req.setAttribute("avg", result );
-		System.out.println(result);
 
-//		int avg = ss.getMapper(Team1ReviewMapper.class).getAllReviewAvg();  병합충돌 나서 주석 처리 했습니다 - 동훈 -
-		req.setAttribute("avg", avg);
-		System.out.println(avg);
+
+        double avg = ss.getMapper(Team1ReviewMapper.class).getAllReviewAvg();
+        String result = String.format("%.1f", avg); 
+        req.setAttribute("avg", result );
+        System.out.println(result);
+
+    }
+
 
 		
-	}
 
 	// 리뷰 글 수정
 	public void updateReview(HttpServletRequest req, Team1ReviewDTO review) {

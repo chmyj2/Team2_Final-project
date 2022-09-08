@@ -6,9 +6,6 @@ public interface ProductCartMapper {
 
 	int regCart(Cart c);
 
-	int checkCart(Cart c);
-
-
 	public List<Product> getProductFromCart(Cart c);
 
 	int deleteCart(Cart c);
@@ -17,4 +14,8 @@ public interface ProductCartMapper {
 
 	int insertPurchasedProduct(OrderDTO o);
 
+	String getOrderNum(OrderDTO o);
+
+	OrderDTO getOrder(OrderDTO o);
+	
 }

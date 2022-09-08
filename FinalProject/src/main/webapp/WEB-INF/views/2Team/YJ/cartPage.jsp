@@ -11,7 +11,7 @@
 <body>
 	<header id="site-header">
 		<div class="container">
-			<h1>Shopping cart <span>[</span> <em><a href="https://codepen.io/tag/rodeo-007" target="_blank">CodePen Challange</a></em> <span class="last-span is-open">]</span></h1>
+			<h1>Shopping cart</h1>
 		</div>
 	</header>
 

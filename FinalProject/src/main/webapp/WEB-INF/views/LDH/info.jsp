@@ -59,11 +59,9 @@ $(function() {
                 	<br>
 
                 	<!-- phoneNum -->
-<<<<<<< HEAD
+
                     <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum"  placeholder="Phone Number *" type="text" maxlength="13" autocomplete="off">
-=======
-                    <input class="join-cellphoneNo" value="${sessionScope.loginMember.member_phoneNum }" name="jm_pNum" id="telInput" placeholder="Phone Number *" type="text" maxlength="13" autocomplete="off">
->>>>>>> af8b8efb1348f40938db88e9ce6fd586a2641319
+
                 	<br>
 
                 	

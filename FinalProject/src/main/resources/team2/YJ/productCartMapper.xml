@@ -6,10 +6,6 @@
  	INSERT into PRODUCT_CART VALUES(CARTNUM_SEQ.nextval,#{cart_UserID },#{cart_ProductNum},#{cart_ProductQuantity},sysdate)
  </insert>
 
-<select id="checkCart" parameterType="com.team12.main.t2.shop.Cart" resultType="int">
-	select * from PRODUCT_CART where CART_USERID = #{cart_UserID} and cart_ProductNum = #{cart_ProductNum}  and cart_ProductQuantity = #{cart_ProductQuantity} 
-</select>
-
 <select id="getProductFromCart" parameterType="com.team12.main.t2.shop.Cart" resultType="com.team12.main.t2.shop.Product">
 	select p1.*, p2.cart_ProductQuantity,p2.cartNum from product p1,product_cart p2 where p1.productnum = p2.cart_productnum and cart_userid = #{cart_UserID}
 </select>
@@ -22,10 +18,23 @@
 	UPDATE  PRODUCT set productStock = productStock - #{cart_ProductQuantity} where productNum = #{productNum}
 </update>
 
-<insert id="insertPurchasedProduct" parameterType="com.team12.main.t2.shop.OrderDTO">
-	INSERT INTO order_Table (Order_Num, Order_User_ID, Order_ProductNum,Order_PhoneNumber,Product_Quantity,Order_Date,Shipping_Address,Order_DeliverState,Order_State,Order_PaymentState,Product_Price,Order_TotalPrice,Recipient,Order_PK,Shipping_Memo)
-	VALUES(#{Order_Num}, #{Order_User_ID}, #{Order_ProductNum},#{Order_PhoneNumber},#{Product_Quantity},sysdate,#{Shipping_Address},'출고 처리중','주문 완료','결재 완료',#{Product_Price},#{Order_TotalPrice},#{Recipient},Order_PK_seq.nextval,#{Shipping_Memo})
+<insert id="insertPurchasedProduct">
+	INSERT into order_Table VALUES(#{Order_Num},#{Order_User_ID},#{Order_ProductNum},#{Order_PhoneNumber},#{Product_Quantity},sysdate,#{Shipping_Address},'출고 처리중','주문완료','결제완료',#{Product_Price},#{Order_TotalPrice},Order_PK_seq.nextval,#{Shipping_Memo},#{Recipient},#{Thumbnail})
 </insert>
+
+<select id="getOrderNum" parameterType="com.team12.main.t2.shop.OrderDTO" resultType="String">
+	SELECT * 
+FROM (SELECT Order_Num 
+	  FROM order_Table 
+      WHERE Order_User_ID = #{Order_User_ID}
+      ORDER BY Order_Date DESC) 
+WHERE ROWNUM &lt;= 1
+</select>
+
+
+<select id="getOrder" parameterType="com.team12.main.t2.shop.OrderDTO" resultType="com.team12.main.t2.shop.OrderDTO">
+	SELECT * from order_Table where Order_Num = #{Order_Num}
+</select>
 
 
 

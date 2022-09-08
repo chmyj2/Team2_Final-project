@@ -4,8 +4,9 @@ import java.sql.Date;
 
 public class OrderDTO {
 
-	private String Order_Num;
-	private String Order_User_ID;
+	
+	private String Order_Num ;
+	private String  Order_User_ID;
 	private String Order_ProductNum;
 	private String Order_PhoneNumber;
 	private String Product_Quantity;
@@ -16,9 +17,12 @@ public class OrderDTO {
 	private String Order_PaymentState;
 	private String Product_Price;
 	private String Order_TotalPrice;
-	private String Recipient;
 	private int Order_PK;
 	private String Shipping_Memo;
+	private String Recipient;
+	private String Thumbnail;
+	private int start;
+	private int end;
 	
 	
 	public OrderDTO() {
@@ -28,8 +32,8 @@ public class OrderDTO {
 
 	public OrderDTO(String order_Num, String order_User_ID, String order_ProductNum, String order_PhoneNumber,
 			String product_Quantity, Date order_Date, String shipping_Address, String order_DeliverState,
-			String order_State, String order_PaymentState, String product_Price, String order_TotalPrice,
-			String recipient, int order_PK, String shipping_Memo) {
+			String order_State, String order_PaymentState, String product_Price, String order_TotalPrice, int order_PK,
+			String shipping_Memo, String recipient, String thumbnail, int start, int end) {
 		super();
 		Order_Num = order_Num;
 		Order_User_ID = order_User_ID;
@@ -43,9 +47,12 @@ public class OrderDTO {
 		Order_PaymentState = order_PaymentState;
 		Product_Price = product_Price;
 		Order_TotalPrice = order_TotalPrice;
-		Recipient = recipient;
 		Order_PK = order_PK;
 		Shipping_Memo = shipping_Memo;
+		Recipient = recipient;
+		Thumbnail = thumbnail;
+		this.start = start;
+		this.end = end;
 	}
 
 
@@ -169,16 +176,6 @@ public class OrderDTO {
 	}
 
 
-	public String getRecipient() {
-		return Recipient;
-	}
-
-
-	public void setRecipient(String recipient) {
-		Recipient = recipient;
-	}
-
-
 	public int getOrder_PK() {
 		return Order_PK;
 	}
@@ -199,9 +196,50 @@ public class OrderDTO {
 	}
 
 
+	public String getRecipient() {
+		return Recipient;
+	}
+
+
+	public void setRecipient(String recipient) {
+		Recipient = recipient;
+	}
+
+
+	public String getThumbnail() {
+		return Thumbnail;
+	}
+
+
+	public void setThumbnail(String thumbnail) {
+		Thumbnail = thumbnail;
+	}
+
+
+	public int getStart() {
+		return start;
+	}
+
+
+	public void setStart(int start) {
+		this.start = start;
+	}
+
+
+	public int getEnd() {
+		return end;
+	}
+
+
+	public void setEnd(int end) {
+		this.end = end;
+	}
+
+
 	
-
-
+		
+	
+	
 	
 	
 	

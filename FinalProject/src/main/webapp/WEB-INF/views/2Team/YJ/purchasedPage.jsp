@@ -12,66 +12,55 @@ $(function(){
 	
 	
 	var totalPrice = $('#totalPrice').text(); // 총금액
-	var shipAddress = $('#shipAddress').text();	// 회원 정보
-	var Recipient = document.getElementById("billAddress").value; // 받는사람
-	var phoneNum = document.getElementById("billCity").value; // 받는사람 전화번호
-	var billState = document.getElementById("billState").value; // 우편번호
-	var billState1 = document.getElementById("billState1").value; // 도로명주소
-	var billState2 = document.getElementById("billState2").value; // 상세주소
-	var memo = document.getElementById("billZip").value; // 메모
-	
-	var productNum = document.getElementsByName("productNum"); // 상품pk
-	var productName = document.getElementsByName("name"); // 상품이름
-	var quantity = document.getElementsByName("quantity"); // 수량
-	var price = document.getElementsByName("price"); // 상품 금액
-	
-	var productNumArr = new Array();
-	var produckNameArr = new Array();
-	var quantityArr = new Array();
-	var pricekArr = new Array();
-	
-	$(".product").each(function( i, e ) {
-		productNumArr.push(productNum[i].value);
-		produckNameArr.push(productName[i].value);
-		quantityArr.push(quantity[i].value);
-		pricekArr.push(price[i].value);
-				 
-	});
 	
 	$('#payment').click(function(){
 		
+		var Recipient = document.getElementById("billAddress").value; // 받는사람 이름
+		var phoneNum = document.getElementById("billCity").value; // 받는사람 전화번호
+		var billState = document.getElementById("billState").value; // 우편번호
+		var billState1 = document.getElementById("billState1").value; // 도로명주소
+		var billState2 = document.getElementById("billState2").value; // 상세주소
 		
 		
-		
-		
+		if (Recipient == "") {
+			alert("수령인을 입력해주세요.")
+			return false;
+		}else if (phoneNum == "") {
+			alert("전화번호를 입력해주세요.")
+			return false;
+		}else if (billState == "") {
+			alert("우편번호를 입력해주세요.")
+			return false;
+		}else if (billState1 == "") {
+			alert("도로명주소를 입력해주세요.")
+			return false;
+		}else if (billState2 == "") {
+			alert("상세주소를 입력해주세요.")
+			return false;
+		}else {
 			$.ajax({
-			url:'kakaopay',
-			type : "POST",
-			dataType:'json',
-			data :	{"totalPrice" : totalPrice},
-			success:function(data){
-				var box = data.next_redirect_pc_url;
-				var kakaoPop= window.open(box,'kakaoPay','width=500, height=800');
-				{
-					
+				url:'kakaopay',
+				type : "POST",
+				dataType:'json',
+				data :	{"totalPrice" : totalPrice},
+				success:function(data){
+					var box = data.next_redirect_pc_url;
+					var kakaoPop= window.open(box,'kakaoPay','width=500, height=800');
+					{
+						
+					}
+				},
+				error:function(error){
+					alert("실패");
 				}
-			},
-			error:function(error){
-				alert("실패");
-			}
-		});
+			});
+		}
 	});
-	
-	
-	
-	
-	
-	
 });
 </script>
 </head>
 <body>
-	<header id="site-header">
+	<header style="margin: 40px; id="site-header">
 		<div class="container">
 			<h1>배송 및 구매</h1>
 		</div>
@@ -81,10 +70,10 @@ $(function(){
 	<c:when test="${sessionScope.loginMember !=null }">
 <fieldset>
 <div style="margin: 50px;">
-      <div style=" margin-bottom: 20px;border: 3px solid #000000;">
+      <div style=" margin-bottom: 20px;" class="titleTxt">
       	<div>Order / Payment</div>
       </div>
-      <div style=" margin-top: 20px;border: 3px solid #000000;">
+      <div style=" margin-top: 30px;" class="InfoTxt">
       	<div>회원 정보</div>
       </div>
       <div class="divTable minimalistBlack" id="shippingAddress">
@@ -110,15 +99,11 @@ $(function(){
       									  <span name="shipState2" id="shipState2">${addr[1]}</span>
       									</div>
     		</div>
-    		<div class="divTableRow">
-      			<div class="divTableCell">배송 시 메모</div>
-      			<div class="divTableCell"> <input type="text" name="shipZip" id="shipZip" value="빠른 배송 부탁드립니다.""/></div>
-    		</div>
   	</div>
 	</div>
 	
 	
-	<div style=" margin-top: 20px;border: 3px solid #000000;">
+	<div style=" margin-top: 30px;" class="InfoTxt">
       	<div>배송 정보
       	<input type="checkbox" id="sameAddressControl"/>회원정보와 동일합니다.</div>
       </div>
@@ -155,7 +140,7 @@ $(function(){
   	</div>
   	
   	</div>
-      <div style=" margin-top: 20px;border: 3px solid #000000;">
+      <div style=" margin-top: 30px;" class="InfoTxt">
       	<div>상품 정보</div>
       </div>
       
@@ -176,12 +161,14 @@ $(function(){
 						<input  type="hidden" name="price" value="${p.productPrice }">
 						<input  type="hidden" name="cartNum" value="${p.cartNum }">
 						<input  type="hidden" name="productNum" value="${p.productNum }">
+						<input  type="hidden" id="Order_User_ID" name="Order_User_ID" value="${sessionScope.loginMember.member_ID }">
 					
 				</header>
 				<div class="content">
 					<span class="p_name">${p.productName }</span>
 				</div>
 				<footer class="content">
+					
 					<span class="qt-minus">수량 : </span>
 					<span class="qt">${p.cart_ProductQuantity }</span>
 					<span class="full-price">${p.productPrice * p.cart_ProductQuantity }</span>
@@ -200,16 +187,12 @@ $(function(){
 </fieldset>
 	</c:when>
 	<c:when test="${sessionScope.loginMember_business !=null }">
-      <%-- <span class="loginOK-dropbtn">${sessionScope.loginMember_business.vet_ID }님</span>
-      <span class="loginOK-dropbtn">${sessionScope.loginMember_business.vet_address }님</span>
-      <span class="loginOK-dropbtn">${sessionScope.loginMember_business.vet_phoneNum }님</span> --%>
-      
      <fieldset>
 <div style="margin: 50px;">
-      <div style=" margin-bottom: 20px;border: 3px solid #000000;">
+      <div style=" margin-bottom: 20px;" class="titleTxt">
       	<div>Order / Payment</div>
       </div>
-      <div style=" margin-top: 20px;border: 3px solid #000000;">
+      <div style=" margin-top: 30px;" class="InfoTxt">
       	<div>회원 정보</div>
       </div>
       <div class="divTable minimalistBlack" id="shippingAddress">
@@ -230,9 +213,9 @@ $(function(){
     		</div>
     		<div class="divTableRow">
       			<div class="divTableCell">주소</div>
-      			<div class="divTableCell"><%-- <span name="shipState" id="shipState">${addr[2]}</span>
+      			<div class="divTableCell"><span name="shipState" id="shipState">${addr[2]}</span>
       									  <span name="shipState1" id="shipState1">${addr[0]}</span>
-      									  <span name="shipState2" id="shipState2">${addr[1]}</span> --%>
+      									  <span name="shipState2" id="shipState2">${addr[1]}</span>
       									</div>
     		</div>
     		<div class="divTableRow">
@@ -243,7 +226,7 @@ $(function(){
 	</div>
 	
 	
-	<div style=" margin-top: 20px;border: 3px solid #000000;">
+	<div style=" margin-top: 30px;" class="InfoTxt">
       	<div>배송 정보
       	<input type="checkbox" id="sameAddressControl"/>회원정보와 동일합니다.</div>
       </div>
@@ -280,7 +263,7 @@ $(function(){
   	</div>
   	
   	</div>
-      <div style=" margin-top: 20px;border: 3px solid #000000;">
+      <div style=" margin-top: 30px;" class="InfoTxt">
       	<div>상품 정보</div>
       </div>
       
@@ -301,6 +284,7 @@ $(function(){
 						<input  type="hidden" name="price" value="${p.productPrice }">
 						<input  type="hidden" name="cartNum" value="${p.cartNum }">
 						<input  type="hidden" name="productNum" value="${p.productNum }">
+						<input  type="hidden" id="Order_User_ID" name="Order_User_ID" value="${sessionScope.loginMember_business.vet_ID }">
 					
 				</header>
 				<div class="content">
@@ -327,9 +311,6 @@ $(function(){
       
 	</c:when>
 	<c:otherwise>
-      <span class="loginOK-dropbtn">${sessionScope.loginMember_business.vet_ID }님</span>
-      <span class="loginOK-dropbtn">${sessionScope.loginMember_business.vet_address }님</span>
-      <span class="loginOK-dropbtn">${sessionScope.loginMember_business.vet_phoneNum }님</span>
 	</c:otherwise>
 </c:choose>
 	
@@ -344,9 +325,12 @@ $(function(){
 
 			<div class="right">
 				<h1 class="total">총 금액: <span id="totalPrice">0</span>원</h1>
-				<a class="payment" id="payment">Payment</a>
+				<a class="button reverse dark" id="payment">결제하기</a>
+				
 			</div>
-
+			
+			
+	
 		</div>
 	</footer>
 
@@ -368,8 +352,10 @@ function deletANDINsert(){
 	var billState1 = document.getElementById("billState1").value; // 도로명주소
 	var billState2 = document.getElementById("billState2").value; // 상세주소
 	var memo = document.getElementById("billZip").value; // 메모
+	var Order_User_ID = document.getElementById("Order_User_ID").value; // 주문자 이름
 	var productName = document.getElementsByName("name"); // 상품이름
 	var price = document.getElementsByName("price"); // 상품 금액
+	var thumbnail = document.getElementsByName("thumbnail"); // 상품 금액
 	
 	
 	var cartNumArr = new Array();
@@ -377,6 +363,7 @@ function deletANDINsert(){
 	var quantityArr = new Array();
 	var pricekArr = new Array();
 	var produckNameArr = new Array();
+	var thumbnailArr = new Array();
 		
 	$(".product").each(function( i, e ) {
 		cartNumArr.push(cartNum[i].value);
@@ -384,27 +371,13 @@ function deletANDINsert(){
 		quantityArr.push(quantity[i].value);
 		pricekArr.push(price[i].value);
 		produckNameArr.push(productName[i].value);
+		thumbnailArr.push(thumbnail[i].value);
 		
 	});
 	
+	alert(Order_User_ID);
 	
-	console.log("3" + shipAddress);
-	console.log("10" + productNumArr);
-	console.log("5" + phoneNum);
-	console.log("11" + quantityArr);
-	console.log("6" + billState);
-	console.log("7" + billState1);
-	console.log("8" + billState2);
-	console.log("9" + memo);
-	console.log("12" + pricekArr);
-	console.log("2" + totalPrice);
-	console.log("4" + Recipient);
-	
-	
-	
-	
-	
-	location.href='deleteAndInserAndUpdatePurchasedProduct?cartNumArr=' + cartNumArr + 
+	location.href='deleteAndInsertAndUpdatePurchasedProduct?cartNumArr=' + cartNumArr + 
 			"&productNumArr=" + productNumArr + 
 			"&quantityArr=" + quantityArr +
 			"&shipAddress=" + shipAddress + 
@@ -415,8 +388,11 @@ function deletANDINsert(){
 			"&memo=" + memo + 
 			"&pricekArr=" + pricekArr + 
 			"&totalPrice=" + totalPrice + 
-			"&Recipient=" + Recipient
+			"&Recipient=" + Recipient +
+			"&thumbnailArr=" + thumbnailArr + 
+			"&Order_User_ID=" + Order_User_ID
 			
+	
 	};
 
 

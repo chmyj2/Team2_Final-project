@@ -44,11 +44,12 @@ public class ProductCartController {
 		public String viewProductPage(HttpServletRequest request,Cart c,
 				@RequestParam("cart_UserID") String cart_UserID) {
 			// 장바구니 가져오기
-			cDAO.getCart(request,cart_UserID);
 			if (lDAO.loginCheck(request)) {
 				
+				cDAO.getCart(request,cart_UserID);
 				request.setAttribute("contentPage", "YJ/cartPage.jsp");
 			}else {
+				
 				request.setAttribute("contentPage", "YJ/purchasePageCheckMember.jsp");
 					
 			}
@@ -56,14 +57,16 @@ public class ProductCartController {
 			return "2Team/t2_index";
 			}
 		
-		
-	
 		@RequestMapping(value = "/purchasePage.go", method = RequestMethod.GET)
-		public String test(HttpServletRequest request,Product p) {
+		public String purchasePageGo(HttpServletRequest request,Product p) {
 			
 			if (lDAO.loginCheck(request)) {
-			// 장바구니 가져오기
-			//lDAO.splitAddr(request);
+			//장바구니 가져오기
+				if (request.getSession().getAttribute("loginMember_business") != null) {
+					lDAO.splitAddr_bus(request);
+				}else {
+					lDAO.splitAddr(request);
+				}
 			cDAO.goPurchasePage(request);
 			request.setAttribute("contentPage", "YJ/purchasedPage.jsp");
 			}else {
@@ -87,17 +90,13 @@ public class ProductCartController {
 		@RequestMapping(value = "/add.product.in.cart", method = RequestMethod.GET)
 		public int addIncart(HttpServletRequest request,Cart c) {
 		
+			
+			if (lDAO.loginCheck(request)) {
+				return cDAO.reqCart(c);
+			}else {
+				return 0;
+			}
 			// 상품 카드에 저장하는 일
-			System.out.println(c.getCart_ProductNum());
-			System.out.println(c.getCart_ProductQuantity());
-			System.out.println(c.getCart_UserID());
-//		if (cDAO.checkCart(c)) {
-//			// 이미 장바구니에 같은 상품이 있음
-//			
-//			return 1;
-//		}
-		
-			return cDAO.reqCart(c);
 		}
 	
 	
@@ -203,10 +202,38 @@ public class ProductCartController {
 		}
 		
 		
+		@RequestMapping(value = "/openTeam1", method = RequestMethod.GET)
+		public String openTeam1(HttpServletRequest request) {
+			
+			int random = 0;
+			 
+			for (int i = 0; i < 3; i++) {
+				
+				// 0 ~ 2까지 랜덤 숫자 구하기
+				random = (int) (Math.random() * 3); 
+			}
+			System.out.println(random);
+			
+			if (random == 0 ) {
+				return "2Team/YJ/goTeam1";
+		
+			}else if (random == 1) {
+				return "2Team/YJ/goTeam1_2";
+				
+			}else {
+				
+				return "2Team/YJ/goTeam1_3";
+			}
+			
+			
+		}
+		
+		
+		
 		
 		
 		// 장바구니 삭제 , 재고 수정, 주문테이블 입력
-		@RequestMapping(value = "/deleteAndInserAndUpdatePurchasedProduct", method = RequestMethod.GET)
+		@RequestMapping(value = "/deleteAndInsertAndUpdatePurchasedProduct", method = RequestMethod.GET)
 		public String deleteCart(HttpServletRequest request,@RequestParam("cartNumArr") String [] cartNumArr,
 				@RequestParam("productNumArr") String [] productNumArr,
 				@RequestParam("quantityArr") String [] quantityArr,
@@ -218,18 +245,32 @@ public class ProductCartController {
 				@RequestParam("memo") String memo,
 				@RequestParam("pricekArr") String [] pricekArr,
 				@RequestParam("totalPrice") String totalPrice,
-				@RequestParam("Recipient") String Recipient) {
+				@RequestParam("Recipient") String Recipient,
+				@RequestParam("thumbnailArr") String [] thumbnailArr,
+				OrderDTO o ) {
 			
-			System.out.println("asdasdasdasd" + memo);
+			
 			
 			cDAO.deletePurchasedProduct(cartNumArr);
 			cDAO.updatePurchasedProduct(productNumArr,quantityArr);
-			cDAO.insertPurchasedProduct(request, productNumArr,quantityArr,shipAddress,phoneNum,billState,billState1,billState2,memo,pricekArr,totalPrice,Recipient);
+			cDAO.insertPurchasedProduct(request, productNumArr,quantityArr,shipAddress,phoneNum,billState,billState1,billState2,memo,pricekArr,totalPrice,Recipient,thumbnailArr);
+			
+			System.out.println(o.getOrder_User_ID());
+			return "redirect:viewPaymentSuccessPage?Order_Num=" + cDAO.getOrderNum(o);
+		}
+		
+		
+		
+
+		@RequestMapping(value = "/viewPaymentSuccessPage", method = RequestMethod.GET)
+		public String viewPaymentSuccessPage(HttpServletRequest request,OrderDTO o) {
+			System.out.println(o.getOrder_Num());
 			lDAO.loginCheck(request);
+			cDAO.getOrder(o,request);
 			
 			request.setAttribute("contentPage", "YJ/paymentSuccess.jsp");
-			
 			return "2Team/t2_index";
 		}
-
+		
+		
 }
