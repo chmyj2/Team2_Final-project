@@ -258,7 +258,6 @@
 	
 	<build>
 	
-<<<<<<< HEAD
 		<plugins>
 		 <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -270,41 +269,7 @@
         </plugin>
 	
 
-=======
-<plugins>
 
-         <plugin>
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <version>2.9</version>
-                <configuration>
-                    <additionalProjectnatures>
-                        <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
-                    </additionalProjectnatures>
-                    <additionalBuildcommands>
-                        <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
-                    </additionalBuildcommands>
-                    <downloadSources>true</downloadSources>
-                    <downloadJavadocs>true</downloadJavadocs>
-                </configuration>
-            </plugin>
-             <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-jar-plugin</artifactId>
-    <version>2.5</version>
-</plugin>
-
-
-<plugin>
-    <artifactId>maven-compiler-plugin</artifactId>
-    <version>2.3.2</version> 
-    <configuration>
-        <source>1.8</source>
-        <target>1.8</target>
-    </configuration>
-</plugin>
-
-         
->>>>>>> 032be6eb03c5eef051260b81bdbc5bdf4e3e4d45
 		</plugins>
           
         

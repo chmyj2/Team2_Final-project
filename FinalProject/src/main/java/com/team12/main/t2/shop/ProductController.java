@@ -66,7 +66,7 @@ public class ProductController {
 	}
 	
 	
-	// 등록페이지
+	// 상푼 전부 가져오기
 	@RequestMapping(value = "/regProductPage.go", method = RequestMethod.GET)
 	public String regProductPage(HttpServletRequest request,Product p) {
 		
@@ -230,7 +230,8 @@ public class ProductController {
 	
 	// 상품 등록
 	@RequestMapping(value = "/Product.upload", method = RequestMethod.POST)
-	public String regProduct(@RequestParam("productThumbnail") MultipartFile file, @RequestParam("productImg") List<MultipartFile> multiFileList,HttpServletRequest request,
+	public String regProduct(@RequestParam("productThumbnail") MultipartFile file, 
+			@RequestParam("productImg") List<MultipartFile> multiFileList,HttpServletRequest request,
 			@RequestParam("pet_category") String pet_category,
 			@RequestParam("toy_category") String toy_category,
 			@RequestParam("productName") String productName,
@@ -241,7 +242,8 @@ public class ProductController {
 			@RequestParam("productTag") String [] productTag){
 		
 		
-		pDAO.regProduct(pet_category,toy_category,productName,productPrice,productInfo,productStock,onExhibition,file,multiFileList,request,productTag);
+		pDAO.regProduct(pet_category,toy_category,productName,productPrice,productInfo,
+						productStock,onExhibition,file,multiFileList,request,productTag);
 		pDAO.realGetAllProduct(request);
 		lDAO.loginCheck(request);
 			

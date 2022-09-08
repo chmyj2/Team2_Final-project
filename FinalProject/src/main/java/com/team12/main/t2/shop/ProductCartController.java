@@ -249,11 +249,11 @@ public class ProductCartController {
 				@RequestParam("thumbnailArr") String [] thumbnailArr,
 				OrderDTO o ) {
 			
-			
-			
 			cDAO.deletePurchasedProduct(cartNumArr);
 			cDAO.updatePurchasedProduct(productNumArr,quantityArr);
-			cDAO.insertPurchasedProduct(request, productNumArr,quantityArr,shipAddress,phoneNum,billState,billState1,billState2,memo,pricekArr,totalPrice,Recipient,thumbnailArr);
+			cDAO.insertPurchasedProduct(request, productNumArr,quantityArr,shipAddress,
+										phoneNum,billState,billState1,billState2,memo,
+										pricekArr,totalPrice,Recipient,thumbnailArr);
 			
 			System.out.println(o.getOrder_User_ID());
 			return "redirect:viewPaymentSuccessPage?Order_Num=" + cDAO.getOrderNum(o);

@@ -179,10 +179,9 @@ public class ProductDAO {
 		try {
 			
 			
-			
-	for (int i = 0; i < multiFileList.size(); i++) {
-		
 		// 다중 파일
+		for (int i = 0; i < multiFileList.size(); i++) {
+		
 		String originFile = multiFileList.get(i).getOriginalFilename();
 		String ext = originFile.substring(originFile.lastIndexOf("."));
 		newFileName = UUID.randomUUID().toString() + ext;
@@ -194,11 +193,10 @@ public class ProductDAO {
 				multiFileList.get(i).transferTo(uploadFile);
 				System.out.println("다중 파일 업로드 성공!");
 				
-	}
-
+		}
 	
 	
-	// 단일 파일
+		// 단일 파일
 		String fileName = file.getOriginalFilename();
 		System.out.println(path);
 	
