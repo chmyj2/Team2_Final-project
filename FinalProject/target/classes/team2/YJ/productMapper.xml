@@ -38,5 +38,49 @@
 	<delete id="deleteProduct" parameterType="com.team12.main.t2.shop.Product">
 		DELETE from PRODUCT where PRODUCTNUM = #{productNum}
 	</delete>
+	
+	<select id="getAllProduct" parameterType="com.team12.main.t2.shop.Product" resultType="com.team12.main.t2.shop.Product">
+		select * from 
+        (select rownum as rn, productNum, productName , productThumbnail, productPrice from (select * from PRODUCT where onExhibition = #{onExhibition }))
+        where rn &gt;= #{start} and rn &lt;= #{end}
+	</select>
+	
+	
+	<select id="countProduct" parameterType="com.team12.main.t2.shop.Product" resultType="int">
+		select count(*) from PRODUCT where onExhibition = #{onExhibition }
+	</select>
+	
+	<select id="countOrder" parameterType="com.team12.main.t2.shop.OrderDTO" resultType="int">
+		select count(*) from order_Table where Order_User_ID = #{Order_User_ID }
+	</select>
+	
+	<select id="countAllOrder" parameterType="com.team12.main.t2.shop.OrderDTO" resultType="int">
+		select count(*) from order_Table
+	</select>
+	
+	<select id="getOrderbyPayment" parameterType="com.team12.main.t2.shop.OrderDTO" resultType="com.team12.main.t2.shop.OrderDTO">
+        select * from 
+        (select rownum as rn, Order_Num,Order_User_ID,Order_ProductNum, Order_Date,Order_DeliverState,Order_State,Order_PaymentState,Order_TotalPrice, Order_PK,Shipping_Memo, Thumbnail from (select * from order_Table where Order_PaymentState = #{Order_PaymentState} ORDER BY Order_Date DESC))
+        where rn &gt;= #{start} and rn &lt;= #{end}
+	</select>
+	
 
+	<update id="updateDeliverState" parameterType="com.team12.main.t2.shop.OrderDTO">
+		UPDATE  order_Table set Order_DeliverState = #{Order_DeliverState} where Order_PK = #{Order_PK }
+	</update>
+	
+	
+	<select id="getOrderbyUserID" parameterType="com.team12.main.t2.shop.OrderDTO" resultType="com.team12.main.t2.shop.OrderDTO">
+		
+		select * from 
+        (select rownum as rn, Order_ProductNum, Order_Date,Order_DeliverState,Order_State,Product_Price, Order_PK,Shipping_Memo, Thumbnail from (select * from order_Table where Order_User_ID = #{Order_User_ID} ORDER BY Order_Date DESC))
+        where rn &gt;= #{start} and rn &lt;= #{end}
+	</select>
+	
+	
+	<delete id="deleteMyOrder" parameterType="com.team12.main.t2.shop.OrderDTO">  
+		DELETE from order_Table where Order_PK = #{Order_PK}
+	</delete>
+	
+	
 </mapper>

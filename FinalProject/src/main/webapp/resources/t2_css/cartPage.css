@@ -32,11 +32,11 @@ a {
 }
 
 a:hover {
-	color: #53b5aa;
+	color: #20469B;
 }
 
 #site-header h1 span {
-	color: #53b5aa;
+	color: #20469B;
 }
 
 #site-header h1 span.last-span {
@@ -56,11 +56,6 @@ a:hover {
 	left: 363px;
 }
 
-#site-header h1 em {
-	font-size: 16px;
-	font-style: normal;
-	vertical-align: middle;
-}
 
 .container {
 	font-family: 'Open Sans', sans-serif;
@@ -77,7 +72,7 @@ a:hover {
 }
 
 #cart a {
-	color: #53b5aa;
+	color: #20469B;
 	text-decoration: none;
 
 	-webkit-transition: color .2s linear;
@@ -141,7 +136,7 @@ a:hover {
 }
 
 .product header h3 {
-	background: #53b5aa;
+	background: #20469B;
 	color: #fff;
 	font-size: 22px;
 	font-weight: 300;
@@ -173,7 +168,7 @@ a:hover {
 }
 
 .product h1 {
-	color: #53b5aa;
+	color: #20469B;
 	font-size: 25px;
 	font-weight: 300;
 	margin: 17px 0 20px 0;
@@ -197,7 +192,7 @@ a:hover {
 }
 
 .product footer .full-price {
-	background: #53b5aa;
+	background: #20469B;
 	color: #fff;
 	float: right;
 	font-size: 22px;
@@ -240,7 +235,7 @@ a:hover {
 }
 
 .qt-plus:hover, .qt-minus:hover {
-	background: #53b5aa;
+	background: #20469B;
 	color: #fff;
 	cursor: pointer;
 }
@@ -293,7 +288,7 @@ a:hover {
 }
 
 .CheckOutbtn {
-	background: #53b5aa;
+	background: #20469B;
 	border: 1px solid #999;
 	border-style: none none solid none;
 	cursor: pointer;
@@ -314,7 +309,7 @@ a:hover {
 
 .CheckOutbtn:hover {
 	color: #fff;
-	background: #429188;
+	background: #19206a;
 }
 
 .type {

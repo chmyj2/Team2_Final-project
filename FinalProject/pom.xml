@@ -258,6 +258,19 @@
 	
 	<build>
 	
+<<<<<<< HEAD
+		<plugins>
+		 <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.6</version>
+            <configuration>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+        </plugin>
+	
+
+=======
 <plugins>
 
          <plugin>
@@ -291,6 +304,7 @@
 </plugin>
 
          
+>>>>>>> 032be6eb03c5eef051260b81bdbc5bdf4e3e4d45
 		</plugins>
           
         

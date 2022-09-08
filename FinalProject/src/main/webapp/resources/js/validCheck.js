@@ -24,6 +24,8 @@ function containsHS(input) {
 	return false;
 }
 
+
+
 // <input> 두 개 넣었을때
 // 두 개 내용이 다르면 true, 같으면 false
 function notEquals(input1, input2) {

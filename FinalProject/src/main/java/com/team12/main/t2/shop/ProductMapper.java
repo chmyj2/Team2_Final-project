@@ -22,6 +22,22 @@ public interface ProductMapper {
 
 	public List<Toy> getToy(Product p);
 
+	public List<Product> getAllProduct(Product p);
+
+	int countProduct(Product p);
+
+	public List<OrderDTO> getOrderbyPayment(OrderDTO o);
+
+	int updateDeliverState(OrderDTO o);
+
+	public List<OrderDTO> getOrderbyUserID(OrderDTO o);
+
+	int countOrder(OrderDTO o);
+
+	int countAllOrder(OrderDTO o);
+
+	int deleteMyOrder(OrderDTO o);
+
 
 
 

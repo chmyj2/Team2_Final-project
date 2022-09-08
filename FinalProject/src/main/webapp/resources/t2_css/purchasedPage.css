@@ -104,7 +104,7 @@
 }
 
 .product footer .full-price {
-	background: #53b5aa;
+	background: #20469B;
 	color: #fff;
 	float: right;
 	font-size: 22px;
@@ -241,7 +241,6 @@ background: #f0f0f0;
 
 
 div.minimalistBlack {
-  border: 3px solid red;
   width: 100%;
   text-align: left;
   border-collapse: collapse;
@@ -282,3 +281,68 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+
+
+
+
+
+
+
+.button.dark {
+  --background: #000000;
+  --shadow: 0 2px 8px -1px rgba(21, 25, 36, 0.32);
+  --shadow-hover: 0 4px 20px -2px rgba(21, 25, 36, 0.5);
+}
+
+
+.button.reverse {
+  --font-shadow: calc(var(--font-size) * -1);
+}
+
+
+.button {
+  --background: #275efe;
+  --text: #fff;
+  --font-size: 20px;
+  --duration: .44s;
+  --move-hover: -4px;
+  --shadow: 0 2px 8px -1px rgba(39, 94, 254, 0.32);
+  --shadow-hover: 0 4px 20px -2px rgba(39, 94, 254, 0.5);
+  --font-shadow: var(--font-size);
+  padding: 16px 32px;
+  font-family: "Roboto";
+  font-weight: 500;
+  line-height: var(--font-size);
+  border-radius: 5px;
+  display: block;
+  outline: none;
+  text-decoration: none;
+  font-size: var(--font-size);
+  letter-spacing: 0.5px;
+  background: var(--background);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transform: translateY(var(--y)) translateZ(0);
+  transition: transform var(--duration) ease, box-shadow var(--duration) ease;
+}
+
+
+.button:hover {
+	color: #fff;
+}
+
+.titleTxt{
+	font-weight: 300px;
+	font-size: 180%;
+	
+}
+
+.InfoTxt{
+	font-weight: 200px;
+	font-size: 150%;
+	
+}
+
+
+

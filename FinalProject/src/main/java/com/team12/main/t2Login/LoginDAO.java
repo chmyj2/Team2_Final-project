@@ -411,6 +411,19 @@ public class LoginDAO {
 		}
 		
 	}
+	
+	public void splitAddr_bus(HttpServletRequest req) {
+		// 주소 ! 기준으로 자르기
+		vet v = (vet) req.getSession().getAttribute("loginMember_business");
+		
+		if (v.getVet_address() != null) {
+			String v_addr = v.getVet_address();
+			String[]  v_addr2 = v_addr.split("!");
+			req.setAttribute("addr", v_addr2);
+			
+		}
+		
+	}
 
 
 

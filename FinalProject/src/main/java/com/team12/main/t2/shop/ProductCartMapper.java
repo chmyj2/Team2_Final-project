@@ -6,13 +6,16 @@ public interface ProductCartMapper {
 
 	int regCart(Cart c);
 
-	int checkCart(Cart c);
-
-
 	public List<Product> getProductFromCart(Cart c);
 
 	int deleteCart(Cart c);
 
-	void deletePurchasedProduct(Cart c);
+	void updatePurchasedProduct(Product p);
 
+	int insertPurchasedProduct(OrderDTO o);
+
+	String getOrderNum(OrderDTO o);
+
+	OrderDTO getOrder(OrderDTO o);
+	
 }

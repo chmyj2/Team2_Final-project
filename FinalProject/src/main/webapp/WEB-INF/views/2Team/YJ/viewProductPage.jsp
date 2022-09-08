@@ -8,15 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-
-</style>
 </head>
 <body>
-<button onclick="location.href='regProductPage.go'">운영자전용 상품등록버튼</button>${result }
-
-
-
 <div class="login_didididiv">
 	
 	<ul class="menu__tabs">
@@ -27,13 +20,13 @@
 		<section class="menu__wrapper">
 			<article id="item-1" class="menu__item item-active">
 				
-				<div class="container-fluid">
+	<div class="container-fluid" style="margin-top: 100px;">
      <div class="row">
       <c:forEach var="p" items="${Product}">
            <div class="col-md-3">
            <a href="detailPage.go?productNum=${p.productNum}"><div class="thumbnail">
                 <img src="resources/t2_yj_files/${p.productThumbnail }" style="height: 300px;width:300px">
-                <div class="caption">
+                <div class="caption"  style="font-weight: 100;font-size: 130%;">
                   <p>${fn:length(p.productName)>20?fn:substring(p.productName,0,20)+="...":p.productName }</p>
                   <p><fmt:formatNumber value="${p.productPrice }" pattern="#,###" />원</p>
                 </div>
@@ -49,13 +42,13 @@
 			
 			<article id="item-2" class="menu__item">
 				
-				<div class="container-fluid">
+	<div class="container-fluid" style="margin-top: 100px;">
      <div class="row">
       <c:forEach var="s" items="${Snack}">
            <div class="col-md-3">
            <a href="detailPage.go?productNum=${s.productNum}"><div class="thumbnail">
                 <img src="resources/t2_yj_files/${s.productThumbnail }" style="height: 300px;width:300px">
-                <div class="caption">
+               <div class="caption"  style="font-weight: 100;font-size: 130%;">
                   <p>${fn:length(s.productName)>20?fn:substring(s.productName,0,20)+="...":s.productName }</p>
                   <p><fmt:formatNumber value="${s.productPrice }" pattern="#,###" />원</p>
                    
@@ -71,13 +64,13 @@
 			
 			<article id="item-3" class="menu__item">
 				
-				<div class="container-fluid">
+	<div class="container-fluid" style="margin-top: 100px;">
      <div class="row">
       <c:forEach var="t" items="${Toy}">
            <div class="col-md-3">
            <a href="detailPage.go?productNum=${t.productNum}"><div class="thumbnail">
                 <img src="resources/t2_yj_files/${t.productThumbnail }" style="height: 300px;width:300px">
-                <div class="caption">
+                <div class="caption"  style="font-weight: 100;font-size: 130%;">
                   <p>${fn:length(t.productName)>20?fn:substring(t.productName,0,20)+="...":t.productName }</p>
                   <p><fmt:formatNumber value="${t.productPrice }" pattern="#,###" />원</p>
                    

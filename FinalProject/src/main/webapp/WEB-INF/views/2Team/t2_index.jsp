@@ -38,7 +38,7 @@
 	<link href='resources/t2_css/board.css' rel="stylesheet" type="text/css">
 	<!-- shop -->
 	<script type="text/javascript" src="resources/t2_js/shop_function.js"></script>
-	<link href='resources/t2_css/shopDetailPage.css' rel="stylesheet" type="text/css">
+	
 	
 	<!-- 로그인 내 정보페이지 -->
 	<link href="resources/t2_css/t2_myPageCSS.css" rel="stylesheet" type="text/css">
@@ -58,11 +58,11 @@
         <ul>
             <li><a href="hospitalGo">동물병원 찾기</a></li>
            <li class="t2-indexDropdown">
-           <a class="t2-indexDropbtn">상품 판매</a>
+           <a href="viewAllProductPage.go?onExhibition=Y&nowPage=1&cntPerPage=16" class="t2-indexDropbtn">상품 판매</a>
            <ul class="t2-indexDropdown-content">
             	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=dog&toy_category=snack&toy=toy">강아지</a></li>                     
             	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=cat&toy_category=snack&toy=toy">고양이</a></li>                 
-            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=etc&toy_category=snack&toy=toy">etc</a></li>                 
+            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=etc&toy_category=snack&toy=toy">etc</a></li>
             </ul>
            </li>
             <li class="t2-indexDropdown">

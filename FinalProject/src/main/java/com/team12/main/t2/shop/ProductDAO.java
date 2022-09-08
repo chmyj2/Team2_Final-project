@@ -3,6 +3,7 @@ package com.team12.main.t2.shop;
 
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -61,10 +62,10 @@ public class ProductDAO {
 	// 정보 수정
 	public void updateProduct(HttpServletRequest request, List<MultipartFile> multiFileList,
 			MultipartFile file, String pet_category, String toy_category, String productName, int productPrice,
-			String productInfo, int productStock, String onExhibition, String[] productTag, int productNum, Product p) {
+			String productInfo, int productStock, String onExhibition, String[] productTag, int productNum) {
 		
 		
-		
+		Product p = new Product();
 		String productTag2 = "";
 		
 		if (productTag != null) {
@@ -74,15 +75,6 @@ public class ProductDAO {
 		}else {
 			productTag2 = "태그 없음";
 		}	
-		
-		if (pet_category == p.getPet_category()) {
-			pet_category = p.getPet_category();
-		}
-		
-		if (toy_category == p.getToy_category()) {
-			toy_category = p.getToy_category();
-		}
-		
 		
 		
 		String path = request.getSession().getServletContext().getRealPath("resources/t2_yj_files");
@@ -311,33 +303,133 @@ public class ProductDAO {
 		request.setAttribute("Toy", ss.getMapper(ProductMapper.class).getToy(p));
 		
 	}
+
+
+
+	public void getAllProduct(HttpServletRequest request, Product p, int total, String nowPage, String cntPerPage) {
+		
+		
+		if (nowPage == null && cntPerPage == null) {
+            nowPage = "1";
+            cntPerPage = "16";
+        } else if (nowPage == null) {
+            nowPage = "1";
+        } else if (cntPerPage == null) {
+            cntPerPage = "16";
+        }
+		
+		PagingDTO pp = new PagingDTO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+		p.setStart(pp.getStart());
+		p.setEnd(pp.getEnd());
+		
+		
+		request.setAttribute("PagingDTO", pp);
+		request.setAttribute("Product", ss.getMapper(ProductMapper.class).getAllProduct(p));
+		
+	}
+
+
+
+	public int countPostList(HttpServletRequest request, Product p) {
+		
+		
+		
+		return ss.getMapper(ProductMapper.class).countProduct(p);
+	}
+
+
+	
+	// 주문조회(운영자 전용)
+	public void getOrderProduct(HttpServletRequest request, OrderDTO o, int total, String nowPage, String cntPerPage) {
+		
+		if (nowPage == null && cntPerPage == null) {
+            nowPage = "1";
+            cntPerPage = "16";
+        } else if (nowPage == null) {
+            nowPage = "1";
+        } else if (cntPerPage == null) {
+            cntPerPage = "16";
+        }
+		
+		PagingDTO pp = new PagingDTO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+		o.setStart(pp.getStart());
+		o.setEnd(pp.getEnd());
+		
+		
+		o.setOrder_PaymentState("결제완료");
+		List<OrderDTO> orders = new ArrayList<OrderDTO>();
+		orders = ss.getMapper(ProductMapper.class).getOrderbyPayment(o);
+		request.setAttribute("PagingDTO", pp);
+		request.setAttribute("orders",orders);
+		
+	}
+
+
+	// 주문 배송상태 업데이트
+	public void updateDeliverState(HttpServletRequest request, OrderDTO o) {
+		
+		System.out.println(o.getOrder_PK());
+		System.out.println(o.getOrder_DeliverState());
+		
+		if (ss.getMapper(ProductMapper.class).updateDeliverState(o) == 1) {
+			System.out.println("업데이트 성공");
+		}else {
+			System.out.println("업데이트 실패");
+		}
+		
+	}
+
+
+
+	// 주문조회 (개인)
+	public void getOrderProductByUser_id(HttpServletRequest request, OrderDTO o, int total, String nowPage, String cntPerPage) {
+		
+		if (nowPage == null && cntPerPage == null) {
+            nowPage = "1";
+            cntPerPage = "16";
+        } else if (nowPage == null) {
+            nowPage = "1";
+        } else if (cntPerPage == null) {
+            cntPerPage = "16";
+        }
+		
+		PagingDTO pp = new PagingDTO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+		o.setStart(pp.getStart());
+		o.setEnd(pp.getEnd());
+		
+		
+		request.setAttribute("PagingDTO", pp);
+		request.setAttribute("orders", ss.getMapper(ProductMapper.class).getOrderbyUserID(o));
+		
+	}
+
+
+
+	public int countOrderList(HttpServletRequest request, OrderDTO o) {
+		
+		
+		
+		return ss.getMapper(ProductMapper.class).countAllOrder(o);
+	}
+
+
+
+	public void deleteMyOrder(OrderDTO o) {
+
+		if (ss.getMapper(ProductMapper.class).deleteMyOrder(o) == 1) {
+			System.out.println("삭제완료");
+		}else {
+			System.out.println("삭제실패");
+		}
+		
+	}
+	
 		
 
 }
 	
 	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 
 
@@ -346,32 +438,6 @@ public class ProductDAO {
 		
 		
 	
-	
-
-
-
-	
-
-
-
-
-
-
-
-	
-		
-		
-		
-		
-		
-	
-
-
-	
-
-
-
-		
 		
 
 		

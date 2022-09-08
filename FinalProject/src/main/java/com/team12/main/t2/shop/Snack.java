@@ -1,7 +1,7 @@
 package com.team12.main.t2.shop;
 
 public class Snack {
-	
+
 	 private int productNum;
 	 private String pet_category;
 	 private String toy_category;
@@ -13,8 +13,6 @@ public class Snack {
 	 private String productThumbnail;
 	 private String productImg;
 	 private String productTag;
-	 private int cart_ProductQuantity;
-	 private int cartNum;
 	 
 	 
 	 public Snack() {
@@ -24,7 +22,7 @@ public class Snack {
 
 	public Snack(int productNum, String pet_category, String toy_category, String productName, int productPrice,
 			String productInfo, int productStock, String onExhibition, String productThumbnail, String productImg,
-			String productTag, int cart_ProductQuantity, int cartNum) {
+			String productTag) {
 		super();
 		this.productNum = productNum;
 		this.pet_category = pet_category;
@@ -37,8 +35,6 @@ public class Snack {
 		this.productThumbnail = productThumbnail;
 		this.productImg = productImg;
 		this.productTag = productTag;
-		this.cart_ProductQuantity = cart_ProductQuantity;
-		this.cartNum = cartNum;
 	}
 
 
@@ -150,32 +146,8 @@ public class Snack {
 	public void setProductTag(String productTag) {
 		this.productTag = productTag;
 	}
-
-
-	public int getCart_ProductQuantity() {
-		return cart_ProductQuantity;
-	}
-
-
-	public void setCart_ProductQuantity(int cart_ProductQuantity) {
-		this.cart_ProductQuantity = cart_ProductQuantity;
-	}
-
-
-	public int getCartNum() {
-		return cartNum;
-	}
-
-
-	public void setCartNum(int cartNum) {
-		this.cartNum = cartNum;
-	}
 	 
 	 
 	 
 	
-	 
-	 
-	 
-	 
 }

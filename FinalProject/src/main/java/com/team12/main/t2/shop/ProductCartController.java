@@ -41,30 +41,32 @@ public class ProductCartController {
 	
 	// 장바구니 가기
 		@RequestMapping(value = "/CartView.go", method = RequestMethod.GET)
-		public String viewProductPage(HttpServletRequest request,Product p,Cart c,
-				@RequestParam("productNum") int productNum,@RequestParam("cart_UserID") String cart_UserID) {
-				
+		public String viewProductPage(HttpServletRequest request,Cart c,
+				@RequestParam("cart_UserID") String cart_UserID) {
 			// 장바구니 가져오기
-			pDAO.getProduct(request,p);
-			cDAO.getCart(request,productNum,cart_UserID);
 			if (lDAO.loginCheck(request)) {
 				
+				cDAO.getCart(request,cart_UserID);
 				request.setAttribute("contentPage", "YJ/cartPage.jsp");
 			}else {
+				
 				request.setAttribute("contentPage", "YJ/purchasePageCheckMember.jsp");
 					
 			}
 				
 			return "2Team/t2_index";
 			}
-	
 		
 		@RequestMapping(value = "/purchasePage.go", method = RequestMethod.GET)
-		public String test(HttpServletRequest request,Product p) {
+		public String purchasePageGo(HttpServletRequest request,Product p) {
 			
 			if (lDAO.loginCheck(request)) {
-			// 장바구니 가져오기
-			lDAO.splitAddr(request);
+			//장바구니 가져오기
+				if (request.getSession().getAttribute("loginMember_business") != null) {
+					lDAO.splitAddr_bus(request);
+				}else {
+					lDAO.splitAddr(request);
+				}
 			cDAO.goPurchasePage(request);
 			request.setAttribute("contentPage", "YJ/purchasedPage.jsp");
 			}else {
@@ -88,17 +90,13 @@ public class ProductCartController {
 		@RequestMapping(value = "/add.product.in.cart", method = RequestMethod.GET)
 		public int addIncart(HttpServletRequest request,Cart c) {
 		
+			
+			if (lDAO.loginCheck(request)) {
+				return cDAO.reqCart(c);
+			}else {
+				return 0;
+			}
 			// 상품 카드에 저장하는 일
-			System.out.println(c.getCart_ProductNum());
-			System.out.println(c.getCart_ProductQuantity());
-			System.out.println(c.getCart_UserID());
-//		if (cDAO.checkCart(c)) {
-//			// 이미 장바구니에 같은 상품이 있음
-//			
-//			return 1;
-//		}
-		
-			return cDAO.reqCart(c);
 		}
 	
 	
@@ -138,8 +136,8 @@ public class ProductCartController {
 						+ "&vat_amount=0" // 부가세
 						+ "&tax_free_amount=0" // 상품 비과세 금액
 						+ "&approval_url=http://localhost:8080/main/kakaoSuccess" // 결제 성공 시
-						+ "&fail_url=http://localhost:8080/kakaoPayCancel" // 결제 실패 시
-						+ "&cancel_url=http://localhost:8080/kakaoPaySuccessFail"; // 결제 취소 시
+						+ "&fail_url=http://localhost:8080/main/kakaoCancel" // 결제 실패 시
+						+ "&cancel_url=http://localhost:8080/main/kakaoFail"; // 결제 취소 시
 				OutputStream send = connection.getOutputStream(); // 이제 뭔가를 를 줄 수 있다.
 				DataOutputStream dataSend = new DataOutputStream(send); // 이제 데이터를 줄 수 있다.
 				dataSend.writeBytes(parameter); // OutputStream은 데이터를 바이트 형식으로 주고 받기로 약속되어 있다. (형변환)
@@ -187,26 +185,92 @@ public class ProductCartController {
 		
 		
 		
-		// 자식창 이동
+		// 성공 자식창 이동
 		@RequestMapping(value = "/kakaoSuccess", method = RequestMethod.GET)
 		public String kakaoSuccess(HttpServletRequest request) {
-		return "2Team/YJ/kakaoPayClose";
+		return "2Team/YJ/kakaoPaySuccess";
+		}
+		// 취소 자식창 이동
+		@RequestMapping(value = "/kakaoCancel", method = RequestMethod.GET)
+		public String kakaoCancel(HttpServletRequest request) {
+			return "2Team/YJ/kakaoPayCancel";
+		}
+		// 실패 자식창 이동
+		@RequestMapping(value = "/kakaoFail", method = RequestMethod.GET)
+		public String kakaoFail(HttpServletRequest request) {
+			return "2Team/YJ/kakaoPayFail";
+		}
+		
+		
+		@RequestMapping(value = "/openTeam1", method = RequestMethod.GET)
+		public String openTeam1(HttpServletRequest request) {
+			
+			int random = 0;
+			 
+			for (int i = 0; i < 3; i++) {
+				
+				// 0 ~ 2까지 랜덤 숫자 구하기
+				random = (int) (Math.random() * 3); 
+			}
+			System.out.println(random);
+			
+			if (random == 0 ) {
+				return "2Team/YJ/goTeam1";
+		
+			}else if (random == 1) {
+				return "2Team/YJ/goTeam1_2";
+				
+			}else {
+				
+				return "2Team/YJ/goTeam1_3";
+			}
+			
+			
 		}
 		
 		
 		
 		
-		// 장바구니 삭제
-		@RequestMapping(value = "/deleteAndInserPurchasedProduct", method = RequestMethod.GET)
-		public String deleteCart(HttpServletRequest request,@RequestParam("cartNumArr") String [] cartNumArr) {
-			System.out.println("여기까지오냐");
+		
+		// 장바구니 삭제 , 재고 수정, 주문테이블 입력
+		@RequestMapping(value = "/deleteAndInsertAndUpdatePurchasedProduct", method = RequestMethod.GET)
+		public String deleteCart(HttpServletRequest request,@RequestParam("cartNumArr") String [] cartNumArr,
+				@RequestParam("productNumArr") String [] productNumArr,
+				@RequestParam("quantityArr") String [] quantityArr,
+				@RequestParam("shipAddress") String shipAddress,
+				@RequestParam("phoneNum") String phoneNum,
+				@RequestParam("billState") String billState,
+				@RequestParam("billState1") String billState1,
+				@RequestParam("billState2") String billState2,
+				@RequestParam("memo") String memo,
+				@RequestParam("pricekArr") String [] pricekArr,
+				@RequestParam("totalPrice") String totalPrice,
+				@RequestParam("Recipient") String Recipient,
+				@RequestParam("thumbnailArr") String [] thumbnailArr,
+				OrderDTO o ) {
+			
+			
+			
 			cDAO.deletePurchasedProduct(cartNumArr);
+			cDAO.updatePurchasedProduct(productNumArr,quantityArr);
+			cDAO.insertPurchasedProduct(request, productNumArr,quantityArr,shipAddress,phoneNum,billState,billState1,billState2,memo,pricekArr,totalPrice,Recipient,thumbnailArr);
+			
+			System.out.println(o.getOrder_User_ID());
+			return "redirect:viewPaymentSuccessPage?Order_Num=" + cDAO.getOrderNum(o);
+		}
+		
+		
+		
+
+		@RequestMapping(value = "/viewPaymentSuccessPage", method = RequestMethod.GET)
+		public String viewPaymentSuccessPage(HttpServletRequest request,OrderDTO o) {
+			System.out.println(o.getOrder_Num());
 			lDAO.loginCheck(request);
+			cDAO.getOrder(o,request);
 			
 			request.setAttribute("contentPage", "YJ/paymentSuccess.jsp");
-			
 			return "2Team/t2_index";
 		}
-	
-
+		
+		
 }
