@@ -24,7 +24,7 @@ window.close();
 	<div>
  <img class="main_img" src="resources/img/home.jpg" style="height: 300px; width: 300px;">	</div>
 	<div>
-		<h1>사시말고 입양하세요.</h1>
+		<h1>사지말고 입양하세요.</h1>
 	</div>
 	<div>
 		<h2>이 아이가 궁금하다면</h2>
