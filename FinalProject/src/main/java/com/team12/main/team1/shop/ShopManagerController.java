@@ -41,7 +41,7 @@ public class ShopManagerController {
 	}
 	
 	
-	/*// 스토어 메인
+	// 스토어 메인
 	@RequestMapping(value="/enter.team1StoreFor", method = RequestMethod.GET)
 	public String shopEntering(Team1ProductDTO product, HttpServletRequest req) {
 			
@@ -70,7 +70,7 @@ public class ShopManagerController {
 		
 		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
 		return "1Team/t1_index";
-	}*/
+	}
 	
 	
 	// 상품 카테고리별 출력
