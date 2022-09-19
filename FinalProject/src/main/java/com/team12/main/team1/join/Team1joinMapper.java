@@ -1,22 +1,23 @@
 package com.team12.main.team1.join;
 
+import com.team12.main.t2Login.Membert2;
 
 public interface Team1joinMapper {
 
-	int join(Member m);
+	int join(Membert2 m);
 
-	Member getMemberByID(Member m);
+	Membert2 getMemberByID(Membert2 m);
 
-	int update(Member m);
+	int update(Membert2 m);
 
-	int bye(Member m);
+	int bye(Membert2 m);
 
-	int getMemberNum(Member m);
+	int getMemberNum(Membert2 m);
 	
 
-	int kakaoJoin(Member m);
+	int kakaoJoin(Membert2 m);
 	
-	String find_id(Member m);
+	String find_id(Membert2 m);
  
 
 	

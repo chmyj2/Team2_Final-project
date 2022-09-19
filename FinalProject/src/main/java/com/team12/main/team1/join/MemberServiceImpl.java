@@ -1,6 +1,5 @@
 package com.team12.main.team1.join;
 
-import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.inject.Inject;

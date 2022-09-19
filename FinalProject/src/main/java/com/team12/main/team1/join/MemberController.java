@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.team12.main.t2Login.Membert2;
 import com.team12.main.team1.store.Team1ProductDAO;
 import com.team12.main.team1.store.Team1ProductDTO;
 
@@ -47,7 +48,7 @@ public class MemberController {
 	
 	
 	@RequestMapping(value = "/member.join.go", method = RequestMethod.GET)
-	public String memberJoinGo(Member m, HttpServletRequest req) {
+	public String memberJoinGo(Membert2 m, HttpServletRequest req) {
 		
 //		mDAO.join(m, req);
 //		mDAO.loginCheck(req);
@@ -59,7 +60,7 @@ public class MemberController {
 	
 	// 아이디 찾기 폼
 	@RequestMapping(value = "/member.findId.go", method = RequestMethod.GET)
-	public String findIdGo(Member m, HttpServletRequest req){
+	public String findIdGo(Membert2 m, HttpServletRequest req){
 		mDAO.loginCheck(req);
 		req.setAttribute("contentPage", "../LDH/findID.jsp");
 		return "1Team/t1_index";
@@ -79,7 +80,7 @@ public class MemberController {
 	
 	
 	@RequestMapping(value = "/member.join", method = RequestMethod.POST)
-	public String memberJoin(Member m, HttpServletRequest req) {
+	public String memberJoin(Membert2 m, HttpServletRequest req) {
 		
 		mDAO.join(m, req);
 		mDAO.loginCheck(req);
@@ -89,7 +90,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "/member.login", method = RequestMethod.POST)
-	public String memberLogin(Member m, HttpServletRequest req) {
+	public String memberLogin(Membert2 m, HttpServletRequest req) {
 		System.out.println(m.getMember_ID());
 		// 로그인
 		
@@ -101,11 +102,16 @@ public class MemberController {
 			
 		}else {
 			mDAO.login(m, req);
-			mDAO.loginCheck(req);
-			Team1ProductDTO p = new Team1ProductDTO();
-			p.setProduct_num(Integer.parseInt(req.getParameter("product_num")));
-			mpDAO.loadAProduct(p, req);
-			req.setAttribute("contentPage", "master/team1shopProductDetail.jsp");
+			if(mDAO.loginCheck(req)) {
+				Team1ProductDTO p = new Team1ProductDTO();
+				p.setProduct_num(Integer.parseInt(req.getParameter("product_num")));
+				mpDAO.loadAProduct(p, req);
+				req.setAttribute("contentPage", "master/team1shopProductDetail.jsp");
+				
+			}else {
+				req.setAttribute("contentPage", "../LDH/loginAndJoin.jsp");
+				
+			}
 			
 		}
 		
@@ -116,7 +122,7 @@ public class MemberController {
 
 	
 	   @RequestMapping("member.kakao")
-	    public String home(@RequestParam(value = "code", required = false) String code, Member m, HttpServletRequest req, HttpSession session) throws Exception{
+	    public String home(@RequestParam(value = "code", required = false) String code, Membert2 m, HttpServletRequest req, HttpSession session) throws Exception{
 		   System.out.println("#########" + code);
 //	        String access_Token = kakaoService.getAccessToken(code);
 //	        HashMap<String, Object> userInfo = kakaoService.getUserInfo(access_Token);
@@ -169,7 +175,7 @@ public class MemberController {
 	
 	
 	@RequestMapping(value = "member.logout", method = RequestMethod.GET)
-	public String logout(Member m, HttpServletRequest req) {
+	public String logout(Membert2 m, HttpServletRequest req) {
 		
 		mDAO.logout(req);
 		mDAO.loginCheck(req);
@@ -178,7 +184,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "member.update", method = RequestMethod.POST)
-	public String memberUpdate(Member m, HttpServletRequest req) {
+	public String memberUpdate(Membert2 m, HttpServletRequest req) {
 		if (mDAO.loginCheck(req)) {
 			mDAO.update(m, req);
 			mDAO.splitAddr(req);
@@ -201,7 +207,7 @@ public class MemberController {
 	@RequestMapping(value = "member.get", 
 			method = RequestMethod.GET, 
 			produces = "application/json; charset=utf-8")
-	public @ResponseBody int memberGet(Member m, HttpServletRequest req) {
+	public @ResponseBody int memberGet(Membert2 m, HttpServletRequest req) {
 		return mDAO.getMemberNum(m, req);
 	}
 	

@@ -67,7 +67,7 @@
 		
 		
 		<!-- ------------------ -->
-		<div class="adopt_cont_drop">
+		<div class="adopt_cont_drop" style="display:none;" >
 			<button id="x_button">X</button>
 			<h1>제목</h1>
 			<ul class="adopt_cont_drop_txt">

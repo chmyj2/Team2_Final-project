@@ -64,6 +64,7 @@
 				<beans:value>classpath:team2loginMapper.xml</beans:value>
 				<beans:value>classpath:shopteam1Mapper.xml</beans:value>
 				<beans:value>classpath:team1ReviewMapper.xml</beans:value>
+				<beans:value>classpath:team1ProductMapper.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>

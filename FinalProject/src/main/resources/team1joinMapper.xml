@@ -15,14 +15,14 @@ insert into final_member values(#{member_ID},' ',2,#{member_name},CURRENT_DATE,'
 
 
 
-<select id="getMemberByID" resultType="com.team12.main.team1.join.Member">
+<select id="getMemberByID" resultType="com.team12.main.t2Login.Membert2">
 
 select * from final_member where member_ID = #{member_ID} and member_linkWhere = #{member_linkWhere}
 
 </select>
 
 
-<update id="update" parameterType="com.team12.main.team1.join.Member">
+<update id="update" parameterType="com.team12.main.t2Login.Membert2">
 		update final_member
 		set member_name=#{member_name},member_phoneNum=#{member_phoneNum},member_address=#{member_address},member_email=#{member_email}
 		where member_ID=#{member_ID}
@@ -31,11 +31,11 @@ select * from final_member where member_ID = #{member_ID} and member_linkWhere =
 
 
 
-<delete id="bye" parameterType="com.team12.main.team1.join.Member">
+<delete id="bye" parameterType="com.team12.main.t2Login.Membert2">
 		delete from final_member where member_ID = #{member_ID}	
 	</delete>
 
-<select id="getMemberNum" 	parameterType="com.team12.main.team1.join.Member"	resultType="java.lang.Integer">
+<select id="getMemberNum" 	parameterType="com.team12.main.t2Login.Membert2"	resultType="java.lang.Integer">
 		select count(*) from final_member where member_ID = #{member_ID}
 	</select>
 	

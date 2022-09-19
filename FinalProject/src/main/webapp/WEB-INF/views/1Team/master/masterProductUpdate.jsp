@@ -8,7 +8,7 @@
 <script src="http://madalla.kr/js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
         //----썸네일 미리보기---- 
-       /*  $(function() {
+         $(function() {
             $("#productImg").on('change', function(){
             readURL(this);
             });
@@ -21,7 +21,7 @@
                 }
                 reader.readAsDataURL(input.files[0]);
             }
-        } */
+        } 
 </script>
 <script type="text/javascript">
 	$(document).ready(function() {

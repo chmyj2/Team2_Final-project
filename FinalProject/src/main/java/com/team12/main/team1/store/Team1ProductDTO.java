@@ -18,13 +18,14 @@ public class Team1ProductDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Team1ProductDTO(int product_num, String product_category, String product_sub_category, String product_title,
-			String product_title2, int product_price, int product_stock, String product_thumnail, String product_detail,
-			String product_info, String product_manufactor) {
+
+		
+	public Team1ProductDTO(int product_num, String product_category, String product_title, String product_title2,
+			int product_price, int product_stock, String product_thumnail, String product_info,
+			String product_manufactor) {
 		super();
 		this.product_num = product_num;
 		this.product_category = product_category;
-		this.product_sub_category = product_sub_category;
 		this.product_title = product_title;
 		this.product_title2 = product_title2;
 		this.product_price = product_price;

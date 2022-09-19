@@ -1,7 +1,7 @@
 --게시판 DB
 create table team2_board(
 	board_num 		number(6) primary key,
-	board_member_id varchar2(30 char) not null,
+	board_member_id varchar2(100 char) not null,
 	board_category 	varchar2(30 char) not null,
 	board_title 	varchar2(100 char) not null,
 	board_txt 		varchar2(2000 char) not null,
@@ -16,7 +16,7 @@ create sequence team2_board_seq;
 create table team2_like(
 	like_pk 		number(6) primary key,
 	like_board_num 	number(6) not null,
-	like_member_id 	varchar2(30 char) not null,
+	like_member_id 	varchar2(100 char) not null,
 
 	constraint board_num_fk foreign key(like_board_num)
 		references team2_board(board_num) on delete cascade,
@@ -29,7 +29,7 @@ create sequence team2_like_seq;
 create table team2_comment(
 	comment_num 		number(6) primary key,
 	comment_board_num 	number(6) not null,
-	comment_member_id 	varchar2(30 char) not null,
+	comment_member_id 	varchar2(100 char) not null,
 	comment_txt 		varchar2(300 char) not null,
 	comment_date 		date not null,
 	comment_child_total number(6) default 0 not null,
@@ -45,7 +45,7 @@ create sequence team2_comment_seq;
 create table team2_child_comment(
 	c_child_num			number(6) primary key,
 	c_child_board_num 	number(6) not null,
-	c_child_member_id 	varchar2(30 char) not null,
+	c_child_member_id 	varchar2(100 char) not null,
 	c_child_parent_num	number(6) not null,
 	c_child_txt			varchar2(300 char) not null,
 	c_child_date		date not null,
