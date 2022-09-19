@@ -122,10 +122,13 @@
                     Every Dog Deserves The Best &nbsp; -->
                 </div>
             </div>
+             <div class="main_page_wrapper3_img_cont">
+                <img src="resources/img/sheep_dog.jpg" alt="">
+            </div>
         </div>
-        <div class="meet_dog_wrapper" style="font-size: 100pt;">
+       <!--  <div class="meet_dog_wrapper" style="font-size: 100pt;">
             Content
-        </div>
+        </div> -->
 
 
 

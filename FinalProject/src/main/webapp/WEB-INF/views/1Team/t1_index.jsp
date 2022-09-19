@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="resources/css/member.css">
 <link rel="stylesheet" href="resources/css/store.css">
 <link rel="stylesheet" href="resources/css/master.css">
+<link rel="stylesheet" href="resources/css/adopt.css">
 <title>Insert title here</title>
 <script type="text/javascript" src="resources/js/jQuery.js"></script>
 <script type="text/javascript" src="resources/js/loginAndJoin.js"></script>
@@ -63,9 +64,9 @@
                 <li><a href="about.go">ABOUT</a>  
                 <!-- 페이지 소개 및 사료와 영양제 수익금의 0%는 유기견구조센터에 기부한다 -->
                 </li>
-                <!-- <li><a href="#">ADOPT</a>  
-                   	 지역별 구조센터
-                </li> -->
+                
+                <li><a href="enter.team1Adopt">ADOPT</a>  
+                </li>
                 
                 <li class="store_drop"><a href="enter.team1MainShop">STORE</a>  
                     <ul class="store_drop_content">
@@ -91,8 +92,6 @@
                         <li><a href="master.reg"> 상품등록 </a></li> -->
                         
                     </ul>
-                </li>
-                <li><a href="team1.community">COMMUNITY</a>  
                 </li>
                 <li><a href="contact.go">CONTACT</a>  
                 </li>

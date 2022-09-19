@@ -8,7 +8,12 @@
 <script type="text/javascript" src="resources/js/jQuery.js"></script>
 </head>
 <body>
-<button onclick="check()">결재완료</button>
+<div class="pay_wrapper">
+	<img class="pay_complete" src="resources/img/about2.png">
+	<p>Thank you for purchase!</p>
+	<button class="pay_btn" onclick="check()">결제 완료</button>
+</div>
+
 </body>
 <script type="text/javascript">
 function check() {
