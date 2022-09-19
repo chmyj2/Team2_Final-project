@@ -29,7 +29,7 @@ function openTeam1() {
 	
 	<div class="receipt">
 	<div>
-		<div class="text">구매해주셔서<br>&nbsp;감사합니다.</div>
+		<div class="text">&nbsp;&nbsp;&nbsp;&nbsp;購入が<br>完了しました。</div>
 	</div>
 	<div id="dog_Class">
 <div class="dog">
@@ -70,31 +70,31 @@ function openTeam1() {
 </div>
   <div class="receipt-list">
     <div class="receipt-item">
-      <div class="receipt-label">주문번호</div>
+      <div class="receipt-label">注文番号</div>
       <div class="receipt-value">${order.order_Num }</div>
     </div>
     <div class="receipt-item">
-      <div class="receipt-label">주문 일자</div>
+      <div class="receipt-label">注文日</div>
       <div class="receipt-value">${order.order_Date }</div>
     </div>
      <div class="receipt-item">
       <div class="receipt-label">
       <c:choose>
 			<c:when test="${sessionScope.loginMember !=null }">
-				<a onclick="location.href='lookUpOrder?Order_User_ID=${sessionScope.loginMember.member_ID }&nowPage=1&cntPerPage=4'">주문조회</a>
+				<a onclick="location.href='lookUpOrder?Order_User_ID=${sessionScope.loginMember.member_ID }&nowPage=1&cntPerPage=4'">注文履歴</a>
 			</c:when>
 			<c:otherwise>
-				<a onclick="location.href='lookUpOrder?Order_User_ID=${sessionScope.loginMember_business.vet_ID }&nowPage=1&cntPerPage=4'">주문조회</a>
+				<a onclick="location.href='lookUpOrder?Order_User_ID=${sessionScope.loginMember_business.vet_ID }&nowPage=1&cntPerPage=4'">注文履歴</a>
 			</c:otherwise>
 		</c:choose>
 		</div>
       <div class="receipt-value"></div>
     </div>
     <div class="receipt-item">
-      <div class="receipt-label"><a href="team2Main">홈으로</a></div>
+      <div class="receipt-label"><a href="team2Main">ホームへ</a></div>
     </div>
     <div class="receipt-item">
-      <div class="receipt-label"><a href="viewAllProductPage.go?onExhibition=Y&nowPage=1&cntPerPage=16">이어서 쇼핑하기</a></div>
+      <div class="receipt-label"><a href="viewAllProductPage.go?onExhibition=Y&nowPage=1&cntPerPage=16">買い物を続く</a></div>
     </div>
   </div>
 </div>

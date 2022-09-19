@@ -3,8 +3,9 @@ package com.team12.main.t2.hospital;
 import java.util.Date;
 
 public class reserveDTO {
-
-	private int reserve_no; 
+	
+	private int RESERVE_LIST_no;
+	private String reserve_no; 
 	private String reserve_hospitalNo;
 	private String reserve_hospitalName;
  	private String reserve_memberID;		
@@ -15,6 +16,7 @@ public class reserveDTO {
 	private String reserve_petBirth;
 	private String reserve_petType;
 	private String reserve_petEctinfo;
+	private String reserve_state;
 	private String reserve_date;
 	private Date reserve_writing_date;
 	
@@ -24,11 +26,12 @@ public class reserveDTO {
 	}
 
 
-	public reserveDTO(int reserve_no, String reserve_hospitalNo, String reserve_hospitalName, String reserve_memberID,
-			String reserve_memberName, String reserve_memberBirth, String reserve_memberphNmb, String reserve_petName,
-			String reserve_petBirth, String reserve_petType, String reserve_petEctinfo, String reserve_date,
-			Date reserve_writing_date) {
+	public reserveDTO(int rESERVE_LIST_no, String reserve_no, String reserve_hospitalNo, String reserve_hospitalName,
+			String reserve_memberID, String reserve_memberName, String reserve_memberBirth, String reserve_memberphNmb,
+			String reserve_petName, String reserve_petBirth, String reserve_petType, String reserve_petEctinfo,
+			String reserve_state, String reserve_date, Date reserve_writing_date) {
 		super();
+		RESERVE_LIST_no = rESERVE_LIST_no;
 		this.reserve_no = reserve_no;
 		this.reserve_hospitalNo = reserve_hospitalNo;
 		this.reserve_hospitalName = reserve_hospitalName;
@@ -40,17 +43,28 @@ public class reserveDTO {
 		this.reserve_petBirth = reserve_petBirth;
 		this.reserve_petType = reserve_petType;
 		this.reserve_petEctinfo = reserve_petEctinfo;
+		this.reserve_state = reserve_state;
 		this.reserve_date = reserve_date;
 		this.reserve_writing_date = reserve_writing_date;
 	}
 
 
-	public int getReserve_no() {
+	public int getRESERVE_LIST_no() {
+		return RESERVE_LIST_no;
+	}
+
+
+	public void setRESERVE_LIST_no(int rESERVE_LIST_no) {
+		RESERVE_LIST_no = rESERVE_LIST_no;
+	}
+
+
+	public String getReserve_no() {
 		return reserve_no;
 	}
 
 
-	public void setReserve_no(int reserve_no) {
+	public void setReserve_no(String reserve_no) {
 		this.reserve_no = reserve_no;
 	}
 
@@ -155,6 +169,16 @@ public class reserveDTO {
 	}
 
 
+	public String getReserve_state() {
+		return reserve_state;
+	}
+
+
+	public void setReserve_state(String reserve_state) {
+		this.reserve_state = reserve_state;
+	}
+
+
 	public String getReserve_date() {
 		return reserve_date;
 	}
@@ -174,7 +198,7 @@ public class reserveDTO {
 		this.reserve_writing_date = reserve_writing_date;
 	}
 
-
+	
 	
 
 

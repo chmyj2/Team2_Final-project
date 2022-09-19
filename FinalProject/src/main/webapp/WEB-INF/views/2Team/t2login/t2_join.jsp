@@ -23,12 +23,12 @@
       
       <div class="join-textForm">
       	<span class="jointxt">*필수 5자 이상 영어 숫자 포함</span>
-        <input name="member_PW"  class="join-pw" placeholder="비밀번호" id="joinMember_PW">
+        <input name="member_PW"  class="join-pw" placeholder="비밀번호" id="joinMember_PW" type="password" >
         <span id="PWCheckResult"></span>
       </div>
       
        <div class="join-textForm">
-        <input name="loginPwConfirm"  class="join-pw2" placeholder="비밀번호 확인">
+        <input name="loginPwConfirm"  class="join-pw2" placeholder="비밀번호 확인" type="password" >
         <span class="pwCheckResult"></span>
       </div>
       

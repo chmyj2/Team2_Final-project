@@ -12,10 +12,10 @@
 
 function orderDelete(order_PK,ID) {
 	
-	  if (!confirm("배송 완료 건은 주문 조회에서 삭제됩니다.")) {
-          alert("취소를 누르셨습니다.");
+	  if (!confirm("配送完了の件は注文履歴から削除されます。")) {
+          alert("キャンセルしました。");
       } else {
-          alert("삭제되었습니다.");
+          alert("削除されました。");
           location.href='deleteMy_order?Order_PK=' + order_PK + '&Order_User_ID='+ ID + '&nowPage=1&cntPerPage=8';
       }
 	
@@ -28,7 +28,7 @@ function orderDelete(order_PK,ID) {
 <div style="margin: 50px;">
 	<header id="site-header">
 		<div class="Txt">
-			<h1>주문 조회</h1>
+			<h1>注文履歴</h1>
 		</div>
 	</header>
 
@@ -36,10 +36,10 @@ function orderDelete(order_PK,ID) {
 <c:if test="${empty orders}">
 	<div class="empty_txt" >
 		<div class="emptyTxt">
-			주문 내역이 없습니다.
+			注文履歴はありません。
 		</div>
 		<div class="go_back">
-			<a href="team2Main">메인으로 돌아가기</a>
+			<a href="team2Main">メインに戻る</a>
 		</div>
 	</div>
 </c:if>
@@ -61,9 +61,9 @@ function orderDelete(order_PK,ID) {
 		<c:forTokens var="price" items="${o.product_Price }" delims="!">
 			<div class="orderInfo">
 				<div>
-					<span class="orderDate">상품 주문일 : ${o.order_Date }</span><br>
-					<span class="orderDate">주문 상태 : ${o.order_DeliverState }</span><br>
-					<span class="orderDate">상품 가격 : ${price }</span><br>
+					<span class="orderDate">商品注文日 : ${o.order_Date }</span><br>
+					<span class="orderDate">注文状態 : ${o.order_DeliverState }</span><br>
+					<span class="orderDate">商品価格 : ${price }</span><br>
 				</div>
 			</div>
 		</c:forTokens>
@@ -77,10 +77,10 @@ function orderDelete(order_PK,ID) {
 				<div class="deliveyrDiv">
 					<c:choose>
 					<c:when test="${sessionScope.loginMember !=null }">
-        			<span><button class="deliveyrCompleted" onclick="orderDelete('${o.order_PK }','${sessionScope.loginMember.member_ID }')">배송 완료</button></span>
+        			<span><button class="deliveyrCompleted" onclick="orderDelete('${o.order_PK }','${sessionScope.loginMember.member_ID }')">配達完了</button></span>
 					</c:when>
 					<c:otherwise>
-        			<span ><button class="deliveyrCompleted" onclick="orderDelete('${o.order_PK }','${sessionScope.loginMember_business.vet_ID }')">배송 완료</button></span>
+        			<span ><button class="deliveyrCompleted" onclick="orderDelete('${o.order_PK }','${sessionScope.loginMember_business.vet_ID }')">配達完了</button></span>
 					</c:otherwise>
 					</c:choose>
 					</div>

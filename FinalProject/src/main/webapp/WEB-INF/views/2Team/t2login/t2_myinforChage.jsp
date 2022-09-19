@@ -113,7 +113,8 @@
 <script type="text/javascript">
 	function agree1() {
 		let btn = document.getElementById('join_btn');
-		let a = document.getElementById('join_btn').disable;
+		let a = document.getElementById('join_btn').disabled;
+		alert(a);
 		if (a) {
 			btn.disabled = false;
 		} else {

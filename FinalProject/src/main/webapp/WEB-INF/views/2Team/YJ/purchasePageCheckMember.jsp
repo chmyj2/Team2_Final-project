@@ -10,12 +10,12 @@
 	<div class="login_didididiv">
 	
 	<ul class="menu__tabs">
-			<li><a class="active" href="#item-1"><i class="fa fa-user"></i> 개인회원 구매</a></li>
-			<li><a href="#item-2"><i class="fa fa-building"></i> 기업회원 구매</a></li>	
+			<li><a class="active" href="#item-1"><i class="fa fa-user"></i> 個人会員購入</a></li>
+			<li><a href="#item-2"><i class="fa fa-building"></i> 企業会員購入</a></li>	
 		</ul>
 		<section class="menu__wrapper">
 			<article id="item-1" class="menu__item item-active">
-				<h3>개인 로그인</h3>
+				<h3>個人ログイン</h3>
 				
 <form action="t2LoginDO.purchase" method="post" name="loginForm" onsubmit="return logincheckCall()">
 
@@ -34,10 +34,10 @@
 			</label>
 			<input name="member_linkWhere" value="1" type="hidden">
 			<span class="pw_alert">${r}</span>
-			<input type="checkbox" id="login_idSave">아이디 기억하기
-			<p class="forgot-pass" type="button"  style="font-size: 12px;" onclick="location.href='acceptgo?member=1' ">회원가입</p>
-			<p class="forgot-pass"  style="font-size: 12px;">아이디를 잊으셨나요?</p>
-			<p class="forgot-pass"  style="font-size: 12px;">비밀번호를 잊으셨나요?</p>
+			<input type="checkbox" id="login_idSave">IDを保存
+			<p class="forgot-pass" type="button"  style="font-size: 12px;" onclick="location.href='acceptgo?member=1' ">会員登録</p>
+			<p class="forgot-pass"  style="font-size: 12px;">IDを探す</p>
+			<p class="forgot-pass"  style="font-size: 12px;">パスワードを探す</p>
 			<div class="box bg-1">
 			<input type="submit" class="login-btn" value="L o g i n"/>
 			</div>
@@ -53,7 +53,7 @@
 			
 			
 			<article id="item-2" class="menu__item">
-				<h3>기업 로그인</h3>
+				<h3>企業ログイン</h3>
 	<form action="t2LoginDO.business.purchase" method="post" name="loginFormBusiness" onsubmit="return loginCheck_business()">
 
 		<div class="login_txt">
@@ -65,10 +65,10 @@
 			<input class="login_input1" name="vet_PW" />
 			</label>
 			<span class="pw_alert">${rb}</span>
-			<input type="checkbox" id="login_idSave1">아이디 기억하기
-			<p class="forgot-pass"  style="font-size: 12px;" onclick="location.href='acceptgo?member=2' ">회원가입</p>
-			<p class="forgot-pass"  style="font-size: 12px;">아이디를 잊으셨나요?</p>
-			<p class="forgot-pass"  style="font-size: 12px;">비밀번호를 잊으셨나요?</p>
+			<input type="checkbox" id="login_idSave1">IDを保存
+			<p class="forgot-pass"  style="font-size: 12px;" onclick="location.href='acceptgo?member=2' ">会員登録</p>
+			<p class="forgot-pass"  style="font-size: 12px;">IDを探す</p>
+			<p class="forgot-pass"  style="font-size: 12px;">パスワードを探す</p>
 			<div class="box bg-1">
 			<input type="submit" class="login-btn" value="L o g i n"/>
 			</div>

@@ -47,7 +47,7 @@
 					<span class="qt-plus">+</span>
 					<span class="full-price">${p.productPrice * p.cart_ProductQuantity }</span>
 					<h2 class="price">${p.productPrice}</h2>
-					<h2 class="onePriceWon">가격 : </h2>
+					<h2 class="onePriceWon">Price : </h2>
 				</footer>
 			</article>
 </c:forEach>
@@ -61,12 +61,12 @@
 		<div class="container clearfix">
 
 			<div class="left">
-				<h2 class="subtotal">상품 금액 : <span id="subPrice"></span>원</h2>
-				<h3 class="tax">배송비 : <span>2500</span>원</h3>
+				<h2 class="subtotal">Product Price : <span id="subPrice"></span>₩</h2>
+				<h3 class="tax">Shipping Price : <span>2500</span>₩</h3>
 			</div>
 
 			<div class="right">
-				<h1 class="total">총 금액: <span id="totalPrice">0</span>원</h1>
+				<h1 class="total">Total Price: <span id="totalPrice">0</span>₩</h1>
 				<a class="CheckOutbtn" onclick="return CheckOutFunc()" >Check Out</a>
 			</div>
 

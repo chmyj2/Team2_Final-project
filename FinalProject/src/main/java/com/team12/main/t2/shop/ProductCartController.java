@@ -96,7 +96,6 @@ public class ProductCartController {
 			}else {
 				return 0;
 			}
-			// 상품 카드에 저장하는 일
 		}
 	
 	
@@ -107,14 +106,13 @@ public class ProductCartController {
 		@RequestMapping(value = "/delete.cart", method = RequestMethod.GET)
 		public int deleteCart(HttpServletRequest request,Cart c) {
 			
-			// 상품 카드에 저장하는 일
+			// 상품 카드에 삭제하는 일
 			return cDAO.deleteCart(c);
 		}
 		
 		
 		
 		// 카카오결재
-		
 		@ResponseBody
 		@RequestMapping(value = "/kakaopay", method = RequestMethod.POST)
 		public String kakaopay(@RequestParam("totalPrice")int totalPrice) {
@@ -256,12 +254,10 @@ public class ProductCartController {
 										pricekArr,totalPrice,Recipient,thumbnailArr);
 			
 			System.out.println(o.getOrder_User_ID());
-			return "redirect:viewPaymentSuccessPage?Order_Num=" + cDAO.getOrderNum(o);
+			return "redirect:viewPaymentSuccessPage?Order_PK=" + cDAO.getOrderPK(o);
 		}
 		
-		
-		
-
+		// 구매완료 페이지 이동
 		@RequestMapping(value = "/viewPaymentSuccessPage", method = RequestMethod.GET)
 		public String viewPaymentSuccessPage(HttpServletRequest request,OrderDTO o) {
 			System.out.println(o.getOrder_Num());
@@ -271,6 +267,4 @@ public class ProductCartController {
 			request.setAttribute("contentPage", "YJ/paymentSuccess.jsp");
 			return "2Team/t2_index";
 		}
-		
-		
-}
+		}

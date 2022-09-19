@@ -14,7 +14,7 @@ public interface ProductCartMapper {
 
 	int insertPurchasedProduct(OrderDTO o);
 
-	String getOrderNum(OrderDTO o);
+	String getOrderPK(OrderDTO o);
 
 	OrderDTO getOrder(OrderDTO o);
 	

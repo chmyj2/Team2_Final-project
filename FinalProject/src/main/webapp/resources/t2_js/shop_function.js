@@ -81,13 +81,13 @@ var prevStock = 0;
 function quantityChange(quantity, price,stock){
 	if( quantity.value>stock ){
 		quantity.value = stock;
-		alert("재고보다 많은 수량은 구매 불가능합니다");
+		alert("在庫より多い数量は購入できません。");
 		return false;
 	}
 
 	if(quantity.value<=0){
 	quantity.value = 1;
-	alert("1개 이상을 선택해주세요");
+	alert("1つ以上を選択してください");
 	return false;
 	}	
 
@@ -122,7 +122,7 @@ function CheckOutFunc() {
 
   var name = document.getElementById("name").value;
   if(document.getElementById("name") == null){
-    alert("장바구니가 비어있습니다.")
+    alert("カートが空です。")
     return false;
 
   }else{
@@ -215,7 +215,7 @@ $(".remove").click(function(){
               if(check) {
                 $("#cart").html("<h1>The shop does not function, yet!</h1><p>If you liked my shopping cart, please take a second and heart this Pen on <a href='https://codepen.io/ziga-miklic/pen/xhpob'>CodePen</a>. Thank you!</p>");
               } else {
-                $("#cart").html("<h1>장바구니가 비어있어요!</h1>");
+                $("#cart").html("<h1>カートには何も入っていません！</h1>");
               }
             }
             changeTotal(); 

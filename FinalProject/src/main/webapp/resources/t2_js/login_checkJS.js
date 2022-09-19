@@ -686,7 +686,7 @@ function petRegDO() {
 		
 		return false;
 	}else if (isNotType(img, "png") && isNotType(img, "gif")
-			&& isNotType(img, "jpg") && isNotType(img, "bmp")) {
+			&& isNotType(img, "jpg") && isNotType(img, "bmp") && isNotType(img, "jpeg")) {
 		alert('올릴 수 없는 파일입니다.');
 		
 		return false;

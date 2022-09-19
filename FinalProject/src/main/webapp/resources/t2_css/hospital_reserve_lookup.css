@@ -1,5 +1,4 @@
 .reserve-lookup-div{
-	height:1000px;
 	
 }
 
@@ -12,7 +11,7 @@
 }
 
 .reserve-lookup-section{
-	padding: 30px 0;
+	padding: 4% 0;
     border-bottom: 1px solid #ddd;
     border-top: 1px solid #ddd;
 }
@@ -24,32 +23,32 @@
 }
 
 .reserve-lookup-info-place-1{
-    padding: 6px 110px;
+    padding: 6px 5%;
     border-right: 1px solid gray;
 }
 
 .reserve-lookup-info-place-2{
-    padding: 6px 50px;
+    padding: 6px 20%;
     border-right: 1px solid gray;
 
 }
 
 .reserve-lookup-info-place-3{
-    padding: 6px 50px;
+    padding: 6px 5%;
     border-right: 1px solid gray;
 }
 .reserve-lookup-info-place-4{
-    padding: 6px 50px;
+    padding: 6px 5%;
     border-right: 1px solid gray;
 
 }
 .reserve-lookup-info-place-5{
-    padding: 6px 40px;
+    padding: 6px 2%;
     border-right: 1px solid gray;
 }
 
 .reserve-lookup-info-place-6{
-    padding: 6px 40px;
+    padding: 6px 2%;
    
 }
 
@@ -57,7 +56,7 @@
 .reserve-lookup-info-list1{
 	display: flex;
     margin: -5px 0;
-    padding: 0px 0px 0px 40px;
+    padding: 0px 0px 0px 65px;
 }
 .reserve-lookup-info-list2{
 	display: flex;
@@ -93,3 +92,195 @@
     white-space: nowrap;
 	
 }
+
+
+
+
+
+.goods_pay_section + .goods_pay_section,
+.goods_group + .goods_group{
+    border-top:1px solid #dadddf;
+}
+
+.goods_pay_item{
+    display: table;
+    width: 100%;
+    min-height: 161px;
+    padding:23px 0 24px;
+    table-layout: fixed;
+}
+.goods_pay_item > div {
+    display: table-cell;
+    vertical-align: middle;
+}
+.goods_pay_item .goods_item{
+    position: relative;
+    padding-left: 129px;
+}
+.goods_pay_item .goods_item .goods_thumb{
+    overflow: hidden;
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    width: 101px;
+    height: 90px;
+    margin-top: -45px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.goods_pay_item .goods_item .goods_info{
+    font-size: 13px;
+    padding-left: 100px;
+}
+.goods_pay_item .goods_item .goods_info .goods .name{
+    max-width: 100%;
+    overflow: hidden;
+    color: #000;
+    font-size: 16px;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    text-decoration: none;
+}
+.goods_pay_item .goods_item .goods_info .goods .name b,
+.goods_pay_item .goods_item .goods_info .goods .name strong {
+    font-weight: normal;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: top;
+}
+.goods_pay_item .goods_item .goods_info .goods .info12{
+    margin:8px 0px 12px;
+    padding: 0px;
+}
+.goods_pay_item .goods_item .goods_info .goods .info12 li{
+    display: inline-block;
+    color: #000;
+    font-size: 14px;
+    line-height: 18px;
+}
+.goods_pay_item .goods_item .goods_info .goods .info12 li.date{
+	font-weight : 700;
+    color: #5d5a5a !important;
+    font-family: Helvetica, '나눔고딕', NanumGothic, '맑은고딕', MalgunGothic, '돋움', Dotum, sans-serif;
+}
+.goods_pay_item .goods_item .goods_info .goods .info12 li.cancle{
+	font-weight : 700;
+    color: #5d5a5a !important;
+    font-family: Helvetica, '나눔고딕', NanumGothic, '맑은고딕', MalgunGothic, '돋움', Dotum, sans-serif;
+	text-decoration: line-through;
+}
+
+.reserve-blindcrD{
+	text-decoration: line-through;
+	
+}
+.goods_pay_item .goods_item .goods_info .goods .info12 li.subscription{
+	font-weight : 700;
+    color: #a5a5a5 !important;
+    font-family: Helvetica, '나눔고딕', NanumGothic, '맑은고딕', MalgunGothic, '돋움', Dotum, sans-serif;
+}
+.goods_pay_item .goods_item .goods_info .goods .info12 li + li{
+    margin:0 0 0 8px !important;
+    padding-left: 280px;
+}
+.goods_pay_item .goods_item .goods_info .goods .info12 li + li:before{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1px;
+    height: 17px;
+    margin-top: -9px;
+    background-color: #f2f3f4;
+    content: '';
+}
+.goods_pay_item .goods_item .goods_info .state{
+    color: blue;
+    text-decoration: none;
+}
+.state_statusNameCancle{
+    color: red;
+    text-decoration: none;
+}
+
+.goods_pay_item .goods_item .goods_info .guide{
+    margin-top: 10px;
+    padding-top: 10px;
+    color: #646465;
+    line-height: 18px;
+    border-top:1px solid #f4f6f7;
+}
+.goods_pay_item .goods_item .goods_info .guide.notify{
+    position: relative;
+    padding-left: 6px;
+}
+
+.goods_pay_item .seller_item{
+    width: 150px;
+}
+.goods_pay_item .seller_item .inner .type {
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 15px;
+    color: #09aa5c;
+}
+.goods_pay_item .seller_item .inner .seller{
+    overflow: hidden;
+    max-width: 100%;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+}
+.goods_pay_item .button_item{
+    width: 135px;
+    padding-right: 40px;
+}
+
+.goods_pay_section .none_inner p strong {
+    font-weight: normal;
+}
+.goods_pay_section .none_inner span {
+    font-size: 12px;
+    color: #a5a5a5
+}
+
+
+.state_button{
+	display: block;
+    text-align: center;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+	
+}
+
+.state_button.function{
+	    width: 100%;
+    height: 29px;
+    color: #424242;
+    font-size: 13px;
+    line-height: 27px;
+    text-decoration: none;
+}
+
+.state_button.qna{
+	width: 50%;
+    height: 20px;
+    margin: 0 auto;
+    color: #a5a5a5;
+    font-size: 12px;
+    line-height: 18px;
+    text-decoration: none;
+}
+
+

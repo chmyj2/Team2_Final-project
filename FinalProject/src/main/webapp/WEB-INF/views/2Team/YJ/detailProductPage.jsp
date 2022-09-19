@@ -25,22 +25,19 @@
 			success : function(getData) {
 				console.log(getData);
 				if (getData == 1) {
-					console.log("성공");
-					alert("장바구니에 추가되었습니다.")
+					console.log("成功");
+					alert("カートに追加しました。")
 				}else {
-					alert("로그인 후 이용해주세요.")
+					alert("ログイン後にご利用ください。")
 				}
 			}
 		});
 	});
-	
-	
-	   
-});
+　　});
 
 
 function soldOut() {
-	alert("품절된 상품입니다.");
+	alert("売り切れの商品です。");
 }
 
 
@@ -81,7 +78,7 @@ function soldOut() {
               <c:forTokens var="item" items="${Product.productTag }" delims="!">
 					<input class="productTag" value="${item }" disabled="disabled">
 				</c:forTokens>
-                  <div class="product-price-discount"><span>${Product.productPrice }원</span></div>
+                  <div class="product-price-discount"><span>${Product.productPrice }₩</span></div>
                 </div>
                 <div class="productInfo">
                 <p>${Product.productInfo }</p>
@@ -89,8 +86,8 @@ function soldOut() {
                 <div class = "productStockDiv">
 					${Product.productName}
 					<input id="quantityInput" type = "number" onchange="quantityChange(this,${Product.productPrice },${Product.productStock})"
-					name = "quantity" style ="width:50px" value = 1>개
-					<span id = "totalPrice">${Product.productPrice }</span> 원 재고 ${Product.productStock}개<br>
+					name = "quantity" style ="width:50px" value = 1>個
+					<span id = "totalPrice">${Product.productPrice }</span>&nbsp;&nbsp;&nbsp;在庫 ${Product.productStock}個<br>
 				</div>
 				</form>
 				
@@ -98,13 +95,13 @@ function soldOut() {
 				<div id="purchaseBtnDiv">
 					<c:choose>
 				<c:when test="${Product.productStock > 0}">
-					<a onclick="goPurchasePage('${Product.productNum}')" class="button">구매하기</a>
-					<a id="cartAddBtn" class="button reverse dark">장바구니 추가</a>
-					<a onclick = "goCartView(${Product.productNum})" class="button fast white">장바구니 바로가기</a>
+					<a onclick="goPurchasePage('${Product.productNum}')" class="button">購入する</a>
+					<a id="cartAddBtn" class="button reverse dark">カートに追加</a>
+					<a onclick = "goCartView(${Product.productNum})" class="button fast white">カートを見る</a>
 		
 				</c:when>
 				<c:otherwise>
-					<button onclick="soldOut()" class="soldOutBtn">품절</button>
+					<button onclick="soldOut()" class="soldOutBtn">売り切れ</button>
 				</c:otherwise>
 			</c:choose>
 				</div>

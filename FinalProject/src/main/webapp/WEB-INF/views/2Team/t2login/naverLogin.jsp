@@ -10,22 +10,19 @@
 </head>
 <body>
 <script type="text/javascript">
-  var naver_id_login = new naver_id_login("BuwruEVQIqPoVW9Sc3Uo", "http://localhost/main/joingo");
+  var naver_id_login = new naver_id_login("BuwruEVQIqPoVW9Sc3Uo", "http://localhost:8080/main/joingo");
   // 접근 토큰 값 출력
  // alert(naver_id_login.oauthParams.access_token);
   // 네이버 사용자 프로필 조회
   naver_id_login.get_naver_userprofile("naverSignInCallback()");
   // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
-  function naverSignInCallback() {
-    alert(naver_id_login.getProfileData('email'));
-    alert(naver_id_login.getProfileData('name'));
-    alert(naver_id_login.getProfileData('gender')); 
+  function naverSignInCallback() { 
     let member_email =naver_id_login.getProfileData('email'); //email에 담기
     let member_ID =  member_email.split('@');
    	member_ID =member_ID[0]; //아이디 담기
    	let member_name =naver_id_login.getProfileData('name');
    	let member_sex = naver_id_login.getProfileData('gender');
-    alert(member_ID);
+    
     
     $.ajax({
 		url:"naverlogin.check",
@@ -37,12 +34,12 @@
 			if (getData >=1) {
 				//회원정보가 있다는 의미
 				window.close();
-				window.opener.location.href="http://localhost/main/naverlogin.do?member_ID="+member_ID;
+				window.opener.location.href="http://localhost:8080/main/naverlogin.do?member_ID="+member_ID;
 			}else {
 				//회원정보가 없다는 의미
 				alert('회원가입을 도와드리겠습니다.');
 				window.close();
-				window.opener.location.href="http://localhost/main/naverjoin.go?member_ID="+member_ID+"&member_email="+member_email+"&member_name="+member_name+"&member_sex="+member_sex;
+				window.opener.location.href="http://localhost:8080/main/naverjoin.go?member_ID="+member_ID+"&member_email="+member_email+"&member_name="+member_name+"&member_sex="+member_sex;
 				
 			}
 			

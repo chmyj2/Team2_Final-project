@@ -11,7 +11,7 @@
 <body>
 	<div class="success-page">
    <img  src="http://share.ashiknesin.com/green-checkmark.png" class="center" alt="" />
-				<button onclick="check()" class="SuccessBtn">결제완료</button>
+				<button onclick="check()" class="SuccessBtn">決済完了</button>
 </div>
 </div>
 

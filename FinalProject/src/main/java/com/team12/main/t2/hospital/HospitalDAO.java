@@ -49,9 +49,7 @@ public class HospitalDAO {
 		rDTO.setReserve_petBirth(pbDate);
 		rDTO.setReserve_date(rdDate);
 		
-		System.out.println(rDTO.getReserve_memberBirth());
-		System.out.println(rDTO.getReserve_petBirth());
-		System.out.println(rDTO.getReserve_date());
+		System.out.println(rDTO.getReserve_no());
 		
 		if(ss.getMapper(Hospital_ListMapper.class).setReverse(rDTO) == 1 ) {
 			
@@ -78,6 +76,38 @@ public class HospitalDAO {
 		req.setAttribute("reserveView", hlm.getReserveinfo(m2));
 		
 	}
+
+
+	public String hospitalReservePWCheck(Membert2 m2) {
+		
+			System.out.println("기능에 id 보내기 : "+m2.getMember_ID());
+		
+			return ss.getMapper(Hospital_ListMapper.class).checkReservePW(m2);
+	}
+
+
+	public void hospitalReserveCancle(HttpServletRequest req, reserveDTO rDTO) {
+			
+				try {
+					
+			if(	ss.getMapper(Hospital_ListMapper.class).reservecancleDo(rDTO) ==1 ) {
+				
+				System.out.println("성공");
+			}else {
+				System.out.println("실패");
+			}
+			
+			
+					
+				} catch (Exception e) {
+
+				}
+	}
+	
+	
+
+	
+	
 
 
 

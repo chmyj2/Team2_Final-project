@@ -12,10 +12,10 @@
 
 function orderDelete(order_PK) {
 	
-	  if (!confirm("주문 조회에서 삭제됩니다.")) {
-        alert("취소를 누르셨습니다.");
+	  if (!confirm("注文履歴から削除されます。")) {
+        alert("キャンセルしました。");
     } else {
-        alert("삭제되었습니다.");
+        alert("削除されました。");
         location.href='deleteMy_order?Order_PK=' + order_PK;
     }
 	
@@ -28,7 +28,7 @@ function orderDelete(order_PK) {
 <div style="margin: 50px;">
 	<header id="site-header">
 		<div class="Txt">
-			<h1>주문 상태 조회</h1>
+			<h1>注文状態</h1>
 		</div>
 	</header>
 
@@ -36,10 +36,10 @@ function orderDelete(order_PK) {
 
 	<div class="empty_txt" >
 		<div class="emptyTxt">
-			주문 내역이 없습니다.
+			注文履歴がありません。
 		</div>
 		<div class="go_back">
-			<a href="team2Main">메인으로 돌아가기</a>
+			<a href="team2Main">メインに戻る</a>
 		</div>
 	</div>
 
@@ -51,23 +51,23 @@ function orderDelete(order_PK) {
         	<form action="UpdateDeliverState">
         		<div class="thumbnail">
                 <div class="caption">
-                	<p>주문자 : ${o.order_User_ID }</p>
+                	<p>注文ID : ${o.order_User_ID }</p>
                 	<select name="Order_DeliverState" id="">
     				<option value="${o.order_DeliverState}">${o.order_DeliverState}</option>
-    				<option value="출고 완료">출고 완료</option>
-    				<option value="입고중">입고중</option>
-    				<option value="배송 준비중">배송 준비중</option>
-    				<option value="배송 완료">배송 완료</option>
+    				<option value="出荷完了">出荷完了</option>
+    				<option value="入荷中">入荷中</option>
+    				<option value="配送準備中">配送準備中</option>
+    				<option value="配達完了">配達完了</option>
 					</select>
-                	<p>주문 상태 : ${o.order_DeliverState}</p>
-                	<p>결제 상태 : ${o.order_PaymentState}</p>
-                	<p>총 가격 : <fmt:formatNumber pattern="#,###" value="${o.order_TotalPrice}"/>원</p>
-                	<p>주문 날짜 : <fmt:formatDate type="date" dateStyle="medium" value="${o.order_Date}"/></p>
+                	<p>注文状態 : ${o.order_DeliverState}</p>
+                	<p>お支払い状況 : ${o.order_PaymentState}</p>
+                	<p>総価格 : <fmt:formatNumber pattern="#,###" value="${o.order_TotalPrice}"/>원</p>
+                	<p>注文日 : <fmt:formatDate type="date" dateStyle="medium" value="${o.order_Date}"/></p>
                 	<input type="hidden" name="Order_PK" value="${o.order_PK}">
                 	<input type="hidden" name="nowPage" value="1">
                 	<input type="hidden" name="cntPerPage" value="8">
-                	<button class="comfirmBtn">등록</button>
-                	<button type="button" class="comfirmBtn" onclick="orderDelete('${o.order_PK}')">삭제</button>
+                	<button class="comfirmBtn">登録</button>
+                	<button type="button" class="comfirmBtn" onclick="orderDelete('${o.order_PK}')">削除</button>
                 </div>
             </div>
             </form>

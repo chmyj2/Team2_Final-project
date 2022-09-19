@@ -12,7 +12,7 @@
 
 <h1>기업용 비밀번호 확인</h1> <br>
 
-<input name="vet_PW" placeholder="비밀번호" > <br>
+<input name="vet_PW" placeholder="비밀번호" type="password" > <br>
 <span class="PWChangeBefore-result">${result} </span><br><br>
 
 <button>확인</button>

@@ -13,9 +13,9 @@
 <div class="login_didididiv">
 	
 	<ul class="menu__tabs">
-			<li><a class="active" href="#item-1">전체보기</a></li>
-			<li><a href="#item-2">간식</a></li>	
-			<li><a href="#item-3">용품</a></li>	
+			<li><a class="active" href="#item-1">全て見る</a></li>
+			<li><a href="#item-2">スナック</a></li>	
+			<li><a href="#item-3">商品</a></li>	
 		</ul>
 		<section class="menu__wrapper">
 			<article id="item-1" class="menu__item item-active">
@@ -28,7 +28,7 @@
                 <img src="resources/t2_yj_files/${p.productThumbnail }" style="height: 300px;width:300px">
                 <div class="caption"  style="font-weight: 100;font-size: 130%;">
                   <p>${fn:length(p.productName)>20?fn:substring(p.productName,0,20)+="...":p.productName }</p>
-                  <p><fmt:formatNumber value="${p.productPrice }" pattern="#,###" />원</p>
+                  <p><fmt:formatNumber value="${p.productPrice }" pattern="#,###" />₩</p>
                 </div>
             </div></a>
            </div>
@@ -50,7 +50,7 @@
                 <img src="resources/t2_yj_files/${s.productThumbnail }" style="height: 300px;width:300px">
                <div class="caption"  style="font-weight: 100;font-size: 130%;">
                   <p>${fn:length(s.productName)>20?fn:substring(s.productName,0,20)+="...":s.productName }</p>
-                  <p><fmt:formatNumber value="${s.productPrice }" pattern="#,###" />원</p>
+                  <p><fmt:formatNumber value="${s.productPrice }" pattern="#,###" />₩</p>
                    
                 </div>
             </div></a>
@@ -72,7 +72,7 @@
                 <img src="resources/t2_yj_files/${t.productThumbnail }" style="height: 300px;width:300px">
                 <div class="caption"  style="font-weight: 100;font-size: 130%;">
                   <p>${fn:length(t.productName)>20?fn:substring(t.productName,0,20)+="...":t.productName }</p>
-                  <p><fmt:formatNumber value="${t.productPrice }" pattern="#,###" />원</p>
+                  <p><fmt:formatNumber value="${t.productPrice }" pattern="#,###" />₩</p>
                    
                 </div>
             </div></a>

@@ -33,13 +33,13 @@
 					<img src="//k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="110" alt="카카오 로그인 버튼"/>
 				</a>
 				<div id="naver_id_login"></div>
-				<a href=""><i class="fa fa-google-plus"></i></a>
+				
 			</div>
 			
 			<label class="login_label"> <span>ID</span> 
 			<input class="login_input" name="member_ID" />
 			</label> <label class="login_label"> <span>Password</span> 
-			<input class="login_input1" name="member_PW" />
+			<input class="login_input1" name="member_PW" type="password" />
 			</label>
 			<input name="member_linkWhere" value="1" type="hidden">
 			<span class="pw_alert">${r}</span>
@@ -65,7 +65,7 @@
 			<label class="login_label"> <span>ID</span> 
 			<input class="login_input3" name="vet_ID" />
 			</label> <label class="login_label"> <span>Password</span> 
-			<input class="login_input1" name="vet_PW" />
+			<input class="login_input1" name="vet_PW" type="password" />
 			</label>
 			<span class="pw_alert">${rb}</span>
 			<input type="checkbox" id="login_idSave1">아이디 기억하기
@@ -85,10 +85,10 @@
 	
 </div>
 <script type="text/javascript">
-  	var naver_id_login = new naver_id_login("BuwruEVQIqPoVW9Sc3Uo", "http://localhost/main/naver.login");
+  	var naver_id_login = new naver_id_login("BuwruEVQIqPoVW9Sc3Uo", "http://localhost:8080/main/naver.login");
   	var state = naver_id_login.getUniqState();
   	naver_id_login.setButton("white", 2,40);
-  	naver_id_login.setDomain("http://localhost/main/naver.login");
+  	naver_id_login.setDomain("http://localhost:8080/main/naver.login");
   	naver_id_login.setState(state);
   	naver_id_login.setPopup();
   	naver_id_login.init_naver_id_login();

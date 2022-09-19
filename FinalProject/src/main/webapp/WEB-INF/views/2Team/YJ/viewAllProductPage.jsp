@@ -18,7 +18,7 @@
                 <img src="resources/t2_yj_files/${p.productThumbnail }" style="height: 300px;width:300px">
                 <div class="caption"  style="font-weight: 100;font-size: 130%;">
                   <p>${fn:length(p.productName)>20?fn:substring(p.productName,0,20)+="...":p.productName }</p>
-                  <p><fmt:formatNumber value="${p.productPrice }" pattern="#,###" />원</p>
+                  <p><fmt:formatNumber value="${p.productPrice }" pattern="#,###" />₩</p>
                 </div>
             </div></a>
            </div>

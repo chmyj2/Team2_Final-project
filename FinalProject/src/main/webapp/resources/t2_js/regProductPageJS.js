@@ -8,7 +8,7 @@ function insRow() {
 
   //삽입될 Form Tag
   var frmTag = "<input id='productTag' class='regInput' type=text name='productTag' style='margin-left:40px;margin-right:4px;padding-top:2px;' >";
-  frmTag += "<input class='DeleteBtn' type=button value='삭제' onClick='removeRow()'>";
+  frmTag += "<input class='DeleteBtn' type=button value='削除' onClick='removeRow()'>";
   oCell.innerHTML = frmTag;
 }
 //Row 삭제
@@ -34,35 +34,35 @@ function frmCheck(){
 
 
     if (pet_category == 1) {
-        alert("카테고리를 입력해주세요.")
+        alert("カテゴリを入力してください。")
         return false;
     } else if(toy_category == 1){
-        alert("상품 분류를 입력해주세요.")
+        alert("商品分類を入力してください。")
         return false;
     } else if(productName == ""){
-        alert("제품 이름을 입력해주세요.")
+        alert("商品名を入力してください。")
         return false;
     } else if(productPrice == ""){
-        alert("제품 가격을 입력해주세요.")
+        alert("価格を入力してください。")
         return false;
     } else if(productInfo == ""){
-        alert("제품 정보를 입력해주세요.")
+        alert("商品情報を入力してください。")
         return false;
     } else if(productStock == ""){
-        alert("재고를 입력해주세요.")
+        alert("在庫を入力してください。")
         return false;
     } else if(productThumbnail == ""){
-        alert("대표사진을 입력해주세요.")
+        alert("代表イメージを入力してください。")
         return false;
     } else if(productImg == ""){
-        alert("상세 이미지를 입력해주세요.")
+        alert("ディテールイメージを入力してください。")
         return false;
     }  else {
         for (let index = 0; index < productTag.length; index++) {
             const element = productTag[index];
             
             if (element.value == "") {
-                alert('태그를 입력해주세요');
+                alert('タグを入力してください.');
                 return false;
             }
         }
@@ -90,7 +90,7 @@ function removeinput_value(){
 
 function productDelete(num,thumbnail,img){
 
-    var con_test = confirm("정말 삭제하시겠습니까?");
+    var con_test = confirm("本当に削除しますか");
     if(con_test == true){
     location.href="product.delete?num=" + num +"&thumbnail=" + thumbnail + "&img=" + img;
     }

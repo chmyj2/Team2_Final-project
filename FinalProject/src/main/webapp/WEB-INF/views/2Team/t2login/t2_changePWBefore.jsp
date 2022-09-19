@@ -12,8 +12,8 @@
 
 <h1>비밀번호 확인</h1> <br>
 
-<input name="member_PW" placeholder="비밀번호" > <br>
-<span class="PWChangeBefore-result">${result} </span><br><br>
+<input name="member_PW" placeholder="비밀번호" type="password"> <br>
+<span class="PWChangeBefore-result"  >${result} </span><br><br>
 
 <button>확인</button>
 

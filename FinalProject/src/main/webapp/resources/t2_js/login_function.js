@@ -112,12 +112,13 @@ function joinEmail_numCheck() {
 		var result = $('#mail-check-warn');
 		
 		if (inputNum == code) {
-			
+			result.html(" ");
 			$('#join_emailCheckNum').val("emailcheck");
 			
 		}else {
 			result.html("인증번호가 불일치합니다.")
 			result.css('color','red');
+			$('#join_emailCheckNum').val("emailUnCheck");
 		}
 		
 	})

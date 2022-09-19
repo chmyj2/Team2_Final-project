@@ -11,7 +11,7 @@
 </head>
 <body>
 	
-			<div>
+			<div style="height: 1300px;">
 				<div class="detail-top-menu">
 					<input type="hidden" id="detail_addr" value="${Hospital.hospital_addr}"/>
 				  <h3 class="top-h3-name">${Hospital.hospital_name }</h3>
@@ -27,35 +27,35 @@
 				  		<div class="detail-info-place-3">
 				  			<ul class="detail-info-list">
 		  						<li>
-		  							<span class="detail-info-list-title">전문분야</span>
-		  							<span class="detail-info-list-text">항암치료</span>
+		  							<span class="detail-info-list-title">専門分野</span>
+		  							<span class="detail-info-list-text">動物</span>
 		  						</li>
 		  						<li>
-		  							<span class="detail-info-list-title">주치의</span>
-		  							<span class="detail-info-list-text">아무개</span>
+		  							<span class="detail-info-list-title">獣医師</span>
+		  							<span class="detail-info-list-text">田中</span>
 		  						</li>
 				  			</ul>
 				  		</div>
 				  		<div class="detail-info-place-3">
 				  			<ul class="detail-info-list">
 				  				<li>
-									<span class="detail-info-list-title">주소</span>				  				
+									<span class="detail-info-list-title">アドレス</span>				  				
 									<span class="detail-info-list-text">${Hospital.hospital_addr}</span>				  				
 				  				</li>					  			
 				  				<li>
-									<span class="detail-info-list-title">전화번호</span>				  				
+									<span class="detail-info-list-title">電話番号</span>				  				
 									<span class="detail-info-list-text">${Hospital.hospital_tel}</span>				  				
 				  				</li>					  			
 				  				<li>
-									<span class="detail-info-list-title">영업시간</span>				  				
-									<span class="detail-info-list-text">9시까지</span>				  				
+									<span class="detail-info-list-title">営業時間</span>				  				
+									<span class="detail-info-list-text">午後９時まで</span>				  				
 				  				</li>					  			
 				  			</ul>
 				  		</div>
 				  		<div class="detail-info-place-3">
 				  			<ul class="detail-reserve-ul">
 				  				<li>
-									<a onclick="reservego_logincheck('${sessionScope.loginMember.member_ID}','${Hospital.hospital_no }')">예약하기</a>	  				
+									<a onclick="reservego_logincheck('${sessionScope.loginMember.member_ID}','${Hospital.hospital_no }')">予約する</a>	  				
 				  				</li>					  			
 				  			</ul>
 				  		</div>
@@ -68,12 +68,12 @@
 					<div>
 						<div class="detail-review-total">
 							<div class="up">
-								<span class="title">후기</span>
-								<span class="text">0개의 후기<button type="button" class="Reviewbutton">+ 후기 작성하기</button></span>
+								<span class="title">口コミ</span>
+								<span class="text">0個の口コミ<button type="button" class="Reviewbutton">+ 口コミを書く</button></span>
 							</div>
 							<div>
 								<div class="detail-review-star">
-									<div class="detail-review-star-total">"총점" <em >0.0점</em> 
+								<div class="detail-review-star-total">"頂点" <em >0.0点</em> 
 										<div>
 											<span>★</span>
 											<span>★</span>
@@ -82,7 +82,7 @@
 											<span>★</span>
 										</div>
 									</div>
-									<div class="detail-review-star-score">"친절" <em >0.0점</em> 
+									<div class="detail-review-star-score">"親切" <em >0.0点</em> 
 										<div class="detail-review-star-container">
 											<span>★</span>
 											<span>★</span>
@@ -91,7 +91,7 @@
 											<span>★</span>
 											</div>
 									</div>
-									<div class="detail-review-star-score">"설명" <em >0.0점</em> 
+									<div class="detail-review-star-score">"説明" <em >0.0点</em> 
 										<div>
 											<span>★</span>
 											<span>★</span>
@@ -100,7 +100,7 @@
 											<span>★</span>
 											</div>
 									</div>
-									<div class="detail-review-star-score">"진료" <em >0.0점</em> 
+									<div class="detail-review-star-score">"診療" <em >0.0点</em> 
 										<div>
 											<span>★</span>
 											<span>★</span>
@@ -109,7 +109,7 @@
 											<span>★</span>
 											</div>
 									</div>
-									<div class="detail-review-star-score">"가격" <em >0.0점</em> 
+									<div class="detail-review-star-score">"値段" <em >0.0点</em> 
 										<div>
 											<span>★</span>
 											<span>★</span>
@@ -128,7 +128,7 @@
 						<ul></ul>
 						<div class="detail-bot-review-button">
 							<button class="detail-bot-review-button-div">
-								<span>후기더보기+</span>
+								<span>口コミもっと見る+</span>
 							</button>
 						</div>
 						</div>		

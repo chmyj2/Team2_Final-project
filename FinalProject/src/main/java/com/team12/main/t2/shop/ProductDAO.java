@@ -198,11 +198,7 @@ public class ProductDAO {
 	
 		// 단일 파일
 		String fileName = file.getOriginalFilename();
-		System.out.println(path);
-	
 		String saveFileName = UUID.randomUUID().toString() + fileName.substring(fileName.lastIndexOf("."));
-		System.out.println(fileName);
-		System.out.println(saveFileName);
 	
 	
 	// 업로드
@@ -223,7 +219,6 @@ public class ProductDAO {
 		if(!file.getOriginalFilename().isEmpty()) {
 		// 실제 업로드 코드
 			file.transferTo(new File(path,saveFileName));
-												// 파일 이름.
 			ss.getMapper(ProductMapper.class).regProduct(p);
 			System.out.println("등록 성공");
 		}else {
@@ -354,7 +349,7 @@ public class ProductDAO {
 		o.setEnd(pp.getEnd());
 		
 		
-		o.setOrder_PaymentState("결제완료");
+		o.setOrder_PaymentState("お支払い完了");
 		List<OrderDTO> orders = new ArrayList<OrderDTO>();
 		orders = ss.getMapper(ProductMapper.class).getOrderbyPayment(o);
 		request.setAttribute("PagingDTO", pp);

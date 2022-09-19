@@ -29,13 +29,12 @@
 			<div class="login-social">
 				<a href=""><i class="fa fa-kakao">kakao</i></a>
 				<div id="naver_id_login"></div>
-				<a href=""><i class="fa fa-google-plus"></i></a>
 							</div>
 			
 			<label class="login_label"> <span>ID</span> 
 			<input class="login_input" name="member_ID" />
 			</label> <label class="login_label"> <span>Password</span> 
-			<input class="login_input1" name="member_PW" />
+			<input class="login_input1" name="member_PW" type="password" />
 			</label>
 			<span class="pw_alert">${r}</span>
 			<input type="checkbox" id="login_idSave">아이디 기억하기
@@ -60,7 +59,7 @@
 			<label class="login_label"> <span>ID</span> 
 			<input class="login_input3" name="vet_ID" />
 			</label> <label class="login_label"> <span>Password</span> 
-			<input class="login_input1" name="vet_PW" />
+			<input class="login_input1" name="vet_PW" type="password" />
 			</label>
 			<span class="pw_alert">${rb}</span>
 			<input type="checkbox" id="login_idSave1">아이디 기억하기

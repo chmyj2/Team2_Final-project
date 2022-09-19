@@ -20,20 +20,6 @@ public class CartDAO {
 
 	public int reqCart(Cart c) {
 
-		try {
-
-			if (c.getCart_UserID().equals("비회원")) {
-				InetAddress myIP = InetAddress.getLocalHost();
-
-				// getHostAddress() 사용중인 PC의 IP주소를 얻어온다.
-				String strIPAddress = myIP.getHostAddress();
-				c.setCart_UserID(strIPAddress);
-			}
-
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-
 		return ss.getMapper(ProductCartMapper.class).regCart(c);
 
 	}
@@ -180,7 +166,7 @@ public class CartDAO {
 		o.setProduct_Quantity(quantity);
 		o.setShipping_Address(address);
 		if (memo == "") {
-			o.setShipping_Memo("빠른 배송부탁드립니다.");
+			o.setShipping_Memo("安全に発送してください。");
 		}else {
 			o.setShipping_Memo(memo);
 		}
@@ -222,9 +208,9 @@ public class CartDAO {
 	}
 
 
-	public String getOrderNum(OrderDTO o) {
+	public String getOrderPK(OrderDTO o) {
 		
-		return ss.getMapper(ProductCartMapper.class).getOrderNum(o);
+		return ss.getMapper(ProductCartMapper.class).getOrderPK(o);
 	}
 
 

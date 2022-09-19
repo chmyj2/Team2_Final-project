@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="t2LoginGO">로그인</a>
+<a href="t2LoginGO">ログイン</a>
 </body>
 </html>

@@ -9,14 +9,13 @@
 .main-hospital-list {
 	margin-left: auto;
 	margin-right: auto;
-	
 }
-.main-hospital-list td{
-	
-	font-size : 14pt;
-	text-align : center
-	width: 200px;
+
+.main-hospital-list td {
+	font-size: 14pt;
+	text-align: center width: 200px;
 }
+
 
 .customoverlay {
 	position: relative;
@@ -26,7 +25,218 @@
 	border-bottom: 2px solid #ddd;
 	float: left;
 	background-color: white;
-	width:100px;
+	width: 100px;
 	text-align: center;
+}
+
+.pagination-div{
+	
+	text-align: center;
+	
+}
+
+/* ------------------ 인포윈도우창------------------------- */
+.wrap {
+	position: absolute;
+	left: 0;
+	bottom: -34px;
+	width: 230px;
+	height: 132px;
+	margin-left: -37px;
+	text-align: left;
+	overflow: hidden;
+	font-size: 12px;
+	font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+	line-height: 1.5;
+}
+
+.wrap * {
+	padding: 0;
+	margin: 0;
+}
+
+.wrap .info {
+	width: 230px;
+	height: 120px;
+	border-radius: 5px;
+	border-bottom: 2px solid #ccc;
+	border-right: 1px solid #ccc;
+	overflow: hidden;
+	background: #fff;
+}
+
+.wrap .info:nth-child(1) {
+	border: 0;
+	box-shadow: 0px 1px 2px #888;
+}
+
+.info .title {
+	padding: 5px 20px 0 10px;
+	height: 30px;
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+	font-size: 15px;
+	font-weight: bold;
+	float:  left;
+	width: 230px;
+}
+
+.info .close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #888;
+	width: 17px;
+	height: 17px;
+	background:
+		url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');
+}
+
+.info .close:hover {
+	cursor: pointer;
+}
+
+.info .body {
+	position: relative;
+	overflow: hidden;
+}
+
+.info .desc {
+	position: relative;
+	margin: 13px 0 0 90px;
+	height: 75px;
+}
+
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.jibun {
+	font-size: 11px;
+	color: #888;
+	margin-top: -2px;
+}
+
+
+.info:after {
+	content: '';
+	position: absolute;
+	margin-left: -12px;
+	left: 50%;
+	bottom: 0;
+	width: 22px;
+	height: 12px;
+	background:
+		url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')
+}
+
+.info .link {
+	color: #5085BB;
+}
+
+
+/* ------------------ 모달창------------------------- */
+.hospital_map_addr_btn{
+	
+	border-radius : 100px;
+	margin: 0 3px;
+    min-width: 140px;
+    padding: 13px 20px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    background-color: rgb(82,129,209);
+    margin-left: 10%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border:none;
+}	
+
+
+#pagination a {
+display:inline-block;
+margin-right:5px;
+cursor:pointer;
+}
+
+#my_modal {
+   display: none;
+   width: 680px;
+   padding: 20px 60px;
+   background-color: #fefefe;
+   border: 1px solid #888;
+   border-radius: 3px;
+}
+
+#my_modal .modal_close_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    content:  "\00d7";
+}
+
+
+.mymodal_head {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.mymodal_title {
+    line-height: 1;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+}
+
+.mymodal_address{
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 490px;
+    width: 100%;
+    text-align: center;
+	
+}
+
+
+.mymodal_address select {
+    padding-right: 40px;
+    padding-left: 20px;
+    height: 55px;
+    font-size: 18px;
+    color: #999;
+    font-weight: 300;
+    background-position: right 20px center;
+    border-radius: 5px;
+    width: 280px;
+    text-align: center;
+    font-size: 18pt;
+}
+
+
+.mymodal_btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-right: -4px;
+    margin-left: -4px;
+    text-align: center;
+}
+.mymodal_btn button{
+    margin: 0 4px;
+    padding: 17px 10px;
+    max-width: 240px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 100px;
+    color: white;
+    background-color: rgb(82,129,209);
+    border: none;
 }
 

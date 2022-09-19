@@ -15,6 +15,10 @@ public interface Hospital_ListMapper {
 	 int setReverse(reserveDTO rDTO);
 
 	 List<reserveDTO>  getReserveinfo(Membert2 m2);
+
+	 String checkReservePW(Membert2 m2);
+
+	 int reservecancleDo(reserveDTO rDTO);
 	
 
 }

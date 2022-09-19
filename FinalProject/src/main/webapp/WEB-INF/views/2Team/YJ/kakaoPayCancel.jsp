@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	결재 취소
-	<button onclick="check()">닫기</button>
+	決済キャンセル
+	<button onclick="check()">閉じる</button>
 </body>
 <script type="text/javascript">
 function check() {

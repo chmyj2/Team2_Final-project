@@ -9,7 +9,7 @@ member_phoneNum number(15) not null,
 member_address varchar2(100 char) not null,
 member_email varchar2(20 char) unique,
 member_joinDate date not null,
-member_paper varchar2(30 char) not null
+	 varchar2(30 char) not null
 );
 ALTER TABLE final_member MODIFY member_ID VARCHAR2(100char);
 ALTER TABLE final_member MODIFY member_email varchar2(40 char);

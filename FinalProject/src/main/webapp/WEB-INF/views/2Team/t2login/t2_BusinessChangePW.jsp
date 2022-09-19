@@ -23,11 +23,11 @@
 
 <input type="hidden" name="vet_ID" value="${ID }">
 
-<input name="vet_PW" placeholder="비밀번호" id="pw1"><br>
+<input name="vet_PW" placeholder="비밀번호" id="pw1" type="password" ><br>
 <span class="pwChange-Guide">＊5자 이상 영어,숫자만 포함해주세요</span>
 <br>
 <span style="font-size: 2pt;" id="result"></span><br><br>
-<input placeholder="비밀번호 재 확인" id="pw2"> <br>
+<input placeholder="비밀번호 재 확인" id="pw2" type="password" > <br>
 <span id="result3"></span>
 <br><br>
 

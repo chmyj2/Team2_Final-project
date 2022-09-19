@@ -13,7 +13,7 @@
 			
 	
 	<div class="main">
-	<div class="cancelDiv"><a onclick="check()" class="cancelBtn">결제실패</a></div>
+	<div class="cancelDiv"><a onclick="check()" class="cancelBtn">決済キャンセル</a></div>
     <span class="stand"></span>
     <div class="cat">
      <div class="body"></div>

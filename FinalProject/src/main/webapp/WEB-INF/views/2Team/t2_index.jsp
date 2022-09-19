@@ -49,28 +49,28 @@
 		<div class="container">
 			<div class="container-fluid">
 				<div class="header-top">
-						<a href="team2Main"><img class="index_logo_img" src="resources/t2_img/logo.jpg" alt="" /></a>
+						<a href="team2Main"><img class="index_logo_img" src="resources/t2_img/산포시요제.jpeg" alt="" /></a>
 					</div>
 					
 				</div>
 			</div>
 	<div id="indexMenu">
         <ul>
-            <li><a href="hospitalGo">동물병원 찾기</a></li>
+            <li><a href="hospitalGo">病院予約</a></li>
            <li class="t2-indexDropdown">
-           <a href="viewAllProductPage.go?onExhibition=Y&nowPage=1&cntPerPage=16" class="t2-indexDropbtn">상품 판매</a>
+           <a href="viewAllProductPage.go?onExhibition=Y&nowPage=1&cntPerPage=16" class="t2-indexDropbtn">商品</a>
            <ul class="t2-indexDropdown-content">
-            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=dog&toy_category=snack&toy=toy">강아지</a></li>                     
-            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=cat&toy_category=snack&toy=toy">고양이</a></li>                 
-            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=etc&toy_category=snack&toy=toy">etc</a></li>
+            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=dog&toy_category=snack&toy=toy">DOG</a></li>                     
+            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=cat&toy_category=snack&toy=toy">CAT</a></li>                 
+            	<li><a href="viewProductPage.go?onExhibition=Y&pet_category=etc&toy_category=snack&toy=toy">ETC</a></li>
             </ul>
            </li>
             <li class="t2-indexDropdown">
-            	<a class="t2-indexDropbtn">게시판</a>
+            	<a class="t2-indexDropbtn">掲示板</a>
             	<ul class="t2-indexDropdown-content">
-            	<li><a href="team2.boardlist?board_category=1">강아지</a></li>                     
-            	<li><a href="team2.boardlist?board_category=2">고양이</a></li>                 
-           		<li><a href="team2.boardlist?board_category=3">etc</a></li>                 
+            	<li><a href="team2.boardlist?board_category=1">DOG</a></li>                     
+            	<li><a href="team2.boardlist?board_category=2">CAT</a></li>                 
+           		<li><a href="team2.boardlist?board_category=3">ETC</a></li>                 
             </ul>
             </li>
         </ul>
@@ -90,31 +90,24 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3 col-md-offset-half col-sm-4 col-xs-12 single-widget">
-						<h2 class="widget-title">HOSPITAL ADDRESS</h2>
+						<h2 class="widget-title">Let’s Go For a Walk.</h2>
 						<div class="widget-inner">
-							<p>E44, Design Street, Web Corner Melbourne - 005</p>
+							<p>Connect</p>
 							<ul>
-								<li>Monday - Friday</li>
-								<li>8.00 - 18.00</li>
-								<li>Saturday</li>
-								<li>8.00 - 18.00</li>
-								<li>Sunday</li>
-								<li>8.00 - 18.00</li>
+								<li>Call</li><br>
+								<li>010-1234-1234</li><br>
+								<li>Mail</li><br>
+								<li>For_a_walk@naver.com</li><br>
 							</ul>
 						</div>
 					</div>
 					<div class="col-md-3 col-md-offset-1  col-sm-4 col-xs-12 single-widget">
-						<h2 class="widget-title">QUICK LINKS</h2>
+						<h2 class="widget-title">FUNCTION</h2>
 						<div class="widget-inner">
 							<ul class="footer-menu">
-								<li><a href="">Doctors</a></li>
-								<li><a href="">Services</a></li>
-								<li><a href="">Gallery</a></li>
-								<li><a href="">News</a></li>
-								<li><a href="">Terms of Use</a></li>
-								<li><a href="">Privacy Policy</a></li>
-								<li><a href="">Desclaimer</a></li>
-								<li><a href="">Sitemap</a></li>
+								<li><a href="hospitalGo">Appointment</a></li><br>
+								<li><a href="viewAllProductPage.go?onExhibition=Y&nowPage=1&cntPerPage=16">Sales</a></li><br>
+								<li><a href="team2.boardlist?board_category=1">Board</a></li><br>
 							</ul>
 						</div>
 					</div>
@@ -124,9 +117,8 @@
 							
 							<div class="clearfix"></div>
 							<div class="social footer">
-								<a href=""><i class="fa fa-twitter"></i></a>
-								<a href=""><i class="fa fa-instagram"></i></a>
-								<a href=""><i class="fa fa-google-plus"></i></a>
+								<a href="https://twitter.com/go_sancheck"><i class="fa fa-twitter"></i></a>
+								<a href="https://www.instagram.com/let_s_go_sancheck/"><i class="fa fa-instagram"></i></a>
 							</div>
 						</div>
 					</div>

@@ -19,7 +19,7 @@
             
             <div class="team2_home_img">
                 <a href="team2Main">
-                    <h1>산책가자</h1>
+                    <h1>さんぽしようぜ</h1>
                     <img src="resources/t2_img/t2_homeImg.jpg" alt="">
                 </a>
             </div>

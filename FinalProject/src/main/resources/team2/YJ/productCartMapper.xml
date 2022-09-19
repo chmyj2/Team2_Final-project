@@ -19,12 +19,12 @@
 </update>
 
 <insert id="insertPurchasedProduct">
-	INSERT into order_Table VALUES(#{Order_Num},#{Order_User_ID},#{Order_ProductNum},#{Order_PhoneNumber},#{Product_Quantity},sysdate,#{Shipping_Address},'출고 처리중','주문완료','결제완료',#{Product_Price},#{Order_TotalPrice},Order_PK_seq.nextval,#{Shipping_Memo},#{Recipient},#{Thumbnail})
+	INSERT into order_Table VALUES(#{Order_Num},#{Order_User_ID},#{Order_ProductNum},#{Order_PhoneNumber},#{Product_Quantity},sysdate,#{Shipping_Address},'出庫処理中','注文完了','お支払い完了',#{Product_Price},#{Order_TotalPrice},Order_PK_seq.nextval,#{Shipping_Memo},#{Recipient},#{Thumbnail})
 </insert>
 
-<select id="getOrderNum" parameterType="com.team12.main.t2.shop.OrderDTO" resultType="String">
+<select id="getOrderPK" parameterType="com.team12.main.t2.shop.OrderDTO" resultType="String">
 	SELECT * 
-FROM (SELECT Order_Num 
+FROM (SELECT Order_PK 
 	  FROM order_Table 
       WHERE Order_User_ID = #{Order_User_ID}
       ORDER BY Order_Date DESC) 
@@ -33,7 +33,7 @@ WHERE ROWNUM &lt;= 1
 
 
 <select id="getOrder" parameterType="com.team12.main.t2.shop.OrderDTO" resultType="com.team12.main.t2.shop.OrderDTO">
-	SELECT * from order_Table where Order_Num = #{Order_Num}
+	SELECT * from order_Table where Order_PK = #{Order_PK}
 </select>
 
 

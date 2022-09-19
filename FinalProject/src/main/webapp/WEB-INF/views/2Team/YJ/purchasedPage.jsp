@@ -23,19 +23,19 @@ $(function(){
 		
 		
 		if (Recipient == "") {
-			alert("수령인을 입력해주세요.")
+			alert("受取人を入力してください。")
 			return false;
 		}else if (phoneNum == "") {
-			alert("전화번호를 입력해주세요.")
+			alert("電話番号を入力してください。")
 			return false;
 		}else if (billState == "") {
-			alert("우편번호를 입력해주세요.")
+			alert("郵便番号を入力してください。")
 			return false;
 		}else if (billState1 == "") {
-			alert("도로명주소를 입력해주세요.")
+			alert("道路名住所を入力してください。")
 			return false;
 		}else if (billState2 == "") {
-			alert("상세주소를 입력해주세요.")
+			alert("詳細アドレスを入力してください。")
 			return false;
 		}else {
 			$.ajax({
@@ -51,7 +51,7 @@ $(function(){
 					}
 				},
 				error:function(error){
-					alert("실패");
+					alert("失敗");
 				}
 			});
 		}
@@ -62,7 +62,7 @@ $(function(){
 <body>
 	<header style="margin: 40px; id="site-header">
 		<div class="container">
-			<h1>배송 및 구매</h1>
+			<h1>配送 / 購入</h1>
 		</div>
 	</header>
 	
@@ -74,26 +74,26 @@ $(function(){
       	<div>Order / Payment</div>
       </div>
       <div style=" margin-top: 30px;" class="InfoTxt">
-      	<div>회원 정보</div>
+      	<div>会員情報</div>
       </div>
       <div class="divTable minimalistBlack" id="shippingAddress">
       	<div class="divTableHeading">
     		<div class="divTableRow">
     		<div class="divTableHead">Recipient Info</div>
-    		<div class="divTableHead">주문자 정보</div>
+    		<div class="divTableHead">オーダー情報</div>
     		</div>
   		</div>
   		<div class="divTableBody">
     		<div class="divTableRow">
-      			<div class="divTableCell">주문자</div>
+      			<div class="divTableCell">オーダー</div>
       			<div class="divTableCell"><span name="shipAddress" id="shipAddress">${sessionScope.loginMember.member_ID }</span></div>
       		</div>
     		<div class="divTableRow">
-      			<div class="divTableCell">휴대전화</div>
+      			<div class="divTableCell">電話番号</div>
       			<div class="divTableCell"><span name="shipCity" id="shipCity">${sessionScope.loginMember.member_phoneNum }</span></div>
     		</div>
     		<div class="divTableRow">
-      			<div class="divTableCell">주소</div>
+      			<div class="divTableCell">住所</div>
       			<div class="divTableCell"><span name="shipState" id="shipState">${addr[2]}</span>
       									  <span name="shipState1" id="shipState1">${addr[0]}</span>
       									  <span name="shipState2" id="shipState2">${addr[1]}</span>
@@ -104,44 +104,44 @@ $(function(){
 	
 	
 	<div style=" margin-top: 30px;" class="InfoTxt">
-      	<div>배송 정보
-      	<input type="checkbox" id="sameAddressControl"/>회원정보와 동일합니다.</div>
+      	<div>配送情報
+      	<input type="checkbox" id="sameAddressControl"/>会員情報と同じです。</div>
       </div>
       <div class="divTable minimalistBlack" id="billingAddress">
       
       	<div class="divTableHeading">
     		<div class="divTableRow">
     		<div class="divTableHead">Orderer Info</div>
-    		<div class="divTableHead">주문자 정보</div>
+    		<div class="divTableHead">オーダー情報</div>
     		</div>
   		</div>
   		<div class="divTableBody">
     		<div class="divTableRow">
-      			<div class="divTableCell">수령인</div>
+      			<div class="divTableCell">受取人</div>
       			<div class="divTableCell"><input type="text" name="billAddress"
                      id="billAddress"/></div>
       		</div>
     		<div class="divTableRow">
-      			<div class="divTableCell">휴대전화</div>
+      			<div class="divTableCell">電話番号</div>
       			<div class="divTableCell"><input type="text" name="billCity" id="billCity"/></div>
     		</div>
     		<div class="divTableRow">
-      			<div class="divTableCell">배송지 주소</div>
-      			<div class="divTableCell"><input type="text" name="billState" id="billState" class="billState" placeholder="우편번호"  style="width: 200px;"/>
-      									  <input type="text" name="billState1" id="billState1" placeholder="도로명주소" style="width: 200px;"/>
-      									  <input type="text" name="billState2" id="billState2" placeholder="상세주소" style="width: 200px;"/>
-      									  <span id="addrSearchBtn" style="display:inline;">[검색]</span></div>
+      			<div class="divTableCell">配送先住所</div>
+      			<div class="divTableCell"><input type="text" name="billState" id="billState" class="billState" placeholder="郵便番号"  style="width: 200px;"/>
+      									  <input type="text" name="billState1" id="billState1" placeholder="道路名住所" style="width: 200px;"/>
+      									  <input type="text" name="billState2" id="billState2" placeholder="詳細住所" style="width: 200px;"/>
+      									  <span id="addrSearchBtn" style="display:inline;">[検索]</span></div>
     		</div>
     		<div class="divTableRow">
-      			<div class="divTableCell">배송 시 메모</div>
-      			<div class="divTableCell"><input type="text" name="billZip" id="billZip" placeholder="빠른 배송 부탁드립니다."/></div>
+      			<div class="divTableCell">メモ</div>
+      			<div class="divTableCell"><input type="text" name="billZip" id="billZip" placeholder="安全に発送してください。"/></div>
     		</div>
     	
   	</div>
   	
   	</div>
       <div style=" margin-top: 30px;" class="InfoTxt">
-      	<div>상품 정보</div>
+      	<div>商品情報</div>
       </div>
       
       <div class="divTable minimalistBlack">
@@ -169,11 +169,11 @@ $(function(){
 				</div>
 				<footer class="content">
 					
-					<span class="qt-minus">수량 : </span>
+					<span class="qt-minus">数量 : </span>
 					<span class="qt">${p.cart_ProductQuantity }</span>
 					<span class="full-price">${p.productPrice * p.cart_ProductQuantity }</span>
 					<h2 class="price">${p.productPrice}</h2>
-					<h2 class="onePriceWon">가격 : </h2>
+					<h2 class="onePriceWon">価格 : </h2>
 				</footer>
 			</article>
 			</div>
@@ -193,34 +193,34 @@ $(function(){
       	<div>Order / Payment</div>
       </div>
       <div style=" margin-top: 30px;" class="InfoTxt">
-      	<div>회원 정보</div>
+      	<div>会員情報</div>
       </div>
       <div class="divTable minimalistBlack" id="shippingAddress">
       	<div class="divTableHeading">
     		<div class="divTableRow">
     		<div class="divTableHead">Recipient Info</div>
-    		<div class="divTableHead">주문자 정보</div>
+    		<div class="divTableHead">オーダー情報</div>
     		</div>
   		</div>
   		<div class="divTableBody">
     		<div class="divTableRow">
-      			<div class="divTableCell">주문자</div>
+      			<div class="divTableCell">オーダ</div>
       			<div class="divTableCell"><span name="shipAddress" id="shipAddress">${sessionScope.loginMember_business.vet_ID }</span></div>
       		</div>
     		<div class="divTableRow">
-      			<div class="divTableCell">휴대전화</div>
+      			<div class="divTableCell">電話番号</div>
       			<div class="divTableCell"><span name="shipCity" id="shipCity">${sessionScope.loginMember_business.vet_phoneNum }</span></div>
     		</div>
     		<div class="divTableRow">
-      			<div class="divTableCell">주소</div>
+      			<div class="divTableCell">住所</div>
       			<div class="divTableCell"><span name="shipState" id="shipState">${addr[2]}</span>
       									  <span name="shipState1" id="shipState1">${addr[0]}</span>
       									  <span name="shipState2" id="shipState2">${addr[1]}</span>
       									</div>
     		</div>
     		<div class="divTableRow">
-      			<div class="divTableCell">배송 시 메모</div>
-      			<div class="divTableCell"> <input type="text" name="shipZip" id="shipZip" value="빠른 배송 부탁드립니다.""/></div>
+      			<div class="divTableCell">メモ</div>
+      			<div class="divTableCell"> <input type="text" name="shipZip" id="shipZip" value="安全に発送してください。""/></div>
     		</div>
   	</div>
 	</div>
@@ -228,43 +228,43 @@ $(function(){
 	
 	<div style=" margin-top: 30px;" class="InfoTxt">
       	<div>배송 정보
-      	<input type="checkbox" id="sameAddressControl"/>회원정보와 동일합니다.</div>
+      	<input type="checkbox" id="sameAddressControl"/>会員情報と同じです。</div>
       </div>
       <div class="divTable minimalistBlack" id="billingAddress">
       
       	<div class="divTableHeading">
     		<div class="divTableRow">
     		<div class="divTableHead">Orderer Info</div>
-    		<div class="divTableHead">주문자 정보</div>
+    		<div class="divTableHead">オーダー情報</div>
     		</div>
   		</div>
   		<div class="divTableBody">
     		<div class="divTableRow">
-      			<div class="divTableCell">수령인</div>
+      			<div class="divTableCell">受取人</div>
       			<div class="divTableCell"><input type="text" name="billAddress"
                      id="billAddress"/></div>
       		</div>
     		<div class="divTableRow">
-      			<div class="divTableCell">휴대전화</div>
+      			<div class="divTableCell">電話番号</div>
       			<div class="divTableCell"><input type="text" name="billCity" id="billCity"/></div>
     		</div>
     		<div class="divTableRow">
-      			<div class="divTableCell">배송지 주소</div>
-      			<div class="divTableCell"><input type="text" name="billState" id="billState" class="billState" placeholder="우편번호"  style="width: 200px;"/>
-      									  <input type="text" name="billState1" id="billState1" placeholder="도로명주소" style="width: 200px;"/>
-      									  <input type="text" name="billState2" id="billState2" placeholder="상세주소" style="width: 200px;"/>
-      									  <span id="addrSearchBtn" style="display:inline;">[검색]</span></div>
+      			<div class="divTableCell">配送先住所</div>
+      			<div class="divTableCell"><input type="text" name="billState" id="billState" class="billState" placeholder="郵便番号"  style="width: 200px;"/>
+      									  <input type="text" name="billState1" id="billState1" placeholder="道路名住所" style="width: 200px;"/>
+      									  <input type="text" name="billState2" id="billState2" placeholder="詳細住所" style="width: 200px;"/>
+      									  <span id="addrSearchBtn" style="display:inline;">[検索]</span></div>
     		</div>
     		<div class="divTableRow">
-      			<div class="divTableCell">배송 시 메모</div>
-      			<div class="divTableCell"><input type="text" name="billZip" id="billZip" placeholder="빠른 배송 부탁드립니다."/></div>
+      			<div class="divTableCell">メモ</div>
+      			<div class="divTableCell"><input type="text" name="billZip" id="billZip" placeholder="安全に発送してください。"/></div>
     		</div>
     	
   	</div>
   	
   	</div>
       <div style=" margin-top: 30px;" class="InfoTxt">
-      	<div>상품 정보</div>
+      	<div>商品情報</div>
       </div>
       
       <div class="divTable minimalistBlack">
@@ -291,11 +291,11 @@ $(function(){
 					<span class="p_name">${p.productName }</span>
 				</div>
 				<footer class="content">
-					<span class="qt-minus">수량 : </span>
+					<span class="qt-minus">数量 : </span>
 					<span class="qt">${p.cart_ProductQuantity }</span>
 					<span class="full-price">${p.productPrice * p.cart_ProductQuantity }</span>
 					<h2 class="price">${p.productPrice}</h2>
-					<h2 class="onePriceWon">가격 : </h2>
+					<h2 class="onePriceWon">価格 : </h2>
 				</footer>
 			</article>
 			</div>
@@ -319,13 +319,13 @@ $(function(){
 		<div class="container clearfix">
 
 			<div class="left">
-				<h2 class="subtotal">상품 금액 : <span id="subPrice"></span>원</h2>
-				<h3 class="tax">배송비 : <span>2500</span>원</h3>
+				<h2 class="subtotal">Price : <span id="subPrice"></span>₩</h2>
+				<h3 class="tax">Shipping Price : <span>2500</span>₩</h3>
 			</div>
 
 			<div class="right">
-				<h1 class="total">총 금액: <span id="totalPrice">0</span>원</h1>
-				<a class="button reverse dark" id="payment">결제하기</a>
+				<h1 class="total">Total Price: <span id="totalPrice">0</span>₩</h1>
+				<a class="button reverse dark" id="payment">お支払い</a>
 				
 			</div>
 			
