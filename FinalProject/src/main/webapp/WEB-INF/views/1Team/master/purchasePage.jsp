@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href='resources/t2_css/purchasedPage.css' rel="stylesheet" type="text/css">
 <script type="text/javascript" src="resources/js/purchasePage.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -119,96 +118,92 @@ function UpdateANDINsert() {
 </script>
 </head>
 <body>
-	
-<fieldset>
-      <div style=" margin-bottom: 20px;border: 3px solid #000000;">
-      	<div>Order / Payment</div>
+<fieldset class="purchasePage_wrap">
+      <div style= "margin-bottom: 20px;">
+      	<h1>Order / Payment</h1>
       </div>
-      <div style=" margin-top: 20px;border: 3px solid #000000;">
-      	<div>회원 정보</div>
+      <div style= "margin-top: 40px; background: yellow;">
+      	<h2>회원 정보</h2>
       </div>
       <div class="divTable minimalistBlack" id="shippingAddress">
-      	<div class="divTableHeading">
+<!--       	<div class="divTableHeading">
     		<div class="divTableRow">
     		<div class="divTableHead">Recipient Info</div>
     		<div class="divTableHead">주문자 정보</div>
     		</div>
-  		</div>
+  		</div> -->
   		<div class="divTableBody">
     		<div class="divTableRow">
       			<div class="divTableCell">주문자</div>
-      			<div class="divTableCell"><span name="shipAddress" id="shipAddress">${sessionScope.loginMember.member_ID }</span></div>
+      			<div class="divTableCell2">
+      			<span name="shipAddress" id="shipAddress">${sessionScope.loginMember.member_ID }</span></div>
       		</div>
     		<div class="divTableRow">
       			<div class="divTableCell">휴대전화</div>
-      			<div class="divTableCell"><span name="shipCity" id="shipCity">${sessionScope.loginMember.member_phoneNum }</span></div>
+      			<div class="divTableCell2"><span name="shipCity" id="shipCity">${sessionScope.loginMember.member_phoneNum }</span></div>
     		</div>
     		<div class="divTableRow">
       			<div class="divTableCell">주소</div>
-      			<div class="divTableCell"><span name="shipState" id="shipState">${addr[2]}</span>
+      			<div class="divTableCell2"><span name="shipState" id="shipState">${addr[2]}</span>
       									  <span name="shipState1" id="shipState1">${addr[0]}</span>
       									  <span name="shipState2" id="shipState2">${addr[1]}</span>
       									</div>
     		</div>
-    		<div class="divTableRow">
+    		<div class="divTableRow" style="margin-top: 40px;">
       			<div class="divTableCell">배송 시 메모</div>
-      			<div class="divTableCell"> <input type="text" name="shipZip" id="shipZip" value="빠른 배송 부탁드립니다.""/></div>
+      			<div class="divTableCell"> 
+      			<input class="memo_input" type="text" name="shipZip" id="shipZip" value="빠른 배송 부탁드립니다.""/></div>
     		</div>
   	</div>
 	</div>
 	
 	
-	<div style=" margin-top: 20px;border: 3px solid #000000;">
-      	<div>배송 정보
-      	<input type="checkbox" id="sameAddressControl"/>회원정보와 동일합니다.</div>
-      </div>
       <div class="divTable minimalistBlack" id="billingAddress">
       
-      	<div class="divTableHeading">
-    		<div class="divTableRow">
-    		<div class="divTableHead">Orderer Info</div>
-    		<div class="divTableHead">주문자 정보</div>
+      	<div class="divTableHeading" style= "margin-bottom: 20px;">
+    		<div class="order_info">
+    		<h2 class="divTableHead" style= "background: yellow;">주문자 정보</h2>
+    		<input type="checkbox" id="sameAddressControl"/>회원정보와 동일합니다.
     		</div>
   		</div>
-  		<div class="divTableBody">
+  		<div class="divTableBody2">
     		<div class="divTableRow">
       			<div class="divTableCell">수령인</div>
-      			<div class="divTableCell"><input type="text" name="billAddress" id="billAddress"/></div>
+      			<div class="divTableCell">
+      			<input type="text" name="billAddress" id="billAddress" style="margin-bottom:10px;"/></div>
       		</div>
     		<div class="divTableRow">
       			<div class="divTableCell">휴대전화</div>
-      			<div class="divTableCell"><input type="text" name="billCity" id="billCity"/></div>
+      			<div class="divTableCell"><input type="text" name="billCity" id="billCity" style="margin-bottom:10px;"/></div>
     		</div>
     		<div class="divTableRow">
       			<div class="divTableCell">배송지 주소</div>
-      			<div class="divTableCell"><input type="text" name="billState" id="billState" class="billState" placeholder="우편번호"  style="width: 200px;"/>
+      			<div class="puchase_add"><input type="text" name="billState" id="billState" class="billState" placeholder="우편번호"  style="width: 200px;"/>
       									  <input type="text" name="billState1" id="billState1" placeholder="도로명주소" style="width: 200px;"/>
-      									  <input type="text" name="billState2" id="billState2" placeholder="상세주소" style="width: 200px;"/>
-      									  <span id="addrSearchBtn" style="display:inline;">[검색]</span></div>
+      									  <input type="text" name="billState2" id="billState2" placeholder="상세주소" style="width: 200px; margin-bottom:10px;"/>
+      									  <span id="addrSearchBtn" style="display:inline;">주소검색</span></div>
     		</div>
     		<div class="divTableRow">
-      			<div class="divTableCell">배송 시 메모</div>
-      			<div class="divTableCell"><input type="text" name="billZip" id="billZip" placeholder="빠른 배송 부탁드립니다."/></div>
+      			<div class="divTableCell" style="margin-bottom:20px;">배송 시 메모</div>
+      			<div class="divTableCell"><input class="memo_input" type="text" name="billZip" id="billZip" placeholder="빠른 배송 부탁드립니다."/></div>
     		</div>
     		
     	
   	</div>
   	
   	</div>
-      <div style=" margin-top: 20px;border: 3px solid #000000;">
-      	<div>상품 정보</div>
+      <div style= "margin-top: 20px; background: yellow;">
+      	<h2>상품 정보</h2>
       </div>
       
       <div class="divTable minimalistBlack">
-      	<div class="container">
+      	<div class="puchase_container">
 
 		<section id="cart" class="cart">  
 		
 		<div  id="product" class="product">
 			<article>
-				<header>
 						<img src="resources/reviewFile/${product.product_thumnail }">
-				</header>
 				<div>
     			<input type="hidden" value="${sessionScope.loginMember.member_ID }" id="Order_User_ID">
     			<input type="hidden" value="${product.product_num }" id="Order_ProductNum">
@@ -222,8 +217,8 @@ function UpdateANDINsert() {
 				<input id="ProductPrice" type="hidden" value="${product.product_price }">
 				<input id="quantity" type="hidden" value="${param.quantity }">
 					<span class="qt-minus" id="qt">수량 : ${param.quantity }</span>
-					<span class="price" id="price" ></span>
 					<span class="onePriceWon">가격 : </span>
+					<span class="price" id="price" ></span>
 				</footer>
 			</article>
 			</div>

@@ -184,10 +184,10 @@ html {
  <div class="store_wrap">
         <div class="store_header">
             <div class="store_for_dog">
-                <img class="store_for_dog_img" src="resources/img/about3.png" alt="">
+                <img class="store_for_dog_img" src="resources/img/about2.png" alt="">
             </div>
             <h2>
-                <a href="#">FOR DOG</a>
+                <a href="#">FOR CAT</a>
             </h2>
         </div>
     
@@ -197,8 +197,8 @@ html {
                 각 DB 5개 정도씩? -->
 
                 <div class="store_new_products_txt">
-                    <h2>* DRY FOOD FOR DOG *</h2>
-                    <p>From raw materials for dogs to other well-being pet foods</p>
+                    <h2>* DRY FOOD FOR CAT *</h2>
+                    <p>From raw materials for cats to other well-being pet foods</p>
                 </div>
                 <div class="login_didididiv">
 	

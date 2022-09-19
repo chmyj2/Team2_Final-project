@@ -41,7 +41,7 @@ public class ShopManagerController {
 	}
 	
 	
-	// 스토어 메인
+	/*// 스토어 메인
 	@RequestMapping(value="/enter.team1StoreFor", method = RequestMethod.GET)
 	public String shopEntering(Team1ProductDTO product, HttpServletRequest req) {
 			
@@ -51,9 +51,9 @@ public class ShopManagerController {
 	
 		req.setAttribute("contentPage", "ShopPageYUJIN/team1ShopForDog.jsp");
 		return "1Team/t1_index";
-	}
+	}*/
 	
-	// 상품 디테일 페이지로 이동
+/*	// 상품 디테일 페이지로 이동
 	@RequestMapping(value="/get.aProductTeam1",method = RequestMethod.GET )
 	public String detailAProduct(Team1ReviewDTO review, ProductDTO p, HttpServletRequest req){
 		
@@ -71,7 +71,7 @@ public class ShopManagerController {
 		req.setAttribute("contentPage", "ShopPageYUJIN/team1shopProductDetail.jsp");
 		return "1Team/t1_index";
 	}
-	
+	*/
 	
 	// 상품 카테고리별 출력
 	@RequestMapping(value = "/loadByCategory.go", method = RequestMethod.GET)

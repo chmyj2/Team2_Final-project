@@ -53,11 +53,11 @@ html {
 .menu__tabs li {
 	float: left;
 	margin-right: 2px;
-	font-size: 1.3em;
+	font-size: 1em;
 }
 .menu__tabs a {
-	padding: 1em;
-	background: #333b48;
+	padding: 10px;
+	background: #9e9e9e;
 	display: inline-block;
 	color: #FFF;
 	text-decoration: none;

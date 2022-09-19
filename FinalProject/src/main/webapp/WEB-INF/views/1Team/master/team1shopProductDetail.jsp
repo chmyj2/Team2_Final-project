@@ -126,28 +126,29 @@ $(function() {
                 <hr>
                 <!-- 제품명2 -->
                 <p>${product.product_title2 }</p>
-                    <strong>￦<fmt:formatNumber value="${product.product_price }" pattern="#,###" />원</strong>
+                    <strong>￦<fmt:formatNumber value="${product.product_price }" pattern="#,###" /></strong>
                     
                     <div class="store_product_detail_option">
-                    <h2> 상품설명 : ${product.product_info }</h2> 
-                    <h2> 제조사 : ${product.product_manufactor }</h2>
+                    <h2 style="display:none;"> 상품설명 : ${product.product_info }</h2> 
+                    <h2 style="display:none;"> 제조사 : ${product.product_manufactor }</h2>
                        <!--  <select name="store_option" id="" class="store_product_datail_select">
                             <option value="">--- (필수)옵션선택 ---</option>
                             <option value="">5.6kg ￦43,850</option>
                             <option value="">1.8kg ￦15,340</option>
                         </select> -->
-                        <p>배송비 ￦3,000원 </p>
                      </div>
                     <div class = "productStockDiv">
-					${product.product_title}
+					<span style="display:none;">${product.product_title}</span>
 					<input id="quantityInput" type = "number" onchange="quantityChange(this,${product.product_price },${product.product_stock})"
 					name = "quantity" style ="width:50px" value = 1>개
-					<span id = "totalPrice"><fmt:formatNumber value="${product.product_price }" pattern="#,###" /></span> 원 재고 ${product.product_stock}개<br>
+					<span id = "totalPrice"><fmt:formatNumber value="${product.product_price }" pattern="#,###" /></span> 원 
+					<span style="color:gray; display:block; font-size:10pt;"> 현재 재고 ${product.product_stock}개 </span><br>
+                        <p>(배송비 ￦3,000원) </p>
 					
 				</div>
                     <!-- 결과창 -->
                     <div class="store_product_detail_result">
-                       	 총액(수량 + 배송비):<span id = "totalPrice2"><fmt:formatNumber value="${product.product_price +3000}" pattern="#,###" /></span>
+                       	 총액 : ￦ <span id = "totalPrice2"><fmt:formatNumber value="${product.product_price +3000}" pattern="#,###" /></span>
                     </div>
                     <div class="store_product_detail_btn">
                         <button class="store_buy_btn" onclick="purchasePageGo(${product.product_num })">구매하기</button>
@@ -190,8 +191,8 @@ $(function() {
 					<label for="tab01">상품상세정보</label>
 					<input type="radio" name="tabmenu" id="tab02" checked>
 					<label for="tab02">사용후기</label>
-					<input type="radio" name="tabmenu" id="tab03" value="3">
-					<label for="tab03">Q&A</label>
+<!-- 					<input type="radio" name="tabmenu" id="tab03" value="3">
+					<label for="tab03">Q&A</label> -->
 					
 					
 					
