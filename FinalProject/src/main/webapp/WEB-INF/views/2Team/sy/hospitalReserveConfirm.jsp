@@ -38,7 +38,7 @@
 <body>
 	<div class="receipt">
 	<div>
-		<div class="text">ご利用いただき<br>ありがとうございます。</div>
+		<div class="text">予約が<br>完了しました。</div>
 	</div>
 	<div id="dog_Class">
 <div class="dog">

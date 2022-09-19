@@ -1,0 +1,58 @@
+.reserve-cancle-div {
+    width: 500px;
+    margin: 0 auto 35px;
+    padding: 55px 60px 60px;
+    background: #fff;
+    box-shadow: -1px 11px 20pxrgba(0,0,0,.19),0 6px 6pxrgb(249 249 249/23%);
+    border-radius: 5px;
+    border-top: 1px solid #5281D1;
+    }
+.reserve-cancle-header{
+    margin-bottom: 40px;
+    text-align: center;
+    }
+
+.reserve-cancle-header h3{
+        font-size: 30px;
+        font-weight: 400;
+        height: 20px;
+    }
+.reserve-cancle-header small{
+        display: block;
+        font-size: 13px;
+        color: #a49f9f;
+        font-weight: 100;
+    }
+
+.reserve-cancle-input-div fieldset, .reserve-cancle-input-div fieldset {
+	
+        border: none;
+    }
+    
+.password-input input{
+
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 10px 0px 12px;
+        border: 1px solid #fff;
+        font-size: 14px;
+        border-radius: 5px;
+        background-color: #f3f3f3;
+
+    }
+
+
+.cancle-fieldset input{
+        width: 100%;
+        margin-top: 3px;
+        padding: 20px;
+        background: #5281D1;
+        border: none;
+        font-size: 16px;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+
+    }

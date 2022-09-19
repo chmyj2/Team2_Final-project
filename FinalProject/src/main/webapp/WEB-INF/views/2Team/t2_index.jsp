@@ -49,7 +49,7 @@
 		<div class="container">
 			<div class="container-fluid">
 				<div class="header-top">
-						<a href="team2Main"><img class="index_logo_img" src="resources/t2_img/산포시요제.jpeg" alt="" /></a>
+						<a href="team2Main"><img class="index_logo_img" src="resources/t2_img/sanposiyowuze.jpeg" alt="" /></a>
 					</div>
 					
 				</div>
