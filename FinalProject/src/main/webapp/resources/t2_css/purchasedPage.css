@@ -239,6 +239,10 @@ background: #f0f0f0;
     padding: 0 30px;
 }
 
+.divTableRow input{
+	margin-top: 10px;
+	border:none;
+}
 
 div.minimalistBlack {
   width: 100%;
