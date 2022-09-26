@@ -29,13 +29,23 @@
    <context:component-scan
       base-package="com.team12.main" />
       
-   <!-- //////////DB연결관련!///////////// -->
+   <!-- //////////DB연결관련! 자기꺼에 맞///////////// -->
+   <!-- 
 <beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<beans:property name="url"
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<beans:property name="username" value="leeyoky" />
 		<beans:property name="password" value="leeyoky" />
+	</beans:bean>
+    -->
+    
+    <beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<beans:property name="url"
+			value="jdbc:oracle:thin:@db202204301707_medium?TNS_ADMIN=/Users/choeyongjun/Wallet_DB202204301707" />
+		<beans:property name="username" value="CYJ" />
+		<beans:property name="password" value="YJ802soldesk" />
 	</beans:bean>
 
 
