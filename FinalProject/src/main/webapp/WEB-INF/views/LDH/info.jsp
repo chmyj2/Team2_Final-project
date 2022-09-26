@@ -86,7 +86,7 @@ $(function() {
                 
                 <div>
                     <div class="update_box">
-                        <button class="update_btn" >수정</button><br>
+                        <button class="update_btn" >수정</button>
                         <button class="delete_account_btn" onclick="bye();" type="button">탈퇴</button>
                     </div>
                 </div>

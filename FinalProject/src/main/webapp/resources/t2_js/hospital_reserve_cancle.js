@@ -42,10 +42,7 @@ $(function() {
 			       		} else {
 			       			location.href="hospitalReserveCancleDo?reserve_memberID="+userid+"&reserve_no="+userreserveNo;
 			       			alert('予約がキャンセルされました。')
-							   opener.location.reload();
-							  
-							   
-							   
+							opener.parent.location.reload();
 			       			window.close();
 			       		}
 			     }
