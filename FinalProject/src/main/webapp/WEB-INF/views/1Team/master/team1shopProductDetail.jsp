@@ -33,18 +33,6 @@
 </script>
 <script type="text/javascript">
 $(function() {
-	$('.starRev span').click(function(){
-		  $(this).parent().children('span').removeClass('on');
-		  $(this).addClass('on').prevAll('span').addClass('on');
-//		  alert($(this).attr("value"));
-		let  a = $(this).attr("value")
-		  $('#starrr').attr('value', a)
-		  return false;
-		});
-});
-</script>
-<script type="text/javascript">
-$(function() {
 	let select=''
 	
 	$(".reviewUpdate").click(function() {
@@ -57,6 +45,7 @@ $(function() {
 		$(this).next().toggle();
 		//$(this).parent().parent().find('input').html(txt);
 		select = $(this).parent().parent().find('input')
+		$(this).find('.reviewUpdate2').css('display', 'block');
 	});
 	
 	$('.reviewUpdate2').click(function() {
@@ -96,6 +85,8 @@ $(function() {
 
 
 </script>
+
+
 </head>
 <body>
           <form action="purchasePage.go_team1" id="purchaseForm">
@@ -365,11 +356,12 @@ $(function() {
 									<!-- 수정 Ajax -->
 								<div class="store_review_btn_stat">
 								<c:if test="${sessionScope.loginMember.member_ID == r.review_id }">
-									<button class="reviewUpdate" onclick="location.href='review.update">수정</button>
+									<button class="reviewUpdate">수정</button>
 									<button id="${r.review_num}" class="reviewUpdate2" style="display: none;">완료</button>
-									<button class="reviewDelete" onclick="location.href='review.delete?review_num=${r.review_num}'">삭제</button>
+									<button class="reviewDelete" onclick="location.href='review.delete?review_num=${r.review_num}&product_num=${product.product_num}'">삭제</button>
 								</c:if>
 								</div>
+								
 								
 							</div>
 						</div>
