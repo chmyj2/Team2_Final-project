@@ -1,15 +1,21 @@
 # FinalProject
-soldesk final project <br>
-team1 DengStiny Lim,Dong-Hoon Lee,Yeong-Kyung  <br>
-team2 산책가자 한수진 김원봉 최용준 박상영 
+### Team1 <br>
+<b> Project nickname </b>: Deng＋Stiny<br>
+<b> Project execution period </b>: 2022.08.04 ~ 2022.09.09 <br>
+<b> Member </b>: Lim-DongHoon, Lee-YeongKyung  <br><br>
+### Team2 <br>
+<b> Project nickname </b>: 산책 가자（さんぽしようぜ） <br>
+<b> Project execution period </b>: 2022.08.04 ~ 2022.09.09 <br>
+<b> Member</b> : Han-SuJin, Kim-WonBong, Choi-YongJun, Park-SangYeong <br>
 
+
+<b> Tools </b>: <img src="https://img.shields.io/badge/Eclipse IDE-003458?style=flat-square&logo=Eclipse&logoColor=white"/> <img src="https://img.shields.io/badge/jquery-%230769AD?style=flat-square&logo=jquery&logoColor=white"/> <img src="https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white"/> <img src="https://img.shields.io/badge/java-%23ED8B00?style=flat-square&logo=java&logoColor=white"/> <img src="https://img.shields.io/badge/ajax-%230769AD?style=flat-square&logo=ajax&logoColor=white"/> <img src="https://img.shields.io/badge/github-%23121011?style=flat-square&logo=github&logoColor=white"/> <img src="https://img.shields.io/badge/spring-%236DB33F?style=flat-square&logo=spring&logoColor=white"/>  <img src="https://img.shields.io/badge/Sourcetree-0052CC?style=flat-square&logo=Sourcetree&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>  <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat-square&logo=Apache Tomcat&logoColor=white"/>
+
+***
 
 # Deng+Stiny
-
-Final Project of Soldesk <br>
-Project period 2022.08.04 ~ 2022.09.09 <br>
-A web page to help with the adoption and rescue of abandoned animals. <br>
-
+유기동물의 입양과 구조를 돕는 웹사이트. <br>
+捨てられたペットの養子縁組や救助を手助けするウェブサイト。<br>
 ## Member
 
 |Lim,Dong-Hun|Lee,Yeong-Kyung|
@@ -19,10 +25,6 @@ A web page to help with the adoption and rescue of abandoned animals. <br>
 |dla_ehdgns@naver.com|leeyoky@naver.com|
 
 ---------------------------------------
-
-## Tools
-
-<img src="https://img.shields.io/badge/Eclipse IDE-003458?style=flat-square&logo=Eclipse&logoColor=white"/> <img src="https://img.shields.io/badge/jquery-%230769AD?style=flat-square&logo=jquery&logoColor=white"/> <img src="https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white"/> <img src="https://img.shields.io/badge/java-%23ED8B00?style=flat-square&logo=java&logoColor=white"/> <img src="https://img.shields.io/badge/ajax-%230769AD?style=flat-square&logo=ajax&logoColor=white"/> <img src="https://img.shields.io/badge/github-%23121011?style=flat-square&logo=github&logoColor=white"/> <img src="https://img.shields.io/badge/spring-%236DB33F?style=flat-square&logo=spring&logoColor=white"/>  <img src="https://img.shields.io/badge/Sourcetree-0052CC?style=flat-square&logo=Sourcetree&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>  <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat-square&logo=Apache Tomcat&logoColor=white"/>
 
 
 
