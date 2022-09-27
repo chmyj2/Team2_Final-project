@@ -13,12 +13,12 @@
 
 ***
 
-# Deng+Stiny
+# Deng+Stiny - Team 1
 유기동물의 입양과 구조를 돕는 웹사이트. <br>
 捨てられたペットの養子縁組や救助を手助けするために作られたウェブサイト。<br>
 ## Assigned Task
 
-|Lim,Dong-Hun|Lee,Yeong-Kyung|
+|Lim-DongHun|Lee-YeongKyung|
 |:------:|:------:|
 |Member System| Site Design|
 |Store|Review|
@@ -51,4 +51,48 @@ Deng+Stinyは毎年増えている捨てられたペットの数と年間捨て�
 회원 등록 会員登録 / 아이디 찾기 ID探し / 상품 구매 商品購入
 <img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192587820-00fcb149-b4b7-43f2-8091-4f8d22a4f039.png">
 
+***
 
+# 산책 가자（さんぽしようぜ）- Team 2
+<b>산책가자는</b><br>
+반려동물 병원 예약 서비스를 제공하면서, 반려동물 상품 구매와 이용자들이 정보를 공유할 수 있는 게시판이 있는 사이트입니다.<br>
+주 이용 고객은 반려동물을 키우는 사람과 동물병원 관계자입니다.<br>
+<b>さんぽしようぜとは</b><br>
+ペット病院の予約サービスを提供し、ペット商品の購入と利用者が情報を共有できる掲示板があるサイトです。<br>
+主な利用客はペットを飼う人と動物病院の関係者です。<br><br>
+## Assigned Task
+
+|Han-SuJin<br>ハン・スジン|Kim-WonBong<br>キム・ウォンボン|Choi-YongJun<br>チェ・ヨンジュン|Park-SangYeong<br>パク・サンヨン|
+|-|-|-|-|
+|chmyj2@naver.com|kmanvy@naver.com|yarunohosi@gmail.com|yarunohosi@gmail.com|
+|일반 회원<br>一般会員|게시판<br>掲示板|상품 정보 페이지<br>商品情報ページ|병원 지도<br>病院マップ|
+|비지니스 회원<br>ビジネス会員|메인 페이지<br>メインページ|관리자 전용 페이지<br>管理者専用ページ|동물 병원 정보<br>動物病院情報|
+|펫 정보 관리<br>ペット情報管理||판매 시스템<br>販売システム|예약 시스템<br>予約システム|
+
+
+---------------------------------------
+
+
+## Description
+
+<img width="800"  src="https://user-images.githubusercontent.com/107028682/191168790-1dd734b4-da3b-4fae-9a72-da24a6d79b51.png">
+
+Deng+Stiny는 매년 늘어나는 유기동물의 수와 연간 유기동물의 안락사 횟수가 증가 하고 있는 점에서 
+
+유기동물의 입양 증가 및 유기동물에 대한 사람들의 관심을 촉구하기 위해 제작되었습니다. 
+
+Deng+Stinyは毎年増えている捨てられたペットの数と年間捨てられたペットの安楽死回数が増加していることから、 
+
+捨てられたペットの養子縁組の増加および捨てられたペットに対する人々の関心を促すために製作されました。<br>
+
+
+## Database
+
+<img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png">
+
+
+## Function
+
+
+회원 등록 会員登録 / 아이디 찾기 ID探し / 상품 구매 商品購入
+<img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192587820-00fcb149-b4b7-43f2-8091-4f8d22a4f039.png">
