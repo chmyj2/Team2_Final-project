@@ -12,6 +12,9 @@
 [한국어 PDF 파일 다운로드](https://github.com/Minji802/HoliDiary/files/9658450/1.pdf)<br>
 [日本語 PDF ファイル ダウンロード](https://github.com/Minji802/HoliDiary/files/9658451/default.pdf)<br><br>
 
+#### Information
+Team1과 Team2는 자매사이트인 관계로 같은 회원 DB를 사용하며 공동 작업을 하게 되었습니다. <br>
+Team1と2Team2は姉妹サイトであるため、同じ会員DBを使用し、共同作業を行うことになりました。<br><br>
 
 
 ## Development Environment 
