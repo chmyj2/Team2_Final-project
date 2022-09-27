@@ -9,7 +9,7 @@
 <b> Member</b> : Han-SuJin, Kim-WonBong, Choi-YongJun, Park-SangYeong <br>
 
 
-<b> Tools </b>: <img src="https://img.shields.io/badge/Eclipse IDE-003458?style=flat-square&logo=Eclipse&logoColor=white"/> <img src="https://img.shields.io/badge/jquery-%230769AD?style=flat-square&logo=jquery&logoColor=white"/> <img src="https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white"/> <img src="https://img.shields.io/badge/java-%23ED8B00?style=flat-square&logo=java&logoColor=white"/> <img src="https://img.shields.io/badge/ajax-%230769AD?style=flat-square&logo=ajax&logoColor=white"/> <img src="https://img.shields.io/badge/github-%23121011?style=flat-square&logo=github&logoColor=white"/> <img src="https://img.shields.io/badge/spring-%236DB33F?style=flat-square&logo=spring&logoColor=white"/>  <img src="https://img.shields.io/badge/Sourcetree-0052CC?style=flat-square&logo=Sourcetree&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>  <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat-square&logo=Apache Tomcat&logoColor=white"/>
+<b> Tools </b>: <img src="https://img.shields.io/badge/Eclipse IDE-003458?style=flat-square&logo=Eclipse&logoColor=white"/> <img src="https://img.shields.io/badge/jquery-%230769AD?style=flat-square&logo=jquery&logoColor=white"/> <img src="https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white"/> <img src="https://img.shields.io/badge/java-%23ED8B00?style=flat-square&logo=java&logoColor=white"/> <img src="https://img.shields.io/badge/ajax-%230769AD?style=flat-square&logo=ajax&logoColor=white"/> <img src="https://img.shields.io/badge/github-%23121011?style=flat-square&logo=github&logoColor=white"/> <img src="https://img.shields.io/badge/spring-%236DB33F?style=flat-square&logo=spring&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>  <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat-square&logo=Apache Tomcat&logoColor=white"/>
 
 ***
 
@@ -88,9 +88,9 @@ Deng+Stinyは毎年増えている捨てられたペットの数と年間捨て�
 
 ## Database & Structure
 
-<img width="600" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192592373-7a0df260-7267-433b-9b67-9d2038e2e935.png">
+<img width="800"  alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192592373-7a0df260-7267-433b-9b67-9d2038e2e935.png">
 
-<img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192592355-d702d600-b7cb-465e-8a23-ed60ca4fc9f6.png">
+<img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192593345-1a69034b-ad45-42b4-8432-96b6a5d6dc05.png">
 ## Function
 
 
