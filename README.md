@@ -2,16 +2,24 @@
 ### Team1 <br>
 <b> Project nickname </b>: Deng＋Stiny<br>
 <b> Project execution period </b>: 2022.08.04 ~ 2022.09.09 <br>
-<b> Member </b>: Lim-DongHoon, Lee-YeongKyung  <br><br>
+<b> Member </b>: Lim-DongHoon, Lee-YeongKyung  <br>
+[한국어 PDF 파일 다운로드](https://github.com/Minji802/HoliDiary/files/9658446/Project.DengStiny.PDF.KR.pdf)<br>
+[日本語 PDF ファイル ダウンロード](https://github.com/Minji802/HoliDiary/files/9658444/Project.DengStiny.PDF.JR.pdf)<br><br>
 ### Team2 <br>
 <b> Project nickname </b>: 산책 가자（さんぽしようぜ） <br>
 <b> Project execution period </b>: 2022.08.04 ~ 2022.09.09 <br>
 <b> Member</b> : Han-SuJin, Kim-WonBong, Choi-YongJun, Park-SangYeong <br>
+[한국어 PDF 파일 다운로드](https://github.com/Minji802/HoliDiary/files/9658450/1.pdf)<br>
+[日本語 PDF ファイル ダウンロード](https://github.com/Minji802/HoliDiary/files/9658451/default.pdf)<br><br>
 
 
-<b> Tools </b>: <img src="https://img.shields.io/badge/Eclipse IDE-003458?style=flat-square&logo=Eclipse&logoColor=white"/> <img src="https://img.shields.io/badge/jquery-%230769AD?style=flat-square&logo=jquery&logoColor=white"/> <img src="https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white"/> <img src="https://img.shields.io/badge/java-%23ED8B00?style=flat-square&logo=java&logoColor=white"/> <img src="https://img.shields.io/badge/ajax-%230769AD?style=flat-square&logo=ajax&logoColor=white"/> <img src="https://img.shields.io/badge/github-%23121011?style=flat-square&logo=github&logoColor=white"/> <img src="https://img.shields.io/badge/spring-%236DB33F?style=flat-square&logo=spring&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>  <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat-square&logo=Apache Tomcat&logoColor=white"/>
 
-***
+## Development Environment 
+<img src="https://img.shields.io/badge/Eclipse IDE-003458?style=flat-square&logo=Eclipse&logoColor=white"/> <img src="https://img.shields.io/badge/jquery-%230769AD?style=flat-square&logo=jquery&logoColor=white"/> <img src="https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white"/> <img src="https://img.shields.io/badge/java-%23ED8B00?style=flat-square&logo=java&logoColor=white"/> <img src="https://img.shields.io/badge/ajax-%230769AD?style=flat-square&logo=ajax&logoColor=white"/> <img src="https://img.shields.io/badge/github-%23121011?style=flat-square&logo=github&logoColor=white"/> <img src="https://img.shields.io/badge/spring-%236DB33F?style=flat-square&logo=spring&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>  <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat-square&logo=Apache Tomcat&logoColor=white"/>
+
+
+<img width="800"  src="https://user-images.githubusercontent.com/107030993/192595537-04770b45-edba-47be-a947-4f8aa7012c93.png">
+<br><br>
 
 # Deng+Stiny - Team 1
 유기동물의 입양과 구조를 돕는 웹사이트. <br>
@@ -24,7 +32,6 @@
 |Store|Review|
 |dla_ehdgns@naver.com|leeyoky@naver.com|
 
----------------------------------------
 
 
 ## Description
@@ -45,11 +52,6 @@ Deng+Stinyは毎年増えている捨てられたペットの数と年間捨て�
 <img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png">
 
 
-## Function
-
-
-회원 등록 会員登録 / 아이디 찾기 ID探し / 상품 구매 商品購入
-<img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192587820-00fcb149-b4b7-43f2-8091-4f8d22a4f039.png">
 
 ***
 
@@ -69,8 +71,6 @@ Deng+Stinyは毎年増えている捨てられたペットの数と年間捨て�
 |비지니스 회원<br>ビジネス会員|메인 페이지<br>メインページ|관리자 전용 페이지<br>管理者専用ページ|동물 병원 정보<br>動物病院情報|
 |펫 정보 관리<br>ペット情報管理||판매 시스템<br>販売システム|예약 시스템<br>予約システム|
 
-
----------------------------------------
 
 
 ## Description
@@ -93,4 +93,5 @@ Deng+Stinyは毎年増えている捨てられたペットの数と年間捨て�
 ## Structure
 <img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192593345-1a69034b-ad45-42b4-8432-96b6a5d6dc05.png">
 
-## Function
+자세한 내용은 상단의 pdf 파일을 참고해주세요.<br>
+詳細については、上記のpdfファイルをご参照ください。
