@@ -1,6 +1,6 @@
 # FinalProject
 soldesk final project <br>
-team1 DengStiny Lim,Dong-Hun Lee,Yeong-Kyung  <br>
+team1 DengStiny Lim,Dong-Hoon Lee,Yeong-Kyung  <br>
 team2 산책가자 한수진 김원봉 최용준 박상영 
 
 
@@ -18,16 +18,28 @@ A web page to help with the adoption and rescue of abandoned animals. <br>
 |Store|Review|
 |dla_ehdgns@naver.com|leeyoky@naver.com|
 
-## Main Home
+---------------------------------------
+## Description
+
 ![Main Home](https://user-images.githubusercontent.com/107028682/191168790-1dd734b4-da3b-4fae-9a72-da24a6d79b51.png)
 
-## Adopt
-![Adopt](https://user-images.githubusercontent.com/107028682/191170697-cbed4e56-88d6-4779-b6d2-826b70d2ac47.png)
+Deng+Stiny는 매년 늘어나는 유기동물의 수와 연간 유기동물의 안락사 횟수가 증가 하고 있는 점에서 
 
-## Store
-![Store](https://user-images.githubusercontent.com/107028682/191169491-e6591a09-f241-452e-ab89-7acd196af797.png)
+유기동물의 입양 증가 및 유기동물에 대한 사람들의 관심을 촉구하기 위해 제작되었습니다. 
 
-## Store Review
-![Review](https://user-images.githubusercontent.com/107028682/191169496-bfb06c19-ee3e-4d8b-bae4-fa5e6b784b72.png)
+Deng+Stinyは毎年増える捨てられたペットの数と年間捨てられたペットの安楽死回数が増加していることから、 
 
+捨てられたペットの養子縁組の増加および捨てられたペットに対する人々の関心を促すために製作されました。
 
+---------------------------------------
+
+## Tools
+
+<img src="https://img.shields.io/badge/Eclipse IDE-003458?style=flat-square&logo=Eclipse&logoColor=white"/> <img src="https://img.shields.io/badge/jquery-%230769AD?style=flat-square&logo=jquery&logoColor=white"/> <img src="https://img.shields.io/badge/Oracle-F80000?style=flat-square&logo=oracle&logoColor=white"/> <img src="https://img.shields.io/badge/java-%23ED8B00?style=flat-square&logo=java&logoColor=white"/> <img src="https://img.shields.io/badge/ajax-%230769AD?style=flat-square&logo=ajax&logoColor=white"/> <img src="https://img.shields.io/badge/github-%23121011?style=flat-square&logo=github&logoColor=white"/> <img src="https://img.shields.io/badge/spring-%236DB33F?style=flat-square&logo=spring&logoColor=white"/>  <img src="https://img.shields.io/badge/Sourcetree-0052CC?style=flat-square&logo=Sourcetree&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>  <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat-square&logo=Apache Tomcat&logoColor=white"/>
+
+———————————————————
+
+## Database
+<img width="433" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/99569785/192527244-816383f3-0195-411a-97eb-761b101f972b.png">
+<img width="272" alt="스크린샷 2022-09-27 오후 9 31 44" src="https://user-images.githubusercontent.com/99569785/192528431-61eee0b4-e656-4ad5-8019-9324399f6b2d.png"><img width="272" alt="스크린샷 2022-09-27 오후 9 32 01" src="https://user-images.githubusercontent.com/99569785/192530263-db67a26f-4f19-4ac0-87fc-6baf451124bb.png">
+<img width="352" alt="스크린샷 2022-09-27 오후 9 32 26" src="https://user-images.githubusercontent.com/99569785/192530337-7c9a8485-a71a-4737-a8b0-6a1369473fb8.png">
