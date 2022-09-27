@@ -47,13 +47,15 @@ Deng+Stinyは毎年増えている捨てられたペットの数と年間捨て�
 
 ## Function
 
-회원 등록
-会員登録
-<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="[https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png](https://user-images.githubusercontent.com/107030993/192586623-41014a69-66b4-468e-baa1-0b8e37b5da7d.png)">
-아이디 찾기
-Find ID
-<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="[https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png](https://user-images.githubusercontent.com/107030993/192586604-de205c35-d4f0-4a75-8244-5bd46e18ac31.png)">
-상품구입
-商品購入
-<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="[https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png](https://user-images.githubusercontent.com/107030993/192586628-b465a096-c814-4d21-9d87-067f1fe21f18.png)">
+
+
+<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192586963-efd54e98-beb6-4cc4-bd57-95ee84b27074.png">
+
+
+<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192586943-a8f3b7fd-9188-4585-b5df-40f51ff95dce.png">
+
+
+<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192586981-acabe3dc-3d1a-4aba-bb29-4ebceb435d1e.png">
+
+
 
