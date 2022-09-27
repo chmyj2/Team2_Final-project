@@ -15,22 +15,19 @@
 
 # Deng+Stiny
 유기동물의 입양과 구조를 돕는 웹사이트. <br>
-捨てられたペットの養子縁組や救助を手助けするウェブサイト。<br>
-## Member
+捨てられたペットの養子縁組や救助を手助けするために作られたウェブサイト。<br>
+## Assigned Task
 
 |Lim,Dong-Hun|Lee,Yeong-Kyung|
 |:------:|:------:|
-|Member|CSS|
+|Member System| Site Design|
 |Store|Review|
 |dla_ehdgns@naver.com|leeyoky@naver.com|
 
 ---------------------------------------
 
 
-
-
 ## Description
-
 
 <img width="1000"  src="https://user-images.githubusercontent.com/107028682/191168790-1dd734b4-da3b-4fae-9a72-da24a6d79b51.png">
 
@@ -38,17 +35,26 @@ Deng+Stiny는 매년 늘어나는 유기동물의 수와 연간 유기동물의 
 
 유기동물의 입양 증가 및 유기동물에 대한 사람들의 관심을 촉구하기 위해 제작되었습니다. 
 
-Deng+Stinyは毎年増える捨てられたペットの数と年間捨てられたペットの安楽死回数が増加していることから、 
+Deng+Stinyは毎年増えている捨てられたペットの数と年間捨てられたペットの安楽死回数が増加していることから、 
 
-捨てられたペットの養子縁組の増加および捨てられたペットに対する人々の関心を促すために製作されました。
+捨てられたペットの養子縁組の増加および捨てられたペットに対する人々の関心を促すために製作されました。<br>
 
----------------------------------------
-
-
-
-———————————————————
 
 ## Database
 
 <img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png">
+
+
+## Function
+
+회원 등록
+会員登録
+<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png">
+아이디 찾기
+Find ID
+<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png">
+상품구입
+商品購入
+<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png">
+
 
