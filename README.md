@@ -29,7 +29,7 @@
 
 ## Description
 
-<img width="1000"  src="https://user-images.githubusercontent.com/107028682/191168790-1dd734b4-da3b-4fae-9a72-da24a6d79b51.png">
+<img width="800"  src="https://user-images.githubusercontent.com/107028682/191168790-1dd734b4-da3b-4fae-9a72-da24a6d79b51.png">
 
 Deng+Stiny는 매년 늘어나는 유기동물의 수와 연간 유기동물의 안락사 횟수가 증가 하고 있는 점에서 
 
@@ -49,12 +49,11 @@ Deng+Stinyは毎年増えている捨てられたペットの数と年間捨て�
 
 회원 등록
 会員登録
-<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png">
+<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="[https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png](https://user-images.githubusercontent.com/107030993/192586623-41014a69-66b4-468e-baa1-0b8e37b5da7d.png)">
 아이디 찾기
 Find ID
-<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png">
+<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="[https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png](https://user-images.githubusercontent.com/107030993/192586604-de205c35-d4f0-4a75-8244-5bd46e18ac31.png)">
 상품구입
 商品購入
-<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png">
-
+<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="[https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png](https://user-images.githubusercontent.com/107030993/192586628-b465a096-c814-4d21-9d87-067f1fe21f18.png)">
 
