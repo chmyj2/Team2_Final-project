@@ -48,14 +48,7 @@ Deng+Stinyは毎年増えている捨てられたペットの数と年間捨て�
 ## Function
 
 
-
-<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192586963-efd54e98-beb6-4cc4-bd57-95ee84b27074.png">
-
-
-<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192586943-a8f3b7fd-9188-4585-b5df-40f51ff95dce.png">
-
-
-<img width="300" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192586981-acabe3dc-3d1a-4aba-bb29-4ebceb435d1e.png">
-
+회원 등록 会員登録 / 아이디 찾기 ID探し / 상품 구매 商品購入
+<img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192587820-00fcb149-b4b7-43f2-8091-4f8d22a4f039.png">
 
 
