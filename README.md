@@ -86,13 +86,11 @@ Deng+Stinyは毎年増えている捨てられたペットの数と年間捨て�
 捨てられたペットの養子縁組の増加および捨てられたペットに対する人々の関心を促すために製作されました。<br>
 
 
-## Database & Structure
+## Database
 
-<img width="800"  alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192592373-7a0df260-7267-433b-9b67-9d2038e2e935.png">
+<img width="800"  alt="스 크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192593959-b2c7ec8d-cd4a-49d6-a112-cffbebebf608.png">
 
+## Structure
 <img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192593345-1a69034b-ad45-42b4-8432-96b6a5d6dc05.png">
+
 ## Function
-
-
-회원 등록 会員登録 / 아이디 찾기 ID探し / 상품 구매 商品購入
-<img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192587820-00fcb149-b4b7-43f2-8091-4f8d22a4f039.png">
