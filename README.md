@@ -25,8 +25,14 @@ Team1と2Team2は姉妹サイトであるため、同じ会員DBを使用し、�
 <br><br>
 
 # Deng+Stiny - Team 1
-유기동물의 입양과 구조를 돕는 웹사이트. <br>
-捨てられたペットの養子縁組や救助を手助けするために作られたウェブサイト。<br>
+<b>Deng+Stiny</b>는 매년 늘어나는 유기동물의 수와 연간 유기동물의 안락사 횟수가 증가 하고 있는 점에서 
+
+유기동물의 입양 증가 및 유기동물에 대한 사람들의 관심을 촉구하기 위해 제작되었습니다. 
+
+<b>Deng+Stiny</b>は毎年増えている捨てられたペットの数と年間捨てられたペットの安楽死回数が増加していることから、 
+
+捨てられたペットの養子縁組の増加および捨てられたペットに対する人々の関心を促すために製作されました。<br>
+
 ## Assigned Task
 
 |Lim-DongHun|Lee-YeongKyung|
@@ -39,22 +45,14 @@ Team1と2Team2は姉妹サイトであるため、同じ会員DBを使用し、�
 
 ## Description
 
-<img width="800"  src="https://user-images.githubusercontent.com/107028682/191168790-1dd734b4-da3b-4fae-9a72-da24a6d79b51.png">
+<img width="800"  src="https://user-images.githubusercontent.com/107028682/191168790-1dd734b4-da3b-4fae-9a72-da24a6d79b51.png"><br>
 
-Deng+Stiny는 매년 늘어나는 유기동물의 수와 연간 유기동물의 안락사 횟수가 증가 하고 있는 점에서 
-
-유기동물의 입양 증가 및 유기동물에 대한 사람들의 관심을 촉구하기 위해 제작되었습니다. 
-
-Deng+Stinyは毎年増えている捨てられたペットの数と年間捨てられたペットの安楽死回数が増加していることから、 
-
-捨てられたペットの養子縁組の増加および捨てられたペットに対する人々の関心を促すために製作されました。<br>
 
 
 ## Database
 
 <img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192576366-e3f700f5-37b2-4a94-a49c-9e4664ac7ff2.png">
-
-
+<br>
 
 ***
 
@@ -78,23 +76,16 @@ Deng+Stinyは毎年増えている捨てられたペットの数と年間捨て�
 
 ## Description
 
-<img width="800"  src="https://user-images.githubusercontent.com/107028682/191168790-1dd734b4-da3b-4fae-9a72-da24a6d79b51.png">
+<img width="800"  src="https://user-images.githubusercontent.com/107030993/192599898-f961f7b1-86c0-4c1e-98fa-a8ab494eb8f6.png"><br>
 
-Deng+Stiny는 매년 늘어나는 유기동물의 수와 연간 유기동물의 안락사 횟수가 증가 하고 있는 점에서 
-
-유기동물의 입양 증가 및 유기동물에 대한 사람들의 관심을 촉구하기 위해 제작되었습니다. 
-
-Deng+Stinyは毎年増えている捨てられたペットの数と年間捨てられたペットの安楽死回数が増加していることから、 
-
-捨てられたペットの養子縁組の増加および捨てられたペットに対する人々の関心を促すために製作されました。<br>
 
 
 ## Database
 
-<img width="800"  alt="스 크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192593959-b2c7ec8d-cd4a-49d6-a112-cffbebebf608.png">
+<img width="800"  alt="스 크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192593959-b2c7ec8d-cd4a-49d6-a112-cffbebebf608.png"><br>
 
 ## Structure
-<img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192593345-1a69034b-ad45-42b4-8432-96b6a5d6dc05.png">
+<img width="800" alt="스크린샷 2022-09-27 오후 9 27 56" src="https://user-images.githubusercontent.com/107030993/192593345-1a69034b-ad45-42b4-8432-96b6a5d6dc05.png"><br>
 
 자세한 내용은 상단의 pdf 파일을 참고해주세요.<br>
 詳細については、上記のpdfファイルをご参照ください。
