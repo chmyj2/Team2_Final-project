@@ -67,7 +67,7 @@ Team1と2Team2は姉妹サイトであるため、同じ会員DBを使用し、�
 
 |Han-SuJin<br>ハン・スジン|Kim-WonBong<br>キム・ウォンボン|Choi-YongJun<br>チェ・ヨンジュン|Park-SangYeong<br>パク・サンヨン|
 |-|-|-|-|
-|chmyj2@naver.com|kmanvy@naver.com|yarunohosi@gmail.com|yarunohosi@gmail.com|
+|th3651@naver.com|jinyuanfeng1@naver.com|chmyj2@naver.com|tkddud04@naver.com|
 |일반 회원<br>一般会員|게시판<br>掲示板|상품 정보 페이지<br>商品情報ページ|병원 지도<br>病院マップ|
 |비지니스 회원<br>ビジネス会員|메인 페이지<br>メインページ|관리자 전용 페이지<br>管理者専用ページ|동물 병원 정보<br>動物病院情報|
 |펫 정보 관리<br>ペット情報管理||판매 시스템<br>販売システム|예약 시스템<br>予約システム|
